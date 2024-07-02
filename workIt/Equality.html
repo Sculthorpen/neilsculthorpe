@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Equality</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --universe-polymorphism </a
+      ><a name="37" class="Symbol"
+      >#-}</a
+      ><a name="40"
+      >
+
+</a
+      ><a name="42" class="Keyword"
+      >open</a
+      ><a name="46"
+      > </a
+      ><a name="47" class="Keyword"
+      >import</a
+      ><a name="53"
+      > </a
+      ><a name="54" href="Level.html#1" class="Module"
+      >Level</a
+      ><a name="59"
+      >
+
+</a
+      ><a name="61" class="Keyword"
+      >module</a
+      ><a name="67"
+      > </a
+      ><a name="68" href="Equality.html#1" class="Module"
+      >Equality</a
+      ><a name="76"
+      > </a
+      ><a name="77" class="Keyword"
+      >where</a
+      ><a name="82"
+      >
+
+</a
+      ><a name="84" class="Keyword"
+      >infix</a
+      ><a name="89"
+      > </a
+      ><a name="90" class="Number"
+      >3</a
+      ><a name="91"
+      > _&#8801;_
+
+</a
+      ><a name="97" class="Keyword"
+      >data</a
+      ><a name="101"
+      > </a
+      ><a name="102" href="Equality.html#102" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="105"
+      > </a
+      ><a name="106" class="Symbol"
+      >{</a
+      ><a name="107" href="Equality.html#107" class="Bound"
+      >l</a
+      ><a name="108"
+      > </a
+      ><a name="109" class="Symbol"
+      >:</a
+      ><a name="110"
+      > </a
+      ><a name="111" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="116" class="Symbol"
+      >}</a
+      ><a name="117"
+      > </a
+      ><a name="118" class="Symbol"
+      >{</a
+      ><a name="119" href="Equality.html#119" class="Bound"
+      >A</a
+      ><a name="120"
+      > </a
+      ><a name="121" class="Symbol"
+      >:</a
+      ><a name="122"
+      > </a
+      ><a name="123" class="PrimitiveType"
+      >Set</a
+      ><a name="126"
+      > </a
+      ><a name="127" href="Equality.html#107" class="Bound"
+      >l</a
+      ><a name="128" class="Symbol"
+      >}</a
+      ><a name="129"
+      > </a
+      ><a name="130" class="Symbol"
+      >(</a
+      ><a name="131" href="Equality.html#131" class="Bound"
+      >a</a
+      ><a name="132"
+      > </a
+      ><a name="133" class="Symbol"
+      >:</a
+      ><a name="134"
+      > </a
+      ><a name="135" href="Equality.html#119" class="Bound"
+      >A</a
+      ><a name="136" class="Symbol"
+      >)</a
+      ><a name="137"
+      > </a
+      ><a name="138" class="Symbol"
+      >:</a
+      ><a name="139"
+      > </a
+      ><a name="140" href="Equality.html#119" class="Bound"
+      >A</a
+      ><a name="141"
+      > </a
+      ><a name="142" class="Symbol"
+      >&#8594;</a
+      ><a name="143"
+      > </a
+      ><a name="144" class="PrimitiveType"
+      >Set</a
+      ><a name="147"
+      > </a
+      ><a name="148" href="Equality.html#107" class="Bound"
+      >l</a
+      ><a name="149"
+      > </a
+      ><a name="150" class="Keyword"
+      >where</a
+      ><a name="155"
+      >
+    </a
+      ><a name="160" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="164"
+      > </a
+      ><a name="165" class="Symbol"
+      >:</a
+      ><a name="166"
+      > </a
+      ><a name="167" href="Equality.html#131" class="Bound"
+      >a</a
+      ><a name="168"
+      > </a
+      ><a name="169" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="170"
+      > </a
+      ><a name="171" href="Equality.html#131" class="Bound"
+      >a</a
+      ><a name="172"
+      >
+
+</a
+      ><a name="174" class="Symbol"
+      >{-#</a
+      ><a name="177"
+      > </a
+      ><a name="178" class="Keyword"
+      >BUILTIN</a
+      ><a name="185"
+      > EQUALITY </a
+      ><a name="195" href="Equality.html#102" class="Datatype Operator"
+      >_&#8801;_</a
+      ><a name="198"
+      > </a
+      ><a name="199" class="Symbol"
+      >#-}</a
+      ><a name="202"
+      >
+</a
+      ><a name="203" class="Symbol"
+      >{-#</a
+      ><a name="206"
+      > </a
+      ><a name="207" class="Keyword"
+      >BUILTIN</a
+      ><a name="214"
+      > REFL </a
+      ><a name="220" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="224"
+      > </a
+      ><a name="225" class="Symbol"
+      >#-}</a
+      ><a name="228"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

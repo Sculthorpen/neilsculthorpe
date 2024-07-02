@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >SubSet</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type </a
+      ><a name="28" class="Symbol"
+      >#-}</a
+      ><a name="31"
+      >
+
+</a
+      ><a name="33" class="Keyword"
+      >open</a
+      ><a name="37"
+      > </a
+      ><a name="38" class="Keyword"
+      >import</a
+      ><a name="44"
+      > </a
+      ><a name="45" href="NeilPrelude.html#1" class="Module"
+      >NeilPrelude</a
+      ><a name="56"
+      >
+
+</a
+      ><a name="58" class="Keyword"
+      >module</a
+      ><a name="64"
+      > </a
+      ><a name="65" href="SubSet.html#1" class="Module"
+      >SubSet</a
+      ><a name="71"
+      > </a
+      ><a name="72" class="Keyword"
+      >where</a
+      ><a name="77"
+      >
+
+</a
+      ><a name="79" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="85"
+      > </a
+      ><a name="86" class="Symbol"
+      >:</a
+      ><a name="87"
+      > </a
+      ><a name="88" class="PrimitiveType"
+      >Set</a
+      ><a name="91"
+      > </a
+      ><a name="92" class="Symbol"
+      >&#8594;</a
+      ><a name="93"
+      > </a
+      ><a name="94" class="PrimitiveType"
+      >Set</a
+      ><a name="97"
+      >
+</a
+      ><a name="98" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="104"
+      > </a
+      ><a name="105" href="SubSet.html#105" class="Bound"
+      >A</a
+      ><a name="106"
+      > </a
+      ><a name="107" class="Symbol"
+      >=</a
+      ><a name="108"
+      > </a
+      ><a name="109" href="SubSet.html#105" class="Bound"
+      >A</a
+      ><a name="110"
+      > </a
+      ><a name="111" class="Symbol"
+      >&#8594;</a
+      ><a name="112"
+      > </a
+      ><a name="113" class="PrimitiveType"
+      >Set</a
+      ><a name="116"
+      >
+
+</a
+      ><a name="118" href="SubSet.html#118" class="Function"
+      >Image</a
+      ><a name="123"
+      > </a
+      ><a name="124" class="Symbol"
+      >:</a
+      ><a name="125"
+      > </a
+      ><a name="126" class="Symbol"
+      >{</a
+      ><a name="127" href="SubSet.html#127" class="Bound"
+      >A</a
+      ><a name="128"
+      > </a
+      ><a name="129" href="SubSet.html#129" class="Bound"
+      >B</a
+      ><a name="130"
+      > </a
+      ><a name="131" class="Symbol"
+      >:</a
+      ><a name="132"
+      > </a
+      ><a name="133" class="PrimitiveType"
+      >Set</a
+      ><a name="136" class="Symbol"
+      >}</a
+      ><a name="137"
+      > </a
+      ><a name="138" class="Symbol"
+      >&#8594;</a
+      ><a name="139"
+      > </a
+      ><a name="140" class="Symbol"
+      >(</a
+      ><a name="141" href="SubSet.html#141" class="Bound"
+      >f</a
+      ><a name="142"
+      > </a
+      ><a name="143" class="Symbol"
+      >:</a
+      ><a name="144"
+      > </a
+      ><a name="145" href="SubSet.html#127" class="Bound"
+      >A</a
+      ><a name="146"
+      > </a
+      ><a name="147" class="Symbol"
+      >&#8594;</a
+      ><a name="148"
+      > </a
+      ><a name="149" href="SubSet.html#129" class="Bound"
+      >B</a
+      ><a name="150" class="Symbol"
+      >)</a
+      ><a name="151"
+      > </a
+      ><a name="152" class="Symbol"
+      >&#8594;</a
+      ><a name="153"
+      > </a
+      ><a name="154" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="160"
+      > </a
+      ><a name="161" href="SubSet.html#129" class="Bound"
+      >B</a
+      ><a name="162"
+      >
+</a
+      ><a name="163" href="SubSet.html#118" class="Function"
+      >Image</a
+      ><a name="168"
+      > </a
+      ><a name="169" class="Symbol"
+      >{</a
+      ><a name="170" href="SubSet.html#170" class="Bound"
+      >A</a
+      ><a name="171" class="Symbol"
+      >}</a
+      ><a name="172"
+      > </a
+      ><a name="173" href="SubSet.html#173" class="Bound"
+      >f</a
+      ><a name="174"
+      > </a
+      ><a name="175" href="SubSet.html#175" class="Bound"
+      >b</a
+      ><a name="176"
+      > </a
+      ><a name="177" class="Symbol"
+      >=</a
+      ><a name="178"
+      > </a
+      ><a name="179" href="Base.html#506" class="Record"
+      >&#931;[</a
+      ><a name="181"
+      > </a
+      ><a name="182" href="SubSet.html#182" class="Bound"
+      >a</a
+      ><a name="183"
+      > </a
+      ><a name="184" href="Base.html#506" class="Record"
+      >&#8758;</a
+      ><a name="185"
+      > </a
+      ><a name="186" href="SubSet.html#170" class="Bound"
+      >A</a
+      ><a name="187"
+      > </a
+      ><a name="188" href="Base.html#506" class="Record"
+      >]</a
+      ><a name="189"
+      > </a
+      ><a name="190" class="Symbol"
+      >(</a
+      ><a name="191" href="SubSet.html#173" class="Bound"
+      >f</a
+      ><a name="192"
+      > </a
+      ><a name="193" href="SubSet.html#182" class="Bound"
+      >a</a
+      ><a name="194"
+      > </a
+      ><a name="195" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="196"
+      > </a
+      ><a name="197" href="SubSet.html#175" class="Bound"
+      >b</a
+      ><a name="198" class="Symbol"
+      >)</a
+      ><a name="199"
+      >
+
+</a
+      ><a name="201" href="SubSet.html#201" class="Function"
+      >SubImage</a
+      ><a name="209"
+      > </a
+      ><a name="210" class="Symbol"
+      >:</a
+      ><a name="211"
+      > </a
+      ><a name="212" class="Symbol"
+      >{</a
+      ><a name="213" href="SubSet.html#213" class="Bound"
+      >A</a
+      ><a name="214"
+      > </a
+      ><a name="215" href="SubSet.html#215" class="Bound"
+      >B</a
+      ><a name="216"
+      > </a
+      ><a name="217" class="Symbol"
+      >:</a
+      ><a name="218"
+      > </a
+      ><a name="219" class="PrimitiveType"
+      >Set</a
+      ><a name="222" class="Symbol"
+      >}</a
+      ><a name="223"
+      > </a
+      ><a name="224" class="Symbol"
+      >&#8594;</a
+      ><a name="225"
+      > </a
+      ><a name="226" class="Symbol"
+      >(</a
+      ><a name="227" href="SubSet.html#227" class="Bound"
+      >f</a
+      ><a name="228"
+      > </a
+      ><a name="229" class="Symbol"
+      >:</a
+      ><a name="230"
+      > </a
+      ><a name="231" href="SubSet.html#213" class="Bound"
+      >A</a
+      ><a name="232"
+      > </a
+      ><a name="233" class="Symbol"
+      >&#8594;</a
+      ><a name="234"
+      > </a
+      ><a name="235" href="SubSet.html#215" class="Bound"
+      >B</a
+      ><a name="236" class="Symbol"
+      >)</a
+      ><a name="237"
+      > </a
+      ><a name="238" class="Symbol"
+      >&#8594;</a
+      ><a name="239"
+      > </a
+      ><a name="240" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="246"
+      > </a
+      ><a name="247" href="SubSet.html#213" class="Bound"
+      >A</a
+      ><a name="248"
+      > </a
+      ><a name="249" class="Symbol"
+      >&#8594;</a
+      ><a name="250"
+      > </a
+      ><a name="251" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="257"
+      > </a
+      ><a name="258" href="SubSet.html#215" class="Bound"
+      >B</a
+      ><a name="259"
+      >
+</a
+      ><a name="260" href="SubSet.html#201" class="Function"
+      >SubImage</a
+      ><a name="268"
+      > </a
+      ><a name="269" class="Symbol"
+      >{</a
+      ><a name="270" href="SubSet.html#270" class="Bound"
+      >A</a
+      ><a name="271" class="Symbol"
+      >}</a
+      ><a name="272"
+      > </a
+      ><a name="273" href="SubSet.html#273" class="Bound"
+      >f</a
+      ><a name="274"
+      > </a
+      ><a name="275" href="SubSet.html#275" class="Bound"
+      >P</a
+      ><a name="276"
+      > </a
+      ><a name="277" href="SubSet.html#277" class="Bound"
+      >b</a
+      ><a name="278"
+      > </a
+      ><a name="279" class="Symbol"
+      >=</a
+      ><a name="280"
+      > </a
+      ><a name="281" href="Base.html#506" class="Record"
+      >&#931;[</a
+      ><a name="283"
+      > </a
+      ><a name="284" href="SubSet.html#284" class="Bound"
+      >a</a
+      ><a name="285"
+      > </a
+      ><a name="286" href="Base.html#506" class="Record"
+      >&#8758;</a
+      ><a name="287"
+      > </a
+      ><a name="288" href="SubSet.html#270" class="Bound"
+      >A</a
+      ><a name="289"
+      > </a
+      ><a name="290" href="Base.html#506" class="Record"
+      >]</a
+      ><a name="291"
+      > </a
+      ><a name="292" class="Symbol"
+      >(</a
+      ><a name="293" href="SubSet.html#275" class="Bound"
+      >P</a
+      ><a name="294"
+      > </a
+      ><a name="295" href="SubSet.html#284" class="Bound"
+      >a</a
+      ><a name="296"
+      > </a
+      ><a name="297" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="298"
+      > </a
+      ><a name="299" href="SubSet.html#273" class="Bound"
+      >f</a
+      ><a name="300"
+      > </a
+      ><a name="301" href="SubSet.html#284" class="Bound"
+      >a</a
+      ><a name="302"
+      > </a
+      ><a name="303" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="304"
+      > </a
+      ><a name="305" href="SubSet.html#277" class="Bound"
+      >b</a
+      ><a name="306" class="Symbol"
+      >)</a
+      ><a name="307"
+      >
+
+</a
+      ><a name="309" href="SubSet.html#309" class="Function"
+      >SubSetEq</a
+      ><a name="317"
+      > </a
+      ><a name="318" class="Symbol"
+      >:</a
+      ><a name="319"
+      > </a
+      ><a name="320" class="Symbol"
+      >{</a
+      ><a name="321" href="SubSet.html#321" class="Bound"
+      >A</a
+      ><a name="322"
+      > </a
+      ><a name="323" class="Symbol"
+      >:</a
+      ><a name="324"
+      > </a
+      ><a name="325" class="PrimitiveType"
+      >Set</a
+      ><a name="328" class="Symbol"
+      >}</a
+      ><a name="329"
+      > </a
+      ><a name="330" class="Symbol"
+      >&#8594;</a
+      ><a name="331"
+      > </a
+      ><a name="332" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="338"
+      > </a
+      ><a name="339" href="SubSet.html#321" class="Bound"
+      >A</a
+      ><a name="340"
+      > </a
+      ><a name="341" class="Symbol"
+      >&#8594;</a
+      ><a name="342"
+      > </a
+      ><a name="343" href="SubSet.html#79" class="Function"
+      >SubSet</a
+      ><a name="349"
+      > </a
+      ><a name="350" href="SubSet.html#321" class="Bound"
+      >A</a
+      ><a name="351"
+      > </a
+      ><a name="352" class="Symbol"
+      >&#8594;</a
+      ><a name="353"
+      > </a
+      ><a name="354" class="PrimitiveType"
+      >Set</a
+      ><a name="357"
+      >
+</a
+      ><a name="358" href="SubSet.html#309" class="Function"
+      >SubSetEq</a
+      ><a name="366"
+      > </a
+      ><a name="367" class="Symbol"
+      >{</a
+      ><a name="368" href="SubSet.html#368" class="Bound"
+      >A</a
+      ><a name="369" class="Symbol"
+      >}</a
+      ><a name="370"
+      > </a
+      ><a name="371" href="SubSet.html#371" class="Bound"
+      >P</a
+      ><a name="372"
+      > </a
+      ><a name="373" href="SubSet.html#373" class="Bound"
+      >Q</a
+      ><a name="374"
+      > </a
+      ><a name="375" class="Symbol"
+      >=</a
+      ><a name="376"
+      > </a
+      ><a name="377" class="Symbol"
+      >(</a
+      ><a name="378" href="SubSet.html#378" class="Bound"
+      >a</a
+      ><a name="379"
+      > </a
+      ><a name="380" class="Symbol"
+      >:</a
+      ><a name="381"
+      > </a
+      ><a name="382" href="SubSet.html#368" class="Bound"
+      >A</a
+      ><a name="383" class="Symbol"
+      >)</a
+      ><a name="384"
+      > </a
+      ><a name="385" class="Symbol"
+      >&#8594;</a
+      ><a name="386"
+      > </a
+      ><a name="387" href="SubSet.html#371" class="Bound"
+      >P</a
+      ><a name="388"
+      > </a
+      ><a name="389" href="SubSet.html#378" class="Bound"
+      >a</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="SubSet.html#373" class="Bound"
+      >Q</a
+      ><a name="394"
+      > </a
+      ><a name="395" href="SubSet.html#378" class="Bound"
+      >a</a
+      ><a name="396"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Level</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --universe-polymorphism </a
+      ><a name="37" class="Symbol"
+      >#-}</a
+      ><a name="40"
+      >
+
+</a
+      ><a name="42" class="Keyword"
+      >module</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="Level.html#1" class="Module"
+      >Level</a
+      ><a name="54"
+      > </a
+      ><a name="55" class="Keyword"
+      >where</a
+      ><a name="60"
+      >
+
+</a
+      ><a name="62" class="Keyword"
+      >infixl</a
+      ><a name="68"
+      > </a
+      ><a name="69" class="Number"
+      >6</a
+      ><a name="70"
+      > _&#8852;_
+
+</a
+      ><a name="76" class="Keyword"
+      >postulate</a
+      ><a name="85"
+      >
+  </a
+      ><a name="88" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="93"
+      > </a
+      ><a name="94" class="Symbol"
+      >:</a
+      ><a name="95"
+      > </a
+      ><a name="96" class="PrimitiveType"
+      >Set</a
+      ><a name="99"
+      >
+  </a
+      ><a name="102" href="Level.html#102" class="Postulate"
+      >zero</a
+      ><a name="106"
+      >  </a
+      ><a name="108" class="Symbol"
+      >:</a
+      ><a name="109"
+      > </a
+      ><a name="110" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="115"
+      >
+  </a
+      ><a name="118" href="Level.html#118" class="Postulate"
+      >suc</a
+      ><a name="121"
+      >   </a
+      ><a name="124" class="Symbol"
+      >:</a
+      ><a name="125"
+      > </a
+      ><a name="126" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="131"
+      > </a
+      ><a name="132" class="Symbol"
+      >&#8594;</a
+      ><a name="133"
+      > </a
+      ><a name="134" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="139"
+      >
+  </a
+      ><a name="142" href="Level.html#142" class="Postulate Operator"
+      >_&#8852;_</a
+      ><a name="145"
+      >   </a
+      ><a name="148" class="Symbol"
+      >:</a
+      ><a name="149"
+      > </a
+      ><a name="150" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="155"
+      > </a
+      ><a name="156" class="Symbol"
+      >&#8594;</a
+      ><a name="157"
+      > </a
+      ><a name="158" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="163"
+      > </a
+      ><a name="164" class="Symbol"
+      >&#8594;</a
+      ><a name="165"
+      > </a
+      ><a name="166" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="171"
+      >
+
+</a
+      ><a name="173" class="Comment"
+      >-- MAlonzo compiles Level to (). This should be safe, because it is</a
+      ><a name="240"
+      >
+</a
+      ><a name="241" class="Comment"
+      >-- not possible to pattern match on levels.</a
+      ><a name="284"
+      >
+
+</a
+      ><a name="286" class="Symbol"
+      >{-#</a
+      ><a name="289"
+      > </a
+      ><a name="290" class="Keyword"
+      >COMPILED_TYPE</a
+      ><a name="303"
+      > </a
+      ><a name="304" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="309"
+      > ()     </a
+      ><a name="317" class="Symbol"
+      >#-}</a
+      ><a name="320"
+      >
+</a
+      ><a name="321" class="Symbol"
+      >{-#</a
+      ><a name="324"
+      > </a
+      ><a name="325" class="Keyword"
+      >COMPILED</a
+      ><a name="333"
+      > </a
+      ><a name="334" href="Level.html#102" class="Postulate"
+      >zero</a
+      ><a name="338"
+      > ()           </a
+      ><a name="352" class="Symbol"
+      >#-}</a
+      ><a name="355"
+      >
+</a
+      ><a name="356" class="Symbol"
+      >{-#</a
+      ><a name="359"
+      > </a
+      ><a name="360" class="Keyword"
+      >COMPILED</a
+      ><a name="368"
+      > </a
+      ><a name="369" href="Level.html#118" class="Postulate"
+      >suc</a
+      ><a name="372"
+      >  (\_ -&gt; ())   </a
+      ><a name="387" class="Symbol"
+      >#-}</a
+      ><a name="390"
+      >
+</a
+      ><a name="391" class="Symbol"
+      >{-#</a
+      ><a name="394"
+      > </a
+      ><a name="395" class="Keyword"
+      >COMPILED</a
+      ><a name="403"
+      > </a
+      ><a name="404" href="Level.html#142" class="Postulate Operator"
+      >_&#8852;_</a
+      ><a name="407"
+      >  (\_ _ -&gt; ()) </a
+      ><a name="422" class="Symbol"
+      >#-}</a
+      ><a name="425"
+      >
+
+</a
+      ><a name="427" class="Symbol"
+      >{-#</a
+      ><a name="430"
+      > </a
+      ><a name="431" class="Keyword"
+      >BUILTIN</a
+      ><a name="438"
+      > LEVEL     </a
+      ><a name="449" href="Level.html#88" class="Postulate"
+      >Level</a
+      ><a name="454"
+      > </a
+      ><a name="455" class="Symbol"
+      >#-}</a
+      ><a name="458"
+      >
+</a
+      ><a name="459" class="Symbol"
+      >{-#</a
+      ><a name="462"
+      > </a
+      ><a name="463" class="Keyword"
+      >BUILTIN</a
+      ><a name="470"
+      > LEVELZERO </a
+      ><a name="481" href="Level.html#102" class="Primitive"
+      >zero</a
+      ><a name="485"
+      >  </a
+      ><a name="487" class="Symbol"
+      >#-}</a
+      ><a name="490"
+      >
+</a
+      ><a name="491" class="Symbol"
+      >{-#</a
+      ><a name="494"
+      > </a
+      ><a name="495" class="Keyword"
+      >BUILTIN</a
+      ><a name="502"
+      > LEVELSUC  </a
+      ><a name="513" href="Level.html#118" class="Primitive"
+      >suc</a
+      ><a name="516"
+      >   </a
+      ><a name="519" class="Symbol"
+      >#-}</a
+      ><a name="522"
+      >
+
+</a
+      ><a name="524" class="Symbol"
+      >{-#</a
+      ><a name="527"
+      > </a
+      ><a name="528" class="Keyword"
+      >BUILTIN</a
+      ><a name="535"
+      > LEVELMAX </a
+      ><a name="545" href="Level.html#142" class="Primitive Operator"
+      >_&#8852;_</a
+      ><a name="548"
+      > </a
+      ><a name="549" class="Symbol"
+      >#-}</a
+      ><a name="552"
+      >
+
+</a
+      ><a name="554" class="Comment"
+      >-- Lifting.</a
+      ><a name="565"
+      >
+
+</a
+      ><a name="567" class="Keyword"
+      >record</a
+      ><a name="573"
+      > </a
+      ><a name="574" href="Level.html#574" class="Record"
+      >Lift</a
+      ><a name="578"
+      > </a
+      ><a name="579" class="Symbol"
+      >{</a
+      ><a name="580" href="Level.html#580" class="Bound"
+      >m</a
+      ><a name="581"
+      > </a
+      ><a name="582" href="Level.html#582" class="Bound"
+      >n</a
+      ><a name="583" class="Symbol"
+      >}</a
+      ><a name="584"
+      > </a
+      ><a name="585" class="Symbol"
+      >(</a
+      ><a name="586" href="Level.html#586" class="Bound"
+      >A</a
+      ><a name="587"
+      > </a
+      ><a name="588" class="Symbol"
+      >:</a
+      ><a name="589"
+      > </a
+      ><a name="590" class="PrimitiveType"
+      >Set</a
+      ><a name="593"
+      > </a
+      ><a name="594" href="Level.html#580" class="Bound"
+      >m</a
+      ><a name="595" class="Symbol"
+      >)</a
+      ><a name="596"
+      > </a
+      ><a name="597" class="Symbol"
+      >:</a
+      ><a name="598"
+      > </a
+      ><a name="599" class="PrimitiveType"
+      >Set</a
+      ><a name="602"
+      > </a
+      ><a name="603" class="Symbol"
+      >(</a
+      ><a name="604" href="Level.html#580" class="Bound"
+      >m</a
+      ><a name="605"
+      > </a
+      ><a name="606" href="Level.html#142" class="Primitive Operator"
+      >&#8852;</a
+      ><a name="607"
+      > </a
+      ><a name="608" href="Level.html#582" class="Bound"
+      >n</a
+      ><a name="609" class="Symbol"
+      >)</a
+      ><a name="610"
+      > </a
+      ><a name="611" class="Keyword"
+      >where</a
+      ><a name="616"
+      >
+  </a
+      ><a name="619" class="Keyword"
+      >constructor</a
+      ><a name="630"
+      > </a
+      ><a name="631" href="Level.html#631" class="InductiveConstructor"
+      >lift</a
+      ><a name="635"
+      >
+  </a
+      ><a name="638" class="Keyword"
+      >field</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="Level.html#644" class="Field"
+      >lower</a
+      ><a name="649"
+      > </a
+      ><a name="650" class="Symbol"
+      >:</a
+      ><a name="651"
+      > </a
+      ><a name="652" href="Level.html#586" class="Bound"
+      >A</a
+      ><a name="653"
+      >
+
+</a
+      ><a name="655" class="Keyword"
+      >open</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="Level.html#574" class="Module"
+      >Lift</a
+      ><a name="664"
+      > </a
+      ><a name="665" class="Keyword"
+      >public</a
+      ><a name="671"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

@@ -1,0 +1,4549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Recursion</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+    </a
+      ><a name="32" class="Symbol"
+      >#-}</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Keyword"
+      >open</a
+      ><a name="41"
+      > </a
+      ><a name="42" class="Keyword"
+      >import</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="60"
+      >
+</a
+      ><a name="61" class="Keyword"
+      >open</a
+      ><a name="65"
+      > </a
+      ><a name="66" class="Keyword"
+      >import</a
+      ><a name="72"
+      > </a
+      ><a name="73" href="Nat.html#69" class="Module"
+      >Nat</a
+      ><a name="76"
+      >
+</a
+      ><a name="77" class="Keyword"
+      >open</a
+      ><a name="81"
+      > </a
+      ><a name="82" class="Keyword"
+      >import</a
+      ><a name="88"
+      > </a
+      ><a name="89" href="List.html#86" class="Module"
+      >List</a
+      ><a name="93"
+      >
+
+</a
+      ><a name="95" class="Keyword"
+      >module</a
+      ><a name="101"
+      > </a
+      ><a name="102" href="Recursion.html#102" class="Module"
+      >Recursion</a
+      ><a name="111"
+      > </a
+      ><a name="112" class="Keyword"
+      >where</a
+      ><a name="117"
+      >
+
+</a
+      ><a name="119" class="Comment"
+      >-- Primitive Recursion -----------------------------------------------</a
+      ><a name="189"
+      >
+
+</a
+      ><a name="191" href="Recursion.html#191" class="Function"
+      >listrec</a
+      ><a name="198"
+      > </a
+      ><a name="199" class="Symbol"
+      >:</a
+      ><a name="200"
+      > </a
+      ><a name="201" class="Symbol"
+      >{</a
+      ><a name="202" href="Recursion.html#202" class="Bound"
+      >A</a
+      ><a name="203"
+      > </a
+      ><a name="204" class="Symbol"
+      >:</a
+      ><a name="205"
+      > </a
+      ><a name="206" class="PrimitiveType"
+      >Set</a
+      ><a name="209" class="Symbol"
+      >}</a
+      ><a name="210"
+      > </a
+      ><a name="211" class="Symbol"
+      >&#8594;</a
+      ><a name="212"
+      > </a
+      ><a name="213" class="Symbol"
+      >{</a
+      ><a name="214" href="Recursion.html#214" class="Bound"
+      >P</a
+      ><a name="215"
+      > </a
+      ><a name="216" class="Symbol"
+      >:</a
+      ><a name="217"
+      > </a
+      ><a name="218" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="222"
+      > </a
+      ><a name="223" href="Recursion.html#202" class="Bound"
+      >A</a
+      ><a name="224"
+      > </a
+      ><a name="225" class="Symbol"
+      >&#8594;</a
+      ><a name="226"
+      > </a
+      ><a name="227" class="PrimitiveType"
+      >Set</a
+      ><a name="230" class="Symbol"
+      >}</a
+      ><a name="231"
+      > </a
+      ><a name="232" class="Symbol"
+      >&#8594;</a
+      ><a name="233"
+      > </a
+      ><a name="234" href="Recursion.html#214" class="Bound"
+      >P</a
+      ><a name="235"
+      > </a
+      ><a name="236" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="238"
+      > </a
+      ><a name="239" class="Symbol"
+      >&#8594;</a
+      ><a name="240"
+      > </a
+      ><a name="241" class="Symbol"
+      >({</a
+      ><a name="243" href="Recursion.html#243" class="Bound"
+      >a</a
+      ><a name="244"
+      > </a
+      ><a name="245" class="Symbol"
+      >:</a
+      ><a name="246"
+      > </a
+      ><a name="247" href="Recursion.html#202" class="Bound"
+      >A</a
+      ><a name="248" class="Symbol"
+      >}</a
+      ><a name="249"
+      > </a
+      ><a name="250" class="Symbol"
+      >&#8594;</a
+      ><a name="251"
+      > </a
+      ><a name="252" class="Symbol"
+      >{</a
+      ><a name="253" href="Recursion.html#253" class="Bound"
+      >as</a
+      ><a name="255"
+      > </a
+      ><a name="256" class="Symbol"
+      >:</a
+      ><a name="257"
+      > </a
+      ><a name="258" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="262"
+      > </a
+      ><a name="263" href="Recursion.html#202" class="Bound"
+      >A</a
+      ><a name="264" class="Symbol"
+      >}</a
+      ><a name="265"
+      > </a
+      ><a name="266" class="Symbol"
+      >&#8594;</a
+      ><a name="267"
+      > </a
+      ><a name="268" href="Recursion.html#214" class="Bound"
+      >P</a
+      ><a name="269"
+      > </a
+      ><a name="270" href="Recursion.html#253" class="Bound"
+      >as</a
+      ><a name="272"
+      > </a
+      ><a name="273" class="Symbol"
+      >&#8594;</a
+      ><a name="274"
+      > </a
+      ><a name="275" href="Recursion.html#214" class="Bound"
+      >P</a
+      ><a name="276"
+      > </a
+      ><a name="277" class="Symbol"
+      >(</a
+      ><a name="278" href="Recursion.html#243" class="Bound"
+      >a</a
+      ><a name="279"
+      > </a
+      ><a name="280" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="281"
+      > </a
+      ><a name="282" href="Recursion.html#253" class="Bound"
+      >as</a
+      ><a name="284" class="Symbol"
+      >))</a
+      ><a name="286"
+      > </a
+      ><a name="287" class="Symbol"
+      >&#8594;</a
+      ><a name="288"
+      > </a
+      ><a name="289" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="290"
+      > </a
+      ><a name="291" class="Symbol"
+      >(</a
+      ><a name="292" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="296"
+      > </a
+      ><a name="297" href="Recursion.html#202" class="Bound"
+      >A</a
+      ><a name="298" class="Symbol"
+      >)</a
+      ><a name="299"
+      > </a
+      ><a name="300" href="Recursion.html#214" class="Bound"
+      >P</a
+      ><a name="301"
+      >
+</a
+      ><a name="302" href="Recursion.html#191" class="Function"
+      >listrec</a
+      ><a name="309"
+      > </a
+      ><a name="310" href="Recursion.html#310" class="Bound"
+      >base</a
+      ><a name="314"
+      > </a
+      ><a name="315" href="Recursion.html#315" class="Bound"
+      >step</a
+      ><a name="319"
+      > </a
+      ><a name="320" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="322"
+      > </a
+      ><a name="323" class="Symbol"
+      >=</a
+      ><a name="324"
+      > </a
+      ><a name="325" href="Recursion.html#310" class="Bound"
+      >base</a
+      ><a name="329"
+      >
+</a
+      ><a name="330" href="Recursion.html#191" class="Function"
+      >listrec</a
+      ><a name="337"
+      > </a
+      ><a name="338" class="Symbol"
+      >{_}</a
+      ><a name="341"
+      > </a
+      ><a name="342" class="Symbol"
+      >{</a
+      ><a name="343" href="Recursion.html#343" class="Bound"
+      >P</a
+      ><a name="344" class="Symbol"
+      >}</a
+      ><a name="345"
+      > </a
+      ><a name="346" href="Recursion.html#346" class="Bound"
+      >base</a
+      ><a name="350"
+      > </a
+      ><a name="351" href="Recursion.html#351" class="Bound"
+      >step</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Symbol"
+      >(_</a
+      ><a name="358"
+      > </a
+      ><a name="359" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="360"
+      > </a
+      ><a name="361" href="Recursion.html#361" class="Bound"
+      >as</a
+      ><a name="363" class="Symbol"
+      >)</a
+      ><a name="364"
+      > </a
+      ><a name="365" class="Symbol"
+      >=</a
+      ><a name="366"
+      > </a
+      ><a name="367" href="Recursion.html#351" class="Bound"
+      >step</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Symbol"
+      >(</a
+      ><a name="373" href="Recursion.html#191" class="Function"
+      >listrec</a
+      ><a name="380"
+      > </a
+      ><a name="381" class="Symbol"
+      >{_}</a
+      ><a name="384"
+      > </a
+      ><a name="385" class="Symbol"
+      >{</a
+      ><a name="386" href="Recursion.html#343" class="Bound"
+      >P</a
+      ><a name="387" class="Symbol"
+      >}</a
+      ><a name="388"
+      > </a
+      ><a name="389" href="Recursion.html#346" class="Bound"
+      >base</a
+      ><a name="393"
+      > </a
+      ><a name="394" href="Recursion.html#351" class="Bound"
+      >step</a
+      ><a name="398"
+      > </a
+      ><a name="399" href="Recursion.html#361" class="Bound"
+      >as</a
+      ><a name="401" class="Symbol"
+      >)</a
+      ><a name="402"
+      >
+
+</a
+      ><a name="404" href="Recursion.html#404" class="Function"
+      >listrec'</a
+      ><a name="412"
+      > </a
+      ><a name="413" class="Symbol"
+      >:</a
+      ><a name="414"
+      > </a
+      ><a name="415" class="Symbol"
+      >{</a
+      ><a name="416" href="Recursion.html#416" class="Bound"
+      >A</a
+      ><a name="417"
+      > </a
+      ><a name="418" class="Symbol"
+      >:</a
+      ><a name="419"
+      > </a
+      ><a name="420" class="PrimitiveType"
+      >Set</a
+      ><a name="423" class="Symbol"
+      >}</a
+      ><a name="424"
+      > </a
+      ><a name="425" class="Symbol"
+      >&#8594;</a
+      ><a name="426"
+      > </a
+      ><a name="427" class="Symbol"
+      >{</a
+      ><a name="428" href="Recursion.html#428" class="Bound"
+      >P</a
+      ><a name="429"
+      > </a
+      ><a name="430" class="Symbol"
+      >:</a
+      ><a name="431"
+      > </a
+      ><a name="432" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="436"
+      > </a
+      ><a name="437" href="Recursion.html#416" class="Bound"
+      >A</a
+      ><a name="438"
+      > </a
+      ><a name="439" class="Symbol"
+      >&#8594;</a
+      ><a name="440"
+      > </a
+      ><a name="441" class="PrimitiveType"
+      >Set</a
+      ><a name="444" class="Symbol"
+      >}</a
+      ><a name="445"
+      > </a
+      ><a name="446" class="Symbol"
+      >&#8594;</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="Recursion.html#428" class="Bound"
+      >P</a
+      ><a name="449"
+      > </a
+      ><a name="450" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="452"
+      > </a
+      ><a name="453" class="Symbol"
+      >&#8594;</a
+      ><a name="454"
+      > </a
+      ><a name="455" class="Symbol"
+      >((</a
+      ><a name="457" href="Recursion.html#457" class="Bound"
+      >a</a
+      ><a name="458"
+      > </a
+      ><a name="459" class="Symbol"
+      >:</a
+      ><a name="460"
+      > </a
+      ><a name="461" href="Recursion.html#416" class="Bound"
+      >A</a
+      ><a name="462" class="Symbol"
+      >)</a
+      ><a name="463"
+      > </a
+      ><a name="464" class="Symbol"
+      >&#8594;</a
+      ><a name="465"
+      > </a
+      ><a name="466" class="Symbol"
+      >(</a
+      ><a name="467" href="Recursion.html#467" class="Bound"
+      >as</a
+      ><a name="469"
+      > </a
+      ><a name="470" class="Symbol"
+      >:</a
+      ><a name="471"
+      > </a
+      ><a name="472" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="476"
+      > </a
+      ><a name="477" href="Recursion.html#416" class="Bound"
+      >A</a
+      ><a name="478" class="Symbol"
+      >)</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Symbol"
+      >&#8594;</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="Recursion.html#428" class="Bound"
+      >P</a
+      ><a name="483"
+      > </a
+      ><a name="484" href="Recursion.html#467" class="Bound"
+      >as</a
+      ><a name="486"
+      > </a
+      ><a name="487" class="Symbol"
+      >&#8594;</a
+      ><a name="488"
+      > </a
+      ><a name="489" href="Recursion.html#428" class="Bound"
+      >P</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Symbol"
+      >(</a
+      ><a name="492" href="Recursion.html#457" class="Bound"
+      >a</a
+      ><a name="493"
+      > </a
+      ><a name="494" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="495"
+      > </a
+      ><a name="496" href="Recursion.html#467" class="Bound"
+      >as</a
+      ><a name="498" class="Symbol"
+      >))</a
+      ><a name="500"
+      > </a
+      ><a name="501" class="Symbol"
+      >&#8594;</a
+      ><a name="502"
+      > </a
+      ><a name="503" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="504"
+      > </a
+      ><a name="505" class="Symbol"
+      >(</a
+      ><a name="506" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="510"
+      > </a
+      ><a name="511" href="Recursion.html#416" class="Bound"
+      >A</a
+      ><a name="512" class="Symbol"
+      >)</a
+      ><a name="513"
+      > </a
+      ><a name="514" href="Recursion.html#428" class="Bound"
+      >P</a
+      ><a name="515"
+      >
+</a
+      ><a name="516" href="Recursion.html#404" class="Function"
+      >listrec'</a
+      ><a name="524"
+      > </a
+      ><a name="525" href="Recursion.html#525" class="Bound"
+      >base</a
+      ><a name="529"
+      > </a
+      ><a name="530" href="Recursion.html#530" class="Bound"
+      >step</a
+      ><a name="534"
+      > </a
+      ><a name="535" class="Symbol"
+      >=</a
+      ><a name="536"
+      > </a
+      ><a name="537" href="Recursion.html#191" class="Function"
+      >listrec</a
+      ><a name="544"
+      > </a
+      ><a name="545" href="Recursion.html#525" class="Bound"
+      >base</a
+      ><a name="549"
+      > </a
+      ><a name="550" class="Symbol"
+      >(&#955;</a
+      ><a name="552"
+      > </a
+      ><a name="553" class="Symbol"
+      >{</a
+      ><a name="554" href="Recursion.html#554" class="Bound"
+      >a</a
+      ><a name="555" class="Symbol"
+      >}</a
+      ><a name="556"
+      > </a
+      ><a name="557" class="Symbol"
+      >{</a
+      ><a name="558" href="Recursion.html#558" class="Bound"
+      >as</a
+      ><a name="560" class="Symbol"
+      >}</a
+      ><a name="561"
+      > </a
+      ><a name="562" class="Symbol"
+      >&#8594;</a
+      ><a name="563"
+      > </a
+      ><a name="564" href="Recursion.html#530" class="Bound"
+      >step</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="Recursion.html#554" class="Bound"
+      >a</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="Recursion.html#558" class="Bound"
+      >as</a
+      ><a name="573" class="Symbol"
+      >)</a
+      ><a name="574"
+      >
+
+</a
+      ><a name="576" class="Comment"
+      >-----------------------------------------------------</a
+      ><a name="629"
+      >
+
+</a
+      ><a name="631" href="Recursion.html#631" class="Function"
+      >natrec</a
+      ><a name="637"
+      > </a
+      ><a name="638" class="Symbol"
+      >:</a
+      ><a name="639"
+      > </a
+      ><a name="640" class="Symbol"
+      >{</a
+      ><a name="641" href="Recursion.html#641" class="Bound"
+      >P</a
+      ><a name="642"
+      > </a
+      ><a name="643" class="Symbol"
+      >:</a
+      ><a name="644"
+      > </a
+      ><a name="645" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="646"
+      > </a
+      ><a name="647" class="Symbol"
+      >&#8594;</a
+      ><a name="648"
+      > </a
+      ><a name="649" class="PrimitiveType"
+      >Set</a
+      ><a name="652" class="Symbol"
+      >}</a
+      ><a name="653"
+      > </a
+      ><a name="654" class="Symbol"
+      >&#8594;</a
+      ><a name="655"
+      > </a
+      ><a name="656" href="Recursion.html#641" class="Bound"
+      >P</a
+      ><a name="657"
+      > </a
+      ><a name="658" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="659"
+      > </a
+      ><a name="660" class="Symbol"
+      >&#8594;</a
+      ><a name="661"
+      > </a
+      ><a name="662" class="Symbol"
+      >({</a
+      ><a name="664" href="Recursion.html#664" class="Bound"
+      >m</a
+      ><a name="665"
+      > </a
+      ><a name="666" class="Symbol"
+      >:</a
+      ><a name="667"
+      > </a
+      ><a name="668" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="669" class="Symbol"
+      >}</a
+      ><a name="670"
+      > </a
+      ><a name="671" class="Symbol"
+      >&#8594;</a
+      ><a name="672"
+      > </a
+      ><a name="673" href="Recursion.html#641" class="Bound"
+      >P</a
+      ><a name="674"
+      > </a
+      ><a name="675" href="Recursion.html#664" class="Bound"
+      >m</a
+      ><a name="676"
+      > </a
+      ><a name="677" class="Symbol"
+      >&#8594;</a
+      ><a name="678"
+      > </a
+      ><a name="679" href="Recursion.html#641" class="Bound"
+      >P</a
+      ><a name="680"
+      > </a
+      ><a name="681" class="Symbol"
+      >(</a
+      ><a name="682" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="683"
+      > </a
+      ><a name="684" href="Recursion.html#664" class="Bound"
+      >m</a
+      ><a name="685" class="Symbol"
+      >))</a
+      ><a name="687"
+      > </a
+      ><a name="688" class="Symbol"
+      >&#8594;</a
+      ><a name="689"
+      > </a
+      ><a name="690" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="691"
+      > </a
+      ><a name="692" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="693"
+      > </a
+      ><a name="694" href="Recursion.html#641" class="Bound"
+      >P</a
+      ><a name="695"
+      >
+</a
+      ><a name="696" href="Recursion.html#631" class="Function"
+      >natrec</a
+      ><a name="702"
+      >     </a
+      ><a name="707" href="Recursion.html#707" class="Bound"
+      >base</a
+      ><a name="711"
+      > </a
+      ><a name="712" href="Recursion.html#712" class="Bound"
+      >step</a
+      ><a name="716"
+      > </a
+      ><a name="717" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >=</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="Recursion.html#707" class="Bound"
+      >base</a
+      ><a name="725"
+      >
+</a
+      ><a name="726" href="Recursion.html#631" class="Function"
+      >natrec</a
+      ><a name="732"
+      > </a
+      ><a name="733" class="Symbol"
+      >{</a
+      ><a name="734" href="Recursion.html#734" class="Bound"
+      >P</a
+      ><a name="735" class="Symbol"
+      >}</a
+      ><a name="736"
+      > </a
+      ><a name="737" href="Recursion.html#737" class="Bound"
+      >base</a
+      ><a name="741"
+      > </a
+      ><a name="742" href="Recursion.html#742" class="Bound"
+      >step</a
+      ><a name="746"
+      > </a
+      ><a name="747" class="Symbol"
+      >(</a
+      ><a name="748" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="749"
+      > </a
+      ><a name="750" href="Recursion.html#750" class="Bound"
+      >n</a
+      ><a name="751" class="Symbol"
+      >)</a
+      ><a name="752"
+      > </a
+      ><a name="753" class="Symbol"
+      >=</a
+      ><a name="754"
+      > </a
+      ><a name="755" href="Recursion.html#742" class="Bound"
+      >step</a
+      ><a name="759"
+      > </a
+      ><a name="760" class="Symbol"
+      >(</a
+      ><a name="761" href="Recursion.html#631" class="Function"
+      >natrec</a
+      ><a name="767"
+      > </a
+      ><a name="768" class="Symbol"
+      >{</a
+      ><a name="769" href="Recursion.html#734" class="Bound"
+      >P</a
+      ><a name="770" class="Symbol"
+      >}</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="Recursion.html#737" class="Bound"
+      >base</a
+      ><a name="776"
+      > </a
+      ><a name="777" href="Recursion.html#742" class="Bound"
+      >step</a
+      ><a name="781"
+      > </a
+      ><a name="782" href="Recursion.html#750" class="Bound"
+      >n</a
+      ><a name="783" class="Symbol"
+      >)</a
+      ><a name="784"
+      >
+
+</a
+      ><a name="786" class="Comment"
+      >-- Primitive Recursion on two arguments.  I'm not sure if this is the best/right way to do this, but it seems to work</a
+      ><a name="903"
+      >
+
+</a
+      ><a name="905" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="912"
+      > </a
+      ><a name="913" class="Symbol"
+      >:</a
+      ><a name="914"
+      > </a
+      ><a name="915" class="Symbol"
+      >{</a
+      ><a name="916" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="917"
+      > </a
+      ><a name="918" class="Symbol"
+      >:</a
+      ><a name="919"
+      > </a
+      ><a name="920" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="921"
+      > </a
+      ><a name="922" class="Symbol"
+      >&#8594;</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="925"
+      > </a
+      ><a name="926" class="Symbol"
+      >&#8594;</a
+      ><a name="927"
+      > </a
+      ><a name="928" class="PrimitiveType"
+      >Set</a
+      ><a name="931" class="Symbol"
+      >}</a
+      ><a name="932"
+      > </a
+      ><a name="933" class="Symbol"
+      >&#8594;</a
+      ><a name="934"
+      > </a
+      ><a name="935" class="Symbol"
+      >((</a
+      ><a name="937" href="Recursion.html#937" class="Bound"
+      >n</a
+      ><a name="938"
+      > </a
+      ><a name="939" class="Symbol"
+      >:</a
+      ><a name="940"
+      > </a
+      ><a name="941" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="942" class="Symbol"
+      >)</a
+      ><a name="943"
+      > </a
+      ><a name="944" class="Symbol"
+      >&#8594;</a
+      ><a name="945"
+      > </a
+      ><a name="946" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="947"
+      > </a
+      ><a name="948" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="949"
+      > </a
+      ><a name="950" href="Recursion.html#937" class="Bound"
+      >n</a
+      ><a name="951" class="Symbol"
+      >)</a
+      ><a name="952"
+      > </a
+      ><a name="953" class="Symbol"
+      >&#8594;</a
+      ><a name="954"
+      > </a
+      ><a name="955" class="Symbol"
+      >((</a
+      ><a name="957" href="Recursion.html#957" class="Bound"
+      >m</a
+      ><a name="958"
+      > </a
+      ><a name="959" class="Symbol"
+      >:</a
+      ><a name="960"
+      > </a
+      ><a name="961" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="962" class="Symbol"
+      >)</a
+      ><a name="963"
+      > </a
+      ><a name="964" class="Symbol"
+      >&#8594;</a
+      ><a name="965"
+      > </a
+      ><a name="966" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="Recursion.html#957" class="Bound"
+      >m</a
+      ><a name="969"
+      > </a
+      ><a name="970" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="971" class="Symbol"
+      >)</a
+      ><a name="972"
+      > </a
+      ><a name="973" class="Symbol"
+      >&#8594;</a
+      ><a name="974"
+      > </a
+      ><a name="975" class="Symbol"
+      >({</a
+      ><a name="977" href="Recursion.html#977" class="Bound"
+      >m</a
+      ><a name="978"
+      > </a
+      ><a name="979" href="Recursion.html#979" class="Bound"
+      >n</a
+      ><a name="980"
+      > </a
+      ><a name="981" class="Symbol"
+      >:</a
+      ><a name="982"
+      > </a
+      ><a name="983" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="984" class="Symbol"
+      >}</a
+      ><a name="985"
+      > </a
+      ><a name="986" class="Symbol"
+      >&#8594;</a
+      ><a name="987"
+      > </a
+      ><a name="988" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="989"
+      > </a
+      ><a name="990" href="Recursion.html#977" class="Bound"
+      >m</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="Recursion.html#979" class="Bound"
+      >n</a
+      ><a name="993"
+      > </a
+      ><a name="994" class="Symbol"
+      >&#8594;</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="997"
+      > </a
+      ><a name="998" class="Symbol"
+      >(</a
+      ><a name="999" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" href="Recursion.html#977" class="Bound"
+      >m</a
+      ><a name="1002" class="Symbol"
+      >)</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" href="Recursion.html#979" class="Bound"
+      >n</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" class="Symbol"
+      >&#8594;</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="Recursion.html#977" class="Bound"
+      >m</a
+      ><a name="1011"
+      > </a
+      ><a name="1012" class="Symbol"
+      >(</a
+      ><a name="1013" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="Recursion.html#979" class="Bound"
+      >n</a
+      ><a name="1016" class="Symbol"
+      >)</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" class="Symbol"
+      >&#8594;</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="1021"
+      > </a
+      ><a name="1022" class="Symbol"
+      >(</a
+      ><a name="1023" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" href="Recursion.html#977" class="Bound"
+      >m</a
+      ><a name="1026" class="Symbol"
+      >)</a
+      ><a name="1027"
+      > </a
+      ><a name="1028" class="Symbol"
+      >(</a
+      ><a name="1029" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" href="Recursion.html#979" class="Bound"
+      >n</a
+      ><a name="1032" class="Symbol"
+      >))</a
+      ><a name="1034"
+      > </a
+      ><a name="1035" class="Symbol"
+      >&#8594;</a
+      ><a name="1036"
+      > </a
+      ><a name="1037" class="Symbol"
+      >(</a
+      ><a name="1038" href="Recursion.html#1038" class="Bound"
+      >m</a
+      ><a name="1039"
+      > </a
+      ><a name="1040" href="Recursion.html#1040" class="Bound"
+      >n</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" class="Symbol"
+      >:</a
+      ><a name="1043"
+      > </a
+      ><a name="1044" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1045" class="Symbol"
+      >)</a
+      ><a name="1046"
+      > </a
+      ><a name="1047" class="Symbol"
+      >&#8594;</a
+      ><a name="1048"
+      > </a
+      ><a name="1049" href="Recursion.html#916" class="Bound"
+      >P</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" href="Recursion.html#1038" class="Bound"
+      >m</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="Recursion.html#1040" class="Bound"
+      >n</a
+      ><a name="1054"
+      >
+</a
+      ><a name="1055" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" href="Recursion.html#1063" class="Bound"
+      >baseL</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" href="Recursion.html#1069" class="Bound"
+      >baseR</a
+      ><a name="1074"
+      > </a
+      ><a name="1075" href="Recursion.html#1075" class="Bound"
+      >step</a
+      ><a name="1079"
+      > </a
+      ><a name="1080" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1081"
+      > </a
+      ><a name="1082" href="Recursion.html#1082" class="Bound"
+      >n</a
+      ><a name="1083"
+      > </a
+      ><a name="1084" class="Symbol"
+      >=</a
+      ><a name="1085"
+      > </a
+      ><a name="1086" href="Recursion.html#1063" class="Bound"
+      >baseL</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" href="Recursion.html#1082" class="Bound"
+      >n</a
+      ><a name="1093"
+      >
+</a
+      ><a name="1094" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" href="Recursion.html#1102" class="Bound"
+      >baseL</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" href="Recursion.html#1108" class="Bound"
+      >baseR</a
+      ><a name="1113"
+      > </a
+      ><a name="1114" href="Recursion.html#1114" class="Bound"
+      >step</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" href="Recursion.html#1119" class="Bound"
+      >m</a
+      ><a name="1120"
+      > </a
+      ><a name="1121" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1122"
+      > </a
+      ><a name="1123" class="Symbol"
+      >=</a
+      ><a name="1124"
+      > </a
+      ><a name="1125" href="Recursion.html#1108" class="Bound"
+      >baseR</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" href="Recursion.html#1119" class="Bound"
+      >m</a
+      ><a name="1132"
+      >
+</a
+      ><a name="1133" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" class="Symbol"
+      >{</a
+      ><a name="1142" href="Recursion.html#1142" class="Bound"
+      >P</a
+      ><a name="1143" class="Symbol"
+      >}</a
+      ><a name="1144"
+      > </a
+      ><a name="1145" href="Recursion.html#1145" class="Bound"
+      >baseL</a
+      ><a name="1150"
+      > </a
+      ><a name="1151" href="Recursion.html#1151" class="Bound"
+      >baseR</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="Recursion.html#1157" class="Bound"
+      >step</a
+      ><a name="1161"
+      > </a
+      ><a name="1162" class="Symbol"
+      >(</a
+      ><a name="1163" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1164"
+      > </a
+      ><a name="1165" href="Recursion.html#1165" class="Bound"
+      >m</a
+      ><a name="1166" class="Symbol"
+      >)</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" class="Symbol"
+      >(</a
+      ><a name="1169" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" href="Recursion.html#1171" class="Bound"
+      >n</a
+      ><a name="1172" class="Symbol"
+      >)</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" class="Symbol"
+      >=</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" href="Recursion.html#1157" class="Bound"
+      >step</a
+      ><a name="1180"
+      > </a
+      ><a name="1181" class="Symbol"
+      >(</a
+      ><a name="1182" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="1189"
+      > </a
+      ><a name="1190" class="Symbol"
+      >{</a
+      ><a name="1191" href="Recursion.html#1142" class="Bound"
+      >P</a
+      ><a name="1192" class="Symbol"
+      >}</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" href="Recursion.html#1145" class="Bound"
+      >baseL</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" href="Recursion.html#1151" class="Bound"
+      >baseR</a
+      ><a name="1205"
+      > </a
+      ><a name="1206" href="Recursion.html#1157" class="Bound"
+      >step</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" href="Recursion.html#1165" class="Bound"
+      >m</a
+      ><a name="1212"
+      > </a
+      ><a name="1213" href="Recursion.html#1171" class="Bound"
+      >n</a
+      ><a name="1214" class="Symbol"
+      >)</a
+      ><a name="1215"
+      >
+                                                </a
+      ><a name="1264" class="Symbol"
+      >(</a
+      ><a name="1265" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" class="Symbol"
+      >{</a
+      ><a name="1274" href="Recursion.html#1142" class="Bound"
+      >P</a
+      ><a name="1275" class="Symbol"
+      >}</a
+      ><a name="1276"
+      > </a
+      ><a name="1277" href="Recursion.html#1145" class="Bound"
+      >baseL</a
+      ><a name="1282"
+      > </a
+      ><a name="1283" href="Recursion.html#1151" class="Bound"
+      >baseR</a
+      ><a name="1288"
+      > </a
+      ><a name="1289" href="Recursion.html#1157" class="Bound"
+      >step</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" class="Symbol"
+      >(</a
+      ><a name="1295" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" href="Recursion.html#1165" class="Bound"
+      >m</a
+      ><a name="1298" class="Symbol"
+      >)</a
+      ><a name="1299"
+      > </a
+      ><a name="1300" href="Recursion.html#1171" class="Bound"
+      >n</a
+      ><a name="1301" class="Symbol"
+      >)</a
+      ><a name="1302"
+      >
+                                                </a
+      ><a name="1351" class="Symbol"
+      >(</a
+      ><a name="1352" href="Recursion.html#905" class="Function"
+      >natrec2</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" class="Symbol"
+      >{</a
+      ><a name="1361" href="Recursion.html#1142" class="Bound"
+      >P</a
+      ><a name="1362" class="Symbol"
+      >}</a
+      ><a name="1363"
+      > </a
+      ><a name="1364" href="Recursion.html#1145" class="Bound"
+      >baseL</a
+      ><a name="1369"
+      > </a
+      ><a name="1370" href="Recursion.html#1151" class="Bound"
+      >baseR</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" href="Recursion.html#1157" class="Bound"
+      >step</a
+      ><a name="1380"
+      > </a
+      ><a name="1381" href="Recursion.html#1165" class="Bound"
+      >m</a
+      ><a name="1382"
+      > </a
+      ><a name="1383" class="Symbol"
+      >(</a
+      ><a name="1384" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1385"
+      > </a
+      ><a name="1386" href="Recursion.html#1171" class="Bound"
+      >n</a
+      ><a name="1387" class="Symbol"
+      >))</a
+      ><a name="1389"
+      >
+
+
+</a
+      ><a name="1392" href="Recursion.html#1392" class="Function"
+      >natrec2simpl</a
+      ><a name="1404"
+      > </a
+      ><a name="1405" class="Symbol"
+      >:</a
+      ><a name="1406"
+      > </a
+      ><a name="1407" class="Symbol"
+      >{</a
+      ><a name="1408" href="Recursion.html#1408" class="Bound"
+      >P</a
+      ><a name="1409"
+      > </a
+      ><a name="1410" class="Symbol"
+      >:</a
+      ><a name="1411"
+      > </a
+      ><a name="1412" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1413"
+      > </a
+      ><a name="1414" class="Symbol"
+      >&#8594;</a
+      ><a name="1415"
+      > </a
+      ><a name="1416" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" class="Symbol"
+      >&#8594;</a
+      ><a name="1419"
+      > </a
+      ><a name="1420" class="PrimitiveType"
+      >Set</a
+      ><a name="1423" class="Symbol"
+      >}</a
+      ><a name="1424"
+      > </a
+      ><a name="1425" class="Symbol"
+      >&#8594;</a
+      ><a name="1426"
+      > </a
+      ><a name="1427" class="Symbol"
+      >((</a
+      ><a name="1429" href="Recursion.html#1429" class="Bound"
+      >n</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" class="Symbol"
+      >:</a
+      ><a name="1432"
+      > </a
+      ><a name="1433" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1434" class="Symbol"
+      >)</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >&#8594;</a
+      ><a name="1437"
+      > </a
+      ><a name="1438" href="Recursion.html#1408" class="Bound"
+      >P</a
+      ><a name="1439"
+      > </a
+      ><a name="1440" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1441"
+      > </a
+      ><a name="1442" href="Recursion.html#1429" class="Bound"
+      >n</a
+      ><a name="1443" class="Symbol"
+      >)</a
+      ><a name="1444"
+      > </a
+      ><a name="1445" class="Symbol"
+      >&#8594;</a
+      ><a name="1446"
+      > </a
+      ><a name="1447" class="Symbol"
+      >((</a
+      ><a name="1449" href="Recursion.html#1449" class="Bound"
+      >m</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" class="Symbol"
+      >:</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1454" class="Symbol"
+      >)</a
+      ><a name="1455"
+      > </a
+      ><a name="1456" class="Symbol"
+      >&#8594;</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" href="Recursion.html#1408" class="Bound"
+      >P</a
+      ><a name="1459"
+      > </a
+      ><a name="1460" href="Recursion.html#1449" class="Bound"
+      >m</a
+      ><a name="1461"
+      > </a
+      ><a name="1462" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1463" class="Symbol"
+      >)</a
+      ><a name="1464"
+      > </a
+      ><a name="1465" class="Symbol"
+      >&#8594;</a
+      ><a name="1466"
+      > </a
+      ><a name="1467" class="Symbol"
+      >({</a
+      ><a name="1469" href="Recursion.html#1469" class="Bound"
+      >m</a
+      ><a name="1470"
+      > </a
+      ><a name="1471" href="Recursion.html#1471" class="Bound"
+      >n</a
+      ><a name="1472"
+      > </a
+      ><a name="1473" class="Symbol"
+      >:</a
+      ><a name="1474"
+      > </a
+      ><a name="1475" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1476" class="Symbol"
+      >}</a
+      ><a name="1477"
+      > </a
+      ><a name="1478" class="Symbol"
+      >&#8594;</a
+      ><a name="1479"
+      > </a
+      ><a name="1480" href="Recursion.html#1408" class="Bound"
+      >P</a
+      ><a name="1481"
+      > </a
+      ><a name="1482" href="Recursion.html#1469" class="Bound"
+      >m</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="Recursion.html#1471" class="Bound"
+      >n</a
+      ><a name="1485"
+      > </a
+      ><a name="1486" class="Symbol"
+      >&#8594;</a
+      ><a name="1487"
+      > </a
+      ><a name="1488" href="Recursion.html#1408" class="Bound"
+      >P</a
+      ><a name="1489"
+      > </a
+      ><a name="1490" class="Symbol"
+      >(</a
+      ><a name="1491" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1492"
+      > </a
+      ><a name="1493" href="Recursion.html#1469" class="Bound"
+      >m</a
+      ><a name="1494" class="Symbol"
+      >)</a
+      ><a name="1495"
+      > </a
+      ><a name="1496" class="Symbol"
+      >(</a
+      ><a name="1497" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1498"
+      > </a
+      ><a name="1499" href="Recursion.html#1471" class="Bound"
+      >n</a
+      ><a name="1500" class="Symbol"
+      >))</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" class="Symbol"
+      >&#8594;</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" class="Symbol"
+      >(</a
+      ><a name="1506" href="Recursion.html#1506" class="Bound"
+      >m</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" href="Recursion.html#1508" class="Bound"
+      >n</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" class="Symbol"
+      >:</a
+      ><a name="1511"
+      > </a
+      ><a name="1512" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1513" class="Symbol"
+      >)</a
+      ><a name="1514"
+      > </a
+      ><a name="1515" class="Symbol"
+      >&#8594;</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" href="Recursion.html#1408" class="Bound"
+      >P</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" href="Recursion.html#1506" class="Bound"
+      >m</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="Recursion.html#1508" class="Bound"
+      >n</a
+      ><a name="1522"
+      >
+</a
+      ><a name="1523" href="Recursion.html#1392" class="Function"
+      >natrec2simpl</a
+      ><a name="1535"
+      > </a
+      ><a name="1536" href="Recursion.html#1536" class="Bound"
+      >baseL</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" href="Recursion.html#1542" class="Bound"
+      >baseR</a
+      ><a name="1547"
+      > </a
+      ><a name="1548" href="Recursion.html#1548" class="Bound"
+      >step</a
+      ><a name="1552"
+      > </a
+      ><a name="1553" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" href="Recursion.html#1555" class="Bound"
+      >n</a
+      ><a name="1556"
+      > </a
+      ><a name="1557" class="Symbol"
+      >=</a
+      ><a name="1558"
+      > </a
+      ><a name="1559" href="Recursion.html#1536" class="Bound"
+      >baseL</a
+      ><a name="1564"
+      > </a
+      ><a name="1565" href="Recursion.html#1555" class="Bound"
+      >n</a
+      ><a name="1566"
+      >
+</a
+      ><a name="1567" href="Recursion.html#1392" class="Function"
+      >natrec2simpl</a
+      ><a name="1579"
+      > </a
+      ><a name="1580" href="Recursion.html#1580" class="Bound"
+      >baseL</a
+      ><a name="1585"
+      > </a
+      ><a name="1586" href="Recursion.html#1586" class="Bound"
+      >baseR</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" href="Recursion.html#1592" class="Bound"
+      >step</a
+      ><a name="1596"
+      > </a
+      ><a name="1597" href="Recursion.html#1597" class="Bound"
+      >m</a
+      ><a name="1598"
+      > </a
+      ><a name="1599" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" class="Symbol"
+      >=</a
+      ><a name="1602"
+      > </a
+      ><a name="1603" href="Recursion.html#1586" class="Bound"
+      >baseR</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" href="Recursion.html#1597" class="Bound"
+      >m</a
+      ><a name="1610"
+      >
+</a
+      ><a name="1611" href="Recursion.html#1392" class="Function"
+      >natrec2simpl</a
+      ><a name="1623"
+      > </a
+      ><a name="1624" class="Symbol"
+      >{</a
+      ><a name="1625" href="Recursion.html#1625" class="Bound"
+      >P</a
+      ><a name="1626" class="Symbol"
+      >}</a
+      ><a name="1627"
+      > </a
+      ><a name="1628" href="Recursion.html#1628" class="Bound"
+      >baseL</a
+      ><a name="1633"
+      > </a
+      ><a name="1634" href="Recursion.html#1634" class="Bound"
+      >baseR</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" href="Recursion.html#1640" class="Bound"
+      >step</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" class="Symbol"
+      >(</a
+      ><a name="1646" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" href="Recursion.html#1648" class="Bound"
+      >m</a
+      ><a name="1649" class="Symbol"
+      >)</a
+      ><a name="1650"
+      > </a
+      ><a name="1651" class="Symbol"
+      >(</a
+      ><a name="1652" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" href="Recursion.html#1654" class="Bound"
+      >n</a
+      ><a name="1655" class="Symbol"
+      >)</a
+      ><a name="1656"
+      > </a
+      ><a name="1657" class="Symbol"
+      >=</a
+      ><a name="1658"
+      > </a
+      ><a name="1659" href="Recursion.html#1640" class="Bound"
+      >step</a
+      ><a name="1663"
+      > </a
+      ><a name="1664" class="Symbol"
+      >(</a
+      ><a name="1665" href="Recursion.html#1392" class="Function"
+      >natrec2simpl</a
+      ><a name="1677"
+      > </a
+      ><a name="1678" class="Symbol"
+      >{</a
+      ><a name="1679" href="Recursion.html#1625" class="Bound"
+      >P</a
+      ><a name="1680" class="Symbol"
+      >}</a
+      ><a name="1681"
+      > </a
+      ><a name="1682" href="Recursion.html#1628" class="Bound"
+      >baseL</a
+      ><a name="1687"
+      > </a
+      ><a name="1688" href="Recursion.html#1634" class="Bound"
+      >baseR</a
+      ><a name="1693"
+      > </a
+      ><a name="1694" href="Recursion.html#1640" class="Bound"
+      >step</a
+      ><a name="1698"
+      > </a
+      ><a name="1699" href="Recursion.html#1648" class="Bound"
+      >m</a
+      ><a name="1700"
+      > </a
+      ><a name="1701" href="Recursion.html#1654" class="Bound"
+      >n</a
+      ><a name="1702" class="Symbol"
+      >)</a
+      ><a name="1703"
+      >
+
+
+</a
+      ><a name="1706" class="Comment"
+      >-- Course of Values (or Complete) Recursion {May also be called transfinite induction} ------------------------</a
+      ><a name="1817"
+      >
+
+</a
+      ><a name="1819" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="1823"
+      > </a
+      ><a name="1824" class="Symbol"
+      >:</a
+      ><a name="1825"
+      > </a
+      ><a name="1826" class="Symbol"
+      >(</a
+      ><a name="1827" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1828"
+      > </a
+      ><a name="1829" class="Symbol"
+      >&#8594;</a
+      ><a name="1830"
+      > </a
+      ><a name="1831" class="PrimitiveType"
+      >Set</a
+      ><a name="1834" class="Symbol"
+      >)</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" class="Symbol"
+      >&#8594;</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" class="Symbol"
+      >&#8594;</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" class="PrimitiveType"
+      >Set</a
+      ><a name="1845"
+      >
+</a
+      ><a name="1846" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="1850"
+      > </a
+      ><a name="1851" href="Recursion.html#1851" class="Bound"
+      >P</a
+      ><a name="1852"
+      > </a
+      ><a name="1853" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="1854"
+      >     </a
+      ><a name="1859" class="Symbol"
+      >=</a
+      ><a name="1860"
+      > </a
+      ><a name="1861" href="NeilPrelude.html#1297" class="Record"
+      >True</a
+      ><a name="1865"
+      >
+</a
+      ><a name="1866" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" href="Recursion.html#1871" class="Bound"
+      >P</a
+      ><a name="1872"
+      > </a
+      ><a name="1873" class="Symbol"
+      >(</a
+      ><a name="1874" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="1875"
+      > </a
+      ><a name="1876" href="Recursion.html#1876" class="Bound"
+      >n</a
+      ><a name="1877" class="Symbol"
+      >)</a
+      ><a name="1878"
+      > </a
+      ><a name="1879" class="Symbol"
+      >=</a
+      ><a name="1880"
+      > </a
+      ><a name="1881" href="Recursion.html#1871" class="Bound"
+      >P</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" href="Recursion.html#1876" class="Bound"
+      >n</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="1886"
+      > </a
+      ><a name="1887" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="1891"
+      > </a
+      ><a name="1892" href="Recursion.html#1871" class="Bound"
+      >P</a
+      ><a name="1893"
+      > </a
+      ><a name="1894" href="Recursion.html#1876" class="Bound"
+      >n</a
+      ><a name="1895"
+      >
+
+</a
+      ><a name="1897" class="Keyword"
+      >mutual</a
+      ><a name="1903"
+      >
+
+  </a
+      ><a name="1907" href="Recursion.html#1907" class="Function"
+      >comrec</a
+      ><a name="1913"
+      > </a
+      ><a name="1914" class="Symbol"
+      >:</a
+      ><a name="1915"
+      > </a
+      ><a name="1916" class="Symbol"
+      >{</a
+      ><a name="1917" href="Recursion.html#1917" class="Bound"
+      >P</a
+      ><a name="1918"
+      > </a
+      ><a name="1919" class="Symbol"
+      >:</a
+      ><a name="1920"
+      > </a
+      ><a name="1921" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1922"
+      > </a
+      ><a name="1923" class="Symbol"
+      >&#8594;</a
+      ><a name="1924"
+      > </a
+      ><a name="1925" class="PrimitiveType"
+      >Set</a
+      ><a name="1928" class="Symbol"
+      >}</a
+      ><a name="1929"
+      > </a
+      ><a name="1930" class="Symbol"
+      >&#8594;</a
+      ><a name="1931"
+      > </a
+      ><a name="1932" class="Symbol"
+      >((</a
+      ><a name="1934" href="Recursion.html#1934" class="Bound"
+      >m</a
+      ><a name="1935"
+      > </a
+      ><a name="1936" class="Symbol"
+      >:</a
+      ><a name="1937"
+      > </a
+      ><a name="1938" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1939" class="Symbol"
+      >)</a
+      ><a name="1940"
+      > </a
+      ><a name="1941" class="Symbol"
+      >&#8594;</a
+      ><a name="1942"
+      > </a
+      ><a name="1943" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="1947"
+      > </a
+      ><a name="1948" href="Recursion.html#1917" class="Bound"
+      >P</a
+      ><a name="1949"
+      > </a
+      ><a name="1950" href="Recursion.html#1934" class="Bound"
+      >m</a
+      ><a name="1951"
+      > </a
+      ><a name="1952" class="Symbol"
+      >&#8594;</a
+      ><a name="1953"
+      > </a
+      ><a name="1954" href="Recursion.html#1917" class="Bound"
+      >P</a
+      ><a name="1955"
+      > </a
+      ><a name="1956" href="Recursion.html#1934" class="Bound"
+      >m</a
+      ><a name="1957" class="Symbol"
+      >)</a
+      ><a name="1958"
+      > </a
+      ><a name="1959" class="Symbol"
+      >&#8594;</a
+      ><a name="1960"
+      > </a
+      ><a name="1961" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="1962"
+      > </a
+      ><a name="1963" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1964"
+      > </a
+      ><a name="1965" href="Recursion.html#1917" class="Bound"
+      >P</a
+      ><a name="1966"
+      >
+  </a
+      ><a name="1969" href="Recursion.html#1907" class="Function"
+      >comrec</a
+      ><a name="1975"
+      > </a
+      ><a name="1976" href="Recursion.html#1976" class="Bound"
+      >step</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" href="Recursion.html#1981" class="Bound"
+      >n</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" class="Symbol"
+      >=</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="Recursion.html#1976" class="Bound"
+      >step</a
+      ><a name="1989"
+      > </a
+      ><a name="1990" href="Recursion.html#1981" class="Bound"
+      >n</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" class="Symbol"
+      >(</a
+      ><a name="1993" href="Recursion.html#2013" class="Function"
+      >covrec</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" href="Recursion.html#1976" class="Bound"
+      >step</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" href="Recursion.html#1981" class="Bound"
+      >n</a
+      ><a name="2006" class="Symbol"
+      >)</a
+      ><a name="2007"
+      >
+  
+  </a
+      ><a name="2013" href="Recursion.html#2013" class="Function"
+      >covrec</a
+      ><a name="2019"
+      > </a
+      ><a name="2020" class="Symbol"
+      >:</a
+      ><a name="2021"
+      > </a
+      ><a name="2022" class="Symbol"
+      >{</a
+      ><a name="2023" href="Recursion.html#2023" class="Bound"
+      >P</a
+      ><a name="2024"
+      > </a
+      ><a name="2025" class="Symbol"
+      >:</a
+      ><a name="2026"
+      > </a
+      ><a name="2027" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="2028"
+      > </a
+      ><a name="2029" class="Symbol"
+      >&#8594;</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" class="PrimitiveType"
+      >Set</a
+      ><a name="2034" class="Symbol"
+      >}</a
+      ><a name="2035"
+      > </a
+      ><a name="2036" class="Symbol"
+      >&#8594;</a
+      ><a name="2037"
+      > </a
+      ><a name="2038" class="Symbol"
+      >((</a
+      ><a name="2040" href="Recursion.html#2040" class="Bound"
+      >m</a
+      ><a name="2041"
+      > </a
+      ><a name="2042" class="Symbol"
+      >:</a
+      ><a name="2043"
+      > </a
+      ><a name="2044" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="2045" class="Symbol"
+      >)</a
+      ><a name="2046"
+      > </a
+      ><a name="2047" class="Symbol"
+      >&#8594;</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="2053"
+      > </a
+      ><a name="2054" href="Recursion.html#2023" class="Bound"
+      >P</a
+      ><a name="2055"
+      > </a
+      ><a name="2056" href="Recursion.html#2040" class="Bound"
+      >m</a
+      ><a name="2057"
+      > </a
+      ><a name="2058" class="Symbol"
+      >&#8594;</a
+      ><a name="2059"
+      > </a
+      ><a name="2060" href="Recursion.html#2023" class="Bound"
+      >P</a
+      ><a name="2061"
+      > </a
+      ><a name="2062" href="Recursion.html#2040" class="Bound"
+      >m</a
+      ><a name="2063" class="Symbol"
+      >)</a
+      ><a name="2064"
+      > </a
+      ><a name="2065" class="Symbol"
+      >&#8594;</a
+      ><a name="2066"
+      > </a
+      ><a name="2067" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="2068"
+      > </a
+      ><a name="2069" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="2070"
+      > </a
+      ><a name="2071" class="Symbol"
+      >(</a
+      ><a name="2072" href="Recursion.html#1819" class="Function"
+      >CRec</a
+      ><a name="2076"
+      > </a
+      ><a name="2077" href="Recursion.html#2023" class="Bound"
+      >P</a
+      ><a name="2078" class="Symbol"
+      >)</a
+      ><a name="2079"
+      >
+  </a
+      ><a name="2082" href="Recursion.html#2013" class="Function"
+      >covrec</a
+      ><a name="2088"
+      > </a
+      ><a name="2089" href="Recursion.html#2089" class="Bound"
+      >step</a
+      ><a name="2093"
+      > </a
+      ><a name="2094" href="Nat.html#149" class="InductiveConstructor"
+      >O</a
+      ><a name="2095"
+      >     </a
+      ><a name="2100" class="Symbol"
+      >=</a
+      ><a name="2101"
+      > </a
+      ><a name="2102" class="Symbol"
+      >_</a
+      ><a name="2103"
+      >
+  </a
+      ><a name="2106" href="Recursion.html#2013" class="Function"
+      >covrec</a
+      ><a name="2112"
+      > </a
+      ><a name="2113" href="Recursion.html#2113" class="Bound"
+      >step</a
+      ><a name="2117"
+      > </a
+      ><a name="2118" class="Symbol"
+      >(</a
+      ><a name="2119" href="Nat.html#157" class="InductiveConstructor"
+      >S</a
+      ><a name="2120"
+      > </a
+      ><a name="2121" href="Recursion.html#2121" class="Bound"
+      >n</a
+      ><a name="2122" class="Symbol"
+      >)</a
+      ><a name="2123"
+      > </a
+      ><a name="2124" class="Symbol"
+      >=</a
+      ><a name="2125"
+      > </a
+      ><a name="2126" href="Recursion.html#1907" class="Function"
+      >comrec</a
+      ><a name="2132"
+      > </a
+      ><a name="2133" href="Recursion.html#2113" class="Bound"
+      >step</a
+      ><a name="2137"
+      > </a
+      ><a name="2138" href="Recursion.html#2121" class="Bound"
+      >n</a
+      ><a name="2139"
+      > </a
+      ><a name="2140" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2141"
+      > </a
+      ><a name="2142" href="Recursion.html#2013" class="Function"
+      >covrec</a
+      ><a name="2148"
+      > </a
+      ><a name="2149" href="Recursion.html#2113" class="Bound"
+      >step</a
+      ><a name="2153"
+      > </a
+      ><a name="2154" href="Recursion.html#2121" class="Bound"
+      >n</a
+      ><a name="2155"
+      >
+
+
+</a
+      ><a name="2158" class="Comment"
+      >-- Complete Recursion on Lists</a
+      ><a name="2188"
+      >
+
+</a
+      ><a name="2190" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2198"
+      > </a
+      ><a name="2199" class="Symbol"
+      >:</a
+      ><a name="2200"
+      > </a
+      ><a name="2201" class="Symbol"
+      >{</a
+      ><a name="2202" href="Recursion.html#2202" class="Bound"
+      >A</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" class="Symbol"
+      >:</a
+      ><a name="2205"
+      > </a
+      ><a name="2206" class="PrimitiveType"
+      >Set</a
+      ><a name="2209" class="Symbol"
+      >}</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" class="Symbol"
+      >&#8594;</a
+      ><a name="2212"
+      > </a
+      ><a name="2213" class="Symbol"
+      >(</a
+      ><a name="2214" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2218"
+      > </a
+      ><a name="2219" href="Recursion.html#2202" class="Bound"
+      >A</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" class="Symbol"
+      >&#8594;</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" class="PrimitiveType"
+      >Set</a
+      ><a name="2226" class="Symbol"
+      >)</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" class="Symbol"
+      >&#8594;</a
+      ><a name="2229"
+      > </a
+      ><a name="2230" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2234"
+      > </a
+      ><a name="2235" href="Recursion.html#2202" class="Bound"
+      >A</a
+      ><a name="2236"
+      > </a
+      ><a name="2237" class="Symbol"
+      >&#8594;</a
+      ><a name="2238"
+      > </a
+      ><a name="2239" class="PrimitiveType"
+      >Set</a
+      ><a name="2242"
+      >
+</a
+      ><a name="2243" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2251"
+      > </a
+      ><a name="2252" href="Recursion.html#2252" class="Bound"
+      >P</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="2256"
+      >       </a
+      ><a name="2263" class="Symbol"
+      >=</a
+      ><a name="2264"
+      > </a
+      ><a name="2265" href="NeilPrelude.html#1297" class="Record"
+      >True</a
+      ><a name="2269"
+      >
+</a
+      ><a name="2270" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2278"
+      > </a
+      ><a name="2279" href="Recursion.html#2279" class="Bound"
+      >P</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" class="Symbol"
+      >(_</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="2285"
+      > </a
+      ><a name="2286" href="Recursion.html#2286" class="Bound"
+      >as</a
+      ><a name="2288" class="Symbol"
+      >)</a
+      ><a name="2289"
+      > </a
+      ><a name="2290" class="Symbol"
+      >=</a
+      ><a name="2291"
+      > </a
+      ><a name="2292" href="Recursion.html#2279" class="Bound"
+      >P</a
+      ><a name="2293"
+      > </a
+      ><a name="2294" href="Recursion.html#2286" class="Bound"
+      >as</a
+      ><a name="2296"
+      > </a
+      ><a name="2297" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="2298"
+      > </a
+      ><a name="2299" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2307"
+      > </a
+      ><a name="2308" href="Recursion.html#2279" class="Bound"
+      >P</a
+      ><a name="2309"
+      > </a
+      ><a name="2310" href="Recursion.html#2286" class="Bound"
+      >as</a
+      ><a name="2312"
+      >
+
+</a
+      ><a name="2314" class="Keyword"
+      >mutual</a
+      ><a name="2320"
+      >
+
+  </a
+      ><a name="2324" href="Recursion.html#2324" class="Function"
+      >comreclist</a
+      ><a name="2334"
+      > </a
+      ><a name="2335" class="Symbol"
+      >:</a
+      ><a name="2336"
+      > </a
+      ><a name="2337" class="Symbol"
+      >{</a
+      ><a name="2338" href="Recursion.html#2338" class="Bound"
+      >A</a
+      ><a name="2339"
+      > </a
+      ><a name="2340" class="Symbol"
+      >:</a
+      ><a name="2341"
+      > </a
+      ><a name="2342" class="PrimitiveType"
+      >Set</a
+      ><a name="2345" class="Symbol"
+      >}</a
+      ><a name="2346"
+      > </a
+      ><a name="2347" class="Symbol"
+      >&#8594;</a
+      ><a name="2348"
+      > </a
+      ><a name="2349" class="Symbol"
+      >{</a
+      ><a name="2350" href="Recursion.html#2350" class="Bound"
+      >P</a
+      ><a name="2351"
+      > </a
+      ><a name="2352" class="Symbol"
+      >:</a
+      ><a name="2353"
+      > </a
+      ><a name="2354" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2358"
+      > </a
+      ><a name="2359" href="Recursion.html#2338" class="Bound"
+      >A</a
+      ><a name="2360"
+      > </a
+      ><a name="2361" class="Symbol"
+      >&#8594;</a
+      ><a name="2362"
+      > </a
+      ><a name="2363" class="PrimitiveType"
+      >Set</a
+      ><a name="2366" class="Symbol"
+      >}</a
+      ><a name="2367"
+      > </a
+      ><a name="2368" class="Symbol"
+      >&#8594;</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" class="Symbol"
+      >((</a
+      ><a name="2372" href="Recursion.html#2372" class="Bound"
+      >bs</a
+      ><a name="2374"
+      > </a
+      ><a name="2375" class="Symbol"
+      >:</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2381"
+      > </a
+      ><a name="2382" href="Recursion.html#2338" class="Bound"
+      >A</a
+      ><a name="2383" class="Symbol"
+      >)</a
+      ><a name="2384"
+      > </a
+      ><a name="2385" class="Symbol"
+      >&#8594;</a
+      ><a name="2386"
+      > </a
+      ><a name="2387" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2395"
+      > </a
+      ><a name="2396" href="Recursion.html#2350" class="Bound"
+      >P</a
+      ><a name="2397"
+      > </a
+      ><a name="2398" href="Recursion.html#2372" class="Bound"
+      >bs</a
+      ><a name="2400"
+      > </a
+      ><a name="2401" class="Symbol"
+      >&#8594;</a
+      ><a name="2402"
+      > </a
+      ><a name="2403" href="Recursion.html#2350" class="Bound"
+      >P</a
+      ><a name="2404"
+      > </a
+      ><a name="2405" href="Recursion.html#2372" class="Bound"
+      >bs</a
+      ><a name="2407" class="Symbol"
+      >)</a
+      ><a name="2408"
+      > </a
+      ><a name="2409" class="Symbol"
+      >&#8594;</a
+      ><a name="2410"
+      > </a
+      ><a name="2411" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="2412"
+      > </a
+      ><a name="2413" class="Symbol"
+      >(</a
+      ><a name="2414" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2418"
+      > </a
+      ><a name="2419" href="Recursion.html#2338" class="Bound"
+      >A</a
+      ><a name="2420" class="Symbol"
+      >)</a
+      ><a name="2421"
+      > </a
+      ><a name="2422" href="Recursion.html#2350" class="Bound"
+      >P</a
+      ><a name="2423"
+      >
+  </a
+      ><a name="2426" href="Recursion.html#2324" class="Function"
+      >comreclist</a
+      ><a name="2436"
+      > </a
+      ><a name="2437" href="Recursion.html#2437" class="Bound"
+      >step</a
+      ><a name="2441"
+      > </a
+      ><a name="2442" href="Recursion.html#2442" class="Bound"
+      >as</a
+      ><a name="2444"
+      > </a
+      ><a name="2445" class="Symbol"
+      >=</a
+      ><a name="2446"
+      > </a
+      ><a name="2447" href="Recursion.html#2437" class="Bound"
+      >step</a
+      ><a name="2451"
+      > </a
+      ><a name="2452" href="Recursion.html#2442" class="Bound"
+      >as</a
+      ><a name="2454"
+      > </a
+      ><a name="2455" class="Symbol"
+      >(</a
+      ><a name="2456" href="Recursion.html#2479" class="Function"
+      >covreclist</a
+      ><a name="2466"
+      > </a
+      ><a name="2467" href="Recursion.html#2437" class="Bound"
+      >step</a
+      ><a name="2471"
+      > </a
+      ><a name="2472" href="Recursion.html#2442" class="Bound"
+      >as</a
+      ><a name="2474" class="Symbol"
+      >)</a
+      ><a name="2475"
+      >
+
+  </a
+      ><a name="2479" href="Recursion.html#2479" class="Function"
+      >covreclist</a
+      ><a name="2489"
+      > </a
+      ><a name="2490" class="Symbol"
+      >:</a
+      ><a name="2491"
+      > </a
+      ><a name="2492" class="Symbol"
+      >{</a
+      ><a name="2493" href="Recursion.html#2493" class="Bound"
+      >A</a
+      ><a name="2494"
+      > </a
+      ><a name="2495" class="Symbol"
+      >:</a
+      ><a name="2496"
+      > </a
+      ><a name="2497" class="PrimitiveType"
+      >Set</a
+      ><a name="2500" class="Symbol"
+      >}</a
+      ><a name="2501"
+      > </a
+      ><a name="2502" class="Symbol"
+      >&#8594;</a
+      ><a name="2503"
+      > </a
+      ><a name="2504" class="Symbol"
+      >{</a
+      ><a name="2505" href="Recursion.html#2505" class="Bound"
+      >P</a
+      ><a name="2506"
+      > </a
+      ><a name="2507" class="Symbol"
+      >:</a
+      ><a name="2508"
+      > </a
+      ><a name="2509" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2513"
+      > </a
+      ><a name="2514" href="Recursion.html#2493" class="Bound"
+      >A</a
+      ><a name="2515"
+      > </a
+      ><a name="2516" class="Symbol"
+      >&#8594;</a
+      ><a name="2517"
+      > </a
+      ><a name="2518" class="PrimitiveType"
+      >Set</a
+      ><a name="2521" class="Symbol"
+      >}</a
+      ><a name="2522"
+      > </a
+      ><a name="2523" class="Symbol"
+      >&#8594;</a
+      ><a name="2524"
+      > </a
+      ><a name="2525" class="Symbol"
+      >((</a
+      ><a name="2527" href="Recursion.html#2527" class="Bound"
+      >bs</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" class="Symbol"
+      >:</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2536"
+      > </a
+      ><a name="2537" href="Recursion.html#2493" class="Bound"
+      >A</a
+      ><a name="2538" class="Symbol"
+      >)</a
+      ><a name="2539"
+      > </a
+      ><a name="2540" class="Symbol"
+      >&#8594;</a
+      ><a name="2541"
+      > </a
+      ><a name="2542" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2550"
+      > </a
+      ><a name="2551" href="Recursion.html#2505" class="Bound"
+      >P</a
+      ><a name="2552"
+      > </a
+      ><a name="2553" href="Recursion.html#2527" class="Bound"
+      >bs</a
+      ><a name="2555"
+      > </a
+      ><a name="2556" class="Symbol"
+      >&#8594;</a
+      ><a name="2557"
+      > </a
+      ><a name="2558" href="Recursion.html#2505" class="Bound"
+      >P</a
+      ><a name="2559"
+      > </a
+      ><a name="2560" href="Recursion.html#2527" class="Bound"
+      >bs</a
+      ><a name="2562" class="Symbol"
+      >)</a
+      ><a name="2563"
+      > </a
+      ><a name="2564" class="Symbol"
+      >&#8594;</a
+      ><a name="2565"
+      > </a
+      ><a name="2566" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="2567"
+      > </a
+      ><a name="2568" class="Symbol"
+      >(</a
+      ><a name="2569" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="2573"
+      > </a
+      ><a name="2574" href="Recursion.html#2493" class="Bound"
+      >A</a
+      ><a name="2575" class="Symbol"
+      >)</a
+      ><a name="2576"
+      > </a
+      ><a name="2577" class="Symbol"
+      >(</a
+      ><a name="2578" href="Recursion.html#2190" class="Function"
+      >CReclist</a
+      ><a name="2586"
+      > </a
+      ><a name="2587" href="Recursion.html#2505" class="Bound"
+      >P</a
+      ><a name="2588" class="Symbol"
+      >)</a
+      ><a name="2589"
+      >
+  </a
+      ><a name="2592" href="Recursion.html#2479" class="Function"
+      >covreclist</a
+      ><a name="2602"
+      > </a
+      ><a name="2603" href="Recursion.html#2603" class="Bound"
+      >step</a
+      ><a name="2607"
+      > </a
+      ><a name="2608" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="2610"
+      >       </a
+      ><a name="2617" class="Symbol"
+      >=</a
+      ><a name="2618"
+      > </a
+      ><a name="2619" class="Symbol"
+      >_</a
+      ><a name="2620"
+      >
+  </a
+      ><a name="2623" href="Recursion.html#2479" class="Function"
+      >covreclist</a
+      ><a name="2633"
+      > </a
+      ><a name="2634" href="Recursion.html#2634" class="Bound"
+      >step</a
+      ><a name="2638"
+      > </a
+      ><a name="2639" class="Symbol"
+      >(_</a
+      ><a name="2641"
+      > </a
+      ><a name="2642" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="2643"
+      > </a
+      ><a name="2644" href="Recursion.html#2644" class="Bound"
+      >as</a
+      ><a name="2646" class="Symbol"
+      >)</a
+      ><a name="2647"
+      > </a
+      ><a name="2648" class="Symbol"
+      >=</a
+      ><a name="2649"
+      > </a
+      ><a name="2650" href="Recursion.html#2324" class="Function"
+      >comreclist</a
+      ><a name="2660"
+      > </a
+      ><a name="2661" href="Recursion.html#2634" class="Bound"
+      >step</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" href="Recursion.html#2644" class="Bound"
+      >as</a
+      ><a name="2668"
+      > </a
+      ><a name="2669" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2670"
+      > </a
+      ><a name="2671" href="Recursion.html#2479" class="Function"
+      >covreclist</a
+      ><a name="2681"
+      > </a
+      ><a name="2682" href="Recursion.html#2634" class="Bound"
+      >step</a
+      ><a name="2686"
+      > </a
+      ><a name="2687" href="Recursion.html#2644" class="Bound"
+      >as</a
+      ><a name="2689"
+      >
+
+
+</a
+      ><a name="2692" class="Comment"
+      >-- Well Founded Recursion --------------------------------------------</a
+      ><a name="2762"
+      >
+
+</a
+      ><a name="2764" class="Keyword"
+      >data</a
+      ><a name="2768"
+      > </a
+      ><a name="2769" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="2770"
+      > </a
+      ><a name="2771" class="Symbol"
+      >(</a
+      ><a name="2772" href="Recursion.html#2772" class="Bound"
+      >A</a
+      ><a name="2773"
+      > </a
+      ><a name="2774" class="Symbol"
+      >:</a
+      ><a name="2775"
+      > </a
+      ><a name="2776" class="PrimitiveType"
+      >Set</a
+      ><a name="2779" class="Symbol"
+      >)</a
+      ><a name="2780"
+      > </a
+      ><a name="2781" class="Symbol"
+      >(</a
+      ><a name="2782" href="Recursion.html#2782" class="Bound"
+      >B</a
+      ><a name="2783"
+      > </a
+      ><a name="2784" class="Symbol"
+      >:</a
+      ><a name="2785"
+      > </a
+      ><a name="2786" href="Recursion.html#2772" class="Bound"
+      >A</a
+      ><a name="2787"
+      > </a
+      ><a name="2788" class="Symbol"
+      >&#8594;</a
+      ><a name="2789"
+      > </a
+      ><a name="2790" class="PrimitiveType"
+      >Set</a
+      ><a name="2793" class="Symbol"
+      >)</a
+      ><a name="2794"
+      > </a
+      ><a name="2795" class="Symbol"
+      >:</a
+      ><a name="2796"
+      > </a
+      ><a name="2797" class="PrimitiveType"
+      >Set</a
+      ><a name="2800"
+      > </a
+      ><a name="2801" class="Keyword"
+      >where</a
+      ><a name="2806"
+      >
+  </a
+      ><a name="2809" href="Recursion.html#2809" class="InductiveConstructor"
+      >sup</a
+      ><a name="2812"
+      > </a
+      ><a name="2813" class="Symbol"
+      >:</a
+      ><a name="2814"
+      > </a
+      ><a name="2815" class="Symbol"
+      >(</a
+      ><a name="2816" href="Recursion.html#2816" class="Bound"
+      >a</a
+      ><a name="2817"
+      > </a
+      ><a name="2818" class="Symbol"
+      >:</a
+      ><a name="2819"
+      > </a
+      ><a name="2820" href="Recursion.html#2772" class="Bound"
+      >A</a
+      ><a name="2821" class="Symbol"
+      >)</a
+      ><a name="2822"
+      > </a
+      ><a name="2823" class="Symbol"
+      >&#8594;</a
+      ><a name="2824"
+      > </a
+      ><a name="2825" class="Symbol"
+      >(</a
+      ><a name="2826" href="Recursion.html#2782" class="Bound"
+      >B</a
+      ><a name="2827"
+      > </a
+      ><a name="2828" href="Recursion.html#2816" class="Bound"
+      >a</a
+      ><a name="2829"
+      > </a
+      ><a name="2830" class="Symbol"
+      >&#8594;</a
+      ><a name="2831"
+      > </a
+      ><a name="2832" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="2833"
+      > </a
+      ><a name="2834" href="Recursion.html#2772" class="Bound"
+      >A</a
+      ><a name="2835"
+      > </a
+      ><a name="2836" href="Recursion.html#2782" class="Bound"
+      >B</a
+      ><a name="2837" class="Symbol"
+      >)</a
+      ><a name="2838"
+      > </a
+      ><a name="2839" class="Symbol"
+      >&#8594;</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="2842"
+      > </a
+      ><a name="2843" href="Recursion.html#2772" class="Bound"
+      >A</a
+      ><a name="2844"
+      > </a
+      ><a name="2845" href="Recursion.html#2782" class="Bound"
+      >B</a
+      ><a name="2846"
+      >
+
+</a
+      ><a name="2848" href="Recursion.html#2848" class="Function"
+      >wrec</a
+      ><a name="2852"
+      > </a
+      ><a name="2853" class="Symbol"
+      >:</a
+      ><a name="2854"
+      > </a
+      ><a name="2855" class="Symbol"
+      >{</a
+      ><a name="2856" href="Recursion.html#2856" class="Bound"
+      >A</a
+      ><a name="2857"
+      > </a
+      ><a name="2858" class="Symbol"
+      >:</a
+      ><a name="2859"
+      > </a
+      ><a name="2860" class="PrimitiveType"
+      >Set</a
+      ><a name="2863" class="Symbol"
+      >}</a
+      ><a name="2864"
+      > </a
+      ><a name="2865" class="Symbol"
+      >&#8594;</a
+      ><a name="2866"
+      > </a
+      ><a name="2867" class="Symbol"
+      >{</a
+      ><a name="2868" href="Recursion.html#2868" class="Bound"
+      >B</a
+      ><a name="2869"
+      > </a
+      ><a name="2870" class="Symbol"
+      >:</a
+      ><a name="2871"
+      > </a
+      ><a name="2872" href="Recursion.html#2856" class="Bound"
+      >A</a
+      ><a name="2873"
+      > </a
+      ><a name="2874" class="Symbol"
+      >&#8594;</a
+      ><a name="2875"
+      > </a
+      ><a name="2876" class="PrimitiveType"
+      >Set</a
+      ><a name="2879" class="Symbol"
+      >}</a
+      ><a name="2880"
+      > </a
+      ><a name="2881" class="Symbol"
+      >&#8594;</a
+      ><a name="2882"
+      > </a
+      ><a name="2883" class="Symbol"
+      >(</a
+      ><a name="2884" href="Recursion.html#2884" class="Bound"
+      >P</a
+      ><a name="2885"
+      > </a
+      ><a name="2886" class="Symbol"
+      >:</a
+      ><a name="2887"
+      > </a
+      ><a name="2888" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" href="Recursion.html#2856" class="Bound"
+      >A</a
+      ><a name="2891"
+      > </a
+      ><a name="2892" href="Recursion.html#2868" class="Bound"
+      >B</a
+      ><a name="2893"
+      > </a
+      ><a name="2894" class="Symbol"
+      >&#8594;</a
+      ><a name="2895"
+      > </a
+      ><a name="2896" class="PrimitiveType"
+      >Set</a
+      ><a name="2899" class="Symbol"
+      >)</a
+      ><a name="2900"
+      > </a
+      ><a name="2901" class="Symbol"
+      >&#8594;</a
+      ><a name="2902"
+      > </a
+      ><a name="2903" class="Symbol"
+      >((</a
+      ><a name="2905" href="Recursion.html#2905" class="Bound"
+      >a</a
+      ><a name="2906"
+      > </a
+      ><a name="2907" class="Symbol"
+      >:</a
+      ><a name="2908"
+      > </a
+      ><a name="2909" href="Recursion.html#2856" class="Bound"
+      >A</a
+      ><a name="2910" class="Symbol"
+      >)</a
+      ><a name="2911"
+      > </a
+      ><a name="2912" class="Symbol"
+      >&#8594;</a
+      ><a name="2913"
+      > </a
+      ><a name="2914" class="Symbol"
+      >(</a
+      ><a name="2915" href="Recursion.html#2915" class="Bound"
+      >f</a
+      ><a name="2916"
+      > </a
+      ><a name="2917" class="Symbol"
+      >:</a
+      ><a name="2918"
+      > </a
+      ><a name="2919" href="Recursion.html#2868" class="Bound"
+      >B</a
+      ><a name="2920"
+      > </a
+      ><a name="2921" href="Recursion.html#2905" class="Bound"
+      >a</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" class="Symbol"
+      >&#8594;</a
+      ><a name="2924"
+      > </a
+      ><a name="2925" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="2926"
+      > </a
+      ><a name="2927" href="Recursion.html#2856" class="Bound"
+      >A</a
+      ><a name="2928"
+      > </a
+      ><a name="2929" href="Recursion.html#2868" class="Bound"
+      >B</a
+      ><a name="2930" class="Symbol"
+      >)</a
+      ><a name="2931"
+      > </a
+      ><a name="2932" class="Symbol"
+      >&#8594;</a
+      ><a name="2933"
+      > </a
+      ><a name="2934" class="Symbol"
+      >((</a
+      ><a name="2936" href="Recursion.html#2936" class="Bound"
+      >b</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" class="Symbol"
+      >:</a
+      ><a name="2939"
+      > </a
+      ><a name="2940" href="Recursion.html#2868" class="Bound"
+      >B</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" href="Recursion.html#2905" class="Bound"
+      >a</a
+      ><a name="2943" class="Symbol"
+      >)</a
+      ><a name="2944"
+      > </a
+      ><a name="2945" class="Symbol"
+      >&#8594;</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" href="Recursion.html#2884" class="Bound"
+      >P</a
+      ><a name="2948"
+      > </a
+      ><a name="2949" class="Symbol"
+      >(</a
+      ><a name="2950" href="Recursion.html#2915" class="Bound"
+      >f</a
+      ><a name="2951"
+      > </a
+      ><a name="2952" href="Recursion.html#2936" class="Bound"
+      >b</a
+      ><a name="2953" class="Symbol"
+      >))</a
+      ><a name="2955"
+      > </a
+      ><a name="2956" class="Symbol"
+      >&#8594;</a
+      ><a name="2957"
+      > </a
+      ><a name="2958" href="Recursion.html#2884" class="Bound"
+      >P</a
+      ><a name="2959"
+      > </a
+      ><a name="2960" class="Symbol"
+      >(</a
+      ><a name="2961" href="Recursion.html#2809" class="InductiveConstructor"
+      >sup</a
+      ><a name="2964"
+      > </a
+      ><a name="2965" href="Recursion.html#2905" class="Bound"
+      >a</a
+      ><a name="2966"
+      > </a
+      ><a name="2967" href="Recursion.html#2915" class="Bound"
+      >f</a
+      ><a name="2968" class="Symbol"
+      >))</a
+      ><a name="2970"
+      > </a
+      ><a name="2971" class="Symbol"
+      >&#8594;</a
+      ><a name="2972"
+      > </a
+      ><a name="2973" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="2974"
+      > </a
+      ><a name="2975" class="Symbol"
+      >(</a
+      ><a name="2976" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="2977"
+      > </a
+      ><a name="2978" href="Recursion.html#2856" class="Bound"
+      >A</a
+      ><a name="2979"
+      > </a
+      ><a name="2980" href="Recursion.html#2868" class="Bound"
+      >B</a
+      ><a name="2981" class="Symbol"
+      >)</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" href="Recursion.html#2884" class="Bound"
+      >P</a
+      ><a name="2984"
+      >
+</a
+      ><a name="2985" href="Recursion.html#2848" class="Function"
+      >wrec</a
+      ><a name="2989"
+      > </a
+      ><a name="2990" href="Recursion.html#2990" class="Bound"
+      >P</a
+      ><a name="2991"
+      > </a
+      ><a name="2992" href="Recursion.html#2992" class="Bound"
+      >step</a
+      ><a name="2996"
+      > </a
+      ><a name="2997" class="Symbol"
+      >(</a
+      ><a name="2998" href="Recursion.html#2809" class="InductiveConstructor"
+      >sup</a
+      ><a name="3001"
+      > </a
+      ><a name="3002" href="Recursion.html#3002" class="Bound"
+      >a</a
+      ><a name="3003"
+      > </a
+      ><a name="3004" href="Recursion.html#3004" class="Bound"
+      >f</a
+      ><a name="3005" class="Symbol"
+      >)</a
+      ><a name="3006"
+      > </a
+      ><a name="3007" class="Symbol"
+      >=</a
+      ><a name="3008"
+      > </a
+      ><a name="3009" href="Recursion.html#2992" class="Bound"
+      >step</a
+      ><a name="3013"
+      > </a
+      ><a name="3014" href="Recursion.html#3002" class="Bound"
+      >a</a
+      ><a name="3015"
+      > </a
+      ><a name="3016" href="Recursion.html#3004" class="Bound"
+      >f</a
+      ><a name="3017"
+      > </a
+      ><a name="3018" class="Symbol"
+      >(&#955;</a
+      ><a name="3020"
+      > </a
+      ><a name="3021" href="Recursion.html#3021" class="Bound"
+      >b</a
+      ><a name="3022"
+      > </a
+      ><a name="3023" class="Symbol"
+      >&#8594;</a
+      ><a name="3024"
+      > </a
+      ><a name="3025" href="Recursion.html#2848" class="Function"
+      >wrec</a
+      ><a name="3029"
+      > </a
+      ><a name="3030" href="Recursion.html#2990" class="Bound"
+      >P</a
+      ><a name="3031"
+      > </a
+      ><a name="3032" href="Recursion.html#2992" class="Bound"
+      >step</a
+      ><a name="3036"
+      > </a
+      ><a name="3037" class="Symbol"
+      >(</a
+      ><a name="3038" href="Recursion.html#3004" class="Bound"
+      >f</a
+      ><a name="3039"
+      > </a
+      ><a name="3040" href="Recursion.html#3021" class="Bound"
+      >b</a
+      ><a name="3041" class="Symbol"
+      >))</a
+      ><a name="3043"
+      >
+
+</a
+      ><a name="3045" href="Recursion.html#3045" class="Function"
+      >initialW</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" class="Symbol"
+      >:</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" class="Symbol"
+      >{</a
+      ><a name="3057" href="Recursion.html#3057" class="Bound"
+      >A</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" class="Symbol"
+      >:</a
+      ><a name="3060"
+      > </a
+      ><a name="3061" class="PrimitiveType"
+      >Set</a
+      ><a name="3064" class="Symbol"
+      >}</a
+      ><a name="3065"
+      > </a
+      ><a name="3066" class="Symbol"
+      >&#8594;</a
+      ><a name="3067"
+      > </a
+      ><a name="3068" class="Symbol"
+      >{</a
+      ><a name="3069" href="Recursion.html#3069" class="Bound"
+      >B</a
+      ><a name="3070"
+      > </a
+      ><a name="3071" class="Symbol"
+      >:</a
+      ><a name="3072"
+      > </a
+      ><a name="3073" href="Recursion.html#3057" class="Bound"
+      >A</a
+      ><a name="3074"
+      > </a
+      ><a name="3075" class="Symbol"
+      >&#8594;</a
+      ><a name="3076"
+      > </a
+      ><a name="3077" class="PrimitiveType"
+      >Set</a
+      ><a name="3080" class="Symbol"
+      >}</a
+      ><a name="3081"
+      > </a
+      ><a name="3082" class="Symbol"
+      >&#8594;</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" href="NeilPrelude.html#992" class="Datatype"
+      >&#931;</a
+      ><a name="3085"
+      > </a
+      ><a name="3086" href="Recursion.html#3057" class="Bound"
+      >A</a
+      ><a name="3087"
+      > </a
+      ><a name="3088" class="Symbol"
+      >(</a
+      ><a name="3089" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="3092"
+      > </a
+      ><a name="3093" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="3094"
+      > </a
+      ><a name="3095" href="Recursion.html#3069" class="Bound"
+      >B</a
+      ><a name="3096" class="Symbol"
+      >)</a
+      ><a name="3097"
+      > </a
+      ><a name="3098" class="Symbol"
+      >&#8594;</a
+      ><a name="3099"
+      > </a
+      ><a name="3100" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="3101"
+      > </a
+      ><a name="3102" href="Recursion.html#3057" class="Bound"
+      >A</a
+      ><a name="3103"
+      > </a
+      ><a name="3104" href="Recursion.html#3069" class="Bound"
+      >B</a
+      ><a name="3105"
+      >
+</a
+      ><a name="3106" href="Recursion.html#3045" class="Function"
+      >initialW</a
+      ><a name="3114"
+      > </a
+      ><a name="3115" class="Symbol"
+      >(</a
+      ><a name="3116" href="Recursion.html#3116" class="Bound"
+      >a</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3119"
+      > </a
+      ><a name="3120" href="Recursion.html#3120" class="Bound"
+      >nb</a
+      ><a name="3122" class="Symbol"
+      >)</a
+      ><a name="3123"
+      > </a
+      ><a name="3124" class="Symbol"
+      >=</a
+      ><a name="3125"
+      > </a
+      ><a name="3126" href="Recursion.html#2809" class="InductiveConstructor"
+      >sup</a
+      ><a name="3129"
+      > </a
+      ><a name="3130" href="Recursion.html#3116" class="Bound"
+      >a</a
+      ><a name="3131"
+      > </a
+      ><a name="3132" class="Symbol"
+      >(</a
+      ><a name="3133" href="NeilPrelude.html#1315" class="Function"
+      >absurd</a
+      ><a name="3139"
+      > </a
+      ><a name="3140" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="3141"
+      > </a
+      ><a name="3142" href="Recursion.html#3120" class="Bound"
+      >nb</a
+      ><a name="3144" class="Symbol"
+      >)</a
+      ><a name="3145"
+      > 
+
+</a
+      ><a name="3148" href="Recursion.html#3148" class="Function"
+      >terminatingW</a
+      ><a name="3160"
+      > </a
+      ><a name="3161" class="Symbol"
+      >:</a
+      ><a name="3162"
+      > </a
+      ><a name="3163" class="Symbol"
+      >{</a
+      ><a name="3164" href="Recursion.html#3164" class="Bound"
+      >A</a
+      ><a name="3165"
+      > </a
+      ><a name="3166" class="Symbol"
+      >:</a
+      ><a name="3167"
+      > </a
+      ><a name="3168" class="PrimitiveType"
+      >Set</a
+      ><a name="3171" class="Symbol"
+      >}</a
+      ><a name="3172"
+      > </a
+      ><a name="3173" class="Symbol"
+      >&#8594;</a
+      ><a name="3174"
+      > </a
+      ><a name="3175" class="Symbol"
+      >{</a
+      ><a name="3176" href="Recursion.html#3176" class="Bound"
+      >B</a
+      ><a name="3177"
+      > </a
+      ><a name="3178" class="Symbol"
+      >:</a
+      ><a name="3179"
+      > </a
+      ><a name="3180" href="Recursion.html#3164" class="Bound"
+      >A</a
+      ><a name="3181"
+      > </a
+      ><a name="3182" class="Symbol"
+      >&#8594;</a
+      ><a name="3183"
+      > </a
+      ><a name="3184" class="PrimitiveType"
+      >Set</a
+      ><a name="3187" class="Symbol"
+      >}</a
+      ><a name="3188"
+      > </a
+      ><a name="3189" class="Symbol"
+      >&#8594;</a
+      ><a name="3190"
+      > </a
+      ><a name="3191" href="Recursion.html#2769" class="Datatype"
+      >W</a
+      ><a name="3192"
+      > </a
+      ><a name="3193" href="Recursion.html#3164" class="Bound"
+      >A</a
+      ><a name="3194"
+      > </a
+      ><a name="3195" href="Recursion.html#3176" class="Bound"
+      >B</a
+      ><a name="3196"
+      > </a
+      ><a name="3197" class="Symbol"
+      >&#8594;</a
+      ><a name="3198"
+      > </a
+      ><a name="3199" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="3202"
+      > </a
+      ><a name="3203" class="Symbol"
+      >(</a
+      ><a name="3204" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="3205"
+      > </a
+      ><a name="3206" href="Recursion.html#3164" class="Bound"
+      >A</a
+      ><a name="3207"
+      > </a
+      ><a name="3208" href="Recursion.html#3176" class="Bound"
+      >B</a
+      ><a name="3209" class="Symbol"
+      >)</a
+      ><a name="3210"
+      >
+</a
+      ><a name="3211" href="Recursion.html#3148" class="Function"
+      >terminatingW</a
+      ><a name="3223"
+      > </a
+      ><a name="3224" class="Symbol"
+      >(</a
+      ><a name="3225" href="Recursion.html#2809" class="InductiveConstructor"
+      >sup</a
+      ><a name="3228"
+      > </a
+      ><a name="3229" href="Recursion.html#3229" class="Bound"
+      >a</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" href="Recursion.html#3231" class="Bound"
+      >fw</a
+      ><a name="3233" class="Symbol"
+      >)</a
+      ><a name="3234"
+      > </a
+      ><a name="3235" href="Recursion.html#3235" class="Bound"
+      >fb</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" class="Symbol"
+      >=</a
+      ><a name="3239"
+      > </a
+      ><a name="3240" href="Recursion.html#3148" class="Function"
+      >terminatingW</a
+      ><a name="3252"
+      > </a
+      ><a name="3253" class="Symbol"
+      >(</a
+      ><a name="3254" href="Recursion.html#3231" class="Bound"
+      >fw</a
+      ><a name="3256"
+      > </a
+      ><a name="3257" class="Symbol"
+      >(</a
+      ><a name="3258" href="Recursion.html#3235" class="Bound"
+      >fb</a
+      ><a name="3260"
+      > </a
+      ><a name="3261" href="Recursion.html#3229" class="Bound"
+      >a</a
+      ><a name="3262" class="Symbol"
+      >))</a
+      ><a name="3264"
+      > </a
+      ><a name="3265" href="Recursion.html#3235" class="Bound"
+      >fb</a
+      ><a name="3267"
+      >
+
+
+</a
+      ><a name="3270" class="Comment"
+      >-- Data-type of Accessible Elements</a
+      ><a name="3305"
+      >
+
+</a
+      ><a name="3307" class="Keyword"
+      >data</a
+      ><a name="3311"
+      > </a
+      ><a name="3312" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3315"
+      > </a
+      ><a name="3316" class="Symbol"
+      >(</a
+      ><a name="3317" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3318"
+      > </a
+      ><a name="3319" class="Symbol"
+      >:</a
+      ><a name="3320"
+      > </a
+      ><a name="3321" class="PrimitiveType"
+      >Set</a
+      ><a name="3324" class="Symbol"
+      >)</a
+      ><a name="3325"
+      > </a
+      ><a name="3326" class="Symbol"
+      >(</a
+      ><a name="3327" href="Recursion.html#3327" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3330"
+      > </a
+      ><a name="3331" class="Symbol"
+      >:</a
+      ><a name="3332"
+      > </a
+      ><a name="3333" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3334"
+      > </a
+      ><a name="3335" class="Symbol"
+      >&#8594;</a
+      ><a name="3336"
+      > </a
+      ><a name="3337" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3338"
+      > </a
+      ><a name="3339" class="Symbol"
+      >&#8594;</a
+      ><a name="3340"
+      > </a
+      ><a name="3341" class="PrimitiveType"
+      >Set</a
+      ><a name="3344" class="Symbol"
+      >)</a
+      ><a name="3345"
+      > </a
+      ><a name="3346" class="Symbol"
+      >(</a
+      ><a name="3347" href="Recursion.html#3347" class="Bound"
+      >a</a
+      ><a name="3348"
+      > </a
+      ><a name="3349" class="Symbol"
+      >:</a
+      ><a name="3350"
+      > </a
+      ><a name="3351" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3352" class="Symbol"
+      >)</a
+      ><a name="3353"
+      > </a
+      ><a name="3354" class="Symbol"
+      >:</a
+      ><a name="3355"
+      > </a
+      ><a name="3356" class="PrimitiveType"
+      >Set</a
+      ><a name="3359"
+      > </a
+      ><a name="3360" class="Keyword"
+      >where</a
+      ><a name="3365"
+      >
+  </a
+      ><a name="3368" href="Recursion.html#3368" class="InductiveConstructor"
+      >acc</a
+      ><a name="3371"
+      > </a
+      ><a name="3372" class="Symbol"
+      >:</a
+      ><a name="3373"
+      > </a
+      ><a name="3374" class="Symbol"
+      >((</a
+      ><a name="3376" href="Recursion.html#3376" class="Bound"
+      >y</a
+      ><a name="3377"
+      > </a
+      ><a name="3378" class="Symbol"
+      >:</a
+      ><a name="3379"
+      > </a
+      ><a name="3380" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3381" class="Symbol"
+      >)</a
+      ><a name="3382"
+      > </a
+      ><a name="3383" class="Symbol"
+      >&#8594;</a
+      ><a name="3384"
+      > </a
+      ><a name="3385" href="Recursion.html#3376" class="Bound"
+      >y</a
+      ><a name="3386"
+      > </a
+      ><a name="3387" href="Recursion.html#3327" class="Bound Operator"
+      >&#8826;</a
+      ><a name="3388"
+      > </a
+      ><a name="3389" href="Recursion.html#3347" class="Bound"
+      >a</a
+      ><a name="3390"
+      > </a
+      ><a name="3391" class="Symbol"
+      >&#8594;</a
+      ><a name="3392"
+      > </a
+      ><a name="3393" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3396"
+      > </a
+      ><a name="3397" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3398"
+      > </a
+      ><a name="3399" href="Recursion.html#3327" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3402"
+      > </a
+      ><a name="3403" href="Recursion.html#3376" class="Bound"
+      >y</a
+      ><a name="3404" class="Symbol"
+      >)</a
+      ><a name="3405"
+      > </a
+      ><a name="3406" class="Symbol"
+      >&#8594;</a
+      ><a name="3407"
+      > </a
+      ><a name="3408" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3411"
+      > </a
+      ><a name="3412" href="Recursion.html#3317" class="Bound"
+      >A</a
+      ><a name="3413"
+      > </a
+      ><a name="3414" href="Recursion.html#3327" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3417"
+      > </a
+      ><a name="3418" href="Recursion.html#3347" class="Bound"
+      >a</a
+      ><a name="3419"
+      >
+
+</a
+      ><a name="3421" class="Keyword"
+      >mutual</a
+      ><a name="3427"
+      >
+
+  </a
+      ><a name="3431" href="Recursion.html#3431" class="Function"
+      >wfrec</a
+      ><a name="3436"
+      > </a
+      ><a name="3437" class="Symbol"
+      >:</a
+      ><a name="3438"
+      > </a
+      ><a name="3439" class="Symbol"
+      >{</a
+      ><a name="3440" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3441"
+      > </a
+      ><a name="3442" class="Symbol"
+      >:</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" class="PrimitiveType"
+      >Set</a
+      ><a name="3447" class="Symbol"
+      >}</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" class="Symbol"
+      >&#8594;</a
+      ><a name="3450"
+      > </a
+      ><a name="3451" class="Symbol"
+      >{</a
+      ><a name="3452" href="Recursion.html#3452" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3455"
+      > </a
+      ><a name="3456" class="Symbol"
+      >:</a
+      ><a name="3457"
+      > </a
+      ><a name="3458" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3459"
+      > </a
+      ><a name="3460" class="Symbol"
+      >&#8594;</a
+      ><a name="3461"
+      > </a
+      ><a name="3462" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3463"
+      > </a
+      ><a name="3464" class="Symbol"
+      >&#8594;</a
+      ><a name="3465"
+      > </a
+      ><a name="3466" class="PrimitiveType"
+      >Set</a
+      ><a name="3469" class="Symbol"
+      >}</a
+      ><a name="3470"
+      > </a
+      ><a name="3471" class="Symbol"
+      >&#8594;</a
+      ><a name="3472"
+      > </a
+      ><a name="3473" class="Symbol"
+      >{</a
+      ><a name="3474" href="Recursion.html#3474" class="Bound"
+      >P</a
+      ><a name="3475"
+      > </a
+      ><a name="3476" class="Symbol"
+      >:</a
+      ><a name="3477"
+      > </a
+      ><a name="3478" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3479"
+      > </a
+      ><a name="3480" class="Symbol"
+      >&#8594;</a
+      ><a name="3481"
+      > </a
+      ><a name="3482" class="PrimitiveType"
+      >Set</a
+      ><a name="3485" class="Symbol"
+      >}</a
+      ><a name="3486"
+      > </a
+      ><a name="3487" class="Symbol"
+      >&#8594;</a
+      ><a name="3488"
+      > </a
+      ><a name="3489" class="Symbol"
+      >(</a
+      ><a name="3490" href="Recursion.html#3490" class="Bound"
+      >a</a
+      ><a name="3491"
+      > </a
+      ><a name="3492" class="Symbol"
+      >:</a
+      ><a name="3493"
+      > </a
+      ><a name="3494" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3495" class="Symbol"
+      >)</a
+      ><a name="3496"
+      > </a
+      ><a name="3497" class="Symbol"
+      >&#8594;</a
+      ><a name="3498"
+      > </a
+      ><a name="3499" class="Symbol"
+      >((</a
+      ><a name="3501" href="Recursion.html#3501" class="Bound"
+      >y</a
+      ><a name="3502"
+      > </a
+      ><a name="3503" class="Symbol"
+      >:</a
+      ><a name="3504"
+      > </a
+      ><a name="3505" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3506" class="Symbol"
+      >)</a
+      ><a name="3507"
+      > </a
+      ><a name="3508" class="Symbol"
+      >&#8594;</a
+      ><a name="3509"
+      > </a
+      ><a name="3510" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3513"
+      > </a
+      ><a name="3514" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3515"
+      > </a
+      ><a name="3516" href="Recursion.html#3452" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3519"
+      > </a
+      ><a name="3520" href="Recursion.html#3501" class="Bound"
+      >y</a
+      ><a name="3521"
+      > </a
+      ><a name="3522" class="Symbol"
+      >&#8594;</a
+      ><a name="3523"
+      > </a
+      ><a name="3524" class="Symbol"
+      >((</a
+      ><a name="3526" href="Recursion.html#3526" class="Bound"
+      >z</a
+      ><a name="3527"
+      > </a
+      ><a name="3528" class="Symbol"
+      >:</a
+      ><a name="3529"
+      > </a
+      ><a name="3530" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3531" class="Symbol"
+      >)</a
+      ><a name="3532"
+      > </a
+      ><a name="3533" class="Symbol"
+      >&#8594;</a
+      ><a name="3534"
+      > </a
+      ><a name="3535" href="Recursion.html#3526" class="Bound"
+      >z</a
+      ><a name="3536"
+      > </a
+      ><a name="3537" href="Recursion.html#3452" class="Bound Operator"
+      >&#8826;</a
+      ><a name="3538"
+      > </a
+      ><a name="3539" href="Recursion.html#3501" class="Bound"
+      >y</a
+      ><a name="3540"
+      > </a
+      ><a name="3541" class="Symbol"
+      >&#8594;</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" href="Recursion.html#3474" class="Bound"
+      >P</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="Recursion.html#3526" class="Bound"
+      >z</a
+      ><a name="3546" class="Symbol"
+      >)</a
+      ><a name="3547"
+      > </a
+      ><a name="3548" class="Symbol"
+      >&#8594;</a
+      ><a name="3549"
+      > </a
+      ><a name="3550" href="Recursion.html#3474" class="Bound"
+      >P</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" href="Recursion.html#3501" class="Bound"
+      >y</a
+      ><a name="3553" class="Symbol"
+      >)</a
+      ><a name="3554"
+      > </a
+      ><a name="3555" class="Symbol"
+      >&#8594;</a
+      ><a name="3556"
+      > </a
+      ><a name="3557" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3560"
+      > </a
+      ><a name="3561" href="Recursion.html#3440" class="Bound"
+      >A</a
+      ><a name="3562"
+      > </a
+      ><a name="3563" href="Recursion.html#3452" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3566"
+      > </a
+      ><a name="3567" href="Recursion.html#3490" class="Bound"
+      >a</a
+      ><a name="3568"
+      > </a
+      ><a name="3569" class="Symbol"
+      >&#8594;</a
+      ><a name="3570"
+      > </a
+      ><a name="3571" href="Recursion.html#3474" class="Bound"
+      >P</a
+      ><a name="3572"
+      > </a
+      ><a name="3573" href="Recursion.html#3490" class="Bound"
+      >a</a
+      ><a name="3574"
+      >
+  </a
+      ><a name="3577" href="Recursion.html#3431" class="Function"
+      >wfrec</a
+      ><a name="3582"
+      > </a
+      ><a name="3583" href="Recursion.html#3583" class="Bound"
+      >a</a
+      ><a name="3584"
+      > </a
+      ><a name="3585" href="Recursion.html#3585" class="Bound"
+      >step</a
+      ><a name="3589"
+      > </a
+      ><a name="3590" href="Recursion.html#3590" class="Bound"
+      >Aa</a
+      ><a name="3592"
+      > </a
+      ><a name="3593" class="Symbol"
+      >=</a
+      ><a name="3594"
+      > </a
+      ><a name="3595" href="Recursion.html#3585" class="Bound"
+      >step</a
+      ><a name="3599"
+      > </a
+      ><a name="3600" href="Recursion.html#3583" class="Bound"
+      >a</a
+      ><a name="3601"
+      > </a
+      ><a name="3602" href="Recursion.html#3590" class="Bound"
+      >Aa</a
+      ><a name="3604"
+      > </a
+      ><a name="3605" class="Symbol"
+      >(</a
+      ><a name="3606" href="Recursion.html#3627" class="Function"
+      >wfrec'</a
+      ><a name="3612"
+      > </a
+      ><a name="3613" href="Recursion.html#3585" class="Bound"
+      >step</a
+      ><a name="3617"
+      > </a
+      ><a name="3618" href="Recursion.html#3590" class="Bound"
+      >Aa</a
+      ><a name="3620" class="Symbol"
+      >)</a
+      ><a name="3621"
+      >
+  
+  </a
+      ><a name="3627" href="Recursion.html#3627" class="Function"
+      >wfrec'</a
+      ><a name="3633"
+      > </a
+      ><a name="3634" class="Symbol"
+      >:</a
+      ><a name="3635"
+      > </a
+      ><a name="3636" class="Symbol"
+      >{</a
+      ><a name="3637" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3638"
+      > </a
+      ><a name="3639" class="Symbol"
+      >:</a
+      ><a name="3640"
+      > </a
+      ><a name="3641" class="PrimitiveType"
+      >Set</a
+      ><a name="3644" class="Symbol"
+      >}</a
+      ><a name="3645"
+      > </a
+      ><a name="3646" class="Symbol"
+      >&#8594;</a
+      ><a name="3647"
+      > </a
+      ><a name="3648" class="Symbol"
+      >{</a
+      ><a name="3649" href="Recursion.html#3649" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3652"
+      > </a
+      ><a name="3653" class="Symbol"
+      >:</a
+      ><a name="3654"
+      > </a
+      ><a name="3655" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3656"
+      > </a
+      ><a name="3657" class="Symbol"
+      >&#8594;</a
+      ><a name="3658"
+      > </a
+      ><a name="3659" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3660"
+      > </a
+      ><a name="3661" class="Symbol"
+      >&#8594;</a
+      ><a name="3662"
+      > </a
+      ><a name="3663" class="PrimitiveType"
+      >Set</a
+      ><a name="3666" class="Symbol"
+      >}</a
+      ><a name="3667"
+      > </a
+      ><a name="3668" class="Symbol"
+      >&#8594;</a
+      ><a name="3669"
+      > </a
+      ><a name="3670" class="Symbol"
+      >{</a
+      ><a name="3671" href="Recursion.html#3671" class="Bound"
+      >P</a
+      ><a name="3672"
+      > </a
+      ><a name="3673" class="Symbol"
+      >:</a
+      ><a name="3674"
+      > </a
+      ><a name="3675" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3676"
+      > </a
+      ><a name="3677" class="Symbol"
+      >&#8594;</a
+      ><a name="3678"
+      > </a
+      ><a name="3679" class="PrimitiveType"
+      >Set</a
+      ><a name="3682" class="Symbol"
+      >}</a
+      ><a name="3683"
+      > </a
+      ><a name="3684" class="Symbol"
+      >&#8594;</a
+      ><a name="3685"
+      > </a
+      ><a name="3686" class="Symbol"
+      >{</a
+      ><a name="3687" href="Recursion.html#3687" class="Bound"
+      >a</a
+      ><a name="3688"
+      > </a
+      ><a name="3689" class="Symbol"
+      >:</a
+      ><a name="3690"
+      > </a
+      ><a name="3691" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3692" class="Symbol"
+      >}</a
+      ><a name="3693"
+      > </a
+      ><a name="3694" class="Symbol"
+      >&#8594;</a
+      ><a name="3695"
+      > </a
+      ><a name="3696" class="Symbol"
+      >((</a
+      ><a name="3698" href="Recursion.html#3698" class="Bound"
+      >y</a
+      ><a name="3699"
+      > </a
+      ><a name="3700" class="Symbol"
+      >:</a
+      ><a name="3701"
+      > </a
+      ><a name="3702" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3703" class="Symbol"
+      >)</a
+      ><a name="3704"
+      > </a
+      ><a name="3705" class="Symbol"
+      >&#8594;</a
+      ><a name="3706"
+      > </a
+      ><a name="3707" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3710"
+      > </a
+      ><a name="3711" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3712"
+      > </a
+      ><a name="3713" href="Recursion.html#3649" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3716"
+      > </a
+      ><a name="3717" href="Recursion.html#3698" class="Bound"
+      >y</a
+      ><a name="3718"
+      > </a
+      ><a name="3719" class="Symbol"
+      >&#8594;</a
+      ><a name="3720"
+      > </a
+      ><a name="3721" class="Symbol"
+      >((</a
+      ><a name="3723" href="Recursion.html#3723" class="Bound"
+      >z</a
+      ><a name="3724"
+      > </a
+      ><a name="3725" class="Symbol"
+      >:</a
+      ><a name="3726"
+      > </a
+      ><a name="3727" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3728" class="Symbol"
+      >)</a
+      ><a name="3729"
+      > </a
+      ><a name="3730" class="Symbol"
+      >&#8594;</a
+      ><a name="3731"
+      > </a
+      ><a name="3732" href="Recursion.html#3723" class="Bound"
+      >z</a
+      ><a name="3733"
+      > </a
+      ><a name="3734" href="Recursion.html#3649" class="Bound Operator"
+      >&#8826;</a
+      ><a name="3735"
+      > </a
+      ><a name="3736" href="Recursion.html#3698" class="Bound"
+      >y</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" class="Symbol"
+      >&#8594;</a
+      ><a name="3739"
+      > </a
+      ><a name="3740" href="Recursion.html#3671" class="Bound"
+      >P</a
+      ><a name="3741"
+      > </a
+      ><a name="3742" href="Recursion.html#3723" class="Bound"
+      >z</a
+      ><a name="3743" class="Symbol"
+      >)</a
+      ><a name="3744"
+      > </a
+      ><a name="3745" class="Symbol"
+      >&#8594;</a
+      ><a name="3746"
+      > </a
+      ><a name="3747" href="Recursion.html#3671" class="Bound"
+      >P</a
+      ><a name="3748"
+      > </a
+      ><a name="3749" href="Recursion.html#3698" class="Bound"
+      >y</a
+      ><a name="3750" class="Symbol"
+      >)</a
+      ><a name="3751"
+      > </a
+      ><a name="3752" class="Symbol"
+      >&#8594;</a
+      ><a name="3753"
+      > </a
+      ><a name="3754" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3757"
+      > </a
+      ><a name="3758" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3759"
+      > </a
+      ><a name="3760" href="Recursion.html#3649" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3763"
+      > </a
+      ><a name="3764" href="Recursion.html#3687" class="Bound"
+      >a</a
+      ><a name="3765"
+      > </a
+      ><a name="3766" class="Symbol"
+      >&#8594;</a
+      ><a name="3767"
+      > </a
+      ><a name="3768" class="Symbol"
+      >(</a
+      ><a name="3769" href="Recursion.html#3769" class="Bound"
+      >z</a
+      ><a name="3770"
+      > </a
+      ><a name="3771" class="Symbol"
+      >:</a
+      ><a name="3772"
+      > </a
+      ><a name="3773" href="Recursion.html#3637" class="Bound"
+      >A</a
+      ><a name="3774" class="Symbol"
+      >)</a
+      ><a name="3775"
+      > </a
+      ><a name="3776" class="Symbol"
+      >&#8594;</a
+      ><a name="3777"
+      > </a
+      ><a name="3778" href="Recursion.html#3769" class="Bound"
+      >z</a
+      ><a name="3779"
+      > </a
+      ><a name="3780" href="Recursion.html#3649" class="Bound Operator"
+      >&#8826;</a
+      ><a name="3781"
+      > </a
+      ><a name="3782" href="Recursion.html#3687" class="Bound"
+      >a</a
+      ><a name="3783"
+      > </a
+      ><a name="3784" class="Symbol"
+      >&#8594;</a
+      ><a name="3785"
+      > </a
+      ><a name="3786" href="Recursion.html#3671" class="Bound"
+      >P</a
+      ><a name="3787"
+      > </a
+      ><a name="3788" href="Recursion.html#3769" class="Bound"
+      >z</a
+      ><a name="3789"
+      >
+  </a
+      ><a name="3792" href="Recursion.html#3627" class="Function"
+      >wfrec'</a
+      ><a name="3798"
+      > </a
+      ><a name="3799" href="Recursion.html#3799" class="Bound"
+      >step</a
+      ><a name="3803"
+      > </a
+      ><a name="3804" class="Symbol"
+      >(</a
+      ><a name="3805" href="Recursion.html#3368" class="InductiveConstructor"
+      >acc</a
+      ><a name="3808"
+      > </a
+      ><a name="3809" href="Recursion.html#3809" class="Bound"
+      >f</a
+      ><a name="3810" class="Symbol"
+      >)</a
+      ><a name="3811"
+      > </a
+      ><a name="3812" href="Recursion.html#3812" class="Bound"
+      >z</a
+      ><a name="3813"
+      > </a
+      ><a name="3814" href="Recursion.html#3814" class="Bound"
+      >za</a
+      ><a name="3816"
+      > </a
+      ><a name="3817" class="Symbol"
+      >=</a
+      ><a name="3818"
+      > </a
+      ><a name="3819" href="Recursion.html#3431" class="Function"
+      >wfrec</a
+      ><a name="3824"
+      > </a
+      ><a name="3825" href="Recursion.html#3812" class="Bound"
+      >z</a
+      ><a name="3826"
+      > </a
+      ><a name="3827" href="Recursion.html#3799" class="Bound"
+      >step</a
+      ><a name="3831"
+      > </a
+      ><a name="3832" class="Symbol"
+      >(</a
+      ><a name="3833" href="Recursion.html#3809" class="Bound"
+      >f</a
+      ><a name="3834"
+      > </a
+      ><a name="3835" href="Recursion.html#3812" class="Bound"
+      >z</a
+      ><a name="3836"
+      > </a
+      ><a name="3837" href="Recursion.html#3814" class="Bound"
+      >za</a
+      ><a name="3839" class="Symbol"
+      >)</a
+      ><a name="3840"
+      >
+
+
+</a
+      ><a name="3843" href="Recursion.html#3843" class="Function"
+      >acc-init</a
+      ><a name="3851"
+      > </a
+      ><a name="3852" class="Symbol"
+      >:</a
+      ><a name="3853"
+      > </a
+      ><a name="3854" class="Symbol"
+      >{</a
+      ><a name="3855" href="Recursion.html#3855" class="Bound"
+      >A</a
+      ><a name="3856"
+      > </a
+      ><a name="3857" class="Symbol"
+      >:</a
+      ><a name="3858"
+      > </a
+      ><a name="3859" class="PrimitiveType"
+      >Set</a
+      ><a name="3862" class="Symbol"
+      >}</a
+      ><a name="3863"
+      > </a
+      ><a name="3864" class="Symbol"
+      >&#8594;</a
+      ><a name="3865"
+      > </a
+      ><a name="3866" class="Symbol"
+      >{</a
+      ><a name="3867" href="Recursion.html#3867" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3870"
+      > </a
+      ><a name="3871" class="Symbol"
+      >:</a
+      ><a name="3872"
+      > </a
+      ><a name="3873" href="Recursion.html#3855" class="Bound"
+      >A</a
+      ><a name="3874"
+      > </a
+      ><a name="3875" class="Symbol"
+      >&#8594;</a
+      ><a name="3876"
+      > </a
+      ><a name="3877" href="Recursion.html#3855" class="Bound"
+      >A</a
+      ><a name="3878"
+      > </a
+      ><a name="3879" class="Symbol"
+      >&#8594;</a
+      ><a name="3880"
+      > </a
+      ><a name="3881" class="PrimitiveType"
+      >Set</a
+      ><a name="3884" class="Symbol"
+      >}</a
+      ><a name="3885"
+      > </a
+      ><a name="3886" class="Symbol"
+      >&#8594;</a
+      ><a name="3887"
+      > </a
+      ><a name="3888" class="Symbol"
+      >{</a
+      ><a name="3889" href="Recursion.html#3889" class="Bound"
+      >a</a
+      ><a name="3890"
+      > </a
+      ><a name="3891" class="Symbol"
+      >:</a
+      ><a name="3892"
+      > </a
+      ><a name="3893" href="Recursion.html#3855" class="Bound"
+      >A</a
+      ><a name="3894" class="Symbol"
+      >}</a
+      ><a name="3895"
+      > </a
+      ><a name="3896" class="Symbol"
+      >&#8594;</a
+      ><a name="3897"
+      > </a
+      ><a name="3898" class="Symbol"
+      >((</a
+      ><a name="3900" href="Recursion.html#3900" class="Bound"
+      >y</a
+      ><a name="3901"
+      > </a
+      ><a name="3902" class="Symbol"
+      >:</a
+      ><a name="3903"
+      > </a
+      ><a name="3904" href="Recursion.html#3855" class="Bound"
+      >A</a
+      ><a name="3905" class="Symbol"
+      >)</a
+      ><a name="3906"
+      > </a
+      ><a name="3907" class="Symbol"
+      >&#8594;</a
+      ><a name="3908"
+      > </a
+      ><a name="3909" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="3912"
+      > </a
+      ><a name="3913" class="Symbol"
+      >(</a
+      ><a name="3914" href="Recursion.html#3900" class="Bound"
+      >y</a
+      ><a name="3915"
+      > </a
+      ><a name="3916" href="Recursion.html#3867" class="Bound Operator"
+      >&#8826;</a
+      ><a name="3917"
+      > </a
+      ><a name="3918" href="Recursion.html#3889" class="Bound"
+      >a</a
+      ><a name="3919" class="Symbol"
+      >))</a
+      ><a name="3921"
+      > </a
+      ><a name="3922" class="Symbol"
+      >&#8594;</a
+      ><a name="3923"
+      > </a
+      ><a name="3924" href="Recursion.html#3312" class="Datatype"
+      >Acc</a
+      ><a name="3927"
+      > </a
+      ><a name="3928" href="Recursion.html#3855" class="Bound"
+      >A</a
+      ><a name="3929"
+      > </a
+      ><a name="3930" href="Recursion.html#3867" class="Bound Operator"
+      >_&#8826;_</a
+      ><a name="3933"
+      > </a
+      ><a name="3934" href="Recursion.html#3889" class="Bound"
+      >a</a
+      ><a name="3935"
+      >
+</a
+      ><a name="3936" href="Recursion.html#3843" class="Function"
+      >acc-init</a
+      ><a name="3944"
+      > </a
+      ><a name="3945" href="Recursion.html#3945" class="Bound"
+      >f</a
+      ><a name="3946"
+      > </a
+      ><a name="3947" class="Symbol"
+      >=</a
+      ><a name="3948"
+      > </a
+      ><a name="3949" href="Recursion.html#3368" class="InductiveConstructor"
+      >acc</a
+      ><a name="3952"
+      > </a
+      ><a name="3953" class="Symbol"
+      >(&#955;</a
+      ><a name="3955"
+      > </a
+      ><a name="3956" href="Recursion.html#3956" class="Bound"
+      >y</a
+      ><a name="3957"
+      > </a
+      ><a name="3958" class="Symbol"
+      >&#8594;</a
+      ><a name="3959"
+      > </a
+      ><a name="3960" href="NeilPrelude.html#1315" class="Function"
+      >absurd</a
+      ><a name="3966"
+      > </a
+      ><a name="3967" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="3968"
+      > </a
+      ><a name="3969" href="Recursion.html#3945" class="Bound"
+      >f</a
+      ><a name="3970"
+      > </a
+      ><a name="3971" href="Recursion.html#3956" class="Bound"
+      >y</a
+      ><a name="3972" class="Symbol"
+      >)</a
+      ><a name="3973"
+      >
+
+
+</a
+      ><a name="3976" class="Comment"
+      >{-
+
+-- Making more arguments implicit makes for a simpler definition
+-- It matches up closer with W types now as well
+
+data Acc' (A : Set) (_&#8826;_ : A &#8594; A &#8594; Set) (a : A) : Set where
+  acc : ({y : A} &#8594; y &#8826; a &#8594; Acc' A _&#8826;_ y) &#8594; Acc' A _&#8826;_ a
+
+rec : {A : Set} &#8594; {_&#8826;_ : A &#8594; A &#8594; Set} &#8594; {P : A &#8594; Set} &#8594; {a : A} &#8594; ({y : A} &#8594; Acc' A _&#8826;_ y &#8594; ({z : A} &#8594; z &#8826; y &#8594; P z) &#8594; P y) &#8594; Acc' A _&#8826;_ a &#8594; P a
+rec step (acc f) = step (acc f) (\lt &#8594; rec step (f lt))
+
+-}</a
+      ></pre
+    ></body
+  ></html
+>

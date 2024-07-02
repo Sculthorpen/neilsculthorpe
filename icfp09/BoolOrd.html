@@ -1,0 +1,2040 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >BoolOrd</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+    </a
+      ><a name="32" class="Symbol"
+      >#-}</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Keyword"
+      >open</a
+      ><a name="41"
+      > </a
+      ><a name="42" class="Keyword"
+      >import</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="60"
+      >
+</a
+      ><a name="61" class="Keyword"
+      >open</a
+      ><a name="65"
+      > </a
+      ><a name="66" class="Keyword"
+      >import</a
+      ><a name="72"
+      > </a
+      ><a name="73" href="BoolProps.html#69" class="Module"
+      >BoolProps</a
+      ><a name="82"
+      >
+</a
+      ><a name="83" class="Keyword"
+      >open</a
+      ><a name="87"
+      > </a
+      ><a name="88" class="Keyword"
+      >import</a
+      ><a name="94"
+      > </a
+      ><a name="95" href="Ord.html#87" class="Module"
+      >Ord</a
+      ><a name="98"
+      >
+
+</a
+      ><a name="100" class="Keyword"
+      >module</a
+      ><a name="106"
+      > </a
+      ><a name="107" href="BoolOrd.html#107" class="Module"
+      >BoolOrd</a
+      ><a name="114"
+      > </a
+      ><a name="115" class="Keyword"
+      >where</a
+      ><a name="120"
+      >
+
+</a
+      ><a name="122" class="Keyword"
+      >infix</a
+      ><a name="127"
+      > </a
+      ><a name="128" class="Number"
+      >3</a
+      ><a name="129"
+      > _&#8804;B_ _&lt;B_
+
+</a
+      ><a name="141" class="Keyword"
+      >infix</a
+      ><a name="146"
+      > </a
+      ><a name="147" class="Number"
+      >8</a
+      ><a name="148"
+      > _&lt;=B_
+
+</a
+      ><a name="156" class="Comment"
+      >--------------------------------</a
+      ><a name="188"
+      >
+
+</a
+      ><a name="190" href="BoolOrd.html#190" class="Function Operator"
+      >_&lt;=B_</a
+      ><a name="195"
+      > </a
+      ><a name="196" class="Symbol"
+      >:</a
+      ><a name="197"
+      > </a
+      ><a name="198" href="NeilPrelude.html#3096" class="Function"
+      >Op</a
+      ><a name="200"
+      > </a
+      ><a name="201" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="205"
+      >
+</a
+      ><a name="206" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="211"
+      > </a
+      ><a name="212" href="BoolOrd.html#190" class="Function Operator"
+      >&lt;=B</a
+      ><a name="215"
+      > </a
+      ><a name="216" class="Symbol"
+      >_</a
+      ><a name="217"
+      >     </a
+      ><a name="222" class="Symbol"
+      >=</a
+      ><a name="223"
+      > </a
+      ><a name="224" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="228"
+      >
+</a
+      ><a name="229" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="233"
+      >  </a
+      ><a name="235" href="BoolOrd.html#190" class="Function Operator"
+      >&lt;=B</a
+      ><a name="238"
+      > </a
+      ><a name="239" href="BoolOrd.html#239" class="Bound"
+      >b</a
+      ><a name="240"
+      >     </a
+      ><a name="245" class="Symbol"
+      >=</a
+      ><a name="246"
+      > </a
+      ><a name="247" href="BoolOrd.html#239" class="Bound"
+      >b</a
+      ><a name="248"
+      >
+
+</a
+      ><a name="250" class="Comment"
+      >--------------------------------</a
+      ><a name="282"
+      >
+
+</a
+      ><a name="284" class="Keyword"
+      >data</a
+      ><a name="288"
+      > </a
+      ><a name="289" href="BoolOrd.html#289" class="Datatype Operator"
+      >_&lt;B_</a
+      ><a name="293"
+      > </a
+      ><a name="294" class="Symbol"
+      >:</a
+      ><a name="295"
+      > </a
+      ><a name="296" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="300"
+      > </a
+      ><a name="301" class="Symbol"
+      >&#8594;</a
+      ><a name="302"
+      > </a
+      ><a name="303" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="307"
+      > </a
+      ><a name="308" class="Symbol"
+      >&#8594;</a
+      ><a name="309"
+      > </a
+      ><a name="310" class="PrimitiveType"
+      >Set</a
+      ><a name="313"
+      > </a
+      ><a name="314" class="Keyword"
+      >where</a
+      ><a name="319"
+      >
+  </a
+      ><a name="322" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="325"
+      > </a
+      ><a name="326" class="Symbol"
+      >:</a
+      ><a name="327"
+      > </a
+      ><a name="328" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="333"
+      > </a
+      ><a name="334" href="BoolOrd.html#289" class="Datatype Operator"
+      >&lt;B</a
+      ><a name="336"
+      > </a
+      ><a name="337" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="341"
+      >
+
+</a
+      ><a name="343" href="BoolOrd.html#343" class="Function"
+      >&lt;transB</a
+      ><a name="350"
+      > </a
+      ><a name="351" class="Symbol"
+      >:</a
+      ><a name="352"
+      > </a
+      ><a name="353" href="NeilPrelude.html#2393" class="Function"
+      >Transitive</a
+      ><a name="363"
+      > </a
+      ><a name="364" href="BoolOrd.html#289" class="Datatype Operator"
+      >_&lt;B_</a
+      ><a name="368"
+      >
+</a
+      ><a name="369" href="BoolOrd.html#343" class="Function"
+      >&lt;transB</a
+      ><a name="376"
+      > </a
+      ><a name="377" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="380"
+      > </a
+      ><a name="381" class="Symbol"
+      >()</a
+      ><a name="383"
+      >
+
+</a
+      ><a name="385" href="BoolOrd.html#385" class="Function"
+      >&lt;trichB</a
+      ><a name="392"
+      > </a
+      ><a name="393" class="Symbol"
+      >:</a
+      ><a name="394"
+      > </a
+      ><a name="395" href="NeilPrelude.html#2834" class="Function"
+      >Trichotomous</a
+      ><a name="407"
+      > </a
+      ><a name="408" href="BoolOrd.html#289" class="Datatype Operator"
+      >_&lt;B_</a
+      ><a name="412"
+      >
+</a
+      ><a name="413" href="BoolOrd.html#385" class="Function"
+      >&lt;trichB</a
+      ><a name="420"
+      > </a
+      ><a name="421" class="Symbol"
+      >{</a
+      ><a name="422" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="427" class="Symbol"
+      >}</a
+      ><a name="428"
+      > </a
+      ><a name="429" class="Symbol"
+      >{</a
+      ><a name="430" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="435" class="Symbol"
+      >}</a
+      ><a name="436"
+      > </a
+      ><a name="437" class="Symbol"
+      >=</a
+      ><a name="438"
+      > </a
+      ><a name="439" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="442"
+      > </a
+      ><a name="443" class="Symbol"
+      >(</a
+      ><a name="444" class="InductiveConstructor"
+      >refl</a
+      ><a name="448"
+      > </a
+      ><a name="449" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="450"
+      > </a
+      ><a name="451" href="NeilPrelude.html#17651" class="Function"
+      >fork</a
+      ><a name="455"
+      > </a
+      ><a name="456" class="Symbol"
+      >(\</a
+      ><a name="458"
+      > </a
+      ><a name="459" class="Symbol"
+      >()))</a
+      ><a name="463"
+      >
+</a
+      ><a name="464" href="BoolOrd.html#385" class="Function"
+      >&lt;trichB</a
+      ><a name="471"
+      > </a
+      ><a name="472" class="Symbol"
+      >{</a
+      ><a name="473" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="478" class="Symbol"
+      >}</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Symbol"
+      >{</a
+      ><a name="481" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="485" class="Symbol"
+      >}</a
+      ><a name="486"
+      >  </a
+      ><a name="488" class="Symbol"
+      >=</a
+      ><a name="489"
+      > </a
+      ><a name="490" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="493"
+      > </a
+      ><a name="494" class="Symbol"
+      >(</a
+      ><a name="495" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="Symbol"
+      >((\</a
+      ><a name="502"
+      > </a
+      ><a name="503" class="Symbol"
+      >())</a
+      ><a name="506"
+      > </a
+      ><a name="507" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="508"
+      > </a
+      ><a name="509" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="514"
+      > </a
+      ><a name="515" class="Symbol"
+      >\</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >()))</a
+      ><a name="521"
+      >
+</a
+      ><a name="522" href="BoolOrd.html#385" class="Function"
+      >&lt;trichB</a
+      ><a name="529"
+      > </a
+      ><a name="530" class="Symbol"
+      >{</a
+      ><a name="531" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="535" class="Symbol"
+      >}</a
+      ><a name="536"
+      > </a
+      ><a name="537" class="Symbol"
+      >{</a
+      ><a name="538" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="543" class="Symbol"
+      >}</a
+      ><a name="544"
+      >  </a
+      ><a name="546" class="Symbol"
+      >=</a
+      ><a name="547"
+      > </a
+      ><a name="548" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="551"
+      > </a
+      ><a name="552" class="Symbol"
+      >(</a
+      ><a name="553" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="556"
+      > </a
+      ><a name="557" class="Symbol"
+      >(</a
+      ><a name="558"
+      > </a
+      ><a name="559" class="Symbol"
+      >(\</a
+      ><a name="561"
+      > </a
+      ><a name="562" class="Symbol"
+      >())</a
+      ><a name="565"
+      > </a
+      ><a name="566" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="567"
+      > </a
+      ><a name="568" class="Symbol"
+      >(\</a
+      ><a name="570"
+      > </a
+      ><a name="571" class="Symbol"
+      >())</a
+      ><a name="574"
+      > </a
+      ><a name="575" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="576"
+      > </a
+      ><a name="577" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="580" class="Symbol"
+      >))</a
+      ><a name="582"
+      >
+</a
+      ><a name="583" href="BoolOrd.html#385" class="Function"
+      >&lt;trichB</a
+      ><a name="590"
+      > </a
+      ><a name="591" class="Symbol"
+      >{</a
+      ><a name="592" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="596" class="Symbol"
+      >}</a
+      ><a name="597"
+      > </a
+      ><a name="598" class="Symbol"
+      >{</a
+      ><a name="599" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="603" class="Symbol"
+      >}</a
+      ><a name="604"
+      >   </a
+      ><a name="607" class="Symbol"
+      >=</a
+      ><a name="608"
+      > </a
+      ><a name="609" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="612"
+      > </a
+      ><a name="613" class="Symbol"
+      >(</a
+      ><a name="614" class="InductiveConstructor"
+      >refl</a
+      ><a name="618"
+      > </a
+      ><a name="619" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="NeilPrelude.html#17651" class="Function"
+      >fork</a
+      ><a name="625"
+      > </a
+      ><a name="626" class="Symbol"
+      >(\</a
+      ><a name="628"
+      > </a
+      ><a name="629" class="Symbol"
+      >()))</a
+      ><a name="633"
+      >
+
+</a
+      ><a name="635" class="Keyword"
+      >import</a
+      ><a name="641"
+      > </a
+      ><a name="642" href="StrictTotalOrder.html#69" class="Module"
+      >StrictTotalOrder</a
+      ><a name="658"
+      >
+</a
+      ><a name="659" class="Keyword"
+      >open</a
+      ><a name="663"
+      > </a
+      ><a name="664" href="StrictTotalOrder.html#69" class="Module"
+      >StrictTotalOrder</a
+      ><a name="680"
+      > </a
+      ><a name="681" href="BoolOrd.html#289" class="Datatype Operator"
+      >_&lt;B_</a
+      ><a name="685"
+      > </a
+      ><a name="686" href="BoolOrd.html#343" class="Function"
+      >&lt;transB</a
+      ><a name="693"
+      > </a
+      ><a name="694" href="BoolOrd.html#385" class="Function"
+      >&lt;trichB</a
+      ><a name="701"
+      > </a
+      ><a name="702" class="Keyword"
+      >public</a
+      ><a name="708"
+      >
+
+</a
+      ><a name="710" href="BoolOrd.html#710" class="Function Operator"
+      >_&#8804;B_</a
+      ><a name="714"
+      > </a
+      ><a name="715" class="Symbol"
+      >:</a
+      ><a name="716"
+      > </a
+      ><a name="717" href="NeilPrelude.html#1392" class="Function"
+      >Rel</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="725"
+      >
+</a
+      ><a name="726" href="BoolOrd.html#710" class="Function Operator"
+      >_&#8804;B_</a
+      ><a name="730"
+      > </a
+      ><a name="731" class="Symbol"
+      >=</a
+      ><a name="732"
+      > </a
+      ><a name="733" href="StrictPreOrder.html#741" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="736"
+      >
+
+</a
+      ><a name="738" href="BoolOrd.html#738" class="Function"
+      >f&#8804;t</a
+      ><a name="741"
+      > </a
+      ><a name="742" class="Symbol"
+      >:</a
+      ><a name="743"
+      > </a
+      ><a name="744" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="749"
+      > </a
+      ><a name="750" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="752"
+      > </a
+      ><a name="753" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="757"
+      >
+</a
+      ><a name="758" href="BoolOrd.html#738" class="Function"
+      >f&#8804;t</a
+      ><a name="761"
+      > </a
+      ><a name="762" class="Symbol"
+      >=</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="767"
+      > </a
+      ><a name="768" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="771"
+      >
+
+</a
+      ><a name="773" href="BoolOrd.html#773" class="Function"
+      >&#8804;false</a
+      ><a name="779"
+      > </a
+      ><a name="780" class="Symbol"
+      >:</a
+      ><a name="781"
+      > </a
+      ><a name="782" class="Symbol"
+      >{</a
+      ><a name="783" href="BoolOrd.html#783" class="Bound"
+      >b</a
+      ><a name="784"
+      > </a
+      ><a name="785" class="Symbol"
+      >:</a
+      ><a name="786"
+      > </a
+      ><a name="787" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="791" class="Symbol"
+      >}</a
+      ><a name="792"
+      > </a
+      ><a name="793" class="Symbol"
+      >&#8594;</a
+      ><a name="794"
+      > </a
+      ><a name="795" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="800"
+      > </a
+      ><a name="801" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="803"
+      > </a
+      ><a name="804" href="BoolOrd.html#783" class="Bound"
+      >b</a
+      ><a name="805"
+      >
+</a
+      ><a name="806" href="BoolOrd.html#773" class="Function"
+      >&#8804;false</a
+      ><a name="812"
+      > </a
+      ><a name="813" class="Symbol"
+      >{</a
+      ><a name="814" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="819" class="Symbol"
+      >}</a
+      ><a name="820"
+      > </a
+      ><a name="821" class="Symbol"
+      >=</a
+      ><a name="822"
+      > </a
+      ><a name="823" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="829"
+      >
+</a
+      ><a name="830" href="BoolOrd.html#773" class="Function"
+      >&#8804;false</a
+      ><a name="836"
+      > </a
+      ><a name="837" class="Symbol"
+      >{</a
+      ><a name="838" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="842" class="Symbol"
+      >}</a
+      ><a name="843"
+      >  </a
+      ><a name="845" class="Symbol"
+      >=</a
+      ><a name="846"
+      > </a
+      ><a name="847" href="BoolOrd.html#738" class="Function"
+      >f&#8804;t</a
+      ><a name="850"
+      >
+
+</a
+      ><a name="852" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="857"
+      > </a
+      ><a name="858" class="Symbol"
+      >:</a
+      ><a name="859"
+      > </a
+      ><a name="860" class="Symbol"
+      >{</a
+      ><a name="861" href="BoolOrd.html#861" class="Bound"
+      >b</a
+      ><a name="862"
+      > </a
+      ><a name="863" class="Symbol"
+      >:</a
+      ><a name="864"
+      > </a
+      ><a name="865" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="869" class="Symbol"
+      >}</a
+      ><a name="870"
+      > </a
+      ><a name="871" class="Symbol"
+      >&#8594;</a
+      ><a name="872"
+      > </a
+      ><a name="873" href="BoolOrd.html#861" class="Bound"
+      >b</a
+      ><a name="874"
+      > </a
+      ><a name="875" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="877"
+      > </a
+      ><a name="878" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="882"
+      >
+</a
+      ><a name="883" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="888"
+      > </a
+      ><a name="889" class="Symbol"
+      >{</a
+      ><a name="890" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="895" class="Symbol"
+      >}</a
+      ><a name="896"
+      > </a
+      ><a name="897" class="Symbol"
+      >=</a
+      ><a name="898"
+      > </a
+      ><a name="899" href="BoolOrd.html#738" class="Function"
+      >f&#8804;t</a
+      ><a name="902"
+      >
+</a
+      ><a name="903" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="908"
+      > </a
+      ><a name="909" class="Symbol"
+      >{</a
+      ><a name="910" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="914" class="Symbol"
+      >}</a
+      ><a name="915"
+      >  </a
+      ><a name="917" class="Symbol"
+      >=</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="925"
+      >
+
+</a
+      ><a name="927" href="BoolOrd.html#927" class="Function"
+      >&#8804;B-antisym</a
+      ><a name="937"
+      > </a
+      ><a name="938" class="Symbol"
+      >:</a
+      ><a name="939"
+      > </a
+      ><a name="940" href="NeilPrelude.html#1921" class="Function"
+      >Antisymmetric</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="BoolOrd.html#710" class="Function Operator"
+      >_&#8804;B_</a
+      ><a name="958"
+      >
+</a
+      ><a name="959" href="BoolOrd.html#927" class="Function"
+      >&#8804;B-antisym</a
+      ><a name="969"
+      > </a
+      ><a name="970" class="Symbol"
+      >=</a
+      ><a name="971"
+      > </a
+      ><a name="972" href="StrictPartialOrder.html#457" class="Function"
+      >antisymmetric</a
+      ><a name="985"
+      >
+
+</a
+      ><a name="987" href="BoolOrd.html#987" class="Function"
+      >&#8804;B-trans</a
+      ><a name="995"
+      > </a
+      ><a name="996" class="Symbol"
+      >:</a
+      ><a name="997"
+      > </a
+      ><a name="998" href="NeilPrelude.html#2393" class="Function"
+      >Transitive</a
+      ><a name="1008"
+      > </a
+      ><a name="1009" href="BoolOrd.html#710" class="Function Operator"
+      >_&#8804;B_</a
+      ><a name="1013"
+      >
+</a
+      ><a name="1014" href="BoolOrd.html#987" class="Function"
+      >&#8804;B-trans</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" class="Symbol"
+      >=</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" href="StrictPreOrder.html#964" class="Function"
+      >&#8804;-trans</a
+      ><a name="1032"
+      >
+
+</a
+      ><a name="1034" href="BoolOrd.html#1034" class="Function"
+      >&#8804;B-total</a
+      ><a name="1042"
+      > </a
+      ><a name="1043" class="Symbol"
+      >:</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" href="NeilPrelude.html#2600" class="Function"
+      >Total</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" href="BoolOrd.html#710" class="Function Operator"
+      >_&#8804;B_</a
+      ><a name="1055"
+      >
+</a
+      ><a name="1056" href="BoolOrd.html#1034" class="Function"
+      >&#8804;B-total</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" class="Symbol"
+      >=</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" href="StrictTotalOrder.html#539" class="Function"
+      >totality</a
+      ><a name="1075"
+      >
+
+</a
+      ><a name="1077" href="BoolOrd.html#1077" class="Function"
+      >&#8804;B-supL</a
+      ><a name="1084"
+      > </a
+      ><a name="1085" class="Symbol"
+      >:</a
+      ><a name="1086"
+      > </a
+      ><a name="1087" class="Symbol"
+      >{</a
+      ><a name="1088" href="BoolOrd.html#1088" class="Bound"
+      >a</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" href="BoolOrd.html#1090" class="Bound"
+      >b</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" class="Symbol"
+      >:</a
+      ><a name="1093"
+      > </a
+      ><a name="1094" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1098" class="Symbol"
+      >}</a
+      ><a name="1099"
+      > </a
+      ><a name="1100" class="Symbol"
+      >&#8594;</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" href="BoolOrd.html#1088" class="Bound"
+      >a</a
+      ><a name="1103"
+      > </a
+      ><a name="1104" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1106"
+      > </a
+      ><a name="1107" href="BoolOrd.html#1088" class="Bound"
+      >a</a
+      ><a name="1108"
+      > </a
+      ><a name="1109" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="1110"
+      > </a
+      ><a name="1111" href="BoolOrd.html#1090" class="Bound"
+      >b</a
+      ><a name="1112"
+      >
+</a
+      ><a name="1113" href="BoolOrd.html#1077" class="Function"
+      >&#8804;B-supL</a
+      ><a name="1120"
+      > </a
+      ><a name="1121" class="Symbol"
+      >{</a
+      ><a name="1122" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="1127" class="Symbol"
+      >}</a
+      ><a name="1128"
+      > </a
+      ><a name="1129" class="Symbol"
+      >=</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" href="BoolOrd.html#773" class="Function"
+      >&#8804;false</a
+      ><a name="1137"
+      >
+</a
+      ><a name="1138" href="BoolOrd.html#1077" class="Function"
+      >&#8804;B-supL</a
+      ><a name="1145"
+      > </a
+      ><a name="1146" class="Symbol"
+      >{</a
+      ><a name="1147" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="1151" class="Symbol"
+      >}</a
+      ><a name="1152"
+      > </a
+      ><a name="1153" class="Symbol"
+      >=</a
+      ><a name="1154"
+      > </a
+      ><a name="1155" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="1161"
+      >
+
+</a
+      ><a name="1163" href="BoolOrd.html#1163" class="Function"
+      >&#8804;B-supR</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" class="Symbol"
+      >:</a
+      ><a name="1172"
+      > </a
+      ><a name="1173" class="Symbol"
+      >{</a
+      ><a name="1174" href="BoolOrd.html#1174" class="Bound"
+      >a</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" href="BoolOrd.html#1176" class="Bound"
+      >b</a
+      ><a name="1177"
+      > </a
+      ><a name="1178" class="Symbol"
+      >:</a
+      ><a name="1179"
+      > </a
+      ><a name="1180" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1184" class="Symbol"
+      >}</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" class="Symbol"
+      >&#8594;</a
+      ><a name="1187"
+      > </a
+      ><a name="1188" href="BoolOrd.html#1176" class="Bound"
+      >b</a
+      ><a name="1189"
+      > </a
+      ><a name="1190" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" href="BoolOrd.html#1174" class="Bound"
+      >a</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" href="BoolOrd.html#1176" class="Bound"
+      >b</a
+      ><a name="1198"
+      >
+</a
+      ><a name="1199" href="BoolOrd.html#1163" class="Function"
+      >&#8804;B-supR</a
+      ><a name="1206"
+      > </a
+      ><a name="1207" class="Symbol"
+      >{</a
+      ><a name="1208" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="1213" class="Symbol"
+      >}</a
+      ><a name="1214"
+      > </a
+      ><a name="1215" class="Symbol"
+      >=</a
+      ><a name="1216"
+      > </a
+      ><a name="1217" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="1223"
+      >
+</a
+      ><a name="1224" href="BoolOrd.html#1163" class="Function"
+      >&#8804;B-supR</a
+      ><a name="1231"
+      > </a
+      ><a name="1232" class="Symbol"
+      >{</a
+      ><a name="1233" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="1237" class="Symbol"
+      >}</a
+      ><a name="1238"
+      >  </a
+      ><a name="1240" class="Symbol"
+      >=</a
+      ><a name="1241"
+      > </a
+      ><a name="1242" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="1247"
+      >
+
+</a
+      ><a name="1249" href="BoolOrd.html#1249" class="Function"
+      >&#8804;B-leastSup</a
+      ><a name="1260"
+      > </a
+      ><a name="1261" class="Symbol"
+      >:</a
+      ><a name="1262"
+      > </a
+      ><a name="1263" class="Symbol"
+      >{</a
+      ><a name="1264" href="BoolOrd.html#1264" class="Bound"
+      >x</a
+      ><a name="1265"
+      > </a
+      ><a name="1266" href="BoolOrd.html#1266" class="Bound"
+      >a</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" href="BoolOrd.html#1268" class="Bound"
+      >b</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" class="Symbol"
+      >:</a
+      ><a name="1271"
+      > </a
+      ><a name="1272" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1276" class="Symbol"
+      >}</a
+      ><a name="1277"
+      > </a
+      ><a name="1278" class="Symbol"
+      >&#8594;</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" href="BoolOrd.html#1266" class="Bound"
+      >a</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1284"
+      > </a
+      ><a name="1285" href="BoolOrd.html#1264" class="Bound"
+      >x</a
+      ><a name="1286"
+      > </a
+      ><a name="1287" class="Symbol"
+      >&#8594;</a
+      ><a name="1288"
+      > </a
+      ><a name="1289" href="BoolOrd.html#1268" class="Bound"
+      >b</a
+      ><a name="1290"
+      > </a
+      ><a name="1291" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" href="BoolOrd.html#1264" class="Bound"
+      >x</a
+      ><a name="1295"
+      > </a
+      ><a name="1296" class="Symbol"
+      >&#8594;</a
+      ><a name="1297"
+      > </a
+      ><a name="1298" href="BoolOrd.html#1266" class="Bound"
+      >a</a
+      ><a name="1299"
+      > </a
+      ><a name="1300" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="1301"
+      > </a
+      ><a name="1302" href="BoolOrd.html#1268" class="Bound"
+      >b</a
+      ><a name="1303"
+      > </a
+      ><a name="1304" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1306"
+      > </a
+      ><a name="1307" href="BoolOrd.html#1264" class="Bound"
+      >x</a
+      ><a name="1308"
+      >
+</a
+      ><a name="1309" href="BoolOrd.html#1249" class="Function"
+      >&#8804;B-leastSup</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" class="Symbol"
+      >(</a
+      ><a name="1322" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="1325"
+      > </a
+      ><a name="1326" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="1329" class="Symbol"
+      >)</a
+      ><a name="1330"
+      > </a
+      ><a name="1331" href="BoolOrd.html#1331" class="Bound"
+      >q</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" class="Symbol"
+      >=</a
+      ><a name="1334"
+      > </a
+      ><a name="1335" href="BoolOrd.html#1331" class="Bound"
+      >q</a
+      ><a name="1336"
+      >
+</a
+      ><a name="1337" href="BoolOrd.html#1249" class="Function"
+      >&#8804;B-leastSup</a
+      ><a name="1348"
+      > </a
+      ><a name="1349" class="Symbol"
+      >(</a
+      ><a name="1350" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1358" class="Symbol"
+      >)</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" class="Symbol"
+      >(</a
+      ><a name="1361" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="1364"
+      > </a
+      ><a name="1365" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="1368" class="Symbol"
+      >)</a
+      ><a name="1369"
+      > </a
+      ><a name="1370" class="Symbol"
+      >=</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="1378"
+      >
+</a
+      ><a name="1379" href="BoolOrd.html#1249" class="Function"
+      >&#8804;B-leastSup</a
+      ><a name="1390"
+      > </a
+      ><a name="1391" class="Symbol"
+      >(</a
+      ><a name="1392" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1395"
+      > </a
+      ><a name="1396" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1400" class="Symbol"
+      >)</a
+      ><a name="1401"
+      > </a
+      ><a name="1402" class="Symbol"
+      >(</a
+      ><a name="1403" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1406"
+      > </a
+      ><a name="1407" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1411" class="Symbol"
+      >)</a
+      ><a name="1412"
+      > </a
+      ><a name="1413" class="Symbol"
+      >=</a
+      ><a name="1414"
+      > </a
+      ><a name="1415" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" href="BoolProps.html#365" class="Function"
+      >&#8744;idem</a
+      ><a name="1424"
+      >
+
+</a
+      ><a name="1426" href="BoolOrd.html#1426" class="Function"
+      >&#8805;B-supL</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" class="Symbol"
+      >:</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" class="Symbol"
+      >{</a
+      ><a name="1437" href="BoolOrd.html#1437" class="Bound"
+      >a</a
+      ><a name="1438"
+      > </a
+      ><a name="1439" href="BoolOrd.html#1439" class="Bound"
+      >b</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" class="Symbol"
+      >:</a
+      ><a name="1442"
+      > </a
+      ><a name="1443" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1447" class="Symbol"
+      >}</a
+      ><a name="1448"
+      > </a
+      ><a name="1449" class="Symbol"
+      >&#8594;</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" href="BoolOrd.html#1437" class="Bound"
+      >a</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" href="Bool.html#431" class="Function Operator"
+      >&#8743;</a
+      ><a name="1454"
+      > </a
+      ><a name="1455" href="BoolOrd.html#1439" class="Bound"
+      >b</a
+      ><a name="1456"
+      > </a
+      ><a name="1457" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1459"
+      > </a
+      ><a name="1460" href="BoolOrd.html#1437" class="Bound"
+      >a</a
+      ><a name="1461"
+      >
+</a
+      ><a name="1462" href="BoolOrd.html#1426" class="Function"
+      >&#8805;B-supL</a
+      ><a name="1469"
+      > </a
+      ><a name="1470" class="Symbol"
+      >{</a
+      ><a name="1471" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="1476" class="Symbol"
+      >}</a
+      ><a name="1477"
+      > </a
+      ><a name="1478" class="Symbol"
+      >=</a
+      ><a name="1479"
+      > </a
+      ><a name="1480" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="1486"
+      >
+</a
+      ><a name="1487" href="BoolOrd.html#1426" class="Function"
+      >&#8805;B-supL</a
+      ><a name="1494"
+      > </a
+      ><a name="1495" class="Symbol"
+      >{</a
+      ><a name="1496" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="1500" class="Symbol"
+      >}</a
+      ><a name="1501"
+      >  </a
+      ><a name="1503" class="Symbol"
+      >=</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="1510"
+      >
+
+</a
+      ><a name="1512" href="BoolOrd.html#1512" class="Function"
+      >&#8805;B-supR</a
+      ><a name="1519"
+      > </a
+      ><a name="1520" class="Symbol"
+      >:</a
+      ><a name="1521"
+      > </a
+      ><a name="1522" class="Symbol"
+      >{</a
+      ><a name="1523" href="BoolOrd.html#1523" class="Bound"
+      >a</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" href="BoolOrd.html#1525" class="Bound"
+      >b</a
+      ><a name="1526"
+      > </a
+      ><a name="1527" class="Symbol"
+      >:</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1533" class="Symbol"
+      >}</a
+      ><a name="1534"
+      > </a
+      ><a name="1535" class="Symbol"
+      >&#8594;</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" href="BoolOrd.html#1523" class="Bound"
+      >a</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" href="Bool.html#431" class="Function Operator"
+      >&#8743;</a
+      ><a name="1540"
+      > </a
+      ><a name="1541" href="BoolOrd.html#1525" class="Bound"
+      >b</a
+      ><a name="1542"
+      > </a
+      ><a name="1543" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1545"
+      > </a
+      ><a name="1546" href="BoolOrd.html#1525" class="Bound"
+      >b</a
+      ><a name="1547"
+      >
+</a
+      ><a name="1548" href="BoolOrd.html#1512" class="Function"
+      >&#8805;B-supR</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" class="Symbol"
+      >{</a
+      ><a name="1557" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="1562" class="Symbol"
+      >}</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" class="Symbol"
+      >=</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" href="BoolOrd.html#773" class="Function"
+      >&#8804;false</a
+      ><a name="1572"
+      >
+</a
+      ><a name="1573" href="BoolOrd.html#1512" class="Function"
+      >&#8805;B-supR</a
+      ><a name="1580"
+      > </a
+      ><a name="1581" class="Symbol"
+      >{</a
+      ><a name="1582" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="1586" class="Symbol"
+      >}</a
+      ><a name="1587"
+      >  </a
+      ><a name="1589" class="Symbol"
+      >=</a
+      ><a name="1590"
+      > </a
+      ><a name="1591" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="1597"
+      >
+
+</a
+      ><a name="1599" href="BoolOrd.html#1599" class="Function"
+      >&#8805;B-mostInf</a
+      ><a name="1609"
+      > </a
+      ><a name="1610" class="Symbol"
+      >:</a
+      ><a name="1611"
+      > </a
+      ><a name="1612" class="Symbol"
+      >{</a
+      ><a name="1613" href="BoolOrd.html#1613" class="Bound"
+      >x</a
+      ><a name="1614"
+      > </a
+      ><a name="1615" href="BoolOrd.html#1615" class="Bound"
+      >a</a
+      ><a name="1616"
+      > </a
+      ><a name="1617" href="BoolOrd.html#1617" class="Bound"
+      >b</a
+      ><a name="1618"
+      > </a
+      ><a name="1619" class="Symbol"
+      >:</a
+      ><a name="1620"
+      > </a
+      ><a name="1621" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1625" class="Symbol"
+      >}</a
+      ><a name="1626"
+      > </a
+      ><a name="1627" class="Symbol"
+      >&#8594;</a
+      ><a name="1628"
+      > </a
+      ><a name="1629" href="BoolOrd.html#1613" class="Bound"
+      >x</a
+      ><a name="1630"
+      > </a
+      ><a name="1631" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1633"
+      > </a
+      ><a name="1634" href="BoolOrd.html#1615" class="Bound"
+      >a</a
+      ><a name="1635"
+      > </a
+      ><a name="1636" class="Symbol"
+      >&#8594;</a
+      ><a name="1637"
+      > </a
+      ><a name="1638" href="BoolOrd.html#1613" class="Bound"
+      >x</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" href="BoolOrd.html#1617" class="Bound"
+      >b</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" class="Symbol"
+      >&#8594;</a
+      ><a name="1646"
+      > </a
+      ><a name="1647" href="BoolOrd.html#1613" class="Bound"
+      >x</a
+      ><a name="1648"
+      > </a
+      ><a name="1649" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" href="BoolOrd.html#1615" class="Bound"
+      >a</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" href="Bool.html#431" class="Function Operator"
+      >&#8743;</a
+      ><a name="1655"
+      > </a
+      ><a name="1656" href="BoolOrd.html#1617" class="Bound"
+      >b</a
+      ><a name="1657"
+      >
+</a
+      ><a name="1658" href="BoolOrd.html#1599" class="Function"
+      >&#8805;B-mostInf</a
+      ><a name="1668"
+      > </a
+      ><a name="1669" class="Symbol"
+      >(</a
+      ><a name="1670" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="1673"
+      > </a
+      ><a name="1674" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="1677" class="Symbol"
+      >)</a
+      ><a name="1678"
+      > </a
+      ><a name="1679" href="BoolOrd.html#1679" class="Bound"
+      >q</a
+      ><a name="1680"
+      > </a
+      ><a name="1681" class="Symbol"
+      >=</a
+      ><a name="1682"
+      > </a
+      ><a name="1683" href="BoolOrd.html#1679" class="Bound"
+      >q</a
+      ><a name="1684"
+      >
+</a
+      ><a name="1685" href="BoolOrd.html#1599" class="Function"
+      >&#8805;B-mostInf</a
+      ><a name="1695"
+      > </a
+      ><a name="1696" class="Symbol"
+      >(</a
+      ><a name="1697" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1700"
+      > </a
+      ><a name="1701" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1705" class="Symbol"
+      >)</a
+      ><a name="1706"
+      > </a
+      ><a name="1707" class="Symbol"
+      >(</a
+      ><a name="1708" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="1711"
+      > </a
+      ><a name="1712" href="BoolOrd.html#322" class="InductiveConstructor"
+      >f&lt;t</a
+      ><a name="1715" class="Symbol"
+      >)</a
+      ><a name="1716"
+      > </a
+      ><a name="1717" class="Symbol"
+      >=</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="1725"
+      >
+</a
+      ><a name="1726" href="BoolOrd.html#1599" class="Function"
+      >&#8805;B-mostInf</a
+      ><a name="1736"
+      > </a
+      ><a name="1737" class="Symbol"
+      >(</a
+      ><a name="1738" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1741"
+      > </a
+      ><a name="1742" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1746" class="Symbol"
+      >)</a
+      ><a name="1747"
+      > </a
+      ><a name="1748" class="Symbol"
+      >(</a
+      ><a name="1749" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1757" class="Symbol"
+      >)</a
+      ><a name="1758"
+      > </a
+      ><a name="1759" class="Symbol"
+      >=</a
+      ><a name="1760"
+      > </a
+      ><a name="1761" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1764"
+      > </a
+      ><a name="1765" class="Symbol"
+      >(</a
+      ><a name="1766" href="NeilPrelude.html#5439" class="Function"
+      >sym</a
+      ><a name="1769"
+      > </a
+      ><a name="1770" href="BoolProps.html#919" class="Function"
+      >&#8743;idem</a
+      ><a name="1775" class="Symbol"
+      >)</a
+      ><a name="1776"
+      >
+
+</a
+      ><a name="1778" class="Comment"
+      >-- import TotalOrder</a
+      ><a name="1798"
+      >
+</a
+      ><a name="1799" class="Comment"
+      >-- open TotalOrder _&#8804;B_ &#8804;B-antisym &#8804;B-trans &#8804;B-total public</a
+      ><a name="1858"
+      >
+
+</a
+      ><a name="1860" class="Keyword"
+      >import</a
+      ><a name="1866"
+      > </a
+      ><a name="1867" href="CompleteTotalLattice.html#69" class="Module"
+      >CompleteTotalLattice</a
+      ><a name="1887"
+      >
+</a
+      ><a name="1888" class="Keyword"
+      >open</a
+      ><a name="1892"
+      > </a
+      ><a name="1893" href="CompleteTotalLattice.html#69" class="Module"
+      >CompleteTotalLattice</a
+      ><a name="1913"
+      > </a
+      ><a name="1914" href="StrictPreOrder.html#741" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="1917"
+      > </a
+      ><a name="1918" href="Bool.html#489" class="Function Operator"
+      >_&#8744;_</a
+      ><a name="1921"
+      > </a
+      ><a name="1922" href="Bool.html#431" class="Function Operator"
+      >_&#8743;_</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="1931"
+      > </a
+      ><a name="1932" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="1936"
+      > </a
+      ><a name="1937" href="BoolOrd.html#927" class="Function"
+      >&#8804;B-antisym</a
+      ><a name="1947"
+      > </a
+      ><a name="1948" href="BoolOrd.html#987" class="Function"
+      >&#8804;B-trans</a
+      ><a name="1956"
+      > </a
+      ><a name="1957" href="BoolOrd.html#1034" class="Function"
+      >&#8804;B-total</a
+      ><a name="1965"
+      > </a
+      ><a name="1966" href="BoolOrd.html#1077" class="Function"
+      >&#8804;B-supL</a
+      ><a name="1973"
+      > </a
+      ><a name="1974" class="Symbol"
+      >(&#955;</a
+      ><a name="1976"
+      > </a
+      ><a name="1977" class="Symbol"
+      >{</a
+      ><a name="1978" href="BoolOrd.html#1978" class="Bound"
+      >a</a
+      ><a name="1979" class="Symbol"
+      >}</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" class="Symbol"
+      >{</a
+      ><a name="1982" href="BoolOrd.html#1982" class="Bound"
+      >b</a
+      ><a name="1983" class="Symbol"
+      >}</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" class="Symbol"
+      >&#8594;</a
+      ><a name="1986"
+      > </a
+      ><a name="1987" href="BoolOrd.html#1163" class="Function"
+      >&#8804;B-supR</a
+      ><a name="1994"
+      > </a
+      ><a name="1995" class="Symbol"
+      >{</a
+      ><a name="1996" href="BoolOrd.html#1982" class="Bound"
+      >b</a
+      ><a name="1997" class="Symbol"
+      >}</a
+      ><a name="1998"
+      > </a
+      ><a name="1999" class="Symbol"
+      >{</a
+      ><a name="2000" href="BoolOrd.html#1978" class="Bound"
+      >a</a
+      ><a name="2001" class="Symbol"
+      >})</a
+      ><a name="2003"
+      > </a
+      ><a name="2004" href="BoolOrd.html#1249" class="Function"
+      >&#8804;B-leastSup</a
+      ><a name="2015"
+      > </a
+      ><a name="2016" href="BoolOrd.html#1426" class="Function"
+      >&#8805;B-supL</a
+      ><a name="2023"
+      > </a
+      ><a name="2024" class="Symbol"
+      >(&#955;</a
+      ><a name="2026"
+      > </a
+      ><a name="2027" class="Symbol"
+      >{</a
+      ><a name="2028" href="BoolOrd.html#2028" class="Bound"
+      >a</a
+      ><a name="2029" class="Symbol"
+      >}</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" class="Symbol"
+      >{</a
+      ><a name="2032" href="BoolOrd.html#2032" class="Bound"
+      >b</a
+      ><a name="2033" class="Symbol"
+      >}</a
+      ><a name="2034"
+      > </a
+      ><a name="2035" class="Symbol"
+      >&#8594;</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" href="BoolOrd.html#1512" class="Function"
+      >&#8805;B-supR</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" class="Symbol"
+      >{</a
+      ><a name="2046" href="BoolOrd.html#2032" class="Bound"
+      >b</a
+      ><a name="2047" class="Symbol"
+      >}</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" class="Symbol"
+      >{</a
+      ><a name="2050" href="BoolOrd.html#2028" class="Bound"
+      >a</a
+      ><a name="2051" class="Symbol"
+      >})</a
+      ><a name="2053"
+      > </a
+      ><a name="2054" href="BoolOrd.html#1599" class="Function"
+      >&#8805;B-mostInf</a
+      ><a name="2064"
+      > </a
+      ><a name="2065" href="BoolOrd.html#773" class="Function"
+      >&#8804;false</a
+      ><a name="2071"
+      > </a
+      ><a name="2072" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="2077"
+      > </a
+      ><a name="2078" class="Keyword"
+      >public</a
+      ><a name="2084"
+      >
+
+
+</a
+      ><a name="2087" class="Comment"
+      >-------------------------------------------------------</a
+      ><a name="2142"
+      >
+
+</a
+      ><a name="2144" href="BoolOrd.html#2144" class="Function"
+      >&#8744;lem1</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" class="Symbol"
+      >:</a
+      ><a name="2151"
+      > </a
+      ><a name="2152" class="Symbol"
+      >{</a
+      ><a name="2153" href="BoolOrd.html#2153" class="Bound"
+      >c</a
+      ><a name="2154"
+      > </a
+      ><a name="2155" class="Symbol"
+      >:</a
+      ><a name="2156"
+      > </a
+      ><a name="2157" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="2161" class="Symbol"
+      >}</a
+      ><a name="2162"
+      > </a
+      ><a name="2163" class="Symbol"
+      >&#8594;</a
+      ><a name="2164"
+      > </a
+      ><a name="2165" class="Symbol"
+      >(</a
+      ><a name="2166" href="BoolOrd.html#2166" class="Bound"
+      >a</a
+      ><a name="2167"
+      > </a
+      ><a name="2168" href="BoolOrd.html#2168" class="Bound"
+      >b</a
+      ><a name="2169"
+      > </a
+      ><a name="2170" class="Symbol"
+      >:</a
+      ><a name="2171"
+      > </a
+      ><a name="2172" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="2176" class="Symbol"
+      >)</a
+      ><a name="2177"
+      > </a
+      ><a name="2178" class="Symbol"
+      >&#8594;</a
+      ><a name="2179"
+      > </a
+      ><a name="2180" class="Symbol"
+      >(</a
+      ><a name="2181" href="BoolOrd.html#2168" class="Bound"
+      >b</a
+      ><a name="2182"
+      > </a
+      ><a name="2183" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="2184"
+      > </a
+      ><a name="2185" href="BoolOrd.html#2168" class="Bound"
+      >b</a
+      ><a name="2186"
+      > </a
+      ><a name="2187" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="2188"
+      > </a
+      ><a name="2189" href="BoolOrd.html#2153" class="Bound"
+      >c</a
+      ><a name="2190"
+      > </a
+      ><a name="2191" href="BoolOrd.html#710" class="Function Operator"
+      >&#8804;B</a
+      ><a name="2193"
+      > </a
+      ><a name="2194" href="BoolOrd.html#2166" class="Bound"
+      >a</a
+      ><a name="2195"
+      > </a
+      ><a name="2196" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="2197"
+      > </a
+      ><a name="2198" href="BoolOrd.html#2168" class="Bound"
+      >b</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" href="Bool.html#489" class="Function Operator"
+      >&#8744;</a
+      ><a name="2201"
+      > </a
+      ><a name="2202" href="BoolOrd.html#2153" class="Bound"
+      >c</a
+      ><a name="2203" class="Symbol"
+      >)</a
+      ><a name="2204"
+      >
+</a
+      ><a name="2205" href="BoolOrd.html#2144" class="Function"
+      >&#8744;lem1</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="2216"
+      > </a
+      ><a name="2217" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" class="Symbol"
+      >=</a
+      ><a name="2224"
+      > </a
+      ><a name="2225" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="2231"
+      >
+</a
+      ><a name="2232" href="BoolOrd.html#2144" class="Function"
+      >&#8744;lem1</a
+      ><a name="2237"
+      > </a
+      ><a name="2238" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="2243"
+      > </a
+      ><a name="2244" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="2248"
+      >  </a
+      ><a name="2250" class="Symbol"
+      >=</a
+      ><a name="2251"
+      > </a
+      ><a name="2252" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="2258"
+      >
+</a
+      ><a name="2259" href="BoolOrd.html#2144" class="Function"
+      >&#8744;lem1</a
+      ><a name="2264"
+      > </a
+      ><a name="2265" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="2275"
+      >  </a
+      ><a name="2277" class="Symbol"
+      >=</a
+      ><a name="2278"
+      > </a
+      ><a name="2279" href="BoolOrd.html#852" class="Function"
+      >&#8804;true</a
+      ><a name="2284"
+      >
+</a
+      ><a name="2285" href="BoolOrd.html#2144" class="Function"
+      >&#8744;lem1</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="2295"
+      > </a
+      ><a name="2296" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="2300"
+      >   </a
+      ><a name="2303" class="Symbol"
+      >=</a
+      ><a name="2304"
+      > </a
+      ><a name="2305" href="StrictPreOrder.html#921" class="Function"
+      >&#8804;-refl</a
+      ><a name="2311"
+      > 
+</a
+      ></pre
+    ></body
+  ></html
+>

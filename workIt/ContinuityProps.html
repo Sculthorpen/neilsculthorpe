@@ -1,0 +1,4553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >ContinuityProps</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type </a
+      ><a name="28" class="Symbol"
+      >#-}</a
+      ><a name="31"
+      >
+
+</a
+      ><a name="33" class="Keyword"
+      >open</a
+      ><a name="37"
+      > </a
+      ><a name="38" class="Keyword"
+      >import</a
+      ><a name="44"
+      > </a
+      ><a name="45" href="NeilPrelude.html#1" class="Module"
+      >NeilPrelude</a
+      ><a name="56"
+      > </a
+      ><a name="57" class="Keyword"
+      >hiding</a
+      ><a name="63"
+      > </a
+      ><a name="64" class="Symbol"
+      >(</a
+      ><a name="65"
+      >result </a
+      ><a name="72" class="Symbol"
+      >;</a
+      ><a name="73"
+      > argument</a
+      ><a name="82" class="Symbol"
+      >)</a
+      ><a name="83"
+      >
+</a
+      ><a name="84" class="Keyword"
+      >open</a
+      ><a name="88"
+      > </a
+      ><a name="89" class="Keyword"
+      >import</a
+      ><a name="95"
+      > </a
+      ><a name="96" href="Extensionality.html#1" class="Module"
+      >Extensionality</a
+      ><a name="110"
+      >
+</a
+      ><a name="111" class="Keyword"
+      >open</a
+      ><a name="115"
+      > </a
+      ><a name="116" class="Keyword"
+      >import</a
+      ><a name="122"
+      > </a
+      ><a name="123" href="CPO.html#1" class="Module"
+      >CPO</a
+      ><a name="126"
+      >
+</a
+      ><a name="127" class="Keyword"
+      >open</a
+      ><a name="131"
+      > </a
+      ><a name="132" class="Keyword"
+      >import</a
+      ><a name="138"
+      > </a
+      ><a name="139" href="CPOFunctions.html#1" class="Module"
+      >CPOFunctions</a
+      ><a name="151"
+      >
+</a
+      ><a name="152" class="Keyword"
+      >open</a
+      ><a name="156"
+      > </a
+      ><a name="157" class="Keyword"
+      >import</a
+      ><a name="163"
+      > </a
+      ><a name="164" href="CPOLemmas.html#1" class="Module"
+      >CPOLemmas</a
+      ><a name="173"
+      >
+
+</a
+      ><a name="175" class="Keyword"
+      >module</a
+      ><a name="181"
+      > </a
+      ><a name="182" href="ContinuityProps.html#1" class="Module"
+      >ContinuityProps</a
+      ><a name="197"
+      >
+
+  </a
+      ><a name="201" class="Symbol"
+      >(</a
+      ><a name="202" href="ContinuityProps.html#202" class="Bound"
+      >_</a
+      ><a name="203"
+      > </a
+      ><a name="204" class="Symbol"
+      >:</a
+      ><a name="205"
+      > </a
+      ><a name="206" href="Extensionality.html#87" class="Function"
+      >Extensionality</a
+      ><a name="220" class="Symbol"
+      >)</a
+      ><a name="221"
+      >
+
+  </a
+      ><a name="225" class="Symbol"
+      >(</a
+      ><a name="226" href="ContinuityProps.html#226" class="Bound"
+      >fix</a
+      ><a name="229"
+      > </a
+      ><a name="230" class="Symbol"
+      >:</a
+      ><a name="231"
+      > </a
+      ><a name="232" class="Symbol"
+      >{</a
+      ><a name="233" href="ContinuityProps.html#233" class="Bound"
+      >&#964;</a
+      ><a name="234"
+      > </a
+      ><a name="235" class="Symbol"
+      >:</a
+      ><a name="236"
+      > </a
+      ><a name="237" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="241" class="Symbol"
+      >}</a
+      ><a name="242"
+      > </a
+      ><a name="243" class="Symbol"
+      >&#8594;</a
+      ><a name="244"
+      > </a
+      ><a name="245" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="248"
+      > </a
+      ><a name="249" class="Symbol"
+      >(</a
+      ><a name="250" href="ContinuityProps.html#233" class="Bound"
+      >&#964;</a
+      ><a name="251"
+      > </a
+      ><a name="252" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="ContinuityProps.html#233" class="Bound"
+      >&#964;</a
+      ><a name="255" class="Symbol"
+      >)</a
+      ><a name="256"
+      > </a
+      ><a name="257" class="Symbol"
+      >&#8594;</a
+      ><a name="258"
+      > </a
+      ><a name="259" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="262"
+      > </a
+      ><a name="263" href="ContinuityProps.html#233" class="Bound"
+      >&#964;</a
+      ><a name="264" class="Symbol"
+      >)</a
+      ><a name="265"
+      >
+
+</a
+      ><a name="267" class="Keyword"
+      >where</a
+      ><a name="272"
+      >
+
+</a
+      ><a name="274" class="Comment"
+      >------------------------------------------------------------------------</a
+      ><a name="346"
+      >
+
+</a
+      ><a name="348" href="ContinuityProps.html#348" class="Function"
+      >app'</a
+      ><a name="352"
+      > </a
+      ><a name="353" class="Symbol"
+      >:</a
+      ><a name="354"
+      > </a
+      ><a name="355" class="Symbol"
+      >{</a
+      ><a name="356" href="ContinuityProps.html#356" class="Bound"
+      >&#963;</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="ContinuityProps.html#358" class="Bound"
+      >&#964;</a
+      ><a name="359"
+      > </a
+      ><a name="360" class="Symbol"
+      >:</a
+      ><a name="361"
+      > </a
+      ><a name="362" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="366" class="Symbol"
+      >}</a
+      ><a name="367"
+      > </a
+      ><a name="368" class="Symbol"
+      >&#8594;</a
+      ><a name="369"
+      > </a
+      ><a name="370" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="373"
+      > </a
+      ><a name="374" class="Symbol"
+      >((</a
+      ><a name="376" href="ContinuityProps.html#356" class="Bound"
+      >&#963;</a
+      ><a name="377"
+      > </a
+      ><a name="378" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="ContinuityProps.html#358" class="Bound"
+      >&#964;</a
+      ><a name="381" class="Symbol"
+      >)</a
+      ><a name="382"
+      > </a
+      ><a name="383" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="384"
+      > </a
+      ><a name="385" href="ContinuityProps.html#356" class="Bound"
+      >&#963;</a
+      ><a name="386" class="Symbol"
+      >)</a
+      ><a name="387"
+      > </a
+      ><a name="388" class="Symbol"
+      >&#8594;</a
+      ><a name="389"
+      > </a
+      ><a name="390" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="393"
+      > </a
+      ><a name="394" href="ContinuityProps.html#358" class="Bound"
+      >&#964;</a
+      ><a name="395"
+      >
+</a
+      ><a name="396" href="ContinuityProps.html#348" class="Function"
+      >app'</a
+      ><a name="400"
+      > </a
+      ><a name="401" class="Symbol"
+      >(</a
+      ><a name="402" href="ContinuityProps.html#402" class="Bound"
+      >f</a
+      ><a name="403"
+      > </a
+      ><a name="404" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="ContinuityProps.html#406" class="Bound"
+      >x</a
+      ><a name="407" class="Symbol"
+      >)</a
+      ><a name="408"
+      > </a
+      ><a name="409" class="Symbol"
+      >=</a
+      ><a name="410"
+      > </a
+      ><a name="411" href="ContinuityProps.html#402" class="Bound"
+      >f</a
+      ><a name="412"
+      > </a
+      ><a name="413" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="414"
+      > </a
+      ><a name="415" href="ContinuityProps.html#406" class="Bound"
+      >x</a
+      ><a name="416"
+      >
+
+</a
+      ><a name="418" class="Comment"
+      >------------------------------------------------------------------------</a
+      ><a name="490"
+      >
+
+</a
+      ><a name="492" class="Comment"
+      >-- The continuity of application is well established.  See for example:</a
+      ><a name="563"
+      >
+</a
+      ><a name="564" class="Comment"
+      >--   * H. P. Barendregt, H. P. &quot;The Lambda Calculus: Its Syntax and Semantics&quot;, North Holland (1984).</a
+      ><a name="665"
+      >
+</a
+      ><a name="666" class="Comment"
+      >--   * Glynn Winskel. &quot;The Formal Semantics of Programming Languages: An Introduction&quot;, MIT (1993).</a
+      ><a name="765"
+      >
+</a
+      ><a name="766" class="Comment"
+      >--</a
+      ><a name="768"
+      >
+</a
+      ><a name="769" class="Comment"
+      >-- Their proof makes use of the property that a function on a product is continuous if it is continuous in each argument seperately.</a
+      ><a name="901"
+      >
+</a
+      ><a name="902" class="Comment"
+      >--</a
+      ><a name="904"
+      >
+</a
+      ><a name="905" class="Comment"
+      >-- postulate pointwise-continuity : {&#963; &#964; &#965; : Type} &#8594; (f : CPO (&#963; &#8855; &#964;) &#8594; CPO &#965;) &#8594; ((x : CPO &#963;) &#8594; Continuous (&#955; y &#8594; f (x , y)))</a
+      ><a name="1030"
+      >
+</a
+      ><a name="1031" class="Comment"
+      >--                                                                             &#8594; ((y : CPO &#964;) &#8594; Continuous (&#955; x &#8594; f (x , y)))</a
+      ><a name="1156"
+      >
+</a
+      ><a name="1157" class="Comment"
+      >--                                                                             &#8594; Continuous f</a
+      ><a name="1250"
+      >
+</a
+      ><a name="1251" class="Comment"
+      >--</a
+      ><a name="1253"
+      >
+</a
+      ><a name="1254" class="Comment"
+      >-- However, in this model I have been unable to prove either that implication or its antecedent.</a
+      ><a name="1350"
+      >
+</a
+      ><a name="1351" class="Comment"
+      >-- Contributions welcome.</a
+      ><a name="1376"
+      >
+
+</a
+      ><a name="1378" class="Keyword"
+      >abstract</a
+      ><a name="1386"
+      >
+
+  </a
+      ><a name="1390" class="Keyword"
+      >postulate</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" href="ContinuityProps.html#1400" class="Postulate"
+      >preservesLUB-app</a
+      ><a name="1416"
+      > </a
+      ><a name="1417" class="Symbol"
+      >:</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" class="Symbol"
+      >{</a
+      ><a name="1420" href="ContinuityProps.html#1420" class="Bound"
+      >&#963;</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" href="ContinuityProps.html#1422" class="Bound"
+      >&#964;</a
+      ><a name="1423"
+      > </a
+      ><a name="1424" class="Symbol"
+      >:</a
+      ><a name="1425"
+      > </a
+      ><a name="1426" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1430" class="Symbol"
+      >}</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >&#8594;</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="CPO.html#3833" class="Function"
+      >PreservesLUB</a
+      ><a name="1446"
+      > </a
+      ><a name="1447" class="Symbol"
+      >{(</a
+      ><a name="1449" href="ContinuityProps.html#1420" class="Bound"
+      >&#963;</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" href="ContinuityProps.html#1422" class="Bound"
+      >&#964;</a
+      ><a name="1454" class="Symbol"
+      >)</a
+      ><a name="1455"
+      > </a
+      ><a name="1456" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" href="ContinuityProps.html#1420" class="Bound"
+      >&#963;</a
+      ><a name="1459" class="Symbol"
+      >}</a
+      ><a name="1460"
+      > </a
+      ><a name="1461" href="ContinuityProps.html#348" class="Function"
+      >app'</a
+      ><a name="1465"
+      >
+
+  </a
+      ><a name="1469" href="ContinuityProps.html#1469" class="Function"
+      >monotonic-app</a
+      ><a name="1482"
+      > </a
+      ><a name="1483" class="Symbol"
+      >:</a
+      ><a name="1484"
+      > </a
+      ><a name="1485" class="Symbol"
+      >{</a
+      ><a name="1486" href="ContinuityProps.html#1486" class="Bound"
+      >&#963;</a
+      ><a name="1487"
+      > </a
+      ><a name="1488" href="ContinuityProps.html#1488" class="Bound"
+      >&#964;</a
+      ><a name="1489"
+      > </a
+      ><a name="1490" class="Symbol"
+      >:</a
+      ><a name="1491"
+      > </a
+      ><a name="1492" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1496" class="Symbol"
+      >}</a
+      ><a name="1497"
+      > </a
+      ><a name="1498" class="Symbol"
+      >&#8594;</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" href="CPO.html#2615" class="Function"
+      >Monotonic</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" class="Symbol"
+      >{(</a
+      ><a name="1512" href="ContinuityProps.html#1486" class="Bound"
+      >&#963;</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" href="ContinuityProps.html#1488" class="Bound"
+      >&#964;</a
+      ><a name="1517" class="Symbol"
+      >)</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="ContinuityProps.html#1486" class="Bound"
+      >&#963;</a
+      ><a name="1522" class="Symbol"
+      >}</a
+      ><a name="1523"
+      > </a
+      ><a name="1524" href="ContinuityProps.html#348" class="Function"
+      >app'</a
+      ><a name="1528"
+      >
+  </a
+      ><a name="1531" href="ContinuityProps.html#1469" class="Function"
+      >monotonic-app</a
+      ><a name="1544"
+      > </a
+      ><a name="1545" class="Symbol"
+      >(</a
+      ><a name="1546" href="CPO.html#2074" class="InductiveConstructor"
+      >&#8849;-prod</a
+      ><a name="1552"
+      > </a
+      ><a name="1553" href="ContinuityProps.html#1553" class="Bound"
+      >p</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" href="ContinuityProps.html#1555" class="Bound"
+      >q</a
+      ><a name="1556" class="Symbol"
+      >)</a
+      ><a name="1557"
+      > </a
+      ><a name="1558" class="Symbol"
+      >=</a
+      ><a name="1559"
+      > </a
+      ><a name="1560" href="CPOLemmas.html#1427" class="Function"
+      >&#8849;-app</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" href="ContinuityProps.html#1553" class="Bound"
+      >p</a
+      ><a name="1567"
+      > </a
+      ><a name="1568" href="ContinuityProps.html#1555" class="Bound"
+      >q</a
+      ><a name="1569"
+      >
+
+  </a
+      ><a name="1573" href="ContinuityProps.html#1573" class="Function"
+      >continuous-app</a
+      ><a name="1587"
+      > </a
+      ><a name="1588" class="Symbol"
+      >:</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" class="Symbol"
+      >{</a
+      ><a name="1591" href="ContinuityProps.html#1591" class="Bound"
+      >&#963;</a
+      ><a name="1592"
+      > </a
+      ><a name="1593" href="ContinuityProps.html#1593" class="Bound"
+      >&#964;</a
+      ><a name="1594"
+      > </a
+      ><a name="1595" class="Symbol"
+      >:</a
+      ><a name="1596"
+      > </a
+      ><a name="1597" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1601" class="Symbol"
+      >}</a
+      ><a name="1602"
+      > </a
+      ><a name="1603" class="Symbol"
+      >&#8594;</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="1615"
+      > </a
+      ><a name="1616" class="Symbol"
+      >{(</a
+      ><a name="1618" href="ContinuityProps.html#1591" class="Bound"
+      >&#963;</a
+      ><a name="1619"
+      > </a
+      ><a name="1620" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" href="ContinuityProps.html#1593" class="Bound"
+      >&#964;</a
+      ><a name="1623" class="Symbol"
+      >)</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="1626"
+      > </a
+      ><a name="1627" href="ContinuityProps.html#1591" class="Bound"
+      >&#963;</a
+      ><a name="1628" class="Symbol"
+      >}</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" href="ContinuityProps.html#348" class="Function"
+      >app'</a
+      ><a name="1634"
+      >
+  </a
+      ><a name="1637" href="ContinuityProps.html#1573" class="Function"
+      >continuous-app</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" class="Symbol"
+      >=</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" href="ContinuityProps.html#1469" class="Function"
+      >monotonic-app</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" href="ContinuityProps.html#1400" class="Postulate"
+      >preservesLUB-app</a
+      ><a name="1686"
+      >
+
+</a
+      ><a name="1688" class="Comment"
+      >-- app = &#955; (f , x) &#8594; f x</a
+      ><a name="1712"
+      >
+</a
+      ><a name="1713" href="ContinuityProps.html#1713" class="Function"
+      >app</a
+      ><a name="1716"
+      > </a
+      ><a name="1717" class="Symbol"
+      >:</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" class="Symbol"
+      >{</a
+      ><a name="1720" href="ContinuityProps.html#1720" class="Bound"
+      >&#963;</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" href="ContinuityProps.html#1722" class="Bound"
+      >&#964;</a
+      ><a name="1723"
+      > </a
+      ><a name="1724" class="Symbol"
+      >:</a
+      ><a name="1725"
+      > </a
+      ><a name="1726" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1730" class="Symbol"
+      >}</a
+      ><a name="1731"
+      > </a
+      ><a name="1732" class="Symbol"
+      >&#8594;</a
+      ><a name="1733"
+      > </a
+      ><a name="1734" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1737"
+      > </a
+      ><a name="1738" class="Symbol"
+      >(((</a
+      ><a name="1741" href="ContinuityProps.html#1720" class="Bound"
+      >&#963;</a
+      ><a name="1742"
+      > </a
+      ><a name="1743" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1744"
+      > </a
+      ><a name="1745" href="ContinuityProps.html#1722" class="Bound"
+      >&#964;</a
+      ><a name="1746" class="Symbol"
+      >)</a
+      ><a name="1747"
+      > </a
+      ><a name="1748" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="1749"
+      > </a
+      ><a name="1750" href="ContinuityProps.html#1720" class="Bound"
+      >&#963;</a
+      ><a name="1751" class="Symbol"
+      >)</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1754"
+      > </a
+      ><a name="1755" href="ContinuityProps.html#1722" class="Bound"
+      >&#964;</a
+      ><a name="1756" class="Symbol"
+      >)</a
+      ><a name="1757"
+      >
+</a
+      ><a name="1758" href="ContinuityProps.html#1713" class="Function"
+      >app</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" class="Symbol"
+      >=</a
+      ><a name="1763"
+      > </a
+      ><a name="1764" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="1767"
+      > </a
+      ><a name="1768" href="ContinuityProps.html#348" class="Function"
+      >app'</a
+      ><a name="1772"
+      > </a
+      ><a name="1773" href="ContinuityProps.html#1573" class="Function"
+      >continuous-app</a
+      ><a name="1787"
+      >
+
+</a
+      ><a name="1789" class="Comment"
+      >-- appTo x = &#955; h &#8594; h $ x</a
+      ><a name="1813"
+      >
+</a
+      ><a name="1814" href="ContinuityProps.html#1814" class="Function"
+      >appTo</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" class="Symbol"
+      >:</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" class="Symbol"
+      >{</a
+      ><a name="1823" href="ContinuityProps.html#1823" class="Bound"
+      >&#963;</a
+      ><a name="1824"
+      > </a
+      ><a name="1825" href="ContinuityProps.html#1825" class="Bound"
+      >&#964;</a
+      ><a name="1826"
+      > </a
+      ><a name="1827" class="Symbol"
+      >:</a
+      ><a name="1828"
+      > </a
+      ><a name="1829" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1833" class="Symbol"
+      >}</a
+      ><a name="1834"
+      > </a
+      ><a name="1835" class="Symbol"
+      >&#8594;</a
+      ><a name="1836"
+      > </a
+      ><a name="1837" class="Symbol"
+      >(</a
+      ><a name="1838" href="ContinuityProps.html#1838" class="Bound"
+      >x</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" class="Symbol"
+      >:</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1845"
+      > </a
+      ><a name="1846" href="ContinuityProps.html#1823" class="Bound"
+      >&#963;</a
+      ><a name="1847" class="Symbol"
+      >)</a
+      ><a name="1848"
+      > </a
+      ><a name="1849" class="Symbol"
+      >&#8594;</a
+      ><a name="1850"
+      > </a
+      ><a name="1851" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1854"
+      > </a
+      ><a name="1855" class="Symbol"
+      >((</a
+      ><a name="1857" href="ContinuityProps.html#1823" class="Bound"
+      >&#963;</a
+      ><a name="1858"
+      > </a
+      ><a name="1859" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1860"
+      > </a
+      ><a name="1861" href="ContinuityProps.html#1825" class="Bound"
+      >&#964;</a
+      ><a name="1862" class="Symbol"
+      >)</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" href="ContinuityProps.html#1825" class="Bound"
+      >&#964;</a
+      ><a name="1867" class="Symbol"
+      >)</a
+      ><a name="1868"
+      >
+</a
+      ><a name="1869" href="ContinuityProps.html#1814" class="Function"
+      >appTo</a
+      ><a name="1874"
+      > </a
+      ><a name="1875" href="ContinuityProps.html#1875" class="Bound"
+      >x</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" class="Symbol"
+      >=</a
+      ><a name="1878"
+      > </a
+      ><a name="1879" href="ContinuityProps.html#1713" class="Function"
+      >app</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" class="Symbol"
+      >(</a
+      ><a name="1886" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1894"
+      > </a
+      ><a name="1895" href="CPOFunctions.html#4412" class="Function Operator"
+      >:&amp;:</a
+      ><a name="1898"
+      > </a
+      ><a name="1899" href="CPOFunctions.html#1163" class="Function"
+      >constant</a
+      ><a name="1907"
+      > </a
+      ><a name="1908" href="ContinuityProps.html#1875" class="Bound"
+      >x</a
+      ><a name="1909" class="Symbol"
+      >)</a
+      ><a name="1910"
+      >
+
+</a
+      ><a name="1912" class="Comment"
+      >------------------------------------------------------------------------</a
+      ><a name="1984"
+      >
+
+</a
+      ><a name="1986" class="Keyword"
+      >abstract</a
+      ><a name="1994"
+      >
+
+  </a
+      ><a name="1998" href="ContinuityProps.html#1998" class="Function"
+      >monotonic-curry-underlying</a
+      ><a name="2024"
+      > </a
+      ><a name="2025" class="Symbol"
+      >:</a
+      ><a name="2026"
+      > </a
+      ><a name="2027" class="Symbol"
+      >{</a
+      ><a name="2028" href="ContinuityProps.html#2028" class="Bound"
+      >&#963;</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" href="ContinuityProps.html#2030" class="Bound"
+      >&#964;</a
+      ><a name="2031"
+      > </a
+      ><a name="2032" href="ContinuityProps.html#2032" class="Bound"
+      >&#965;</a
+      ><a name="2033"
+      > </a
+      ><a name="2034" class="Symbol"
+      >:</a
+      ><a name="2035"
+      > </a
+      ><a name="2036" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="2040" class="Symbol"
+      >}</a
+      ><a name="2041"
+      > </a
+      ><a name="2042" class="Symbol"
+      >&#8594;</a
+      ><a name="2043"
+      > </a
+      ><a name="2044" class="Symbol"
+      >(</a
+      ><a name="2045" href="ContinuityProps.html#2045" class="Bound"
+      >f</a
+      ><a name="2046"
+      > </a
+      ><a name="2047" class="Symbol"
+      >:</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2052"
+      > </a
+      ><a name="2053" class="Symbol"
+      >((</a
+      ><a name="2055" href="ContinuityProps.html#2028" class="Bound"
+      >&#963;</a
+      ><a name="2056"
+      > </a
+      ><a name="2057" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="2058"
+      > </a
+      ><a name="2059" href="ContinuityProps.html#2030" class="Bound"
+      >&#964;</a
+      ><a name="2060" class="Symbol"
+      >)</a
+      ><a name="2061"
+      > </a
+      ><a name="2062" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="2063"
+      > </a
+      ><a name="2064" href="ContinuityProps.html#2032" class="Bound"
+      >&#965;</a
+      ><a name="2065" class="Symbol"
+      >))</a
+      ><a name="2067"
+      > </a
+      ><a name="2068" class="Symbol"
+      >&#8594;</a
+      ><a name="2069"
+      > </a
+      ><a name="2070" class="Symbol"
+      >(</a
+      ><a name="2071" href="ContinuityProps.html#2071" class="Bound"
+      >x</a
+      ><a name="2072"
+      > </a
+      ><a name="2073" class="Symbol"
+      >:</a
+      ><a name="2074"
+      > </a
+      ><a name="2075" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2078"
+      > </a
+      ><a name="2079" href="ContinuityProps.html#2028" class="Bound"
+      >&#963;</a
+      ><a name="2080" class="Symbol"
+      >)</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" class="Symbol"
+      >&#8594;</a
+      ><a name="2083"
+      > </a
+      ><a name="2084" href="CPO.html#2615" class="Function"
+      >Monotonic</a
+      ><a name="2093"
+      > </a
+      ><a name="2094" class="Symbol"
+      >(&#955;</a
+      ><a name="2096"
+      > </a
+      ><a name="2097" href="ContinuityProps.html#2097" class="Bound"
+      >y</a
+      ><a name="2098"
+      > </a
+      ><a name="2099" class="Symbol"
+      >&#8594;</a
+      ><a name="2100"
+      > </a
+      ><a name="2101" href="ContinuityProps.html#2045" class="Bound"
+      >f</a
+      ><a name="2102"
+      > </a
+      ><a name="2103" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" class="Symbol"
+      >(</a
+      ><a name="2106" href="ContinuityProps.html#2071" class="Bound"
+      >x</a
+      ><a name="2107"
+      > </a
+      ><a name="2108" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2109"
+      > </a
+      ><a name="2110" href="ContinuityProps.html#2097" class="Bound"
+      >y</a
+      ><a name="2111" class="Symbol"
+      >))</a
+      ><a name="2113"
+      >
+  </a
+      ><a name="2116" href="ContinuityProps.html#1998" class="Function"
+      >monotonic-curry-underlying</a
+      ><a name="2142"
+      > </a
+      ><a name="2143" href="ContinuityProps.html#2143" class="Bound"
+      >f</a
+      ><a name="2144"
+      > </a
+      ><a name="2145" href="ContinuityProps.html#2145" class="Bound"
+      >x</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" href="ContinuityProps.html#2147" class="Bound"
+      >lt</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" class="Symbol"
+      >=</a
+      ><a name="2151"
+      > </a
+      ><a name="2152" href="CPO.html#4314" class="Function"
+      >monotonic</a
+      ><a name="2161"
+      > </a
+      ><a name="2162" href="ContinuityProps.html#2143" class="Bound"
+      >f</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" class="Symbol"
+      >(</a
+      ><a name="2165" href="CPO.html#2074" class="InductiveConstructor"
+      >&#8849;-prod</a
+      ><a name="2171"
+      > </a
+      ><a name="2172" href="CPO.html#7804" class="Function"
+      >&#8849;-refl</a
+      ><a name="2178"
+      > </a
+      ><a name="2179" href="ContinuityProps.html#2147" class="Bound"
+      >lt</a
+      ><a name="2181" class="Symbol"
+      >)</a
+      ><a name="2182"
+      >
+
+  </a
+      ><a name="2186" href="ContinuityProps.html#2186" class="Function"
+      >preservesLUB-curry-underlying</a
+      ><a name="2215"
+      > </a
+      ><a name="2216" class="Symbol"
+      >:</a
+      ><a name="2217"
+      > </a
+      ><a name="2218" class="Symbol"
+      >{</a
+      ><a name="2219" href="ContinuityProps.html#2219" class="Bound"
+      >&#963;</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" href="ContinuityProps.html#2221" class="Bound"
+      >&#964;</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" href="ContinuityProps.html#2223" class="Bound"
+      >&#965;</a
+      ><a name="2224"
+      > </a
+      ><a name="2225" class="Symbol"
+      >:</a
+      ><a name="2226"
+      > </a
+      ><a name="2227" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="2231" class="Symbol"
+      >}</a
+      ><a name="2232"
+      > </a
+      ><a name="2233" class="Symbol"
+      >&#8594;</a
+      ><a name="2234"
+      > </a
+      ><a name="2235" class="Symbol"
+      >(</a
+      ><a name="2236" href="ContinuityProps.html#2236" class="Bound"
+      >f</a
+      ><a name="2237"
+      > </a
+      ><a name="2238" class="Symbol"
+      >:</a
+      ><a name="2239"
+      > </a
+      ><a name="2240" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2243"
+      > </a
+      ><a name="2244" class="Symbol"
+      >((</a
+      ><a name="2246" href="ContinuityProps.html#2219" class="Bound"
+      >&#963;</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" href="ContinuityProps.html#2221" class="Bound"
+      >&#964;</a
+      ><a name="2251" class="Symbol"
+      >)</a
+      ><a name="2252"
+      > </a
+      ><a name="2253" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="2254"
+      > </a
+      ><a name="2255" href="ContinuityProps.html#2223" class="Bound"
+      >&#965;</a
+      ><a name="2256" class="Symbol"
+      >))</a
+      ><a name="2258"
+      > </a
+      ><a name="2259" class="Symbol"
+      >&#8594;</a
+      ><a name="2260"
+      > </a
+      ><a name="2261" class="Symbol"
+      >(</a
+      ><a name="2262" href="ContinuityProps.html#2262" class="Bound"
+      >x</a
+      ><a name="2263"
+      > </a
+      ><a name="2264" class="Symbol"
+      >:</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" href="ContinuityProps.html#2219" class="Bound"
+      >&#963;</a
+      ><a name="2271" class="Symbol"
+      >)</a
+      ><a name="2272"
+      > </a
+      ><a name="2273" class="Symbol"
+      >&#8594;</a
+      ><a name="2274"
+      > </a
+      ><a name="2275" href="CPO.html#3833" class="Function"
+      >PreservesLUB</a
+      ><a name="2287"
+      > </a
+      ><a name="2288" class="Symbol"
+      >(&#955;</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="ContinuityProps.html#2291" class="Bound"
+      >y</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" class="Symbol"
+      >&#8594;</a
+      ><a name="2294"
+      > </a
+      ><a name="2295" href="ContinuityProps.html#2236" class="Bound"
+      >f</a
+      ><a name="2296"
+      > </a
+      ><a name="2297" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2298"
+      > </a
+      ><a name="2299" class="Symbol"
+      >(</a
+      ><a name="2300" href="ContinuityProps.html#2262" class="Bound"
+      >x</a
+      ><a name="2301"
+      > </a
+      ><a name="2302" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2303"
+      > </a
+      ><a name="2304" href="ContinuityProps.html#2291" class="Bound"
+      >y</a
+      ><a name="2305" class="Symbol"
+      >))</a
+      ><a name="2307"
+      >
+  </a
+      ><a name="2310" href="ContinuityProps.html#2186" class="Function"
+      >preservesLUB-curry-underlying</a
+      ><a name="2339"
+      > </a
+      ><a name="2340" class="Symbol"
+      >{</a
+      ><a name="2341" href="ContinuityProps.html#2341" class="Bound"
+      >&#963;</a
+      ><a name="2342" class="Symbol"
+      >}</a
+      ><a name="2343"
+      > </a
+      ><a name="2344" class="Symbol"
+      >{</a
+      ><a name="2345" href="ContinuityProps.html#2345" class="Bound"
+      >&#964;</a
+      ><a name="2346" class="Symbol"
+      >}</a
+      ><a name="2347"
+      > </a
+      ><a name="2348" class="Symbol"
+      >{</a
+      ><a name="2349" href="ContinuityProps.html#2349" class="Bound"
+      >&#965;</a
+      ><a name="2350" class="Symbol"
+      >}</a
+      ><a name="2351"
+      > </a
+      ><a name="2352" href="ContinuityProps.html#2352" class="Bound"
+      >f</a
+      ><a name="2353"
+      > </a
+      ><a name="2354" href="ContinuityProps.html#2354" class="Bound"
+      >x</a
+      ><a name="2355"
+      > </a
+      ><a name="2356" href="ContinuityProps.html#2356" class="Bound"
+      >Y</a
+      ><a name="2357"
+      > </a
+      ><a name="2358" href="ContinuityProps.html#2358" class="Bound"
+      >p</a
+      ><a name="2359"
+      > </a
+      ><a name="2360" href="ContinuityProps.html#2360" class="Bound"
+      >z</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" href="ContinuityProps.html#2362" class="Bound"
+      >zUB</a
+      ><a name="2365"
+      > </a
+      ><a name="2366" class="Symbol"
+      >=</a
+      ><a name="2367"
+      > </a
+      ><a name="2368" href="CPO.html#4412" class="Function"
+      >preservesLUB</a
+      ><a name="2380"
+      > </a
+      ><a name="2381" href="ContinuityProps.html#2352" class="Bound"
+      >f</a
+      ><a name="2382"
+      > </a
+      ><a name="2383" class="Symbol"
+      >(</a
+      ><a name="2384" href="CPO.html#10579" class="Function"
+      >firstChain</a
+      ><a name="2394"
+      > </a
+      ><a name="2395" href="ContinuityProps.html#2354" class="Bound"
+      >x</a
+      ><a name="2396"
+      > </a
+      ><a name="2397" href="ContinuityProps.html#2356" class="Bound"
+      >Y</a
+      ><a name="2398" class="Symbol"
+      >)</a
+      ><a name="2399"
+      > </a
+      ><a name="2400" class="Symbol"
+      >(</a
+      ><a name="2401" href="CPOLemmas.html#6285" class="Function"
+      >firstIsNonEmptyChain</a
+      ><a name="2421"
+      > </a
+      ><a name="2422" href="ContinuityProps.html#2354" class="Bound"
+      >x</a
+      ><a name="2423"
+      > </a
+      ><a name="2424" href="ContinuityProps.html#2356" class="Bound"
+      >Y</a
+      ><a name="2425"
+      > </a
+      ><a name="2426" href="ContinuityProps.html#2358" class="Bound"
+      >p</a
+      ><a name="2427" class="Symbol"
+      >)</a
+      ><a name="2428"
+      > </a
+      ><a name="2429" href="ContinuityProps.html#2360" class="Bound"
+      >z</a
+      ><a name="2430"
+      > </a
+      ><a name="2431" href="ContinuityProps.html#2470" class="Function"
+      >preservesLUB-curry-aux</a
+      ><a name="2453"
+      >
+    </a
+      ><a name="2458" class="Keyword"
+      >where</a
+      ><a name="2463"
+      >
+      </a
+      ><a name="2470" href="ContinuityProps.html#2470" class="Function"
+      >preservesLUB-curry-aux</a
+      ><a name="2492"
+      > </a
+      ><a name="2493" class="Symbol"
+      >:</a
+      ><a name="2494"
+      > </a
+      ><a name="2495" class="Symbol"
+      >(</a
+      ><a name="2496" href="ContinuityProps.html#2496" class="Bound"
+      >z'</a
+      ><a name="2498"
+      > </a
+      ><a name="2499" class="Symbol"
+      >:</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2504"
+      > </a
+      ><a name="2505" href="ContinuityProps.html#2349" class="Bound"
+      >&#965;</a
+      ><a name="2506" class="Symbol"
+      >)</a
+      ><a name="2507"
+      > </a
+      ><a name="2508" class="Symbol"
+      >&#8594;</a
+      ><a name="2509"
+      > </a
+      ><a name="2510" href="Base.html#506" class="Record"
+      >&#931;</a
+      ><a name="2511"
+      > </a
+      ><a name="2512" class="Symbol"
+      >(</a
+      ><a name="2513" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2516"
+      > </a
+      ><a name="2517" class="Symbol"
+      >(</a
+      ><a name="2518" href="ContinuityProps.html#2341" class="Bound"
+      >&#963;</a
+      ><a name="2519"
+      > </a
+      ><a name="2520" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="2521"
+      > </a
+      ><a name="2522" href="ContinuityProps.html#2345" class="Bound"
+      >&#964;</a
+      ><a name="2523" class="Symbol"
+      >))</a
+      ><a name="2525"
+      > </a
+      ><a name="2526" class="Symbol"
+      >(&#955;</a
+      ><a name="2528"
+      > </a
+      ><a name="2529" href="ContinuityProps.html#2529" class="Bound"
+      >xy</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" class="Symbol"
+      >&#8594;</a
+      ><a name="2533"
+      > </a
+      ><a name="2534" class="Symbol"
+      >(</a
+      ><a name="2535" href="CPO.html#10423" class="Function"
+      >uncurry-prop</a
+      ><a name="2547"
+      > </a
+      ><a name="2548" class="Symbol"
+      >(&#955;</a
+      ><a name="2550"
+      > </a
+      ><a name="2551" href="ContinuityProps.html#2551" class="Bound"
+      >x'</a
+      ><a name="2553"
+      > </a
+      ><a name="2554" href="ContinuityProps.html#2554" class="Bound"
+      >y</a
+      ><a name="2555"
+      > </a
+      ><a name="2556" class="Symbol"
+      >&#8594;</a
+      ><a name="2557"
+      > </a
+      ><a name="2558" class="Symbol"
+      >(</a
+      ><a name="2559" href="ContinuityProps.html#2354" class="Bound"
+      >x</a
+      ><a name="2560"
+      > </a
+      ><a name="2561" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2562"
+      > </a
+      ><a name="2563" href="ContinuityProps.html#2551" class="Bound"
+      >x'</a
+      ><a name="2565" class="Symbol"
+      >)</a
+      ><a name="2566"
+      > </a
+      ><a name="2567" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="2568"
+      > </a
+      ><a name="2569" href="ContinuityProps.html#2554" class="Bound"
+      >y</a
+      ><a name="2570"
+      > </a
+      ><a name="2571" href="CPO.html#2889" class="Function Operator"
+      >&#8712;</a
+      ><a name="2572"
+      > </a
+      ><a name="2573" href="ContinuityProps.html#2356" class="Bound"
+      >Y</a
+      ><a name="2574" class="Symbol"
+      >)</a
+      ><a name="2575"
+      > </a
+      ><a name="2576" href="ContinuityProps.html#2529" class="Bound"
+      >xy</a
+      ><a name="2578" class="Symbol"
+      >)</a
+      ><a name="2579"
+      > </a
+      ><a name="2580" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="2581"
+      > </a
+      ><a name="2582" href="ContinuityProps.html#2352" class="Bound"
+      >f</a
+      ><a name="2583"
+      > </a
+      ><a name="2584" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2585"
+      > </a
+      ><a name="2586" href="ContinuityProps.html#2529" class="Bound"
+      >xy</a
+      ><a name="2588"
+      > </a
+      ><a name="2589" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2590"
+      > </a
+      ><a name="2591" href="ContinuityProps.html#2496" class="Bound"
+      >z'</a
+      ><a name="2593" class="Symbol"
+      >)</a
+      ><a name="2594"
+      > </a
+      ><a name="2595" class="Symbol"
+      >&#8594;</a
+      ><a name="2596"
+      > </a
+      ><a name="2597" href="ContinuityProps.html#2496" class="Bound"
+      >z'</a
+      ><a name="2599"
+      > </a
+      ><a name="2600" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="2601"
+      > </a
+      ><a name="2602" href="ContinuityProps.html#2360" class="Bound"
+      >z</a
+      ><a name="2603"
+      >
+      </a
+      ><a name="2610" href="ContinuityProps.html#2470" class="Function"
+      >preservesLUB-curry-aux</a
+      ><a name="2632"
+      > </a
+      ><a name="2633" class="DottedPattern Symbol"
+      >._</a
+      ><a name="2635"
+      > </a
+      ><a name="2636" class="Symbol"
+      >((</a
+      ><a name="2638" class="DottedPattern Symbol"
+      >.</a
+      ><a name="2639" href="ContinuityProps.html#2354" class="DottedPattern Bound"
+      >x</a
+      ><a name="2640"
+      > </a
+      ><a name="2641" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2642"
+      > </a
+      ><a name="2643" href="ContinuityProps.html#2643" class="Bound"
+      >y</a
+      ><a name="2644" class="Symbol"
+      >)</a
+      ><a name="2645"
+      > </a
+      ><a name="2646" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2647"
+      > </a
+      ><a name="2648" class="Symbol"
+      >(</a
+      ><a name="2649" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2655"
+      > </a
+      ><a name="2656" href="ContinuityProps.html#2656" class="Bound"
+      >Py</a
+      ><a name="2658" class="Symbol"
+      >)</a
+      ><a name="2659"
+      > </a
+      ><a name="2660" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="2666" class="Symbol"
+      >)</a
+      ><a name="2667"
+      > </a
+      ><a name="2668" class="Symbol"
+      >=</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" href="ContinuityProps.html#2362" class="Bound"
+      >zUB</a
+      ><a name="2673"
+      > </a
+      ><a name="2674" class="Symbol"
+      >(</a
+      ><a name="2675" href="ContinuityProps.html#2352" class="Bound"
+      >f</a
+      ><a name="2676"
+      > </a
+      ><a name="2677" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2678"
+      > </a
+      ><a name="2679" class="Symbol"
+      >(</a
+      ><a name="2680" href="ContinuityProps.html#2354" class="Bound"
+      >x</a
+      ><a name="2681"
+      > </a
+      ><a name="2682" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2683"
+      > </a
+      ><a name="2684" href="ContinuityProps.html#2643" class="Bound"
+      >y</a
+      ><a name="2685" class="Symbol"
+      >))</a
+      ><a name="2687"
+      > </a
+      ><a name="2688" class="Symbol"
+      >(</a
+      ><a name="2689" href="ContinuityProps.html#2643" class="Bound"
+      >y</a
+      ><a name="2690"
+      > </a
+      ><a name="2691" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2692"
+      > </a
+      ><a name="2693" class="Symbol"
+      >(</a
+      ><a name="2694" href="ContinuityProps.html#2656" class="Bound"
+      >Py</a
+      ><a name="2696"
+      > </a
+      ><a name="2697" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2698"
+      > </a
+      ><a name="2699" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="2703" class="Symbol"
+      >))</a
+      ><a name="2705"
+      >
+
+  </a
+      ><a name="2709" href="ContinuityProps.html#2709" class="Function"
+      >continuous-curry-underlying</a
+      ><a name="2736"
+      > </a
+      ><a name="2737" class="Symbol"
+      >:</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" class="Symbol"
+      >{</a
+      ><a name="2740" href="ContinuityProps.html#2740" class="Bound"
+      >&#963;</a
+      ><a name="2741"
+      > </a
+      ><a name="2742" href="ContinuityProps.html#2742" class="Bound"
+      >&#964;</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="ContinuityProps.html#2744" class="Bound"
+      >&#965;</a
+      ><a name="2745"
+      > </a
+      ><a name="2746" class="Symbol"
+      >:</a
+      ><a name="2747"
+      > </a
+      ><a name="2748" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="2752" class="Symbol"
+      >}</a
+      ><a name="2753"
+      > </a
+      ><a name="2754" class="Symbol"
+      >&#8594;</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" class="Symbol"
+      >(</a
+      ><a name="2757" href="ContinuityProps.html#2757" class="Bound"
+      >f</a
+      ><a name="2758"
+      > </a
+      ><a name="2759" class="Symbol"
+      >:</a
+      ><a name="2760"
+      > </a
+      ><a name="2761" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2764"
+      > </a
+      ><a name="2765" class="Symbol"
+      >((</a
+      ><a name="2767" href="ContinuityProps.html#2740" class="Bound"
+      >&#963;</a
+      ><a name="2768"
+      > </a
+      ><a name="2769" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="2770"
+      > </a
+      ><a name="2771" href="ContinuityProps.html#2742" class="Bound"
+      >&#964;</a
+      ><a name="2772" class="Symbol"
+      >)</a
+      ><a name="2773"
+      > </a
+      ><a name="2774" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="2775"
+      > </a
+      ><a name="2776" href="ContinuityProps.html#2744" class="Bound"
+      >&#965;</a
+      ><a name="2777" class="Symbol"
+      >))</a
+      ><a name="2779"
+      > </a
+      ><a name="2780" class="Symbol"
+      >&#8594;</a
+      ><a name="2781"
+      > </a
+      ><a name="2782" class="Symbol"
+      >(</a
+      ><a name="2783" href="ContinuityProps.html#2783" class="Bound"
+      >x</a
+      ><a name="2784"
+      > </a
+      ><a name="2785" class="Symbol"
+      >:</a
+      ><a name="2786"
+      > </a
+      ><a name="2787" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2790"
+      > </a
+      ><a name="2791" href="ContinuityProps.html#2740" class="Bound"
+      >&#963;</a
+      ><a name="2792" class="Symbol"
+      >)</a
+      ><a name="2793"
+      > </a
+      ><a name="2794" class="Symbol"
+      >&#8594;</a
+      ><a name="2795"
+      > </a
+      ><a name="2796" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="2806"
+      > </a
+      ><a name="2807" class="Symbol"
+      >(&#955;</a
+      ><a name="2809"
+      > </a
+      ><a name="2810" href="ContinuityProps.html#2810" class="Bound"
+      >y</a
+      ><a name="2811"
+      > </a
+      ><a name="2812" class="Symbol"
+      >&#8594;</a
+      ><a name="2813"
+      > </a
+      ><a name="2814" href="ContinuityProps.html#2757" class="Bound"
+      >f</a
+      ><a name="2815"
+      > </a
+      ><a name="2816" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2817"
+      > </a
+      ><a name="2818" class="Symbol"
+      >(</a
+      ><a name="2819" href="ContinuityProps.html#2783" class="Bound"
+      >x</a
+      ><a name="2820"
+      > </a
+      ><a name="2821" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2822"
+      > </a
+      ><a name="2823" href="ContinuityProps.html#2810" class="Bound"
+      >y</a
+      ><a name="2824" class="Symbol"
+      >))</a
+      ><a name="2826"
+      >
+  </a
+      ><a name="2829" href="ContinuityProps.html#2709" class="Function"
+      >continuous-curry-underlying</a
+      ><a name="2856"
+      > </a
+      ><a name="2857" href="ContinuityProps.html#2857" class="Bound"
+      >f</a
+      ><a name="2858"
+      > </a
+      ><a name="2859" href="ContinuityProps.html#2859" class="Bound"
+      >x</a
+      ><a name="2860"
+      > </a
+      ><a name="2861" class="Symbol"
+      >=</a
+      ><a name="2862"
+      > </a
+      ><a name="2863" href="ContinuityProps.html#1998" class="Function"
+      >monotonic-curry-underlying</a
+      ><a name="2889"
+      > </a
+      ><a name="2890" href="ContinuityProps.html#2857" class="Bound"
+      >f</a
+      ><a name="2891"
+      > </a
+      ><a name="2892" href="ContinuityProps.html#2859" class="Bound"
+      >x</a
+      ><a name="2893"
+      > </a
+      ><a name="2894" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2895"
+      > </a
+      ><a name="2896" href="ContinuityProps.html#2186" class="Function"
+      >preservesLUB-curry-underlying</a
+      ><a name="2925"
+      > </a
+      ><a name="2926" href="ContinuityProps.html#2857" class="Bound"
+      >f</a
+      ><a name="2927"
+      > </a
+      ><a name="2928" href="ContinuityProps.html#2859" class="Bound"
+      >x</a
+      ><a name="2929"
+      >
+
+</a
+      ><a name="2931" href="ContinuityProps.html#2931" class="Function"
+      >curry-&#8855;'</a
+      ><a name="2939"
+      > </a
+      ><a name="2940" class="Symbol"
+      >:</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" class="Symbol"
+      >{</a
+      ><a name="2943" href="ContinuityProps.html#2943" class="Bound"
+      >&#963;</a
+      ><a name="2944"
+      > </a
+      ><a name="2945" href="ContinuityProps.html#2945" class="Bound"
+      >&#964;</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" href="ContinuityProps.html#2947" class="Bound"
+      >&#965;</a
+      ><a name="2948"
+      > </a
+      ><a name="2949" class="Symbol"
+      >:</a
+      ><a name="2950"
+      > </a
+      ><a name="2951" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="2955" class="Symbol"
+      >}</a
+      ><a name="2956"
+      > </a
+      ><a name="2957" class="Symbol"
+      >&#8594;</a
+      ><a name="2958"
+      > </a
+      ><a name="2959" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2962"
+      > </a
+      ><a name="2963" class="Symbol"
+      >((</a
+      ><a name="2965" href="ContinuityProps.html#2943" class="Bound"
+      >&#963;</a
+      ><a name="2966"
+      > </a
+      ><a name="2967" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="2968"
+      > </a
+      ><a name="2969" href="ContinuityProps.html#2945" class="Bound"
+      >&#964;</a
+      ><a name="2970" class="Symbol"
+      >)</a
+      ><a name="2971"
+      > </a
+      ><a name="2972" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="2973"
+      > </a
+      ><a name="2974" href="ContinuityProps.html#2947" class="Bound"
+      >&#965;</a
+      ><a name="2975" class="Symbol"
+      >)</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" class="Symbol"
+      >&#8594;</a
+      ><a name="2978"
+      > </a
+      ><a name="2979" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" href="ContinuityProps.html#2943" class="Bound"
+      >&#963;</a
+      ><a name="2984"
+      > </a
+      ><a name="2985" class="Symbol"
+      >&#8594;</a
+      ><a name="2986"
+      > </a
+      ><a name="2987" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="2990"
+      > </a
+      ><a name="2991" class="Symbol"
+      >(</a
+      ><a name="2992" href="ContinuityProps.html#2945" class="Bound"
+      >&#964;</a
+      ><a name="2993"
+      > </a
+      ><a name="2994" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="2995"
+      > </a
+      ><a name="2996" href="ContinuityProps.html#2947" class="Bound"
+      >&#965;</a
+      ><a name="2997" class="Symbol"
+      >)</a
+      ><a name="2998"
+      >
+</a
+      ><a name="2999" href="ContinuityProps.html#2931" class="Function"
+      >curry-&#8855;'</a
+      ><a name="3007"
+      > </a
+      ><a name="3008" href="ContinuityProps.html#3008" class="Bound"
+      >f</a
+      ><a name="3009"
+      > </a
+      ><a name="3010" href="ContinuityProps.html#3010" class="Bound"
+      >x</a
+      ><a name="3011"
+      > </a
+      ><a name="3012" class="Symbol"
+      >=</a
+      ><a name="3013"
+      > </a
+      ><a name="3014" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="3017"
+      > </a
+      ><a name="3018" class="Symbol"
+      >(&#955;</a
+      ><a name="3020"
+      > </a
+      ><a name="3021" href="ContinuityProps.html#3021" class="Bound"
+      >y</a
+      ><a name="3022"
+      > </a
+      ><a name="3023" class="Symbol"
+      >&#8594;</a
+      ><a name="3024"
+      > </a
+      ><a name="3025" href="ContinuityProps.html#3008" class="Bound"
+      >f</a
+      ><a name="3026"
+      > </a
+      ><a name="3027" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="3028"
+      > </a
+      ><a name="3029" class="Symbol"
+      >(</a
+      ><a name="3030" href="ContinuityProps.html#3010" class="Bound"
+      >x</a
+      ><a name="3031"
+      > </a
+      ><a name="3032" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" href="ContinuityProps.html#3021" class="Bound"
+      >y</a
+      ><a name="3035" class="Symbol"
+      >))</a
+      ><a name="3037"
+      > </a
+      ><a name="3038" class="Symbol"
+      >(</a
+      ><a name="3039" href="ContinuityProps.html#2709" class="Function"
+      >continuous-curry-underlying</a
+      ><a name="3066"
+      > </a
+      ><a name="3067" href="ContinuityProps.html#3008" class="Bound"
+      >f</a
+      ><a name="3068"
+      > </a
+      ><a name="3069" href="ContinuityProps.html#3010" class="Bound"
+      >x</a
+      ><a name="3070" class="Symbol"
+      >)</a
+      ><a name="3071"
+      >
+
+</a
+      ><a name="3073" class="Keyword"
+      >abstract</a
+      ><a name="3081"
+      >
+
+  </a
+      ><a name="3085" href="ContinuityProps.html#3085" class="Function"
+      >monotonic-curry</a
+      ><a name="3100"
+      > </a
+      ><a name="3101" class="Symbol"
+      >:</a
+      ><a name="3102"
+      > </a
+      ><a name="3103" class="Symbol"
+      >{</a
+      ><a name="3104" href="ContinuityProps.html#3104" class="Bound"
+      >&#963;</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" href="ContinuityProps.html#3106" class="Bound"
+      >&#964;</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" href="ContinuityProps.html#3108" class="Bound"
+      >&#965;</a
+      ><a name="3109"
+      > </a
+      ><a name="3110" class="Symbol"
+      >:</a
+      ><a name="3111"
+      > </a
+      ><a name="3112" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="3116" class="Symbol"
+      >}</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" class="Symbol"
+      >&#8594;</a
+      ><a name="3119"
+      > </a
+      ><a name="3120" class="Symbol"
+      >(</a
+      ><a name="3121" href="ContinuityProps.html#3121" class="Bound"
+      >f</a
+      ><a name="3122"
+      > </a
+      ><a name="3123" class="Symbol"
+      >:</a
+      ><a name="3124"
+      > </a
+      ><a name="3125" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" class="Symbol"
+      >((</a
+      ><a name="3131" href="ContinuityProps.html#3104" class="Bound"
+      >&#963;</a
+      ><a name="3132"
+      > </a
+      ><a name="3133" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="3134"
+      > </a
+      ><a name="3135" href="ContinuityProps.html#3106" class="Bound"
+      >&#964;</a
+      ><a name="3136" class="Symbol"
+      >)</a
+      ><a name="3137"
+      > </a
+      ><a name="3138" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="3139"
+      > </a
+      ><a name="3140" href="ContinuityProps.html#3108" class="Bound"
+      >&#965;</a
+      ><a name="3141" class="Symbol"
+      >))</a
+      ><a name="3143"
+      > </a
+      ><a name="3144" class="Symbol"
+      >&#8594;</a
+      ><a name="3145"
+      > </a
+      ><a name="3146" href="CPO.html#2615" class="Function"
+      >Monotonic</a
+      ><a name="3155"
+      > </a
+      ><a name="3156" class="Symbol"
+      >(</a
+      ><a name="3157" href="ContinuityProps.html#2931" class="Function"
+      >curry-&#8855;'</a
+      ><a name="3165"
+      > </a
+      ><a name="3166" href="ContinuityProps.html#3121" class="Bound"
+      >f</a
+      ><a name="3167" class="Symbol"
+      >)</a
+      ><a name="3168"
+      >
+  </a
+      ><a name="3171" href="ContinuityProps.html#3085" class="Function"
+      >monotonic-curry</a
+      ><a name="3186"
+      > </a
+      ><a name="3187" href="ContinuityProps.html#3187" class="Bound"
+      >f</a
+      ><a name="3188"
+      > </a
+      ><a name="3189" href="ContinuityProps.html#3189" class="Bound"
+      >lt</a
+      ><a name="3191"
+      > </a
+      ><a name="3192" class="Symbol"
+      >=</a
+      ><a name="3193"
+      > </a
+      ><a name="3194" href="CPO.html#2180" class="InductiveConstructor"
+      >&#8849;-fun</a
+      ><a name="3199"
+      > </a
+      ><a name="3200" class="Symbol"
+      >(</a
+      ><a name="3201" href="CPO.html#4314" class="Function"
+      >monotonic</a
+      ><a name="3210"
+      > </a
+      ><a name="3211" href="ContinuityProps.html#3187" class="Bound"
+      >f</a
+      ><a name="3212"
+      > </a
+      ><a name="3213" class="Symbol"
+      >(</a
+      ><a name="3214" href="CPO.html#2074" class="InductiveConstructor"
+      >&#8849;-prod</a
+      ><a name="3220"
+      > </a
+      ><a name="3221" href="ContinuityProps.html#3189" class="Bound"
+      >lt</a
+      ><a name="3223"
+      > </a
+      ><a name="3224" href="CPO.html#7804" class="Function"
+      >&#8849;-refl</a
+      ><a name="3230" class="Symbol"
+      >))</a
+      ><a name="3232"
+      >
+
+  </a
+      ><a name="3236" href="ContinuityProps.html#3236" class="Function"
+      >preservesLUB-curry</a
+      ><a name="3254"
+      > </a
+      ><a name="3255" class="Symbol"
+      >:</a
+      ><a name="3256"
+      > </a
+      ><a name="3257" class="Symbol"
+      >{</a
+      ><a name="3258" href="ContinuityProps.html#3258" class="Bound"
+      >&#963;</a
+      ><a name="3259"
+      > </a
+      ><a name="3260" href="ContinuityProps.html#3260" class="Bound"
+      >&#964;</a
+      ><a name="3261"
+      > </a
+      ><a name="3262" href="ContinuityProps.html#3262" class="Bound"
+      >&#965;</a
+      ><a name="3263"
+      > </a
+      ><a name="3264" class="Symbol"
+      >:</a
+      ><a name="3265"
+      > </a
+      ><a name="3266" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="3270" class="Symbol"
+      >}</a
+      ><a name="3271"
+      > </a
+      ><a name="3272" class="Symbol"
+      >&#8594;</a
+      ><a name="3273"
+      > </a
+      ><a name="3274" class="Symbol"
+      >(</a
+      ><a name="3275" href="ContinuityProps.html#3275" class="Bound"
+      >f</a
+      ><a name="3276"
+      > </a
+      ><a name="3277" class="Symbol"
+      >:</a
+      ><a name="3278"
+      > </a
+      ><a name="3279" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3282"
+      > </a
+      ><a name="3283" class="Symbol"
+      >((</a
+      ><a name="3285" href="ContinuityProps.html#3258" class="Bound"
+      >&#963;</a
+      ><a name="3286"
+      > </a
+      ><a name="3287" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="3288"
+      > </a
+      ><a name="3289" href="ContinuityProps.html#3260" class="Bound"
+      >&#964;</a
+      ><a name="3290" class="Symbol"
+      >)</a
+      ><a name="3291"
+      > </a
+      ><a name="3292" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="3293"
+      > </a
+      ><a name="3294" href="ContinuityProps.html#3262" class="Bound"
+      >&#965;</a
+      ><a name="3295" class="Symbol"
+      >))</a
+      ><a name="3297"
+      > </a
+      ><a name="3298" class="Symbol"
+      >&#8594;</a
+      ><a name="3299"
+      > </a
+      ><a name="3300" href="CPO.html#3833" class="Function"
+      >PreservesLUB</a
+      ><a name="3312"
+      > </a
+      ><a name="3313" class="Symbol"
+      >(</a
+      ><a name="3314" href="ContinuityProps.html#2931" class="Function"
+      >curry-&#8855;'</a
+      ><a name="3322"
+      > </a
+      ><a name="3323" href="ContinuityProps.html#3275" class="Bound"
+      >f</a
+      ><a name="3324" class="Symbol"
+      >)</a
+      ><a name="3325"
+      >
+  </a
+      ><a name="3328" href="ContinuityProps.html#3236" class="Function"
+      >preservesLUB-curry</a
+      ><a name="3346"
+      > </a
+      ><a name="3347" class="Symbol"
+      >{</a
+      ><a name="3348" href="ContinuityProps.html#3348" class="Bound"
+      >&#963;</a
+      ><a name="3349" class="Symbol"
+      >}</a
+      ><a name="3350"
+      > </a
+      ><a name="3351" class="Symbol"
+      >{</a
+      ><a name="3352" href="ContinuityProps.html#3352" class="Bound"
+      >&#964;</a
+      ><a name="3353" class="Symbol"
+      >}</a
+      ><a name="3354"
+      > </a
+      ><a name="3355" class="Symbol"
+      >{</a
+      ><a name="3356" href="ContinuityProps.html#3356" class="Bound"
+      >&#965;</a
+      ><a name="3357" class="Symbol"
+      >}</a
+      ><a name="3358"
+      > </a
+      ><a name="3359" href="ContinuityProps.html#3359" class="Bound"
+      >f</a
+      ><a name="3360"
+      > </a
+      ><a name="3361" href="ContinuityProps.html#3361" class="Bound"
+      >X</a
+      ><a name="3362"
+      > </a
+      ><a name="3363" href="ContinuityProps.html#3363" class="Bound"
+      >p</a
+      ><a name="3364"
+      > </a
+      ><a name="3365" class="Symbol"
+      >(</a
+      ><a name="3366" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="3369"
+      > </a
+      ><a name="3370" href="ContinuityProps.html#3370" class="Bound"
+      >g</a
+      ><a name="3371"
+      > </a
+      ><a name="3372" href="ContinuityProps.html#3372" class="Bound"
+      >cg</a
+      ><a name="3374" class="Symbol"
+      >)</a
+      ><a name="3375"
+      > </a
+      ><a name="3376" href="ContinuityProps.html#3376" class="Bound"
+      >gUB</a
+      ><a name="3379"
+      > </a
+      ><a name="3380" class="Symbol"
+      >=</a
+      ><a name="3381"
+      > </a
+      ><a name="3382" href="CPO.html#2180" class="InductiveConstructor"
+      >&#8849;-fun</a
+      ><a name="3387"
+      > </a
+      ><a name="3388" class="Symbol"
+      >(&#955;</a
+      ><a name="3390"
+      > </a
+      ><a name="3391" class="Symbol"
+      >{</a
+      ><a name="3392" href="ContinuityProps.html#3392" class="Bound"
+      >y</a
+      ><a name="3393" class="Symbol"
+      >}</a
+      ><a name="3394"
+      > </a
+      ><a name="3395" class="Symbol"
+      >&#8594;</a
+      ><a name="3396"
+      > </a
+      ><a name="3397" href="CPO.html#4412" class="Function"
+      >preservesLUB</a
+      ><a name="3409"
+      > </a
+      ><a name="3410" href="ContinuityProps.html#3359" class="Bound"
+      >f</a
+      ><a name="3411"
+      > </a
+      ><a name="3412" class="Symbol"
+      >(</a
+      ><a name="3413" href="CPO.html#10712" class="Function"
+      >secondChain</a
+      ><a name="3424"
+      > </a
+      ><a name="3425" href="ContinuityProps.html#3392" class="Bound"
+      >y</a
+      ><a name="3426"
+      > </a
+      ><a name="3427" href="ContinuityProps.html#3361" class="Bound"
+      >X</a
+      ><a name="3428" class="Symbol"
+      >)</a
+      ><a name="3429"
+      > </a
+      ><a name="3430" class="Symbol"
+      >(</a
+      ><a name="3431" href="CPOLemmas.html#6585" class="Function"
+      >secondIsNonEmptyChain</a
+      ><a name="3452"
+      > </a
+      ><a name="3453" href="ContinuityProps.html#3392" class="Bound"
+      >y</a
+      ><a name="3454"
+      > </a
+      ><a name="3455" href="ContinuityProps.html#3361" class="Bound"
+      >X</a
+      ><a name="3456"
+      > </a
+      ><a name="3457" href="ContinuityProps.html#3363" class="Bound"
+      >p</a
+      ><a name="3458" class="Symbol"
+      >)</a
+      ><a name="3459"
+      > </a
+      ><a name="3460" class="Symbol"
+      >(</a
+      ><a name="3461" href="ContinuityProps.html#3370" class="Bound"
+      >g</a
+      ><a name="3462"
+      > </a
+      ><a name="3463" href="ContinuityProps.html#3392" class="Bound"
+      >y</a
+      ><a name="3464" class="Symbol"
+      >)</a
+      ><a name="3465"
+      > </a
+      ><a name="3466" class="Symbol"
+      >(</a
+      ><a name="3467" href="ContinuityProps.html#3510" class="Function"
+      >preservesLUB-curry-aux</a
+      ><a name="3489"
+      > </a
+      ><a name="3490" href="ContinuityProps.html#3392" class="Bound"
+      >y</a
+      ><a name="3491" class="Symbol"
+      >))</a
+      ><a name="3493"
+      >
+    </a
+      ><a name="3498" class="Keyword"
+      >where</a
+      ><a name="3503"
+      >
+      </a
+      ><a name="3510" href="ContinuityProps.html#3510" class="Function"
+      >preservesLUB-curry-aux</a
+      ><a name="3532"
+      > </a
+      ><a name="3533" class="Symbol"
+      >:</a
+      ><a name="3534"
+      > </a
+      ><a name="3535" class="Symbol"
+      >(</a
+      ><a name="3536" href="ContinuityProps.html#3536" class="Bound"
+      >y</a
+      ><a name="3537"
+      > </a
+      ><a name="3538" class="Symbol"
+      >:</a
+      ><a name="3539"
+      > </a
+      ><a name="3540" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3543"
+      > </a
+      ><a name="3544" href="ContinuityProps.html#3352" class="Bound"
+      >&#964;</a
+      ><a name="3545" class="Symbol"
+      >)</a
+      ><a name="3546"
+      > </a
+      ><a name="3547" class="Symbol"
+      >&#8594;</a
+      ><a name="3548"
+      > </a
+      ><a name="3549" class="Symbol"
+      >(</a
+      ><a name="3550" href="ContinuityProps.html#3550" class="Bound"
+      >z</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" class="Symbol"
+      >:</a
+      ><a name="3553"
+      > </a
+      ><a name="3554" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3557"
+      > </a
+      ><a name="3558" href="ContinuityProps.html#3356" class="Bound"
+      >&#965;</a
+      ><a name="3559" class="Symbol"
+      >)</a
+      ><a name="3560"
+      > </a
+      ><a name="3561" class="Symbol"
+      >&#8594;</a
+      ><a name="3562"
+      > </a
+      ><a name="3563" href="Base.html#506" class="Record"
+      >&#931;</a
+      ><a name="3564"
+      > </a
+      ><a name="3565" class="Symbol"
+      >(</a
+      ><a name="3566" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3569"
+      > </a
+      ><a name="3570" class="Symbol"
+      >(</a
+      ><a name="3571" href="ContinuityProps.html#3348" class="Bound"
+      >&#963;</a
+      ><a name="3572"
+      > </a
+      ><a name="3573" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="3574"
+      > </a
+      ><a name="3575" href="ContinuityProps.html#3352" class="Bound"
+      >&#964;</a
+      ><a name="3576" class="Symbol"
+      >))</a
+      ><a name="3578"
+      > </a
+      ><a name="3579" class="Symbol"
+      >(&#955;</a
+      ><a name="3581"
+      > </a
+      ><a name="3582" href="ContinuityProps.html#3582" class="Bound"
+      >xy</a
+      ><a name="3584"
+      > </a
+      ><a name="3585" class="Symbol"
+      >&#8594;</a
+      ><a name="3586"
+      > </a
+      ><a name="3587" href="CPO.html#10423" class="Function"
+      >uncurry-prop</a
+      ><a name="3599"
+      > </a
+      ><a name="3600" class="Symbol"
+      >(&#955;</a
+      ><a name="3602"
+      > </a
+      ><a name="3603" href="ContinuityProps.html#3603" class="Bound"
+      >x'</a
+      ><a name="3605"
+      > </a
+      ><a name="3606" href="ContinuityProps.html#3606" class="Bound"
+      >y'</a
+      ><a name="3608"
+      > </a
+      ><a name="3609" class="Symbol"
+      >&#8594;</a
+      ><a name="3610"
+      > </a
+      ><a name="3611" href="ContinuityProps.html#3536" class="Bound"
+      >y</a
+      ><a name="3612"
+      > </a
+      ><a name="3613" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3614"
+      > </a
+      ><a name="3615" href="ContinuityProps.html#3606" class="Bound"
+      >y'</a
+      ><a name="3617"
+      > </a
+      ><a name="3618" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="3619"
+      > </a
+      ><a name="3620" class="Symbol"
+      >(</a
+      ><a name="3621" href="ContinuityProps.html#3603" class="Bound"
+      >x'</a
+      ><a name="3623"
+      > </a
+      ><a name="3624" href="CPO.html#2889" class="Function Operator"
+      >&#8712;</a
+      ><a name="3625"
+      > </a
+      ><a name="3626" href="ContinuityProps.html#3361" class="Bound"
+      >X</a
+      ><a name="3627" class="Symbol"
+      >))</a
+      ><a name="3629"
+      > </a
+      ><a name="3630" href="ContinuityProps.html#3582" class="Bound"
+      >xy</a
+      ><a name="3632"
+      > </a
+      ><a name="3633" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="3634"
+      > </a
+      ><a name="3635" class="Symbol"
+      >(</a
+      ><a name="3636" href="ContinuityProps.html#3359" class="Bound"
+      >f</a
+      ><a name="3637"
+      > </a
+      ><a name="3638" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="3639"
+      > </a
+      ><a name="3640" href="ContinuityProps.html#3582" class="Bound"
+      >xy</a
+      ><a name="3642"
+      > </a
+      ><a name="3643" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3644"
+      > </a
+      ><a name="3645" href="ContinuityProps.html#3550" class="Bound"
+      >z</a
+      ><a name="3646" class="Symbol"
+      >))</a
+      ><a name="3648"
+      > </a
+      ><a name="3649" class="Symbol"
+      >&#8594;</a
+      ><a name="3650"
+      > </a
+      ><a name="3651" href="ContinuityProps.html#3550" class="Bound"
+      >z</a
+      ><a name="3652"
+      > </a
+      ><a name="3653" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="3654"
+      > </a
+      ><a name="3655" href="ContinuityProps.html#3370" class="Bound"
+      >g</a
+      ><a name="3656"
+      > </a
+      ><a name="3657" href="ContinuityProps.html#3536" class="Bound"
+      >y</a
+      ><a name="3658"
+      >
+      </a
+      ><a name="3665" href="ContinuityProps.html#3510" class="Function"
+      >preservesLUB-curry-aux</a
+      ><a name="3687"
+      > </a
+      ><a name="3688" href="ContinuityProps.html#3688" class="Bound"
+      >y</a
+      ><a name="3689"
+      > </a
+      ><a name="3690" class="DottedPattern Symbol"
+      >._</a
+      ><a name="3692"
+      > </a
+      ><a name="3693" class="Symbol"
+      >((</a
+      ><a name="3695" href="ContinuityProps.html#3695" class="Bound"
+      >x'</a
+      ><a name="3697"
+      > </a
+      ><a name="3698" href="CPO.html#1381" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3699"
+      > </a
+      ><a name="3700" class="DottedPattern Symbol"
+      >._</a
+      ><a name="3702" class="Symbol"
+      >)</a
+      ><a name="3703"
+      > </a
+      ><a name="3704" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3705"
+      > </a
+      ><a name="3706" class="Symbol"
+      >(</a
+      ><a name="3707" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="3711"
+      > </a
+      ><a name="3712" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3713"
+      > </a
+      ><a name="3714" href="ContinuityProps.html#3714" class="Bound"
+      >Px'</a
+      ><a name="3717" class="Symbol"
+      >)</a
+      ><a name="3718"
+      > </a
+      ><a name="3719" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3720"
+      > </a
+      ><a name="3721" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="3725" class="Symbol"
+      >)</a
+      ><a name="3726"
+      > </a
+      ><a name="3727" class="Keyword"
+      >with</a
+      ><a name="3731"
+      > </a
+      ><a name="3732" href="ContinuityProps.html#3376" class="Bound"
+      >gUB</a
+      ><a name="3735"
+      > </a
+      ><a name="3736" class="Symbol"
+      >(</a
+      ><a name="3737" href="ContinuityProps.html#3359" class="Bound"
+      >f</a
+      ><a name="3738"
+      > </a
+      ><a name="3739" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3740"
+      > </a
+      ><a name="3741" class="Symbol"
+      >(</a
+      ><a name="3742" href="CPOFunctions.html#1163" class="Function"
+      >constant</a
+      ><a name="3750"
+      > </a
+      ><a name="3751" href="ContinuityProps.html#3695" class="Bound"
+      >x'</a
+      ><a name="3753"
+      > </a
+      ><a name="3754" href="CPOFunctions.html#4412" class="Function Operator"
+      >:&amp;:</a
+      ><a name="3757"
+      > </a
+      ><a name="3758" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="3766" class="Symbol"
+      >))</a
+      ><a name="3768"
+      > </a
+      ><a name="3769" class="Symbol"
+      >(</a
+      ><a name="3770" href="ContinuityProps.html#3695" class="Bound"
+      >x'</a
+      ><a name="3772"
+      > </a
+      ><a name="3773" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3774"
+      > </a
+      ><a name="3775" class="Symbol"
+      >(</a
+      ><a name="3776" href="ContinuityProps.html#3714" class="Bound"
+      >Px'</a
+      ><a name="3779"
+      > </a
+      ><a name="3780" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3781"
+      > </a
+      ><a name="3782" href="CPO.html#7573" class="Function"
+      >injective-$</a
+      ><a name="3793"
+      > </a
+      ><a name="3794" class="InductiveConstructor"
+      >refl</a
+      ><a name="3798" class="Symbol"
+      >))</a
+      ><a name="3800"
+      >
+      </a
+      ><a name="3807" class="Symbol"
+      >...</a
+      ><a name="3810"
+      > </a
+      ><a name="3811" class="Symbol"
+      >|</a
+      ><a name="3812"
+      > </a
+      ><a name="3813" href="CPO.html#2180" class="InductiveConstructor"
+      >&#8849;-fun</a
+      ><a name="3818"
+      > </a
+      ><a name="3819" href="ContinuityProps.html#3819" class="Bound"
+      >lt</a
+      ><a name="3821"
+      > </a
+      ><a name="3822" class="Symbol"
+      >=</a
+      ><a name="3823"
+      > </a
+      ><a name="3824" href="ContinuityProps.html#3819" class="Bound"
+      >lt</a
+      ><a name="3826"
+      >
+
+  </a
+      ><a name="3830" href="ContinuityProps.html#3830" class="Function"
+      >continuous-curry</a
+      ><a name="3846"
+      > </a
+      ><a name="3847" class="Symbol"
+      >:</a
+      ><a name="3848"
+      > </a
+      ><a name="3849" class="Symbol"
+      >{</a
+      ><a name="3850" href="ContinuityProps.html#3850" class="Bound"
+      >&#963;</a
+      ><a name="3851"
+      > </a
+      ><a name="3852" href="ContinuityProps.html#3852" class="Bound"
+      >&#964;</a
+      ><a name="3853"
+      > </a
+      ><a name="3854" href="ContinuityProps.html#3854" class="Bound"
+      >&#965;</a
+      ><a name="3855"
+      > </a
+      ><a name="3856" class="Symbol"
+      >:</a
+      ><a name="3857"
+      > </a
+      ><a name="3858" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="3862" class="Symbol"
+      >}</a
+      ><a name="3863"
+      > </a
+      ><a name="3864" class="Symbol"
+      >&#8594;</a
+      ><a name="3865"
+      > </a
+      ><a name="3866" class="Symbol"
+      >(</a
+      ><a name="3867" href="ContinuityProps.html#3867" class="Bound"
+      >f</a
+      ><a name="3868"
+      > </a
+      ><a name="3869" class="Symbol"
+      >:</a
+      ><a name="3870"
+      > </a
+      ><a name="3871" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3874"
+      > </a
+      ><a name="3875" class="Symbol"
+      >((</a
+      ><a name="3877" href="ContinuityProps.html#3850" class="Bound"
+      >&#963;</a
+      ><a name="3878"
+      > </a
+      ><a name="3879" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="3880"
+      > </a
+      ><a name="3881" href="ContinuityProps.html#3852" class="Bound"
+      >&#964;</a
+      ><a name="3882" class="Symbol"
+      >)</a
+      ><a name="3883"
+      > </a
+      ><a name="3884" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="3885"
+      > </a
+      ><a name="3886" href="ContinuityProps.html#3854" class="Bound"
+      >&#965;</a
+      ><a name="3887" class="Symbol"
+      >))</a
+      ><a name="3889"
+      > </a
+      ><a name="3890" class="Symbol"
+      >&#8594;</a
+      ><a name="3891"
+      > </a
+      ><a name="3892" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="3902"
+      > </a
+      ><a name="3903" class="Symbol"
+      >(</a
+      ><a name="3904" href="ContinuityProps.html#2931" class="Function"
+      >curry-&#8855;'</a
+      ><a name="3912"
+      > </a
+      ><a name="3913" href="ContinuityProps.html#3867" class="Bound"
+      >f</a
+      ><a name="3914" class="Symbol"
+      >)</a
+      ><a name="3915"
+      >
+  </a
+      ><a name="3918" href="ContinuityProps.html#3830" class="Function"
+      >continuous-curry</a
+      ><a name="3934"
+      > </a
+      ><a name="3935" href="ContinuityProps.html#3935" class="Bound"
+      >f</a
+      ><a name="3936"
+      > </a
+      ><a name="3937" class="Symbol"
+      >=</a
+      ><a name="3938"
+      > </a
+      ><a name="3939" href="ContinuityProps.html#3085" class="Function"
+      >monotonic-curry</a
+      ><a name="3954"
+      > </a
+      ><a name="3955" href="ContinuityProps.html#3935" class="Bound"
+      >f</a
+      ><a name="3956"
+      > </a
+      ><a name="3957" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3958"
+      > </a
+      ><a name="3959" href="ContinuityProps.html#3236" class="Function"
+      >preservesLUB-curry</a
+      ><a name="3977"
+      > </a
+      ><a name="3978" href="ContinuityProps.html#3935" class="Bound"
+      >f</a
+      ><a name="3979"
+      >
+
+</a
+      ><a name="3981" class="Comment"
+      >-- curry-&#8855; f = &#955; x y &#8594; f (x , y)</a
+      ><a name="4013"
+      >
+</a
+      ><a name="4014" href="ContinuityProps.html#4014" class="Function"
+      >curry-&#8855;</a
+      ><a name="4021"
+      > </a
+      ><a name="4022" class="Symbol"
+      >:</a
+      ><a name="4023"
+      > </a
+      ><a name="4024" class="Symbol"
+      >{</a
+      ><a name="4025" href="ContinuityProps.html#4025" class="Bound"
+      >&#963;</a
+      ><a name="4026"
+      > </a
+      ><a name="4027" href="ContinuityProps.html#4027" class="Bound"
+      >&#964;</a
+      ><a name="4028"
+      > </a
+      ><a name="4029" href="ContinuityProps.html#4029" class="Bound"
+      >&#965;</a
+      ><a name="4030"
+      > </a
+      ><a name="4031" class="Symbol"
+      >:</a
+      ><a name="4032"
+      > </a
+      ><a name="4033" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="4037" class="Symbol"
+      >}</a
+      ><a name="4038"
+      > </a
+      ><a name="4039" class="Symbol"
+      >&#8594;</a
+      ><a name="4040"
+      > </a
+      ><a name="4041" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4044"
+      > </a
+      ><a name="4045" class="Symbol"
+      >((</a
+      ><a name="4047" href="ContinuityProps.html#4025" class="Bound"
+      >&#963;</a
+      ><a name="4048"
+      > </a
+      ><a name="4049" href="CPO.html#1174" class="InductiveConstructor Operator"
+      >&#8855;</a
+      ><a name="4050"
+      > </a
+      ><a name="4051" href="ContinuityProps.html#4027" class="Bound"
+      >&#964;</a
+      ><a name="4052" class="Symbol"
+      >)</a
+      ><a name="4053"
+      > </a
+      ><a name="4054" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4055"
+      > </a
+      ><a name="4056" href="ContinuityProps.html#4029" class="Bound"
+      >&#965;</a
+      ><a name="4057" class="Symbol"
+      >)</a
+      ><a name="4058"
+      > </a
+      ><a name="4059" class="Symbol"
+      >&#8594;</a
+      ><a name="4060"
+      > </a
+      ><a name="4061" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4064"
+      > </a
+      ><a name="4065" class="Symbol"
+      >(</a
+      ><a name="4066" href="ContinuityProps.html#4025" class="Bound"
+      >&#963;</a
+      ><a name="4067"
+      > </a
+      ><a name="4068" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4069"
+      > </a
+      ><a name="4070" href="ContinuityProps.html#4027" class="Bound"
+      >&#964;</a
+      ><a name="4071"
+      > </a
+      ><a name="4072" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4073"
+      > </a
+      ><a name="4074" href="ContinuityProps.html#4029" class="Bound"
+      >&#965;</a
+      ><a name="4075" class="Symbol"
+      >)</a
+      ><a name="4076"
+      >
+</a
+      ><a name="4077" href="ContinuityProps.html#4014" class="Function"
+      >curry-&#8855;</a
+      ><a name="4084"
+      > </a
+      ><a name="4085" href="ContinuityProps.html#4085" class="Bound"
+      >f</a
+      ><a name="4086"
+      > </a
+      ><a name="4087" class="Symbol"
+      >=</a
+      ><a name="4088"
+      > </a
+      ><a name="4089" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="4092"
+      > </a
+      ><a name="4093" class="Symbol"
+      >(</a
+      ><a name="4094" href="ContinuityProps.html#2931" class="Function"
+      >curry-&#8855;'</a
+      ><a name="4102"
+      > </a
+      ><a name="4103" href="ContinuityProps.html#4085" class="Bound"
+      >f</a
+      ><a name="4104" class="Symbol"
+      >)</a
+      ><a name="4105"
+      > </a
+      ><a name="4106" class="Symbol"
+      >(</a
+      ><a name="4107" href="ContinuityProps.html#3830" class="Function"
+      >continuous-curry</a
+      ><a name="4123"
+      > </a
+      ><a name="4124" href="ContinuityProps.html#4085" class="Bound"
+      >f</a
+      ><a name="4125" class="Symbol"
+      >)</a
+      ><a name="4126"
+      >
+
+</a
+      ><a name="4128" class="Comment"
+      >------------------------------------------------------------------------</a
+      ><a name="4200"
+      >
+
+</a
+      ><a name="4202" href="ContinuityProps.html#4202" class="Function"
+      >subst-cont</a
+      ><a name="4212"
+      > </a
+      ><a name="4213" class="Symbol"
+      >:</a
+      ><a name="4214"
+      > </a
+      ><a name="4215" class="Symbol"
+      >{</a
+      ><a name="4216" href="ContinuityProps.html#4216" class="Bound"
+      >&#963;</a
+      ><a name="4217"
+      > </a
+      ><a name="4218" href="ContinuityProps.html#4218" class="Bound"
+      >&#964;</a
+      ><a name="4219"
+      > </a
+      ><a name="4220" class="Symbol"
+      >:</a
+      ><a name="4221"
+      > </a
+      ><a name="4222" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="4226" class="Symbol"
+      >}</a
+      ><a name="4227"
+      > </a
+      ><a name="4228" class="Symbol"
+      >&#8594;</a
+      ><a name="4229"
+      > </a
+      ><a name="4230" class="Symbol"
+      >{</a
+      ><a name="4231" href="ContinuityProps.html#4231" class="Bound"
+      >f</a
+      ><a name="4232"
+      > </a
+      ><a name="4233" href="ContinuityProps.html#4233" class="Bound"
+      >g</a
+      ><a name="4234"
+      > </a
+      ><a name="4235" class="Symbol"
+      >:</a
+      ><a name="4236"
+      > </a
+      ><a name="4237" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4240"
+      > </a
+      ><a name="4241" href="ContinuityProps.html#4216" class="Bound"
+      >&#963;</a
+      ><a name="4242"
+      > </a
+      ><a name="4243" class="Symbol"
+      >&#8594;</a
+      ><a name="4244"
+      > </a
+      ><a name="4245" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4248"
+      > </a
+      ><a name="4249" href="ContinuityProps.html#4218" class="Bound"
+      >&#964;</a
+      ><a name="4250" class="Symbol"
+      >}</a
+      ><a name="4251"
+      > </a
+      ><a name="4252" class="Symbol"
+      >&#8594;</a
+      ><a name="4253"
+      > </a
+      ><a name="4254" href="ContinuityProps.html#4231" class="Bound"
+      >f</a
+      ><a name="4255"
+      > </a
+      ><a name="4256" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4257"
+      > </a
+      ><a name="4258" href="ContinuityProps.html#4233" class="Bound"
+      >g</a
+      ><a name="4259"
+      > </a
+      ><a name="4260" class="Symbol"
+      >&#8594;</a
+      ><a name="4261"
+      > </a
+      ><a name="4262" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="4272"
+      > </a
+      ><a name="4273" href="ContinuityProps.html#4231" class="Bound"
+      >f</a
+      ><a name="4274"
+      > </a
+      ><a name="4275" class="Symbol"
+      >&#8594;</a
+      ><a name="4276"
+      > </a
+      ><a name="4277" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="4287"
+      > </a
+      ><a name="4288" href="ContinuityProps.html#4233" class="Bound"
+      >g</a
+      ><a name="4289"
+      >
+</a
+      ><a name="4290" href="ContinuityProps.html#4202" class="Function"
+      >subst-cont</a
+      ><a name="4300"
+      > </a
+      ><a name="4301" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="4305"
+      > </a
+      ><a name="4306" href="ContinuityProps.html#4306" class="Bound"
+      >cf</a
+      ><a name="4308"
+      > </a
+      ><a name="4309" class="Symbol"
+      >=</a
+      ><a name="4310"
+      > </a
+      ><a name="4311" href="ContinuityProps.html#4306" class="Bound"
+      >cf</a
+      ><a name="4313"
+      >
+
+</a
+      ><a name="4315" href="ContinuityProps.html#4315" class="Function"
+      >resultArg-def</a
+      ><a name="4328"
+      > </a
+      ><a name="4329" class="Symbol"
+      >:</a
+      ><a name="4330"
+      > </a
+      ><a name="4331" class="Symbol"
+      >{</a
+      ><a name="4332" href="ContinuityProps.html#4332" class="Bound"
+      >&#963;</a
+      ><a name="4333"
+      > </a
+      ><a name="4334" href="ContinuityProps.html#4334" class="Bound"
+      >&#964;</a
+      ><a name="4335"
+      > </a
+      ><a name="4336" href="ContinuityProps.html#4336" class="Bound"
+      >&#965;</a
+      ><a name="4337"
+      > </a
+      ><a name="4338" href="ContinuityProps.html#4338" class="Bound"
+      >&#957;</a
+      ><a name="4339"
+      > </a
+      ><a name="4340" class="Symbol"
+      >:</a
+      ><a name="4341"
+      > </a
+      ><a name="4342" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="4346" class="Symbol"
+      >}</a
+      ><a name="4347"
+      > </a
+      ><a name="4348" class="Symbol"
+      >&#8594;</a
+      ><a name="4349"
+      > </a
+      ><a name="4350" class="Symbol"
+      >(</a
+      ><a name="4351" href="ContinuityProps.html#4351" class="Bound"
+      >f</a
+      ><a name="4352"
+      > </a
+      ><a name="4353" class="Symbol"
+      >:</a
+      ><a name="4354"
+      > </a
+      ><a name="4355" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4358"
+      > </a
+      ><a name="4359" class="Symbol"
+      >(</a
+      ><a name="4360" href="ContinuityProps.html#4336" class="Bound"
+      >&#965;</a
+      ><a name="4361"
+      > </a
+      ><a name="4362" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4363"
+      > </a
+      ><a name="4364" href="ContinuityProps.html#4338" class="Bound"
+      >&#957;</a
+      ><a name="4365" class="Symbol"
+      >))</a
+      ><a name="4367"
+      > </a
+      ><a name="4368" class="Symbol"
+      >&#8594;</a
+      ><a name="4369"
+      > </a
+      ><a name="4370" class="Symbol"
+      >(</a
+      ><a name="4371" href="ContinuityProps.html#4371" class="Bound"
+      >g</a
+      ><a name="4372"
+      > </a
+      ><a name="4373" class="Symbol"
+      >:</a
+      ><a name="4374"
+      > </a
+      ><a name="4375" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4378"
+      > </a
+      ><a name="4379" class="Symbol"
+      >(</a
+      ><a name="4380" href="ContinuityProps.html#4332" class="Bound"
+      >&#963;</a
+      ><a name="4381"
+      > </a
+      ><a name="4382" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4383"
+      > </a
+      ><a name="4384" href="ContinuityProps.html#4334" class="Bound"
+      >&#964;</a
+      ><a name="4385" class="Symbol"
+      >))</a
+      ><a name="4387"
+      > </a
+      ><a name="4388" class="Symbol"
+      >&#8594;</a
+      ><a name="4389"
+      > </a
+      ><a name="4390" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4393"
+      > </a
+      ><a name="4394" class="Symbol"
+      >((</a
+      ><a name="4396" href="ContinuityProps.html#4334" class="Bound"
+      >&#964;</a
+      ><a name="4397"
+      > </a
+      ><a name="4398" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4399"
+      > </a
+      ><a name="4400" href="ContinuityProps.html#4336" class="Bound"
+      >&#965;</a
+      ><a name="4401" class="Symbol"
+      >)</a
+      ><a name="4402"
+      > </a
+      ><a name="4403" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4404"
+      > </a
+      ><a name="4405" class="Symbol"
+      >(</a
+      ><a name="4406" href="ContinuityProps.html#4332" class="Bound"
+      >&#963;</a
+      ><a name="4407"
+      > </a
+      ><a name="4408" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4409"
+      > </a
+      ><a name="4410" href="ContinuityProps.html#4338" class="Bound"
+      >&#957;</a
+      ><a name="4411" class="Symbol"
+      >))</a
+      ><a name="4413"
+      >
+</a
+      ><a name="4414" href="ContinuityProps.html#4315" class="Function"
+      >resultArg-def</a
+      ><a name="4427"
+      > </a
+      ><a name="4428" href="ContinuityProps.html#4428" class="Bound"
+      >f</a
+      ><a name="4429"
+      > </a
+      ><a name="4430" href="ContinuityProps.html#4430" class="Bound"
+      >g</a
+      ><a name="4431"
+      > </a
+      ><a name="4432" class="Symbol"
+      >=</a
+      ><a name="4433"
+      > </a
+      ><a name="4434" href="ContinuityProps.html#4014" class="Function"
+      >curry-&#8855;</a
+      ><a name="4441"
+      > </a
+      ><a name="4442" class="Symbol"
+      >(</a
+      ><a name="4443" href="ContinuityProps.html#4428" class="Bound"
+      >f</a
+      ><a name="4444"
+      > </a
+      ><a name="4445" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4446"
+      > </a
+      ><a name="4447" href="ContinuityProps.html#1713" class="Function"
+      >app</a
+      ><a name="4450"
+      > </a
+      ><a name="4451" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4452"
+      > </a
+      ><a name="4453" class="Symbol"
+      >(</a
+      ><a name="4454" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="4462"
+      > </a
+      ><a name="4463" href="CPOFunctions.html#6340" class="Function Operator"
+      >:&#215;:</a
+      ><a name="4466"
+      > </a
+      ><a name="4467" href="ContinuityProps.html#4430" class="Bound"
+      >g</a
+      ><a name="4468" class="Symbol"
+      >))</a
+      ><a name="4470"
+      >
+
+</a
+      ><a name="4472" class="Keyword"
+      >abstract</a
+      ><a name="4480"
+      >
+
+  </a
+      ><a name="4484" href="ContinuityProps.html#4484" class="Function"
+      >continuous-resultArg</a
+      ><a name="4504"
+      > </a
+      ><a name="4505" class="Symbol"
+      >:</a
+      ><a name="4506"
+      > </a
+      ><a name="4507" class="Symbol"
+      >{</a
+      ><a name="4508" href="ContinuityProps.html#4508" class="Bound"
+      >&#963;</a
+      ><a name="4509"
+      > </a
+      ><a name="4510" href="ContinuityProps.html#4510" class="Bound"
+      >&#964;</a
+      ><a name="4511"
+      > </a
+      ><a name="4512" href="ContinuityProps.html#4512" class="Bound"
+      >&#965;</a
+      ><a name="4513"
+      > </a
+      ><a name="4514" href="ContinuityProps.html#4514" class="Bound"
+      >&#957;</a
+      ><a name="4515"
+      > </a
+      ><a name="4516" class="Symbol"
+      >:</a
+      ><a name="4517"
+      > </a
+      ><a name="4518" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="4522" class="Symbol"
+      >}</a
+      ><a name="4523"
+      > </a
+      ><a name="4524" class="Symbol"
+      >&#8594;</a
+      ><a name="4525"
+      > </a
+      ><a name="4526" class="Symbol"
+      >(</a
+      ><a name="4527" href="ContinuityProps.html#4527" class="Bound"
+      >f</a
+      ><a name="4528"
+      > </a
+      ><a name="4529" class="Symbol"
+      >:</a
+      ><a name="4530"
+      > </a
+      ><a name="4531" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4534"
+      > </a
+      ><a name="4535" class="Symbol"
+      >(</a
+      ><a name="4536" href="ContinuityProps.html#4512" class="Bound"
+      >&#965;</a
+      ><a name="4537"
+      > </a
+      ><a name="4538" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4539"
+      > </a
+      ><a name="4540" href="ContinuityProps.html#4514" class="Bound"
+      >&#957;</a
+      ><a name="4541" class="Symbol"
+      >))</a
+      ><a name="4543"
+      > </a
+      ><a name="4544" class="Symbol"
+      >&#8594;</a
+      ><a name="4545"
+      > </a
+      ><a name="4546" class="Symbol"
+      >(</a
+      ><a name="4547" href="ContinuityProps.html#4547" class="Bound"
+      >g</a
+      ><a name="4548"
+      > </a
+      ><a name="4549" class="Symbol"
+      >:</a
+      ><a name="4550"
+      > </a
+      ><a name="4551" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4554"
+      > </a
+      ><a name="4555" class="Symbol"
+      >(</a
+      ><a name="4556" href="ContinuityProps.html#4508" class="Bound"
+      >&#963;</a
+      ><a name="4557"
+      > </a
+      ><a name="4558" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4559"
+      > </a
+      ><a name="4560" href="ContinuityProps.html#4510" class="Bound"
+      >&#964;</a
+      ><a name="4561" class="Symbol"
+      >))</a
+      ><a name="4563"
+      > </a
+      ><a name="4564" class="Symbol"
+      >&#8594;</a
+      ><a name="4565"
+      > </a
+      ><a name="4566" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="4576"
+      > </a
+      ><a name="4577" class="Symbol"
+      >(&#955;</a
+      ><a name="4579"
+      > </a
+      ><a name="4580" href="ContinuityProps.html#4580" class="Bound"
+      >h</a
+      ><a name="4581"
+      > </a
+      ><a name="4582" class="Symbol"
+      >&#8594;</a
+      ><a name="4583"
+      > </a
+      ><a name="4584" href="ContinuityProps.html#4527" class="Bound"
+      >f</a
+      ><a name="4585"
+      > </a
+      ><a name="4586" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4587"
+      > </a
+      ><a name="4588" href="ContinuityProps.html#4580" class="Bound"
+      >h</a
+      ><a name="4589"
+      > </a
+      ><a name="4590" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4591"
+      > </a
+      ><a name="4592" href="ContinuityProps.html#4547" class="Bound"
+      >g</a
+      ><a name="4593" class="Symbol"
+      >)</a
+      ><a name="4594"
+      >
+  </a
+      ><a name="4597" href="ContinuityProps.html#4484" class="Function"
+      >continuous-resultArg</a
+      ><a name="4617"
+      > </a
+      ><a name="4618" href="ContinuityProps.html#4618" class="Bound"
+      >f</a
+      ><a name="4619"
+      > </a
+      ><a name="4620" href="ContinuityProps.html#4620" class="Bound"
+      >g</a
+      ><a name="4621"
+      > </a
+      ><a name="4622" class="Symbol"
+      >=</a
+      ><a name="4623"
+      > </a
+      ><a name="4624" href="ContinuityProps.html#4202" class="Function"
+      >subst-cont</a
+      ><a name="4634"
+      > </a
+      ><a name="4635" class="Symbol"
+      >(</a
+      ><a name="4636" href="Extensionality.html#472" class="Function"
+      >ext'</a
+      ><a name="4640"
+      > </a
+      ><a name="4641" class="Symbol"
+      >(</a
+      ><a name="4642" href="CPO.html#7573" class="Function"
+      >injective-$</a
+      ><a name="4653"
+      > </a
+      ><a name="4654" class="InductiveConstructor"
+      >refl</a
+      ><a name="4658" class="Symbol"
+      >))</a
+      ><a name="4660"
+      > </a
+      ><a name="4661" class="Symbol"
+      >(</a
+      ><a name="4662" href="CPO.html#4219" class="Function"
+      >continuous</a
+      ><a name="4672"
+      > </a
+      ><a name="4673" class="Symbol"
+      >(</a
+      ><a name="4674" href="ContinuityProps.html#4315" class="Function"
+      >resultArg-def</a
+      ><a name="4687"
+      > </a
+      ><a name="4688" href="ContinuityProps.html#4618" class="Bound"
+      >f</a
+      ><a name="4689"
+      > </a
+      ><a name="4690" href="ContinuityProps.html#4620" class="Bound"
+      >g</a
+      ><a name="4691" class="Symbol"
+      >))</a
+      ><a name="4693"
+      >
+
+  </a
+      ><a name="4697" href="ContinuityProps.html#4697" class="Function"
+      >continuous-result</a
+      ><a name="4714"
+      > </a
+      ><a name="4715" class="Symbol"
+      >:</a
+      ><a name="4716"
+      > </a
+      ><a name="4717" class="Symbol"
+      >{</a
+      ><a name="4718" href="ContinuityProps.html#4718" class="Bound"
+      >&#963;</a
+      ><a name="4719"
+      > </a
+      ><a name="4720" href="ContinuityProps.html#4720" class="Bound"
+      >&#964;</a
+      ><a name="4721"
+      > </a
+      ><a name="4722" href="ContinuityProps.html#4722" class="Bound"
+      >&#965;</a
+      ><a name="4723"
+      > </a
+      ><a name="4724" class="Symbol"
+      >:</a
+      ><a name="4725"
+      > </a
+      ><a name="4726" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="4730" class="Symbol"
+      >}</a
+      ><a name="4731"
+      > </a
+      ><a name="4732" class="Symbol"
+      >&#8594;</a
+      ><a name="4733"
+      > </a
+      ><a name="4734" class="Symbol"
+      >(</a
+      ><a name="4735" href="ContinuityProps.html#4735" class="Bound"
+      >f</a
+      ><a name="4736"
+      > </a
+      ><a name="4737" class="Symbol"
+      >:</a
+      ><a name="4738"
+      > </a
+      ><a name="4739" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4742"
+      > </a
+      ><a name="4743" class="Symbol"
+      >(</a
+      ><a name="4744" href="ContinuityProps.html#4720" class="Bound"
+      >&#964;</a
+      ><a name="4745"
+      > </a
+      ><a name="4746" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4747"
+      > </a
+      ><a name="4748" href="ContinuityProps.html#4722" class="Bound"
+      >&#965;</a
+      ><a name="4749" class="Symbol"
+      >))</a
+      ><a name="4751"
+      > </a
+      ><a name="4752" class="Symbol"
+      >&#8594;</a
+      ><a name="4753"
+      > </a
+      ><a name="4754" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="4764"
+      > </a
+      ><a name="4765" class="Symbol"
+      >{</a
+      ><a name="4766" href="ContinuityProps.html#4718" class="Bound"
+      >&#963;</a
+      ><a name="4767"
+      > </a
+      ><a name="4768" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4769"
+      > </a
+      ><a name="4770" href="ContinuityProps.html#4720" class="Bound"
+      >&#964;</a
+      ><a name="4771" class="Symbol"
+      >}</a
+      ><a name="4772"
+      > </a
+      ><a name="4773" class="Symbol"
+      >{</a
+      ><a name="4774" href="ContinuityProps.html#4718" class="Bound"
+      >&#963;</a
+      ><a name="4775"
+      > </a
+      ><a name="4776" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4777"
+      > </a
+      ><a name="4778" href="ContinuityProps.html#4722" class="Bound"
+      >&#965;</a
+      ><a name="4779" class="Symbol"
+      >}</a
+      ><a name="4780"
+      > </a
+      ><a name="4781" class="Symbol"
+      >(&#955;</a
+      ><a name="4783"
+      > </a
+      ><a name="4784" href="ContinuityProps.html#4784" class="Bound"
+      >h</a
+      ><a name="4785"
+      > </a
+      ><a name="4786" class="Symbol"
+      >&#8594;</a
+      ><a name="4787"
+      > </a
+      ><a name="4788" href="ContinuityProps.html#4735" class="Bound"
+      >f</a
+      ><a name="4789"
+      > </a
+      ><a name="4790" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4791"
+      > </a
+      ><a name="4792" href="ContinuityProps.html#4784" class="Bound"
+      >h</a
+      ><a name="4793" class="Symbol"
+      >)</a
+      ><a name="4794"
+      >
+  </a
+      ><a name="4797" href="ContinuityProps.html#4697" class="Function"
+      >continuous-result</a
+      ><a name="4814"
+      > </a
+      ><a name="4815" href="ContinuityProps.html#4815" class="Bound"
+      >f</a
+      ><a name="4816"
+      > </a
+      ><a name="4817" class="Symbol"
+      >=</a
+      ><a name="4818"
+      > </a
+      ><a name="4819" href="ContinuityProps.html#4202" class="Function"
+      >subst-cont</a
+      ><a name="4829"
+      > </a
+      ><a name="4830" class="Symbol"
+      >(</a
+      ><a name="4831" href="Extensionality.html#472" class="Function"
+      >ext'</a
+      ><a name="4835"
+      > </a
+      ><a name="4836" class="Symbol"
+      >(</a
+      ><a name="4837" href="CPO.html#7573" class="Function"
+      >injective-$</a
+      ><a name="4848"
+      > </a
+      ><a name="4849" class="InductiveConstructor"
+      >refl</a
+      ><a name="4853" class="Symbol"
+      >))</a
+      ><a name="4855"
+      > </a
+      ><a name="4856" class="Symbol"
+      >(</a
+      ><a name="4857" href="ContinuityProps.html#4484" class="Function"
+      >continuous-resultArg</a
+      ><a name="4877"
+      > </a
+      ><a name="4878" href="ContinuityProps.html#4815" class="Bound"
+      >f</a
+      ><a name="4879"
+      > </a
+      ><a name="4880" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="4888" class="Symbol"
+      >)</a
+      ><a name="4889"
+      >
+
+  </a
+      ><a name="4893" href="ContinuityProps.html#4893" class="Function"
+      >continuous-argument</a
+      ><a name="4912"
+      > </a
+      ><a name="4913" class="Symbol"
+      >:</a
+      ><a name="4914"
+      > </a
+      ><a name="4915" class="Symbol"
+      >{</a
+      ><a name="4916" href="ContinuityProps.html#4916" class="Bound"
+      >&#963;</a
+      ><a name="4917"
+      > </a
+      ><a name="4918" href="ContinuityProps.html#4918" class="Bound"
+      >&#964;</a
+      ><a name="4919"
+      > </a
+      ><a name="4920" href="ContinuityProps.html#4920" class="Bound"
+      >&#965;</a
+      ><a name="4921"
+      > </a
+      ><a name="4922" class="Symbol"
+      >:</a
+      ><a name="4923"
+      > </a
+      ><a name="4924" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="4928" class="Symbol"
+      >}</a
+      ><a name="4929"
+      > </a
+      ><a name="4930" class="Symbol"
+      >&#8594;</a
+      ><a name="4931"
+      > </a
+      ><a name="4932" class="Symbol"
+      >(</a
+      ><a name="4933" href="ContinuityProps.html#4933" class="Bound"
+      >f</a
+      ><a name="4934"
+      > </a
+      ><a name="4935" class="Symbol"
+      >:</a
+      ><a name="4936"
+      > </a
+      ><a name="4937" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="4940"
+      > </a
+      ><a name="4941" class="Symbol"
+      >(</a
+      ><a name="4942" href="ContinuityProps.html#4916" class="Bound"
+      >&#963;</a
+      ><a name="4943"
+      > </a
+      ><a name="4944" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4945"
+      > </a
+      ><a name="4946" href="ContinuityProps.html#4918" class="Bound"
+      >&#964;</a
+      ><a name="4947" class="Symbol"
+      >))</a
+      ><a name="4949"
+      > </a
+      ><a name="4950" class="Symbol"
+      >&#8594;</a
+      ><a name="4951"
+      > </a
+      ><a name="4952" href="CPO.html#3973" class="Function"
+      >Continuous</a
+      ><a name="4962"
+      > </a
+      ><a name="4963" class="Symbol"
+      >{</a
+      ><a name="4964" href="ContinuityProps.html#4918" class="Bound"
+      >&#964;</a
+      ><a name="4965"
+      > </a
+      ><a name="4966" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="4967"
+      > </a
+      ><a name="4968" href="ContinuityProps.html#4920" class="Bound"
+      >&#965;</a
+      ><a name="4969" class="Symbol"
+      >}</a
+      ><a name="4970"
+      > </a
+      ><a name="4971" class="Symbol"
+      >(&#955;</a
+      ><a name="4973"
+      > </a
+      ><a name="4974" href="ContinuityProps.html#4974" class="Bound"
+      >h</a
+      ><a name="4975"
+      > </a
+      ><a name="4976" class="Symbol"
+      >&#8594;</a
+      ><a name="4977"
+      > </a
+      ><a name="4978" href="ContinuityProps.html#4974" class="Bound"
+      >h</a
+      ><a name="4979"
+      > </a
+      ><a name="4980" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4981"
+      > </a
+      ><a name="4982" href="ContinuityProps.html#4933" class="Bound"
+      >f</a
+      ><a name="4983" class="Symbol"
+      >)</a
+      ><a name="4984"
+      >
+  </a
+      ><a name="4987" href="ContinuityProps.html#4893" class="Function"
+      >continuous-argument</a
+      ><a name="5006"
+      > </a
+      ><a name="5007" href="ContinuityProps.html#5007" class="Bound"
+      >f</a
+      ><a name="5008"
+      > </a
+      ><a name="5009" class="Symbol"
+      >=</a
+      ><a name="5010"
+      > </a
+      ><a name="5011" href="ContinuityProps.html#4202" class="Function"
+      >subst-cont</a
+      ><a name="5021"
+      > </a
+      ><a name="5022" class="Symbol"
+      >(</a
+      ><a name="5023" href="Extensionality.html#472" class="Function"
+      >ext'</a
+      ><a name="5027"
+      > </a
+      ><a name="5028" class="Symbol"
+      >(</a
+      ><a name="5029" href="CPO.html#7573" class="Function"
+      >injective-$</a
+      ><a name="5040"
+      > </a
+      ><a name="5041" class="InductiveConstructor"
+      >refl</a
+      ><a name="5045" class="Symbol"
+      >))</a
+      ><a name="5047"
+      > </a
+      ><a name="5048" class="Symbol"
+      >(</a
+      ><a name="5049" href="ContinuityProps.html#4484" class="Function"
+      >continuous-resultArg</a
+      ><a name="5069"
+      > </a
+      ><a name="5070" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="5078"
+      > </a
+      ><a name="5079" href="ContinuityProps.html#5007" class="Bound"
+      >f</a
+      ><a name="5080" class="Symbol"
+      >)</a
+      ><a name="5081"
+      >
+
+</a
+      ><a name="5083" class="Comment"
+      >--------------------------------------------------------------------------------------------------------</a
+      ><a name="5187"
+      >
+
+</a
+      ><a name="5189" class="Comment"
+      >-- resultArg f g = (&#955; h &#8594; f &#8729; h &#8729; g)</a
+      ><a name="5225"
+      >
+</a
+      ><a name="5226" href="ContinuityProps.html#5226" class="Function"
+      >resultArg</a
+      ><a name="5235"
+      > </a
+      ><a name="5236" class="Symbol"
+      >:</a
+      ><a name="5237"
+      > </a
+      ><a name="5238" class="Symbol"
+      >{</a
+      ><a name="5239" href="ContinuityProps.html#5239" class="Bound"
+      >&#963;</a
+      ><a name="5240"
+      > </a
+      ><a name="5241" href="ContinuityProps.html#5241" class="Bound"
+      >&#964;</a
+      ><a name="5242"
+      > </a
+      ><a name="5243" href="ContinuityProps.html#5243" class="Bound"
+      >&#965;</a
+      ><a name="5244"
+      > </a
+      ><a name="5245" href="ContinuityProps.html#5245" class="Bound"
+      >&#957;</a
+      ><a name="5246"
+      > </a
+      ><a name="5247" class="Symbol"
+      >:</a
+      ><a name="5248"
+      > </a
+      ><a name="5249" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="5253" class="Symbol"
+      >}</a
+      ><a name="5254"
+      > </a
+      ><a name="5255" class="Symbol"
+      >&#8594;</a
+      ><a name="5256"
+      > </a
+      ><a name="5257" class="Symbol"
+      >(</a
+      ><a name="5258" href="ContinuityProps.html#5258" class="Bound"
+      >f</a
+      ><a name="5259"
+      > </a
+      ><a name="5260" class="Symbol"
+      >:</a
+      ><a name="5261"
+      > </a
+      ><a name="5262" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5265"
+      > </a
+      ><a name="5266" class="Symbol"
+      >(</a
+      ><a name="5267" href="ContinuityProps.html#5243" class="Bound"
+      >&#965;</a
+      ><a name="5268"
+      > </a
+      ><a name="5269" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5270"
+      > </a
+      ><a name="5271" href="ContinuityProps.html#5245" class="Bound"
+      >&#957;</a
+      ><a name="5272" class="Symbol"
+      >))</a
+      ><a name="5274"
+      > </a
+      ><a name="5275" class="Symbol"
+      >&#8594;</a
+      ><a name="5276"
+      > </a
+      ><a name="5277" class="Symbol"
+      >(</a
+      ><a name="5278" href="ContinuityProps.html#5278" class="Bound"
+      >g</a
+      ><a name="5279"
+      > </a
+      ><a name="5280" class="Symbol"
+      >:</a
+      ><a name="5281"
+      > </a
+      ><a name="5282" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5285"
+      > </a
+      ><a name="5286" class="Symbol"
+      >(</a
+      ><a name="5287" href="ContinuityProps.html#5239" class="Bound"
+      >&#963;</a
+      ><a name="5288"
+      > </a
+      ><a name="5289" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5290"
+      > </a
+      ><a name="5291" href="ContinuityProps.html#5241" class="Bound"
+      >&#964;</a
+      ><a name="5292" class="Symbol"
+      >))</a
+      ><a name="5294"
+      > </a
+      ><a name="5295" class="Symbol"
+      >&#8594;</a
+      ><a name="5296"
+      > </a
+      ><a name="5297" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5300"
+      > </a
+      ><a name="5301" class="Symbol"
+      >((</a
+      ><a name="5303" href="ContinuityProps.html#5241" class="Bound"
+      >&#964;</a
+      ><a name="5304"
+      > </a
+      ><a name="5305" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5306"
+      > </a
+      ><a name="5307" href="ContinuityProps.html#5243" class="Bound"
+      >&#965;</a
+      ><a name="5308" class="Symbol"
+      >)</a
+      ><a name="5309"
+      > </a
+      ><a name="5310" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5311"
+      > </a
+      ><a name="5312" class="Symbol"
+      >(</a
+      ><a name="5313" href="ContinuityProps.html#5239" class="Bound"
+      >&#963;</a
+      ><a name="5314"
+      > </a
+      ><a name="5315" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5316"
+      > </a
+      ><a name="5317" href="ContinuityProps.html#5245" class="Bound"
+      >&#957;</a
+      ><a name="5318" class="Symbol"
+      >))</a
+      ><a name="5320"
+      >
+</a
+      ><a name="5321" href="ContinuityProps.html#5226" class="Function"
+      >resultArg</a
+      ><a name="5330"
+      > </a
+      ><a name="5331" href="ContinuityProps.html#5331" class="Bound"
+      >f</a
+      ><a name="5332"
+      > </a
+      ><a name="5333" href="ContinuityProps.html#5333" class="Bound"
+      >g</a
+      ><a name="5334"
+      > </a
+      ><a name="5335" class="Symbol"
+      >=</a
+      ><a name="5336"
+      > </a
+      ><a name="5337" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="5340"
+      > </a
+      ><a name="5341" class="Symbol"
+      >(&#955;</a
+      ><a name="5343"
+      > </a
+      ><a name="5344" href="ContinuityProps.html#5344" class="Bound"
+      >h</a
+      ><a name="5345"
+      > </a
+      ><a name="5346" class="Symbol"
+      >&#8594;</a
+      ><a name="5347"
+      > </a
+      ><a name="5348" href="ContinuityProps.html#5331" class="Bound"
+      >f</a
+      ><a name="5349"
+      > </a
+      ><a name="5350" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5351"
+      > </a
+      ><a name="5352" href="ContinuityProps.html#5344" class="Bound"
+      >h</a
+      ><a name="5353"
+      > </a
+      ><a name="5354" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5355"
+      > </a
+      ><a name="5356" href="ContinuityProps.html#5333" class="Bound"
+      >g</a
+      ><a name="5357" class="Symbol"
+      >)</a
+      ><a name="5358"
+      > </a
+      ><a name="5359" class="Symbol"
+      >(</a
+      ><a name="5360" href="ContinuityProps.html#4484" class="Function"
+      >continuous-resultArg</a
+      ><a name="5380"
+      > </a
+      ><a name="5381" href="ContinuityProps.html#5331" class="Bound"
+      >f</a
+      ><a name="5382"
+      > </a
+      ><a name="5383" href="ContinuityProps.html#5333" class="Bound"
+      >g</a
+      ><a name="5384" class="Symbol"
+      >)</a
+      ><a name="5385"
+      >
+
+</a
+      ><a name="5387" class="Comment"
+      >-- result f = &#955; h &#8594; f &#8729; h</a
+      ><a name="5412"
+      >
+</a
+      ><a name="5413" href="ContinuityProps.html#5413" class="Function"
+      >result</a
+      ><a name="5419"
+      > </a
+      ><a name="5420" class="Symbol"
+      >:</a
+      ><a name="5421"
+      > </a
+      ><a name="5422" class="Symbol"
+      >{</a
+      ><a name="5423" href="ContinuityProps.html#5423" class="Bound"
+      >&#963;</a
+      ><a name="5424"
+      > </a
+      ><a name="5425" href="ContinuityProps.html#5425" class="Bound"
+      >&#964;</a
+      ><a name="5426"
+      > </a
+      ><a name="5427" href="ContinuityProps.html#5427" class="Bound"
+      >&#965;</a
+      ><a name="5428"
+      > </a
+      ><a name="5429" class="Symbol"
+      >:</a
+      ><a name="5430"
+      > </a
+      ><a name="5431" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="5435" class="Symbol"
+      >}</a
+      ><a name="5436"
+      > </a
+      ><a name="5437" class="Symbol"
+      >&#8594;</a
+      ><a name="5438"
+      > </a
+      ><a name="5439" class="Symbol"
+      >(</a
+      ><a name="5440" href="ContinuityProps.html#5440" class="Bound"
+      >f</a
+      ><a name="5441"
+      > </a
+      ><a name="5442" class="Symbol"
+      >:</a
+      ><a name="5443"
+      > </a
+      ><a name="5444" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5447"
+      > </a
+      ><a name="5448" class="Symbol"
+      >(</a
+      ><a name="5449" href="ContinuityProps.html#5425" class="Bound"
+      >&#964;</a
+      ><a name="5450"
+      > </a
+      ><a name="5451" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5452"
+      > </a
+      ><a name="5453" href="ContinuityProps.html#5427" class="Bound"
+      >&#965;</a
+      ><a name="5454" class="Symbol"
+      >))</a
+      ><a name="5456"
+      > </a
+      ><a name="5457" class="Symbol"
+      >&#8594;</a
+      ><a name="5458"
+      > </a
+      ><a name="5459" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5462"
+      > </a
+      ><a name="5463" class="Symbol"
+      >((</a
+      ><a name="5465" href="ContinuityProps.html#5423" class="Bound"
+      >&#963;</a
+      ><a name="5466"
+      > </a
+      ><a name="5467" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5468"
+      > </a
+      ><a name="5469" href="ContinuityProps.html#5425" class="Bound"
+      >&#964;</a
+      ><a name="5470" class="Symbol"
+      >)</a
+      ><a name="5471"
+      > </a
+      ><a name="5472" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5473"
+      > </a
+      ><a name="5474" class="Symbol"
+      >(</a
+      ><a name="5475" href="ContinuityProps.html#5423" class="Bound"
+      >&#963;</a
+      ><a name="5476"
+      > </a
+      ><a name="5477" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5478"
+      > </a
+      ><a name="5479" href="ContinuityProps.html#5427" class="Bound"
+      >&#965;</a
+      ><a name="5480" class="Symbol"
+      >))</a
+      ><a name="5482"
+      >
+</a
+      ><a name="5483" href="ContinuityProps.html#5413" class="Function"
+      >result</a
+      ><a name="5489"
+      > </a
+      ><a name="5490" href="ContinuityProps.html#5490" class="Bound"
+      >f</a
+      ><a name="5491"
+      > </a
+      ><a name="5492" class="Symbol"
+      >=</a
+      ><a name="5493"
+      > </a
+      ><a name="5494" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="5497"
+      > </a
+      ><a name="5498" class="Symbol"
+      >(&#955;</a
+      ><a name="5500"
+      > </a
+      ><a name="5501" href="ContinuityProps.html#5501" class="Bound"
+      >h</a
+      ><a name="5502"
+      > </a
+      ><a name="5503" class="Symbol"
+      >&#8594;</a
+      ><a name="5504"
+      > </a
+      ><a name="5505" href="ContinuityProps.html#5490" class="Bound"
+      >f</a
+      ><a name="5506"
+      > </a
+      ><a name="5507" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5508"
+      > </a
+      ><a name="5509" href="ContinuityProps.html#5501" class="Bound"
+      >h</a
+      ><a name="5510" class="Symbol"
+      >)</a
+      ><a name="5511"
+      > </a
+      ><a name="5512" class="Symbol"
+      >(</a
+      ><a name="5513" href="ContinuityProps.html#4697" class="Function"
+      >continuous-result</a
+      ><a name="5530"
+      > </a
+      ><a name="5531" href="ContinuityProps.html#5490" class="Bound"
+      >f</a
+      ><a name="5532" class="Symbol"
+      >)</a
+      ><a name="5533"
+      >
+
+</a
+      ><a name="5535" class="Comment"
+      >-- argument f = &#955; h &#8594; h &#8729; f</a
+      ><a name="5562"
+      >
+</a
+      ><a name="5563" href="ContinuityProps.html#5563" class="Function"
+      >argument</a
+      ><a name="5571"
+      > </a
+      ><a name="5572" class="Symbol"
+      >:</a
+      ><a name="5573"
+      > </a
+      ><a name="5574" class="Symbol"
+      >{</a
+      ><a name="5575" href="ContinuityProps.html#5575" class="Bound"
+      >&#963;</a
+      ><a name="5576"
+      > </a
+      ><a name="5577" href="ContinuityProps.html#5577" class="Bound"
+      >&#964;</a
+      ><a name="5578"
+      > </a
+      ><a name="5579" href="ContinuityProps.html#5579" class="Bound"
+      >&#965;</a
+      ><a name="5580"
+      > </a
+      ><a name="5581" class="Symbol"
+      >:</a
+      ><a name="5582"
+      > </a
+      ><a name="5583" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="5587" class="Symbol"
+      >}</a
+      ><a name="5588"
+      > </a
+      ><a name="5589" class="Symbol"
+      >&#8594;</a
+      ><a name="5590"
+      > </a
+      ><a name="5591" class="Symbol"
+      >(</a
+      ><a name="5592" href="ContinuityProps.html#5592" class="Bound"
+      >f</a
+      ><a name="5593"
+      > </a
+      ><a name="5594" class="Symbol"
+      >:</a
+      ><a name="5595"
+      > </a
+      ><a name="5596" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5599"
+      > </a
+      ><a name="5600" class="Symbol"
+      >(</a
+      ><a name="5601" href="ContinuityProps.html#5575" class="Bound"
+      >&#963;</a
+      ><a name="5602"
+      > </a
+      ><a name="5603" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5604"
+      > </a
+      ><a name="5605" href="ContinuityProps.html#5577" class="Bound"
+      >&#964;</a
+      ><a name="5606" class="Symbol"
+      >))</a
+      ><a name="5608"
+      > </a
+      ><a name="5609" class="Symbol"
+      >&#8594;</a
+      ><a name="5610"
+      > </a
+      ><a name="5611" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="5614"
+      > </a
+      ><a name="5615" class="Symbol"
+      >((</a
+      ><a name="5617" href="ContinuityProps.html#5577" class="Bound"
+      >&#964;</a
+      ><a name="5618"
+      > </a
+      ><a name="5619" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5620"
+      > </a
+      ><a name="5621" href="ContinuityProps.html#5579" class="Bound"
+      >&#965;</a
+      ><a name="5622" class="Symbol"
+      >)</a
+      ><a name="5623"
+      > </a
+      ><a name="5624" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5625"
+      > </a
+      ><a name="5626" class="Symbol"
+      >(</a
+      ><a name="5627" href="ContinuityProps.html#5575" class="Bound"
+      >&#963;</a
+      ><a name="5628"
+      > </a
+      ><a name="5629" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="5630"
+      > </a
+      ><a name="5631" href="ContinuityProps.html#5579" class="Bound"
+      >&#965;</a
+      ><a name="5632" class="Symbol"
+      >))</a
+      ><a name="5634"
+      >
+</a
+      ><a name="5635" href="ContinuityProps.html#5563" class="Function"
+      >argument</a
+      ><a name="5643"
+      > </a
+      ><a name="5644" href="ContinuityProps.html#5644" class="Bound"
+      >f</a
+      ><a name="5645"
+      > </a
+      ><a name="5646" class="Symbol"
+      >=</a
+      ><a name="5647"
+      > </a
+      ><a name="5648" href="CPO.html#1456" class="InductiveConstructor"
+      >fun</a
+      ><a name="5651"
+      > </a
+      ><a name="5652" class="Symbol"
+      >(&#955;</a
+      ><a name="5654"
+      > </a
+      ><a name="5655" href="ContinuityProps.html#5655" class="Bound"
+      >h</a
+      ><a name="5656"
+      > </a
+      ><a name="5657" class="Symbol"
+      >&#8594;</a
+      ><a name="5658"
+      > </a
+      ><a name="5659" href="ContinuityProps.html#5655" class="Bound"
+      >h</a
+      ><a name="5660"
+      > </a
+      ><a name="5661" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5662"
+      > </a
+      ><a name="5663" href="ContinuityProps.html#5644" class="Bound"
+      >f</a
+      ><a name="5664" class="Symbol"
+      >)</a
+      ><a name="5665"
+      > </a
+      ><a name="5666" class="Symbol"
+      >(</a
+      ><a name="5667" href="ContinuityProps.html#4893" class="Function"
+      >continuous-argument</a
+      ><a name="5686"
+      > </a
+      ><a name="5687" href="ContinuityProps.html#5644" class="Bound"
+      >f</a
+      ><a name="5688" class="Symbol"
+      >)</a
+      ><a name="5689"
+      >
+
+</a
+      ><a name="5691" class="Comment"
+      >--------------------------------------------------------------------------------------------------------</a
+      ><a name="5795"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

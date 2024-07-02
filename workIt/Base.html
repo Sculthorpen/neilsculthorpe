@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Base</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >module</a
+      ><a name="7"
+      > </a
+      ><a name="8" href="Base.html#1" class="Module"
+      >Base</a
+      ><a name="12"
+      > </a
+      ><a name="13" class="Keyword"
+      >where</a
+      ><a name="18"
+      >
+
+</a
+      ><a name="20" class="Comment"
+      >-- Precedence -------------------------------------</a
+      ><a name="71"
+      >
+
+</a
+      ><a name="73" class="Keyword"
+      >infixr</a
+      ><a name="79"
+      > </a
+      ><a name="80" class="Number"
+      >1</a
+      ><a name="81"
+      >  _&#8846;_
+</a
+      ><a name="87" class="Keyword"
+      >infixr</a
+      ><a name="93"
+      > </a
+      ><a name="94" class="Number"
+      >2</a
+      ><a name="95"
+      >  _&#215;_ _,_
+
+</a
+      ><a name="106" class="Comment"
+      >-- Basic Datatypes --------------------------------------------------------------</a
+      ><a name="187"
+      >
+
+</a
+      ><a name="189" class="Keyword"
+      >data</a
+      ><a name="193"
+      > </a
+      ><a name="194" href="Base.html#194" class="Datatype"
+      >False</a
+      ><a name="199"
+      > </a
+      ><a name="200" class="Symbol"
+      >:</a
+      ><a name="201"
+      > </a
+      ><a name="202" class="PrimitiveType"
+      >Set</a
+      ><a name="205"
+      > </a
+      ><a name="206" class="Keyword"
+      >where</a
+      ><a name="211"
+      >
+
+</a
+      ><a name="213" class="Keyword"
+      >data</a
+      ><a name="217"
+      > </a
+      ><a name="218" href="Base.html#218" class="Datatype"
+      >Unit</a
+      ><a name="222"
+      > </a
+      ><a name="223" class="Symbol"
+      >:</a
+      ><a name="224"
+      > </a
+      ><a name="225" class="PrimitiveType"
+      >Set</a
+      ><a name="228"
+      > </a
+      ><a name="229" class="Keyword"
+      >where</a
+      ><a name="234"
+      >
+  </a
+      ><a name="237" href="Base.html#237" class="InductiveConstructor"
+      >unit</a
+      ><a name="241"
+      > </a
+      ><a name="242" class="Symbol"
+      >:</a
+      ><a name="243"
+      > </a
+      ><a name="244" href="Base.html#218" class="Datatype"
+      >Unit</a
+      ><a name="248"
+      >
+
+</a
+      ><a name="250" class="Keyword"
+      >data</a
+      ><a name="254"
+      > </a
+      ><a name="255" href="Base.html#255" class="Datatype"
+      >Bool</a
+      ><a name="259"
+      > </a
+      ><a name="260" class="Symbol"
+      >:</a
+      ><a name="261"
+      > </a
+      ><a name="262" class="PrimitiveType"
+      >Set</a
+      ><a name="265"
+      > </a
+      ><a name="266" class="Keyword"
+      >where</a
+      ><a name="271"
+      >
+  </a
+      ><a name="274" href="Base.html#274" class="InductiveConstructor"
+      >false</a
+      ><a name="279"
+      > </a
+      ><a name="280" class="Symbol"
+      >:</a
+      ><a name="281"
+      > </a
+      ><a name="282" href="Base.html#255" class="Datatype"
+      >Bool</a
+      ><a name="286"
+      >
+  </a
+      ><a name="289" href="Base.html#289" class="InductiveConstructor"
+      >true</a
+      ><a name="293"
+      >  </a
+      ><a name="295" class="Symbol"
+      >:</a
+      ><a name="296"
+      > </a
+      ><a name="297" href="Base.html#255" class="Datatype"
+      >Bool</a
+      ><a name="301"
+      >
+
+</a
+      ><a name="303" class="Symbol"
+      >{-#</a
+      ><a name="306"
+      > </a
+      ><a name="307" class="Keyword"
+      >BUILTIN</a
+      ><a name="314"
+      > BOOL  </a
+      ><a name="321" href="Base.html#255" class="Datatype"
+      >Bool</a
+      ><a name="325"
+      >  </a
+      ><a name="327" class="Symbol"
+      >#-}</a
+      ><a name="330"
+      >
+</a
+      ><a name="331" class="Symbol"
+      >{-#</a
+      ><a name="334"
+      > </a
+      ><a name="335" class="Keyword"
+      >BUILTIN</a
+      ><a name="342"
+      > TRUE  </a
+      ><a name="349" href="Base.html#289" class="InductiveConstructor"
+      >true</a
+      ><a name="353"
+      >  </a
+      ><a name="355" class="Symbol"
+      >#-}</a
+      ><a name="358"
+      >
+</a
+      ><a name="359" class="Symbol"
+      >{-#</a
+      ><a name="362"
+      > </a
+      ><a name="363" class="Keyword"
+      >BUILTIN</a
+      ><a name="370"
+      > FALSE </a
+      ><a name="377" href="Base.html#274" class="InductiveConstructor"
+      >false</a
+      ><a name="382"
+      > </a
+      ><a name="383" class="Symbol"
+      >#-}</a
+      ><a name="386"
+      >
+
+</a
+      ><a name="388" class="Keyword"
+      >data</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="Base.html#393" class="Datatype"
+      >Maybe</a
+      ><a name="398"
+      > </a
+      ><a name="399" class="Symbol"
+      >(</a
+      ><a name="400" href="Base.html#400" class="Bound"
+      >A</a
+      ><a name="401"
+      > </a
+      ><a name="402" class="Symbol"
+      >:</a
+      ><a name="403"
+      > </a
+      ><a name="404" class="PrimitiveType"
+      >Set</a
+      ><a name="407" class="Symbol"
+      >)</a
+      ><a name="408"
+      > </a
+      ><a name="409" class="Symbol"
+      >:</a
+      ><a name="410"
+      > </a
+      ><a name="411" class="PrimitiveType"
+      >Set</a
+      ><a name="414"
+      > </a
+      ><a name="415" class="Keyword"
+      >where</a
+      ><a name="420"
+      >
+  </a
+      ><a name="423" href="Base.html#423" class="InductiveConstructor"
+      >nothing</a
+      ><a name="430"
+      > </a
+      ><a name="431" class="Symbol"
+      >:</a
+      ><a name="432"
+      > </a
+      ><a name="433" href="Base.html#393" class="Datatype"
+      >Maybe</a
+      ><a name="438"
+      > </a
+      ><a name="439" href="Base.html#400" class="Bound"
+      >A</a
+      ><a name="440"
+      >
+  </a
+      ><a name="443" href="Base.html#443" class="InductiveConstructor"
+      >just</a
+      ><a name="447"
+      >    </a
+      ><a name="451" class="Symbol"
+      >:</a
+      ><a name="452"
+      > </a
+      ><a name="453" href="Base.html#400" class="Bound"
+      >A</a
+      ><a name="454"
+      > </a
+      ><a name="455" class="Symbol"
+      >&#8594;</a
+      ><a name="456"
+      > </a
+      ><a name="457" href="Base.html#393" class="Datatype"
+      >Maybe</a
+      ><a name="462"
+      > </a
+      ><a name="463" href="Base.html#400" class="Bound"
+      >A</a
+      ><a name="464"
+      >
+
+</a
+      ><a name="466" class="Comment"
+      >-- Dependent Products (&#931; types)</a
+      ><a name="497"
+      >
+
+</a
+      ><a name="499" class="Keyword"
+      >record</a
+      ><a name="505"
+      > </a
+      ><a name="506" href="Base.html#506" class="Record"
+      >&#931;</a
+      ><a name="507"
+      > </a
+      ><a name="508" class="Symbol"
+      >(</a
+      ><a name="509" href="Base.html#509" class="Bound"
+      >A</a
+      ><a name="510"
+      > </a
+      ><a name="511" class="Symbol"
+      >:</a
+      ><a name="512"
+      > </a
+      ><a name="513" class="PrimitiveType"
+      >Set</a
+      ><a name="516" class="Symbol"
+      >)</a
+      ><a name="517"
+      > </a
+      ><a name="518" class="Symbol"
+      >(</a
+      ><a name="519" href="Base.html#519" class="Bound"
+      >B</a
+      ><a name="520"
+      > </a
+      ><a name="521" class="Symbol"
+      >:</a
+      ><a name="522"
+      > </a
+      ><a name="523" href="Base.html#509" class="Bound"
+      >A</a
+      ><a name="524"
+      > </a
+      ><a name="525" class="Symbol"
+      >&#8594;</a
+      ><a name="526"
+      > </a
+      ><a name="527" class="PrimitiveType"
+      >Set</a
+      ><a name="530" class="Symbol"
+      >)</a
+      ><a name="531"
+      > </a
+      ><a name="532" class="Symbol"
+      >:</a
+      ><a name="533"
+      > </a
+      ><a name="534" class="PrimitiveType"
+      >Set</a
+      ><a name="537"
+      > </a
+      ><a name="538" class="Keyword"
+      >where</a
+      ><a name="543"
+      >
+  </a
+      ><a name="546" class="Keyword"
+      >constructor</a
+      ><a name="557"
+      > </a
+      ><a name="558" href="Base.html#558" class="InductiveConstructor Operator"
+      >_,_</a
+      ><a name="561"
+      >
+  </a
+      ><a name="564" class="Keyword"
+      >field</a
+      ><a name="569"
+      >
+    </a
+      ><a name="574" href="Base.html#574" class="Field"
+      >fst</a
+      ><a name="577"
+      > </a
+      ><a name="578" class="Symbol"
+      >:</a
+      ><a name="579"
+      > </a
+      ><a name="580" href="Base.html#509" class="Bound"
+      >A</a
+      ><a name="581"
+      >
+    </a
+      ><a name="586" href="Base.html#586" class="Field"
+      >snd</a
+      ><a name="589"
+      > </a
+      ><a name="590" class="Symbol"
+      >:</a
+      ><a name="591"
+      > </a
+      ><a name="592" href="Base.html#519" class="Bound"
+      >B</a
+      ><a name="593"
+      > </a
+      ><a name="594" href="Base.html#574" class="Bound"
+      >fst</a
+      ><a name="597"
+      >
+
+</a
+      ><a name="599" class="Keyword"
+      >open</a
+      ><a name="603"
+      > </a
+      ><a name="604" href="Base.html#506" class="Module"
+      >&#931;</a
+      ><a name="605"
+      > </a
+      ><a name="606" class="Keyword"
+      >public</a
+      ><a name="612"
+      >
+
+</a
+      ><a name="614" class="Comment"
+      >-- data &#931; (A : Set) (B : A &#8594; Set) : Set where</a
+      ><a name="659"
+      >
+</a
+      ><a name="660" class="Comment"
+      >--   _,_ : (a : A) &#8594; B a &#8594; &#931; A B</a
+      ><a name="692"
+      >
+
+</a
+      ><a name="694" class="Keyword"
+      >syntax</a
+      ><a name="700"
+      > &#931; A </a
+      ><a name="705" class="Symbol"
+      >(&#955;</a
+      ><a name="707"
+      > a </a
+      ><a name="710" class="Symbol"
+      >&#8594;</a
+      ><a name="711"
+      > B</a
+      ><a name="713" class="Symbol"
+      >)</a
+      ><a name="714"
+      > </a
+      ><a name="715" class="Symbol"
+      >=</a
+      ><a name="716"
+      > &#931;[ a &#8758; A ] B
+
+</a
+      ><a name="731" class="Comment"
+      >-- Cartesian Product</a
+      ><a name="751"
+      >
+
+</a
+      ><a name="753" href="Base.html#753" class="Function Operator"
+      >_&#215;_</a
+      ><a name="756"
+      > </a
+      ><a name="757" class="Symbol"
+      >:</a
+      ><a name="758"
+      > </a
+      ><a name="759" class="PrimitiveType"
+      >Set</a
+      ><a name="762"
+      > </a
+      ><a name="763" class="Symbol"
+      >&#8594;</a
+      ><a name="764"
+      > </a
+      ><a name="765" class="PrimitiveType"
+      >Set</a
+      ><a name="768"
+      > </a
+      ><a name="769" class="Symbol"
+      >&#8594;</a
+      ><a name="770"
+      > </a
+      ><a name="771" class="PrimitiveType"
+      >Set</a
+      ><a name="774"
+      >
+</a
+      ><a name="775" href="Base.html#775" class="Bound"
+      >A</a
+      ><a name="776"
+      > </a
+      ><a name="777" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="778"
+      > </a
+      ><a name="779" href="Base.html#779" class="Bound"
+      >B</a
+      ><a name="780"
+      > </a
+      ><a name="781" class="Symbol"
+      >=</a
+      ><a name="782"
+      > </a
+      ><a name="783" href="Base.html#506" class="Record"
+      >&#931;</a
+      ><a name="784"
+      > </a
+      ><a name="785" href="Base.html#775" class="Bound"
+      >A</a
+      ><a name="786"
+      > </a
+      ><a name="787" class="Symbol"
+      >(&#955;</a
+      ><a name="789"
+      > </a
+      ><a name="790" href="Base.html#790" class="Bound"
+      >_</a
+      ><a name="791"
+      > </a
+      ><a name="792" class="Symbol"
+      >&#8594;</a
+      ><a name="793"
+      > </a
+      ><a name="794" href="Base.html#779" class="Bound"
+      >B</a
+      ><a name="795" class="Symbol"
+      >)</a
+      ><a name="796"
+      >
+
+</a
+      ><a name="798" class="Comment"
+      >-- Sum Types (a.k.a. co-products) --</a
+      ><a name="834"
+      >
+
+</a
+      ><a name="836" class="Keyword"
+      >data</a
+      ><a name="840"
+      > </a
+      ><a name="841" href="Base.html#841" class="Datatype Operator"
+      >_&#8846;_</a
+      ><a name="844"
+      > </a
+      ><a name="845" class="Symbol"
+      >(</a
+      ><a name="846" href="Base.html#846" class="Bound"
+      >A</a
+      ><a name="847"
+      > </a
+      ><a name="848" href="Base.html#848" class="Bound"
+      >B</a
+      ><a name="849"
+      > </a
+      ><a name="850" class="Symbol"
+      >:</a
+      ><a name="851"
+      > </a
+      ><a name="852" class="PrimitiveType"
+      >Set</a
+      ><a name="855" class="Symbol"
+      >)</a
+      ><a name="856"
+      > </a
+      ><a name="857" class="Symbol"
+      >:</a
+      ><a name="858"
+      > </a
+      ><a name="859" class="PrimitiveType"
+      >Set</a
+      ><a name="862"
+      > </a
+      ><a name="863" class="Keyword"
+      >where</a
+      ><a name="868"
+      >
+  </a
+      ><a name="871" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="874"
+      > </a
+      ><a name="875" class="Symbol"
+      >:</a
+      ><a name="876"
+      > </a
+      ><a name="877" href="Base.html#846" class="Bound"
+      >A</a
+      ><a name="878"
+      > </a
+      ><a name="879" class="Symbol"
+      >&#8594;</a
+      ><a name="880"
+      > </a
+      ><a name="881" href="Base.html#846" class="Bound"
+      >A</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="884"
+      > </a
+      ><a name="885" href="Base.html#848" class="Bound"
+      >B</a
+      ><a name="886"
+      >
+  </a
+      ><a name="889" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="892"
+      > </a
+      ><a name="893" class="Symbol"
+      >:</a
+      ><a name="894"
+      > </a
+      ><a name="895" href="Base.html#848" class="Bound"
+      >B</a
+      ><a name="896"
+      > </a
+      ><a name="897" class="Symbol"
+      >&#8594;</a
+      ><a name="898"
+      > </a
+      ><a name="899" href="Base.html#846" class="Bound"
+      >A</a
+      ><a name="900"
+      > </a
+      ><a name="901" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="902"
+      > </a
+      ><a name="903" href="Base.html#848" class="Bound"
+      >B</a
+      ><a name="904"
+      >
+
+</a
+      ><a name="906" class="Comment"
+      >-- Binary Operators</a
+      ><a name="925"
+      >
+
+</a
+      ><a name="927" href="Base.html#927" class="Function"
+      >Op</a
+      ><a name="929"
+      > </a
+      ><a name="930" class="Symbol"
+      >:</a
+      ><a name="931"
+      > </a
+      ><a name="932" class="PrimitiveType"
+      >Set</a
+      ><a name="935"
+      > </a
+      ><a name="936" class="Symbol"
+      >&#8594;</a
+      ><a name="937"
+      > </a
+      ><a name="938" class="PrimitiveType"
+      >Set</a
+      ><a name="941"
+      >
+</a
+      ><a name="942" href="Base.html#927" class="Function"
+      >Op</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="Base.html#945" class="Bound"
+      >A</a
+      ><a name="946"
+      > </a
+      ><a name="947" class="Symbol"
+      >=</a
+      ><a name="948"
+      > </a
+      ><a name="949" href="Base.html#945" class="Bound"
+      >A</a
+      ><a name="950"
+      > </a
+      ><a name="951" class="Symbol"
+      >&#8594;</a
+      ><a name="952"
+      > </a
+      ><a name="953" href="Base.html#945" class="Bound"
+      >A</a
+      ><a name="954"
+      > </a
+      ><a name="955" class="Symbol"
+      >&#8594;</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="Base.html#945" class="Bound"
+      >A</a
+      ><a name="958"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

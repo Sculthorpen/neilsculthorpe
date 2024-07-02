@@ -1,0 +1,1022 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Ord1</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >open</a
+      ><a name="5"
+      > </a
+      ><a name="6" class="Keyword"
+      >import</a
+      ><a name="12"
+      > </a
+      ><a name="13" href="NeilPrelude1.html#45" class="Module"
+      >NeilPrelude1</a
+      ><a name="25"
+      >
+
+</a
+      ><a name="27" class="Comment"
+      >-- The Ordered Universe</a
+      ><a name="50"
+      >
+
+</a
+      ><a name="52" class="Keyword"
+      >module</a
+      ><a name="58"
+      > </a
+      ><a name="59" href="Ord1.html#59" class="Module"
+      >Ord1</a
+      ><a name="63"
+      > </a
+      ><a name="64" class="Keyword"
+      >where</a
+      ><a name="69"
+      >
+
+</a
+      ><a name="71" class="Keyword"
+      >infix</a
+      ><a name="76"
+      >  </a
+      ><a name="78" class="Number"
+      >3</a
+      ><a name="79"
+      >  _&#8804;_ _&#8805;_ 
+
+</a
+      ><a name="91" class="Keyword"
+      >infix</a
+      ><a name="96"
+      >  </a
+      ><a name="98" class="Number"
+      >8</a
+      ><a name="99"
+      >  _&lt;=_ _&lt;_ _&gt;=_ _&gt;_
+
+
+</a
+      ><a name="121" class="Comment"
+      >-- Ordered Universe --</a
+      ><a name="143"
+      >
+
+</a
+      ><a name="145" class="Keyword"
+      >data</a
+      ><a name="149"
+      > </a
+      ><a name="150" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="154"
+      > </a
+      ><a name="155" class="Symbol"
+      >:</a
+      ><a name="156"
+      > </a
+      ><a name="157" class="PrimitiveType"
+      >Set</a
+      ><a name="160"
+      > </a
+      ><a name="161" class="Keyword"
+      >where</a
+      ><a name="166"
+      >
+  </a
+      ><a name="169" href="Ord1.html#169" class="InductiveConstructor"
+      >bool</a
+      ><a name="173"
+      > </a
+      ><a name="174" class="Symbol"
+      >:</a
+      ><a name="175"
+      > </a
+      ><a name="176" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="180"
+      >
+  </a
+      ><a name="183" href="Ord1.html#183" class="InductiveConstructor"
+      >nat</a
+      ><a name="186"
+      >  </a
+      ><a name="188" class="Symbol"
+      >:</a
+      ><a name="189"
+      > </a
+      ><a name="190" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="194"
+      >
+
+</a
+      ><a name="196" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="202"
+      > </a
+      ><a name="203" class="Symbol"
+      >:</a
+      ><a name="204"
+      > </a
+      ><a name="205" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="209"
+      > </a
+      ><a name="210" class="Symbol"
+      >&#8594;</a
+      ><a name="211"
+      > </a
+      ><a name="212" class="PrimitiveType"
+      >Set</a
+      ><a name="215"
+      >
+</a
+      ><a name="216" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="222"
+      > </a
+      ><a name="223" href="Ord1.html#169" class="InductiveConstructor"
+      >bool</a
+      ><a name="227"
+      > </a
+      ><a name="228" class="Symbol"
+      >=</a
+      ><a name="229"
+      > </a
+      ><a name="230" href="NeilPrelude1.html#8853" class="Datatype"
+      >Bool</a
+      ><a name="234"
+      >
+</a
+      ><a name="235" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="241"
+      > </a
+      ><a name="242" href="Ord1.html#183" class="InductiveConstructor"
+      >nat</a
+      ><a name="245"
+      >  </a
+      ><a name="247" class="Symbol"
+      >=</a
+      ><a name="248"
+      > </a
+      ><a name="249" href="NeilPrelude1.html#9831" class="Datatype"
+      >&#8469;</a
+      ><a name="250"
+      >
+
+</a
+      ><a name="252" href="Ord1.html#252" class="Function Operator"
+      >_&lt;=_</a
+      ><a name="256"
+      > </a
+      ><a name="257" class="Symbol"
+      >:</a
+      ><a name="258"
+      > </a
+      ><a name="259" class="Symbol"
+      >{</a
+      ><a name="260" href="Ord1.html#260" class="Bound"
+      >t</a
+      ><a name="261"
+      > </a
+      ><a name="262" class="Symbol"
+      >:</a
+      ><a name="263"
+      > </a
+      ><a name="264" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="268" class="Symbol"
+      >}</a
+      ><a name="269"
+      > </a
+      ><a name="270" class="Symbol"
+      >&#8594;</a
+      ><a name="271"
+      > </a
+      ><a name="272" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="278"
+      > </a
+      ><a name="279" href="Ord1.html#260" class="Bound"
+      >t</a
+      ><a name="280"
+      > </a
+      ><a name="281" class="Symbol"
+      >&#8594;</a
+      ><a name="282"
+      > </a
+      ><a name="283" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="289"
+      > </a
+      ><a name="290" href="Ord1.html#260" class="Bound"
+      >t</a
+      ><a name="291"
+      > </a
+      ><a name="292" class="Symbol"
+      >&#8594;</a
+      ><a name="293"
+      > </a
+      ><a name="294" href="NeilPrelude1.html#8853" class="Datatype"
+      >Bool</a
+      ><a name="298"
+      >
+
+</a
+      ><a name="300" href="Ord1.html#252" class="Function Operator"
+      >_&lt;=_</a
+      ><a name="304"
+      > </a
+      ><a name="305" class="Symbol"
+      >{</a
+      ><a name="306" href="Ord1.html#169" class="InductiveConstructor"
+      >bool</a
+      ><a name="310" class="Symbol"
+      >}</a
+      ><a name="311"
+      > </a
+      ><a name="312" href="NeilPrelude1.html#8872" class="InductiveConstructor"
+      >false</a
+      ><a name="317"
+      > </a
+      ><a name="318" class="Symbol"
+      >_</a
+      ><a name="319"
+      > </a
+      ><a name="320" class="Symbol"
+      >=</a
+      ><a name="321"
+      > </a
+      ><a name="322" href="NeilPrelude1.html#8887" class="InductiveConstructor"
+      >true</a
+      ><a name="326"
+      >
+</a
+      ><a name="327" href="Ord1.html#252" class="Function Operator"
+      >_&lt;=_</a
+      ><a name="331"
+      > </a
+      ><a name="332" class="Symbol"
+      >{</a
+      ><a name="333" href="Ord1.html#169" class="InductiveConstructor"
+      >bool</a
+      ><a name="337" class="Symbol"
+      >}</a
+      ><a name="338"
+      > </a
+      ><a name="339" href="NeilPrelude1.html#8887" class="InductiveConstructor"
+      >true</a
+      ><a name="343"
+      > </a
+      ><a name="344" href="Ord1.html#344" class="Bound"
+      >b</a
+      ><a name="345"
+      > </a
+      ><a name="346" class="Symbol"
+      >=</a
+      ><a name="347"
+      > </a
+      ><a name="348" href="Ord1.html#344" class="Bound"
+      >b</a
+      ><a name="349"
+      >
+
+</a
+      ><a name="351" href="Ord1.html#252" class="Function Operator"
+      >_&lt;=_</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Symbol"
+      >{</a
+      ><a name="357" href="Ord1.html#183" class="InductiveConstructor"
+      >nat</a
+      ><a name="360" class="Symbol"
+      >}</a
+      ><a name="361"
+      > </a
+      ><a name="362" href="NeilPrelude1.html#9847" class="InductiveConstructor"
+      >O</a
+      ><a name="363"
+      > </a
+      ><a name="364" class="Symbol"
+      >_</a
+      ><a name="365"
+      > </a
+      ><a name="366" class="Symbol"
+      >=</a
+      ><a name="367"
+      > </a
+      ><a name="368" href="NeilPrelude1.html#8887" class="InductiveConstructor"
+      >true</a
+      ><a name="372"
+      >
+</a
+      ><a name="373" href="Ord1.html#252" class="Function Operator"
+      >_&lt;=_</a
+      ><a name="377"
+      > </a
+      ><a name="378" class="Symbol"
+      >{</a
+      ><a name="379" href="Ord1.html#183" class="InductiveConstructor"
+      >nat</a
+      ><a name="382" class="Symbol"
+      >}</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Symbol"
+      >(</a
+      ><a name="385" href="NeilPrelude1.html#9855" class="InductiveConstructor"
+      >S</a
+      ><a name="386"
+      > </a
+      ><a name="387" class="Symbol"
+      >_)</a
+      ><a name="389"
+      > </a
+      ><a name="390" href="NeilPrelude1.html#9847" class="InductiveConstructor"
+      >O</a
+      ><a name="391"
+      > </a
+      ><a name="392" class="Symbol"
+      >=</a
+      ><a name="393"
+      > </a
+      ><a name="394" href="NeilPrelude1.html#8872" class="InductiveConstructor"
+      >false</a
+      ><a name="399"
+      >
+</a
+      ><a name="400" href="Ord1.html#252" class="Function Operator"
+      >_&lt;=_</a
+      ><a name="404"
+      > </a
+      ><a name="405" class="Symbol"
+      >{</a
+      ><a name="406" href="Ord1.html#183" class="InductiveConstructor"
+      >nat</a
+      ><a name="409" class="Symbol"
+      >}</a
+      ><a name="410"
+      > </a
+      ><a name="411" class="Symbol"
+      >(</a
+      ><a name="412" href="NeilPrelude1.html#9855" class="InductiveConstructor"
+      >S</a
+      ><a name="413"
+      > </a
+      ><a name="414" href="Ord1.html#414" class="Bound"
+      >m</a
+      ><a name="415" class="Symbol"
+      >)</a
+      ><a name="416"
+      > </a
+      ><a name="417" class="Symbol"
+      >(</a
+      ><a name="418" href="NeilPrelude1.html#9855" class="InductiveConstructor"
+      >S</a
+      ><a name="419"
+      > </a
+      ><a name="420" href="Ord1.html#420" class="Bound"
+      >n</a
+      ><a name="421" class="Symbol"
+      >)</a
+      ><a name="422"
+      > </a
+      ><a name="423" class="Symbol"
+      >=</a
+      ><a name="424"
+      > </a
+      ><a name="425" href="Ord1.html#414" class="Bound"
+      >m</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="Ord1.html#252" class="Function Operator"
+      >&lt;=</a
+      ><a name="429"
+      > </a
+      ><a name="430" href="Ord1.html#420" class="Bound"
+      >n</a
+      ><a name="431"
+      >
+
+
+</a
+      ><a name="434" href="Ord1.html#434" class="Function Operator"
+      >_&gt;=_</a
+      ><a name="438"
+      > </a
+      ><a name="439" class="Symbol"
+      >:</a
+      ><a name="440"
+      > </a
+      ><a name="441" class="Symbol"
+      >{</a
+      ><a name="442" href="Ord1.html#442" class="Bound"
+      >t</a
+      ><a name="443"
+      > </a
+      ><a name="444" class="Symbol"
+      >:</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="450" class="Symbol"
+      >}</a
+      ><a name="451"
+      > </a
+      ><a name="452" class="Symbol"
+      >&#8594;</a
+      ><a name="453"
+      > </a
+      ><a name="454" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="460"
+      > </a
+      ><a name="461" href="Ord1.html#442" class="Bound"
+      >t</a
+      ><a name="462"
+      > </a
+      ><a name="463" class="Symbol"
+      >&#8594;</a
+      ><a name="464"
+      > </a
+      ><a name="465" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="471"
+      > </a
+      ><a name="472" href="Ord1.html#442" class="Bound"
+      >t</a
+      ><a name="473"
+      > </a
+      ><a name="474" class="Symbol"
+      >&#8594;</a
+      ><a name="475"
+      > </a
+      ><a name="476" href="NeilPrelude1.html#8853" class="Datatype"
+      >Bool</a
+      ><a name="480"
+      >
+</a
+      ><a name="481" href="Ord1.html#481" class="Bound"
+      >x</a
+      ><a name="482"
+      > </a
+      ><a name="483" href="Ord1.html#434" class="Function Operator"
+      >&gt;=</a
+      ><a name="485"
+      > </a
+      ><a name="486" href="Ord1.html#486" class="Bound"
+      >y</a
+      ><a name="487"
+      > </a
+      ><a name="488" class="Symbol"
+      >=</a
+      ><a name="489"
+      > </a
+      ><a name="490" href="Ord1.html#486" class="Bound"
+      >y</a
+      ><a name="491"
+      > </a
+      ><a name="492" href="Ord1.html#252" class="Function Operator"
+      >&lt;=</a
+      ><a name="494"
+      > </a
+      ><a name="495" href="Ord1.html#481" class="Bound"
+      >x</a
+      ><a name="496"
+      >
+
+</a
+      ><a name="498" href="Ord1.html#498" class="Function Operator"
+      >_&gt;_</a
+      ><a name="501"
+      > </a
+      ><a name="502" class="Symbol"
+      >:</a
+      ><a name="503"
+      > </a
+      ><a name="504" class="Symbol"
+      >{</a
+      ><a name="505" href="Ord1.html#505" class="Bound"
+      >t</a
+      ><a name="506"
+      > </a
+      ><a name="507" class="Symbol"
+      >:</a
+      ><a name="508"
+      > </a
+      ><a name="509" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="513" class="Symbol"
+      >}</a
+      ><a name="514"
+      > </a
+      ><a name="515" class="Symbol"
+      >&#8594;</a
+      ><a name="516"
+      > </a
+      ><a name="517" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="523"
+      > </a
+      ><a name="524" href="Ord1.html#505" class="Bound"
+      >t</a
+      ><a name="525"
+      > </a
+      ><a name="526" class="Symbol"
+      >&#8594;</a
+      ><a name="527"
+      > </a
+      ><a name="528" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="534"
+      > </a
+      ><a name="535" href="Ord1.html#505" class="Bound"
+      >t</a
+      ><a name="536"
+      > </a
+      ><a name="537" class="Symbol"
+      >&#8594;</a
+      ><a name="538"
+      > </a
+      ><a name="539" href="NeilPrelude1.html#8853" class="Datatype"
+      >Bool</a
+      ><a name="543"
+      >
+</a
+      ><a name="544" href="Ord1.html#544" class="Bound"
+      >x</a
+      ><a name="545"
+      > </a
+      ><a name="546" href="Ord1.html#498" class="Function Operator"
+      >&gt;</a
+      ><a name="547"
+      > </a
+      ><a name="548" href="Ord1.html#548" class="Bound"
+      >y</a
+      ><a name="549"
+      > </a
+      ><a name="550" class="Symbol"
+      >=</a
+      ><a name="551"
+      > </a
+      ><a name="552" href="NeilPrelude1.html#8986" class="Function"
+      >not</a
+      ><a name="555"
+      > </a
+      ><a name="556" class="Symbol"
+      >(</a
+      ><a name="557" href="Ord1.html#544" class="Bound"
+      >x</a
+      ><a name="558"
+      > </a
+      ><a name="559" href="Ord1.html#252" class="Function Operator"
+      >&lt;=</a
+      ><a name="561"
+      > </a
+      ><a name="562" href="Ord1.html#548" class="Bound"
+      >y</a
+      ><a name="563" class="Symbol"
+      >)</a
+      ><a name="564"
+      >
+
+</a
+      ><a name="566" href="Ord1.html#566" class="Function Operator"
+      >_&lt;_</a
+      ><a name="569"
+      > </a
+      ><a name="570" class="Symbol"
+      >:</a
+      ><a name="571"
+      > </a
+      ><a name="572" class="Symbol"
+      >{</a
+      ><a name="573" href="Ord1.html#573" class="Bound"
+      >t</a
+      ><a name="574"
+      > </a
+      ><a name="575" class="Symbol"
+      >:</a
+      ><a name="576"
+      > </a
+      ><a name="577" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="581" class="Symbol"
+      >}</a
+      ><a name="582"
+      > </a
+      ><a name="583" class="Symbol"
+      >&#8594;</a
+      ><a name="584"
+      > </a
+      ><a name="585" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="591"
+      > </a
+      ><a name="592" href="Ord1.html#573" class="Bound"
+      >t</a
+      ><a name="593"
+      > </a
+      ><a name="594" class="Symbol"
+      >&#8594;</a
+      ><a name="595"
+      > </a
+      ><a name="596" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="602"
+      > </a
+      ><a name="603" href="Ord1.html#573" class="Bound"
+      >t</a
+      ><a name="604"
+      > </a
+      ><a name="605" class="Symbol"
+      >&#8594;</a
+      ><a name="606"
+      > </a
+      ><a name="607" href="NeilPrelude1.html#8853" class="Datatype"
+      >Bool</a
+      ><a name="611"
+      >
+</a
+      ><a name="612" href="Ord1.html#612" class="Bound"
+      >x</a
+      ><a name="613"
+      > </a
+      ><a name="614" href="Ord1.html#566" class="Function Operator"
+      >&lt;</a
+      ><a name="615"
+      > </a
+      ><a name="616" href="Ord1.html#616" class="Bound"
+      >y</a
+      ><a name="617"
+      > </a
+      ><a name="618" class="Symbol"
+      >=</a
+      ><a name="619"
+      > </a
+      ><a name="620" href="NeilPrelude1.html#8986" class="Function"
+      >not</a
+      ><a name="623"
+      > </a
+      ><a name="624" class="Symbol"
+      >(</a
+      ><a name="625" href="Ord1.html#612" class="Bound"
+      >x</a
+      ><a name="626"
+      > </a
+      ><a name="627" href="Ord1.html#434" class="Function Operator"
+      >&gt;=</a
+      ><a name="629"
+      > </a
+      ><a name="630" href="Ord1.html#616" class="Bound"
+      >y</a
+      ><a name="631" class="Symbol"
+      >)</a
+      ><a name="632"
+      >
+
+
+</a
+      ><a name="635" class="Comment"
+      >------------------------------------------------</a
+      ><a name="683"
+      >
+
+</a
+      ><a name="685" class="Keyword"
+      >data</a
+      ><a name="689"
+      > </a
+      ><a name="690" href="Ord1.html#690" class="Datatype Operator"
+      >_&#8804;_</a
+      ><a name="693"
+      > </a
+      ><a name="694" class="Symbol"
+      >:</a
+      ><a name="695"
+      > </a
+      ><a name="696" class="Symbol"
+      >{</a
+      ><a name="697" href="Ord1.html#697" class="Bound"
+      >u</a
+      ><a name="698"
+      > </a
+      ><a name="699" class="Symbol"
+      >:</a
+      ><a name="700"
+      > </a
+      ><a name="701" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="705" class="Symbol"
+      >}</a
+      ><a name="706"
+      > </a
+      ><a name="707" class="Symbol"
+      >&#8594;</a
+      ><a name="708"
+      > </a
+      ><a name="709" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="715"
+      > </a
+      ><a name="716" href="Ord1.html#697" class="Bound"
+      >u</a
+      ><a name="717"
+      > </a
+      ><a name="718" class="Symbol"
+      >&#8594;</a
+      ><a name="719"
+      > </a
+      ><a name="720" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="726"
+      > </a
+      ><a name="727" href="Ord1.html#697" class="Bound"
+      >u</a
+      ><a name="728"
+      > </a
+      ><a name="729" class="Symbol"
+      >&#8594;</a
+      ><a name="730"
+      > </a
+      ><a name="731" class="PrimitiveType"
+      >Set</a
+      ><a name="734"
+      > </a
+      ><a name="735" class="Keyword"
+      >where</a
+      ><a name="740"
+      >
+  </a
+      ><a name="743" href="Ord1.html#743" class="InductiveConstructor"
+      >refl</a
+      ><a name="747"
+      > </a
+      ><a name="748" class="Symbol"
+      >:</a
+      ><a name="749"
+      > </a
+      ><a name="750" class="Symbol"
+      >{</a
+      ><a name="751" href="Ord1.html#751" class="Bound"
+      >b</a
+      ><a name="752"
+      > </a
+      ><a name="753" class="Symbol"
+      >:</a
+      ><a name="754"
+      > </a
+      ><a name="755" href="NeilPrelude1.html#8853" class="Datatype"
+      >Bool</a
+      ><a name="759" class="Symbol"
+      >}</a
+      ><a name="760"
+      >         </a
+      ><a name="769" class="Symbol"
+      >-&gt;</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="Ord1.html#751" class="Bound"
+      >b</a
+      ><a name="773"
+      > </a
+      ><a name="774" href="Ord1.html#690" class="Datatype Operator"
+      >&#8804;</a
+      ><a name="775"
+      > </a
+      ><a name="776" href="Ord1.html#751" class="Bound"
+      >b</a
+      ><a name="777"
+      >
+  </a
+      ><a name="780" href="Ord1.html#780" class="InductiveConstructor"
+      >f&#8804;t</a
+      ><a name="783"
+      >  </a
+      ><a name="785" class="Symbol"
+      >:</a
+      ><a name="786"
+      >                       </a
+      ><a name="809" href="NeilPrelude1.html#8872" class="InductiveConstructor"
+      >false</a
+      ><a name="814"
+      > </a
+      ><a name="815" href="Ord1.html#690" class="Datatype Operator"
+      >&#8804;</a
+      ><a name="816"
+      > </a
+      ><a name="817" href="NeilPrelude1.html#8887" class="InductiveConstructor"
+      >true</a
+      ><a name="821"
+      >
+  </a
+      ><a name="824" href="Ord1.html#824" class="InductiveConstructor"
+      >&#8804;O</a
+      ><a name="826"
+      >   </a
+      ><a name="829" class="Symbol"
+      >:</a
+      ><a name="830"
+      > </a
+      ><a name="831" class="Symbol"
+      >{</a
+      ><a name="832" href="Ord1.html#832" class="Bound"
+      >n</a
+      ><a name="833"
+      > </a
+      ><a name="834" class="Symbol"
+      >:</a
+      ><a name="835"
+      > </a
+      ><a name="836" href="NeilPrelude1.html#9831" class="Datatype"
+      >&#8469;</a
+      ><a name="837" class="Symbol"
+      >}</a
+      ><a name="838"
+      >            </a
+      ><a name="850" class="Symbol"
+      >-&gt;</a
+      ><a name="852"
+      > </a
+      ><a name="853" href="NeilPrelude1.html#9847" class="InductiveConstructor"
+      >O</a
+      ><a name="854"
+      > </a
+      ><a name="855" href="Ord1.html#690" class="Datatype Operator"
+      >&#8804;</a
+      ><a name="856"
+      > </a
+      ><a name="857" href="Ord1.html#832" class="Bound"
+      >n</a
+      ><a name="858"
+      >
+  </a
+      ><a name="861" href="Ord1.html#861" class="InductiveConstructor"
+      >&#8804;S</a
+      ><a name="863"
+      >   </a
+      ><a name="866" class="Symbol"
+      >:</a
+      ><a name="867"
+      > </a
+      ><a name="868" class="Symbol"
+      >{</a
+      ><a name="869" href="Ord1.html#869" class="Bound"
+      >m</a
+      ><a name="870"
+      > </a
+      ><a name="871" href="Ord1.html#871" class="Bound"
+      >n</a
+      ><a name="872"
+      > </a
+      ><a name="873" class="Symbol"
+      >:</a
+      ><a name="874"
+      > </a
+      ><a name="875" href="NeilPrelude1.html#9831" class="Datatype"
+      >&#8469;</a
+      ><a name="876" class="Symbol"
+      >}</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >-&gt;</a
+      ><a name="880"
+      > </a
+      ><a name="881" href="Ord1.html#869" class="Bound"
+      >m</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="Ord1.html#690" class="Datatype Operator"
+      >&#8804;</a
+      ><a name="884"
+      > </a
+      ><a name="885" href="Ord1.html#871" class="Bound"
+      >n</a
+      ><a name="886"
+      > </a
+      ><a name="887" class="Symbol"
+      >-&gt;</a
+      ><a name="889"
+      > </a
+      ><a name="890" href="NeilPrelude1.html#9855" class="InductiveConstructor"
+      >S</a
+      ><a name="891"
+      > </a
+      ><a name="892" href="Ord1.html#869" class="Bound"
+      >m</a
+      ><a name="893"
+      > </a
+      ><a name="894" href="Ord1.html#690" class="Datatype Operator"
+      >&#8804;</a
+      ><a name="895"
+      > </a
+      ><a name="896" href="NeilPrelude1.html#9855" class="InductiveConstructor"
+      >S</a
+      ><a name="897"
+      > </a
+      ><a name="898" href="Ord1.html#871" class="Bound"
+      >n</a
+      ><a name="899"
+      >
+  
+
+</a
+      ><a name="904" href="Ord1.html#904" class="Function Operator"
+      >_&#8805;_</a
+      ><a name="907"
+      > </a
+      ><a name="908" class="Symbol"
+      >:</a
+      ><a name="909"
+      > </a
+      ><a name="910" class="Symbol"
+      >{</a
+      ><a name="911" href="Ord1.html#911" class="Bound"
+      >u</a
+      ><a name="912"
+      > </a
+      ><a name="913" class="Symbol"
+      >:</a
+      ><a name="914"
+      > </a
+      ><a name="915" href="Ord1.html#150" class="Datatype"
+      >OrdU</a
+      ><a name="919" class="Symbol"
+      >}</a
+      ><a name="920"
+      > </a
+      ><a name="921" class="Symbol"
+      >&#8594;</a
+      ><a name="922"
+      > </a
+      ><a name="923" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="929"
+      > </a
+      ><a name="930" href="Ord1.html#911" class="Bound"
+      >u</a
+      ><a name="931"
+      > </a
+      ><a name="932" class="Symbol"
+      >&#8594;</a
+      ><a name="933"
+      > </a
+      ><a name="934" href="Ord1.html#196" class="Function"
+      >ordSet</a
+      ><a name="940"
+      > </a
+      ><a name="941" href="Ord1.html#911" class="Bound"
+      >u</a
+      ><a name="942"
+      > </a
+      ><a name="943" class="Symbol"
+      >&#8594;</a
+      ><a name="944"
+      > </a
+      ><a name="945" class="PrimitiveType"
+      >Set</a
+      ><a name="948"
+      >
+</a
+      ><a name="949" href="Ord1.html#949" class="Bound"
+      >a</a
+      ><a name="950"
+      > </a
+      ><a name="951" href="Ord1.html#904" class="Function Operator"
+      >&#8805;</a
+      ><a name="952"
+      > </a
+      ><a name="953" href="Ord1.html#953" class="Bound"
+      >b</a
+      ><a name="954"
+      > </a
+      ><a name="955" class="Symbol"
+      >=</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="Ord1.html#953" class="Bound"
+      >b</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="Ord1.html#690" class="Datatype Operator"
+      >&#8804;</a
+      ><a name="960"
+      > </a
+      ><a name="961" href="Ord1.html#949" class="Bound"
+      >a</a
+      ></pre
+    ></body
+  ></html
+>

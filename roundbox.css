@@ -1,0 +1,23 @@
+/* set background images for corners */
+.roundbox { background: url(Corner_Images/corner_background.gif) repeat; margin-bottom:15px;}
+
+.roundboxtop         { background: url(Corner_Images/corner_top.gif) repeat-x; }
+.roundboxtop div     { background: url(Corner_Images/corner_top_left.gif) no-repeat top left; }
+.roundboxtop div div { background: url(Corner_Images/corner_top_right.gif) no-repeat top right; }
+
+.roundboxbottom         { background: url(Corner_Images/corner_bottom.gif) repeat-x; }
+.roundboxbottom div     { background: url(Corner_Images/corner_bottom_left.gif) no-repeat top left; }
+.roundboxbottom div div { background: url(Corner_Images/corner_bottom_right.gif) no-repeat top right; }
+
+.roundboxcontentwrap { background: url(Corner_Images/corner_left.gif) repeat-y left }
+.roundboxcontent     { background: url(Corner_Images/corner_right.gif) repeat-y right }
+
+
+ /* height and width details */
+.roundboxtop div, .roundboxtop, .roundboxbottom div, .roundboxbottom {
+	height: 8px;
+	font-size: 1px
+}
+
+.roundboxcontent { padding: 1px 15px 10px 15px; margin: 0 }
+.roundbox { width: 100%  }

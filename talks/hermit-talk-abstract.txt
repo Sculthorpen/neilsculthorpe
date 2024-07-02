@@ -1,0 +1,14 @@
+The importance of reasoning about and refactoring programs is a central tenet
+of functional programming.  Yet our compilers and development toolchains only
+provide rudimentary support for these tasks.  To address this, we have
+implemented HERMIT, a toolkit enabling informal but systematic transformation
+of Haskell programs from inside the Glasgow Haskell Compiler's optimisation
+pipeline.  With HERMIT, users can experiment with optimisations and equational
+reasoning, while the tedious heavy lifting of performing the actual
+transformations is done for them.
+
+HERMIT provides a transformation API that can be used to build higher-level
+rewrite tools.  In this talk I will describe one HERMIT application---a
+read-eval-print shell for performing transformations using HERMIT.  I will
+also demonstrate using this shell to prototype an optimisation on a specific
+example, and discuss our initial experiences and remaining challenges.

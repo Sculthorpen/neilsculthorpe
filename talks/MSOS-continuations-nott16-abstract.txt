@@ -1,0 +1,5 @@
+It has been an open question as to whether the Modular Structural
+Operational Semantics (MSOS) framework can express the dynamic
+semantics of call/cc and related control operators.  This talk
+will overview MSOS and control operators, and then demonstrate
+that the former can indeed formally specify the latter.

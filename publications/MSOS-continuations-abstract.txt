@@ -1,0 +1,6 @@
+It has been an open question as to whether the Modular
+Structural Operational Semantics framework can express
+the dynamic semantics of call/cc.  This paper shows
+that it can, and furthermore, demonstrates that it can
+express the more general delimited control operators
+control and shift.

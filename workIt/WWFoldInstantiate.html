@@ -1,0 +1,5355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >WWFoldInstantiate</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type </a
+      ><a name="28" class="Symbol"
+      >#-}</a
+      ><a name="31"
+      >
+
+</a
+      ><a name="33" class="Keyword"
+      >open</a
+      ><a name="37"
+      > </a
+      ><a name="38" class="Keyword"
+      >import</a
+      ><a name="44"
+      > </a
+      ><a name="45" href="NeilPrelude.html#1" class="Module"
+      >NeilPrelude</a
+      ><a name="56"
+      >
+</a
+      ><a name="57" class="Keyword"
+      >open</a
+      ><a name="61"
+      > </a
+      ><a name="62" class="Keyword"
+      >import</a
+      ><a name="68"
+      > </a
+      ><a name="69" href="Logic.html#1" class="Module"
+      >Logic</a
+      ><a name="74"
+      >
+</a
+      ><a name="75" class="Keyword"
+      >open</a
+      ><a name="79"
+      > </a
+      ><a name="80" class="Keyword"
+      >import</a
+      ><a name="86"
+      > </a
+      ><a name="87" href="Extensionality.html#1" class="Module"
+      >Extensionality</a
+      ><a name="101"
+      >
+</a
+      ><a name="102" class="Keyword"
+      >open</a
+      ><a name="106"
+      > </a
+      ><a name="107" class="Keyword"
+      >import</a
+      ><a name="113"
+      > </a
+      ><a name="114" href="EquationalEq.html#1" class="Module"
+      >EquationalEq</a
+      ><a name="126"
+      >
+</a
+      ><a name="127" class="Keyword"
+      >open</a
+      ><a name="131"
+      > </a
+      ><a name="132" class="Keyword"
+      >import</a
+      ><a name="138"
+      > </a
+      ><a name="139" href="CPO.html#1" class="Module"
+      >CPO</a
+      ><a name="142"
+      >
+</a
+      ><a name="143" class="Keyword"
+      >open</a
+      ><a name="147"
+      > </a
+      ><a name="148" class="Keyword"
+      >import</a
+      ><a name="154"
+      > </a
+      ><a name="155" href="CPOLemmas.html#1" class="Module"
+      >CPOLemmas</a
+      ><a name="164"
+      >
+</a
+      ><a name="165" class="Keyword"
+      >open</a
+      ><a name="169"
+      > </a
+      ><a name="170" class="Keyword"
+      >import</a
+      ><a name="176"
+      > </a
+      ><a name="177" href="CPOFunctions.html#1" class="Module"
+      >CPOFunctions</a
+      ><a name="189"
+      >
+</a
+      ><a name="190" class="Keyword"
+      >import</a
+      ><a name="196"
+      > </a
+      ><a name="197" href="Fold.html#1" class="Module"
+      >Fold</a
+      ><a name="201"
+      >
+
+</a
+      ><a name="203" class="Keyword"
+      >module</a
+      ><a name="209"
+      > </a
+      ><a name="210" href="WWFoldInstantiate.html#1" class="Module"
+      >WWFoldInstantiate</a
+      ><a name="227"
+      >
+
+  </a
+      ><a name="231" class="Symbol"
+      >(</a
+      ><a name="232" href="WWFoldInstantiate.html#232" class="Bound"
+      >ext</a
+      ><a name="235"
+      > </a
+      ><a name="236" class="Symbol"
+      >:</a
+      ><a name="237"
+      > </a
+      ><a name="238" href="Extensionality.html#87" class="Function"
+      >Extensionality</a
+      ><a name="252" class="Symbol"
+      >)</a
+      ><a name="253"
+      >
+
+  </a
+      ><a name="257" class="Symbol"
+      >(</a
+      ><a name="258" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="261"
+      > </a
+      ><a name="262" class="Symbol"
+      >:</a
+      ><a name="263"
+      > </a
+      ><a name="264" class="Symbol"
+      >{</a
+      ><a name="265" href="WWFoldInstantiate.html#265" class="Bound"
+      >&#964;</a
+      ><a name="266"
+      > </a
+      ><a name="267" class="Symbol"
+      >:</a
+      ><a name="268"
+      > </a
+      ><a name="269" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="273" class="Symbol"
+      >}</a
+      ><a name="274"
+      > </a
+      ><a name="275" class="Symbol"
+      >&#8594;</a
+      ><a name="276"
+      > </a
+      ><a name="277" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="280"
+      > </a
+      ><a name="281" class="Symbol"
+      >(</a
+      ><a name="282" href="WWFoldInstantiate.html#265" class="Bound"
+      >&#964;</a
+      ><a name="283"
+      > </a
+      ><a name="284" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="285"
+      > </a
+      ><a name="286" href="WWFoldInstantiate.html#265" class="Bound"
+      >&#964;</a
+      ><a name="287" class="Symbol"
+      >)</a
+      ><a name="288"
+      > </a
+      ><a name="289" class="Symbol"
+      >&#8594;</a
+      ><a name="290"
+      > </a
+      ><a name="291" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="294"
+      > </a
+      ><a name="295" href="WWFoldInstantiate.html#265" class="Bound"
+      >&#964;</a
+      ><a name="296" class="Symbol"
+      >)</a
+      ><a name="297"
+      >
+  </a
+      ><a name="300" class="Symbol"
+      >(</a
+      ><a name="301" href="WWFoldInstantiate.html#301" class="Bound"
+      >Computation</a
+      ><a name="312"
+      > </a
+      ><a name="313" class="Symbol"
+      >:</a
+      ><a name="314"
+      > </a
+      ><a name="315" class="Symbol"
+      >{</a
+      ><a name="316" href="WWFoldInstantiate.html#316" class="Bound"
+      >&#964;</a
+      ><a name="317"
+      > </a
+      ><a name="318" class="Symbol"
+      >:</a
+      ><a name="319"
+      > </a
+      ><a name="320" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="324" class="Symbol"
+      >}</a
+      ><a name="325"
+      > </a
+      ><a name="326" class="Symbol"
+      >&#8594;</a
+      ><a name="327"
+      > </a
+      ><a name="328" class="Symbol"
+      >(</a
+      ><a name="329" href="WWFoldInstantiate.html#329" class="Bound"
+      >f</a
+      ><a name="330"
+      > </a
+      ><a name="331" class="Symbol"
+      >:</a
+      ><a name="332"
+      > </a
+      ><a name="333" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="336"
+      > </a
+      ><a name="337" class="Symbol"
+      >(</a
+      ><a name="338" href="WWFoldInstantiate.html#316" class="Bound"
+      >&#964;</a
+      ><a name="339"
+      > </a
+      ><a name="340" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="341"
+      > </a
+      ><a name="342" href="WWFoldInstantiate.html#316" class="Bound"
+      >&#964;</a
+      ><a name="343" class="Symbol"
+      >))</a
+      ><a name="345"
+      > </a
+      ><a name="346" class="Symbol"
+      >&#8594;</a
+      ><a name="347"
+      > </a
+      ><a name="348" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="351"
+      > </a
+      ><a name="352" href="WWFoldInstantiate.html#329" class="Bound"
+      >f</a
+      ><a name="353"
+      > </a
+      ><a name="354" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="355"
+      > </a
+      ><a name="356" href="WWFoldInstantiate.html#329" class="Bound"
+      >f</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="359"
+      > </a
+      ><a name="360" class="Symbol"
+      >(</a
+      ><a name="361" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="364"
+      > </a
+      ><a name="365" href="WWFoldInstantiate.html#329" class="Bound"
+      >f</a
+      ><a name="366" class="Symbol"
+      >))</a
+      ><a name="368"
+      >
+  </a
+      ><a name="371" class="Symbol"
+      >(</a
+      ><a name="372" href="WWFoldInstantiate.html#372" class="Bound"
+      >Induction</a
+      ><a name="381"
+      > </a
+      ><a name="382" class="Symbol"
+      >:</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Symbol"
+      >{</a
+      ><a name="385" href="WWFoldInstantiate.html#385" class="Bound"
+      >&#964;</a
+      ><a name="386"
+      > </a
+      ><a name="387" class="Symbol"
+      >:</a
+      ><a name="388"
+      > </a
+      ><a name="389" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="393" class="Symbol"
+      >}</a
+      ><a name="394"
+      > </a
+      ><a name="395" class="Symbol"
+      >&#8594;</a
+      ><a name="396"
+      > </a
+      ><a name="397" class="Symbol"
+      >{</a
+      ><a name="398" href="WWFoldInstantiate.html#398" class="Bound"
+      >x</a
+      ><a name="399"
+      > </a
+      ><a name="400" class="Symbol"
+      >:</a
+      ><a name="401"
+      > </a
+      ><a name="402" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="WWFoldInstantiate.html#385" class="Bound"
+      >&#964;</a
+      ><a name="407" class="Symbol"
+      >}</a
+      ><a name="408"
+      >  </a
+      ><a name="410" class="Symbol"
+      >&#8594;</a
+      ><a name="411"
+      > </a
+      ><a name="412" class="Symbol"
+      >(</a
+      ><a name="413" href="WWFoldInstantiate.html#413" class="Bound"
+      >f</a
+      ><a name="414"
+      > </a
+      ><a name="415" class="Symbol"
+      >:</a
+      ><a name="416"
+      > </a
+      ><a name="417" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="420"
+      > </a
+      ><a name="421" class="Symbol"
+      >(</a
+      ><a name="422" href="WWFoldInstantiate.html#385" class="Bound"
+      >&#964;</a
+      ><a name="423"
+      > </a
+      ><a name="424" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="425"
+      > </a
+      ><a name="426" href="WWFoldInstantiate.html#385" class="Bound"
+      >&#964;</a
+      ><a name="427" class="Symbol"
+      >))</a
+      ><a name="429"
+      > </a
+      ><a name="430" class="Symbol"
+      >&#8594;</a
+      ><a name="431"
+      > </a
+      ><a name="432" href="WWFoldInstantiate.html#413" class="Bound"
+      >f</a
+      ><a name="433"
+      > </a
+      ><a name="434" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="WWFoldInstantiate.html#398" class="Bound"
+      >x</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="439"
+      > </a
+      ><a name="440" href="WWFoldInstantiate.html#398" class="Bound"
+      >x</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Symbol"
+      >&#8594;</a
+      ><a name="443"
+      > </a
+      ><a name="444" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="WWFoldInstantiate.html#413" class="Bound"
+      >f</a
+      ><a name="449"
+      > </a
+      ><a name="450" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="451"
+      > </a
+      ><a name="452" href="WWFoldInstantiate.html#398" class="Bound"
+      >x</a
+      ><a name="453" class="Symbol"
+      >)</a
+      ><a name="454"
+      >
+
+  </a
+      ><a name="458" class="Symbol"
+      >(</a
+      ><a name="459" href="WWFoldInstantiate.html#459" class="Bound"
+      >fix-&#8855;</a
+      ><a name="464"
+      > </a
+      ><a name="465" class="Symbol"
+      >:</a
+      ><a name="466"
+      > </a
+      ><a name="467" class="Symbol"
+      >{</a
+      ><a name="468" href="WWFoldInstantiate.html#468" class="Bound"
+      >&#963;</a
+      ><a name="469"
+      > </a
+      ><a name="470" href="WWFoldInstantiate.html#470" class="Bound"
+      >&#964;</a
+      ><a name="471"
+      > </a
+      ><a name="472" class="Symbol"
+      >:</a
+      ><a name="473"
+      > </a
+      ><a name="474" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="478" class="Symbol"
+      >}</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Symbol"
+      >&#8594;</a
+      ><a name="481"
+      > </a
+      ><a name="482" class="Symbol"
+      >{</a
+      ><a name="483" href="WWFoldInstantiate.html#483" class="Bound"
+      >f</a
+      ><a name="484"
+      > </a
+      ><a name="485" class="Symbol"
+      >:</a
+      ><a name="486"
+      > </a
+      ><a name="487" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Symbol"
+      >(</a
+      ><a name="492" href="WWFoldInstantiate.html#468" class="Bound"
+      >&#963;</a
+      ><a name="493"
+      > </a
+      ><a name="494" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="495"
+      > </a
+      ><a name="496" href="WWFoldInstantiate.html#468" class="Bound"
+      >&#963;</a
+      ><a name="497" class="Symbol"
+      >)}</a
+      ><a name="499"
+      > </a
+      ><a name="500" class="Symbol"
+      >&#8594;</a
+      ><a name="501"
+      > </a
+      ><a name="502" class="Symbol"
+      >{</a
+      ><a name="503" href="WWFoldInstantiate.html#503" class="Bound"
+      >g</a
+      ><a name="504"
+      > </a
+      ><a name="505" class="Symbol"
+      >:</a
+      ><a name="506"
+      > </a
+      ><a name="507" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="510"
+      > </a
+      ><a name="511" class="Symbol"
+      >(</a
+      ><a name="512" href="WWFoldInstantiate.html#470" class="Bound"
+      >&#964;</a
+      ><a name="513"
+      > </a
+      ><a name="514" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="515"
+      > </a
+      ><a name="516" href="WWFoldInstantiate.html#470" class="Bound"
+      >&#964;</a
+      ><a name="517" class="Symbol"
+      >)}</a
+      ><a name="519"
+      > </a
+      ><a name="520" class="Symbol"
+      >&#8594;</a
+      ><a name="521"
+      > </a
+      ><a name="522" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="525"
+      > </a
+      ><a name="526" class="Symbol"
+      >(</a
+      ><a name="527" href="WWFoldInstantiate.html#483" class="Bound"
+      >f</a
+      ><a name="528"
+      > </a
+      ><a name="529" href="CPOFunctions.html#6340" class="Function Operator"
+      >:&#215;:</a
+      ><a name="532"
+      > </a
+      ><a name="533" href="WWFoldInstantiate.html#503" class="Bound"
+      >g</a
+      ><a name="534" class="Symbol"
+      >)</a
+      ><a name="535"
+      > </a
+      ><a name="536" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="537"
+      > </a
+      ><a name="538" class="Symbol"
+      >(</a
+      ><a name="539" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="542"
+      > </a
+      ><a name="543" href="WWFoldInstantiate.html#483" class="Bound"
+      >f</a
+      ><a name="544"
+      > </a
+      ><a name="545" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="546"
+      > </a
+      ><a name="547" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="550"
+      > </a
+      ><a name="551" href="WWFoldInstantiate.html#503" class="Bound"
+      >g</a
+      ><a name="552" class="Symbol"
+      >))</a
+      ><a name="554"
+      >
+
+  </a
+      ><a name="558" class="Symbol"
+      >(</a
+      ><a name="559" href="WWFoldInstantiate.html#559" class="Bound"
+      >FixpointInduction</a
+      ><a name="576"
+      > </a
+      ><a name="577" class="Symbol"
+      >:</a
+      ><a name="578"
+      > </a
+      ><a name="579" class="Symbol"
+      >{</a
+      ><a name="580" href="WWFoldInstantiate.html#580" class="Bound"
+      >&#964;</a
+      ><a name="581"
+      > </a
+      ><a name="582" class="Symbol"
+      >:</a
+      ><a name="583"
+      > </a
+      ><a name="584" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="588" class="Symbol"
+      >}</a
+      ><a name="589"
+      > </a
+      ><a name="590" class="Symbol"
+      >&#8594;</a
+      ><a name="591"
+      > </a
+      ><a name="592" class="Symbol"
+      >(</a
+      ><a name="593" href="WWFoldInstantiate.html#593" class="Bound"
+      >P</a
+      ><a name="594"
+      > </a
+      ><a name="595" class="Symbol"
+      >:</a
+      ><a name="596"
+      > </a
+      ><a name="597" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="600"
+      > </a
+      ><a name="601" href="WWFoldInstantiate.html#580" class="Bound"
+      >&#964;</a
+      ><a name="602"
+      > </a
+      ><a name="603" class="Symbol"
+      >&#8594;</a
+      ><a name="604"
+      > </a
+      ><a name="605" class="PrimitiveType"
+      >Set</a
+      ><a name="608" class="Symbol"
+      >)</a
+      ><a name="609"
+      > </a
+      ><a name="610" class="Symbol"
+      >&#8594;</a
+      ><a name="611"
+      > </a
+      ><a name="612" class="Symbol"
+      >(</a
+      ><a name="613" href="WWFoldInstantiate.html#613" class="Bound"
+      >f</a
+      ><a name="614"
+      > </a
+      ><a name="615" class="Symbol"
+      >:</a
+      ><a name="616"
+      > </a
+      ><a name="617" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="620"
+      > </a
+      ><a name="621" class="Symbol"
+      >(</a
+      ><a name="622" href="WWFoldInstantiate.html#580" class="Bound"
+      >&#964;</a
+      ><a name="623"
+      > </a
+      ><a name="624" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="625"
+      > </a
+      ><a name="626" href="WWFoldInstantiate.html#580" class="Bound"
+      >&#964;</a
+      ><a name="627" class="Symbol"
+      >))</a
+      ><a name="629"
+      > </a
+      ><a name="630" class="Symbol"
+      >&#8594;</a
+      ><a name="631"
+      > </a
+      ><a name="632" href="CPO.html#11243" class="Function"
+      >ChainComplete</a
+      ><a name="645"
+      > </a
+      ><a name="646" href="WWFoldInstantiate.html#593" class="Bound"
+      >P</a
+      ><a name="647"
+      > </a
+      ><a name="648" class="Symbol"
+      >&#8594;</a
+      ><a name="649"
+      > </a
+      ><a name="650" href="WWFoldInstantiate.html#593" class="Bound"
+      >P</a
+      ><a name="651"
+      > </a
+      ><a name="652" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="653"
+      > </a
+      ><a name="654" class="Symbol"
+      >&#8594;</a
+      ><a name="655"
+      > </a
+      ><a name="656" class="Symbol"
+      >((</a
+      ><a name="658" href="WWFoldInstantiate.html#658" class="Bound"
+      >x</a
+      ><a name="659"
+      > </a
+      ><a name="660" class="Symbol"
+      >:</a
+      ><a name="661"
+      > </a
+      ><a name="662" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="WWFoldInstantiate.html#580" class="Bound"
+      >&#964;</a
+      ><a name="667" class="Symbol"
+      >)</a
+      ><a name="668"
+      > </a
+      ><a name="669" class="Symbol"
+      >&#8594;</a
+      ><a name="670"
+      > </a
+      ><a name="671" href="WWFoldInstantiate.html#593" class="Bound"
+      >P</a
+      ><a name="672"
+      > </a
+      ><a name="673" href="WWFoldInstantiate.html#658" class="Bound"
+      >x</a
+      ><a name="674"
+      > </a
+      ><a name="675" class="Symbol"
+      >&#8594;</a
+      ><a name="676"
+      > </a
+      ><a name="677" href="WWFoldInstantiate.html#593" class="Bound"
+      >P</a
+      ><a name="678"
+      > </a
+      ><a name="679" class="Symbol"
+      >(</a
+      ><a name="680" href="WWFoldInstantiate.html#613" class="Bound"
+      >f</a
+      ><a name="681"
+      > </a
+      ><a name="682" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="683"
+      > </a
+      ><a name="684" href="WWFoldInstantiate.html#658" class="Bound"
+      >x</a
+      ><a name="685" class="Symbol"
+      >))</a
+      ><a name="687"
+      > </a
+      ><a name="688" class="Symbol"
+      >&#8594;</a
+      ><a name="689"
+      > </a
+      ><a name="690" href="WWFoldInstantiate.html#593" class="Bound"
+      >P</a
+      ><a name="691"
+      > </a
+      ><a name="692" class="Symbol"
+      >(</a
+      ><a name="693" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="696"
+      > </a
+      ><a name="697" href="WWFoldInstantiate.html#613" class="Bound"
+      >f</a
+      ><a name="698" class="Symbol"
+      >))</a
+      ><a name="700"
+      >
+
+  </a
+      ><a name="704" class="Symbol"
+      >(</a
+      ><a name="705" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="706"
+      > </a
+      ><a name="707" class="Symbol"
+      >:</a
+      ><a name="708"
+      > </a
+      ><a name="709" href="CPO.html#11767" class="Function"
+      >Functor</a
+      ><a name="716" class="Symbol"
+      >)</a
+      ><a name="717"
+      >
+  </a
+      ><a name="720" class="Symbol"
+      >(</a
+      ><a name="721" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="726"
+      > </a
+      ><a name="727" class="Symbol"
+      >:</a
+      ><a name="728"
+      > </a
+      ><a name="729" class="Symbol"
+      >{</a
+      ><a name="730" href="WWFoldInstantiate.html#730" class="Bound"
+      >&#963;</a
+      ><a name="731"
+      > </a
+      ><a name="732" href="WWFoldInstantiate.html#732" class="Bound"
+      >&#964;</a
+      ><a name="733"
+      > </a
+      ><a name="734" class="Symbol"
+      >:</a
+      ><a name="735"
+      > </a
+      ><a name="736" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="740" class="Symbol"
+      >}</a
+      ><a name="741"
+      > </a
+      ><a name="742" class="Symbol"
+      >&#8594;</a
+      ><a name="743"
+      > </a
+      ><a name="744" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="747"
+      > </a
+      ><a name="748" class="Symbol"
+      >((</a
+      ><a name="750" href="WWFoldInstantiate.html#730" class="Bound"
+      >&#963;</a
+      ><a name="751"
+      > </a
+      ><a name="752" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="753"
+      > </a
+      ><a name="754" href="WWFoldInstantiate.html#732" class="Bound"
+      >&#964;</a
+      ><a name="755" class="Symbol"
+      >)</a
+      ><a name="756"
+      > </a
+      ><a name="757" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="758"
+      > </a
+      ><a name="759" class="Symbol"
+      >(</a
+      ><a name="760" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="761"
+      > </a
+      ><a name="762" href="WWFoldInstantiate.html#730" class="Bound"
+      >&#963;</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="765"
+      > </a
+      ><a name="766" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="767"
+      > </a
+      ><a name="768" href="WWFoldInstantiate.html#732" class="Bound"
+      >&#964;</a
+      ><a name="769" class="Symbol"
+      >)))</a
+      ><a name="772"
+      >
+  </a
+      ><a name="775" class="Symbol"
+      >(</a
+      ><a name="776" href="WWFoldInstantiate.html#776" class="Bound"
+      >fmap-id</a
+      ><a name="783"
+      >   </a
+      ><a name="786" class="Symbol"
+      >:</a
+      ><a name="787"
+      > </a
+      ><a name="788" class="Symbol"
+      >{</a
+      ><a name="789" href="WWFoldInstantiate.html#789" class="Bound"
+      >&#964;</a
+      ><a name="790"
+      > </a
+      ><a name="791" class="Symbol"
+      >:</a
+      ><a name="792"
+      > </a
+      ><a name="793" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="797" class="Symbol"
+      >}</a
+      ><a name="798"
+      > </a
+      ><a name="799" class="Symbol"
+      >&#8594;</a
+      ><a name="800"
+      > </a
+      ><a name="801" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="806"
+      > </a
+      ><a name="807" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="808"
+      > </a
+      ><a name="809" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="817"
+      > </a
+      ><a name="818" class="Symbol"
+      >{</a
+      ><a name="819" href="WWFoldInstantiate.html#789" class="Bound"
+      >&#964;</a
+      ><a name="820" class="Symbol"
+      >}</a
+      ><a name="821"
+      > </a
+      ><a name="822" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="823"
+      > </a
+      ><a name="824" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="832" class="Symbol"
+      >)</a
+      ><a name="833"
+      >
+  </a
+      ><a name="836" class="Symbol"
+      >(</a
+      ><a name="837" href="WWFoldInstantiate.html#837" class="Bound"
+      >fmap-comp</a
+      ><a name="846"
+      > </a
+      ><a name="847" class="Symbol"
+      >:</a
+      ><a name="848"
+      > </a
+      ><a name="849" class="Symbol"
+      >{</a
+      ><a name="850" href="WWFoldInstantiate.html#850" class="Bound"
+      >&#963;</a
+      ><a name="851"
+      > </a
+      ><a name="852" href="WWFoldInstantiate.html#852" class="Bound"
+      >&#964;</a
+      ><a name="853"
+      > </a
+      ><a name="854" href="WWFoldInstantiate.html#854" class="Bound"
+      >&#965;</a
+      ><a name="855"
+      > </a
+      ><a name="856" class="Symbol"
+      >:</a
+      ><a name="857"
+      > </a
+      ><a name="858" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="862" class="Symbol"
+      >}</a
+      ><a name="863"
+      > </a
+      ><a name="864" class="Symbol"
+      >&#8594;</a
+      ><a name="865"
+      > </a
+      ><a name="866" class="Symbol"
+      >(</a
+      ><a name="867" href="WWFoldInstantiate.html#867" class="Bound"
+      >f</a
+      ><a name="868"
+      > </a
+      ><a name="869" class="Symbol"
+      >:</a
+      ><a name="870"
+      > </a
+      ><a name="871" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="874"
+      > </a
+      ><a name="875" class="Symbol"
+      >(</a
+      ><a name="876" href="WWFoldInstantiate.html#852" class="Bound"
+      >&#964;</a
+      ><a name="877"
+      > </a
+      ><a name="878" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="WWFoldInstantiate.html#854" class="Bound"
+      >&#965;</a
+      ><a name="881" class="Symbol"
+      >))</a
+      ><a name="883"
+      > </a
+      ><a name="884" class="Symbol"
+      >&#8594;</a
+      ><a name="885"
+      > </a
+      ><a name="886" class="Symbol"
+      >(</a
+      ><a name="887" href="WWFoldInstantiate.html#887" class="Bound"
+      >g</a
+      ><a name="888"
+      > </a
+      ><a name="889" class="Symbol"
+      >:</a
+      ><a name="890"
+      > </a
+      ><a name="891" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="894"
+      > </a
+      ><a name="895" class="Symbol"
+      >(</a
+      ><a name="896" href="WWFoldInstantiate.html#850" class="Bound"
+      >&#963;</a
+      ><a name="897"
+      > </a
+      ><a name="898" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="899"
+      > </a
+      ><a name="900" href="WWFoldInstantiate.html#852" class="Bound"
+      >&#964;</a
+      ><a name="901" class="Symbol"
+      >))</a
+      ><a name="903"
+      > </a
+      ><a name="904" class="Symbol"
+      >&#8594;</a
+      ><a name="905"
+      > </a
+      ><a name="906" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="911"
+      > </a
+      ><a name="912" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="913"
+      > </a
+      ><a name="914" class="Symbol"
+      >(</a
+      ><a name="915" href="WWFoldInstantiate.html#867" class="Bound"
+      >f</a
+      ><a name="916"
+      > </a
+      ><a name="917" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="WWFoldInstantiate.html#887" class="Bound"
+      >g</a
+      ><a name="920" class="Symbol"
+      >)</a
+      ><a name="921"
+      > </a
+      ><a name="922" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="923"
+      > </a
+      ><a name="924" class="Symbol"
+      >(</a
+      ><a name="925" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="930"
+      > </a
+      ><a name="931" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="932"
+      > </a
+      ><a name="933" href="WWFoldInstantiate.html#867" class="Bound"
+      >f</a
+      ><a name="934" class="Symbol"
+      >)</a
+      ><a name="935"
+      > </a
+      ><a name="936" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="937"
+      > </a
+      ><a name="938" class="Symbol"
+      >(</a
+      ><a name="939" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="946"
+      > </a
+      ><a name="947" href="WWFoldInstantiate.html#887" class="Bound"
+      >g</a
+      ><a name="948" class="Symbol"
+      >))</a
+      ><a name="950"
+      >
+
+  </a
+      ><a name="954" class="Symbol"
+      >(</a
+      ><a name="955" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="956"
+      > </a
+      ><a name="957" class="Symbol"
+      >:</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="CPO.html#11767" class="Function"
+      >Functor</a
+      ><a name="966"
+      > </a
+      ><a name="967" class="Symbol"
+      >&#8594;</a
+      ><a name="968"
+      > </a
+      ><a name="969" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="973" class="Symbol"
+      >)</a
+      ><a name="974"
+      >
+  </a
+      ><a name="977" class="Symbol"
+      >(</a
+      ><a name="978" href="WWFoldInstantiate.html#978" class="Bound"
+      >inn</a
+      ><a name="981"
+      >    </a
+      ><a name="985" class="Symbol"
+      >:</a
+      ><a name="986"
+      > </a
+      ><a name="987" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="990"
+      > </a
+      ><a name="991" class="Symbol"
+      >(</a
+      ><a name="992" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="993"
+      > </a
+      ><a name="994" class="Symbol"
+      >(</a
+      ><a name="995" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="996"
+      > </a
+      ><a name="997" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="998" class="Symbol"
+      >)</a
+      ><a name="999"
+      > </a
+      ><a name="1000" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1001"
+      > </a
+      ><a name="1002" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1005" class="Symbol"
+      >))</a
+      ><a name="1007"
+      >
+  </a
+      ><a name="1010" class="Symbol"
+      >(</a
+      ><a name="1011" href="WWFoldInstantiate.html#1011" class="Bound"
+      >out</a
+      ><a name="1014"
+      >    </a
+      ><a name="1018" class="Symbol"
+      >:</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1023"
+      > </a
+      ><a name="1024" class="Symbol"
+      >(</a
+      ><a name="1025" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="1026"
+      > </a
+      ><a name="1027" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1028"
+      > </a
+      ><a name="1029" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1032"
+      > </a
+      ><a name="1033" class="Symbol"
+      >(</a
+      ><a name="1034" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1037" class="Symbol"
+      >)))</a
+      ><a name="1040"
+      >
+  </a
+      ><a name="1043" class="Symbol"
+      >(</a
+      ><a name="1044" href="WWFoldInstantiate.html#1044" class="Bound"
+      >innSur</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" class="Symbol"
+      >:</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="WWFoldInstantiate.html#978" class="Bound"
+      >inn</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1058"
+      > </a
+      ><a name="1059" href="WWFoldInstantiate.html#1011" class="Bound"
+      >out</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1073" class="Symbol"
+      >)</a
+      ><a name="1074"
+      >
+  </a
+      ><a name="1077" class="Symbol"
+      >(</a
+      ><a name="1078" href="WWFoldInstantiate.html#1078" class="Bound"
+      >outInj</a
+      ><a name="1084"
+      > </a
+      ><a name="1085" class="Symbol"
+      >:</a
+      ><a name="1086"
+      > </a
+      ><a name="1087" href="WWFoldInstantiate.html#1011" class="Bound"
+      >out</a
+      ><a name="1090"
+      > </a
+      ><a name="1091" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1092"
+      > </a
+      ><a name="1093" href="WWFoldInstantiate.html#978" class="Bound"
+      >inn</a
+      ><a name="1096"
+      > </a
+      ><a name="1097" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1107" class="Symbol"
+      >)</a
+      ><a name="1108"
+      >
+  </a
+      ><a name="1111" class="Symbol"
+      >(</a
+      ><a name="1112" href="WWFoldInstantiate.html#1112" class="Bound"
+      >lemma-fold-inn</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" class="Symbol"
+      >:</a
+      ><a name="1128"
+      > </a
+      ><a name="1129" class="Symbol"
+      >(</a
+      ><a name="1130" href="Fold.html#661" class="Function"
+      >Fold.fold</a
+      ><a name="1139"
+      > </a
+      ><a name="1140" href="WWFoldInstantiate.html#232" class="Bound"
+      >ext</a
+      ><a name="1143"
+      > </a
+      ><a name="1144" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="1147"
+      > </a
+      ><a name="1148" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1149"
+      > </a
+      ><a name="1150" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="1155"
+      > </a
+      ><a name="1156" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="1157"
+      > </a
+      ><a name="1158" href="WWFoldInstantiate.html#1011" class="Bound"
+      >out</a
+      ><a name="1161" class="Symbol"
+      >)</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="WWFoldInstantiate.html#978" class="Bound"
+      >inn</a
+      ><a name="1166"
+      > </a
+      ><a name="1167" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1168"
+      > </a
+      ><a name="1169" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1177" class="Symbol"
+      >)</a
+      ><a name="1178"
+      >
+
+  </a
+      ><a name="1182" class="Symbol"
+      >(</a
+      ><a name="1183" href="WWFoldInstantiate.html#1183" class="Bound"
+      >A</a
+      ><a name="1184"
+      > </a
+      ><a name="1185" class="Symbol"
+      >:</a
+      ><a name="1186"
+      > </a
+      ><a name="1187" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1191" class="Symbol"
+      >)</a
+      ><a name="1192"
+      >
+  </a
+      ><a name="1195" class="Symbol"
+      >(</a
+      ><a name="1196" href="WWFoldInstantiate.html#1196" class="Bound"
+      >B</a
+      ><a name="1197"
+      > </a
+      ><a name="1198" class="Symbol"
+      >:</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1204" class="Symbol"
+      >)</a
+      ><a name="1205"
+      >
+
+  </a
+      ><a name="1209" class="Symbol"
+      >(</a
+      ><a name="1210" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="1211"
+      >   </a
+      ><a name="1214" class="Symbol"
+      >:</a
+      ><a name="1215"
+      > </a
+      ><a name="1216" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1219"
+      > </a
+      ><a name="1220" class="Symbol"
+      >(</a
+      ><a name="1221" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1222"
+      > </a
+      ><a name="1223" href="WWFoldInstantiate.html#1183" class="Bound"
+      >A</a
+      ><a name="1224"
+      > </a
+      ><a name="1225" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1226"
+      > </a
+      ><a name="1227" href="WWFoldInstantiate.html#1183" class="Bound"
+      >A</a
+      ><a name="1228" class="Symbol"
+      >))</a
+      ><a name="1230"
+      >
+  </a
+      ><a name="1233" class="Symbol"
+      >(</a
+      ><a name="1234" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="1235"
+      >   </a
+      ><a name="1238" class="Symbol"
+      >:</a
+      ><a name="1239"
+      > </a
+      ><a name="1240" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1243"
+      > </a
+      ><a name="1244" class="Symbol"
+      >(</a
+      ><a name="1245" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1246"
+      > </a
+      ><a name="1247" href="WWFoldInstantiate.html#1196" class="Bound"
+      >B</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1250"
+      > </a
+      ><a name="1251" href="WWFoldInstantiate.html#1196" class="Bound"
+      >B</a
+      ><a name="1252" class="Symbol"
+      >))</a
+      ><a name="1254"
+      >
+  </a
+      ><a name="1257" class="Symbol"
+      >(</a
+      ><a name="1258" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" class="Symbol"
+      >:</a
+      ><a name="1263"
+      > </a
+      ><a name="1264" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" class="Symbol"
+      >(</a
+      ><a name="1269" href="WWFoldInstantiate.html#1183" class="Bound"
+      >A</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" href="WWFoldInstantiate.html#1196" class="Bound"
+      >B</a
+      ><a name="1274" class="Symbol"
+      >))</a
+      ><a name="1276"
+      >
+  </a
+      ><a name="1279" class="Symbol"
+      >(</a
+      ><a name="1280" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="1283"
+      > </a
+      ><a name="1284" class="Symbol"
+      >:</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" class="Symbol"
+      >(</a
+      ><a name="1291" href="WWFoldInstantiate.html#1196" class="Bound"
+      >B</a
+      ><a name="1292"
+      > </a
+      ><a name="1293" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1294"
+      > </a
+      ><a name="1295" href="WWFoldInstantiate.html#1183" class="Bound"
+      >A</a
+      ><a name="1296" class="Symbol"
+      >))</a
+      ><a name="1298"
+      >
+
+</a
+      ><a name="1300" class="Keyword"
+      >where</a
+      ><a name="1305"
+      >
+
+</a
+      ><a name="1307" class="Keyword"
+      >import</a
+      ><a name="1313"
+      > </a
+      ><a name="1314" href="WWFoldCommon.html#1" class="Module"
+      >WWFoldCommon</a
+      ><a name="1326"
+      >
+</a
+      ><a name="1327" class="Keyword"
+      >open</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" href="WWFoldCommon.html#1" class="Module"
+      >WWFoldCommon</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" href="WWFoldInstantiate.html#232" class="Bound"
+      >ext</a
+      ><a name="1348"
+      > </a
+      ><a name="1349" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="1352"
+      > </a
+      ><a name="1353" href="WWFoldInstantiate.html#301" class="Bound"
+      >Computation</a
+      ><a name="1364"
+      > </a
+      ><a name="1365" href="WWFoldInstantiate.html#372" class="Bound"
+      >Induction</a
+      ><a name="1374"
+      > </a
+      ><a name="1375" href="WWFoldInstantiate.html#459" class="Bound"
+      >fix-&#8855;</a
+      ><a name="1380"
+      > </a
+      ><a name="1381" href="WWFoldInstantiate.html#559" class="Bound"
+      >FixpointInduction</a
+      ><a name="1398"
+      > </a
+      ><a name="1399" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1400"
+      > </a
+      ><a name="1401" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="1406"
+      > </a
+      ><a name="1407" href="WWFoldInstantiate.html#776" class="Bound"
+      >fmap-id</a
+      ><a name="1414"
+      > </a
+      ><a name="1415" href="WWFoldInstantiate.html#837" class="Bound"
+      >fmap-comp</a
+      ><a name="1424"
+      > </a
+      ><a name="1425" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="1426"
+      > </a
+      ><a name="1427" href="WWFoldInstantiate.html#978" class="Bound"
+      >inn</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" href="WWFoldInstantiate.html#1011" class="Bound"
+      >out</a
+      ><a name="1434"
+      > </a
+      ><a name="1435" href="WWFoldInstantiate.html#1044" class="Bound"
+      >innSur</a
+      ><a name="1441"
+      > </a
+      ><a name="1442" href="WWFoldInstantiate.html#1078" class="Bound"
+      >outInj</a
+      ><a name="1448"
+      > </a
+      ><a name="1449" href="WWFoldInstantiate.html#1112" class="Bound"
+      >lemma-fold-inn</a
+      ><a name="1463"
+      > </a
+      ><a name="1464" href="WWFoldInstantiate.html#1183" class="Bound"
+      >A</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" href="WWFoldInstantiate.html#1196" class="Bound"
+      >B</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="1469"
+      > </a
+      ><a name="1470" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="1471"
+      > </a
+      ><a name="1472" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="1475"
+      > </a
+      ><a name="1476" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="1479"
+      >
+    </a
+      ><a name="1484" class="Keyword"
+      >hiding</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" class="Symbol"
+      >(</a
+      ><a name="1492"
+      >RollingRuleFold </a
+      ><a name="1508" class="Symbol"
+      >;</a
+      ><a name="1509"
+      > ComputationFold </a
+      ><a name="1526" class="Symbol"
+      >;</a
+      ><a name="1527"
+      > FoldFusion </a
+      ><a name="1539" class="Symbol"
+      >;</a
+      ><a name="1540"
+      > FoldReflectsStrictness </a
+      ><a name="1564" class="Symbol"
+      >;</a
+      ><a name="1565"
+      > FoldFunctorProp</a
+      ><a name="1581" class="Symbol"
+      >)</a
+      ><a name="1582"
+      >
+
+</a
+      ><a name="1584" class="Keyword"
+      >import</a
+      ><a name="1590"
+      > </a
+      ><a name="1591" href="FoldTheoremsInstantiated.html#1" class="Module"
+      >FoldTheoremsInstantiated</a
+      ><a name="1615"
+      >
+</a
+      ><a name="1616" class="Keyword"
+      >open</a
+      ><a name="1620"
+      > </a
+      ><a name="1621" href="FoldTheoremsInstantiated.html#1" class="Module"
+      >FoldTheoremsInstantiated</a
+      ><a name="1645"
+      > </a
+      ><a name="1646" href="WWFoldInstantiate.html#232" class="Bound"
+      >ext</a
+      ><a name="1649"
+      > </a
+      ><a name="1650" href="WWFoldInstantiate.html#258" class="Bound"
+      >fix</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" href="WWFoldInstantiate.html#301" class="Bound"
+      >Computation</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="WWFoldInstantiate.html#372" class="Bound"
+      >Induction</a
+      ><a name="1675"
+      > </a
+      ><a name="1676" href="WWFoldInstantiate.html#459" class="Bound"
+      >fix-&#8855;</a
+      ><a name="1681"
+      > </a
+      ><a name="1682" href="WWFoldInstantiate.html#559" class="Bound"
+      >FixpointInduction</a
+      ><a name="1699"
+      > </a
+      ><a name="1700" href="WWFoldInstantiate.html#705" class="Bound"
+      >F</a
+      ><a name="1701"
+      > </a
+      ><a name="1702" href="WWFoldInstantiate.html#721" class="Bound"
+      >fmap'</a
+      ><a name="1707"
+      > </a
+      ><a name="1708" href="WWFoldInstantiate.html#776" class="Bound"
+      >fmap-id</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" href="WWFoldInstantiate.html#837" class="Bound"
+      >fmap-comp</a
+      ><a name="1725"
+      > </a
+      ><a name="1726" href="WWFoldInstantiate.html#955" class="Bound"
+      >&#956;</a
+      ><a name="1727"
+      > </a
+      ><a name="1728" href="WWFoldInstantiate.html#978" class="Bound"
+      >inn</a
+      ><a name="1731"
+      > </a
+      ><a name="1732" href="WWFoldInstantiate.html#1011" class="Bound"
+      >out</a
+      ><a name="1735"
+      > </a
+      ><a name="1736" href="WWFoldInstantiate.html#1044" class="Bound"
+      >innSur</a
+      ><a name="1742"
+      > </a
+      ><a name="1743" href="WWFoldInstantiate.html#1078" class="Bound"
+      >outInj</a
+      ><a name="1749"
+      > </a
+      ><a name="1750" href="WWFoldInstantiate.html#1112" class="Bound"
+      >lemma-fold-inn</a
+      ><a name="1764"
+      >
+
+</a
+      ><a name="1766" class="Comment"
+      >------------------------------------------------</a
+      ><a name="1814"
+      >
+
+</a
+      ><a name="1816" href="WWFoldInstantiate.html#1816" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" class="Symbol"
+      >:</a
+      ><a name="1823"
+      > </a
+      ><a name="1824" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="1830"
+      > </a
+      ><a name="1831" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="1832"
+      > </a
+      ><a name="1833" class="Symbol"
+      >&#8594;</a
+      ><a name="1834"
+      > </a
+      ><a name="1835" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" class="Symbol"
+      >&#8594;</a
+      ><a name="1843"
+      > </a
+      ><a name="1844" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="1850"
+      >
+</a
+      ><a name="1851" href="WWFoldInstantiate.html#1816" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="1856"
+      > </a
+      ><a name="1857" href="WWFoldInstantiate.html#1857" class="Bound"
+      >sf</a
+      ><a name="1859"
+      > </a
+      ><a name="1860" class="Symbol"
+      >(</a
+      ><a name="1861" href="WWFoldInstantiate.html#1861" class="Bound"
+      >&#946;</a
+      ><a name="1862"
+      > </a
+      ><a name="1863" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1864"
+      > </a
+      ><a name="1865" href="WWFoldInstantiate.html#1865" class="Bound"
+      >sr</a
+      ><a name="1867" class="Symbol"
+      >)</a
+      ><a name="1868"
+      > </a
+      ><a name="1869" class="Symbol"
+      >=</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="1874"
+      > </a
+      ><a name="1875" class="Symbol"
+      >(</a
+      ><a name="1876" href="FoldTheoremsInstantiated.html#1529" class="Function"
+      >FoldFusionInstantiated</a
+      ><a name="1898"
+      > </a
+      ><a name="1899" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="1900"
+      > </a
+      ><a name="1901" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="1902"
+      > </a
+      ><a name="1903" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="1906"
+      > </a
+      ><a name="1907" href="WWFoldInstantiate.html#1857" class="Bound"
+      >sf</a
+      ><a name="1909"
+      > </a
+      ><a name="1910" href="WWFoldInstantiate.html#1865" class="Bound"
+      >sr</a
+      ><a name="1912"
+      > </a
+      ><a name="1913" href="WWFoldInstantiate.html#1861" class="Bound"
+      >&#946;</a
+      ><a name="1914" class="Symbol"
+      >)</a
+      ><a name="1915"
+      >
+
+</a
+      ><a name="1917" href="WWFoldInstantiate.html#1917" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="1922"
+      > </a
+      ><a name="1923" class="Symbol"
+      >:</a
+      ><a name="1924"
+      > </a
+      ><a name="1925" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="1931"
+      > </a
+      ><a name="1932" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="1935"
+      > </a
+      ><a name="1936" class="Symbol"
+      >&#8594;</a
+      ><a name="1937"
+      > </a
+      ><a name="1938" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="1944"
+      > </a
+      ><a name="1945" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="1948"
+      > </a
+      ><a name="1949" class="Symbol"
+      >&#8594;</a
+      ><a name="1950"
+      > </a
+      ><a name="1951" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="1957"
+      > </a
+      ><a name="1958" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="1959"
+      > </a
+      ><a name="1960" class="Symbol"
+      >&#8594;</a
+      ><a name="1961"
+      > </a
+      ><a name="1962" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="1966"
+      > </a
+      ><a name="1967" class="Symbol"
+      >&#8594;</a
+      ><a name="1968"
+      > </a
+      ><a name="1969" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="1975"
+      > </a
+      ><a name="1976" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="1977"
+      > </a
+      ><a name="1978" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="1984"
+      >
+</a
+      ><a name="1985" href="WWFoldInstantiate.html#1917" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="1990"
+      > </a
+      ><a name="1991" href="WWFoldInstantiate.html#1991" class="Bound"
+      >sa</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" href="WWFoldInstantiate.html#1994" class="Bound"
+      >sr</a
+      ><a name="1996"
+      > </a
+      ><a name="1997" href="WWFoldInstantiate.html#1997" class="Bound"
+      >sf</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" href="WWFoldInstantiate.html#2000" class="Bound"
+      >C</a
+      ><a name="2001"
+      > </a
+      ><a name="2002" class="Symbol"
+      >=</a
+      ><a name="2003"
+      > </a
+      ><a name="2004" href="Logic.html#443" class="Function"
+      >&#8596;-&#8801;</a
+      ><a name="2007"
+      > </a
+      ><a name="2008" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="2012"
+      > </a
+      ><a name="2013" class="Symbol"
+      >(</a
+      ><a name="2014"
+      >
+
+   </a
+      ><a name="2019" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2023"
+      > </a
+      ><a name="2024" class="Symbol"
+      >(</a
+      ><a name="2025" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2028"
+      > </a
+      ><a name="2029" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2032"
+      > </a
+      ><a name="2033" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2034"
+      > </a
+      ><a name="2035" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2039"
+      > </a
+      ><a name="2040" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2043" class="Symbol"
+      >)</a
+      ><a name="2044"
+      >
+                                                </a
+      ><a name="2093" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="2099"
+      > </a
+      ><a name="2100" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" class="Symbol"
+      >(</a
+      ><a name="2106" href="CPOFunctions.html#7009" class="Function"
+      >&#8729;-assocRL</a
+      ><a name="2115"
+      > </a
+      ><a name="2116" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2119"
+      > </a
+      ><a name="2120" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2121"
+      > </a
+      ><a name="2122" class="Symbol"
+      >(</a
+      ><a name="2123" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2131" class="Symbol"
+      >))</a
+      ><a name="2133"
+      > </a
+      ><a name="2134" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2135"
+      >
+   </a
+      ><a name="2139" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2143"
+      > </a
+      ><a name="2144" class="Symbol"
+      >((</a
+      ><a name="2146" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2151"
+      > </a
+      ><a name="2152" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2153" class="Symbol"
+      >)</a
+      ><a name="2154"
+      > </a
+      ><a name="2155" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2156"
+      > </a
+      ><a name="2157" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2161"
+      > </a
+      ><a name="2162" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2165" class="Symbol"
+      >)</a
+      ><a name="2166"
+      >
+                                                </a
+      ><a name="2215" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2216"
+      > </a
+      ><a name="2217" href="FoldTheoremsInstantiated.html#2897" class="Function"
+      >RollingRuleFoldInstantiated</a
+      ><a name="2244"
+      > </a
+      ><a name="2245" class="Symbol"
+      >(</a
+      ><a name="2246" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2251"
+      > </a
+      ><a name="2252" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2253" class="Symbol"
+      >)</a
+      ><a name="2254"
+      > </a
+      ><a name="2255" class="Symbol"
+      >(</a
+      ><a name="2256" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2260"
+      > </a
+      ><a name="2261" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2264" class="Symbol"
+      >)</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" class="Symbol"
+      >(</a
+      ><a name="2267" href="FixTheorems.html#2238" class="Function"
+      >StrictComposition</a
+      ><a name="2284"
+      > </a
+      ><a name="2285" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2286"
+      > </a
+      ><a name="2287" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2290"
+      > </a
+      ><a name="2291" href="WWFoldInstantiate.html#1997" class="Bound"
+      >sf</a
+      ><a name="2293"
+      > </a
+      ><a name="2294" href="WWFoldInstantiate.html#1994" class="Bound"
+      >sr</a
+      ><a name="2296" class="Symbol"
+      >)</a
+      ><a name="2297"
+      > </a
+      ><a name="2298" class="Symbol"
+      >(</a
+      ><a name="2299" href="FoldTheorems.html#7991" class="Function"
+      >FmapPreservesStrictness</a
+      ><a name="2322"
+      > </a
+      ><a name="2323" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" href="WWFoldInstantiate.html#1991" class="Bound"
+      >sa</a
+      ><a name="2329" class="Symbol"
+      >)</a
+      ><a name="2330"
+      > </a
+      ><a name="2331" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2332"
+      >
+   </a
+      ><a name="2336" class="Symbol"
+      >(</a
+      ><a name="2337" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2340"
+      > </a
+      ><a name="2341" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2342"
+      > </a
+      ><a name="2343" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2344" class="Symbol"
+      >)</a
+      ><a name="2345"
+      > </a
+      ><a name="2346" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2347"
+      > </a
+      ><a name="2348" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2352"
+      > </a
+      ><a name="2353" class="Symbol"
+      >(</a
+      ><a name="2354" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2358"
+      > </a
+      ><a name="2359" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2362"
+      > </a
+      ><a name="2363" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2364"
+      > </a
+      ><a name="2365" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" class="Symbol"
+      >(</a
+      ><a name="2371" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2374"
+      > </a
+      ><a name="2375" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2376"
+      > </a
+      ><a name="2377" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2378" class="Symbol"
+      >))</a
+      ><a name="2380"
+      >
+                                                </a
+      ><a name="2429" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2430"
+      > </a
+      ><a name="2431" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="2438"
+      > </a
+      ><a name="2439" class="Symbol"
+      >(</a
+      ><a name="2440" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2443"
+      > </a
+      ><a name="2444" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2445"
+      > </a
+      ><a name="2446" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2447" class="Symbol"
+      >)</a
+      ><a name="2448"
+      > </a
+      ><a name="2449" class="Symbol"
+      >(</a
+      ><a name="2450"
+      >
+                                                      </a
+      ><a name="2505" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2509"
+      > </a
+      ><a name="2510" class="Symbol"
+      >(</a
+      ><a name="2511" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2515"
+      > </a
+      ><a name="2516" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2519"
+      > </a
+      ><a name="2520" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2521"
+      > </a
+      ><a name="2522" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2526"
+      > </a
+      ><a name="2527" class="Symbol"
+      >(</a
+      ><a name="2528" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2533"
+      > </a
+      ><a name="2534" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2535" class="Symbol"
+      >))</a
+      ><a name="2537"
+      >
+                                                                                        </a
+      ><a name="2626" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2627"
+      > </a
+      ><a name="2628" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="2632"
+      > </a
+      ><a name="2633" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2637"
+      > </a
+      ><a name="2638" class="Symbol"
+      >(</a
+      ><a name="2639" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="2642"
+      > </a
+      ><a name="2643" class="Symbol"
+      >(</a
+      ><a name="2644" href="WWFoldInstantiate.html#837" class="Bound"
+      >fmap-comp</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2657"
+      > </a
+      ><a name="2658" class="Symbol"
+      >(</a
+      ><a name="2659" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2662"
+      > </a
+      ><a name="2663" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2664"
+      > </a
+      ><a name="2665" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2666" class="Symbol"
+      >)))</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2671"
+      >
+                                                      </a
+      ><a name="2726" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" class="Symbol"
+      >(</a
+      ><a name="2732" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2736"
+      > </a
+      ><a name="2737" class="Symbol"
+      >(</a
+      ><a name="2738" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2741"
+      > </a
+      ><a name="2742" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2747"
+      > </a
+      ><a name="2748" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2749"
+      > </a
+      ><a name="2750" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2751" class="Symbol"
+      >))</a
+      ><a name="2753"
+      >
+                                                                                        </a
+      ><a name="2842" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2843"
+      > </a
+      ><a name="2844" href="FoldTheoremsInstantiated.html#4149" class="Function"
+      >FoldFunctorPropInstantiated</a
+      ><a name="2871"
+      >
+                                                                                             </a
+      ><a name="2965" class="Symbol"
+      >(</a
+      ><a name="2966" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="2969"
+      > </a
+      ><a name="2970" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2971"
+      > </a
+      ><a name="2972" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="2975"
+      > </a
+      ><a name="2976" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2977"
+      > </a
+      ><a name="2978" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="2979" class="Symbol"
+      >)</a
+      ><a name="2980"
+      >
+                                                                                             </a
+      ><a name="3074" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3075"
+      >
+                                                                                             </a
+      ><a name="3169" class="Symbol"
+      >(</a
+      ><a name="3170" href="FixTheorems.html#2238" class="Function"
+      >StrictComposition</a
+      ><a name="3187"
+      > </a
+      ><a name="3188" class="Symbol"
+      >(</a
+      ><a name="3189" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3192"
+      > </a
+      ><a name="3193" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3194"
+      > </a
+      ><a name="3195" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3196" class="Symbol"
+      >)</a
+      ><a name="3197"
+      > </a
+      ><a name="3198" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="3201"
+      > </a
+      ><a name="3202" class="Symbol"
+      >(</a
+      ><a name="3203" href="FixTheorems.html#2238" class="Function"
+      >StrictComposition</a
+      ><a name="3220"
+      > </a
+      ><a name="3221" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3222"
+      > </a
+      ><a name="3223" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3226"
+      > </a
+      ><a name="3227" href="WWFoldInstantiate.html#1997" class="Bound"
+      >sf</a
+      ><a name="3229"
+      > </a
+      ><a name="3230" href="WWFoldInstantiate.html#1994" class="Bound"
+      >sr</a
+      ><a name="3232" class="Symbol"
+      >)</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" href="WWFoldInstantiate.html#1991" class="Bound"
+      >sa</a
+      ><a name="3236" class="Symbol"
+      >)</a
+      ><a name="3237"
+      >
+                                                                                             </a
+      ><a name="3331" href="WWFoldInstantiate.html#1997" class="Bound"
+      >sf</a
+      ><a name="3333"
+      >
+                                                                                             </a
+      ><a name="3427" href="WWFoldInstantiate.html#2000" class="Bound"
+      >C</a
+      ><a name="3428"
+      >
+                                                                                        </a
+      ><a name="3517" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3518"
+      >
+                                                      </a
+      ><a name="3573" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="3577"
+      > </a
+      ><a name="3578" class="Symbol"
+      >(</a
+      ><a name="3579" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3583"
+      > </a
+      ><a name="3584" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3585" class="Symbol"
+      >)</a
+      ><a name="3586"
+      >
+                                                                                        </a
+      ><a name="3675" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="3678" class="Symbol"
+      >)</a
+      ><a name="3679"
+      >
+                                                </a
+      ><a name="3728" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3729"
+      >
+   </a
+      ><a name="3733" class="Symbol"
+      >(</a
+      ><a name="3734" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3739"
+      > </a
+      ><a name="3740" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3741" class="Symbol"
+      >)</a
+      ><a name="3742"
+      > </a
+      ><a name="3743" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3744"
+      > </a
+      ><a name="3745" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="3749"
+      > </a
+      ><a name="3750" class="Symbol"
+      >(</a
+      ><a name="3751" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3755"
+      > </a
+      ><a name="3756" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3757" class="Symbol"
+      >)</a
+      ><a name="3758"
+      >
+                                                </a
+      ><a name="3807" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3808"
+      > </a
+      ><a name="3809" href="CPOFunctions.html#6804" class="Function"
+      >&#8729;-assocLR</a
+      ><a name="3818"
+      > </a
+      ><a name="3819" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3822"
+      > </a
+      ><a name="3823" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3824"
+      > </a
+      ><a name="3825" class="Symbol"
+      >(</a
+      ><a name="3826" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="3830"
+      > </a
+      ><a name="3831" class="Symbol"
+      >(</a
+      ><a name="3832" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3836"
+      > </a
+      ><a name="3837" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3838" class="Symbol"
+      >))</a
+      ><a name="3840"
+      > </a
+      ><a name="3841" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3842"
+      >
+   </a
+      ><a name="3846" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3849"
+      > </a
+      ><a name="3850" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3851"
+      > </a
+      ><a name="3852" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3853"
+      > </a
+      ><a name="3854" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3855"
+      > </a
+      ><a name="3856" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="3860"
+      > </a
+      ><a name="3861" class="Symbol"
+      >(</a
+      ><a name="3862" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3866"
+      > </a
+      ><a name="3867" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3868" class="Symbol"
+      >)</a
+      ><a name="3869"
+      >
+                                                </a
+      ><a name="3918" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3919"
+      > </a
+      ><a name="3920" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="3927"
+      > </a
+      ><a name="3928" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3931"
+      > </a
+      ><a name="3932" class="Symbol"
+      >(</a
+      ><a name="3933" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="3936"
+      > </a
+      ><a name="3937" class="Symbol"
+      >(</a
+      ><a name="3938" href="FoldTheoremsInstantiated.html#3592" class="Function"
+      >ComputationFoldInstantiated</a
+      ><a name="3965"
+      > </a
+      ><a name="3966" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3967"
+      > </a
+      ><a name="3968" href="WWFoldInstantiate.html#1997" class="Bound"
+      >sf</a
+      ><a name="3970" class="Symbol"
+      >))</a
+      ><a name="3972"
+      > </a
+      ><a name="3973" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3974"
+      >
+   </a
+      ><a name="3978" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="3981"
+      > </a
+      ><a name="3982" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3983"
+      > </a
+      ><a name="3984" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="3988"
+      > </a
+      ><a name="3989" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="3990"
+      >
+                                                </a
+      ><a name="4039" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="4042"
+      >
+   </a
+      ><a name="4046" class="Symbol"
+      >)</a
+      ><a name="4047"
+      >
+
+
+</a
+      ><a name="4050" href="WWFoldInstantiate.html#4050" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="4057"
+      > </a
+      ><a name="4058" class="Symbol"
+      >:</a
+      ><a name="4059"
+      > </a
+      ><a name="4060" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="4066"
+      > </a
+      ><a name="4067" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4070"
+      > </a
+      ><a name="4071" class="Symbol"
+      >&#8594;</a
+      ><a name="4072"
+      > </a
+      ><a name="4073" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="4079"
+      > </a
+      ><a name="4080" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4083"
+      > </a
+      ><a name="4084" class="Symbol"
+      >&#8594;</a
+      ><a name="4085"
+      > </a
+      ><a name="4086" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="4092"
+      > </a
+      ><a name="4093" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4094"
+      > </a
+      ><a name="4095" class="Symbol"
+      >&#8594;</a
+      ><a name="4096"
+      > </a
+      ><a name="4097" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="4101"
+      > </a
+      ><a name="4102" class="Symbol"
+      >&#8594;</a
+      ><a name="4103"
+      > </a
+      ><a name="4104" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="4110"
+      > </a
+      ><a name="4111" class="Symbol"
+      >&#8594;</a
+      ><a name="4112"
+      > </a
+      ><a name="4113" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="4128"
+      >
+</a
+      ><a name="4129" href="WWFoldInstantiate.html#4050" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="4136"
+      > </a
+      ><a name="4137" href="WWFoldInstantiate.html#4137" class="Bound"
+      >sa</a
+      ><a name="4139"
+      > </a
+      ><a name="4140" href="WWFoldInstantiate.html#4140" class="Bound"
+      >sr</a
+      ><a name="4142"
+      > </a
+      ><a name="4143" href="WWFoldInstantiate.html#4143" class="Bound"
+      >sf</a
+      ><a name="4145"
+      > </a
+      ><a name="4146" href="WWFoldInstantiate.html#4146" class="Bound"
+      >C</a
+      ><a name="4147"
+      > </a
+      ><a name="4148" href="WWFoldInstantiate.html#4148" class="Bound"
+      >&#946;</a
+      ><a name="4149"
+      > </a
+      ><a name="4150" class="Symbol"
+      >=</a
+      ><a name="4151"
+      >
+
+   </a
+      ><a name="4156" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4160"
+      > </a
+      ><a name="4161" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4162"
+      >
+                                       </a
+      ><a name="4202" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4203"
+      > </a
+      ><a name="4204" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="4207"
+      > </a
+      ><a name="4208" href="WWFoldInstantiate.html#4146" class="Bound"
+      >C</a
+      ><a name="4209"
+      > </a
+      ><a name="4210" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4211"
+      >
+   </a
+      ><a name="4215" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4219"
+      > </a
+      ><a name="4220" class="Symbol"
+      >(</a
+      ><a name="4221" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4224"
+      > </a
+      ><a name="4225" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4226"
+      > </a
+      ><a name="4227" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4230"
+      > </a
+      ><a name="4231" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4232"
+      > </a
+      ><a name="4233" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4234" class="Symbol"
+      >)</a
+      ><a name="4235"
+      >
+                                       </a
+      ><a name="4275" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4276"
+      > </a
+      ><a name="4277" href="FoldTheoremsInstantiated.html#2897" class="Function"
+      >RollingRuleFoldInstantiated</a
+      ><a name="4304"
+      > </a
+      ><a name="4305" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4308"
+      > </a
+      ><a name="4309" class="Symbol"
+      >(</a
+      ><a name="4310" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4313"
+      > </a
+      ><a name="4314" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4315"
+      > </a
+      ><a name="4316" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4317" class="Symbol"
+      >)</a
+      ><a name="4318"
+      > </a
+      ><a name="4319" href="WWFoldInstantiate.html#4137" class="Bound"
+      >sa</a
+      ><a name="4321"
+      > </a
+      ><a name="4322" class="Symbol"
+      >(</a
+      ><a name="4323" href="FixTheorems.html#2238" class="Function"
+      >StrictComposition</a
+      ><a name="4340"
+      > </a
+      ><a name="4341" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4342"
+      > </a
+      ><a name="4343" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4346"
+      > </a
+      ><a name="4347" href="WWFoldInstantiate.html#4143" class="Bound"
+      >sf</a
+      ><a name="4349"
+      > </a
+      ><a name="4350" href="WWFoldInstantiate.html#4140" class="Bound"
+      >sr</a
+      ><a name="4352" class="Symbol"
+      >)</a
+      ><a name="4353"
+      > </a
+      ><a name="4354" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4355"
+      >
+   </a
+      ><a name="4359" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4362"
+      > </a
+      ><a name="4363" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4364"
+      > </a
+      ><a name="4365" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4369"
+      > </a
+      ><a name="4370" class="Symbol"
+      >((</a
+      ><a name="4372" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4375"
+      > </a
+      ><a name="4376" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4377"
+      > </a
+      ><a name="4378" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4379" class="Symbol"
+      >)</a
+      ><a name="4380"
+      > </a
+      ><a name="4381" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4382"
+      > </a
+      ><a name="4383" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4387"
+      > </a
+      ><a name="4388" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4391" class="Symbol"
+      >)</a
+      ><a name="4392"
+      >
+                                       </a
+      ><a name="4432" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4433"
+      > </a
+      ><a name="4434" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="4441"
+      > </a
+      ><a name="4442" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4445"
+      > </a
+      ><a name="4446" class="Symbol"
+      >(</a
+      ><a name="4447"
+      >
+                                             </a
+      ><a name="4493" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4497"
+      > </a
+      ><a name="4498" class="Symbol"
+      >((</a
+      ><a name="4500" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4503"
+      > </a
+      ><a name="4504" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4505"
+      > </a
+      ><a name="4506" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4507" class="Symbol"
+      >)</a
+      ><a name="4508"
+      > </a
+      ><a name="4509" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4510"
+      > </a
+      ><a name="4511" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4515"
+      > </a
+      ><a name="4516" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4519" class="Symbol"
+      >)</a
+      ><a name="4520"
+      >
+                                                                          </a
+      ><a name="4595" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4596"
+      > </a
+      ><a name="4597" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="4601"
+      > </a
+      ><a name="4602" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4606"
+      > </a
+      ><a name="4607" class="Symbol"
+      >(</a
+      ><a name="4608" href="CPOFunctions.html#6804" class="Function"
+      >&#8729;-assocLR</a
+      ><a name="4617"
+      > </a
+      ><a name="4618" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4621"
+      > </a
+      ><a name="4622" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4623"
+      > </a
+      ><a name="4624" class="Symbol"
+      >(</a
+      ><a name="4625" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4629"
+      > </a
+      ><a name="4630" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4633" class="Symbol"
+      >))</a
+      ><a name="4635"
+      > </a
+      ><a name="4636" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4637"
+      >
+                                             </a
+      ><a name="4683" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4687"
+      > </a
+      ><a name="4688" class="Symbol"
+      >(</a
+      ><a name="4689" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="4692"
+      > </a
+      ><a name="4693" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4694"
+      > </a
+      ><a name="4695" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="4696"
+      > </a
+      ><a name="4697" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4698"
+      > </a
+      ><a name="4699" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4703"
+      > </a
+      ><a name="4704" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4707" class="Symbol"
+      >)</a
+      ><a name="4708"
+      >
+                                                                          </a
+      ><a name="4783" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4784"
+      > </a
+      ><a name="4785" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="4788"
+      > </a
+      ><a name="4789" href="WWFoldInstantiate.html#4148" class="Bound"
+      >&#946;</a
+      ><a name="4790"
+      > </a
+      ><a name="4791" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4792"
+      >
+                                             </a
+      ><a name="4838" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4842"
+      > </a
+      ><a name="4843" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="4844"
+      >
+                                                                          </a
+      ><a name="4919" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="4922" class="Symbol"
+      >)</a
+      ><a name="4923"
+      >
+                                       </a
+      ><a name="4963" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4964"
+      >
+   </a
+      ><a name="4968" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="4971"
+      > </a
+      ><a name="4972" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4973"
+      > </a
+      ><a name="4974" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="4978"
+      > </a
+      ><a name="4979" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="4980"
+      >
+                                       </a
+      ><a name="5020" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="5023"
+      >
+
+
+</a
+      ><a name="5026" href="WWFoldInstantiate.html#5026" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5033"
+      > </a
+      ><a name="5034" class="Symbol"
+      >:</a
+      ><a name="5035"
+      > </a
+      ><a name="5036" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5042"
+      > </a
+      ><a name="5043" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="5046"
+      > </a
+      ><a name="5047" class="Symbol"
+      >&#8594;</a
+      ><a name="5048"
+      > </a
+      ><a name="5049" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5055"
+      > </a
+      ><a name="5056" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5059"
+      > </a
+      ><a name="5060" class="Symbol"
+      >&#8594;</a
+      ><a name="5061"
+      > </a
+      ><a name="5062" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5068"
+      > </a
+      ><a name="5069" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="5070"
+      > </a
+      ><a name="5071" class="Symbol"
+      >&#8594;</a
+      ><a name="5072"
+      > </a
+      ><a name="5073" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="5077"
+      > </a
+      ><a name="5078" class="Symbol"
+      >&#8594;</a
+      ><a name="5079"
+      > </a
+      ><a name="5080" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="5086"
+      > </a
+      ><a name="5087" class="Symbol"
+      >&#8594;</a
+      ><a name="5088"
+      > </a
+      ><a name="5089" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="5104"
+      >
+</a
+      ><a name="5105" href="WWFoldInstantiate.html#5026" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5112"
+      > </a
+      ><a name="5113" href="WWFoldInstantiate.html#5113" class="Bound"
+      >sa</a
+      ><a name="5115"
+      > </a
+      ><a name="5116" href="WWFoldInstantiate.html#5116" class="Bound"
+      >sr</a
+      ><a name="5118"
+      > </a
+      ><a name="5119" href="WWFoldInstantiate.html#5119" class="Bound"
+      >sf</a
+      ><a name="5121"
+      > </a
+      ><a name="5122" href="WWFoldInstantiate.html#5122" class="Bound"
+      >C</a
+      ><a name="5123"
+      > </a
+      ><a name="5124" href="WWFoldInstantiate.html#5124" class="Bound"
+      >&#946;</a
+      ><a name="5125"
+      > </a
+      ><a name="5126" class="Symbol"
+      >=</a
+      ><a name="5127"
+      > </a
+      ><a name="5128" href="WWFoldInstantiate.html#4050" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="5135"
+      > </a
+      ><a name="5136" href="WWFoldInstantiate.html#5113" class="Bound"
+      >sa</a
+      ><a name="5138"
+      > </a
+      ><a name="5139" href="WWFoldInstantiate.html#5116" class="Bound"
+      >sr</a
+      ><a name="5141"
+      > </a
+      ><a name="5142" href="WWFoldInstantiate.html#5119" class="Bound"
+      >sf</a
+      ><a name="5144"
+      > </a
+      ><a name="5145" href="WWFoldInstantiate.html#5122" class="Bound"
+      >C</a
+      ><a name="5146"
+      > </a
+      ><a name="5147" class="Symbol"
+      >(</a
+      ><a name="5148" href="Base.html#586" class="Function"
+      >snd</a
+      ><a name="5151"
+      > </a
+      ><a name="5152" class="Symbol"
+      >(</a
+      ><a name="5153" href="WWFoldInstantiate.html#1917" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="5158"
+      > </a
+      ><a name="5159" href="WWFoldInstantiate.html#5113" class="Bound"
+      >sa</a
+      ><a name="5161"
+      > </a
+      ><a name="5162" href="WWFoldInstantiate.html#5116" class="Bound"
+      >sr</a
+      ><a name="5164"
+      > </a
+      ><a name="5165" href="WWFoldInstantiate.html#5119" class="Bound"
+      >sf</a
+      ><a name="5167"
+      > </a
+      ><a name="5168" href="WWFoldInstantiate.html#5122" class="Bound"
+      >C</a
+      ><a name="5169" class="Symbol"
+      >)</a
+      ><a name="5170"
+      > </a
+      ><a name="5171" href="WWFoldInstantiate.html#5124" class="Bound"
+      >&#946;</a
+      ><a name="5172" class="Symbol"
+      >)</a
+      ><a name="5173"
+      >
+
+</a
+      ><a name="5175" href="WWFoldInstantiate.html#5175" class="Function"
+      >1&#945;C&#8658;Fac</a
+      ><a name="5182"
+      > </a
+      ><a name="5183" class="Symbol"
+      >:</a
+      ><a name="5184"
+      > </a
+      ><a name="5185" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5191"
+      > </a
+      ><a name="5192" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="5195"
+      > </a
+      ><a name="5196" class="Symbol"
+      >&#8594;</a
+      ><a name="5197"
+      > </a
+      ><a name="5198" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5204"
+      > </a
+      ><a name="5205" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5208"
+      > </a
+      ><a name="5209" class="Symbol"
+      >&#8594;</a
+      ><a name="5210"
+      > </a
+      ><a name="5211" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5217"
+      > </a
+      ><a name="5218" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="5219"
+      > </a
+      ><a name="5220" class="Symbol"
+      >&#8594;</a
+      ><a name="5221"
+      > </a
+      ><a name="5222" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="5226"
+      > </a
+      ><a name="5227" class="Symbol"
+      >&#8594;</a
+      ><a name="5228"
+      > </a
+      ><a name="5229" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="5235"
+      > </a
+      ><a name="5236" class="Symbol"
+      >&#8594;</a
+      ><a name="5237"
+      > </a
+      ><a name="5238" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="5253"
+      >
+</a
+      ><a name="5254" href="WWFoldInstantiate.html#5175" class="Function"
+      >1&#945;C&#8658;Fac</a
+      ><a name="5261"
+      > </a
+      ><a name="5262" href="WWFoldInstantiate.html#5262" class="Bound"
+      >sa</a
+      ><a name="5264"
+      > </a
+      ><a name="5265" href="WWFoldInstantiate.html#5265" class="Bound"
+      >sr</a
+      ><a name="5267"
+      > </a
+      ><a name="5268" href="WWFoldInstantiate.html#5268" class="Bound"
+      >sf</a
+      ><a name="5270"
+      > </a
+      ><a name="5271" href="WWFoldInstantiate.html#5271" class="Bound"
+      >C</a
+      ><a name="5272"
+      > </a
+      ><a name="5273" class="Symbol"
+      >=</a
+      ><a name="5274"
+      > </a
+      ><a name="5275" href="WWFoldInstantiate.html#4050" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="5282"
+      > </a
+      ><a name="5283" href="WWFoldInstantiate.html#5262" class="Bound"
+      >sa</a
+      ><a name="5285"
+      > </a
+      ><a name="5286" href="WWFoldInstantiate.html#5265" class="Bound"
+      >sr</a
+      ><a name="5288"
+      > </a
+      ><a name="5289" href="WWFoldInstantiate.html#5268" class="Bound"
+      >sf</a
+      ><a name="5291"
+      > </a
+      ><a name="5292" href="WWFoldInstantiate.html#5271" class="Bound"
+      >C</a
+      ><a name="5293"
+      > </a
+      ><a name="5294" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="5295"
+      > </a
+      ><a name="5296" href="WWFoldCommon.html#2402" class="Function"
+      >1&#945;&#8658;1&#946;</a
+      ><a name="5301"
+      >
+
+</a
+      ><a name="5303" href="WWFoldInstantiate.html#5303" class="Function"
+      >2&#945;C&#8658;Fac</a
+      ><a name="5310"
+      > </a
+      ><a name="5311" class="Symbol"
+      >:</a
+      ><a name="5312"
+      > </a
+      ><a name="5313" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5319"
+      > </a
+      ><a name="5320" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="5323"
+      > </a
+      ><a name="5324" class="Symbol"
+      >&#8594;</a
+      ><a name="5325"
+      > </a
+      ><a name="5326" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5332"
+      > </a
+      ><a name="5333" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5336"
+      > </a
+      ><a name="5337" class="Symbol"
+      >&#8594;</a
+      ><a name="5338"
+      > </a
+      ><a name="5339" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5345"
+      > </a
+      ><a name="5346" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="5347"
+      > </a
+      ><a name="5348" class="Symbol"
+      >&#8594;</a
+      ><a name="5349"
+      > </a
+      ><a name="5350" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="5354"
+      > </a
+      ><a name="5355" class="Symbol"
+      >&#8594;</a
+      ><a name="5356"
+      > </a
+      ><a name="5357" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="5363"
+      > </a
+      ><a name="5364" class="Symbol"
+      >&#8594;</a
+      ><a name="5365"
+      > </a
+      ><a name="5366" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="5381"
+      >
+</a
+      ><a name="5382" href="WWFoldInstantiate.html#5303" class="Function"
+      >2&#945;C&#8658;Fac</a
+      ><a name="5389"
+      > </a
+      ><a name="5390" href="WWFoldInstantiate.html#5390" class="Bound"
+      >sa</a
+      ><a name="5392"
+      > </a
+      ><a name="5393" href="WWFoldInstantiate.html#5393" class="Bound"
+      >sr</a
+      ><a name="5395"
+      > </a
+      ><a name="5396" href="WWFoldInstantiate.html#5396" class="Bound"
+      >sf</a
+      ><a name="5398"
+      > </a
+      ><a name="5399" href="WWFoldInstantiate.html#5399" class="Bound"
+      >C</a
+      ><a name="5400"
+      > </a
+      ><a name="5401" class="Symbol"
+      >=</a
+      ><a name="5402"
+      > </a
+      ><a name="5403" href="WWFoldInstantiate.html#5026" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5410"
+      > </a
+      ><a name="5411" href="WWFoldInstantiate.html#5390" class="Bound"
+      >sa</a
+      ><a name="5413"
+      > </a
+      ><a name="5414" href="WWFoldInstantiate.html#5393" class="Bound"
+      >sr</a
+      ><a name="5416"
+      > </a
+      ><a name="5417" href="WWFoldInstantiate.html#5396" class="Bound"
+      >sf</a
+      ><a name="5419"
+      > </a
+      ><a name="5420" href="WWFoldInstantiate.html#5399" class="Bound"
+      >C</a
+      ><a name="5421"
+      > </a
+      ><a name="5422" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="5423"
+      > </a
+      ><a name="5424" href="WWFoldInstantiate.html#1816" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="5429"
+      > </a
+      ><a name="5430" href="WWFoldInstantiate.html#5396" class="Bound"
+      >sf</a
+      ><a name="5432"
+      >
+
+</a
+      ><a name="5434" href="WWFoldInstantiate.html#5434" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="5444"
+      > </a
+      ><a name="5445" class="Symbol"
+      >:</a
+      ><a name="5446"
+      > </a
+      ><a name="5447" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5453"
+      > </a
+      ><a name="5454" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="5457"
+      > </a
+      ><a name="5458" class="Symbol"
+      >&#8594;</a
+      ><a name="5459"
+      > </a
+      ><a name="5460" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5466"
+      > </a
+      ><a name="5467" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5470"
+      > </a
+      ><a name="5471" class="Symbol"
+      >&#8594;</a
+      ><a name="5472"
+      > </a
+      ><a name="5473" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5479"
+      > </a
+      ><a name="5480" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="5481"
+      > </a
+      ><a name="5482" class="Symbol"
+      >&#8594;</a
+      ><a name="5483"
+      > </a
+      ><a name="5484" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="5488"
+      > </a
+      ><a name="5489" class="Symbol"
+      >&#8594;</a
+      ><a name="5490"
+      > </a
+      ><a name="5491" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="5497"
+      > </a
+      ><a name="5498" class="Symbol"
+      >&#8594;</a
+      ><a name="5499"
+      > </a
+      ><a name="5500" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="5508"
+      >
+</a
+      ><a name="5509" href="WWFoldInstantiate.html#5434" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="5519"
+      > </a
+      ><a name="5520" href="WWFoldInstantiate.html#5520" class="Bound"
+      >sa</a
+      ><a name="5522"
+      > </a
+      ><a name="5523" href="WWFoldInstantiate.html#5523" class="Bound"
+      >sr</a
+      ><a name="5525"
+      > </a
+      ><a name="5526" href="WWFoldInstantiate.html#5526" class="Bound"
+      >sf</a
+      ><a name="5528"
+      > </a
+      ><a name="5529" href="WWFoldInstantiate.html#5529" class="Bound"
+      >C</a
+      ><a name="5530"
+      > </a
+      ><a name="5531" href="WWFoldInstantiate.html#5531" class="Bound"
+      >&#946;</a
+      ><a name="5532"
+      > </a
+      ><a name="5533" class="Symbol"
+      >=</a
+      ><a name="5534"
+      >
+                           </a
+      ><a name="5562" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5565"
+      > </a
+      ><a name="5566" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5567"
+      > </a
+      ><a name="5568" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="5571"
+      > </a
+      ><a name="5572" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5573"
+      > </a
+      ><a name="5574" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="5578"
+      > </a
+      ><a name="5579" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="5580"
+      >
+                                              </a
+      ><a name="5627" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5628"
+      > </a
+      ><a name="5629" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="5636"
+      > </a
+      ><a name="5637" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5640"
+      > </a
+      ><a name="5641" class="Symbol"
+      >(</a
+      ><a name="5642" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="5645"
+      > </a
+      ><a name="5646" class="Symbol"
+      >(</a
+      ><a name="5647" href="WWFoldInstantiate.html#5026" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5654"
+      > </a
+      ><a name="5655" href="WWFoldInstantiate.html#5520" class="Bound"
+      >sa</a
+      ><a name="5657"
+      > </a
+      ><a name="5658" href="WWFoldInstantiate.html#5523" class="Bound"
+      >sr</a
+      ><a name="5660"
+      > </a
+      ><a name="5661" href="WWFoldInstantiate.html#5526" class="Bound"
+      >sf</a
+      ><a name="5663"
+      > </a
+      ><a name="5664" href="WWFoldInstantiate.html#5529" class="Bound"
+      >C</a
+      ><a name="5665"
+      > </a
+      ><a name="5666" href="WWFoldInstantiate.html#5531" class="Bound"
+      >&#946;</a
+      ><a name="5667" class="Symbol"
+      >))</a
+      ><a name="5669"
+      > </a
+      ><a name="5670" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5671"
+      >
+                           </a
+      ><a name="5699" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5702"
+      > </a
+      ><a name="5703" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5704"
+      > </a
+      ><a name="5705" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="5709"
+      > </a
+      ><a name="5710" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="5711"
+      >
+                                              </a
+      ><a name="5758" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5759"
+      > </a
+      ><a name="5760" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="5763"
+      > </a
+      ><a name="5764" href="WWFoldInstantiate.html#5531" class="Bound"
+      >&#946;</a
+      ><a name="5765"
+      > </a
+      ><a name="5766" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5767"
+      >
+                           </a
+      ><a name="5795" href="Fold.html#661" class="Function"
+      >fold</a
+      ><a name="5799"
+      > </a
+      ><a name="5800" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="5801"
+      >
+                                              </a
+      ><a name="5848" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="5851"
+      >
+
+
+</a
+      ><a name="5854" href="WWFoldInstantiate.html#5854" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="5864"
+      > </a
+      ><a name="5865" class="Symbol"
+      >:</a
+      ><a name="5866"
+      > </a
+      ><a name="5867" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5873"
+      > </a
+      ><a name="5874" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="5877"
+      > </a
+      ><a name="5878" class="Symbol"
+      >&#8594;</a
+      ><a name="5879"
+      > </a
+      ><a name="5880" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5886"
+      > </a
+      ><a name="5887" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="5890"
+      > </a
+      ><a name="5891" class="Symbol"
+      >&#8594;</a
+      ><a name="5892"
+      > </a
+      ><a name="5893" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="5899"
+      > </a
+      ><a name="5900" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="5901"
+      > </a
+      ><a name="5902" class="Symbol"
+      >&#8594;</a
+      ><a name="5903"
+      > </a
+      ><a name="5904" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="5908"
+      > </a
+      ><a name="5909" class="Symbol"
+      >&#8594;</a
+      ><a name="5910"
+      > </a
+      ><a name="5911" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="5917"
+      > </a
+      ><a name="5918" class="Symbol"
+      >&#8594;</a
+      ><a name="5919"
+      > </a
+      ><a name="5920" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="5928"
+      >
+</a
+      ><a name="5929" href="WWFoldInstantiate.html#5854" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="5939"
+      > </a
+      ><a name="5940" href="WWFoldInstantiate.html#5940" class="Bound"
+      >sa</a
+      ><a name="5942"
+      > </a
+      ><a name="5943" href="WWFoldInstantiate.html#5943" class="Bound"
+      >sr</a
+      ><a name="5945"
+      > </a
+      ><a name="5946" href="WWFoldInstantiate.html#5946" class="Bound"
+      >sf</a
+      ><a name="5948"
+      > </a
+      ><a name="5949" href="WWFoldInstantiate.html#5949" class="Bound"
+      >C</a
+      ><a name="5950"
+      > </a
+      ><a name="5951" href="WWFoldInstantiate.html#5951" class="Bound"
+      >&#946;</a
+      ><a name="5952"
+      > </a
+      ><a name="5953" class="Symbol"
+      >=</a
+      ><a name="5954"
+      > </a
+      ><a name="5955" href="WWFoldInstantiate.html#5434" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="5965"
+      > </a
+      ><a name="5966" href="WWFoldInstantiate.html#5940" class="Bound"
+      >sa</a
+      ><a name="5968"
+      > </a
+      ><a name="5969" href="WWFoldInstantiate.html#5943" class="Bound"
+      >sr</a
+      ><a name="5971"
+      > </a
+      ><a name="5972" href="WWFoldInstantiate.html#5946" class="Bound"
+      >sf</a
+      ><a name="5974"
+      > </a
+      ><a name="5975" href="WWFoldInstantiate.html#5949" class="Bound"
+      >C</a
+      ><a name="5976"
+      > </a
+      ><a name="5977" class="Symbol"
+      >(</a
+      ><a name="5978" href="Base.html#574" class="Function"
+      >fst</a
+      ><a name="5981"
+      > </a
+      ><a name="5982" class="Symbol"
+      >(</a
+      ><a name="5983" href="WWFoldInstantiate.html#1917" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="5988"
+      > </a
+      ><a name="5989" href="WWFoldInstantiate.html#5940" class="Bound"
+      >sa</a
+      ><a name="5991"
+      > </a
+      ><a name="5992" href="WWFoldInstantiate.html#5943" class="Bound"
+      >sr</a
+      ><a name="5994"
+      > </a
+      ><a name="5995" href="WWFoldInstantiate.html#5946" class="Bound"
+      >sf</a
+      ><a name="5997"
+      > </a
+      ><a name="5998" href="WWFoldInstantiate.html#5949" class="Bound"
+      >C</a
+      ><a name="5999" class="Symbol"
+      >)</a
+      ><a name="6000"
+      > </a
+      ><a name="6001" href="WWFoldInstantiate.html#5951" class="Bound"
+      >&#946;</a
+      ><a name="6002" class="Symbol"
+      >)</a
+      ><a name="6003"
+      >
+
+</a
+      ><a name="6005" href="WWFoldInstantiate.html#6005" class="Function"
+      >1&#945;C&#8658;Fusion</a
+      ><a name="6015"
+      > </a
+      ><a name="6016" class="Symbol"
+      >:</a
+      ><a name="6017"
+      > </a
+      ><a name="6018" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6024"
+      > </a
+      ><a name="6025" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="6028"
+      > </a
+      ><a name="6029" class="Symbol"
+      >&#8594;</a
+      ><a name="6030"
+      > </a
+      ><a name="6031" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6037"
+      > </a
+      ><a name="6038" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="6041"
+      > </a
+      ><a name="6042" class="Symbol"
+      >&#8594;</a
+      ><a name="6043"
+      > </a
+      ><a name="6044" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6050"
+      > </a
+      ><a name="6051" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="6052"
+      > </a
+      ><a name="6053" class="Symbol"
+      >&#8594;</a
+      ><a name="6054"
+      > </a
+      ><a name="6055" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="6059"
+      > </a
+      ><a name="6060" class="Symbol"
+      >&#8594;</a
+      ><a name="6061"
+      > </a
+      ><a name="6062" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="6068"
+      > </a
+      ><a name="6069" class="Symbol"
+      >&#8594;</a
+      ><a name="6070"
+      > </a
+      ><a name="6071" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="6079"
+      >
+</a
+      ><a name="6080" href="WWFoldInstantiate.html#6005" class="Function"
+      >1&#945;C&#8658;Fusion</a
+      ><a name="6090"
+      > </a
+      ><a name="6091" href="WWFoldInstantiate.html#6091" class="Bound"
+      >sa</a
+      ><a name="6093"
+      > </a
+      ><a name="6094" href="WWFoldInstantiate.html#6094" class="Bound"
+      >sr</a
+      ><a name="6096"
+      > </a
+      ><a name="6097" href="WWFoldInstantiate.html#6097" class="Bound"
+      >sf</a
+      ><a name="6099"
+      > </a
+      ><a name="6100" href="WWFoldInstantiate.html#6100" class="Bound"
+      >C</a
+      ><a name="6101"
+      > </a
+      ><a name="6102" class="Symbol"
+      >=</a
+      ><a name="6103"
+      > </a
+      ><a name="6104" href="WWFoldInstantiate.html#5854" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="6114"
+      > </a
+      ><a name="6115" href="WWFoldInstantiate.html#6091" class="Bound"
+      >sa</a
+      ><a name="6117"
+      > </a
+      ><a name="6118" href="WWFoldInstantiate.html#6094" class="Bound"
+      >sr</a
+      ><a name="6120"
+      > </a
+      ><a name="6121" href="WWFoldInstantiate.html#6097" class="Bound"
+      >sf</a
+      ><a name="6123"
+      > </a
+      ><a name="6124" href="WWFoldInstantiate.html#6100" class="Bound"
+      >C</a
+      ><a name="6125"
+      > </a
+      ><a name="6126" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="6127"
+      > </a
+      ><a name="6128" href="WWFoldCommon.html#2402" class="Function"
+      >1&#945;&#8658;1&#946;</a
+      ><a name="6133"
+      >
+
+</a
+      ><a name="6135" href="WWFoldInstantiate.html#6135" class="Function"
+      >2&#945;C&#8658;Fusion</a
+      ><a name="6145"
+      > </a
+      ><a name="6146" class="Symbol"
+      >:</a
+      ><a name="6147"
+      > </a
+      ><a name="6148" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6154"
+      > </a
+      ><a name="6155" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="6158"
+      > </a
+      ><a name="6159" class="Symbol"
+      >&#8594;</a
+      ><a name="6160"
+      > </a
+      ><a name="6161" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6167"
+      > </a
+      ><a name="6168" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="6171"
+      > </a
+      ><a name="6172" class="Symbol"
+      >&#8594;</a
+      ><a name="6173"
+      > </a
+      ><a name="6174" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6180"
+      > </a
+      ><a name="6181" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="6182"
+      > </a
+      ><a name="6183" class="Symbol"
+      >&#8594;</a
+      ><a name="6184"
+      > </a
+      ><a name="6185" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="6189"
+      > </a
+      ><a name="6190" class="Symbol"
+      >&#8594;</a
+      ><a name="6191"
+      > </a
+      ><a name="6192" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="6198"
+      > </a
+      ><a name="6199" class="Symbol"
+      >&#8594;</a
+      ><a name="6200"
+      > </a
+      ><a name="6201" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="6209"
+      >
+</a
+      ><a name="6210" href="WWFoldInstantiate.html#6135" class="Function"
+      >2&#945;C&#8658;Fusion</a
+      ><a name="6220"
+      > </a
+      ><a name="6221" href="WWFoldInstantiate.html#6221" class="Bound"
+      >sa</a
+      ><a name="6223"
+      > </a
+      ><a name="6224" href="WWFoldInstantiate.html#6224" class="Bound"
+      >sr</a
+      ><a name="6226"
+      > </a
+      ><a name="6227" href="WWFoldInstantiate.html#6227" class="Bound"
+      >sf</a
+      ><a name="6229"
+      > </a
+      ><a name="6230" href="WWFoldInstantiate.html#6230" class="Bound"
+      >C</a
+      ><a name="6231"
+      > </a
+      ><a name="6232" class="Symbol"
+      >=</a
+      ><a name="6233"
+      > </a
+      ><a name="6234" href="WWFoldInstantiate.html#5434" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="6244"
+      > </a
+      ><a name="6245" href="WWFoldInstantiate.html#6221" class="Bound"
+      >sa</a
+      ><a name="6247"
+      > </a
+      ><a name="6248" href="WWFoldInstantiate.html#6224" class="Bound"
+      >sr</a
+      ><a name="6250"
+      > </a
+      ><a name="6251" href="WWFoldInstantiate.html#6227" class="Bound"
+      >sf</a
+      ><a name="6253"
+      > </a
+      ><a name="6254" href="WWFoldInstantiate.html#6230" class="Bound"
+      >C</a
+      ><a name="6255"
+      > </a
+      ><a name="6256" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="6257"
+      > </a
+      ><a name="6258" href="WWFoldInstantiate.html#1816" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="6263"
+      > </a
+      ><a name="6264" href="WWFoldInstantiate.html#6227" class="Bound"
+      >sf</a
+      ><a name="6266"
+      >
+
+</a
+      ><a name="6268" href="WWFoldInstantiate.html#6268" class="Function"
+      >FactFusion&#8660;2&#946;</a
+      ><a name="6281"
+      > </a
+      ><a name="6282" class="Symbol"
+      >:</a
+      ><a name="6283"
+      > </a
+      ><a name="6284" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6290"
+      > </a
+      ><a name="6291" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="6294"
+      > </a
+      ><a name="6295" class="Symbol"
+      >&#8594;</a
+      ><a name="6296"
+      > </a
+      ><a name="6297" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6303"
+      > </a
+      ><a name="6304" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="6307"
+      > </a
+      ><a name="6308" class="Symbol"
+      >&#8594;</a
+      ><a name="6309"
+      > </a
+      ><a name="6310" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6316"
+      > </a
+      ><a name="6317" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="6318"
+      > </a
+      ><a name="6319" class="Symbol"
+      >&#8594;</a
+      ><a name="6320"
+      > </a
+      ><a name="6321" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="6325"
+      > </a
+      ><a name="6326" class="Symbol"
+      >&#8594;</a
+      ><a name="6327"
+      > </a
+      ><a name="6328" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="6334"
+      > </a
+      ><a name="6335" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="6336"
+      > </a
+      ><a name="6337" class="Symbol"
+      >(</a
+      ><a name="6338" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="6353"
+      > </a
+      ><a name="6354" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="6355"
+      > </a
+      ><a name="6356" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="6364" class="Symbol"
+      >)</a
+      ><a name="6365"
+      >
+</a
+      ><a name="6366" href="WWFoldInstantiate.html#6268" class="Function"
+      >FactFusion&#8660;2&#946;</a
+      ><a name="6379"
+      > </a
+      ><a name="6380" href="WWFoldInstantiate.html#6380" class="Bound"
+      >sa</a
+      ><a name="6382"
+      > </a
+      ><a name="6383" href="WWFoldInstantiate.html#6383" class="Bound"
+      >sr</a
+      ><a name="6385"
+      > </a
+      ><a name="6386" href="WWFoldInstantiate.html#6386" class="Bound"
+      >sf</a
+      ><a name="6388"
+      > </a
+      ><a name="6389" href="WWFoldInstantiate.html#6389" class="Bound"
+      >C</a
+      ><a name="6390"
+      > </a
+      ><a name="6391" class="Symbol"
+      >=</a
+      ><a name="6392"
+      > </a
+      ><a name="6393" class="Symbol"
+      >(&#955;</a
+      ><a name="6395"
+      > </a
+      ><a name="6396" href="WWFoldInstantiate.html#6396" class="Bound"
+      >&#946;</a
+      ><a name="6397"
+      > </a
+      ><a name="6398" class="Symbol"
+      >&#8594;</a
+      ><a name="6399"
+      > </a
+      ><a name="6400" href="WWFoldInstantiate.html#5026" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="6407"
+      > </a
+      ><a name="6408" href="WWFoldInstantiate.html#6380" class="Bound"
+      >sa</a
+      ><a name="6410"
+      > </a
+      ><a name="6411" href="WWFoldInstantiate.html#6383" class="Bound"
+      >sr</a
+      ><a name="6413"
+      > </a
+      ><a name="6414" href="WWFoldInstantiate.html#6386" class="Bound"
+      >sf</a
+      ><a name="6416"
+      > </a
+      ><a name="6417" href="WWFoldInstantiate.html#6389" class="Bound"
+      >C</a
+      ><a name="6418"
+      > </a
+      ><a name="6419" href="WWFoldInstantiate.html#6396" class="Bound"
+      >&#946;</a
+      ><a name="6420"
+      > </a
+      ><a name="6421" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="6422"
+      > </a
+      ><a name="6423" href="WWFoldInstantiate.html#5434" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="6433"
+      > </a
+      ><a name="6434" href="WWFoldInstantiate.html#6380" class="Bound"
+      >sa</a
+      ><a name="6436"
+      > </a
+      ><a name="6437" href="WWFoldInstantiate.html#6383" class="Bound"
+      >sr</a
+      ><a name="6439"
+      > </a
+      ><a name="6440" href="WWFoldInstantiate.html#6386" class="Bound"
+      >sf</a
+      ><a name="6442"
+      > </a
+      ><a name="6443" href="WWFoldInstantiate.html#6389" class="Bound"
+      >C</a
+      ><a name="6444"
+      > </a
+      ><a name="6445" href="WWFoldInstantiate.html#6396" class="Bound"
+      >&#946;</a
+      ><a name="6446" class="Symbol"
+      >)</a
+      ><a name="6447"
+      > </a
+      ><a name="6448" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="6449"
+      > </a
+      ><a name="6450" href="NeilPrelude.html#9367" class="Function"
+      >uncurry</a
+      ><a name="6457"
+      > </a
+      ><a name="6458" class="Symbol"
+      >(</a
+      ><a name="6459" href="WWFoldCommon.html#5604" class="Function"
+      >FactFusionC&#8658;2&#946;</a
+      ><a name="6473"
+      > </a
+      ><a name="6474" href="WWFoldInstantiate.html#6389" class="Bound"
+      >C</a
+      ><a name="6475" class="Symbol"
+      >)</a
+      ><a name="6476"
+      >
+
+</a
+      ><a name="6478" class="Comment"
+      >------------------------------------------------</a
+      ><a name="6526"
+      >
+
+</a
+      ><a name="6528" href="WWFoldInstantiate.html#6528" class="Function"
+      >3&#945;C&#8658;Fac</a
+      ><a name="6535"
+      > </a
+      ><a name="6536" class="Symbol"
+      >:</a
+      ><a name="6537"
+      > </a
+      ><a name="6538" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6544"
+      > </a
+      ><a name="6545" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="6548"
+      > </a
+      ><a name="6549" class="Symbol"
+      >&#8594;</a
+      ><a name="6550"
+      > </a
+      ><a name="6551" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6557"
+      > </a
+      ><a name="6558" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="6559"
+      > </a
+      ><a name="6560" class="Symbol"
+      >&#8594;</a
+      ><a name="6561"
+      > </a
+      ><a name="6562" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="6566"
+      > </a
+      ><a name="6567" class="Symbol"
+      >&#8594;</a
+      ><a name="6568"
+      > </a
+      ><a name="6569" href="WWFoldCommon.html#1853" class="Function"
+      >Cond3&#945;</a
+      ><a name="6575"
+      > </a
+      ><a name="6576" class="Symbol"
+      >&#8594;</a
+      ><a name="6577"
+      > </a
+      ><a name="6578" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="6593"
+      >
+</a
+      ><a name="6594" href="WWFoldInstantiate.html#6528" class="Function"
+      >3&#945;C&#8658;Fac</a
+      ><a name="6601"
+      > </a
+      ><a name="6602" href="WWFoldInstantiate.html#6602" class="Bound"
+      >sa</a
+      ><a name="6604"
+      > </a
+      ><a name="6605" href="WWFoldInstantiate.html#6605" class="Bound"
+      >sg</a
+      ><a name="6607"
+      > </a
+      ><a name="6608" href="WWFoldInstantiate.html#6608" class="Bound"
+      >C</a
+      ><a name="6609"
+      > </a
+      ><a name="6610" href="WWFoldInstantiate.html#6610" class="Bound"
+      >&#945;</a
+      ><a name="6611"
+      > </a
+      ><a name="6612" class="Symbol"
+      >=</a
+      ><a name="6613"
+      > </a
+      ><a name="6614" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="6617"
+      > </a
+      ><a name="6618" class="Symbol"
+      >(</a
+      ><a name="6619" href="FoldTheoremsInstantiated.html#1529" class="Function"
+      >FoldFusionInstantiated</a
+      ><a name="6641"
+      > </a
+      ><a name="6642" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="6643"
+      > </a
+      ><a name="6644" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="6645"
+      > </a
+      ><a name="6646" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="6649"
+      > </a
+      ><a name="6650" href="WWFoldInstantiate.html#6605" class="Bound"
+      >sg</a
+      ><a name="6652"
+      > </a
+      ><a name="6653" href="WWFoldInstantiate.html#6602" class="Bound"
+      >sa</a
+      ><a name="6655"
+      > </a
+      ><a name="6656" href="WWFoldInstantiate.html#6610" class="Bound"
+      >&#945;</a
+      ><a name="6657" class="Symbol"
+      >)</a
+      ><a name="6658"
+      >
+
+</a
+      ><a name="6660" class="Comment"
+      >------------------------------------------------</a
+      ><a name="6708"
+      >
+
+</a
+      ><a name="6710" class="Comment"
+      >-- Note the many strictness conditions</a
+      ><a name="6748"
+      >
+
+</a
+      ><a name="6750" href="WWFoldInstantiate.html#6750" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="6761"
+      > </a
+      ><a name="6762" class="Symbol"
+      >:</a
+      ><a name="6763"
+      > </a
+      ><a name="6764" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="6768"
+      > </a
+      ><a name="6769" class="Symbol"
+      >&#8594;</a
+      ><a name="6770"
+      > </a
+      ><a name="6771" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6777"
+      > </a
+      ><a name="6778" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="6781"
+      > </a
+      ><a name="6782" class="Symbol"
+      >&#8594;</a
+      ><a name="6783"
+      > </a
+      ><a name="6784" class="Symbol"
+      >(((</a
+      ><a name="6787" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="6793"
+      > </a
+      ><a name="6794" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="6795"
+      > </a
+      ><a name="6796" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="6802" class="Symbol"
+      >)</a
+      ><a name="6803"
+      > </a
+      ><a name="6804" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="6805"
+      > </a
+      ><a name="6806" class="Symbol"
+      >(</a
+      ><a name="6807" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="6813"
+      > </a
+      ><a name="6814" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="6815"
+      > </a
+      ><a name="6816" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="6822" class="Symbol"
+      >))</a
+      ><a name="6824"
+      > </a
+      ><a name="6825" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="6826"
+      > </a
+      ><a name="6827" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6833"
+      > </a
+      ><a name="6834" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="6837"
+      > </a
+      ><a name="6838" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="6839"
+      > </a
+      ><a name="6840" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6846"
+      > </a
+      ><a name="6847" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="6848" class="Symbol"
+      >)</a
+      ><a name="6849"
+      > </a
+      ><a name="6850" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="6851"
+      > </a
+      ><a name="6852" class="Symbol"
+      >(</a
+      ><a name="6853" href="WWFoldCommon.html#1853" class="Function"
+      >Cond3&#945;</a
+      ><a name="6859"
+      > </a
+      ><a name="6860" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="6861"
+      > </a
+      ><a name="6862" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="6868"
+      > </a
+      ><a name="6869" href="WWFoldInstantiate.html#1234" class="Bound"
+      >g</a
+      ><a name="6870" class="Symbol"
+      >)</a
+      ><a name="6871"
+      > </a
+      ><a name="6872" class="Symbol"
+      >&#8594;</a
+      ><a name="6873"
+      > </a
+      ><a name="6874" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="6889"
+      >
+</a
+      ><a name="6890" href="WWFoldInstantiate.html#6750" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="6901"
+      > </a
+      ><a name="6902" href="WWFoldInstantiate.html#6902" class="Bound"
+      >C</a
+      ><a name="6903"
+      > </a
+      ><a name="6904" href="WWFoldInstantiate.html#6904" class="Bound"
+      >sa</a
+      ><a name="6906"
+      > </a
+      ><a name="6907" class="Symbol"
+      >(</a
+      ><a name="6908" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="6911"
+      > </a
+      ><a name="6912" class="Symbol"
+      >(</a
+      ><a name="6913" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="6916"
+      > </a
+      ><a name="6917" class="Symbol"
+      >(</a
+      ><a name="6918" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="6921"
+      > </a
+      ><a name="6922" href="WWFoldInstantiate.html#6922" class="Bound"
+      >1&#945;</a
+      ><a name="6924" class="Symbol"
+      >)</a
+      ><a name="6925"
+      > </a
+      ><a name="6926" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="6927"
+      > </a
+      ><a name="6928" href="WWFoldInstantiate.html#6928" class="Bound"
+      >sr</a
+      ><a name="6930"
+      > </a
+      ><a name="6931" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="6932"
+      > </a
+      ><a name="6933" href="WWFoldInstantiate.html#6933" class="Bound"
+      >sf</a
+      ><a name="6935" class="Symbol"
+      >))</a
+      ><a name="6937"
+      >  </a
+      ><a name="6939" class="Symbol"
+      >=</a
+      ><a name="6940"
+      > </a
+      ><a name="6941" href="WWFoldInstantiate.html#5175" class="Function"
+      >1&#945;C&#8658;Fac</a
+      ><a name="6948"
+      > </a
+      ><a name="6949" href="WWFoldInstantiate.html#6904" class="Bound"
+      >sa</a
+      ><a name="6951"
+      > </a
+      ><a name="6952" href="WWFoldInstantiate.html#6928" class="Bound"
+      >sr</a
+      ><a name="6954"
+      > </a
+      ><a name="6955" href="WWFoldInstantiate.html#6933" class="Bound"
+      >sf</a
+      ><a name="6957"
+      > </a
+      ><a name="6958" href="WWFoldInstantiate.html#6902" class="Bound"
+      >C</a
+      ><a name="6959"
+      > </a
+      ><a name="6960" href="WWFoldInstantiate.html#6922" class="Bound"
+      >1&#945;</a
+      ><a name="6962"
+      >
+</a
+      ><a name="6963" href="WWFoldInstantiate.html#6750" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="6974"
+      > </a
+      ><a name="6975" href="WWFoldInstantiate.html#6975" class="Bound"
+      >C</a
+      ><a name="6976"
+      > </a
+      ><a name="6977" href="WWFoldInstantiate.html#6977" class="Bound"
+      >sa</a
+      ><a name="6979"
+      > </a
+      ><a name="6980" class="Symbol"
+      >(</a
+      ><a name="6981" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="6984"
+      > </a
+      ><a name="6985" class="Symbol"
+      >(</a
+      ><a name="6986" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="6989"
+      > </a
+      ><a name="6990" class="Symbol"
+      >(</a
+      ><a name="6991" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="6994"
+      > </a
+      ><a name="6995" href="WWFoldInstantiate.html#6995" class="Bound"
+      >1&#946;</a
+      ><a name="6997" class="Symbol"
+      >)</a
+      ><a name="6998"
+      > </a
+      ><a name="6999" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7000"
+      > </a
+      ><a name="7001" href="WWFoldInstantiate.html#7001" class="Bound"
+      >sr</a
+      ><a name="7003"
+      > </a
+      ><a name="7004" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7005"
+      > </a
+      ><a name="7006" href="WWFoldInstantiate.html#7006" class="Bound"
+      >sf</a
+      ><a name="7008" class="Symbol"
+      >))</a
+      ><a name="7010"
+      >  </a
+      ><a name="7012" class="Symbol"
+      >=</a
+      ><a name="7013"
+      > </a
+      ><a name="7014" href="WWFoldInstantiate.html#4050" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="7021"
+      > </a
+      ><a name="7022" href="WWFoldInstantiate.html#6977" class="Bound"
+      >sa</a
+      ><a name="7024"
+      > </a
+      ><a name="7025" href="WWFoldInstantiate.html#7001" class="Bound"
+      >sr</a
+      ><a name="7027"
+      > </a
+      ><a name="7028" href="WWFoldInstantiate.html#7006" class="Bound"
+      >sf</a
+      ><a name="7030"
+      > </a
+      ><a name="7031" href="WWFoldInstantiate.html#6975" class="Bound"
+      >C</a
+      ><a name="7032"
+      > </a
+      ><a name="7033" href="WWFoldInstantiate.html#6995" class="Bound"
+      >1&#946;</a
+      ><a name="7035"
+      >
+</a
+      ><a name="7036" href="WWFoldInstantiate.html#6750" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="7047"
+      > </a
+      ><a name="7048" href="WWFoldInstantiate.html#7048" class="Bound"
+      >C</a
+      ><a name="7049"
+      > </a
+      ><a name="7050" href="WWFoldInstantiate.html#7050" class="Bound"
+      >sa</a
+      ><a name="7052"
+      > </a
+      ><a name="7053" class="Symbol"
+      >(</a
+      ><a name="7054" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7057"
+      > </a
+      ><a name="7058" class="Symbol"
+      >(</a
+      ><a name="7059" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7062"
+      > </a
+      ><a name="7063" class="Symbol"
+      >(</a
+      ><a name="7064" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7067"
+      > </a
+      ><a name="7068" href="WWFoldInstantiate.html#7068" class="Bound"
+      >2&#945;</a
+      ><a name="7070" class="Symbol"
+      >)</a
+      ><a name="7071"
+      > </a
+      ><a name="7072" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7073"
+      > </a
+      ><a name="7074" href="WWFoldInstantiate.html#7074" class="Bound"
+      >sr</a
+      ><a name="7076"
+      > </a
+      ><a name="7077" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7078"
+      > </a
+      ><a name="7079" href="WWFoldInstantiate.html#7079" class="Bound"
+      >sf</a
+      ><a name="7081" class="Symbol"
+      >))</a
+      ><a name="7083"
+      >  </a
+      ><a name="7085" class="Symbol"
+      >=</a
+      ><a name="7086"
+      > </a
+      ><a name="7087" href="WWFoldInstantiate.html#5303" class="Function"
+      >2&#945;C&#8658;Fac</a
+      ><a name="7094"
+      > </a
+      ><a name="7095" href="WWFoldInstantiate.html#7050" class="Bound"
+      >sa</a
+      ><a name="7097"
+      > </a
+      ><a name="7098" href="WWFoldInstantiate.html#7074" class="Bound"
+      >sr</a
+      ><a name="7100"
+      > </a
+      ><a name="7101" href="WWFoldInstantiate.html#7079" class="Bound"
+      >sf</a
+      ><a name="7103"
+      > </a
+      ><a name="7104" href="WWFoldInstantiate.html#7048" class="Bound"
+      >C</a
+      ><a name="7105"
+      > </a
+      ><a name="7106" href="WWFoldInstantiate.html#7068" class="Bound"
+      >2&#945;</a
+      ><a name="7108"
+      >
+</a
+      ><a name="7109" href="WWFoldInstantiate.html#6750" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="7120"
+      > </a
+      ><a name="7121" href="WWFoldInstantiate.html#7121" class="Bound"
+      >C</a
+      ><a name="7122"
+      > </a
+      ><a name="7123" href="WWFoldInstantiate.html#7123" class="Bound"
+      >sa</a
+      ><a name="7125"
+      > </a
+      ><a name="7126" class="Symbol"
+      >(</a
+      ><a name="7127" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7130"
+      > </a
+      ><a name="7131" class="Symbol"
+      >(</a
+      ><a name="7132" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7135"
+      > </a
+      ><a name="7136" class="Symbol"
+      >(</a
+      ><a name="7137" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7140"
+      > </a
+      ><a name="7141" href="WWFoldInstantiate.html#7141" class="Bound"
+      >2&#946;</a
+      ><a name="7143" class="Symbol"
+      >)</a
+      ><a name="7144"
+      > </a
+      ><a name="7145" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7146"
+      > </a
+      ><a name="7147" href="WWFoldInstantiate.html#7147" class="Bound"
+      >sr</a
+      ><a name="7149"
+      > </a
+      ><a name="7150" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7151"
+      > </a
+      ><a name="7152" href="WWFoldInstantiate.html#7152" class="Bound"
+      >sf</a
+      ><a name="7154" class="Symbol"
+      >))</a
+      ><a name="7156"
+      >  </a
+      ><a name="7158" class="Symbol"
+      >=</a
+      ><a name="7159"
+      > </a
+      ><a name="7160" href="WWFoldInstantiate.html#5026" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="7167"
+      > </a
+      ><a name="7168" href="WWFoldInstantiate.html#7123" class="Bound"
+      >sa</a
+      ><a name="7170"
+      > </a
+      ><a name="7171" href="WWFoldInstantiate.html#7147" class="Bound"
+      >sr</a
+      ><a name="7173"
+      > </a
+      ><a name="7174" href="WWFoldInstantiate.html#7152" class="Bound"
+      >sf</a
+      ><a name="7176"
+      > </a
+      ><a name="7177" href="WWFoldInstantiate.html#7121" class="Bound"
+      >C</a
+      ><a name="7178"
+      > </a
+      ><a name="7179" href="WWFoldInstantiate.html#7141" class="Bound"
+      >2&#946;</a
+      ><a name="7181"
+      >
+</a
+      ><a name="7182" href="WWFoldInstantiate.html#6750" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="7193"
+      > </a
+      ><a name="7194" href="WWFoldInstantiate.html#7194" class="Bound"
+      >C</a
+      ><a name="7195"
+      > </a
+      ><a name="7196" href="WWFoldInstantiate.html#7196" class="Bound"
+      >sa</a
+      ><a name="7198"
+      > </a
+      ><a name="7199" class="Symbol"
+      >(</a
+      ><a name="7200" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7203"
+      > </a
+      ><a name="7204" class="Symbol"
+      >(</a
+      ><a name="7205" href="WWFoldInstantiate.html#7205" class="Bound"
+      >3&#945;</a
+      ><a name="7207"
+      > </a
+      ><a name="7208" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="7209"
+      > </a
+      ><a name="7210" href="WWFoldInstantiate.html#7210" class="Bound"
+      >sg</a
+      ><a name="7212" class="Symbol"
+      >))</a
+      ><a name="7214"
+      >                 </a
+      ><a name="7231" class="Symbol"
+      >=</a
+      ><a name="7232"
+      > </a
+      ><a name="7233" href="WWFoldInstantiate.html#6528" class="Function"
+      >3&#945;C&#8658;Fac</a
+      ><a name="7240"
+      > </a
+      ><a name="7241" href="WWFoldInstantiate.html#7196" class="Bound"
+      >sa</a
+      ><a name="7243"
+      > </a
+      ><a name="7244" href="WWFoldInstantiate.html#7210" class="Bound"
+      >sg</a
+      ><a name="7246"
+      > </a
+      ><a name="7247" href="WWFoldInstantiate.html#7194" class="Bound"
+      >C</a
+      ><a name="7248"
+      > </a
+      ><a name="7249" href="WWFoldInstantiate.html#7205" class="Bound"
+      >3&#945;</a
+      ><a name="7251"
+      >
+
+</a
+      ><a name="7253" href="WWFoldInstantiate.html#7253" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="7267"
+      > </a
+      ><a name="7268" class="Symbol"
+      >:</a
+      ><a name="7269"
+      > </a
+      ><a name="7270" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="7274"
+      > </a
+      ><a name="7275" class="Symbol"
+      >&#8594;</a
+      ><a name="7276"
+      > </a
+      ><a name="7277" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="7283"
+      > </a
+      ><a name="7284" href="WWFoldInstantiate.html#1280" class="Bound"
+      >abs</a
+      ><a name="7287"
+      > </a
+      ><a name="7288" class="Symbol"
+      >&#8594;</a
+      ><a name="7289"
+      > </a
+      ><a name="7290" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="7296"
+      > </a
+      ><a name="7297" href="WWFoldInstantiate.html#1258" class="Bound"
+      >rep</a
+      ><a name="7300"
+      > </a
+      ><a name="7301" class="Symbol"
+      >&#8594;</a
+      ><a name="7302"
+      > </a
+      ><a name="7303" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="7309"
+      > </a
+      ><a name="7310" href="WWFoldInstantiate.html#1210" class="Bound"
+      >f</a
+      ><a name="7311"
+      > </a
+      ><a name="7312" class="Symbol"
+      >&#8594;</a
+      ><a name="7313"
+      > </a
+      ><a name="7314" class="Symbol"
+      >(</a
+      ><a name="7315" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="7321"
+      > </a
+      ><a name="7322" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="7323"
+      > </a
+      ><a name="7324" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="7330" class="Symbol"
+      >)</a
+      ><a name="7331"
+      > </a
+      ><a name="7332" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="7333"
+      > </a
+      ><a name="7334" class="Symbol"
+      >(</a
+      ><a name="7335" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="7341"
+      > </a
+      ><a name="7342" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="7343"
+      > </a
+      ><a name="7344" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="7350" class="Symbol"
+      >)</a
+      ><a name="7351"
+      > </a
+      ><a name="7352" class="Symbol"
+      >&#8594;</a
+      ><a name="7353"
+      > </a
+      ><a name="7354" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="7362"
+      >
+</a
+      ><a name="7363" href="WWFoldInstantiate.html#7253" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="7377"
+      > </a
+      ><a name="7378" href="WWFoldInstantiate.html#7378" class="Bound"
+      >C</a
+      ><a name="7379"
+      > </a
+      ><a name="7380" href="WWFoldInstantiate.html#7380" class="Bound"
+      >sa</a
+      ><a name="7382"
+      > </a
+      ><a name="7383" href="WWFoldInstantiate.html#7383" class="Bound"
+      >sr</a
+      ><a name="7385"
+      > </a
+      ><a name="7386" href="WWFoldInstantiate.html#7386" class="Bound"
+      >sf</a
+      ><a name="7388"
+      > </a
+      ><a name="7389" class="Symbol"
+      >(</a
+      ><a name="7390" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7393"
+      > </a
+      ><a name="7394" class="Symbol"
+      >(</a
+      ><a name="7395" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7398"
+      > </a
+      ><a name="7399" href="WWFoldInstantiate.html#7399" class="Bound"
+      >1&#945;</a
+      ><a name="7401" class="Symbol"
+      >))</a
+      ><a name="7403"
+      > </a
+      ><a name="7404" class="Symbol"
+      >=</a
+      ><a name="7405"
+      > </a
+      ><a name="7406" href="WWFoldInstantiate.html#6005" class="Function"
+      >1&#945;C&#8658;Fusion</a
+      ><a name="7416"
+      > </a
+      ><a name="7417" href="WWFoldInstantiate.html#7380" class="Bound"
+      >sa</a
+      ><a name="7419"
+      > </a
+      ><a name="7420" href="WWFoldInstantiate.html#7383" class="Bound"
+      >sr</a
+      ><a name="7422"
+      > </a
+      ><a name="7423" href="WWFoldInstantiate.html#7386" class="Bound"
+      >sf</a
+      ><a name="7425"
+      > </a
+      ><a name="7426" href="WWFoldInstantiate.html#7378" class="Bound"
+      >C</a
+      ><a name="7427"
+      > </a
+      ><a name="7428" href="WWFoldInstantiate.html#7399" class="Bound"
+      >1&#945;</a
+      ><a name="7430"
+      >
+</a
+      ><a name="7431" href="WWFoldInstantiate.html#7253" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="7445"
+      > </a
+      ><a name="7446" href="WWFoldInstantiate.html#7446" class="Bound"
+      >C</a
+      ><a name="7447"
+      > </a
+      ><a name="7448" href="WWFoldInstantiate.html#7448" class="Bound"
+      >sa</a
+      ><a name="7450"
+      > </a
+      ><a name="7451" href="WWFoldInstantiate.html#7451" class="Bound"
+      >sr</a
+      ><a name="7453"
+      > </a
+      ><a name="7454" href="WWFoldInstantiate.html#7454" class="Bound"
+      >sf</a
+      ><a name="7456"
+      > </a
+      ><a name="7457" class="Symbol"
+      >(</a
+      ><a name="7458" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7461"
+      > </a
+      ><a name="7462" class="Symbol"
+      >(</a
+      ><a name="7463" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7466"
+      > </a
+      ><a name="7467" href="WWFoldInstantiate.html#7467" class="Bound"
+      >1&#946;</a
+      ><a name="7469" class="Symbol"
+      >))</a
+      ><a name="7471"
+      > </a
+      ><a name="7472" class="Symbol"
+      >=</a
+      ><a name="7473"
+      > </a
+      ><a name="7474" href="WWFoldInstantiate.html#5854" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="7484"
+      > </a
+      ><a name="7485" href="WWFoldInstantiate.html#7448" class="Bound"
+      >sa</a
+      ><a name="7487"
+      > </a
+      ><a name="7488" href="WWFoldInstantiate.html#7451" class="Bound"
+      >sr</a
+      ><a name="7490"
+      > </a
+      ><a name="7491" href="WWFoldInstantiate.html#7454" class="Bound"
+      >sf</a
+      ><a name="7493"
+      > </a
+      ><a name="7494" href="WWFoldInstantiate.html#7446" class="Bound"
+      >C</a
+      ><a name="7495"
+      > </a
+      ><a name="7496" href="WWFoldInstantiate.html#7467" class="Bound"
+      >1&#946;</a
+      ><a name="7498"
+      >
+</a
+      ><a name="7499" href="WWFoldInstantiate.html#7253" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="7513"
+      > </a
+      ><a name="7514" href="WWFoldInstantiate.html#7514" class="Bound"
+      >C</a
+      ><a name="7515"
+      > </a
+      ><a name="7516" href="WWFoldInstantiate.html#7516" class="Bound"
+      >sa</a
+      ><a name="7518"
+      > </a
+      ><a name="7519" href="WWFoldInstantiate.html#7519" class="Bound"
+      >sr</a
+      ><a name="7521"
+      > </a
+      ><a name="7522" href="WWFoldInstantiate.html#7522" class="Bound"
+      >sf</a
+      ><a name="7524"
+      > </a
+      ><a name="7525" class="Symbol"
+      >(</a
+      ><a name="7526" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7529"
+      > </a
+      ><a name="7530" class="Symbol"
+      >(</a
+      ><a name="7531" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="7534"
+      > </a
+      ><a name="7535" href="WWFoldInstantiate.html#7535" class="Bound"
+      >2&#945;</a
+      ><a name="7537" class="Symbol"
+      >))</a
+      ><a name="7539"
+      > </a
+      ><a name="7540" class="Symbol"
+      >=</a
+      ><a name="7541"
+      > </a
+      ><a name="7542" href="WWFoldInstantiate.html#6135" class="Function"
+      >2&#945;C&#8658;Fusion</a
+      ><a name="7552"
+      > </a
+      ><a name="7553" href="WWFoldInstantiate.html#7516" class="Bound"
+      >sa</a
+      ><a name="7555"
+      > </a
+      ><a name="7556" href="WWFoldInstantiate.html#7519" class="Bound"
+      >sr</a
+      ><a name="7558"
+      > </a
+      ><a name="7559" href="WWFoldInstantiate.html#7522" class="Bound"
+      >sf</a
+      ><a name="7561"
+      > </a
+      ><a name="7562" href="WWFoldInstantiate.html#7514" class="Bound"
+      >C</a
+      ><a name="7563"
+      > </a
+      ><a name="7564" href="WWFoldInstantiate.html#7535" class="Bound"
+      >2&#945;</a
+      ><a name="7566"
+      >
+</a
+      ><a name="7567" href="WWFoldInstantiate.html#7253" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="7581"
+      > </a
+      ><a name="7582" href="WWFoldInstantiate.html#7582" class="Bound"
+      >C</a
+      ><a name="7583"
+      > </a
+      ><a name="7584" href="WWFoldInstantiate.html#7584" class="Bound"
+      >sa</a
+      ><a name="7586"
+      > </a
+      ><a name="7587" href="WWFoldInstantiate.html#7587" class="Bound"
+      >sr</a
+      ><a name="7589"
+      > </a
+      ><a name="7590" href="WWFoldInstantiate.html#7590" class="Bound"
+      >sf</a
+      ><a name="7592"
+      > </a
+      ><a name="7593" class="Symbol"
+      >(</a
+      ><a name="7594" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7597"
+      > </a
+      ><a name="7598" class="Symbol"
+      >(</a
+      ><a name="7599" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="7602"
+      > </a
+      ><a name="7603" href="WWFoldInstantiate.html#7603" class="Bound"
+      >2&#946;</a
+      ><a name="7605" class="Symbol"
+      >))</a
+      ><a name="7607"
+      > </a
+      ><a name="7608" class="Symbol"
+      >=</a
+      ><a name="7609"
+      > </a
+      ><a name="7610" href="WWFoldInstantiate.html#5434" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="7620"
+      > </a
+      ><a name="7621" href="WWFoldInstantiate.html#7584" class="Bound"
+      >sa</a
+      ><a name="7623"
+      > </a
+      ><a name="7624" href="WWFoldInstantiate.html#7587" class="Bound"
+      >sr</a
+      ><a name="7626"
+      > </a
+      ><a name="7627" href="WWFoldInstantiate.html#7590" class="Bound"
+      >sf</a
+      ><a name="7629"
+      > </a
+      ><a name="7630" href="WWFoldInstantiate.html#7582" class="Bound"
+      >C</a
+      ><a name="7631"
+      > </a
+      ><a name="7632" href="WWFoldInstantiate.html#7603" class="Bound"
+      >2&#946;</a
+      ><a name="7634"
+      >
+
+</a
+      ><a name="7636" class="Comment"
+      >------------------------------------------------</a
+      ><a name="7684"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

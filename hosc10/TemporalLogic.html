@@ -1,0 +1,5344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >TemporalLogic</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+   </a
+      ><a name="31" class="Symbol"
+      >#-}</a
+      ><a name="34"
+      >
+
+</a
+      ><a name="36" class="Keyword"
+      >open</a
+      ><a name="40"
+      > </a
+      ><a name="41" class="Keyword"
+      >import</a
+      ><a name="47"
+      > </a
+      ><a name="48" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="59"
+      >
+</a
+      ><a name="60" class="Keyword"
+      >open</a
+      ><a name="64"
+      > </a
+      ><a name="65" class="Keyword"
+      >import</a
+      ><a name="71"
+      > </a
+      ><a name="72" href="Logic.html#86" class="Module"
+      >Logic</a
+      ><a name="77"
+      >
+
+</a
+      ><a name="79" class="Keyword"
+      >module</a
+      ><a name="85"
+      > </a
+      ><a name="86" href="TemporalLogic.html#86" class="Module"
+      >TemporalLogic</a
+      ><a name="99"
+      >
+
+  </a
+      ><a name="103" class="Symbol"
+      >(</a
+      ><a name="104" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="108"
+      > </a
+      ><a name="109" class="Symbol"
+      >:</a
+      ><a name="110"
+      > </a
+      ><a name="111" class="PrimitiveType"
+      >Set</a
+      ><a name="114" class="Symbol"
+      >)</a
+      ><a name="115"
+      >
+  </a
+      ><a name="118" class="Symbol"
+      >(</a
+      ><a name="119" href="TemporalLogic.html#119" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="123"
+      >  </a
+      ><a name="125" class="Symbol"
+      >:</a
+      ><a name="126"
+      > </a
+      ><a name="127" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="130"
+      > </a
+      ><a name="131" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="135" class="Symbol"
+      >)</a
+      ><a name="136"
+      >
+  </a
+      ><a name="139" class="Symbol"
+      >(</a
+      ><a name="140" href="TemporalLogic.html#140" class="Bound"
+      >irreflex</a
+      ><a name="148"
+      > </a
+      ><a name="149" class="Symbol"
+      >:</a
+      ><a name="150"
+      > </a
+      ><a name="151" href="NeilPrelude.html#1620" class="Function"
+      >Irreflexive</a
+      ><a name="162"
+      > </a
+      ><a name="163" href="TemporalLogic.html#119" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="167" class="Symbol"
+      >)</a
+      ><a name="168"
+      >
+  </a
+      ><a name="171" class="Symbol"
+      >(</a
+      ><a name="172" href="TemporalLogic.html#172" class="Bound"
+      >transit</a
+      ><a name="179"
+      > </a
+      ><a name="180" class="Symbol"
+      >:</a
+      ><a name="181"
+      > </a
+      ><a name="182" href="NeilPrelude.html#2349" class="Function"
+      >Transitive</a
+      ><a name="192"
+      > </a
+      ><a name="193" href="TemporalLogic.html#119" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="197" class="Symbol"
+      >)</a
+      ><a name="198"
+      >
+
+</a
+      ><a name="200" class="Keyword"
+      >where</a
+      ><a name="205"
+      >
+
+</a
+      ><a name="207" class="Keyword"
+      >import</a
+      ><a name="213"
+      > </a
+      ><a name="214" href="StrictPreOrder.html#69" class="Module"
+      >StrictPreOrder</a
+      ><a name="228"
+      >
+</a
+      ><a name="229" class="Keyword"
+      >open</a
+      ><a name="233"
+      > </a
+      ><a name="234" href="StrictPreOrder.html#69" class="Module"
+      >StrictPreOrder</a
+      ><a name="248"
+      > </a
+      ><a name="249" href="TemporalLogic.html#119" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="TemporalLogic.html#140" class="Bound"
+      >irreflex</a
+      ><a name="262"
+      > </a
+      ><a name="263" href="TemporalLogic.html#172" class="Bound"
+      >transit</a
+      ><a name="270"
+      > </a
+      ><a name="271" class="Keyword"
+      >public</a
+      ><a name="277"
+      >
+
+</a
+      ><a name="279" class="Comment"
+      >-------------------------------</a
+      ><a name="310"
+      >
+
+</a
+      ><a name="312" class="Keyword"
+      >infixr</a
+      ><a name="318"
+      > </a
+      ><a name="319" class="Number"
+      >0</a
+      ><a name="320"
+      >  _&#8658;_
+</a
+      ><a name="326" class="Keyword"
+      >infixr</a
+      ><a name="332"
+      > </a
+      ><a name="333" class="Number"
+      >5</a
+      ><a name="334"
+      >  _&#8744;_
+</a
+      ><a name="340" class="Keyword"
+      >infixr</a
+      ><a name="346"
+      > </a
+      ><a name="347" class="Number"
+      >6</a
+      ><a name="348"
+      >  _&#8743;_
+
+</a
+      ><a name="355" class="Comment"
+      >-------------------------------</a
+      ><a name="386"
+      >
+
+</a
+      ><a name="388" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="393"
+      > </a
+      ><a name="394" class="Symbol"
+      >=</a
+      ><a name="395"
+      > </a
+      ><a name="396" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="400"
+      > </a
+      ><a name="401" class="Symbol"
+      >&#8594;</a
+      ><a name="402"
+      > </a
+      ><a name="403" class="PrimitiveType"
+      >Set</a
+      ><a name="406"
+      >
+</a
+      ><a name="407" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="415"
+      > </a
+      ><a name="416" class="Symbol"
+      >=</a
+      ><a name="417"
+      > </a
+      ><a name="418" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="423"
+      >
+
+</a
+      ><a name="425" class="Comment"
+      >-------------------------------</a
+      ><a name="456"
+      >
+
+</a
+      ><a name="458" class="Comment"
+      >-- Lifted Logical Operators</a
+      ><a name="485"
+      >
+
+</a
+      ><a name="487" href="TemporalLogic.html#487" class="Function Operator"
+      >_&#8744;_</a
+      ><a name="490"
+      > </a
+      ><a name="491" class="Symbol"
+      >:</a
+      ><a name="492"
+      > </a
+      ><a name="493" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="Symbol"
+      >&#8594;</a
+      ><a name="500"
+      > </a
+      ><a name="501" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="506"
+      > </a
+      ><a name="507" class="Symbol"
+      >&#8594;</a
+      ><a name="508"
+      > </a
+      ><a name="509" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="514"
+      >
+</a
+      ><a name="515" class="Symbol"
+      >(</a
+      ><a name="516" href="TemporalLogic.html#516" class="Bound"
+      >&#966;</a
+      ><a name="517"
+      > </a
+      ><a name="518" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="519"
+      > </a
+      ><a name="520" href="TemporalLogic.html#520" class="Bound"
+      >&#968;</a
+      ><a name="521" class="Symbol"
+      >)</a
+      ><a name="522"
+      > </a
+      ><a name="523" href="TemporalLogic.html#523" class="Bound"
+      >t</a
+      ><a name="524"
+      > </a
+      ><a name="525" class="Symbol"
+      >=</a
+      ><a name="526"
+      > </a
+      ><a name="527" href="TemporalLogic.html#516" class="Bound"
+      >&#966;</a
+      ><a name="528"
+      > </a
+      ><a name="529" href="TemporalLogic.html#523" class="Bound"
+      >t</a
+      ><a name="530"
+      > </a
+      ><a name="531" href="NeilPrelude.html#1160" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="532"
+      > </a
+      ><a name="533" href="TemporalLogic.html#520" class="Bound"
+      >&#968;</a
+      ><a name="534"
+      > </a
+      ><a name="535" href="TemporalLogic.html#523" class="Bound"
+      >t</a
+      ><a name="536"
+      >
+
+</a
+      ><a name="538" href="TemporalLogic.html#538" class="Function Operator"
+      >_&#8743;_</a
+      ><a name="541"
+      > </a
+      ><a name="542" class="Symbol"
+      >:</a
+      ><a name="543"
+      > </a
+      ><a name="544" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="549"
+      > </a
+      ><a name="550" class="Symbol"
+      >&#8594;</a
+      ><a name="551"
+      > </a
+      ><a name="552" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="557"
+      > </a
+      ><a name="558" class="Symbol"
+      >&#8594;</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="565"
+      >
+</a
+      ><a name="566" class="Symbol"
+      >(</a
+      ><a name="567" href="TemporalLogic.html#567" class="Bound"
+      >&#966;</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="TemporalLogic.html#571" class="Bound"
+      >&#968;</a
+      ><a name="572" class="Symbol"
+      >)</a
+      ><a name="573"
+      > </a
+      ><a name="574" href="TemporalLogic.html#574" class="Bound"
+      >t</a
+      ><a name="575"
+      > </a
+      ><a name="576" class="Symbol"
+      >=</a
+      ><a name="577"
+      > </a
+      ><a name="578" href="TemporalLogic.html#567" class="Bound"
+      >&#966;</a
+      ><a name="579"
+      > </a
+      ><a name="580" href="TemporalLogic.html#574" class="Bound"
+      >t</a
+      ><a name="581"
+      > </a
+      ><a name="582" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="583"
+      > </a
+      ><a name="584" href="TemporalLogic.html#571" class="Bound"
+      >&#968;</a
+      ><a name="585"
+      > </a
+      ><a name="586" href="TemporalLogic.html#574" class="Bound"
+      >t</a
+      ><a name="587"
+      >
+
+</a
+      ><a name="589" href="TemporalLogic.html#589" class="Function Operator"
+      >_&#8658;_</a
+      ><a name="592"
+      > </a
+      ><a name="593" class="Symbol"
+      >:</a
+      ><a name="594"
+      > </a
+      ><a name="595" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="600"
+      > </a
+      ><a name="601" class="Symbol"
+      >&#8594;</a
+      ><a name="602"
+      > </a
+      ><a name="603" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="608"
+      > </a
+      ><a name="609" class="Symbol"
+      >&#8594;</a
+      ><a name="610"
+      > </a
+      ><a name="611" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="616"
+      >
+</a
+      ><a name="617" class="Symbol"
+      >(</a
+      ><a name="618" href="TemporalLogic.html#618" class="Bound"
+      >&#966;</a
+      ><a name="619"
+      > </a
+      ><a name="620" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="621"
+      > </a
+      ><a name="622" href="TemporalLogic.html#622" class="Bound"
+      >&#968;</a
+      ><a name="623" class="Symbol"
+      >)</a
+      ><a name="624"
+      > </a
+      ><a name="625" href="TemporalLogic.html#625" class="Bound"
+      >t</a
+      ><a name="626"
+      > </a
+      ><a name="627" class="Symbol"
+      >=</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="TemporalLogic.html#618" class="Bound"
+      >&#966;</a
+      ><a name="630"
+      > </a
+      ><a name="631" href="TemporalLogic.html#625" class="Bound"
+      >t</a
+      ><a name="632"
+      > </a
+      ><a name="633" class="Symbol"
+      >&#8594;</a
+      ><a name="634"
+      > </a
+      ><a name="635" href="TemporalLogic.html#622" class="Bound"
+      >&#968;</a
+      ><a name="636"
+      > </a
+      ><a name="637" href="TemporalLogic.html#625" class="Bound"
+      >t</a
+      ><a name="638"
+      >
+
+</a
+      ><a name="640" href="TemporalLogic.html#640" class="Function"
+      >&#8869;</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >:</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="649"
+      >
+</a
+      ><a name="650" href="TemporalLogic.html#640" class="Function"
+      >&#8869;</a
+      ><a name="651"
+      > </a
+      ><a name="652" href="TemporalLogic.html#652" class="Bound"
+      >t</a
+      ><a name="653"
+      > </a
+      ><a name="654" class="Symbol"
+      >=</a
+      ><a name="655"
+      > </a
+      ><a name="656" href="NeilPrelude.html#1258" class="Datatype"
+      >False</a
+      ><a name="661"
+      >
+
+</a
+      ><a name="663" href="TemporalLogic.html#663" class="Function"
+      >&#8868;</a
+      ><a name="664"
+      > </a
+      ><a name="665" class="Symbol"
+      >:</a
+      ><a name="666"
+      > </a
+      ><a name="667" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="672"
+      >
+</a
+      ><a name="673" href="TemporalLogic.html#663" class="Function"
+      >&#8868;</a
+      ><a name="674"
+      > </a
+      ><a name="675" href="TemporalLogic.html#675" class="Bound"
+      >t</a
+      ><a name="676"
+      > </a
+      ><a name="677" class="Symbol"
+      >=</a
+      ><a name="678"
+      > </a
+      ><a name="679" href="Logic.html#171" class="Record"
+      >True</a
+      ><a name="683"
+      >
+
+</a
+      ><a name="685" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;_</a
+      ><a name="687"
+      > </a
+      ><a name="688" class="Symbol"
+      >:</a
+      ><a name="689"
+      > </a
+      ><a name="690" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="695"
+      > </a
+      ><a name="696" class="Symbol"
+      >&#8594;</a
+      ><a name="697"
+      > </a
+      ><a name="698" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="703"
+      >
+</a
+      ><a name="704" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="705"
+      > </a
+      ><a name="706" href="TemporalLogic.html#706" class="Bound"
+      >&#966;</a
+      ><a name="707"
+      > </a
+      ><a name="708" class="Symbol"
+      >=</a
+      ><a name="709"
+      > </a
+      ><a name="710" href="TemporalLogic.html#706" class="Bound"
+      >&#966;</a
+      ><a name="711"
+      > </a
+      ><a name="712" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="713"
+      > </a
+      ><a name="714" href="TemporalLogic.html#640" class="Function"
+      >&#8869;</a
+      ><a name="715"
+      >
+
+</a
+      ><a name="717" class="Comment"
+      >-----------------------------------------</a
+      ><a name="758"
+      >
+
+</a
+      ><a name="760" class="Comment"
+      >-- Global</a
+      ><a name="769"
+      >
+
+</a
+      ><a name="771" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="772"
+      > </a
+      ><a name="773" class="Symbol"
+      >:</a
+      ><a name="774"
+      > </a
+      ><a name="775" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="780"
+      > </a
+      ><a name="781" class="Symbol"
+      >&#8594;</a
+      ><a name="782"
+      > </a
+      ><a name="783" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="788"
+      >
+</a
+      ><a name="789" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="790"
+      > </a
+      ><a name="791" href="TemporalLogic.html#791" class="Bound"
+      >&#966;</a
+      ><a name="792"
+      > </a
+      ><a name="793" href="TemporalLogic.html#793" class="Bound"
+      >t</a
+      ><a name="794"
+      > </a
+      ><a name="795" class="Symbol"
+      >=</a
+      ><a name="796"
+      > </a
+      ><a name="797" class="Symbol"
+      >(</a
+      ><a name="798" href="TemporalLogic.html#798" class="Bound"
+      >t'</a
+      ><a name="800"
+      > </a
+      ><a name="801" class="Symbol"
+      >:</a
+      ><a name="802"
+      > </a
+      ><a name="803" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="807" class="Symbol"
+      >)</a
+      ><a name="808"
+      > </a
+      ><a name="809" class="Symbol"
+      >&#8594;</a
+      ><a name="810"
+      > </a
+      ><a name="811" href="TemporalLogic.html#798" class="Bound"
+      >t'</a
+      ><a name="813"
+      > </a
+      ><a name="814" href="StrictPreOrder.html#330" class="Function Operator"
+      >&gt;</a
+      ><a name="815"
+      > </a
+      ><a name="816" href="TemporalLogic.html#793" class="Bound"
+      >t</a
+      ><a name="817"
+      > </a
+      ><a name="818" class="Symbol"
+      >&#8594;</a
+      ><a name="819"
+      > </a
+      ><a name="820" href="TemporalLogic.html#791" class="Bound"
+      >&#966;</a
+      ><a name="821"
+      > </a
+      ><a name="822" href="TemporalLogic.html#798" class="Bound"
+      >t'</a
+      ><a name="824"
+      >
+
+</a
+      ><a name="826" class="Comment"
+      >-- History</a
+      ><a name="836"
+      >
+
+</a
+      ><a name="838" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="839"
+      > </a
+      ><a name="840" class="Symbol"
+      >:</a
+      ><a name="841"
+      > </a
+      ><a name="842" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="847"
+      > </a
+      ><a name="848" class="Symbol"
+      >&#8594;</a
+      ><a name="849"
+      > </a
+      ><a name="850" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="855"
+      >
+</a
+      ><a name="856" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="857"
+      > </a
+      ><a name="858" href="TemporalLogic.html#858" class="Bound"
+      >&#966;</a
+      ><a name="859"
+      > </a
+      ><a name="860" href="TemporalLogic.html#860" class="Bound"
+      >t</a
+      ><a name="861"
+      > </a
+      ><a name="862" class="Symbol"
+      >=</a
+      ><a name="863"
+      > </a
+      ><a name="864" class="Symbol"
+      >(</a
+      ><a name="865" href="TemporalLogic.html#865" class="Bound"
+      >t'</a
+      ><a name="867"
+      > </a
+      ><a name="868" class="Symbol"
+      >:</a
+      ><a name="869"
+      > </a
+      ><a name="870" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="874" class="Symbol"
+      >)</a
+      ><a name="875"
+      > </a
+      ><a name="876" class="Symbol"
+      >&#8594;</a
+      ><a name="877"
+      > </a
+      ><a name="878" href="TemporalLogic.html#865" class="Bound"
+      >t'</a
+      ><a name="880"
+      > </a
+      ><a name="881" href="StrictPreOrder.html#306" class="Function Operator"
+      >&lt;</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="TemporalLogic.html#860" class="Bound"
+      >t</a
+      ><a name="884"
+      > </a
+      ><a name="885" class="Symbol"
+      >&#8594;</a
+      ><a name="886"
+      > </a
+      ><a name="887" href="TemporalLogic.html#858" class="Bound"
+      >&#966;</a
+      ><a name="888"
+      > </a
+      ><a name="889" href="TemporalLogic.html#865" class="Bound"
+      >t'</a
+      ><a name="891"
+      >
+
+</a
+      ><a name="893" class="Comment"
+      >-- Future</a
+      ><a name="902"
+      >
+
+</a
+      ><a name="904" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="905"
+      > </a
+      ><a name="906" class="Symbol"
+      >:</a
+      ><a name="907"
+      > </a
+      ><a name="908" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="913"
+      > </a
+      ><a name="914" class="Symbol"
+      >&#8594;</a
+      ><a name="915"
+      > </a
+      ><a name="916" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="921"
+      >
+</a
+      ><a name="922" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="TemporalLogic.html#924" class="Bound"
+      >&#966;</a
+      ><a name="925"
+      > </a
+      ><a name="926" href="TemporalLogic.html#926" class="Bound"
+      >t</a
+      ><a name="927"
+      > </a
+      ><a name="928" class="Symbol"
+      >=</a
+      ><a name="929"
+      > </a
+      ><a name="930" href="NeilPrelude.html#979" class="Datatype"
+      >&#931;</a
+      ><a name="931"
+      > </a
+      ><a name="932" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="936"
+      > </a
+      ><a name="937" class="Symbol"
+      >(&#955;</a
+      ><a name="939"
+      > </a
+      ><a name="940" href="TemporalLogic.html#940" class="Bound"
+      >t'</a
+      ><a name="942"
+      > </a
+      ><a name="943" class="Symbol"
+      >&#8594;</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="TemporalLogic.html#940" class="Bound"
+      >t'</a
+      ><a name="947"
+      > </a
+      ><a name="948" href="StrictPreOrder.html#330" class="Function Operator"
+      >&gt;</a
+      ><a name="949"
+      > </a
+      ><a name="950" href="TemporalLogic.html#926" class="Bound"
+      >t</a
+      ><a name="951"
+      > </a
+      ><a name="952" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="TemporalLogic.html#924" class="Bound"
+      >&#966;</a
+      ><a name="955"
+      > </a
+      ><a name="956" href="TemporalLogic.html#940" class="Bound"
+      >t'</a
+      ><a name="958" class="Symbol"
+      >)</a
+      ><a name="959"
+      >
+
+</a
+      ><a name="961" class="Comment"
+      >-- Past</a
+      ><a name="968"
+      >
+
+</a
+      ><a name="970" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="971"
+      > </a
+      ><a name="972" class="Symbol"
+      >:</a
+      ><a name="973"
+      > </a
+      ><a name="974" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="979"
+      > </a
+      ><a name="980" class="Symbol"
+      >&#8594;</a
+      ><a name="981"
+      > </a
+      ><a name="982" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="987"
+      >
+</a
+      ><a name="988" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="989"
+      > </a
+      ><a name="990" href="TemporalLogic.html#990" class="Bound"
+      >&#966;</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="TemporalLogic.html#992" class="Bound"
+      >t</a
+      ><a name="993"
+      > </a
+      ><a name="994" class="Symbol"
+      >=</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="NeilPrelude.html#979" class="Datatype"
+      >&#931;</a
+      ><a name="997"
+      > </a
+      ><a name="998" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" class="Symbol"
+      >(&#955;</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" href="TemporalLogic.html#1006" class="Bound"
+      >t'</a
+      ><a name="1008"
+      > </a
+      ><a name="1009" class="Symbol"
+      >&#8594;</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" href="TemporalLogic.html#1006" class="Bound"
+      >t'</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" href="StrictPreOrder.html#306" class="Function Operator"
+      >&lt;</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" href="TemporalLogic.html#992" class="Bound"
+      >t</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" href="TemporalLogic.html#990" class="Bound"
+      >&#966;</a
+      ><a name="1021"
+      > </a
+      ><a name="1022" href="TemporalLogic.html#1006" class="Bound"
+      >t'</a
+      ><a name="1024" class="Symbol"
+      >)</a
+      ><a name="1025"
+      >
+
+</a
+      ><a name="1027" class="Comment"
+      >--------------------------------------------------</a
+      ><a name="1077"
+      >
+
+</a
+      ><a name="1079" class="Comment"
+      >-- Between, After and Before are utility Type Synonyms</a
+      ><a name="1133"
+      >
+
+</a
+      ><a name="1135" href="TemporalLogic.html#1135" class="Function"
+      >Between</a
+      ><a name="1142"
+      > </a
+      ><a name="1143" class="Symbol"
+      >:</a
+      ><a name="1144"
+      > </a
+      ><a name="1145" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1149"
+      > </a
+      ><a name="1150" class="Symbol"
+      >&#8594;</a
+      ><a name="1151"
+      > </a
+      ><a name="1152" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" class="Symbol"
+      >&#8594;</a
+      ><a name="1158"
+      > </a
+      ><a name="1159" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1164"
+      > </a
+      ><a name="1165" class="Symbol"
+      >&#8594;</a
+      ><a name="1166"
+      > </a
+      ><a name="1167" class="PrimitiveType"
+      >Set</a
+      ><a name="1170"
+      >
+</a
+      ><a name="1171" href="TemporalLogic.html#1135" class="Function"
+      >Between</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" href="TemporalLogic.html#1179" class="Bound"
+      >t&#8320;</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" href="TemporalLogic.html#1182" class="Bound"
+      >t&#8321;</a
+      ><a name="1184"
+      > </a
+      ><a name="1185" href="TemporalLogic.html#1185" class="Bound"
+      >&#966;</a
+      ><a name="1186"
+      > </a
+      ><a name="1187" class="Symbol"
+      >=</a
+      ><a name="1188"
+      > </a
+      ><a name="1189" class="Symbol"
+      >(</a
+      ><a name="1190" href="TemporalLogic.html#1190" class="Bound"
+      >t</a
+      ><a name="1191"
+      > </a
+      ><a name="1192" class="Symbol"
+      >:</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1198" class="Symbol"
+      >)</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" class="Symbol"
+      >&#8594;</a
+      ><a name="1201"
+      > </a
+      ><a name="1202" href="TemporalLogic.html#1190" class="Bound"
+      >t</a
+      ><a name="1203"
+      > </a
+      ><a name="1204" href="StrictPreOrder.html#330" class="Function Operator"
+      >&gt;</a
+      ><a name="1205"
+      > </a
+      ><a name="1206" href="TemporalLogic.html#1179" class="Bound"
+      >t&#8320;</a
+      ><a name="1208"
+      > </a
+      ><a name="1209" class="Symbol"
+      >&#8594;</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" href="TemporalLogic.html#1190" class="Bound"
+      >t</a
+      ><a name="1212"
+      > </a
+      ><a name="1213" href="StrictPreOrder.html#306" class="Function Operator"
+      >&lt;</a
+      ><a name="1214"
+      > </a
+      ><a name="1215" href="TemporalLogic.html#1182" class="Bound"
+      >t&#8321;</a
+      ><a name="1217"
+      > </a
+      ><a name="1218" class="Symbol"
+      >&#8594;</a
+      ><a name="1219"
+      > </a
+      ><a name="1220" href="TemporalLogic.html#1185" class="Bound"
+      >&#966;</a
+      ><a name="1221"
+      > </a
+      ><a name="1222" href="TemporalLogic.html#1190" class="Bound"
+      >t</a
+      ><a name="1223"
+      >
+
+</a
+      ><a name="1225" href="TemporalLogic.html#1225" class="Function"
+      >Between*</a
+      ><a name="1233"
+      > </a
+      ><a name="1234" class="Symbol"
+      >:</a
+      ><a name="1235"
+      > </a
+      ><a name="1236" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" class="Symbol"
+      >&#8594;</a
+      ><a name="1242"
+      > </a
+      ><a name="1243" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1247"
+      > </a
+      ><a name="1248" class="Symbol"
+      >&#8594;</a
+      ><a name="1249"
+      > </a
+      ><a name="1250" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1255"
+      > </a
+      ><a name="1256" class="Symbol"
+      >&#8594;</a
+      ><a name="1257"
+      > </a
+      ><a name="1258" class="PrimitiveType"
+      >Set</a
+      ><a name="1261"
+      >
+</a
+      ><a name="1262" href="TemporalLogic.html#1225" class="Function"
+      >Between*</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" href="TemporalLogic.html#1271" class="Bound"
+      >t&#8320;</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" href="TemporalLogic.html#1274" class="Bound"
+      >t&#8321;</a
+      ><a name="1276"
+      > </a
+      ><a name="1277" href="TemporalLogic.html#1277" class="Bound"
+      >&#966;</a
+      ><a name="1278"
+      > </a
+      ><a name="1279" class="Symbol"
+      >=</a
+      ><a name="1280"
+      > </a
+      ><a name="1281" class="Symbol"
+      >(</a
+      ><a name="1282" href="TemporalLogic.html#1282" class="Bound"
+      >t</a
+      ><a name="1283"
+      > </a
+      ><a name="1284" class="Symbol"
+      >:</a
+      ><a name="1285"
+      > </a
+      ><a name="1286" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1290" class="Symbol"
+      >)</a
+      ><a name="1291"
+      > </a
+      ><a name="1292" class="Symbol"
+      >&#8594;</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" href="TemporalLogic.html#1282" class="Bound"
+      >t</a
+      ><a name="1295"
+      > </a
+      ><a name="1296" href="StrictPreOrder.html#782" class="Function Operator"
+      >&#8805;</a
+      ><a name="1297"
+      > </a
+      ><a name="1298" href="TemporalLogic.html#1271" class="Bound"
+      >t&#8320;</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" class="Symbol"
+      >&#8594;</a
+      ><a name="1302"
+      > </a
+      ><a name="1303" href="TemporalLogic.html#1282" class="Bound"
+      >t</a
+      ><a name="1304"
+      > </a
+      ><a name="1305" href="StrictPreOrder.html#745" class="Function Operator"
+      >&#8804;</a
+      ><a name="1306"
+      > </a
+      ><a name="1307" href="TemporalLogic.html#1274" class="Bound"
+      >t&#8321;</a
+      ><a name="1309"
+      > </a
+      ><a name="1310" class="Symbol"
+      >&#8594;</a
+      ><a name="1311"
+      > </a
+      ><a name="1312" href="TemporalLogic.html#1277" class="Bound"
+      >&#966;</a
+      ><a name="1313"
+      > </a
+      ><a name="1314" href="TemporalLogic.html#1282" class="Bound"
+      >t</a
+      ><a name="1315"
+      >
+
+</a
+      ><a name="1317" href="TemporalLogic.html#1317" class="Function"
+      >After</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" class="Symbol"
+      >:</a
+      ><a name="1324"
+      > </a
+      ><a name="1325" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1329"
+      > </a
+      ><a name="1330" class="Symbol"
+      >&#8594;</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" class="Symbol"
+      >&#8594;</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1345"
+      >
+</a
+      ><a name="1346" href="TemporalLogic.html#1317" class="Function"
+      >After</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" href="TemporalLogic.html#1352" class="Bound"
+      >t&#8320;</a
+      ><a name="1354"
+      > </a
+      ><a name="1355" href="TemporalLogic.html#1355" class="Bound"
+      >&#966;</a
+      ><a name="1356"
+      > </a
+      ><a name="1357" href="TemporalLogic.html#1357" class="Bound"
+      >t&#8321;</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" class="Symbol"
+      >=</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" href="TemporalLogic.html#1135" class="Function"
+      >Between</a
+      ><a name="1369"
+      > </a
+      ><a name="1370" href="TemporalLogic.html#1352" class="Bound"
+      >t&#8320;</a
+      ><a name="1372"
+      > </a
+      ><a name="1373" href="TemporalLogic.html#1357" class="Bound"
+      >t&#8321;</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" href="TemporalLogic.html#1355" class="Bound"
+      >&#966;</a
+      ><a name="1377"
+      >
+
+</a
+      ><a name="1379" href="TemporalLogic.html#1379" class="Function"
+      >After*</a
+      ><a name="1385"
+      > </a
+      ><a name="1386" class="Symbol"
+      >:</a
+      ><a name="1387"
+      > </a
+      ><a name="1388" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1392"
+      > </a
+      ><a name="1393" class="Symbol"
+      >&#8594;</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1400"
+      > </a
+      ><a name="1401" class="Symbol"
+      >&#8594;</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1408"
+      >
+</a
+      ><a name="1409" href="TemporalLogic.html#1379" class="Function"
+      >After*</a
+      ><a name="1415"
+      > </a
+      ><a name="1416" href="TemporalLogic.html#1416" class="Bound"
+      >t&#8320;</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" href="TemporalLogic.html#1419" class="Bound"
+      >&#966;</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" href="TemporalLogic.html#1421" class="Bound"
+      >t&#8321;</a
+      ><a name="1423"
+      > </a
+      ><a name="1424" class="Symbol"
+      >=</a
+      ><a name="1425"
+      > </a
+      ><a name="1426" href="TemporalLogic.html#1225" class="Function"
+      >Between*</a
+      ><a name="1434"
+      > </a
+      ><a name="1435" href="TemporalLogic.html#1416" class="Bound"
+      >t&#8320;</a
+      ><a name="1437"
+      > </a
+      ><a name="1438" href="TemporalLogic.html#1421" class="Bound"
+      >t&#8321;</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" href="TemporalLogic.html#1419" class="Bound"
+      >&#966;</a
+      ><a name="1442"
+      >
+
+</a
+      ><a name="1444" href="TemporalLogic.html#1444" class="Function"
+      >Before</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" class="Symbol"
+      >:</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" class="Symbol"
+      >&#8594;</a
+      ><a name="1459"
+      > </a
+      ><a name="1460" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" class="Symbol"
+      >&#8594;</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1473"
+      >
+</a
+      ><a name="1474" href="TemporalLogic.html#1444" class="Function"
+      >Before</a
+      ><a name="1480"
+      > </a
+      ><a name="1481" href="TemporalLogic.html#1481" class="Bound"
+      >t&#8321;</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="TemporalLogic.html#1484" class="Bound"
+      >&#966;</a
+      ><a name="1485"
+      > </a
+      ><a name="1486" href="TemporalLogic.html#1486" class="Bound"
+      >t&#8320;</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" class="Symbol"
+      >=</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" href="TemporalLogic.html#1135" class="Function"
+      >Between</a
+      ><a name="1498"
+      > </a
+      ><a name="1499" href="TemporalLogic.html#1486" class="Bound"
+      >t&#8320;</a
+      ><a name="1501"
+      > </a
+      ><a name="1502" href="TemporalLogic.html#1481" class="Bound"
+      >t&#8321;</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" href="TemporalLogic.html#1484" class="Bound"
+      >&#966;</a
+      ><a name="1506"
+      >
+
+</a
+      ><a name="1508" href="TemporalLogic.html#1508" class="Function"
+      >Before*</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" class="Symbol"
+      >:</a
+      ><a name="1517"
+      > </a
+      ><a name="1518" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="1522"
+      > </a
+      ><a name="1523" class="Symbol"
+      >&#8594;</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1530"
+      > </a
+      ><a name="1531" class="Symbol"
+      >&#8594;</a
+      ><a name="1532"
+      > </a
+      ><a name="1533" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1538"
+      >
+</a
+      ><a name="1539" href="TemporalLogic.html#1508" class="Function"
+      >Before*</a
+      ><a name="1546"
+      > </a
+      ><a name="1547" href="TemporalLogic.html#1547" class="Bound"
+      >t&#8321;</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" href="TemporalLogic.html#1550" class="Bound"
+      >&#966;</a
+      ><a name="1551"
+      > </a
+      ><a name="1552" href="TemporalLogic.html#1552" class="Bound"
+      >t&#8320;</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" class="Symbol"
+      >=</a
+      ><a name="1556"
+      > </a
+      ><a name="1557" href="TemporalLogic.html#1225" class="Function"
+      >Between*</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" href="TemporalLogic.html#1552" class="Bound"
+      >t&#8320;</a
+      ><a name="1568"
+      > </a
+      ><a name="1569" href="TemporalLogic.html#1547" class="Bound"
+      >t&#8321;</a
+      ><a name="1571"
+      > </a
+      ><a name="1572" href="TemporalLogic.html#1550" class="Bound"
+      >&#966;</a
+      ><a name="1573"
+      >
+
+
+</a
+      ><a name="1576" class="Comment"
+      >-- Until</a
+      ><a name="1584"
+      >
+
+</a
+      ><a name="1586" href="TemporalLogic.html#1586" class="Function Operator"
+      >_U_</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" class="Symbol"
+      >:</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1597"
+      > </a
+      ><a name="1598" class="Symbol"
+      >&#8594;</a
+      ><a name="1599"
+      > </a
+      ><a name="1600" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1605"
+      > </a
+      ><a name="1606" class="Symbol"
+      >&#8594;</a
+      ><a name="1607"
+      > </a
+      ><a name="1608" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1613"
+      >
+</a
+      ><a name="1614" class="Symbol"
+      >(</a
+      ><a name="1615" href="TemporalLogic.html#1615" class="Bound"
+      >&#966;</a
+      ><a name="1616"
+      > </a
+      ><a name="1617" href="TemporalLogic.html#1586" class="Function Operator"
+      >U</a
+      ><a name="1618"
+      > </a
+      ><a name="1619" href="TemporalLogic.html#1619" class="Bound"
+      >&#968;</a
+      ><a name="1620" class="Symbol"
+      >)</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" href="TemporalLogic.html#1622" class="Bound"
+      >t</a
+      ><a name="1623"
+      > </a
+      ><a name="1624" class="Symbol"
+      >=</a
+      ><a name="1625"
+      > </a
+      ><a name="1626" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="1627"
+      > </a
+      ><a name="1628" class="Symbol"
+      >(</a
+      ><a name="1629" href="TemporalLogic.html#1619" class="Bound"
+      >&#968;</a
+      ><a name="1630"
+      > </a
+      ><a name="1631" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="1632"
+      > </a
+      ><a name="1633" href="TemporalLogic.html#1317" class="Function"
+      >After</a
+      ><a name="1638"
+      > </a
+      ><a name="1639" href="TemporalLogic.html#1622" class="Bound"
+      >t</a
+      ><a name="1640"
+      > </a
+      ><a name="1641" href="TemporalLogic.html#1615" class="Bound"
+      >&#966;</a
+      ><a name="1642" class="Symbol"
+      >)</a
+      ><a name="1643"
+      > </a
+      ><a name="1644" href="TemporalLogic.html#1622" class="Bound"
+      >t</a
+      ><a name="1645"
+      >
+
+
+</a
+      ><a name="1648" class="Comment"
+      >-- Since</a
+      ><a name="1656"
+      >
+
+</a
+      ><a name="1658" class="Keyword"
+      >private</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="TemporalLogic.html#1666" class="Function Operator"
+      >_S_</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" class="Symbol"
+      >:</a
+      ><a name="1671"
+      > </a
+      ><a name="1672" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1677"
+      > </a
+      ><a name="1678" class="Symbol"
+      >&#8594;</a
+      ><a name="1679"
+      > </a
+      ><a name="1680" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1685"
+      > </a
+      ><a name="1686" class="Symbol"
+      >&#8594;</a
+      ><a name="1687"
+      > </a
+      ><a name="1688" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1693"
+      >
+        </a
+      ><a name="1702" class="Symbol"
+      >(</a
+      ><a name="1703" href="TemporalLogic.html#1703" class="Bound"
+      >&#966;</a
+      ><a name="1704"
+      > </a
+      ><a name="1705" href="TemporalLogic.html#1666" class="Function Operator"
+      >S</a
+      ><a name="1706"
+      > </a
+      ><a name="1707" href="TemporalLogic.html#1707" class="Bound"
+      >&#968;</a
+      ><a name="1708" class="Symbol"
+      >)</a
+      ><a name="1709"
+      > </a
+      ><a name="1710" href="TemporalLogic.html#1710" class="Bound"
+      >t</a
+      ><a name="1711"
+      > </a
+      ><a name="1712" class="Symbol"
+      >=</a
+      ><a name="1713"
+      > </a
+      ><a name="1714" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" class="Symbol"
+      >(</a
+      ><a name="1717" href="TemporalLogic.html#1707" class="Bound"
+      >&#968;</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="1720"
+      > </a
+      ><a name="1721" href="TemporalLogic.html#1444" class="Function"
+      >Before</a
+      ><a name="1727"
+      > </a
+      ><a name="1728" href="TemporalLogic.html#1710" class="Bound"
+      >t</a
+      ><a name="1729"
+      > </a
+      ><a name="1730" href="TemporalLogic.html#1703" class="Bound"
+      >&#966;</a
+      ><a name="1731" class="Symbol"
+      >)</a
+      ><a name="1732"
+      > </a
+      ><a name="1733" href="TemporalLogic.html#1710" class="Bound"
+      >t</a
+      ><a name="1734"
+      >
+
+</a
+      ><a name="1736" class="Comment"
+      >-- I introduce a synonym as S gets used elseware a lot</a
+      ><a name="1790"
+      >
+
+</a
+      ><a name="1792" href="TemporalLogic.html#1792" class="Function Operator"
+      >_Since_</a
+      ><a name="1799"
+      > </a
+      ><a name="1800" class="Symbol"
+      >=</a
+      ><a name="1801"
+      > </a
+      ><a name="1802" href="TemporalLogic.html#1666" class="Function Operator"
+      >_S_</a
+      ><a name="1805"
+      >
+
+</a
+      ><a name="1807" href="TemporalLogic.html#1807" class="Function Operator"
+      >_S*_</a
+      ><a name="1811"
+      > </a
+      ><a name="1812" class="Symbol"
+      >:</a
+      ><a name="1813"
+      > </a
+      ><a name="1814" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" class="Symbol"
+      >&#8594;</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1827"
+      > </a
+      ><a name="1828" class="Symbol"
+      >&#8594;</a
+      ><a name="1829"
+      > </a
+      ><a name="1830" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1835"
+      >
+</a
+      ><a name="1836" class="Symbol"
+      >(</a
+      ><a name="1837" href="TemporalLogic.html#1837" class="Bound"
+      >&#966;</a
+      ><a name="1838"
+      > </a
+      ><a name="1839" href="TemporalLogic.html#1807" class="Function Operator"
+      >S*</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" href="TemporalLogic.html#1842" class="Bound"
+      >&#968;</a
+      ><a name="1843" class="Symbol"
+      >)</a
+      ><a name="1844"
+      > </a
+      ><a name="1845" href="TemporalLogic.html#1845" class="Bound"
+      >t</a
+      ><a name="1846"
+      > </a
+      ><a name="1847" class="Symbol"
+      >=</a
+      ><a name="1848"
+      > </a
+      ><a name="1849" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="1850"
+      > </a
+      ><a name="1851" class="Symbol"
+      >(</a
+      ><a name="1852" href="TemporalLogic.html#1842" class="Bound"
+      >&#968;</a
+      ><a name="1853"
+      > </a
+      ><a name="1854" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="1855"
+      > </a
+      ><a name="1856" href="TemporalLogic.html#1508" class="Function"
+      >Before*</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" href="TemporalLogic.html#1845" class="Bound"
+      >t</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" href="TemporalLogic.html#1837" class="Bound"
+      >&#966;</a
+      ><a name="1867" class="Symbol"
+      >)</a
+      ><a name="1868"
+      > </a
+      ><a name="1869" href="TemporalLogic.html#1845" class="Bound"
+      >t</a
+      ><a name="1870"
+      >
+
+</a
+      ><a name="1872" class="Comment"
+      >--------------------------------------------------</a
+      ><a name="1922"
+      >
+
+</a
+      ><a name="1924" class="Comment"
+      >-- Reflexive variants (including current time)</a
+      ><a name="1970"
+      >
+
+</a
+      ><a name="1972" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="1974"
+      > </a
+      ><a name="1975" class="Symbol"
+      >:</a
+      ><a name="1976"
+      > </a
+      ><a name="1977" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" class="Symbol"
+      >&#8594;</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="1990"
+      >
+</a
+      ><a name="1991" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" href="TemporalLogic.html#1994" class="Bound"
+      >&#966;</a
+      ><a name="1995"
+      > </a
+      ><a name="1996" class="Symbol"
+      >=</a
+      ><a name="1997"
+      > </a
+      ><a name="1998" href="TemporalLogic.html#1994" class="Bound"
+      >&#966;</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="2001"
+      > </a
+      ><a name="2002" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="2003"
+      > </a
+      ><a name="2004" href="TemporalLogic.html#1994" class="Bound"
+      >&#966;</a
+      ><a name="2005"
+      >
+
+</a
+      ><a name="2007" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2009"
+      > </a
+      ><a name="2010" class="Symbol"
+      >:</a
+      ><a name="2011"
+      > </a
+      ><a name="2012" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2017"
+      > </a
+      ><a name="2018" class="Symbol"
+      >&#8594;</a
+      ><a name="2019"
+      > </a
+      ><a name="2020" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2025"
+      >
+</a
+      ><a name="2026" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2028"
+      > </a
+      ><a name="2029" href="TemporalLogic.html#2029" class="Bound"
+      >&#966;</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" class="Symbol"
+      >=</a
+      ><a name="2032"
+      > </a
+      ><a name="2033" href="TemporalLogic.html#2029" class="Bound"
+      >&#966;</a
+      ><a name="2034"
+      > </a
+      ><a name="2035" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="2038"
+      > </a
+      ><a name="2039" href="TemporalLogic.html#2029" class="Bound"
+      >&#966;</a
+      ><a name="2040"
+      >
+
+</a
+      ><a name="2042" href="TemporalLogic.html#2042" class="Function"
+      >F&#691;</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" class="Symbol"
+      >:</a
+      ><a name="2046"
+      > </a
+      ><a name="2047" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2052"
+      > </a
+      ><a name="2053" class="Symbol"
+      >&#8594;</a
+      ><a name="2054"
+      > </a
+      ><a name="2055" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2060"
+      >
+</a
+      ><a name="2061" href="TemporalLogic.html#2042" class="Function"
+      >F&#691;</a
+      ><a name="2063"
+      > </a
+      ><a name="2064" href="TemporalLogic.html#2064" class="Bound"
+      >&#966;</a
+      ><a name="2065"
+      > </a
+      ><a name="2066" class="Symbol"
+      >=</a
+      ><a name="2067"
+      > </a
+      ><a name="2068" href="TemporalLogic.html#2064" class="Bound"
+      >&#966;</a
+      ><a name="2069"
+      > </a
+      ><a name="2070" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2071"
+      > </a
+      ><a name="2072" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="2073"
+      > </a
+      ><a name="2074" href="TemporalLogic.html#2064" class="Bound"
+      >&#966;</a
+      ><a name="2075"
+      >
+
+</a
+      ><a name="2077" href="TemporalLogic.html#2077" class="Function"
+      >P&#691;</a
+      ><a name="2079"
+      > </a
+      ><a name="2080" class="Symbol"
+      >:</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2087"
+      > </a
+      ><a name="2088" class="Symbol"
+      >&#8594;</a
+      ><a name="2089"
+      > </a
+      ><a name="2090" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2095"
+      >
+</a
+      ><a name="2096" href="TemporalLogic.html#2077" class="Function"
+      >P&#691;</a
+      ><a name="2098"
+      > </a
+      ><a name="2099" href="TemporalLogic.html#2099" class="Bound"
+      >&#966;</a
+      ><a name="2100"
+      > </a
+      ><a name="2101" class="Symbol"
+      >=</a
+      ><a name="2102"
+      > </a
+      ><a name="2103" href="TemporalLogic.html#2099" class="Bound"
+      >&#966;</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2106"
+      > </a
+      ><a name="2107" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="2108"
+      > </a
+      ><a name="2109" href="TemporalLogic.html#2099" class="Bound"
+      >&#966;</a
+      ><a name="2110"
+      >
+
+</a
+      ><a name="2112" href="TemporalLogic.html#2112" class="Function Operator"
+      >_U&#691;_</a
+      ><a name="2116"
+      > </a
+      ><a name="2117" class="Symbol"
+      >:</a
+      ><a name="2118"
+      > </a
+      ><a name="2119" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" class="Symbol"
+      >&#8594;</a
+      ><a name="2126"
+      > </a
+      ><a name="2127" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2132"
+      > </a
+      ><a name="2133" class="Symbol"
+      >&#8594;</a
+      ><a name="2134"
+      > </a
+      ><a name="2135" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2140"
+      >
+</a
+      ><a name="2141" href="TemporalLogic.html#2141" class="Bound"
+      >&#966;</a
+      ><a name="2142"
+      > </a
+      ><a name="2143" href="TemporalLogic.html#2112" class="Function Operator"
+      >U&#691;</a
+      ><a name="2145"
+      > </a
+      ><a name="2146" href="TemporalLogic.html#2146" class="Bound"
+      >&#968;</a
+      ><a name="2147"
+      > </a
+      ><a name="2148" class="Symbol"
+      >=</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" href="TemporalLogic.html#2146" class="Bound"
+      >&#968;</a
+      ><a name="2151"
+      > </a
+      ><a name="2152" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2153"
+      > </a
+      ><a name="2154" class="Symbol"
+      >(</a
+      ><a name="2155" href="TemporalLogic.html#2141" class="Bound"
+      >&#966;</a
+      ><a name="2156"
+      > </a
+      ><a name="2157" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="2158"
+      > </a
+      ><a name="2159" class="Symbol"
+      >(</a
+      ><a name="2160" href="TemporalLogic.html#2141" class="Bound"
+      >&#966;</a
+      ><a name="2161"
+      > </a
+      ><a name="2162" href="TemporalLogic.html#1586" class="Function Operator"
+      >U</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" href="TemporalLogic.html#2146" class="Bound"
+      >&#968;</a
+      ><a name="2165" class="Symbol"
+      >))</a
+      ><a name="2167"
+      >
+
+</a
+      ><a name="2169" href="TemporalLogic.html#2169" class="Function Operator"
+      >_S&#691;_</a
+      ><a name="2173"
+      > </a
+      ><a name="2174" class="Symbol"
+      >:</a
+      ><a name="2175"
+      > </a
+      ><a name="2176" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2181"
+      > </a
+      ><a name="2182" class="Symbol"
+      >&#8594;</a
+      ><a name="2183"
+      > </a
+      ><a name="2184" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2189"
+      > </a
+      ><a name="2190" class="Symbol"
+      >&#8594;</a
+      ><a name="2191"
+      > </a
+      ><a name="2192" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2197"
+      >
+</a
+      ><a name="2198" href="TemporalLogic.html#2198" class="Bound"
+      >&#966;</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" href="TemporalLogic.html#2169" class="Function Operator"
+      >S&#691;</a
+      ><a name="2202"
+      > </a
+      ><a name="2203" href="TemporalLogic.html#2203" class="Bound"
+      >&#968;</a
+      ><a name="2204"
+      > </a
+      ><a name="2205" class="Symbol"
+      >=</a
+      ><a name="2206"
+      > </a
+      ><a name="2207" href="TemporalLogic.html#2203" class="Bound"
+      >&#968;</a
+      ><a name="2208"
+      > </a
+      ><a name="2209" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" class="Symbol"
+      >(</a
+      ><a name="2212" href="TemporalLogic.html#2198" class="Bound"
+      >&#966;</a
+      ><a name="2213"
+      > </a
+      ><a name="2214" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="2215"
+      > </a
+      ><a name="2216" class="Symbol"
+      >(</a
+      ><a name="2217" href="TemporalLogic.html#2198" class="Bound"
+      >&#966;</a
+      ><a name="2218"
+      > </a
+      ><a name="2219" href="TemporalLogic.html#1666" class="Function Operator"
+      >S</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" href="TemporalLogic.html#2203" class="Bound"
+      >&#968;</a
+      ><a name="2222" class="Symbol"
+      >))</a
+      ><a name="2224"
+      >
+
+</a
+      ><a name="2226" class="Comment"
+      >-- Note we don't use the standard definition of &quot;Weak-Until&quot; for ease of proving properties involving it</a
+      ><a name="2330"
+      >
+
+</a
+      ><a name="2332" class="Comment"
+      >-- _W_ : TPred &#8594; TPred &#8594; TPred</a
+      ><a name="2362"
+      >
+</a
+      ><a name="2363" class="Comment"
+      >-- &#966; W &#968; = (&#966; U &#968;) &#8744; G &#966;</a
+      ><a name="2387"
+      >
+
+</a
+      ><a name="2389" class="Comment"
+      >-- _W&#691;'_ : TPred &#8594; TPred &#8594; TPred</a
+      ><a name="2421"
+      >
+</a
+      ><a name="2422" class="Comment"
+      >-- &#966; W&#691;' &#968; = (&#966; U&#691; &#968;) &#8744; G&#691; &#966;</a
+      ><a name="2450"
+      >
+
+</a
+      ><a name="2452" class="Comment"
+      >-- waits-for (Weak Until)</a
+      ><a name="2477"
+      >
+
+</a
+      ><a name="2479" href="TemporalLogic.html#2479" class="Function Operator"
+      >_W_</a
+      ><a name="2482"
+      > </a
+      ><a name="2483" class="Symbol"
+      >:</a
+      ><a name="2484"
+      > </a
+      ><a name="2485" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2490"
+      > </a
+      ><a name="2491" class="Symbol"
+      >&#8594;</a
+      ><a name="2492"
+      > </a
+      ><a name="2493" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2498"
+      > </a
+      ><a name="2499" class="Symbol"
+      >&#8594;</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2506"
+      >
+</a
+      ><a name="2507" class="Symbol"
+      >(</a
+      ><a name="2508" href="TemporalLogic.html#2508" class="Bound"
+      >&#966;</a
+      ><a name="2509"
+      > </a
+      ><a name="2510" href="TemporalLogic.html#2479" class="Function Operator"
+      >W</a
+      ><a name="2511"
+      > </a
+      ><a name="2512" href="TemporalLogic.html#2512" class="Bound"
+      >&#968;</a
+      ><a name="2513" class="Symbol"
+      >)</a
+      ><a name="2514"
+      > </a
+      ><a name="2515" href="TemporalLogic.html#2515" class="Bound"
+      >t</a
+      ><a name="2516"
+      > </a
+      ><a name="2517" class="Symbol"
+      >=</a
+      ><a name="2518"
+      > </a
+      ><a name="2519" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="2520"
+      > </a
+      ><a name="2521" class="Symbol"
+      >(</a
+      ><a name="2522" href="TemporalLogic.html#1317" class="Function"
+      >After</a
+      ><a name="2527"
+      > </a
+      ><a name="2528" href="TemporalLogic.html#2515" class="Bound"
+      >t</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" class="Symbol"
+      >(</a
+      ><a name="2531" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="2532"
+      > </a
+      ><a name="2533" href="TemporalLogic.html#2512" class="Bound"
+      >&#968;</a
+      ><a name="2534" class="Symbol"
+      >)</a
+      ><a name="2535"
+      > </a
+      ><a name="2536" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2537"
+      > </a
+      ><a name="2538" href="TemporalLogic.html#1317" class="Function"
+      >After</a
+      ><a name="2543"
+      > </a
+      ><a name="2544" href="TemporalLogic.html#2515" class="Bound"
+      >t</a
+      ><a name="2545"
+      > </a
+      ><a name="2546" href="TemporalLogic.html#2508" class="Bound"
+      >&#966;</a
+      ><a name="2547" class="Symbol"
+      >)</a
+      ><a name="2548"
+      > </a
+      ><a name="2549" href="TemporalLogic.html#2515" class="Bound"
+      >t</a
+      ><a name="2550"
+      >
+
+</a
+      ><a name="2552" href="TemporalLogic.html#2552" class="Function Operator"
+      >_W&#691;_</a
+      ><a name="2556"
+      > </a
+      ><a name="2557" class="Symbol"
+      >:</a
+      ><a name="2558"
+      > </a
+      ><a name="2559" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2564"
+      > </a
+      ><a name="2565" class="Symbol"
+      >&#8594;</a
+      ><a name="2566"
+      > </a
+      ><a name="2567" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2572"
+      > </a
+      ><a name="2573" class="Symbol"
+      >&#8594;</a
+      ><a name="2574"
+      > </a
+      ><a name="2575" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2580"
+      >
+</a
+      ><a name="2581" href="TemporalLogic.html#2581" class="Bound"
+      >&#966;</a
+      ><a name="2582"
+      > </a
+      ><a name="2583" href="TemporalLogic.html#2552" class="Function Operator"
+      >W&#691;</a
+      ><a name="2585"
+      > </a
+      ><a name="2586" href="TemporalLogic.html#2586" class="Bound"
+      >&#968;</a
+      ><a name="2587"
+      > </a
+      ><a name="2588" class="Symbol"
+      >=</a
+      ><a name="2589"
+      > </a
+      ><a name="2590" href="TemporalLogic.html#2586" class="Bound"
+      >&#968;</a
+      ><a name="2591"
+      > </a
+      ><a name="2592" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2593"
+      > </a
+      ><a name="2594" class="Symbol"
+      >(</a
+      ><a name="2595" href="TemporalLogic.html#2581" class="Bound"
+      >&#966;</a
+      ><a name="2596"
+      > </a
+      ><a name="2597" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="2598"
+      > </a
+      ><a name="2599" class="Symbol"
+      >(</a
+      ><a name="2600" href="TemporalLogic.html#2581" class="Bound"
+      >&#966;</a
+      ><a name="2601"
+      > </a
+      ><a name="2602" href="TemporalLogic.html#2479" class="Function Operator"
+      >W</a
+      ><a name="2603"
+      > </a
+      ><a name="2604" href="TemporalLogic.html#2586" class="Bound"
+      >&#968;</a
+      ><a name="2605" class="Symbol"
+      >))</a
+      ><a name="2607"
+      >
+
+</a
+      ><a name="2609" class="Comment"
+      >-- back-to (Weak Since)</a
+      ><a name="2632"
+      >
+
+</a
+      ><a name="2634" class="Keyword"
+      >private</a
+      ><a name="2641"
+      > </a
+      ><a name="2642" href="TemporalLogic.html#2642" class="Function Operator"
+      >_B_</a
+      ><a name="2645"
+      > </a
+      ><a name="2646" class="Symbol"
+      >:</a
+      ><a name="2647"
+      > </a
+      ><a name="2648" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" class="Symbol"
+      >&#8594;</a
+      ><a name="2655"
+      > </a
+      ><a name="2656" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" class="Symbol"
+      >&#8594;</a
+      ><a name="2663"
+      > </a
+      ><a name="2664" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2669"
+      >
+        </a
+      ><a name="2678" href="TemporalLogic.html#2678" class="Bound"
+      >&#966;</a
+      ><a name="2679"
+      > </a
+      ><a name="2680" href="TemporalLogic.html#2642" class="Function Operator"
+      >B</a
+      ><a name="2681"
+      > </a
+      ><a name="2682" href="TemporalLogic.html#2682" class="Bound"
+      >&#968;</a
+      ><a name="2683"
+      > </a
+      ><a name="2684" class="Symbol"
+      >=</a
+      ><a name="2685"
+      > </a
+      ><a name="2686" class="Symbol"
+      >(</a
+      ><a name="2687" href="TemporalLogic.html#2678" class="Bound"
+      >&#966;</a
+      ><a name="2688"
+      > </a
+      ><a name="2689" href="TemporalLogic.html#1666" class="Function Operator"
+      >S</a
+      ><a name="2690"
+      > </a
+      ><a name="2691" href="TemporalLogic.html#2682" class="Bound"
+      >&#968;</a
+      ><a name="2692" class="Symbol"
+      >)</a
+      ><a name="2693"
+      > </a
+      ><a name="2694" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2695"
+      > </a
+      ><a name="2696" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="2697"
+      > </a
+      ><a name="2698" href="TemporalLogic.html#2678" class="Bound"
+      >&#966;</a
+      ><a name="2699"
+      >
+
+</a
+      ><a name="2701" href="TemporalLogic.html#2701" class="Function Operator"
+      >_Back-To_</a
+      ><a name="2710"
+      > </a
+      ><a name="2711" class="Symbol"
+      >=</a
+      ><a name="2712"
+      > </a
+      ><a name="2713" href="TemporalLogic.html#2642" class="Function Operator"
+      >_B_</a
+      ><a name="2716"
+      >
+
+</a
+      ><a name="2718" href="TemporalLogic.html#2718" class="Function Operator"
+      >_B&#691;_</a
+      ><a name="2722"
+      > </a
+      ><a name="2723" class="Symbol"
+      >:</a
+      ><a name="2724"
+      > </a
+      ><a name="2725" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" class="Symbol"
+      >&#8594;</a
+      ><a name="2732"
+      > </a
+      ><a name="2733" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" class="Symbol"
+      >&#8594;</a
+      ><a name="2740"
+      > </a
+      ><a name="2741" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2746"
+      >
+</a
+      ><a name="2747" href="TemporalLogic.html#2747" class="Bound"
+      >&#966;</a
+      ><a name="2748"
+      > </a
+      ><a name="2749" href="TemporalLogic.html#2718" class="Function Operator"
+      >B&#691;</a
+      ><a name="2751"
+      > </a
+      ><a name="2752" href="TemporalLogic.html#2752" class="Bound"
+      >&#968;</a
+      ><a name="2753"
+      > </a
+      ><a name="2754" class="Symbol"
+      >=</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" href="TemporalLogic.html#2752" class="Bound"
+      >&#968;</a
+      ><a name="2757"
+      > </a
+      ><a name="2758" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="2759"
+      > </a
+      ><a name="2760" class="Symbol"
+      >(</a
+      ><a name="2761" href="TemporalLogic.html#2747" class="Bound"
+      >&#966;</a
+      ><a name="2762"
+      > </a
+      ><a name="2763" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="2764"
+      > </a
+      ><a name="2765" class="Symbol"
+      >(</a
+      ><a name="2766" href="TemporalLogic.html#2747" class="Bound"
+      >&#966;</a
+      ><a name="2767"
+      > </a
+      ><a name="2768" href="TemporalLogic.html#2642" class="Function Operator"
+      >B</a
+      ><a name="2769"
+      > </a
+      ><a name="2770" href="TemporalLogic.html#2752" class="Bound"
+      >&#968;</a
+      ><a name="2771" class="Symbol"
+      >))</a
+      ><a name="2773"
+      >
+
+
+</a
+      ><a name="2776" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="2833"
+      >
+
+</a
+      ><a name="2835" class="Comment"
+      >-- A utility</a
+      ><a name="2847"
+      >
+
+</a
+      ><a name="2849" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2855"
+      > </a
+      ><a name="2856" class="Symbol"
+      >:</a
+      ><a name="2857"
+      > </a
+      ><a name="2858" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="2863"
+      > </a
+      ><a name="2864" class="Symbol"
+      >&#8594;</a
+      ><a name="2865"
+      > </a
+      ><a name="2866" class="PrimitiveType"
+      >Set</a
+      ><a name="2869"
+      >
+</a
+      ><a name="2870" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2876"
+      > </a
+      ><a name="2877" class="Symbol"
+      >=</a
+      ><a name="2878"
+      > </a
+      ><a name="2879" href="NeilPrelude.html#5711" class="Function"
+      >&#928;</a
+      ><a name="2880"
+      > </a
+      ><a name="2881" href="TemporalLogic.html#104" class="Bound"
+      >Time</a
+      ><a name="2885"
+      >
+
+</a
+      ><a name="2887" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="2944"
+      >
+
+</a
+      ><a name="2946" class="Comment"
+      >-- Some Properties</a
+      ><a name="2964"
+      >
+
+</a
+      ><a name="2966" href="TemporalLogic.html#2966" class="Function"
+      >FirstPoint</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" class="Symbol"
+      >:</a
+      ><a name="2978"
+      > </a
+      ><a name="2979" class="PrimitiveType"
+      >Set</a
+      ><a name="2982"
+      >
+</a
+      ><a name="2983" href="TemporalLogic.html#2966" class="Function"
+      >FirstPoint</a
+      ><a name="2993"
+      > </a
+      ><a name="2994" class="Symbol"
+      >=</a
+      ><a name="2995"
+      > </a
+      ><a name="2996" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3002"
+      > </a
+      ><a name="3003" class="Symbol"
+      >(</a
+      ><a name="3004" href="TemporalLogic.html#2077" class="Function"
+      >P&#691;</a
+      ><a name="3006"
+      > </a
+      ><a name="3007" class="Symbol"
+      >(</a
+      ><a name="3008" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="3009"
+      > </a
+      ><a name="3010" href="TemporalLogic.html#640" class="Function"
+      >&#8869;</a
+      ><a name="3011" class="Symbol"
+      >))</a
+      ><a name="3013"
+      >
+
+</a
+      ><a name="3015" href="TemporalLogic.html#3015" class="Function"
+      >EndPoint</a
+      ><a name="3023"
+      > </a
+      ><a name="3024" class="Symbol"
+      >:</a
+      ><a name="3025"
+      > </a
+      ><a name="3026" class="PrimitiveType"
+      >Set</a
+      ><a name="3029"
+      >
+</a
+      ><a name="3030" href="TemporalLogic.html#3015" class="Function"
+      >EndPoint</a
+      ><a name="3038"
+      > </a
+      ><a name="3039" class="Symbol"
+      >=</a
+      ><a name="3040"
+      > </a
+      ><a name="3041" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3047"
+      > </a
+      ><a name="3048" class="Symbol"
+      >(</a
+      ><a name="3049" href="TemporalLogic.html#2042" class="Function"
+      >F&#691;</a
+      ><a name="3051"
+      > </a
+      ><a name="3052" class="Symbol"
+      >(</a
+      ><a name="3053" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3054"
+      > </a
+      ><a name="3055" href="TemporalLogic.html#640" class="Function"
+      >&#8869;</a
+      ><a name="3056" class="Symbol"
+      >))</a
+      ><a name="3058"
+      >
+
+</a
+      ><a name="3060" href="TemporalLogic.html#3060" class="Function"
+      >Density</a
+      ><a name="3067"
+      > </a
+      ><a name="3068" class="Symbol"
+      >:</a
+      ><a name="3069"
+      > </a
+      ><a name="3070" class="PrimitiveType"
+      >Set</a
+      ><a name="3073"
+      >
+</a
+      ><a name="3074" href="TemporalLogic.html#3060" class="Function"
+      >Density</a
+      ><a name="3081"
+      > </a
+      ><a name="3082" class="Symbol"
+      >=</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" class="Symbol"
+      >&#8704;</a
+      ><a name="3085"
+      > </a
+      ><a name="3086" class="Symbol"
+      >{</a
+      ><a name="3087" href="TemporalLogic.html#3087" class="Bound"
+      >&#966;</a
+      ><a name="3088" class="Symbol"
+      >}</a
+      ><a name="3089"
+      > </a
+      ><a name="3090" class="Symbol"
+      >&#8594;</a
+      ><a name="3091"
+      > </a
+      ><a name="3092" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3098"
+      > </a
+      ><a name="3099" class="Symbol"
+      >(</a
+      ><a name="3100" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3101"
+      > </a
+      ><a name="3102" href="TemporalLogic.html#3087" class="Bound"
+      >&#966;</a
+      ><a name="3103"
+      > </a
+      ><a name="3104" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" class="Symbol"
+      >(</a
+      ><a name="3109" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3110"
+      > </a
+      ><a name="3111" href="TemporalLogic.html#3087" class="Bound"
+      >&#966;</a
+      ><a name="3112" class="Symbol"
+      >))</a
+      ><a name="3114"
+      >
+
+</a
+      ><a name="3116" href="TemporalLogic.html#3116" class="Function"
+      >NonBranching</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" class="Symbol"
+      >:</a
+      ><a name="3130"
+      > </a
+      ><a name="3131" class="PrimitiveType"
+      >Set</a
+      ><a name="3134"
+      >
+</a
+      ><a name="3135" href="TemporalLogic.html#3116" class="Function"
+      >NonBranching</a
+      ><a name="3147"
+      > </a
+      ><a name="3148" class="Symbol"
+      >=</a
+      ><a name="3149"
+      > </a
+      ><a name="3150" class="Symbol"
+      >&#8704;</a
+      ><a name="3151"
+      > </a
+      ><a name="3152" class="Symbol"
+      >{</a
+      ><a name="3153" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3154" class="Symbol"
+      >}</a
+      ><a name="3155"
+      > </a
+      ><a name="3156" class="Symbol"
+      >&#8594;</a
+      ><a name="3157"
+      >  </a
+      ><a name="3159" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3165"
+      > </a
+      ><a name="3166" class="Symbol"
+      >(</a
+      ><a name="3167"
+      > </a
+      ><a name="3168" class="Symbol"
+      >(</a
+      ><a name="3169" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="3170"
+      > </a
+      ><a name="3171" class="Symbol"
+      >(</a
+      ><a name="3172" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3173"
+      > </a
+      ><a name="3174" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3175" class="Symbol"
+      >)</a
+      ><a name="3176"
+      > </a
+      ><a name="3177" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3178"
+      > </a
+      ><a name="3179" class="Symbol"
+      >(</a
+      ><a name="3180" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="3181"
+      > </a
+      ><a name="3182" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3183"
+      > </a
+      ><a name="3184" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="3185"
+      > </a
+      ><a name="3186" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3187"
+      > </a
+      ><a name="3188" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="3189"
+      > </a
+      ><a name="3190" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3191"
+      > </a
+      ><a name="3192" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3193" class="Symbol"
+      >))</a
+      ><a name="3195"
+      >
+                               </a
+      ><a name="3227" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="3228"
+      > </a
+      ><a name="3229" class="Symbol"
+      >(</a
+      ><a name="3230" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3231"
+      > </a
+      ><a name="3232" class="Symbol"
+      >(</a
+      ><a name="3233" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="3234"
+      > </a
+      ><a name="3235" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3236" class="Symbol"
+      >)</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3239"
+      > </a
+      ><a name="3240" class="Symbol"
+      >(</a
+      ><a name="3241" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3242"
+      > </a
+      ><a name="3243" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3244"
+      > </a
+      ><a name="3245" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="3246"
+      > </a
+      ><a name="3247" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3248"
+      > </a
+      ><a name="3249" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="3250"
+      > </a
+      ><a name="3251" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="3252"
+      > </a
+      ><a name="3253" href="TemporalLogic.html#3153" class="Bound"
+      >&#966;</a
+      ><a name="3254" class="Symbol"
+      >)))</a
+      ><a name="3257"
+      >
+
+</a
+      ><a name="3259" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="3316"
+      >
+
+</a
+      ><a name="3318" href="TemporalLogic.html#3318" class="Function"
+      >lem-G</a
+      ><a name="3323"
+      > </a
+      ><a name="3324" class="Symbol"
+      >:</a
+      ><a name="3325"
+      > </a
+      ><a name="3326" class="Symbol"
+      >{</a
+      ><a name="3327" href="TemporalLogic.html#3327" class="Bound"
+      >&#966;</a
+      ><a name="3328"
+      > </a
+      ><a name="3329" href="TemporalLogic.html#3329" class="Bound"
+      >&#968;</a
+      ><a name="3330"
+      > </a
+      ><a name="3331" class="Symbol"
+      >:</a
+      ><a name="3332"
+      > </a
+      ><a name="3333" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3338" class="Symbol"
+      >}</a
+      ><a name="3339"
+      > </a
+      ><a name="3340" class="Symbol"
+      >&#8594;</a
+      ><a name="3341"
+      > </a
+      ><a name="3342" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3348"
+      > </a
+      ><a name="3349" class="Symbol"
+      >(</a
+      ><a name="3350" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3351"
+      > </a
+      ><a name="3352" class="Symbol"
+      >(</a
+      ><a name="3353" href="TemporalLogic.html#3327" class="Bound"
+      >&#966;</a
+      ><a name="3354"
+      > </a
+      ><a name="3355" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3356"
+      > </a
+      ><a name="3357" href="TemporalLogic.html#3329" class="Bound"
+      >&#968;</a
+      ><a name="3358" class="Symbol"
+      >)</a
+      ><a name="3359"
+      > </a
+      ><a name="3360" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3361"
+      > </a
+      ><a name="3362" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3363"
+      > </a
+      ><a name="3364" href="TemporalLogic.html#3327" class="Bound"
+      >&#966;</a
+      ><a name="3365"
+      > </a
+      ><a name="3366" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3367"
+      > </a
+      ><a name="3368" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3369"
+      > </a
+      ><a name="3370" href="TemporalLogic.html#3329" class="Bound"
+      >&#968;</a
+      ><a name="3371" class="Symbol"
+      >)</a
+      ><a name="3372"
+      >
+</a
+      ><a name="3373" href="TemporalLogic.html#3318" class="Function"
+      >lem-G</a
+      ><a name="3378"
+      > </a
+      ><a name="3379" href="TemporalLogic.html#3379" class="Bound"
+      >t</a
+      ><a name="3380"
+      > </a
+      ><a name="3381" class="Symbol"
+      >=</a
+      ><a name="3382"
+      > </a
+      ><a name="3383" href="NeilPrelude.html#10623" class="Function"
+      >S-comb&#8322;</a
+      ><a name="3390"
+      >
+
+</a
+      ><a name="3392" href="TemporalLogic.html#3392" class="Function"
+      >lemGn</a
+      ><a name="3397"
+      > </a
+      ><a name="3398" class="Symbol"
+      >:</a
+      ><a name="3399"
+      > </a
+      ><a name="3400" class="Symbol"
+      >{</a
+      ><a name="3401" href="TemporalLogic.html#3401" class="Bound"
+      >&#966;</a
+      ><a name="3402"
+      > </a
+      ><a name="3403" href="TemporalLogic.html#3403" class="Bound"
+      >&#968;</a
+      ><a name="3404"
+      > </a
+      ><a name="3405" class="Symbol"
+      >:</a
+      ><a name="3406"
+      > </a
+      ><a name="3407" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3412" class="Symbol"
+      >}</a
+      ><a name="3413"
+      > </a
+      ><a name="3414" class="Symbol"
+      >&#8594;</a
+      ><a name="3415"
+      > </a
+      ><a name="3416" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3422"
+      > </a
+      ><a name="3423" class="Symbol"
+      >(</a
+      ><a name="3424" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3425"
+      > </a
+      ><a name="3426" class="Symbol"
+      >(</a
+      ><a name="3427" href="TemporalLogic.html#3401" class="Bound"
+      >&#966;</a
+      ><a name="3428"
+      > </a
+      ><a name="3429" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3430"
+      > </a
+      ><a name="3431" href="TemporalLogic.html#3403" class="Bound"
+      >&#968;</a
+      ><a name="3432" class="Symbol"
+      >)</a
+      ><a name="3433"
+      > </a
+      ><a name="3434" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3435"
+      > </a
+      ><a name="3436" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3437"
+      > </a
+      ><a name="3438" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3439"
+      > </a
+      ><a name="3440" href="TemporalLogic.html#3403" class="Bound"
+      >&#968;</a
+      ><a name="3441"
+      > </a
+      ><a name="3442" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3445"
+      > </a
+      ><a name="3446" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3447"
+      > </a
+      ><a name="3448" href="TemporalLogic.html#3401" class="Bound"
+      >&#966;</a
+      ><a name="3449" class="Symbol"
+      >)</a
+      ><a name="3450"
+      >
+</a
+      ><a name="3451" href="TemporalLogic.html#3392" class="Function"
+      >lemGn</a
+      ><a name="3456"
+      > </a
+      ><a name="3457" href="TemporalLogic.html#3457" class="Bound"
+      >t</a
+      ><a name="3458"
+      > </a
+      ><a name="3459" href="TemporalLogic.html#3459" class="Bound"
+      >&#966;&#8658;&#968;</a
+      ><a name="3462"
+      > </a
+      ><a name="3463" class="Symbol"
+      >=</a
+      ><a name="3464"
+      > </a
+      ><a name="3465" href="NeilPrelude.html#10133" class="Function"
+      >argument</a
+      ><a name="3473"
+      > </a
+      ><a name="3474" class="Symbol"
+      >(</a
+      ><a name="3475" href="TemporalLogic.html#3318" class="Function"
+      >lem-G</a
+      ><a name="3480"
+      > </a
+      ><a name="3481" href="TemporalLogic.html#3457" class="Bound"
+      >t</a
+      ><a name="3482"
+      > </a
+      ><a name="3483" href="TemporalLogic.html#3459" class="Bound"
+      >&#966;&#8658;&#968;</a
+      ><a name="3486" class="Symbol"
+      >)</a
+      ><a name="3487"
+      >
+
+</a
+      ><a name="3489" href="TemporalLogic.html#3489" class="Function"
+      >lem-GF</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" class="Symbol"
+      >:</a
+      ><a name="3497"
+      > </a
+      ><a name="3498" class="Symbol"
+      >{</a
+      ><a name="3499" href="TemporalLogic.html#3499" class="Bound"
+      >&#966;</a
+      ><a name="3500"
+      > </a
+      ><a name="3501" href="TemporalLogic.html#3501" class="Bound"
+      >&#968;</a
+      ><a name="3502"
+      > </a
+      ><a name="3503" class="Symbol"
+      >:</a
+      ><a name="3504"
+      > </a
+      ><a name="3505" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3510" class="Symbol"
+      >}</a
+      ><a name="3511"
+      > </a
+      ><a name="3512" class="Symbol"
+      >&#8594;</a
+      ><a name="3513"
+      > </a
+      ><a name="3514" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3520"
+      > </a
+      ><a name="3521" class="Symbol"
+      >(</a
+      ><a name="3522" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3523"
+      > </a
+      ><a name="3524" class="Symbol"
+      >(</a
+      ><a name="3525" href="TemporalLogic.html#3499" class="Bound"
+      >&#966;</a
+      ><a name="3526"
+      > </a
+      ><a name="3527" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3528"
+      > </a
+      ><a name="3529" href="TemporalLogic.html#3501" class="Bound"
+      >&#968;</a
+      ><a name="3530" class="Symbol"
+      >)</a
+      ><a name="3531"
+      > </a
+      ><a name="3532" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3533"
+      > </a
+      ><a name="3534" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3535"
+      > </a
+      ><a name="3536" href="TemporalLogic.html#3499" class="Bound"
+      >&#966;</a
+      ><a name="3537"
+      > </a
+      ><a name="3538" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3539"
+      > </a
+      ><a name="3540" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3541"
+      > </a
+      ><a name="3542" href="TemporalLogic.html#3501" class="Bound"
+      >&#968;</a
+      ><a name="3543" class="Symbol"
+      >)</a
+      ><a name="3544"
+      >
+</a
+      ><a name="3545" href="TemporalLogic.html#3489" class="Function"
+      >lem-GF</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" href="TemporalLogic.html#3552" class="Bound"
+      >t</a
+      ><a name="3553"
+      > </a
+      ><a name="3554" href="TemporalLogic.html#3554" class="Bound"
+      >&#966;&#8658;&#968;</a
+      ><a name="3557"
+      > </a
+      ><a name="3558" class="Symbol"
+      >(</a
+      ><a name="3559" href="TemporalLogic.html#3559" class="Bound"
+      >t'</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3563"
+      > </a
+      ><a name="3564" href="TemporalLogic.html#3564" class="Bound"
+      >lt</a
+      ><a name="3566"
+      > </a
+      ><a name="3567" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3568"
+      > </a
+      ><a name="3569" href="TemporalLogic.html#3569" class="Bound"
+      >&#966;'</a
+      ><a name="3571" class="Symbol"
+      >)</a
+      ><a name="3572"
+      > </a
+      ><a name="3573" class="Symbol"
+      >=</a
+      ><a name="3574"
+      > </a
+      ><a name="3575" href="TemporalLogic.html#3559" class="Bound"
+      >t'</a
+      ><a name="3577"
+      > </a
+      ><a name="3578" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3579"
+      > </a
+      ><a name="3580" href="TemporalLogic.html#3564" class="Bound"
+      >lt</a
+      ><a name="3582"
+      > </a
+      ><a name="3583" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3584"
+      > </a
+      ><a name="3585" href="TemporalLogic.html#3554" class="Bound"
+      >&#966;&#8658;&#968;</a
+      ><a name="3588"
+      > </a
+      ><a name="3589" href="TemporalLogic.html#3559" class="Bound"
+      >t'</a
+      ><a name="3591"
+      > </a
+      ><a name="3592" href="TemporalLogic.html#3564" class="Bound"
+      >lt</a
+      ><a name="3594"
+      > </a
+      ><a name="3595" href="TemporalLogic.html#3569" class="Bound"
+      >&#966;'</a
+      ><a name="3597"
+      >
+
+</a
+      ><a name="3599" href="TemporalLogic.html#3599" class="Function"
+      >lem-NF&#8658;GN</a
+      ><a name="3608"
+      > </a
+      ><a name="3609" class="Symbol"
+      >:</a
+      ><a name="3610"
+      > </a
+      ><a name="3611" class="Symbol"
+      >{</a
+      ><a name="3612" href="TemporalLogic.html#3612" class="Bound"
+      >&#966;</a
+      ><a name="3613"
+      > </a
+      ><a name="3614" class="Symbol"
+      >:</a
+      ><a name="3615"
+      > </a
+      ><a name="3616" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3621" class="Symbol"
+      >}</a
+      ><a name="3622"
+      > </a
+      ><a name="3623" class="Symbol"
+      >&#8594;</a
+      ><a name="3624"
+      > </a
+      ><a name="3625" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3631"
+      > </a
+      ><a name="3632" class="Symbol"
+      >(</a
+      ><a name="3633" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3634"
+      > </a
+      ><a name="3635" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3636"
+      > </a
+      ><a name="3637" href="TemporalLogic.html#3612" class="Bound"
+      >&#966;</a
+      ><a name="3638"
+      > </a
+      ><a name="3639" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3640"
+      > </a
+      ><a name="3641" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3642"
+      > </a
+      ><a name="3643" class="Symbol"
+      >(</a
+      ><a name="3644" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3645"
+      > </a
+      ><a name="3646" href="TemporalLogic.html#3612" class="Bound"
+      >&#966;</a
+      ><a name="3647" class="Symbol"
+      >))</a
+      ><a name="3649"
+      >
+</a
+      ><a name="3650" href="TemporalLogic.html#3599" class="Function"
+      >lem-NF&#8658;GN</a
+      ><a name="3659"
+      > </a
+      ><a name="3660" href="TemporalLogic.html#3660" class="Bound"
+      >t</a
+      ><a name="3661"
+      > </a
+      ><a name="3662" class="Symbol"
+      >=</a
+      ><a name="3663"
+      > </a
+      ><a name="3664" href="NeilPrelude.html#12091" class="Function"
+      >curry2</a
+      ><a name="3670"
+      >
+
+</a
+      ><a name="3672" href="TemporalLogic.html#3672" class="Function"
+      >lem-NG&#8658;FN</a
+      ><a name="3681"
+      > </a
+      ><a name="3682" class="Symbol"
+      >:</a
+      ><a name="3683"
+      > </a
+      ><a name="3684" class="Symbol"
+      >{</a
+      ><a name="3685" href="TemporalLogic.html#3685" class="Bound"
+      >&#966;</a
+      ><a name="3686"
+      > </a
+      ><a name="3687" class="Symbol"
+      >:</a
+      ><a name="3688"
+      > </a
+      ><a name="3689" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3694" class="Symbol"
+      >}</a
+      ><a name="3695"
+      > </a
+      ><a name="3696" class="Symbol"
+      >&#8594;</a
+      ><a name="3697"
+      > </a
+      ><a name="3698" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="3700"
+      > </a
+      ><a name="3701" class="Symbol"
+      >&#8594;</a
+      ><a name="3702"
+      > </a
+      ><a name="3703" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3709"
+      > </a
+      ><a name="3710" class="Symbol"
+      >(</a
+      ><a name="3711" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3712"
+      > </a
+      ><a name="3713" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3714"
+      > </a
+      ><a name="3715" href="TemporalLogic.html#3685" class="Bound"
+      >&#966;</a
+      ><a name="3716"
+      > </a
+      ><a name="3717" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3718"
+      > </a
+      ><a name="3719" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3720"
+      > </a
+      ><a name="3721" class="Symbol"
+      >(</a
+      ><a name="3722" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3723"
+      > </a
+      ><a name="3724" href="TemporalLogic.html#3685" class="Bound"
+      >&#966;</a
+      ><a name="3725" class="Symbol"
+      >))</a
+      ><a name="3727"
+      >
+</a
+      ><a name="3728" href="TemporalLogic.html#3672" class="Function"
+      >lem-NG&#8658;FN</a
+      ><a name="3737"
+      > </a
+      ><a name="3738" href="TemporalLogic.html#3738" class="Bound"
+      >em</a
+      ><a name="3740"
+      > </a
+      ><a name="3741" href="TemporalLogic.html#3741" class="Bound"
+      >t</a
+      ><a name="3742"
+      > </a
+      ><a name="3743" class="Symbol"
+      >=</a
+      ><a name="3744"
+      > </a
+      ><a name="3745" href="Logic.html#4701" class="Function"
+      >must-exist-not2</a
+      ><a name="3760"
+      > </a
+      ><a name="3761" href="TemporalLogic.html#3738" class="Bound"
+      >em</a
+      ><a name="3763"
+      >
+
+</a
+      ><a name="3765" href="TemporalLogic.html#3765" class="Function"
+      >lem-NP&#8658;HN</a
+      ><a name="3774"
+      > </a
+      ><a name="3775" class="Symbol"
+      >:</a
+      ><a name="3776"
+      > </a
+      ><a name="3777" class="Symbol"
+      >{</a
+      ><a name="3778" href="TemporalLogic.html#3778" class="Bound"
+      >&#966;</a
+      ><a name="3779"
+      > </a
+      ><a name="3780" class="Symbol"
+      >:</a
+      ><a name="3781"
+      > </a
+      ><a name="3782" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3787" class="Symbol"
+      >}</a
+      ><a name="3788"
+      > </a
+      ><a name="3789" class="Symbol"
+      >&#8594;</a
+      ><a name="3790"
+      > </a
+      ><a name="3791" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3797"
+      > </a
+      ><a name="3798" class="Symbol"
+      >(</a
+      ><a name="3799" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3800"
+      > </a
+      ><a name="3801" href="TemporalLogic.html#970" class="Function"
+      >P</a
+      ><a name="3802"
+      > </a
+      ><a name="3803" href="TemporalLogic.html#3778" class="Bound"
+      >&#966;</a
+      ><a name="3804"
+      > </a
+      ><a name="3805" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3806"
+      > </a
+      ><a name="3807" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="3808"
+      > </a
+      ><a name="3809" class="Symbol"
+      >(</a
+      ><a name="3810" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3811"
+      > </a
+      ><a name="3812" href="TemporalLogic.html#3778" class="Bound"
+      >&#966;</a
+      ><a name="3813" class="Symbol"
+      >))</a
+      ><a name="3815"
+      >
+</a
+      ><a name="3816" href="TemporalLogic.html#3765" class="Function"
+      >lem-NP&#8658;HN</a
+      ><a name="3825"
+      > </a
+      ><a name="3826" href="TemporalLogic.html#3826" class="Bound"
+      >t</a
+      ><a name="3827"
+      > </a
+      ><a name="3828" class="Symbol"
+      >=</a
+      ><a name="3829"
+      > </a
+      ><a name="3830" href="NeilPrelude.html#12091" class="Function"
+      >curry2</a
+      ><a name="3836"
+      >
+
+</a
+      ><a name="3838" href="TemporalLogic.html#3838" class="Function"
+      >lem-F&#8658;NGN</a
+      ><a name="3847"
+      > </a
+      ><a name="3848" class="Symbol"
+      >:</a
+      ><a name="3849"
+      > </a
+      ><a name="3850" class="Symbol"
+      >{</a
+      ><a name="3851" href="TemporalLogic.html#3851" class="Bound"
+      >&#966;</a
+      ><a name="3852"
+      > </a
+      ><a name="3853" class="Symbol"
+      >:</a
+      ><a name="3854"
+      > </a
+      ><a name="3855" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3860" class="Symbol"
+      >}</a
+      ><a name="3861"
+      > </a
+      ><a name="3862" class="Symbol"
+      >&#8594;</a
+      ><a name="3863"
+      > </a
+      ><a name="3864" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3870"
+      > </a
+      ><a name="3871" class="Symbol"
+      >(</a
+      ><a name="3872" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3873"
+      > </a
+      ><a name="3874" href="TemporalLogic.html#3851" class="Bound"
+      >&#966;</a
+      ><a name="3875"
+      > </a
+      ><a name="3876" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3877"
+      > </a
+      ><a name="3878" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3879"
+      > </a
+      ><a name="3880" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3881"
+      > </a
+      ><a name="3882" class="Symbol"
+      >(</a
+      ><a name="3883" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3884"
+      > </a
+      ><a name="3885" href="TemporalLogic.html#3851" class="Bound"
+      >&#966;</a
+      ><a name="3886" class="Symbol"
+      >))</a
+      ><a name="3888"
+      >
+</a
+      ><a name="3889" href="TemporalLogic.html#3838" class="Function"
+      >lem-F&#8658;NGN</a
+      ><a name="3898"
+      > </a
+      ><a name="3899" href="TemporalLogic.html#3899" class="Bound"
+      >t</a
+      ><a name="3900"
+      > </a
+      ><a name="3901" class="Symbol"
+      >=</a
+      ><a name="3902"
+      > </a
+      ><a name="3903" href="NeilPrelude.html#8326" class="Function"
+      >flip</a
+      ><a name="3907"
+      > </a
+      ><a name="3908" href="NeilPrelude.html#12655" class="Function"
+      >uncurry2</a
+      ><a name="3916"
+      >
+
+</a
+      ><a name="3918" href="TemporalLogic.html#3918" class="Function"
+      >lem-G&#8658;NFN</a
+      ><a name="3927"
+      > </a
+      ><a name="3928" class="Symbol"
+      >:</a
+      ><a name="3929"
+      > </a
+      ><a name="3930" class="Symbol"
+      >{</a
+      ><a name="3931" href="TemporalLogic.html#3931" class="Bound"
+      >&#966;</a
+      ><a name="3932"
+      > </a
+      ><a name="3933" class="Symbol"
+      >:</a
+      ><a name="3934"
+      > </a
+      ><a name="3935" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="3940" class="Symbol"
+      >}</a
+      ><a name="3941"
+      > </a
+      ><a name="3942" class="Symbol"
+      >&#8594;</a
+      ><a name="3943"
+      > </a
+      ><a name="3944" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3950"
+      > </a
+      ><a name="3951" class="Symbol"
+      >(</a
+      ><a name="3952" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3953"
+      > </a
+      ><a name="3954" href="TemporalLogic.html#3931" class="Bound"
+      >&#966;</a
+      ><a name="3955"
+      > </a
+      ><a name="3956" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3957"
+      > </a
+      ><a name="3958" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3959"
+      > </a
+      ><a name="3960" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="3961"
+      > </a
+      ><a name="3962" class="Symbol"
+      >(</a
+      ><a name="3963" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="3964"
+      > </a
+      ><a name="3965" href="TemporalLogic.html#3931" class="Bound"
+      >&#966;</a
+      ><a name="3966" class="Symbol"
+      >))</a
+      ><a name="3968"
+      >
+</a
+      ><a name="3969" href="TemporalLogic.html#3918" class="Function"
+      >lem-G&#8658;NFN</a
+      ><a name="3978"
+      > </a
+      ><a name="3979" href="TemporalLogic.html#3979" class="Bound"
+      >t</a
+      ><a name="3980"
+      > </a
+      ><a name="3981" href="TemporalLogic.html#3981" class="Bound"
+      >G&#966;</a
+      ><a name="3983"
+      > </a
+      ><a name="3984" class="Symbol"
+      >(</a
+      ><a name="3985" href="TemporalLogic.html#3985" class="Bound"
+      >t'</a
+      ><a name="3987"
+      > </a
+      ><a name="3988" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3989"
+      > </a
+      ><a name="3990" href="TemporalLogic.html#3990" class="Bound"
+      >gt</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3994"
+      > </a
+      ><a name="3995" href="TemporalLogic.html#3995" class="Bound"
+      >n&#966;t</a
+      ><a name="3998" class="Symbol"
+      >)</a
+      ><a name="3999"
+      > </a
+      ><a name="4000" class="Symbol"
+      >=</a
+      ><a name="4001"
+      > </a
+      ><a name="4002" href="TemporalLogic.html#3995" class="Bound"
+      >n&#966;t</a
+      ><a name="4005"
+      > </a
+      ><a name="4006" class="Symbol"
+      >(</a
+      ><a name="4007" href="TemporalLogic.html#3981" class="Bound"
+      >G&#966;</a
+      ><a name="4009"
+      > </a
+      ><a name="4010" href="TemporalLogic.html#3985" class="Bound"
+      >t'</a
+      ><a name="4012"
+      > </a
+      ><a name="4013" href="TemporalLogic.html#3990" class="Bound"
+      >gt</a
+      ><a name="4015" class="Symbol"
+      >)</a
+      ><a name="4016"
+      >
+
+</a
+      ><a name="4018" href="TemporalLogic.html#4018" class="Function"
+      >lem-NFN&#8658;G</a
+      ><a name="4027"
+      > </a
+      ><a name="4028" class="Symbol"
+      >:</a
+      ><a name="4029"
+      > </a
+      ><a name="4030" class="Symbol"
+      >{</a
+      ><a name="4031" href="TemporalLogic.html#4031" class="Bound"
+      >&#966;</a
+      ><a name="4032"
+      > </a
+      ><a name="4033" class="Symbol"
+      >:</a
+      ><a name="4034"
+      > </a
+      ><a name="4035" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="4040" class="Symbol"
+      >}</a
+      ><a name="4041"
+      > </a
+      ><a name="4042" class="Symbol"
+      >&#8594;</a
+      ><a name="4043"
+      > </a
+      ><a name="4044" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="4046"
+      > </a
+      ><a name="4047" class="Symbol"
+      >&#8594;</a
+      ><a name="4048"
+      > </a
+      ><a name="4049" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="4055"
+      > </a
+      ><a name="4056" class="Symbol"
+      >(</a
+      ><a name="4057" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="4058"
+      > </a
+      ><a name="4059" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="4060"
+      > </a
+      ><a name="4061" class="Symbol"
+      >(</a
+      ><a name="4062" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="4063"
+      > </a
+      ><a name="4064" href="TemporalLogic.html#4031" class="Bound"
+      >&#966;</a
+      ><a name="4065" class="Symbol"
+      >)</a
+      ><a name="4066"
+      > </a
+      ><a name="4067" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4068"
+      > </a
+      ><a name="4069" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="4070"
+      > </a
+      ><a name="4071" href="TemporalLogic.html#4031" class="Bound"
+      >&#966;</a
+      ><a name="4072" class="Symbol"
+      >)</a
+      ><a name="4073"
+      >
+</a
+      ><a name="4074" href="TemporalLogic.html#4018" class="Function"
+      >lem-NFN&#8658;G</a
+      ><a name="4083"
+      > </a
+      ><a name="4084" href="TemporalLogic.html#4084" class="Bound"
+      >em</a
+      ><a name="4086"
+      > </a
+      ><a name="4087" href="TemporalLogic.html#4087" class="Bound"
+      >t</a
+      ><a name="4088"
+      > </a
+      ><a name="4089" class="Symbol"
+      >=</a
+      ><a name="4090"
+      > </a
+      ><a name="4091" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="4099"
+      > </a
+      ><a name="4100" class="Symbol"
+      >(</a
+      ><a name="4101" href="Logic.html#2450" class="Function"
+      >contradiction</a
+      ><a name="4114"
+      > </a
+      ><a name="4115" href="TemporalLogic.html#4084" class="Bound"
+      >em</a
+      ><a name="4117" class="Symbol"
+      >)</a
+      ><a name="4118"
+      > </a
+      ><a name="4119" href="NeilPrelude.html#7368" class="Function Operator"
+      >&#8728;</a
+      ><a name="4120"
+      > </a
+      ><a name="4121" href="NeilPrelude.html#12091" class="Function"
+      >curry2</a
+      ><a name="4127"
+      >
+
+</a
+      ><a name="4129" href="TemporalLogic.html#4129" class="Function"
+      >lem-NGN&#8658;F</a
+      ><a name="4138"
+      > </a
+      ><a name="4139" class="Symbol"
+      >:</a
+      ><a name="4140"
+      > </a
+      ><a name="4141" class="Symbol"
+      >{</a
+      ><a name="4142" href="TemporalLogic.html#4142" class="Bound"
+      >&#966;</a
+      ><a name="4143"
+      > </a
+      ><a name="4144" class="Symbol"
+      >:</a
+      ><a name="4145"
+      > </a
+      ><a name="4146" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="4151" class="Symbol"
+      >}</a
+      ><a name="4152"
+      > </a
+      ><a name="4153" class="Symbol"
+      >&#8594;</a
+      ><a name="4154"
+      > </a
+      ><a name="4155" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="4157"
+      > </a
+      ><a name="4158" class="Symbol"
+      >&#8594;</a
+      ><a name="4159"
+      > </a
+      ><a name="4160" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="4166"
+      > </a
+      ><a name="4167" class="Symbol"
+      >(</a
+      ><a name="4168" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="4169"
+      > </a
+      ><a name="4170" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="4171"
+      > </a
+      ><a name="4172" class="Symbol"
+      >(</a
+      ><a name="4173" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="4174"
+      > </a
+      ><a name="4175" href="TemporalLogic.html#4142" class="Bound"
+      >&#966;</a
+      ><a name="4176" class="Symbol"
+      >)</a
+      ><a name="4177"
+      > </a
+      ><a name="4178" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4179"
+      > </a
+      ><a name="4180" href="TemporalLogic.html#904" class="Function"
+      >F</a
+      ><a name="4181"
+      > </a
+      ><a name="4182" href="TemporalLogic.html#4142" class="Bound"
+      >&#966;</a
+      ><a name="4183" class="Symbol"
+      >)</a
+      ><a name="4184"
+      >
+</a
+      ><a name="4185" href="TemporalLogic.html#4129" class="Function"
+      >lem-NGN&#8658;F</a
+      ><a name="4194"
+      > </a
+      ><a name="4195" href="TemporalLogic.html#4195" class="Bound"
+      >em</a
+      ><a name="4197"
+      > </a
+      ><a name="4198" href="TemporalLogic.html#4198" class="Bound"
+      >t</a
+      ><a name="4199"
+      > </a
+      ><a name="4200" class="Symbol"
+      >=</a
+      ><a name="4201"
+      > </a
+      ><a name="4202" href="Logic.html#2450" class="Function"
+      >contradiction</a
+      ><a name="4215"
+      > </a
+      ><a name="4216" href="TemporalLogic.html#4195" class="Bound"
+      >em</a
+      ><a name="4218"
+      > </a
+      ><a name="4219" href="NeilPrelude.html#7368" class="Function Operator"
+      >&#8728;</a
+      ><a name="4220"
+      > </a
+      ><a name="4221" href="NeilPrelude.html#10133" class="Function"
+      >argument</a
+      ><a name="4229"
+      > </a
+      ><a name="4230" href="NeilPrelude.html#12091" class="Function"
+      >curry2</a
+      ><a name="4236"
+      >
+
+
+</a
+      ><a name="4239" class="Comment"
+      >-- tl-contpos : {&#966; &#968; : TPred} &#8594; Always ((&#966; &#8658; &#968;) &#8658; (&#172; &#968; &#8658; &#172; &#966;))</a
+      ><a name="4301"
+      >
+</a
+      ><a name="4302" class="Comment"
+      >-- tl-contpos t = _&#8921;_</a
+      ><a name="4323"
+      >
+
+</a
+      ><a name="4325" class="Comment"
+      >-- tl-contpos-em : {&#966; &#968; : TPred} &#8594; EM &#8594; Always ((&#172; &#966; &#8658; &#172; &#968;) &#8658; (&#968; &#8658; &#966;))</a
+      ><a name="4395"
+      >
+</a
+      ><a name="4396" class="Comment"
+      >-- tl-contpos-em {&#966;} em t p &#968;t with em {&#966; t}</a
+      ><a name="4440"
+      >
+</a
+      ><a name="4441" class="Comment"
+      >-- ... | inl  &#966;t  = &#966;t</a
+      ><a name="4463"
+      >
+</a
+      ><a name="4464" class="Comment"
+      >-- ... | inr n&#966;t = absurd (p n&#966;t &#968;t)</a
+      ><a name="4500"
+      >
+
+</a
+      ><a name="4502" class="Comment"
+      >-- tl-contr : {&#966; &#968; : TPred} &#8594; Always (&#172; (&#966; &#8743; &#172; &#968; &#8743; (&#966; &#8658; &#968;)))</a
+      ><a name="4562"
+      >
+</a
+      ><a name="4563" class="Comment"
+      >-- tl-contr t (&#966;t , n&#968;t , p) = n&#968;t (p &#966;t)</a
+      ><a name="4604"
+      >
+
+</a
+      ><a name="4606" class="Comment"
+      >-- tl-nn-antecdent : {&#966; &#968; : TPred} &#8594; Always ((&#172; &#172; &#966; &#8658; &#968;) &#8658; (&#966; &#8658; &#968;))</a
+      ><a name="4673"
+      >
+</a
+      ><a name="4674" class="Comment"
+      >-- tl-nn-antecdent t = nn-antecedent</a
+      ><a name="4710"
+      >
+
+</a
+      ><a name="4712" class="Comment"
+      >-- tl-nn-consequent : {&#966; &#968; : TPred} &#8594; EM &#8594; Always ((&#966; &#8658; &#172; &#172; &#968;) &#8658; (&#966; &#8658; &#968;))</a
+      ><a name="4785"
+      >
+</a
+      ><a name="4786" class="Comment"
+      >-- tl-nn-consequent {&#966;} {&#968;} em t p &#966;t with em {&#968; t}</a
+      ><a name="4837"
+      >
+</a
+      ><a name="4838" class="Comment"
+      >-- ... | inl &#968;t   = &#968;t</a
+      ><a name="4860"
+      >
+</a
+      ><a name="4861" class="Comment"
+      >-- ... | inr n&#968;t = absurd (p &#966;t n&#968;t)</a
+      ><a name="4897"
+      >
+
+</a
+      ><a name="4899" class="Comment"
+      >----------------------------------------------------------</a
+      ><a name="4957"
+      >
+
+</a
+      ><a name="4959" href="TemporalLogic.html#4959" class="Function"
+      >lem-Gr</a
+      ><a name="4965"
+      > </a
+      ><a name="4966" class="Symbol"
+      >:</a
+      ><a name="4967"
+      > </a
+      ><a name="4968" class="Symbol"
+      >{</a
+      ><a name="4969" href="TemporalLogic.html#4969" class="Bound"
+      >&#966;</a
+      ><a name="4970"
+      > </a
+      ><a name="4971" class="Symbol"
+      >:</a
+      ><a name="4972"
+      > </a
+      ><a name="4973" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="4978" class="Symbol"
+      >}</a
+      ><a name="4979"
+      > </a
+      ><a name="4980" class="Symbol"
+      >&#8594;</a
+      ><a name="4981"
+      > </a
+      ><a name="4982" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="4984"
+      > </a
+      ><a name="4985" class="Symbol"
+      >&#8594;</a
+      ><a name="4986"
+      > </a
+      ><a name="4987" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="4993"
+      > </a
+      ><a name="4994" class="Symbol"
+      >(</a
+      ><a name="4995" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="4996"
+      > </a
+      ><a name="4997" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="4999"
+      > </a
+      ><a name="5000" href="TemporalLogic.html#4969" class="Bound"
+      >&#966;</a
+      ><a name="5001"
+      > </a
+      ><a name="5002" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5003"
+      > </a
+      ><a name="5004" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5005"
+      > </a
+      ><a name="5006" href="TemporalLogic.html#4969" class="Bound"
+      >&#966;</a
+      ><a name="5007"
+      > </a
+      ><a name="5008" href="TemporalLogic.html#487" class="Function Operator"
+      >&#8744;</a
+      ><a name="5009"
+      > </a
+      ><a name="5010" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5011"
+      > </a
+      ><a name="5012" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="5013"
+      > </a
+      ><a name="5014" href="TemporalLogic.html#4969" class="Bound"
+      >&#966;</a
+      ><a name="5015" class="Symbol"
+      >)</a
+      ><a name="5016"
+      >
+</a
+      ><a name="5017" href="TemporalLogic.html#4959" class="Function"
+      >lem-Gr</a
+      ><a name="5023"
+      > </a
+      ><a name="5024" class="Symbol"
+      >{</a
+      ><a name="5025" href="TemporalLogic.html#5025" class="Bound"
+      >&#966;</a
+      ><a name="5026" class="Symbol"
+      >}</a
+      ><a name="5027"
+      > </a
+      ><a name="5028" href="TemporalLogic.html#5028" class="Bound"
+      >em</a
+      ><a name="5030"
+      > </a
+      ><a name="5031" href="TemporalLogic.html#5031" class="Bound"
+      >t</a
+      ><a name="5032"
+      > </a
+      ><a name="5033" href="TemporalLogic.html#5033" class="Bound"
+      >nGr&#966;</a
+      ><a name="5037"
+      > </a
+      ><a name="5038" class="Keyword"
+      >with</a
+      ><a name="5042"
+      > </a
+      ><a name="5043" href="TemporalLogic.html#5028" class="Bound"
+      >em</a
+      ><a name="5045"
+      > </a
+      ><a name="5046" class="Symbol"
+      >{</a
+      ><a name="5047" href="TemporalLogic.html#5025" class="Bound"
+      >&#966;</a
+      ><a name="5048"
+      > </a
+      ><a name="5049" href="TemporalLogic.html#5031" class="Bound"
+      >t</a
+      ><a name="5050" class="Symbol"
+      >}</a
+      ><a name="5051"
+      >
+</a
+      ><a name="5052" class="Symbol"
+      >...</a
+      ><a name="5055"
+      > </a
+      ><a name="5056" class="Symbol"
+      >|</a
+      ><a name="5057"
+      > </a
+      ><a name="5058" href="NeilPrelude.html#1208" class="InductiveConstructor"
+      >inr</a
+      ><a name="5061"
+      > </a
+      ><a name="5062" href="TemporalLogic.html#5062" class="Bound"
+      >n&#966;t</a
+      ><a name="5065"
+      > </a
+      ><a name="5066" class="Symbol"
+      >=</a
+      ><a name="5067"
+      > </a
+      ><a name="5068" href="NeilPrelude.html#1190" class="InductiveConstructor"
+      >inl</a
+      ><a name="5071"
+      > </a
+      ><a name="5072" href="TemporalLogic.html#5062" class="Bound"
+      >n&#966;t</a
+      ><a name="5075"
+      >
+</a
+      ><a name="5076" class="Symbol"
+      >...</a
+      ><a name="5079"
+      > </a
+      ><a name="5080" class="Symbol"
+      >|</a
+      ><a name="5081"
+      > </a
+      ><a name="5082" href="NeilPrelude.html#1190" class="InductiveConstructor"
+      >inl</a
+      ><a name="5085"
+      > </a
+      ><a name="5086" href="TemporalLogic.html#5086" class="Bound"
+      >&#966;t</a
+      ><a name="5088"
+      >  </a
+      ><a name="5090" class="Symbol"
+      >=</a
+      ><a name="5091"
+      > </a
+      ><a name="5092" href="NeilPrelude.html#20857" class="Function"
+      >left</a
+      ><a name="5096"
+      > </a
+      ><a name="5097" class="Symbol"
+      >(</a
+      ><a name="5098" href="NeilPrelude.html#8326" class="Function"
+      >flip</a
+      ><a name="5102"
+      > </a
+      ><a name="5103" class="Symbol"
+      >(</a
+      ><a name="5104" href="NeilPrelude.html#11965" class="Function"
+      >curry</a
+      ><a name="5109"
+      > </a
+      ><a name="5110" href="TemporalLogic.html#5033" class="Bound"
+      >nGr&#966;</a
+      ><a name="5114" class="Symbol"
+      >))</a
+      ><a name="5116"
+      > </a
+      ><a name="5117" href="TemporalLogic.html#5028" class="Bound"
+      >em</a
+      ><a name="5119"
+      >
+
+</a
+      ><a name="5121" class="Comment"
+      >----------------------------------------------------------</a
+      ><a name="5179"
+      >
+
+</a
+      ><a name="5181" class="Comment"
+      >-- lem-GF1 : {&#966; : TPred} &#8594; Always (G&#691; &#966; &#8658; &#172; F&#691; (&#172; &#966;))</a
+      ><a name="5234"
+      >
+</a
+      ><a name="5235" class="Comment"
+      >-- lem-GF1 t (&#966;t , G&#966;) = case (applyTo &#966;t) (lem-GF1+ t G&#966;)</a
+      ><a name="5293"
+      >
+
+</a
+      ><a name="5295" class="Comment"
+      >-- lem-GF2 : {&#966; : TPred} &#8594; Always (&#172; &#172; F&#691; (&#172; &#966;) &#8658; &#172; G&#691; &#966;)</a
+      ><a name="5352"
+      >
+</a
+      ><a name="5353" class="Comment"
+      >-- lem-GF2 t = contpos (lem-GF1 t)</a
+      ><a name="5387"
+      >
+
+</a
+      ><a name="5389" class="Comment"
+      >-- lem-GF3 : {&#966; : TPred} &#8594; Always (F&#691; (&#172; &#966;) &#8658; &#172; G&#691; &#966;)</a
+      ><a name="5442"
+      >
+</a
+      ><a name="5443" class="Comment"
+      >-- lem-GF3 t = nn-antecedent (lem-GF2 t)</a
+      ><a name="5483"
+      >
+
+</a
+      ><a name="5485" href="TemporalLogic.html#5485" class="Function"
+      >lem-NGr&#8658;FrN</a
+      ><a name="5496"
+      > </a
+      ><a name="5497" class="Symbol"
+      >:</a
+      ><a name="5498"
+      > </a
+      ><a name="5499" class="Symbol"
+      >{</a
+      ><a name="5500" href="TemporalLogic.html#5500" class="Bound"
+      >&#966;</a
+      ><a name="5501"
+      > </a
+      ><a name="5502" class="Symbol"
+      >:</a
+      ><a name="5503"
+      > </a
+      ><a name="5504" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="5509" class="Symbol"
+      >}</a
+      ><a name="5510"
+      > </a
+      ><a name="5511" class="Symbol"
+      >&#8594;</a
+      ><a name="5512"
+      > </a
+      ><a name="5513" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="5515"
+      > </a
+      ><a name="5516" class="Symbol"
+      >&#8594;</a
+      ><a name="5517"
+      > </a
+      ><a name="5518" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="5524"
+      > </a
+      ><a name="5525" class="Symbol"
+      >(</a
+      ><a name="5526" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5527"
+      > </a
+      ><a name="5528" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="5530"
+      > </a
+      ><a name="5531" href="TemporalLogic.html#5500" class="Bound"
+      >&#966;</a
+      ><a name="5532"
+      > </a
+      ><a name="5533" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5534"
+      > </a
+      ><a name="5535" href="TemporalLogic.html#2042" class="Function"
+      >F&#691;</a
+      ><a name="5537"
+      > </a
+      ><a name="5538" class="Symbol"
+      >(</a
+      ><a name="5539" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5540"
+      > </a
+      ><a name="5541" href="TemporalLogic.html#5500" class="Bound"
+      >&#966;</a
+      ><a name="5542" class="Symbol"
+      >))</a
+      ><a name="5544"
+      >
+</a
+      ><a name="5545" href="TemporalLogic.html#5485" class="Function"
+      >lem-NGr&#8658;FrN</a
+      ><a name="5556"
+      > </a
+      ><a name="5557" href="TemporalLogic.html#5557" class="Bound"
+      >em</a
+      ><a name="5559"
+      > </a
+      ><a name="5560" href="TemporalLogic.html#5560" class="Bound"
+      >t</a
+      ><a name="5561"
+      > </a
+      ><a name="5562" href="TemporalLogic.html#5562" class="Bound"
+      >nGr&#966;</a
+      ><a name="5566"
+      > </a
+      ><a name="5567" class="Symbol"
+      >=</a
+      ><a name="5568"
+      > </a
+      ><a name="5569" href="NeilPrelude.html#20933" class="Function"
+      >right</a
+      ><a name="5574"
+      > </a
+      ><a name="5575" class="Symbol"
+      >(</a
+      ><a name="5576" href="TemporalLogic.html#3672" class="Function"
+      >lem-NG&#8658;FN</a
+      ><a name="5585"
+      > </a
+      ><a name="5586" href="TemporalLogic.html#5557" class="Bound"
+      >em</a
+      ><a name="5588"
+      > </a
+      ><a name="5589" href="TemporalLogic.html#5560" class="Bound"
+      >t</a
+      ><a name="5590" class="Symbol"
+      >)</a
+      ><a name="5591"
+      > </a
+      ><a name="5592" class="Symbol"
+      >(</a
+      ><a name="5593" href="TemporalLogic.html#4959" class="Function"
+      >lem-Gr</a
+      ><a name="5599"
+      > </a
+      ><a name="5600" href="TemporalLogic.html#5557" class="Bound"
+      >em</a
+      ><a name="5602"
+      > </a
+      ><a name="5603" href="TemporalLogic.html#5560" class="Bound"
+      >t</a
+      ><a name="5604"
+      > </a
+      ><a name="5605" href="TemporalLogic.html#5562" class="Bound"
+      >nGr&#966;</a
+      ><a name="5609" class="Symbol"
+      >)</a
+      ><a name="5610"
+      >
+
+
+</a
+      ><a name="5613" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="5670"
+      >
+
+</a
+      ><a name="5672" href="TemporalLogic.html#5672" class="Function"
+      >lem-W&#691;</a
+      ><a name="5678"
+      > </a
+      ><a name="5679" class="Symbol"
+      >:</a
+      ><a name="5680"
+      > </a
+      ><a name="5681" class="Symbol"
+      >{</a
+      ><a name="5682" href="TemporalLogic.html#5682" class="Bound"
+      >&#966;</a
+      ><a name="5683"
+      > </a
+      ><a name="5684" href="TemporalLogic.html#5684" class="Bound"
+      >&#968;</a
+      ><a name="5685"
+      > </a
+      ><a name="5686" class="Symbol"
+      >:</a
+      ><a name="5687"
+      > </a
+      ><a name="5688" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="5693" class="Symbol"
+      >}</a
+      ><a name="5694"
+      > </a
+      ><a name="5695" class="Symbol"
+      >&#8594;</a
+      ><a name="5696"
+      > </a
+      ><a name="5697" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="5699"
+      > </a
+      ><a name="5700" class="Symbol"
+      >&#8594;</a
+      ><a name="5701"
+      > </a
+      ><a name="5702" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="5708"
+      > </a
+      ><a name="5709" class="Symbol"
+      >(</a
+      ><a name="5710" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="5712"
+      > </a
+      ><a name="5713" class="Symbol"
+      >(</a
+      ><a name="5714" href="TemporalLogic.html#5682" class="Bound"
+      >&#966;</a
+      ><a name="5715"
+      > </a
+      ><a name="5716" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5717"
+      > </a
+      ><a name="5718" href="TemporalLogic.html#5684" class="Bound"
+      >&#968;</a
+      ><a name="5719" class="Symbol"
+      >)</a
+      ><a name="5720"
+      > </a
+      ><a name="5721" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5722"
+      > </a
+      ><a name="5723" class="Symbol"
+      >(</a
+      ><a name="5724" href="TemporalLogic.html#5684" class="Bound"
+      >&#968;</a
+      ><a name="5725"
+      > </a
+      ><a name="5726" href="TemporalLogic.html#2552" class="Function Operator"
+      >W&#691;</a
+      ><a name="5728"
+      > </a
+      ><a name="5729" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5730"
+      > </a
+      ><a name="5731" href="TemporalLogic.html#5682" class="Bound"
+      >&#966;</a
+      ><a name="5732" class="Symbol"
+      >))</a
+      ><a name="5734"
+      >
+</a
+      ><a name="5735" href="TemporalLogic.html#5672" class="Function"
+      >lem-W&#691;</a
+      ><a name="5741"
+      > </a
+      ><a name="5742" class="Symbol"
+      >{</a
+      ><a name="5743" href="TemporalLogic.html#5743" class="Bound"
+      >&#966;</a
+      ><a name="5744" class="Symbol"
+      >}</a
+      ><a name="5745"
+      > </a
+      ><a name="5746" href="TemporalLogic.html#5746" class="Bound"
+      >em</a
+      ><a name="5748"
+      > </a
+      ><a name="5749" href="TemporalLogic.html#5749" class="Bound"
+      >t</a
+      ><a name="5750"
+      > </a
+      ><a name="5751" class="Symbol"
+      >(</a
+      ><a name="5752" href="TemporalLogic.html#5752" class="Bound"
+      >&#966;t&#8658;&#968;t</a
+      ><a name="5757"
+      > </a
+      ><a name="5758" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="5759"
+      > </a
+      ><a name="5760" href="TemporalLogic.html#5760" class="Bound"
+      >G&#966;&#8658;&#968;</a
+      ><a name="5764" class="Symbol"
+      >)</a
+      ><a name="5765"
+      > </a
+      ><a name="5766" class="Keyword"
+      >with</a
+      ><a name="5770"
+      > </a
+      ><a name="5771" href="TemporalLogic.html#5746" class="Bound"
+      >em</a
+      ><a name="5773"
+      > </a
+      ><a name="5774" class="Symbol"
+      >{</a
+      ><a name="5775" href="TemporalLogic.html#5743" class="Bound"
+      >&#966;</a
+      ><a name="5776"
+      > </a
+      ><a name="5777" href="TemporalLogic.html#5749" class="Bound"
+      >t</a
+      ><a name="5778" class="Symbol"
+      >}</a
+      ><a name="5779"
+      >
+</a
+      ><a name="5780" class="Symbol"
+      >...</a
+      ><a name="5783"
+      > </a
+      ><a name="5784" class="Symbol"
+      >|</a
+      ><a name="5785"
+      > </a
+      ><a name="5786" href="NeilPrelude.html#1208" class="InductiveConstructor"
+      >inr</a
+      ><a name="5789"
+      > </a
+      ><a name="5790" href="TemporalLogic.html#5790" class="Bound"
+      >n&#966;t</a
+      ><a name="5793"
+      > </a
+      ><a name="5794" class="Symbol"
+      >=</a
+      ><a name="5795"
+      > </a
+      ><a name="5796" href="NeilPrelude.html#1190" class="InductiveConstructor"
+      >inl</a
+      ><a name="5799"
+      > </a
+      ><a name="5800" href="TemporalLogic.html#5790" class="Bound"
+      >n&#966;t</a
+      ><a name="5803"
+      >
+</a
+      ><a name="5804" class="Symbol"
+      >...</a
+      ><a name="5807"
+      > </a
+      ><a name="5808" class="Symbol"
+      >|</a
+      ><a name="5809"
+      > </a
+      ><a name="5810" href="NeilPrelude.html#1190" class="InductiveConstructor"
+      >inl</a
+      ><a name="5813"
+      > </a
+      ><a name="5814" href="TemporalLogic.html#5814" class="Bound"
+      >&#966;t</a
+      ><a name="5816"
+      > </a
+      ><a name="5817" class="Keyword"
+      >with</a
+      ><a name="5821"
+      > </a
+      ><a name="5822" href="TemporalLogic.html#5752" class="Bound"
+      >&#966;t&#8658;&#968;t</a
+      ><a name="5827"
+      > </a
+      ><a name="5828" href="TemporalLogic.html#5814" class="Bound"
+      >&#966;t</a
+      ><a name="5830"
+      >
+</a
+      ><a name="5831" class="Symbol"
+      >...</a
+      ><a name="5834"
+      >    </a
+      ><a name="5838" class="Symbol"
+      >|</a
+      ><a name="5839"
+      > </a
+      ><a name="5840" href="TemporalLogic.html#5840" class="Bound"
+      >&#968;t</a
+      ><a name="5842"
+      > </a
+      ><a name="5843" class="Symbol"
+      >=</a
+      ><a name="5844"
+      > </a
+      ><a name="5845" href="NeilPrelude.html#1208" class="InductiveConstructor"
+      >inr</a
+      ><a name="5848"
+      > </a
+      ><a name="5849" class="Symbol"
+      >(</a
+      ><a name="5850" href="TemporalLogic.html#5840" class="Bound"
+      >&#968;t</a
+      ><a name="5852"
+      > </a
+      ><a name="5853" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="5854"
+      > </a
+      ><a name="5855" class="Symbol"
+      >&#955;</a
+      ><a name="5856"
+      > </a
+      ><a name="5857" href="TemporalLogic.html#5857" class="Bound"
+      >t'</a
+      ><a name="5859"
+      > </a
+      ><a name="5860" href="TemporalLogic.html#5860" class="Bound"
+      >gt</a
+      ><a name="5862"
+      > </a
+      ><a name="5863" href="TemporalLogic.html#5863" class="Bound"
+      >f</a
+      ><a name="5864"
+      > </a
+      ><a name="5865" href="TemporalLogic.html#5865" class="Bound"
+      >u</a
+      ><a name="5866"
+      > </a
+      ><a name="5867" href="TemporalLogic.html#5867" class="Bound"
+      >gt1</a
+      ><a name="5870"
+      > </a
+      ><a name="5871" href="TemporalLogic.html#5871" class="Bound"
+      >gt2</a
+      ><a name="5874"
+      > </a
+      ><a name="5875" class="Symbol"
+      >&#8594;</a
+      ><a name="5876"
+      > </a
+      ><a name="5877" href="TemporalLogic.html#5760" class="Bound"
+      >G&#966;&#8658;&#968;</a
+      ><a name="5881"
+      > </a
+      ><a name="5882" href="TemporalLogic.html#5865" class="Bound"
+      >u</a
+      ><a name="5883"
+      > </a
+      ><a name="5884" href="TemporalLogic.html#5867" class="Bound"
+      >gt1</a
+      ><a name="5887"
+      > </a
+      ><a name="5888" class="Symbol"
+      >(</a
+      ><a name="5889" href="Logic.html#2450" class="Function"
+      >contradiction</a
+      ><a name="5902"
+      > </a
+      ><a name="5903" href="TemporalLogic.html#5746" class="Bound"
+      >em</a
+      ><a name="5905"
+      > </a
+      ><a name="5906" class="Symbol"
+      >(</a
+      ><a name="5907" href="TemporalLogic.html#5863" class="Bound"
+      >f</a
+      ><a name="5908"
+      > </a
+      ><a name="5909" href="TemporalLogic.html#5865" class="Bound"
+      >u</a
+      ><a name="5910"
+      > </a
+      ><a name="5911" href="TemporalLogic.html#5867" class="Bound"
+      >gt1</a
+      ><a name="5914"
+      > </a
+      ><a name="5915" href="TemporalLogic.html#5871" class="Bound"
+      >gt2</a
+      ><a name="5918" class="Symbol"
+      >)))</a
+      ><a name="5921"
+      >
+
+</a
+      ><a name="5923" href="TemporalLogic.html#5923" class="Function"
+      >lem-W&#691;n'</a
+      ><a name="5931"
+      > </a
+      ><a name="5932" class="Symbol"
+      >:</a
+      ><a name="5933"
+      > </a
+      ><a name="5934" class="Symbol"
+      >{</a
+      ><a name="5935" href="TemporalLogic.html#5935" class="Bound"
+      >&#966;</a
+      ><a name="5936"
+      > </a
+      ><a name="5937" href="TemporalLogic.html#5937" class="Bound"
+      >&#968;</a
+      ><a name="5938"
+      > </a
+      ><a name="5939" class="Symbol"
+      >:</a
+      ><a name="5940"
+      > </a
+      ><a name="5941" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="5946" class="Symbol"
+      >}</a
+      ><a name="5947"
+      > </a
+      ><a name="5948" class="Symbol"
+      >&#8594;</a
+      ><a name="5949"
+      > </a
+      ><a name="5950" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="5952"
+      > </a
+      ><a name="5953" class="Symbol"
+      >&#8594;</a
+      ><a name="5954"
+      > </a
+      ><a name="5955" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="5961"
+      > </a
+      ><a name="5962" class="Symbol"
+      >(</a
+      ><a name="5963" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="5965"
+      > </a
+      ><a name="5966" class="Symbol"
+      >(</a
+      ><a name="5967" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5968"
+      > </a
+      ><a name="5969" href="TemporalLogic.html#5935" class="Bound"
+      >&#966;</a
+      ><a name="5970"
+      > </a
+      ><a name="5971" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5972"
+      > </a
+      ><a name="5973" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5974"
+      > </a
+      ><a name="5975" href="TemporalLogic.html#5937" class="Bound"
+      >&#968;</a
+      ><a name="5976" class="Symbol"
+      >)</a
+      ><a name="5977"
+      > </a
+      ><a name="5978" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5979"
+      > </a
+      ><a name="5980" class="Symbol"
+      >(</a
+      ><a name="5981" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5982"
+      > </a
+      ><a name="5983" href="TemporalLogic.html#5937" class="Bound"
+      >&#968;</a
+      ><a name="5984"
+      > </a
+      ><a name="5985" href="TemporalLogic.html#2552" class="Function Operator"
+      >W&#691;</a
+      ><a name="5987"
+      > </a
+      ><a name="5988" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5989"
+      > </a
+      ><a name="5990" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="5991"
+      > </a
+      ><a name="5992" href="TemporalLogic.html#5935" class="Bound"
+      >&#966;</a
+      ><a name="5993" class="Symbol"
+      >))</a
+      ><a name="5995"
+      >
+</a
+      ><a name="5996" href="TemporalLogic.html#5923" class="Function"
+      >lem-W&#691;n'</a
+      ><a name="6004"
+      > </a
+      ><a name="6005" class="Symbol"
+      >=</a
+      ><a name="6006"
+      > </a
+      ><a name="6007" href="TemporalLogic.html#5672" class="Function"
+      >lem-W&#691;</a
+      ><a name="6013"
+      >
+
+</a
+      ><a name="6015" href="TemporalLogic.html#6015" class="Function"
+      >lem-W&#691;n</a
+      ><a name="6022"
+      > </a
+      ><a name="6023" class="Symbol"
+      >:</a
+      ><a name="6024"
+      > </a
+      ><a name="6025" class="Symbol"
+      >{</a
+      ><a name="6026" href="TemporalLogic.html#6026" class="Bound"
+      >&#966;</a
+      ><a name="6027"
+      > </a
+      ><a name="6028" href="TemporalLogic.html#6028" class="Bound"
+      >&#968;</a
+      ><a name="6029"
+      > </a
+      ><a name="6030" class="Symbol"
+      >:</a
+      ><a name="6031"
+      > </a
+      ><a name="6032" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="6037" class="Symbol"
+      >}</a
+      ><a name="6038"
+      > </a
+      ><a name="6039" class="Symbol"
+      >&#8594;</a
+      ><a name="6040"
+      > </a
+      ><a name="6041" href="Logic.html#2264" class="Function"
+      >EM</a
+      ><a name="6043"
+      > </a
+      ><a name="6044" class="Symbol"
+      >&#8594;</a
+      ><a name="6045"
+      > </a
+      ><a name="6046" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="6052"
+      > </a
+      ><a name="6053" class="Symbol"
+      >(</a
+      ><a name="6054" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="6056"
+      > </a
+      ><a name="6057" class="Symbol"
+      >(</a
+      ><a name="6058" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="6059"
+      > </a
+      ><a name="6060" href="TemporalLogic.html#6026" class="Bound"
+      >&#966;</a
+      ><a name="6061"
+      > </a
+      ><a name="6062" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="6063"
+      > </a
+      ><a name="6064" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="6065"
+      > </a
+      ><a name="6066" href="TemporalLogic.html#6028" class="Bound"
+      >&#968;</a
+      ><a name="6067" class="Symbol"
+      >)</a
+      ><a name="6068"
+      > </a
+      ><a name="6069" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="6070"
+      > </a
+      ><a name="6071" class="Symbol"
+      >(</a
+      ><a name="6072" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="6073"
+      > </a
+      ><a name="6074" href="TemporalLogic.html#6028" class="Bound"
+      >&#968;</a
+      ><a name="6075"
+      > </a
+      ><a name="6076" href="TemporalLogic.html#2552" class="Function Operator"
+      >W&#691;</a
+      ><a name="6078"
+      > </a
+      ><a name="6079" href="TemporalLogic.html#6026" class="Bound"
+      >&#966;</a
+      ><a name="6080" class="Symbol"
+      >))</a
+      ><a name="6082"
+      >
+</a
+      ><a name="6083" href="TemporalLogic.html#6015" class="Function"
+      >lem-W&#691;n</a
+      ><a name="6090"
+      > </a
+      ><a name="6091" class="Symbol"
+      >{</a
+      ><a name="6092" href="TemporalLogic.html#6092" class="Bound"
+      >&#966;</a
+      ><a name="6093" class="Symbol"
+      >}</a
+      ><a name="6094"
+      > </a
+      ><a name="6095" class="Symbol"
+      >{</a
+      ><a name="6096" href="TemporalLogic.html#6096" class="Bound"
+      >&#968;</a
+      ><a name="6097" class="Symbol"
+      >}</a
+      ><a name="6098"
+      > </a
+      ><a name="6099" href="TemporalLogic.html#6099" class="Bound"
+      >em</a
+      ><a name="6101"
+      > </a
+      ><a name="6102" href="TemporalLogic.html#6102" class="Bound"
+      >t</a
+      ><a name="6103"
+      > </a
+      ><a name="6104" class="Symbol"
+      >=</a
+      ><a name="6105"
+      > </a
+      ><a name="6106" href="NeilPrelude.html#9301" class="Function"
+      >result</a
+      ><a name="6112"
+      > </a
+      ><a name="6113" class="Symbol"
+      >(</a
+      ><a name="6114" href="NeilPrelude.html#20759" class="Function"
+      >map-&#8846;</a
+      ><a name="6119"
+      > </a
+      ><a name="6120" class="Symbol"
+      >(</a
+      ><a name="6121" href="Logic.html#2450" class="Function"
+      >contradiction</a
+      ><a name="6134"
+      > </a
+      ><a name="6135" href="TemporalLogic.html#6099" class="Bound"
+      >em</a
+      ><a name="6137" class="Symbol"
+      >)</a
+      ><a name="6138"
+      > </a
+      ><a name="6139" class="Symbol"
+      >(</a
+      ><a name="6140" href="NeilPrelude.html#13265" class="Function"
+      >second</a
+      ><a name="6146"
+      > </a
+      ><a name="6147" class="Symbol"
+      >(</a
+      ><a name="6148" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="6156"
+      > </a
+      ><a name="6157" class="Symbol"
+      >(</a
+      ><a name="6158" href="NeilPrelude.html#10133" class="Function"
+      >argument</a
+      ><a name="6166"
+      > </a
+      ><a name="6167" class="Symbol"
+      >(</a
+      ><a name="6168" href="NeilPrelude.html#9872" class="Function"
+      >result3'</a
+      ><a name="6176"
+      > </a
+      ><a name="6177" href="Logic.html#1586" class="Function"
+      >NotNot</a
+      ><a name="6183" class="Symbol"
+      >)))))</a
+      ><a name="6188"
+      > </a
+      ><a name="6189" class="Symbol"
+      >(</a
+      ><a name="6190" href="TemporalLogic.html#5923" class="Function"
+      >lem-W&#691;n'</a
+      ><a name="6198"
+      > </a
+      ><a name="6199" class="Symbol"
+      >{</a
+      ><a name="6200" href="TemporalLogic.html#6092" class="Bound"
+      >&#966;</a
+      ><a name="6201" class="Symbol"
+      >}</a
+      ><a name="6202"
+      > </a
+      ><a name="6203" class="Symbol"
+      >{</a
+      ><a name="6204" href="TemporalLogic.html#6096" class="Bound"
+      >&#968;</a
+      ><a name="6205" class="Symbol"
+      >}</a
+      ><a name="6206"
+      > </a
+      ><a name="6207" href="TemporalLogic.html#6099" class="Bound"
+      >em</a
+      ><a name="6209"
+      > </a
+      ><a name="6210" href="TemporalLogic.html#6102" class="Bound"
+      >t</a
+      ><a name="6211" class="Symbol"
+      >)</a
+      ><a name="6212"
+      >
+
+
+</a
+      ><a name="6215" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="6272"
+      >
+
+</a
+      ><a name="6274" class="Comment"
+      >-- lem-W&#691;' : {&#966; &#968; : TPred} &#8594; EM &#8594; Always (G&#691; (&#966; &#8658; &#968;) &#8658; (&#968; W&#691;' &#172; &#966;))</a
+      ><a name="6341"
+      >
+</a
+      ><a name="6342" class="Comment"
+      >-- lem-W&#691;' {&#966;} {&#968;} em t (&#966;&#8658;&#968; , G&#966;&#8658;&#968;) with em {&#966; t}</a
+      ><a name="6392"
+      >
+</a
+      ><a name="6393" class="Comment"
+      >-- ... | inr n&#966;t  = inl (inl n&#966;t)</a
+      ><a name="6426"
+      >
+</a
+      ><a name="6427" class="Comment"
+      >-- ... | inl &#966;t with em {G&#691; &#968; t}</a
+      ><a name="6459"
+      >
+</a
+      ><a name="6460" class="Comment"
+      >-- ...    | inl G&#691;&#968; = inr G&#691;&#968;</a
+      ><a name="6489"
+      >
+</a
+      ><a name="6490" class="Comment"
+      >-- ...    | inr nG&#691;&#968; with &#966;&#8658;&#968; &#966;t | notBoth (inl em) nG&#691;&#968;</a
+      ><a name="6546"
+      >
+</a
+      ><a name="6547" class="Comment"
+      >-- ...       | &#968;t | inl n&#968;t = absurd (n&#968;t &#968;t)</a
+      ><a name="6592"
+      >
+</a
+      ><a name="6593" class="Comment"
+      >-- ...       | &#968;t | inr nG&#968; = {!!} -- with lem-NG&#8658;FN em t nG&#968;</a
+      ><a name="6654"
+      >
+</a
+      ><a name="6655" class="Comment"
+      >-- -- ...                | (t' , gt , n&#968;t') = inl (inr (&#968;t , {!!}))</a
+      ><a name="6722"
+      >
+
+</a
+      ><a name="6724" class="Comment"
+      >{-
+lem-W&#691;' {&#966;} em t (&#966;t&#8658;&#968;t , G&#966;&#8658;&#968;) with em {&#966; t}
+... | inr n&#966;t = inl n&#966;t
+... | inl &#966;t with &#966;t&#8658;&#968;t &#966;t
+...    | &#968;t = inr (&#968;t , &#955; t' gt f u gt1 gt2 &#8594; G&#966;&#8658;&#968; u gt1 (contradiction em (f u gt1 gt2)))
+-}</a
+      ><a name="6917"
+      >
+
+</a
+      ><a name="6919" class="Comment"
+      >-- The below was the (flawed) proof using the old &quot;Weak-Until&quot; operator.  It relied on a property of time that isn't true</a
+      ><a name="7040"
+      >
+</a
+      ><a name="7041" class="Comment"
+      >-- when time is dense</a
+      ><a name="7062"
+      >
+
+</a
+      ><a name="7064" class="Comment"
+      >-- postulate lem-1stpoint : {&#966; : TPred} &#8594; (t : Time) &#8594; (&#966; &#8743; F (&#172; &#966;) &#8658; F (&#172; &#966; &#8743; Since t &#966;)) t</a
+      ><a name="7156"
+      >
+
+</a
+      ><a name="7158" class="Comment"
+      >-- lem-W&#691; : {&#966; &#968; : TPred} &#8594; EM &#8594; Always (G&#691; (&#966; &#8658; &#968;) &#8658; (&#968; W&#691; &#172; &#966;))</a
+      ><a name="7223"
+      >
+</a
+      ><a name="7224" class="Comment"
+      >-- lem-W&#691; {&#966;} {&#968;} em t (&#966;t&#8658;&#968;t , G&#966;&#8658;&#968;) with em {&#966; t}</a
+      ><a name="7275"
+      >
+</a
+      ><a name="7276" class="Comment"
+      >-- ... | inr n&#966;t = inl (inl n&#966;t)</a
+      ><a name="7308"
+      >
+</a
+      ><a name="7309" class="Comment"
+      >-- ... | inl &#966;t with &#966;t&#8658;&#968;t &#966;t</a
+      ><a name="7338"
+      >
+</a
+      ><a name="7339" class="Comment"
+      >-- ...    | &#968;t with em {F (&#172; &#966;) t}</a
+      ><a name="7373"
+      >
+</a
+      ><a name="7374" class="Comment"
+      >-- ...       | inl Fn&#966;  = inl (inr (&#968;t , fourth (&#955; g u lt1 &#8594; G&#966;&#8658;&#968; u lt1 &#8728; g u lt1) (lem-1stpoint t (&#966;t , Fn&#966;)))) </a
+      ><a name="7487"
+      >
+</a
+      ><a name="7488" class="Comment"
+      >-- ...       | inr nFn&#966; = inr (&#968;t , (lem-G t G&#966;&#8658;&#968; (lem-NFN&#8658;G em t nFn&#966;)))</a
+      ><a name="7561"
+      >
+
+</a
+      ><a name="7563" class="Comment"
+      >-- lem-W&#691;n' : {&#966; &#968; : TPred} &#8594; EM &#8594; Always (G&#691; (&#172; &#966; &#8658; &#172; &#968;) &#8658; (&#172; &#968; W&#691; &#172; &#172; &#966;))</a
+      ><a name="7638"
+      >
+</a
+      ><a name="7639" class="Comment"
+      >-- lem-W&#691;n' = lem-W&#691;</a
+      ><a name="7659"
+      >
+
+</a
+      ><a name="7661" class="Comment"
+      >-- lem-W&#691;n : {&#966; &#968; : TPred} &#8594; EM &#8594; Always (G&#691; (&#172; &#966; &#8658; &#172; &#968;) &#8658; (&#172; &#968; W&#691; &#966;))</a
+      ><a name="7731"
+      >
+</a
+      ><a name="7732" class="Comment"
+      >-- lem-W&#691;n {&#966;} {&#968;} em t = result (left (map-&#8846; (contradiction em) (fourth (first (contradiction em))))) (lem-W&#691;n' {&#966;} {&#968;} em t)</a
+      ><a name="7858"
+      >
+
+</a
+      ><a name="7860" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="7916"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

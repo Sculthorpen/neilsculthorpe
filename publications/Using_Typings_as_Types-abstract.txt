@@ -1,0 +1,6 @@
+In languages with dynamic scope, the free variables of an abstraction correspond
+to implicit parameters. The values of these parameters are determined by the
+bindings current where the abstraction is applied, but their allowed types can
+be checked statically. We give a novel type system for dynamic scope using types
+that involve type environments and intersections. We also explore how to give
+typing rules with a high degree of modularity using typings themselves as types.

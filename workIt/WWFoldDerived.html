@@ -1,0 +1,5234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >WWFoldDerived</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type </a
+      ><a name="28" class="Symbol"
+      >#-}</a
+      ><a name="31"
+      >
+
+</a
+      ><a name="33" class="Keyword"
+      >open</a
+      ><a name="37"
+      > </a
+      ><a name="38" class="Keyword"
+      >import</a
+      ><a name="44"
+      > </a
+      ><a name="45" href="NeilPrelude.html#1" class="Module"
+      >NeilPrelude</a
+      ><a name="56"
+      > </a
+      ><a name="57" class="Keyword"
+      >hiding</a
+      ><a name="63"
+      > </a
+      ><a name="64" class="Symbol"
+      >(</a
+      ><a name="65"
+      >result</a
+      ><a name="71" class="Symbol"
+      >)</a
+      ><a name="72"
+      >
+</a
+      ><a name="73" class="Keyword"
+      >open</a
+      ><a name="77"
+      > </a
+      ><a name="78" class="Keyword"
+      >import</a
+      ><a name="84"
+      > </a
+      ><a name="85" href="Logic.html#1" class="Module"
+      >Logic</a
+      ><a name="90"
+      >
+</a
+      ><a name="91" class="Keyword"
+      >open</a
+      ><a name="95"
+      > </a
+      ><a name="96" class="Keyword"
+      >import</a
+      ><a name="102"
+      > </a
+      ><a name="103" href="Extensionality.html#1" class="Module"
+      >Extensionality</a
+      ><a name="117"
+      >
+</a
+      ><a name="118" class="Keyword"
+      >open</a
+      ><a name="122"
+      > </a
+      ><a name="123" class="Keyword"
+      >import</a
+      ><a name="129"
+      > </a
+      ><a name="130" href="EquationalEq.html#1" class="Module"
+      >EquationalEq</a
+      ><a name="142"
+      >
+</a
+      ><a name="143" class="Keyword"
+      >open</a
+      ><a name="147"
+      > </a
+      ><a name="148" class="Keyword"
+      >import</a
+      ><a name="154"
+      > </a
+      ><a name="155" href="CPO.html#1" class="Module"
+      >CPO</a
+      ><a name="158"
+      >
+</a
+      ><a name="159" class="Keyword"
+      >open</a
+      ><a name="163"
+      > </a
+      ><a name="164" class="Keyword"
+      >import</a
+      ><a name="170"
+      > </a
+      ><a name="171" href="CPOLemmas.html#1" class="Module"
+      >CPOLemmas</a
+      ><a name="180"
+      >
+</a
+      ><a name="181" class="Keyword"
+      >open</a
+      ><a name="185"
+      > </a
+      ><a name="186" class="Keyword"
+      >import</a
+      ><a name="192"
+      > </a
+      ><a name="193" href="CPOFunctions.html#1" class="Module"
+      >CPOFunctions</a
+      ><a name="205"
+      >
+</a
+      ><a name="206" class="Keyword"
+      >import</a
+      ><a name="212"
+      > </a
+      ><a name="213" href="Fold.html#1" class="Module"
+      >Fold</a
+      ><a name="217"
+      >
+
+</a
+      ><a name="219" class="Keyword"
+      >module</a
+      ><a name="225"
+      > </a
+      ><a name="226" href="WWFoldDerived.html#1" class="Module"
+      >WWFoldDerived</a
+      ><a name="239"
+      >
+
+  </a
+      ><a name="243" class="Symbol"
+      >(</a
+      ><a name="244" href="WWFoldDerived.html#244" class="Bound"
+      >ext</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >:</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="Extensionality.html#87" class="Function"
+      >Extensionality</a
+      ><a name="264" class="Symbol"
+      >)</a
+      ><a name="265"
+      >
+
+  </a
+      ><a name="269" class="Symbol"
+      >(</a
+      ><a name="270" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="273"
+      > </a
+      ><a name="274" class="Symbol"
+      >:</a
+      ><a name="275"
+      > </a
+      ><a name="276" class="Symbol"
+      >{</a
+      ><a name="277" href="WWFoldDerived.html#277" class="Bound"
+      >&#964;</a
+      ><a name="278"
+      > </a
+      ><a name="279" class="Symbol"
+      >:</a
+      ><a name="280"
+      > </a
+      ><a name="281" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="285" class="Symbol"
+      >}</a
+      ><a name="286"
+      > </a
+      ><a name="287" class="Symbol"
+      >&#8594;</a
+      ><a name="288"
+      > </a
+      ><a name="289" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="292"
+      > </a
+      ><a name="293" class="Symbol"
+      >(</a
+      ><a name="294" href="WWFoldDerived.html#277" class="Bound"
+      >&#964;</a
+      ><a name="295"
+      > </a
+      ><a name="296" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="297"
+      > </a
+      ><a name="298" href="WWFoldDerived.html#277" class="Bound"
+      >&#964;</a
+      ><a name="299" class="Symbol"
+      >)</a
+      ><a name="300"
+      > </a
+      ><a name="301" class="Symbol"
+      >&#8594;</a
+      ><a name="302"
+      > </a
+      ><a name="303" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="306"
+      > </a
+      ><a name="307" href="WWFoldDerived.html#277" class="Bound"
+      >&#964;</a
+      ><a name="308" class="Symbol"
+      >)</a
+      ><a name="309"
+      >
+  </a
+      ><a name="312" class="Symbol"
+      >(</a
+      ><a name="313" href="WWFoldDerived.html#313" class="Bound"
+      >Computation</a
+      ><a name="324"
+      > </a
+      ><a name="325" class="Symbol"
+      >:</a
+      ><a name="326"
+      > </a
+      ><a name="327" class="Symbol"
+      >{</a
+      ><a name="328" href="WWFoldDerived.html#328" class="Bound"
+      >&#964;</a
+      ><a name="329"
+      > </a
+      ><a name="330" class="Symbol"
+      >:</a
+      ><a name="331"
+      > </a
+      ><a name="332" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="336" class="Symbol"
+      >}</a
+      ><a name="337"
+      > </a
+      ><a name="338" class="Symbol"
+      >&#8594;</a
+      ><a name="339"
+      > </a
+      ><a name="340" class="Symbol"
+      >(</a
+      ><a name="341" href="WWFoldDerived.html#341" class="Bound"
+      >f</a
+      ><a name="342"
+      > </a
+      ><a name="343" class="Symbol"
+      >:</a
+      ><a name="344"
+      > </a
+      ><a name="345" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="348"
+      > </a
+      ><a name="349" class="Symbol"
+      >(</a
+      ><a name="350" href="WWFoldDerived.html#328" class="Bound"
+      >&#964;</a
+      ><a name="351"
+      > </a
+      ><a name="352" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="353"
+      > </a
+      ><a name="354" href="WWFoldDerived.html#328" class="Bound"
+      >&#964;</a
+      ><a name="355" class="Symbol"
+      >))</a
+      ><a name="357"
+      > </a
+      ><a name="358" class="Symbol"
+      >&#8594;</a
+      ><a name="359"
+      > </a
+      ><a name="360" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="363"
+      > </a
+      ><a name="364" href="WWFoldDerived.html#341" class="Bound"
+      >f</a
+      ><a name="365"
+      > </a
+      ><a name="366" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="367"
+      > </a
+      ><a name="368" href="WWFoldDerived.html#341" class="Bound"
+      >f</a
+      ><a name="369"
+      > </a
+      ><a name="370" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Symbol"
+      >(</a
+      ><a name="373" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="376"
+      > </a
+      ><a name="377" href="WWFoldDerived.html#341" class="Bound"
+      >f</a
+      ><a name="378" class="Symbol"
+      >))</a
+      ><a name="380"
+      >
+  </a
+      ><a name="383" class="Symbol"
+      >(</a
+      ><a name="384" href="WWFoldDerived.html#384" class="Bound"
+      >Induction</a
+      ><a name="393"
+      > </a
+      ><a name="394" class="Symbol"
+      >:</a
+      ><a name="395"
+      > </a
+      ><a name="396" class="Symbol"
+      >{</a
+      ><a name="397" href="WWFoldDerived.html#397" class="Bound"
+      >&#964;</a
+      ><a name="398"
+      > </a
+      ><a name="399" class="Symbol"
+      >:</a
+      ><a name="400"
+      > </a
+      ><a name="401" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="405" class="Symbol"
+      >}</a
+      ><a name="406"
+      > </a
+      ><a name="407" class="Symbol"
+      >&#8594;</a
+      ><a name="408"
+      > </a
+      ><a name="409" class="Symbol"
+      >{</a
+      ><a name="410" href="WWFoldDerived.html#410" class="Bound"
+      >x</a
+      ><a name="411"
+      > </a
+      ><a name="412" class="Symbol"
+      >:</a
+      ><a name="413"
+      > </a
+      ><a name="414" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="417"
+      > </a
+      ><a name="418" href="WWFoldDerived.html#397" class="Bound"
+      >&#964;</a
+      ><a name="419" class="Symbol"
+      >}</a
+      ><a name="420"
+      >  </a
+      ><a name="422" class="Symbol"
+      >&#8594;</a
+      ><a name="423"
+      > </a
+      ><a name="424" class="Symbol"
+      >(</a
+      ><a name="425" href="WWFoldDerived.html#425" class="Bound"
+      >f</a
+      ><a name="426"
+      > </a
+      ><a name="427" class="Symbol"
+      >:</a
+      ><a name="428"
+      > </a
+      ><a name="429" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="432"
+      > </a
+      ><a name="433" class="Symbol"
+      >(</a
+      ><a name="434" href="WWFoldDerived.html#397" class="Bound"
+      >&#964;</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="WWFoldDerived.html#397" class="Bound"
+      >&#964;</a
+      ><a name="439" class="Symbol"
+      >))</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Symbol"
+      >&#8594;</a
+      ><a name="443"
+      > </a
+      ><a name="444" href="WWFoldDerived.html#425" class="Bound"
+      >f</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="WWFoldDerived.html#410" class="Bound"
+      >x</a
+      ><a name="449"
+      > </a
+      ><a name="450" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="451"
+      > </a
+      ><a name="452" href="WWFoldDerived.html#410" class="Bound"
+      >x</a
+      ><a name="453"
+      > </a
+      ><a name="454" class="Symbol"
+      >&#8594;</a
+      ><a name="455"
+      > </a
+      ><a name="456" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="459"
+      > </a
+      ><a name="460" href="WWFoldDerived.html#425" class="Bound"
+      >f</a
+      ><a name="461"
+      > </a
+      ><a name="462" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="463"
+      > </a
+      ><a name="464" href="WWFoldDerived.html#410" class="Bound"
+      >x</a
+      ><a name="465" class="Symbol"
+      >)</a
+      ><a name="466"
+      >
+
+  </a
+      ><a name="470" class="Symbol"
+      >(</a
+      ><a name="471" href="WWFoldDerived.html#471" class="Bound"
+      >fix-&#8855;</a
+      ><a name="476"
+      > </a
+      ><a name="477" class="Symbol"
+      >:</a
+      ><a name="478"
+      > </a
+      ><a name="479" class="Symbol"
+      >{</a
+      ><a name="480" href="WWFoldDerived.html#480" class="Bound"
+      >&#963;</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="WWFoldDerived.html#482" class="Bound"
+      >&#964;</a
+      ><a name="483"
+      > </a
+      ><a name="484" class="Symbol"
+      >:</a
+      ><a name="485"
+      > </a
+      ><a name="486" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="490" class="Symbol"
+      >}</a
+      ><a name="491"
+      > </a
+      ><a name="492" class="Symbol"
+      >&#8594;</a
+      ><a name="493"
+      > </a
+      ><a name="494" class="Symbol"
+      >{</a
+      ><a name="495" href="WWFoldDerived.html#495" class="Bound"
+      >f</a
+      ><a name="496"
+      > </a
+      ><a name="497" class="Symbol"
+      >:</a
+      ><a name="498"
+      > </a
+      ><a name="499" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="502"
+      > </a
+      ><a name="503" class="Symbol"
+      >(</a
+      ><a name="504" href="WWFoldDerived.html#480" class="Bound"
+      >&#963;</a
+      ><a name="505"
+      > </a
+      ><a name="506" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="507"
+      > </a
+      ><a name="508" href="WWFoldDerived.html#480" class="Bound"
+      >&#963;</a
+      ><a name="509" class="Symbol"
+      >)}</a
+      ><a name="511"
+      > </a
+      ><a name="512" class="Symbol"
+      >&#8594;</a
+      ><a name="513"
+      > </a
+      ><a name="514" class="Symbol"
+      >{</a
+      ><a name="515" href="WWFoldDerived.html#515" class="Bound"
+      >g</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >:</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="522"
+      > </a
+      ><a name="523" class="Symbol"
+      >(</a
+      ><a name="524" href="WWFoldDerived.html#482" class="Bound"
+      >&#964;</a
+      ><a name="525"
+      > </a
+      ><a name="526" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="527"
+      > </a
+      ><a name="528" href="WWFoldDerived.html#482" class="Bound"
+      >&#964;</a
+      ><a name="529" class="Symbol"
+      >)}</a
+      ><a name="531"
+      > </a
+      ><a name="532" class="Symbol"
+      >&#8594;</a
+      ><a name="533"
+      > </a
+      ><a name="534" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="537"
+      > </a
+      ><a name="538" class="Symbol"
+      >(</a
+      ><a name="539" href="WWFoldDerived.html#495" class="Bound"
+      >f</a
+      ><a name="540"
+      > </a
+      ><a name="541" href="CPOFunctions.html#6340" class="Function Operator"
+      >:&#215;:</a
+      ><a name="544"
+      > </a
+      ><a name="545" href="WWFoldDerived.html#515" class="Bound"
+      >g</a
+      ><a name="546" class="Symbol"
+      >)</a
+      ><a name="547"
+      > </a
+      ><a name="548" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="549"
+      > </a
+      ><a name="550" class="Symbol"
+      >(</a
+      ><a name="551" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="554"
+      > </a
+      ><a name="555" href="WWFoldDerived.html#495" class="Bound"
+      >f</a
+      ><a name="556"
+      > </a
+      ><a name="557" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="558"
+      > </a
+      ><a name="559" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="562"
+      > </a
+      ><a name="563" href="WWFoldDerived.html#515" class="Bound"
+      >g</a
+      ><a name="564" class="Symbol"
+      >))</a
+      ><a name="566"
+      >
+
+  </a
+      ><a name="570" class="Symbol"
+      >(</a
+      ><a name="571" href="WWFoldDerived.html#571" class="Bound"
+      >FixpointInduction</a
+      ><a name="588"
+      > </a
+      ><a name="589" class="Symbol"
+      >:</a
+      ><a name="590"
+      > </a
+      ><a name="591" class="Symbol"
+      >{</a
+      ><a name="592" href="WWFoldDerived.html#592" class="Bound"
+      >&#964;</a
+      ><a name="593"
+      > </a
+      ><a name="594" class="Symbol"
+      >:</a
+      ><a name="595"
+      > </a
+      ><a name="596" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="600" class="Symbol"
+      >}</a
+      ><a name="601"
+      > </a
+      ><a name="602" class="Symbol"
+      >&#8594;</a
+      ><a name="603"
+      > </a
+      ><a name="604" class="Symbol"
+      >(</a
+      ><a name="605" href="WWFoldDerived.html#605" class="Bound"
+      >P</a
+      ><a name="606"
+      > </a
+      ><a name="607" class="Symbol"
+      >:</a
+      ><a name="608"
+      > </a
+      ><a name="609" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="612"
+      > </a
+      ><a name="613" href="WWFoldDerived.html#592" class="Bound"
+      >&#964;</a
+      ><a name="614"
+      > </a
+      ><a name="615" class="Symbol"
+      >&#8594;</a
+      ><a name="616"
+      > </a
+      ><a name="617" class="PrimitiveType"
+      >Set</a
+      ><a name="620" class="Symbol"
+      >)</a
+      ><a name="621"
+      > </a
+      ><a name="622" class="Symbol"
+      >&#8594;</a
+      ><a name="623"
+      > </a
+      ><a name="624" class="Symbol"
+      >(</a
+      ><a name="625" href="WWFoldDerived.html#625" class="Bound"
+      >f</a
+      ><a name="626"
+      > </a
+      ><a name="627" class="Symbol"
+      >:</a
+      ><a name="628"
+      > </a
+      ><a name="629" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="632"
+      > </a
+      ><a name="633" class="Symbol"
+      >(</a
+      ><a name="634" href="WWFoldDerived.html#592" class="Bound"
+      >&#964;</a
+      ><a name="635"
+      > </a
+      ><a name="636" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="637"
+      > </a
+      ><a name="638" href="WWFoldDerived.html#592" class="Bound"
+      >&#964;</a
+      ><a name="639" class="Symbol"
+      >))</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >&#8594;</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="CPO.html#11243" class="Function"
+      >ChainComplete</a
+      ><a name="657"
+      > </a
+      ><a name="658" href="WWFoldDerived.html#605" class="Bound"
+      >P</a
+      ><a name="659"
+      > </a
+      ><a name="660" class="Symbol"
+      >&#8594;</a
+      ><a name="661"
+      > </a
+      ><a name="662" href="WWFoldDerived.html#605" class="Bound"
+      >P</a
+      ><a name="663"
+      > </a
+      ><a name="664" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="665"
+      > </a
+      ><a name="666" class="Symbol"
+      >&#8594;</a
+      ><a name="667"
+      > </a
+      ><a name="668" class="Symbol"
+      >((</a
+      ><a name="670" href="WWFoldDerived.html#670" class="Bound"
+      >x</a
+      ><a name="671"
+      > </a
+      ><a name="672" class="Symbol"
+      >:</a
+      ><a name="673"
+      > </a
+      ><a name="674" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="677"
+      > </a
+      ><a name="678" href="WWFoldDerived.html#592" class="Bound"
+      >&#964;</a
+      ><a name="679" class="Symbol"
+      >)</a
+      ><a name="680"
+      > </a
+      ><a name="681" class="Symbol"
+      >&#8594;</a
+      ><a name="682"
+      > </a
+      ><a name="683" href="WWFoldDerived.html#605" class="Bound"
+      >P</a
+      ><a name="684"
+      > </a
+      ><a name="685" href="WWFoldDerived.html#670" class="Bound"
+      >x</a
+      ><a name="686"
+      > </a
+      ><a name="687" class="Symbol"
+      >&#8594;</a
+      ><a name="688"
+      > </a
+      ><a name="689" href="WWFoldDerived.html#605" class="Bound"
+      >P</a
+      ><a name="690"
+      > </a
+      ><a name="691" class="Symbol"
+      >(</a
+      ><a name="692" href="WWFoldDerived.html#625" class="Bound"
+      >f</a
+      ><a name="693"
+      > </a
+      ><a name="694" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="695"
+      > </a
+      ><a name="696" href="WWFoldDerived.html#670" class="Bound"
+      >x</a
+      ><a name="697" class="Symbol"
+      >))</a
+      ><a name="699"
+      > </a
+      ><a name="700" class="Symbol"
+      >&#8594;</a
+      ><a name="701"
+      > </a
+      ><a name="702" href="WWFoldDerived.html#605" class="Bound"
+      >P</a
+      ><a name="703"
+      > </a
+      ><a name="704" class="Symbol"
+      >(</a
+      ><a name="705" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="708"
+      > </a
+      ><a name="709" href="WWFoldDerived.html#625" class="Bound"
+      >f</a
+      ><a name="710" class="Symbol"
+      >))</a
+      ><a name="712"
+      >
+
+  </a
+      ><a name="716" class="Symbol"
+      >(</a
+      ><a name="717" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >:</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="CPO.html#11767" class="Function"
+      >Functor</a
+      ><a name="728" class="Symbol"
+      >)</a
+      ><a name="729"
+      >
+  </a
+      ><a name="732" class="Symbol"
+      >(</a
+      ><a name="733" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="738"
+      > </a
+      ><a name="739" class="Symbol"
+      >:</a
+      ><a name="740"
+      > </a
+      ><a name="741" class="Symbol"
+      >{</a
+      ><a name="742" href="WWFoldDerived.html#742" class="Bound"
+      >&#963;</a
+      ><a name="743"
+      > </a
+      ><a name="744" href="WWFoldDerived.html#744" class="Bound"
+      >&#964;</a
+      ><a name="745"
+      > </a
+      ><a name="746" class="Symbol"
+      >:</a
+      ><a name="747"
+      > </a
+      ><a name="748" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="752" class="Symbol"
+      >}</a
+      ><a name="753"
+      > </a
+      ><a name="754" class="Symbol"
+      >&#8594;</a
+      ><a name="755"
+      > </a
+      ><a name="756" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="759"
+      > </a
+      ><a name="760" class="Symbol"
+      >((</a
+      ><a name="762" href="WWFoldDerived.html#742" class="Bound"
+      >&#963;</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="765"
+      > </a
+      ><a name="766" href="WWFoldDerived.html#744" class="Bound"
+      >&#964;</a
+      ><a name="767" class="Symbol"
+      >)</a
+      ><a name="768"
+      > </a
+      ><a name="769" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="770"
+      > </a
+      ><a name="771" class="Symbol"
+      >(</a
+      ><a name="772" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="773"
+      > </a
+      ><a name="774" href="WWFoldDerived.html#742" class="Bound"
+      >&#963;</a
+      ><a name="775"
+      > </a
+      ><a name="776" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="777"
+      > </a
+      ><a name="778" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="779"
+      > </a
+      ><a name="780" href="WWFoldDerived.html#744" class="Bound"
+      >&#964;</a
+      ><a name="781" class="Symbol"
+      >)))</a
+      ><a name="784"
+      >
+  </a
+      ><a name="787" class="Symbol"
+      >(</a
+      ><a name="788" href="WWFoldDerived.html#788" class="Bound"
+      >fmap-id</a
+      ><a name="795"
+      >   </a
+      ><a name="798" class="Symbol"
+      >:</a
+      ><a name="799"
+      > </a
+      ><a name="800" class="Symbol"
+      >{</a
+      ><a name="801" href="WWFoldDerived.html#801" class="Bound"
+      >&#964;</a
+      ><a name="802"
+      > </a
+      ><a name="803" class="Symbol"
+      >:</a
+      ><a name="804"
+      > </a
+      ><a name="805" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="809" class="Symbol"
+      >}</a
+      ><a name="810"
+      > </a
+      ><a name="811" class="Symbol"
+      >&#8594;</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="818"
+      > </a
+      ><a name="819" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="829"
+      > </a
+      ><a name="830" class="Symbol"
+      >{</a
+      ><a name="831" href="WWFoldDerived.html#801" class="Bound"
+      >&#964;</a
+      ><a name="832" class="Symbol"
+      >}</a
+      ><a name="833"
+      > </a
+      ><a name="834" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="835"
+      > </a
+      ><a name="836" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="844" class="Symbol"
+      >)</a
+      ><a name="845"
+      >
+  </a
+      ><a name="848" class="Symbol"
+      >(</a
+      ><a name="849" href="WWFoldDerived.html#849" class="Bound"
+      >fmap-comp</a
+      ><a name="858"
+      > </a
+      ><a name="859" class="Symbol"
+      >:</a
+      ><a name="860"
+      > </a
+      ><a name="861" class="Symbol"
+      >{</a
+      ><a name="862" href="WWFoldDerived.html#862" class="Bound"
+      >&#963;</a
+      ><a name="863"
+      > </a
+      ><a name="864" href="WWFoldDerived.html#864" class="Bound"
+      >&#964;</a
+      ><a name="865"
+      > </a
+      ><a name="866" href="WWFoldDerived.html#866" class="Bound"
+      >&#965;</a
+      ><a name="867"
+      > </a
+      ><a name="868" class="Symbol"
+      >:</a
+      ><a name="869"
+      > </a
+      ><a name="870" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="874" class="Symbol"
+      >}</a
+      ><a name="875"
+      > </a
+      ><a name="876" class="Symbol"
+      >&#8594;</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >(</a
+      ><a name="879" href="WWFoldDerived.html#879" class="Bound"
+      >f</a
+      ><a name="880"
+      > </a
+      ><a name="881" class="Symbol"
+      >:</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="886"
+      > </a
+      ><a name="887" class="Symbol"
+      >(</a
+      ><a name="888" href="WWFoldDerived.html#864" class="Bound"
+      >&#964;</a
+      ><a name="889"
+      > </a
+      ><a name="890" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="891"
+      > </a
+      ><a name="892" href="WWFoldDerived.html#866" class="Bound"
+      >&#965;</a
+      ><a name="893" class="Symbol"
+      >))</a
+      ><a name="895"
+      > </a
+      ><a name="896" class="Symbol"
+      >&#8594;</a
+      ><a name="897"
+      > </a
+      ><a name="898" class="Symbol"
+      >(</a
+      ><a name="899" href="WWFoldDerived.html#899" class="Bound"
+      >g</a
+      ><a name="900"
+      > </a
+      ><a name="901" class="Symbol"
+      >:</a
+      ><a name="902"
+      > </a
+      ><a name="903" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >(</a
+      ><a name="908" href="WWFoldDerived.html#862" class="Bound"
+      >&#963;</a
+      ><a name="909"
+      > </a
+      ><a name="910" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="911"
+      > </a
+      ><a name="912" href="WWFoldDerived.html#864" class="Bound"
+      >&#964;</a
+      ><a name="913" class="Symbol"
+      >))</a
+      ><a name="915"
+      > </a
+      ><a name="916" class="Symbol"
+      >&#8594;</a
+      ><a name="917"
+      > </a
+      ><a name="918" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="925"
+      > </a
+      ><a name="926" class="Symbol"
+      >(</a
+      ><a name="927" href="WWFoldDerived.html#879" class="Bound"
+      >f</a
+      ><a name="928"
+      > </a
+      ><a name="929" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="930"
+      > </a
+      ><a name="931" href="WWFoldDerived.html#899" class="Bound"
+      >g</a
+      ><a name="932" class="Symbol"
+      >)</a
+      ><a name="933"
+      > </a
+      ><a name="934" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="935"
+      > </a
+      ><a name="936" class="Symbol"
+      >(</a
+      ><a name="937" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="942"
+      > </a
+      ><a name="943" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="WWFoldDerived.html#879" class="Bound"
+      >f</a
+      ><a name="946" class="Symbol"
+      >)</a
+      ><a name="947"
+      > </a
+      ><a name="948" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="949"
+      > </a
+      ><a name="950" class="Symbol"
+      >(</a
+      ><a name="951" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="958"
+      > </a
+      ><a name="959" href="WWFoldDerived.html#899" class="Bound"
+      >g</a
+      ><a name="960" class="Symbol"
+      >))</a
+      ><a name="962"
+      >
+
+  </a
+      ><a name="966" class="Symbol"
+      >(</a
+      ><a name="967" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="968"
+      > </a
+      ><a name="969" class="Symbol"
+      >:</a
+      ><a name="970"
+      > </a
+      ><a name="971" href="CPO.html#11767" class="Function"
+      >Functor</a
+      ><a name="978"
+      > </a
+      ><a name="979" class="Symbol"
+      >&#8594;</a
+      ><a name="980"
+      > </a
+      ><a name="981" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="985" class="Symbol"
+      >)</a
+      ><a name="986"
+      >
+  </a
+      ><a name="989" class="Symbol"
+      >(</a
+      ><a name="990" href="WWFoldDerived.html#990" class="Bound"
+      >inn</a
+      ><a name="993"
+      >    </a
+      ><a name="997" class="Symbol"
+      >:</a
+      ><a name="998"
+      > </a
+      ><a name="999" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" class="Symbol"
+      >(</a
+      ><a name="1004" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" class="Symbol"
+      >(</a
+      ><a name="1007" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1008"
+      > </a
+      ><a name="1009" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1010" class="Symbol"
+      >)</a
+      ><a name="1011"
+      > </a
+      ><a name="1012" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1017" class="Symbol"
+      >))</a
+      ><a name="1019"
+      >
+  </a
+      ><a name="1022" class="Symbol"
+      >(</a
+      ><a name="1023" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="1026"
+      >    </a
+      ><a name="1030" class="Symbol"
+      >:</a
+      ><a name="1031"
+      > </a
+      ><a name="1032" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" class="Symbol"
+      >(</a
+      ><a name="1037" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1040"
+      > </a
+      ><a name="1041" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1042"
+      > </a
+      ><a name="1043" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" class="Symbol"
+      >(</a
+      ><a name="1046" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1049" class="Symbol"
+      >)))</a
+      ><a name="1052"
+      >
+  </a
+      ><a name="1055" class="Symbol"
+      >(</a
+      ><a name="1056" href="WWFoldDerived.html#1056" class="Bound"
+      >innSur</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" class="Symbol"
+      >:</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" href="WWFoldDerived.html#990" class="Bound"
+      >inn</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1070"
+      > </a
+      ><a name="1071" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="1074"
+      > </a
+      ><a name="1075" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1085" class="Symbol"
+      >)</a
+      ><a name="1086"
+      >
+  </a
+      ><a name="1089" class="Symbol"
+      >(</a
+      ><a name="1090" href="WWFoldDerived.html#1090" class="Bound"
+      >outInj</a
+      ><a name="1096"
+      > </a
+      ><a name="1097" class="Symbol"
+      >:</a
+      ><a name="1098"
+      > </a
+      ><a name="1099" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="1102"
+      > </a
+      ><a name="1103" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1104"
+      > </a
+      ><a name="1105" href="WWFoldDerived.html#990" class="Bound"
+      >inn</a
+      ><a name="1108"
+      > </a
+      ><a name="1109" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1110"
+      > </a
+      ><a name="1111" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1119" class="Symbol"
+      >)</a
+      ><a name="1120"
+      >
+  </a
+      ><a name="1123" class="Symbol"
+      >(</a
+      ><a name="1124" href="WWFoldDerived.html#1124" class="Bound"
+      >lemma-fold-inn</a
+      ><a name="1138"
+      > </a
+      ><a name="1139" class="Symbol"
+      >:</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" class="Symbol"
+      >(</a
+      ><a name="1142" href="Fold.html#661" class="Function"
+      >Fold.fold</a
+      ><a name="1151"
+      > </a
+      ><a name="1152" href="WWFoldDerived.html#244" class="Bound"
+      >ext</a
+      ><a name="1155"
+      > </a
+      ><a name="1156" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="1159"
+      > </a
+      ><a name="1160" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1161"
+      > </a
+      ><a name="1162" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1169"
+      > </a
+      ><a name="1170" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="1173" class="Symbol"
+      >)</a
+      ><a name="1174"
+      > </a
+      ><a name="1175" href="WWFoldDerived.html#990" class="Bound"
+      >inn</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1180"
+      > </a
+      ><a name="1181" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1189" class="Symbol"
+      >)</a
+      ><a name="1190"
+      >
+
+  </a
+      ><a name="1194" class="Symbol"
+      >(</a
+      ><a name="1195" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" class="Symbol"
+      >:</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1203" class="Symbol"
+      >)</a
+      ><a name="1204"
+      >
+  </a
+      ><a name="1207" class="Symbol"
+      >(</a
+      ><a name="1208" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1209"
+      > </a
+      ><a name="1210" class="Symbol"
+      >:</a
+      ><a name="1211"
+      > </a
+      ><a name="1212" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="1216" class="Symbol"
+      >)</a
+      ><a name="1217"
+      >
+
+  </a
+      ><a name="1221" class="Symbol"
+      >(</a
+      ><a name="1222" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="1223"
+      >   </a
+      ><a name="1226" class="Symbol"
+      >:</a
+      ><a name="1227"
+      > </a
+      ><a name="1228" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1231"
+      > </a
+      ><a name="1232" class="Symbol"
+      >(</a
+      ><a name="1233" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1234"
+      > </a
+      ><a name="1235" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1236"
+      > </a
+      ><a name="1237" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1240" class="Symbol"
+      >))</a
+      ><a name="1242"
+      >
+  </a
+      ><a name="1245" class="Symbol"
+      >(</a
+      ><a name="1246" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="1247"
+      >   </a
+      ><a name="1250" class="Symbol"
+      >:</a
+      ><a name="1251"
+      > </a
+      ><a name="1252" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1255"
+      > </a
+      ><a name="1256" class="Symbol"
+      >(</a
+      ><a name="1257" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1258"
+      > </a
+      ><a name="1259" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1260"
+      > </a
+      ><a name="1261" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1262"
+      > </a
+      ><a name="1263" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1264" class="Symbol"
+      >))</a
+      ><a name="1266"
+      >
+  </a
+      ><a name="1269" class="Symbol"
+      >(</a
+      ><a name="1270" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" class="Symbol"
+      >:</a
+      ><a name="1275"
+      > </a
+      ><a name="1276" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" class="Symbol"
+      >(</a
+      ><a name="1281" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1282"
+      > </a
+      ><a name="1283" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1284"
+      > </a
+      ><a name="1285" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1286" class="Symbol"
+      >))</a
+      ><a name="1288"
+      >
+  </a
+      ><a name="1291" class="Symbol"
+      >(</a
+      ><a name="1292" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="1295"
+      > </a
+      ><a name="1296" class="Symbol"
+      >:</a
+      ><a name="1297"
+      > </a
+      ><a name="1298" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1301"
+      > </a
+      ><a name="1302" class="Symbol"
+      >(</a
+      ><a name="1303" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1304"
+      > </a
+      ><a name="1305" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1306"
+      > </a
+      ><a name="1307" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1308" class="Symbol"
+      >))</a
+      ><a name="1310"
+      >
+
+</a
+      ><a name="1312" class="Keyword"
+      >where</a
+      ><a name="1317"
+      >
+
+</a
+      ><a name="1319" class="Keyword"
+      >import</a
+      ><a name="1325"
+      > </a
+      ><a name="1326" href="ContinuityProps.html#1" class="Module"
+      >ContinuityProps</a
+      ><a name="1341"
+      >
+</a
+      ><a name="1342" class="Keyword"
+      >open</a
+      ><a name="1346"
+      > </a
+      ><a name="1347" href="ContinuityProps.html#1" class="Module"
+      >ContinuityProps</a
+      ><a name="1362"
+      > </a
+      ><a name="1363" href="WWFoldDerived.html#244" class="Bound"
+      >ext</a
+      ><a name="1366"
+      > </a
+      ><a name="1367" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="1370"
+      >
+
+</a
+      ><a name="1372" class="Keyword"
+      >import</a
+      ><a name="1378"
+      > </a
+      ><a name="1379" href="WWFoldCommon.html#1" class="Module"
+      >WWFoldCommon</a
+      ><a name="1391"
+      >
+</a
+      ><a name="1392" class="Keyword"
+      >open</a
+      ><a name="1396"
+      > </a
+      ><a name="1397" href="WWFoldCommon.html#1" class="Module"
+      >WWFoldCommon</a
+      ><a name="1409"
+      > </a
+      ><a name="1410" href="WWFoldDerived.html#244" class="Bound"
+      >ext</a
+      ><a name="1413"
+      > </a
+      ><a name="1414" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" href="WWFoldDerived.html#313" class="Bound"
+      >Computation</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="WWFoldDerived.html#384" class="Bound"
+      >Induction</a
+      ><a name="1439"
+      > </a
+      ><a name="1440" href="WWFoldDerived.html#471" class="Bound"
+      >fix-&#8855;</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" href="WWFoldDerived.html#571" class="Bound"
+      >FixpointInduction</a
+      ><a name="1463"
+      > </a
+      ><a name="1464" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" href="WWFoldDerived.html#733" class="Bound"
+      >fmap'</a
+      ><a name="1471"
+      > </a
+      ><a name="1472" href="WWFoldDerived.html#788" class="Bound"
+      >fmap-id</a
+      ><a name="1479"
+      > </a
+      ><a name="1480" href="WWFoldDerived.html#849" class="Bound"
+      >fmap-comp</a
+      ><a name="1489"
+      > </a
+      ><a name="1490" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1491"
+      > </a
+      ><a name="1492" href="WWFoldDerived.html#990" class="Bound"
+      >inn</a
+      ><a name="1495"
+      > </a
+      ><a name="1496" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" href="WWFoldDerived.html#1056" class="Bound"
+      >innSur</a
+      ><a name="1506"
+      > </a
+      ><a name="1507" href="WWFoldDerived.html#1090" class="Bound"
+      >outInj</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" href="WWFoldDerived.html#1124" class="Bound"
+      >lemma-fold-inn</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1530"
+      > </a
+      ><a name="1531" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1532"
+      > </a
+      ><a name="1533" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="1534"
+      > </a
+      ><a name="1535" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="1540"
+      > </a
+      ><a name="1541" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="1544"
+      >
+
+</a
+      ><a name="1546" href="WWFoldDerived.html#1546" class="Function"
+      >f'</a
+      ><a name="1548"
+      > </a
+      ><a name="1549" class="Symbol"
+      >:</a
+      ><a name="1550"
+      > </a
+      ><a name="1551" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" class="Symbol"
+      >((</a
+      ><a name="1557" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1558"
+      > </a
+      ><a name="1559" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1560"
+      > </a
+      ><a name="1561" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1562"
+      > </a
+      ><a name="1563" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1564" class="Symbol"
+      >)</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1567"
+      > </a
+      ><a name="1568" class="Symbol"
+      >(</a
+      ><a name="1569" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1570"
+      > </a
+      ><a name="1571" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1572"
+      > </a
+      ><a name="1573" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1574"
+      > </a
+      ><a name="1575" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1576" class="Symbol"
+      >))</a
+      ><a name="1578"
+      >
+</a
+      ><a name="1579" href="WWFoldDerived.html#1546" class="Function"
+      >f'</a
+      ><a name="1581"
+      > </a
+      ><a name="1582" class="Symbol"
+      >=</a
+      ><a name="1583"
+      > </a
+      ><a name="1584" href="Fold.html#508" class="Function"
+      >fold-fun</a
+      ><a name="1592"
+      > </a
+      ><a name="1593" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="1594"
+      >
+
+</a
+      ><a name="1596" href="WWFoldDerived.html#1596" class="Function"
+      >g'</a
+      ><a name="1598"
+      > </a
+      ><a name="1599" class="Symbol"
+      >:</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" class="Symbol"
+      >((</a
+      ><a name="1607" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1612"
+      > </a
+      ><a name="1613" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1614" class="Symbol"
+      >)</a
+      ><a name="1615"
+      > </a
+      ><a name="1616" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1617"
+      > </a
+      ><a name="1618" class="Symbol"
+      >(</a
+      ><a name="1619" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1620"
+      > </a
+      ><a name="1621" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1622"
+      > </a
+      ><a name="1623" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1626" class="Symbol"
+      >))</a
+      ><a name="1628"
+      >
+</a
+      ><a name="1629" href="WWFoldDerived.html#1596" class="Function"
+      >g'</a
+      ><a name="1631"
+      > </a
+      ><a name="1632" class="Symbol"
+      >=</a
+      ><a name="1633"
+      > </a
+      ><a name="1634" href="Fold.html#508" class="Function"
+      >fold-fun</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="1644"
+      >
+
+</a
+      ><a name="1646" href="WWFoldDerived.html#1646" class="Function"
+      >abs'</a
+      ><a name="1650"
+      > </a
+      ><a name="1651" class="Symbol"
+      >:</a
+      ><a name="1652"
+      > </a
+      ><a name="1653" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1656"
+      > </a
+      ><a name="1657" class="Symbol"
+      >((</a
+      ><a name="1659" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1660"
+      > </a
+      ><a name="1661" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1662"
+      > </a
+      ><a name="1663" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1664"
+      > </a
+      ><a name="1665" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1666" class="Symbol"
+      >)</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1669"
+      > </a
+      ><a name="1670" class="Symbol"
+      >(</a
+      ><a name="1671" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1674"
+      > </a
+      ><a name="1675" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1676"
+      > </a
+      ><a name="1677" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1678" class="Symbol"
+      >))</a
+      ><a name="1680"
+      >
+</a
+      ><a name="1681" href="WWFoldDerived.html#1646" class="Function"
+      >abs'</a
+      ><a name="1685"
+      > </a
+      ><a name="1686" class="Symbol"
+      >=</a
+      ><a name="1687"
+      > </a
+      ><a name="1688" href="ContinuityProps.html#5413" class="Function"
+      >result</a
+      ><a name="1694"
+      > </a
+      ><a name="1695" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="1698"
+      >
+
+</a
+      ><a name="1700" href="WWFoldDerived.html#1700" class="Function"
+      >rep'</a
+      ><a name="1704"
+      > </a
+      ><a name="1705" class="Symbol"
+      >:</a
+      ><a name="1706"
+      > </a
+      ><a name="1707" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" class="Symbol"
+      >((</a
+      ><a name="1713" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1714"
+      > </a
+      ><a name="1715" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1716"
+      > </a
+      ><a name="1717" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1720" class="Symbol"
+      >)</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1723"
+      > </a
+      ><a name="1724" class="Symbol"
+      >(</a
+      ><a name="1725" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1726"
+      > </a
+      ><a name="1727" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1728"
+      > </a
+      ><a name="1729" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1732" class="Symbol"
+      >))</a
+      ><a name="1734"
+      >
+</a
+      ><a name="1735" href="WWFoldDerived.html#1700" class="Function"
+      >rep'</a
+      ><a name="1739"
+      > </a
+      ><a name="1740" class="Symbol"
+      >=</a
+      ><a name="1741"
+      > </a
+      ><a name="1742" href="ContinuityProps.html#5413" class="Function"
+      >result</a
+      ><a name="1748"
+      > </a
+      ><a name="1749" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="1752"
+      >
+
+</a
+      ><a name="1754" class="Keyword"
+      >import</a
+      ><a name="1760"
+      > </a
+      ><a name="1761" href="WWFix.html#1" class="Module"
+      >WWFix</a
+      ><a name="1766"
+      >
+</a
+      ><a name="1767" class="Keyword"
+      >open</a
+      ><a name="1771"
+      > </a
+      ><a name="1772" href="WWFix.html#1" class="Module"
+      >WWFix</a
+      ><a name="1777"
+      > </a
+      ><a name="1778" href="WWFoldDerived.html#244" class="Bound"
+      >ext</a
+      ><a name="1781"
+      > </a
+      ><a name="1782" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="1785"
+      > </a
+      ><a name="1786" href="WWFoldDerived.html#313" class="Bound"
+      >Computation</a
+      ><a name="1797"
+      > </a
+      ><a name="1798" href="WWFoldDerived.html#384" class="Bound"
+      >Induction</a
+      ><a name="1807"
+      > </a
+      ><a name="1808" href="WWFoldDerived.html#471" class="Bound"
+      >fix-&#8855;</a
+      ><a name="1813"
+      > </a
+      ><a name="1814" href="WWFoldDerived.html#571" class="Bound"
+      >FixpointInduction</a
+      ><a name="1831"
+      > </a
+      ><a name="1832" class="Symbol"
+      >(</a
+      ><a name="1833" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1834"
+      > </a
+      ><a name="1835" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1836"
+      > </a
+      ><a name="1837" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1838"
+      > </a
+      ><a name="1839" href="WWFoldDerived.html#1195" class="Bound"
+      >A</a
+      ><a name="1840" class="Symbol"
+      >)</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" class="Symbol"
+      >(</a
+      ><a name="1843" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="1844"
+      > </a
+      ><a name="1845" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="1846"
+      > </a
+      ><a name="1847" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="1848"
+      > </a
+      ><a name="1849" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="1850" class="Symbol"
+      >)</a
+      ><a name="1851"
+      > </a
+      ><a name="1852" href="WWFoldDerived.html#1546" class="Function"
+      >f'</a
+      ><a name="1854"
+      > </a
+      ><a name="1855" href="WWFoldDerived.html#1596" class="Function"
+      >g'</a
+      ><a name="1857"
+      > </a
+      ><a name="1858" href="WWFoldDerived.html#1700" class="Function"
+      >rep'</a
+      ><a name="1862"
+      > </a
+      ><a name="1863" href="WWFoldDerived.html#1646" class="Function"
+      >abs'</a
+      ><a name="1867"
+      > </a
+      ><a name="1868" class="Keyword"
+      >renaming</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" class="Symbol"
+      >(</a
+      ><a name="1878"
+      >AssA </a
+      ><a name="1883" class="Symbol"
+      >to</a
+      ><a name="1885"
+      > AssA-fix </a
+      ><a name="1895" class="Symbol"
+      >;</a
+      ><a name="1896"
+      > AssB </a
+      ><a name="1902" class="Symbol"
+      >to</a
+      ><a name="1904"
+      > AssB-fix </a
+      ><a name="1914" class="Symbol"
+      >;</a
+      ><a name="1915"
+      > AssC </a
+      ><a name="1921" class="Symbol"
+      >to</a
+      ><a name="1923"
+      > AssC-fix </a
+      ><a name="1933" class="Symbol"
+      >;</a
+      ><a name="1934"
+      > Cond1&#945; </a
+      ><a name="1942" class="Symbol"
+      >to</a
+      ><a name="1944"
+      > Cond1&#945;-fix </a
+      ><a name="1956" class="Symbol"
+      >;</a
+      ><a name="1957"
+      > Cond1&#946; </a
+      ><a name="1965" class="Symbol"
+      >to</a
+      ><a name="1967"
+      > Cond1&#946;-fix </a
+      ><a name="1979" class="Symbol"
+      >;</a
+      ><a name="1980"
+      > Cond2&#945; </a
+      ><a name="1988" class="Symbol"
+      >to</a
+      ><a name="1990"
+      > Cond2&#945;-fix </a
+      ><a name="2002" class="Symbol"
+      >;</a
+      ><a name="2003"
+      > Cond2&#946; </a
+      ><a name="2011" class="Symbol"
+      >to</a
+      ><a name="2013"
+      > Cond2&#946;-fix </a
+      ><a name="2025" class="Symbol"
+      >;</a
+      ><a name="2026"
+      > Cond3&#945; </a
+      ><a name="2034" class="Symbol"
+      >to</a
+      ><a name="2036"
+      > Cond3&#945;-fix </a
+      ><a name="2048" class="Symbol"
+      >;</a
+      ><a name="2049"
+      > WWFactorisation </a
+      ><a name="2066" class="Symbol"
+      >to</a
+      ><a name="2068"
+      > WWFactorisation-fix </a
+      ><a name="2089" class="Symbol"
+      >;</a
+      ><a name="2090"
+      > WWFusion </a
+      ><a name="2100" class="Symbol"
+      >to</a
+      ><a name="2102"
+      > WWFusion-fix</a
+      ><a name="2115" class="Symbol"
+      >)</a
+      ><a name="2116"
+      >
+
+</a
+      ><a name="2118" class="Comment"
+      >------------------------------------------------</a
+      ><a name="2166"
+      >
+
+</a
+      ><a name="2168" href="WWFoldDerived.html#2168" class="Function"
+      >AssA&#8658;AssA-fix</a
+      ><a name="2181"
+      > </a
+      ><a name="2182" class="Symbol"
+      >:</a
+      ><a name="2183"
+      > </a
+      ><a name="2184" href="WWFoldCommon.html#1517" class="Function"
+      >AssA</a
+      ><a name="2188"
+      > </a
+      ><a name="2189" class="Symbol"
+      >&#8594;</a
+      ><a name="2190"
+      > </a
+      ><a name="2191" href="WWFix.html#932" class="Function"
+      >AssA-fix</a
+      ><a name="2199"
+      >
+</a
+      ><a name="2200" href="WWFoldDerived.html#2168" class="Function"
+      >AssA&#8658;AssA-fix</a
+      ><a name="2213"
+      > </a
+      ><a name="2214" href="WWFoldDerived.html#2214" class="Bound"
+      >A</a
+      ><a name="2215"
+      > </a
+      ><a name="2216" class="Symbol"
+      >=</a
+      ><a name="2217"
+      > </a
+      ><a name="2218" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="2225"
+      > </a
+      ><a name="2226" class="Symbol"
+      >(&#955;</a
+      ><a name="2228"
+      > </a
+      ><a name="2229" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2230"
+      > </a
+      ><a name="2231" class="Symbol"
+      >&#8594;</a
+      ><a name="2232"
+      > </a
+      ><a name="2233" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="2236"
+      > </a
+      ><a name="2237" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2238"
+      > </a
+      ><a name="2239" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="2242"
+      > </a
+      ><a name="2243" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2244"
+      > </a
+      ><a name="2245" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2246"
+      >
+                                                    </a
+      ><a name="2299" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2300"
+      > </a
+      ><a name="2301" href="CPOFunctions.html#7009" class="Function"
+      >&#8729;-assocRL</a
+      ><a name="2310"
+      > </a
+      ><a name="2311" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="2314"
+      > </a
+      ><a name="2315" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="2318"
+      > </a
+      ><a name="2319" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2320"
+      > </a
+      ><a name="2321" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2322"
+      >
+                                 </a
+      ><a name="2356" class="Symbol"
+      >(</a
+      ><a name="2357" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="2360"
+      > </a
+      ><a name="2361" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2362"
+      > </a
+      ><a name="2363" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="2366" class="Symbol"
+      >)</a
+      ><a name="2367"
+      > </a
+      ><a name="2368" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2371"
+      >
+                                                    </a
+      ><a name="2424" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2425"
+      > </a
+      ><a name="2426" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="2433"
+      > </a
+      ><a name="2434" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2435"
+      > </a
+      ><a name="2436" href="WWFoldDerived.html#2214" class="Bound"
+      >A</a
+      ><a name="2437"
+      > </a
+      ><a name="2438" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2439"
+      >
+                                 </a
+      ><a name="2473" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="2481"
+      > </a
+      ><a name="2482" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2483"
+      > </a
+      ><a name="2484" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2485"
+      >
+                                                    </a
+      ><a name="2538" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2539"
+      > </a
+      ><a name="2540" href="CPOFunctions.html#6562" class="Function"
+      >&#8729;-idL</a
+      ><a name="2545"
+      > </a
+      ><a name="2546" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2547"
+      > </a
+      ><a name="2548" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2549"
+      >
+                                 </a
+      ><a name="2583" href="WWFoldDerived.html#2229" class="Bound"
+      >h</a
+      ><a name="2584"
+      >
+                                                    </a
+      ><a name="2637" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="2640" class="Symbol"
+      >)</a
+      ><a name="2641"
+      >
+
+</a
+      ><a name="2643" class="Comment"
+      >------------------------------------------------</a
+      ><a name="2691"
+      >
+
+</a
+      ><a name="2693" href="WWFoldDerived.html#2693" class="Function"
+      >AssB&#8658;AssB-fix</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" class="Symbol"
+      >:</a
+      ><a name="2708"
+      > </a
+      ><a name="2709" href="WWFoldCommon.html#1557" class="Function"
+      >AssB</a
+      ><a name="2713"
+      > </a
+      ><a name="2714" class="Symbol"
+      >&#8594;</a
+      ><a name="2715"
+      > </a
+      ><a name="2716" href="WWFix.html#972" class="Function"
+      >AssB-fix</a
+      ><a name="2724"
+      >
+</a
+      ><a name="2725" href="WWFoldDerived.html#2693" class="Function"
+      >AssB&#8658;AssB-fix</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" href="WWFoldDerived.html#2739" class="Bound"
+      >B</a
+      ><a name="2740"
+      > </a
+      ><a name="2741" class="Symbol"
+      >=</a
+      ><a name="2742"
+      > </a
+      ><a name="2743" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="2750"
+      > </a
+      ><a name="2751" class="Symbol"
+      >(&#955;</a
+      ><a name="2753"
+      > </a
+      ><a name="2754" href="WWFoldDerived.html#2754" class="Bound"
+      >h</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" class="Symbol"
+      >&#8594;</a
+      ><a name="2757"
+      > </a
+      ><a name="2758" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="2761"
+      > </a
+      ><a name="2762" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2763"
+      > </a
+      ><a name="2764" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="2767"
+      > </a
+      ><a name="2768" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2769"
+      > </a
+      ><a name="2770" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="2771"
+      > </a
+      ><a name="2772" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2773"
+      > </a
+      ><a name="2774" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2778"
+      > </a
+      ><a name="2779" href="WWFoldDerived.html#2754" class="Bound"
+      >h</a
+      ><a name="2780"
+      > </a
+      ><a name="2781" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2782"
+      > </a
+      ><a name="2783" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="2786"
+      >
+                                                               </a
+      ><a name="2850" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2851"
+      > </a
+      ><a name="2852" href="CPOFunctions.html#7964" class="Function"
+      >&#8729;-assocRRLR</a
+      ><a name="2863"
+      > </a
+      ><a name="2864" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="2867"
+      > </a
+      ><a name="2868" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="2871"
+      > </a
+      ><a name="2872" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="2873"
+      > </a
+      ><a name="2874" class="Symbol"
+      >(</a
+      ><a name="2875" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2879"
+      > </a
+      ><a name="2880" href="WWFoldDerived.html#2754" class="Bound"
+      >h</a
+      ><a name="2881"
+      > </a
+      ><a name="2882" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2883"
+      > </a
+      ><a name="2884" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="2887" class="Symbol"
+      >)</a
+      ><a name="2888"
+      > </a
+      ><a name="2889" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2890"
+      >
+                                 </a
+      ><a name="2924" class="Symbol"
+      >(</a
+      ><a name="2925" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="2928"
+      > </a
+      ><a name="2929" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2930"
+      > </a
+      ><a name="2931" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="2934"
+      > </a
+      ><a name="2935" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2936"
+      > </a
+      ><a name="2937" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="2938" class="Symbol"
+      >)</a
+      ><a name="2939"
+      > </a
+      ><a name="2940" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" href="WWFoldDerived.html#2754" class="Bound"
+      >h</a
+      ><a name="2948"
+      > </a
+      ><a name="2949" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2950"
+      > </a
+      ><a name="2951" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="2954"
+      >
+                                                               </a
+      ><a name="3018" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3019"
+      > </a
+      ><a name="3020" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="3027"
+      > </a
+      ><a name="3028" class="Symbol"
+      >(</a
+      ><a name="3029" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" href="WWFoldDerived.html#2754" class="Bound"
+      >h</a
+      ><a name="3035"
+      > </a
+      ><a name="3036" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3037"
+      > </a
+      ><a name="3038" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3041" class="Symbol"
+      >)</a
+      ><a name="3042"
+      > </a
+      ><a name="3043" href="WWFoldDerived.html#2739" class="Bound"
+      >B</a
+      ><a name="3044"
+      > </a
+      ><a name="3045" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3046"
+      >
+                                 </a
+      ><a name="3080" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3081"
+      > </a
+      ><a name="3082" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3088"
+      > </a
+      ><a name="3089" href="WWFoldDerived.html#2754" class="Bound"
+      >h</a
+      ><a name="3090"
+      > </a
+      ><a name="3091" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3092"
+      > </a
+      ><a name="3093" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3096"
+      >
+                                                               </a
+      ><a name="3160" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="3163"
+      > </a
+      ><a name="3164" class="Symbol"
+      >)</a
+      ><a name="3165"
+      >
+
+</a
+      ><a name="3167" class="Comment"
+      >------------------------------------------------</a
+      ><a name="3215"
+      >
+
+</a
+      ><a name="3217" href="WWFoldDerived.html#3217" class="Function"
+      >AssC&#8660;AssC-fix</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" class="Symbol"
+      >:</a
+      ><a name="3232"
+      > </a
+      ><a name="3233" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="3239"
+      > </a
+      ><a name="3240" href="WWFix.html#1009" class="Function"
+      >AssC-fix</a
+      ><a name="3248"
+      >
+</a
+      ><a name="3249" href="WWFoldDerived.html#3217" class="Function"
+      >AssC&#8660;AssC-fix</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" class="Symbol"
+      >=</a
+      ><a name="3264"
+      > </a
+      ><a name="3265" href="Logic.html#443" class="Function"
+      >&#8596;-&#8801;</a
+      ><a name="3268"
+      > </a
+      ><a name="3269" class="Symbol"
+      >(</a
+      ><a name="3270" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="3278"
+      > </a
+      ><a name="3279" class="Symbol"
+      >(</a
+      ><a name="3280" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="3287"
+      > </a
+      ><a name="3288" class="Symbol"
+      >(&#955;</a
+      ><a name="3290"
+      > </a
+      ><a name="3291" href="WWFoldDerived.html#3291" class="Bound"
+      >h</a
+      ><a name="3292"
+      > </a
+      ><a name="3293" class="Symbol"
+      >&#8594;</a
+      ><a name="3294"
+      > </a
+      ><a name="3295" class="Symbol"
+      >(</a
+      ><a name="3296" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3299"
+      > </a
+      ><a name="3300" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3301"
+      > </a
+      ><a name="3302" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3305"
+      > </a
+      ><a name="3306" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3307"
+      > </a
+      ><a name="3308" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3309" class="Symbol"
+      >)</a
+      ><a name="3310"
+      > </a
+      ><a name="3311" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3312"
+      > </a
+      ><a name="3313" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3317"
+      > </a
+      ><a name="3318" href="WWFoldDerived.html#3291" class="Bound"
+      >h</a
+      ><a name="3319"
+      > </a
+      ><a name="3320" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3321"
+      > </a
+      ><a name="3322" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3325"
+      >
+                                                                             </a
+      ><a name="3403" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3404"
+      > </a
+      ><a name="3405" href="CPOFunctions.html#8218" class="Function"
+      >&#8729;-assocLRRR</a
+      ><a name="3416"
+      > </a
+      ><a name="3417" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3420"
+      > </a
+      ><a name="3421" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3424"
+      > </a
+      ><a name="3425" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3426"
+      > </a
+      ><a name="3427" class="Symbol"
+      >(</a
+      ><a name="3428" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3432"
+      > </a
+      ><a name="3433" href="WWFoldDerived.html#3291" class="Bound"
+      >h</a
+      ><a name="3434"
+      > </a
+      ><a name="3435" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3436"
+      > </a
+      ><a name="3437" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3440" class="Symbol"
+      >)</a
+      ><a name="3441"
+      > </a
+      ><a name="3442" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3443"
+      >
+                                              </a
+      ><a name="3490" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3493"
+      > </a
+      ><a name="3494" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3499"
+      > </a
+      ><a name="3500" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3501"
+      > </a
+      ><a name="3502" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3503"
+      > </a
+      ><a name="3504" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3505"
+      > </a
+      ><a name="3506" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3510"
+      > </a
+      ><a name="3511" href="WWFoldDerived.html#3291" class="Bound"
+      >h</a
+      ><a name="3512"
+      > </a
+      ><a name="3513" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3514"
+      > </a
+      ><a name="3515" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3518"
+      >
+                                                                             </a
+      ><a name="3596" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="3599" class="Symbol"
+      >)))</a
+      ><a name="3602"
+      >
+                    </a
+      ><a name="3623" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="3627"
+      >
+
+</a
+      ><a name="3629" href="WWFoldDerived.html#3629" class="Function"
+      >AssC&#8658;AssC-fix</a
+      ><a name="3642"
+      > </a
+      ><a name="3643" class="Symbol"
+      >:</a
+      ><a name="3644"
+      > </a
+      ><a name="3645" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="3649"
+      > </a
+      ><a name="3650" class="Symbol"
+      >&#8594;</a
+      ><a name="3651"
+      > </a
+      ><a name="3652" href="WWFix.html#1009" class="Function"
+      >AssC-fix</a
+      ><a name="3660"
+      >
+</a
+      ><a name="3661" href="WWFoldDerived.html#3629" class="Function"
+      >AssC&#8658;AssC-fix</a
+      ><a name="3674"
+      > </a
+      ><a name="3675" class="Symbol"
+      >=</a
+      ><a name="3676"
+      > </a
+      ><a name="3677" href="Base.html#574" class="Function"
+      >fst</a
+      ><a name="3680"
+      > </a
+      ><a name="3681" href="WWFoldDerived.html#3217" class="Function"
+      >AssC&#8660;AssC-fix</a
+      ><a name="3694"
+      >
+
+</a
+      ><a name="3696" class="Comment"
+      >------------------------------------------------</a
+      ><a name="3744"
+      >
+
+</a
+      ><a name="3746" href="WWFoldDerived.html#3746" class="Function"
+      >cond1aux</a
+      ><a name="3754"
+      > </a
+      ><a name="3755" class="Symbol"
+      >:</a
+      ><a name="3756"
+      > </a
+      ><a name="3757" class="Symbol"
+      >(</a
+      ><a name="3758" href="WWFoldDerived.html#3758" class="Bound"
+      >h</a
+      ><a name="3759"
+      > </a
+      ><a name="3760" class="Symbol"
+      >:</a
+      ><a name="3761"
+      > </a
+      ><a name="3762" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="3765"
+      > </a
+      ><a name="3766" class="Symbol"
+      >(</a
+      ><a name="3767" href="WWFoldDerived.html#967" class="Bound"
+      >&#956;</a
+      ><a name="3768"
+      > </a
+      ><a name="3769" href="WWFoldDerived.html#717" class="Bound"
+      >F</a
+      ><a name="3770"
+      > </a
+      ><a name="3771" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="3772"
+      > </a
+      ><a name="3773" href="WWFoldDerived.html#1208" class="Bound"
+      >B</a
+      ><a name="3774" class="Symbol"
+      >))</a
+      ><a name="3776"
+      > </a
+      ><a name="3777" class="Symbol"
+      >&#8594;</a
+      ><a name="3778"
+      > </a
+      ><a name="3779" class="Symbol"
+      >(</a
+      ><a name="3780" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3783"
+      > </a
+      ><a name="3784" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3785"
+      > </a
+      ><a name="3786" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3787"
+      > </a
+      ><a name="3788" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3789"
+      > </a
+      ><a name="3790" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3794"
+      > </a
+      ><a name="3795" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3798" class="Symbol"
+      >)</a
+      ><a name="3799"
+      > </a
+      ><a name="3800" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3801"
+      > </a
+      ><a name="3802" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3806"
+      > </a
+      ><a name="3807" href="WWFoldDerived.html#3758" class="Bound"
+      >h</a
+      ><a name="3808"
+      > </a
+      ><a name="3809" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3810"
+      > </a
+      ><a name="3811" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3814"
+      > </a
+      ><a name="3815" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3816"
+      > </a
+      ><a name="3817" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3820"
+      > </a
+      ><a name="3821" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3822"
+      > </a
+      ><a name="3823" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3824"
+      > </a
+      ><a name="3825" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3826"
+      > </a
+      ><a name="3827" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3831"
+      > </a
+      ><a name="3832" class="Symbol"
+      >(</a
+      ><a name="3833" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3836"
+      > </a
+      ><a name="3837" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3838"
+      > </a
+      ><a name="3839" href="WWFoldDerived.html#3758" class="Bound"
+      >h</a
+      ><a name="3840" class="Symbol"
+      >)</a
+      ><a name="3841"
+      > </a
+      ><a name="3842" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3843"
+      > </a
+      ><a name="3844" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3847"
+      >
+</a
+      ><a name="3848" href="WWFoldDerived.html#3746" class="Function"
+      >cond1aux</a
+      ><a name="3856"
+      > </a
+      ><a name="3857" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="3858"
+      > </a
+      ><a name="3859" class="Symbol"
+      >=</a
+      ><a name="3860"
+      >
+              </a
+      ><a name="3875" class="Symbol"
+      >(</a
+      ><a name="3876" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3879"
+      > </a
+      ><a name="3880" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3881"
+      > </a
+      ><a name="3882" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3883"
+      > </a
+      ><a name="3884" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3885"
+      > </a
+      ><a name="3886" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3890"
+      > </a
+      ><a name="3891" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3894" class="Symbol"
+      >)</a
+      ><a name="3895"
+      > </a
+      ><a name="3896" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3897"
+      > </a
+      ><a name="3898" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3902"
+      > </a
+      ><a name="3903" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="3904"
+      > </a
+      ><a name="3905" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3906"
+      > </a
+      ><a name="3907" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="3910"
+      >
+                                                  </a
+      ><a name="3961" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3962"
+      > </a
+      ><a name="3963" href="CPOFunctions.html#6804" class="Function"
+      >&#8729;-assocLR</a
+      ><a name="3972"
+      > </a
+      ><a name="3973" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="3976"
+      > </a
+      ><a name="3977" class="Symbol"
+      >(</a
+      ><a name="3978" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="3979"
+      > </a
+      ><a name="3980" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3981"
+      > </a
+      ><a name="3982" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3986"
+      > </a
+      ><a name="3987" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="3990" class="Symbol"
+      >)</a
+      ><a name="3991"
+      > </a
+      ><a name="3992" class="Symbol"
+      >(</a
+      ><a name="3993" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="3997"
+      > </a
+      ><a name="3998" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="3999"
+      > </a
+      ><a name="4000" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4001"
+      > </a
+      ><a name="4002" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4005" class="Symbol"
+      >)</a
+      ><a name="4006"
+      > </a
+      ><a name="4007" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4008"
+      >
+              </a
+      ><a name="4023" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="4026"
+      > </a
+      ><a name="4027" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4028"
+      > </a
+      ><a name="4029" class="Symbol"
+      >(</a
+      ><a name="4030" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4031"
+      > </a
+      ><a name="4032" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4033"
+      > </a
+      ><a name="4034" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4038"
+      > </a
+      ><a name="4039" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4042" class="Symbol"
+      >)</a
+      ><a name="4043"
+      > </a
+      ><a name="4044" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4045"
+      > </a
+      ><a name="4046" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4050"
+      > </a
+      ><a name="4051" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4052"
+      > </a
+      ><a name="4053" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4054"
+      > </a
+      ><a name="4055" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4058"
+      >
+                                                  </a
+      ><a name="4109" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4110"
+      > </a
+      ><a name="4111" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="4118"
+      > </a
+      ><a name="4119" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="4122"
+      > </a
+      ><a name="4123" class="Symbol"
+      >(</a
+      ><a name="4124"
+      >
+                                                                  </a
+      ><a name="4191" class="Symbol"
+      >(</a
+      ><a name="4192" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4193"
+      > </a
+      ><a name="4194" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4195"
+      > </a
+      ><a name="4196" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4200"
+      > </a
+      ><a name="4201" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4204" class="Symbol"
+      >)</a
+      ><a name="4205"
+      > </a
+      ><a name="4206" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4207"
+      > </a
+      ><a name="4208" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4212"
+      > </a
+      ><a name="4213" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4214"
+      > </a
+      ><a name="4215" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4216"
+      > </a
+      ><a name="4217" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4220"
+      >
+                                                                                                </a
+      ><a name="4317" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4318"
+      > </a
+      ><a name="4319" href="CPOFunctions.html#8472" class="Function"
+      >&#8729;-assocEC</a
+      ><a name="4328"
+      > </a
+      ><a name="4329" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4330"
+      > </a
+      ><a name="4331" class="Symbol"
+      >(</a
+      ><a name="4332" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4336"
+      > </a
+      ><a name="4337" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4340" class="Symbol"
+      >)</a
+      ><a name="4341"
+      > </a
+      ><a name="4342" class="Symbol"
+      >(</a
+      ><a name="4343" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4347"
+      > </a
+      ><a name="4348" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4349" class="Symbol"
+      >)</a
+      ><a name="4350"
+      > </a
+      ><a name="4351" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4354"
+      > </a
+      ><a name="4355" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4356"
+      >
+                                                                  </a
+      ><a name="4423" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4424"
+      > </a
+      ><a name="4425" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4426"
+      > </a
+      ><a name="4427" class="Symbol"
+      >(</a
+      ><a name="4428" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4432"
+      > </a
+      ><a name="4433" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4436"
+      > </a
+      ><a name="4437" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4438"
+      > </a
+      ><a name="4439" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4443"
+      > </a
+      ><a name="4444" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4445" class="Symbol"
+      >)</a
+      ><a name="4446"
+      > </a
+      ><a name="4447" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4448"
+      > </a
+      ><a name="4449" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4452"
+      >
+                                                                                                </a
+      ><a name="4549" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4550"
+      > </a
+      ><a name="4551" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="4558"
+      > </a
+      ><a name="4559" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4560"
+      > </a
+      ><a name="4561" class="Symbol"
+      >(</a
+      ><a name="4562" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="4569"
+      > </a
+      ><a name="4570" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4573"
+      > </a
+      ><a name="4574" class="Symbol"
+      >(</a
+      ><a name="4575" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="4578"
+      > </a
+      ><a name="4579" class="Symbol"
+      >(</a
+      ><a name="4580" href="WWFoldDerived.html#849" class="Bound"
+      >fmap-comp</a
+      ><a name="4589"
+      > </a
+      ><a name="4590" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4593"
+      > </a
+      ><a name="4594" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4595" class="Symbol"
+      >)))</a
+      ><a name="4598"
+      > </a
+      ><a name="4599" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4600"
+      >
+                                                                  </a
+      ><a name="4667" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4668"
+      > </a
+      ><a name="4669" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4670"
+      > </a
+      ><a name="4671" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4675"
+      > </a
+      ><a name="4676" class="Symbol"
+      >(</a
+      ><a name="4677" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4680"
+      > </a
+      ><a name="4681" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4682"
+      > </a
+      ><a name="4683" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4684" class="Symbol"
+      >)</a
+      ><a name="4685"
+      > </a
+      ><a name="4686" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4687"
+      > </a
+      ><a name="4688" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4691"
+      >
+                                                                                                </a
+      ><a name="4788" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="4791"
+      > </a
+      ><a name="4792" class="Symbol"
+      >)</a
+      ><a name="4793"
+      >
+                                                  </a
+      ><a name="4844" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4845"
+      >
+              </a
+      ><a name="4860" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="4863"
+      > </a
+      ><a name="4864" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4865"
+      > </a
+      ><a name="4866" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="4867"
+      > </a
+      ><a name="4868" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4869"
+      > </a
+      ><a name="4870" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="4874"
+      > </a
+      ><a name="4875" class="Symbol"
+      >(</a
+      ><a name="4876" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="4879"
+      > </a
+      ><a name="4880" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4881"
+      > </a
+      ><a name="4882" href="WWFoldDerived.html#3857" class="Bound"
+      >h</a
+      ><a name="4883" class="Symbol"
+      >)</a
+      ><a name="4884"
+      > </a
+      ><a name="4885" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4886"
+      > </a
+      ><a name="4887" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="4890"
+      >
+                                                  </a
+      ><a name="4941" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="4944"
+      >
+
+</a
+      ><a name="4946" href="WWFoldDerived.html#4946" class="Function"
+      >Cond1&#945;&#8658;Cond1&#945;-fix</a
+      ><a name="4963"
+      > </a
+      ><a name="4964" class="Symbol"
+      >:</a
+      ><a name="4965"
+      > </a
+      ><a name="4966" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="4972"
+      > </a
+      ><a name="4973" class="Symbol"
+      >&#8594;</a
+      ><a name="4974"
+      > </a
+      ><a name="4975" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;-fix</a
+      ><a name="4985"
+      >
+</a
+      ><a name="4986" href="WWFoldDerived.html#4946" class="Function"
+      >Cond1&#945;&#8658;Cond1&#945;-fix</a
+      ><a name="5003"
+      > </a
+      ><a name="5004" href="WWFoldDerived.html#5004" class="Bound"
+      >1&#945;</a
+      ><a name="5006"
+      > </a
+      ><a name="5007" class="Symbol"
+      >=</a
+      ><a name="5008"
+      > </a
+      ><a name="5009" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="5016"
+      > </a
+      ><a name="5017" class="Symbol"
+      >(&#955;</a
+      ><a name="5019"
+      > </a
+      ><a name="5020" href="WWFoldDerived.html#5020" class="Bound"
+      >h</a
+      ><a name="5021"
+      > </a
+      ><a name="5022" class="Symbol"
+      >&#8594;</a
+      ><a name="5023"
+      >  </a
+      ><a name="5025" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="5026"
+      > </a
+      ><a name="5027" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5028"
+      > </a
+      ><a name="5029" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5033"
+      > </a
+      ><a name="5034" href="WWFoldDerived.html#5020" class="Bound"
+      >h</a
+      ><a name="5035"
+      > </a
+      ><a name="5036" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5037"
+      > </a
+      ><a name="5038" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="5041"
+      >
+                                                                           </a
+      ><a name="5117" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5118"
+      > </a
+      ><a name="5119" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="5126"
+      > </a
+      ><a name="5127" class="Symbol"
+      >(</a
+      ><a name="5128" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5132"
+      > </a
+      ><a name="5133" href="WWFoldDerived.html#5020" class="Bound"
+      >h</a
+      ><a name="5134"
+      > </a
+      ><a name="5135" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5136"
+      > </a
+      ><a name="5137" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="5140" class="Symbol"
+      >)</a
+      ><a name="5141"
+      > </a
+      ><a name="5142" href="WWFoldDerived.html#5004" class="Bound"
+      >1&#945;</a
+      ><a name="5144"
+      > </a
+      ><a name="5145" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5146"
+      >
+                                       </a
+      ><a name="5186" class="Symbol"
+      >(</a
+      ><a name="5187" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="5190"
+      > </a
+      ><a name="5191" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5192"
+      > </a
+      ><a name="5193" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="5194"
+      > </a
+      ><a name="5195" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5196"
+      > </a
+      ><a name="5197" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5201"
+      > </a
+      ><a name="5202" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="5205" class="Symbol"
+      >)</a
+      ><a name="5206"
+      > </a
+      ><a name="5207" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5208"
+      > </a
+      ><a name="5209" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5213"
+      > </a
+      ><a name="5214" href="WWFoldDerived.html#5020" class="Bound"
+      >h</a
+      ><a name="5215"
+      > </a
+      ><a name="5216" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5217"
+      > </a
+      ><a name="5218" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="5221"
+      >
+                                                                           </a
+      ><a name="5297" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5298"
+      > </a
+      ><a name="5299" href="WWFoldDerived.html#3746" class="Function"
+      >cond1aux</a
+      ><a name="5307"
+      > </a
+      ><a name="5308" href="WWFoldDerived.html#5020" class="Bound"
+      >h</a
+      ><a name="5309"
+      > </a
+      ><a name="5310" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5311"
+      >
+                                       </a
+      ><a name="5351" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="5354"
+      > </a
+      ><a name="5355" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5356"
+      > </a
+      ><a name="5357" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="5358"
+      > </a
+      ><a name="5359" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5360"
+      > </a
+      ><a name="5361" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5365"
+      > </a
+      ><a name="5366" class="Symbol"
+      >(</a
+      ><a name="5367" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="5370"
+      > </a
+      ><a name="5371" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5372"
+      > </a
+      ><a name="5373" href="WWFoldDerived.html#5020" class="Bound"
+      >h</a
+      ><a name="5374" class="Symbol"
+      >)</a
+      ><a name="5375"
+      > </a
+      ><a name="5376" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5377"
+      > </a
+      ><a name="5378" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="5381"
+      >
+                                                                           </a
+      ><a name="5457" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="5460" class="Symbol"
+      >)</a
+      ><a name="5461"
+      >
+
+</a
+      ><a name="5463" class="Comment"
+      >------------------------------------------------</a
+      ><a name="5511"
+      >
+
+</a
+      ><a name="5513" href="WWFoldDerived.html#5513" class="Function"
+      >Cond1&#946;&#8660;Cond1&#946;-fix</a
+      ><a name="5530"
+      > </a
+      ><a name="5531" class="Symbol"
+      >:</a
+      ><a name="5532"
+      > </a
+      ><a name="5533" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="5539"
+      > </a
+      ><a name="5540" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="5541"
+      > </a
+      ><a name="5542" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;-fix</a
+      ><a name="5552"
+      >
+</a
+      ><a name="5553" href="WWFoldDerived.html#5513" class="Function"
+      >Cond1&#946;&#8660;Cond1&#946;-fix</a
+      ><a name="5570"
+      > </a
+      ><a name="5571" class="Symbol"
+      >=</a
+      ><a name="5572"
+      > </a
+      ><a name="5573" href="Logic.html#443" class="Function"
+      >&#8596;-&#8801;</a
+      ><a name="5576"
+      > </a
+      ><a name="5577" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="5581"
+      > </a
+      ><a name="5582" class="Symbol"
+      >(</a
+      ><a name="5583" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="5587"
+      > </a
+      ><a name="5588" href="WWFoldDerived.html#270" class="Bound"
+      >fix</a
+      ><a name="5591"
+      > </a
+      ><a name="5592" class="Symbol"
+      >(</a
+      ><a name="5593" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="5600"
+      > </a
+      ><a name="5601" href="WWFoldDerived.html#3746" class="Function"
+      >cond1aux</a
+      ><a name="5609" class="Symbol"
+      >))</a
+      ><a name="5611"
+      >
+
+</a
+      ><a name="5613" href="WWFoldDerived.html#5613" class="Function"
+      >Cond1&#946;&#8658;Cond1&#946;-fix</a
+      ><a name="5630"
+      > </a
+      ><a name="5631" class="Symbol"
+      >:</a
+      ><a name="5632"
+      > </a
+      ><a name="5633" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="5639"
+      > </a
+      ><a name="5640" class="Symbol"
+      >&#8594;</a
+      ><a name="5641"
+      > </a
+      ><a name="5642" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;-fix</a
+      ><a name="5652"
+      >
+</a
+      ><a name="5653" href="WWFoldDerived.html#5613" class="Function"
+      >Cond1&#946;&#8658;Cond1&#946;-fix</a
+      ><a name="5670"
+      > </a
+      ><a name="5671" class="Symbol"
+      >=</a
+      ><a name="5672"
+      > </a
+      ><a name="5673" href="Base.html#574" class="Function"
+      >fst</a
+      ><a name="5676"
+      > </a
+      ><a name="5677" href="WWFoldDerived.html#5513" class="Function"
+      >Cond1&#946;&#8660;Cond1&#946;-fix</a
+      ><a name="5694"
+      >
+
+</a
+      ><a name="5696" class="Comment"
+      >------------------------------------------------</a
+      ><a name="5744"
+      >
+
+</a
+      ><a name="5746" href="WWFoldDerived.html#5746" class="Function"
+      >Cond2&#945;&#8658;Cond2&#945;-fix</a
+      ><a name="5763"
+      > </a
+      ><a name="5764" class="Symbol"
+      >:</a
+      ><a name="5765"
+      > </a
+      ><a name="5766" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="5772"
+      > </a
+      ><a name="5773" class="Symbol"
+      >&#8594;</a
+      ><a name="5774"
+      > </a
+      ><a name="5775" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;-fix</a
+      ><a name="5785"
+      >
+</a
+      ><a name="5786" href="WWFoldDerived.html#5746" class="Function"
+      >Cond2&#945;&#8658;Cond2&#945;-fix</a
+      ><a name="5803"
+      > </a
+      ><a name="5804" class="Symbol"
+      >=</a
+      ><a name="5805"
+      > </a
+      ><a name="5806" href="WWFoldDerived.html#5858" class="Function"
+      >2&#945;AuxEq</a
+      ><a name="5813"
+      > </a
+      ><a name="5814" href="NeilPrelude.html#12814" class="Function Operator"
+      >&#8741;</a
+      ><a name="5815"
+      > </a
+      ><a name="5816" href="Base.html#574" class="Function"
+      >fst</a
+      ><a name="5819"
+      > </a
+      ><a name="5820" class="Symbol"
+      >(</a
+      ><a name="5821" href="FixTheorems.html#1974" class="Function"
+      >PointFreeStrictness</a
+      ><a name="5840"
+      > </a
+      ><a name="5841" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="5844" class="Symbol"
+      >)</a
+      ><a name="5845"
+      >
+  </a
+      ><a name="5848" class="Keyword"
+      >where</a
+      ><a name="5853"
+      >
+    </a
+      ><a name="5858" href="WWFoldDerived.html#5858" class="Function"
+      >2&#945;AuxEq</a
+      ><a name="5865"
+      > </a
+      ><a name="5866" class="Symbol"
+      >:</a
+      ><a name="5867"
+      > </a
+      ><a name="5868" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="5871"
+      > </a
+      ><a name="5872" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5873"
+      > </a
+      ><a name="5874" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="5875"
+      > </a
+      ><a name="5876" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="5877"
+      > </a
+      ><a name="5878" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="5879"
+      > </a
+      ><a name="5880" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5881"
+      > </a
+      ><a name="5882" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5886"
+      > </a
+      ><a name="5887" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="5890"
+      > </a
+      ><a name="5891" class="Symbol"
+      >&#8594;</a
+      ><a name="5892"
+      > </a
+      ><a name="5893" href="WWFoldDerived.html#1700" class="Function"
+      >rep'</a
+      ><a name="5897"
+      > </a
+      ><a name="5898" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5899"
+      > </a
+      ><a name="5900" href="WWFoldDerived.html#1546" class="Function"
+      >f'</a
+      ><a name="5902"
+      > </a
+      ><a name="5903" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="5904"
+      > </a
+      ><a name="5905" href="WWFoldDerived.html#1596" class="Function"
+      >g'</a
+      ><a name="5907"
+      > </a
+      ><a name="5908" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5909"
+      > </a
+      ><a name="5910" href="WWFoldDerived.html#1700" class="Function"
+      >rep'</a
+      ><a name="5914"
+      >
+    </a
+      ><a name="5919" href="WWFoldDerived.html#5858" class="Function"
+      >2&#945;AuxEq</a
+      ><a name="5926"
+      > </a
+      ><a name="5927" href="WWFoldDerived.html#5927" class="Bound"
+      >2&#945;</a
+      ><a name="5929"
+      > </a
+      ><a name="5930" class="Symbol"
+      >=</a
+      ><a name="5931"
+      > </a
+      ><a name="5932" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="5939"
+      > </a
+      ><a name="5940" class="Symbol"
+      >(&#955;</a
+      ><a name="5942"
+      > </a
+      ><a name="5943" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="5944"
+      > </a
+      ><a name="5945" class="Symbol"
+      >&#8594;</a
+      ><a name="5946"
+      >
+                                 </a
+      ><a name="5980" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="5983"
+      > </a
+      ><a name="5984" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5985"
+      > </a
+      ><a name="5986" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="5987"
+      > </a
+      ><a name="5988" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5989"
+      > </a
+      ><a name="5990" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="5994"
+      > </a
+      ><a name="5995" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="5996"
+      > </a
+      ><a name="5997" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5998"
+      > </a
+      ><a name="5999" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6002"
+      >
+                                                               </a
+      ><a name="6066" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="6067"
+      > </a
+      ><a name="6068" href="CPOFunctions.html#7009" class="Function"
+      >&#8729;-assocRL</a
+      ><a name="6077"
+      > </a
+      ><a name="6078" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6081"
+      > </a
+      ><a name="6082" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="6083"
+      > </a
+      ><a name="6084" class="Symbol"
+      >(</a
+      ><a name="6085" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6089"
+      > </a
+      ><a name="6090" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6091"
+      > </a
+      ><a name="6092" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6093"
+      > </a
+      ><a name="6094" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6097" class="Symbol"
+      >)</a
+      ><a name="6098"
+      > </a
+      ><a name="6099" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="6100"
+      >
+                                 </a
+      ><a name="6134" class="Symbol"
+      >(</a
+      ><a name="6135" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6138"
+      > </a
+      ><a name="6139" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6140"
+      > </a
+      ><a name="6141" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="6142" class="Symbol"
+      >)</a
+      ><a name="6143"
+      > </a
+      ><a name="6144" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6145"
+      > </a
+      ><a name="6146" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6150"
+      > </a
+      ><a name="6151" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6152"
+      > </a
+      ><a name="6153" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6154"
+      > </a
+      ><a name="6155" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6158"
+      >
+                                                               </a
+      ><a name="6222" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="6223"
+      > </a
+      ><a name="6224" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="6231"
+      > </a
+      ><a name="6232" class="Symbol"
+      >(</a
+      ><a name="6233" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6237"
+      > </a
+      ><a name="6238" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6239"
+      > </a
+      ><a name="6240" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6241"
+      > </a
+      ><a name="6242" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6245" class="Symbol"
+      >)</a
+      ><a name="6246"
+      > </a
+      ><a name="6247" href="WWFoldDerived.html#5927" class="Bound"
+      >2&#945;</a
+      ><a name="6249"
+      > </a
+      ><a name="6250" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="6251"
+      >
+                                 </a
+      ><a name="6285" class="Symbol"
+      >(</a
+      ><a name="6286" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="6287"
+      > </a
+      ><a name="6288" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6289"
+      > </a
+      ><a name="6290" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6294"
+      > </a
+      ><a name="6295" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6298" class="Symbol"
+      >)</a
+      ><a name="6299"
+      > </a
+      ><a name="6300" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6301"
+      > </a
+      ><a name="6302" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6306"
+      > </a
+      ><a name="6307" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6308"
+      > </a
+      ><a name="6309" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6310"
+      > </a
+      ><a name="6311" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6314"
+      >
+                                                               </a
+      ><a name="6378" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="6379"
+      > </a
+      ><a name="6380" href="CPOFunctions.html#8472" class="Function"
+      >&#8729;-assocEC</a
+      ><a name="6389"
+      > </a
+      ><a name="6390" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="6391"
+      > </a
+      ><a name="6392" class="Symbol"
+      >(</a
+      ><a name="6393" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6397"
+      > </a
+      ><a name="6398" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6401" class="Symbol"
+      >)</a
+      ><a name="6402"
+      > </a
+      ><a name="6403" class="Symbol"
+      >(</a
+      ><a name="6404" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6408"
+      > </a
+      ><a name="6409" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6410" class="Symbol"
+      >)</a
+      ><a name="6411"
+      > </a
+      ><a name="6412" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6415"
+      > </a
+      ><a name="6416" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="6417"
+      >
+                                 </a
+      ><a name="6451" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="6452"
+      > </a
+      ><a name="6453" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6454"
+      > </a
+      ><a name="6455" class="Symbol"
+      >(</a
+      ><a name="6456" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6460"
+      > </a
+      ><a name="6461" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6464"
+      > </a
+      ><a name="6465" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6466"
+      > </a
+      ><a name="6467" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6471"
+      > </a
+      ><a name="6472" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6473" class="Symbol"
+      >)</a
+      ><a name="6474"
+      > </a
+      ><a name="6475" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6476"
+      > </a
+      ><a name="6477" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6480"
+      >
+                                                               </a
+      ><a name="6544" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="6545"
+      > </a
+      ><a name="6546" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="6553"
+      > </a
+      ><a name="6554" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="6555"
+      > </a
+      ><a name="6556" class="Symbol"
+      >(</a
+      ><a name="6557" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="6564"
+      > </a
+      ><a name="6565" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6568"
+      > </a
+      ><a name="6569" class="Symbol"
+      >(</a
+      ><a name="6570" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="6573"
+      > </a
+      ><a name="6574" class="Symbol"
+      >(</a
+      ><a name="6575" href="WWFoldDerived.html#849" class="Bound"
+      >fmap-comp</a
+      ><a name="6584"
+      > </a
+      ><a name="6585" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6588"
+      > </a
+      ><a name="6589" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6590" class="Symbol"
+      >)))</a
+      ><a name="6593"
+      > </a
+      ><a name="6594" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="6595"
+      >
+                                 </a
+      ><a name="6629" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="6630"
+      > </a
+      ><a name="6631" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6632"
+      > </a
+      ><a name="6633" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="6637"
+      > </a
+      ><a name="6638" class="Symbol"
+      >(</a
+      ><a name="6639" href="WWFoldDerived.html#1270" class="Bound"
+      >rep</a
+      ><a name="6642"
+      > </a
+      ><a name="6643" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6644"
+      > </a
+      ><a name="6645" href="WWFoldDerived.html#5943" class="Bound"
+      >h</a
+      ><a name="6646" class="Symbol"
+      >)</a
+      ><a name="6647"
+      > </a
+      ><a name="6648" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6649"
+      > </a
+      ><a name="6650" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="6653"
+      >
+                                                               </a
+      ><a name="6717" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="6720" class="Symbol"
+      >)</a
+      ><a name="6721"
+      >
+
+</a
+      ><a name="6723" class="Comment"
+      >------------------------------------------------</a
+      ><a name="6771"
+      >
+
+</a
+      ><a name="6773" href="WWFoldDerived.html#6773" class="Function"
+      >Cond2&#946;&#8658;Cond2&#946;-fix</a
+      ><a name="6790"
+      > </a
+      ><a name="6791" class="Symbol"
+      >:</a
+      ><a name="6792"
+      > </a
+      ><a name="6793" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="6799"
+      > </a
+      ><a name="6800" class="Symbol"
+      >&#8594;</a
+      ><a name="6801"
+      > </a
+      ><a name="6802" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;-fix</a
+      ><a name="6812"
+      >
+</a
+      ><a name="6813" href="WWFoldDerived.html#6773" class="Function"
+      >Cond2&#946;&#8658;Cond2&#946;-fix</a
+      ><a name="6830"
+      > </a
+      ><a name="6831" href="WWFoldDerived.html#6831" class="Bound"
+      >2&#946;</a
+      ><a name="6833"
+      > </a
+      ><a name="6834" class="Symbol"
+      >=</a
+      ><a name="6835"
+      > </a
+      ><a name="6836" href="WWFoldDerived.html#6831" class="Bound"
+      >2&#946;</a
+      ><a name="6838"
+      >
+
+</a
+      ><a name="6840" class="Comment"
+      >------------------------------------------------</a
+      ><a name="6888"
+      >
+
+</a
+      ><a name="6890" href="WWFoldDerived.html#6890" class="Function"
+      >Cond3&#945;&#8658;Cond3&#945;-fix</a
+      ><a name="6907"
+      > </a
+      ><a name="6908" class="Symbol"
+      >:</a
+      ><a name="6909"
+      > </a
+      ><a name="6910" href="WWFoldCommon.html#1853" class="Function"
+      >Cond3&#945;</a
+      ><a name="6916"
+      > </a
+      ><a name="6917" class="Symbol"
+      >&#8594;</a
+      ><a name="6918"
+      > </a
+      ><a name="6919" href="WWFix.html#1248" class="Function"
+      >Cond3&#945;-fix</a
+      ><a name="6929"
+      >
+</a
+      ><a name="6930" href="WWFoldDerived.html#6890" class="Function"
+      >Cond3&#945;&#8658;Cond3&#945;-fix</a
+      ><a name="6947"
+      > </a
+      ><a name="6948" href="WWFoldDerived.html#6948" class="Bound"
+      >3&#945;</a
+      ><a name="6950"
+      > </a
+      ><a name="6951" class="Symbol"
+      >=</a
+      ><a name="6952"
+      > </a
+      ><a name="6953" href="CPOLemmas.html#199" class="Function"
+      >cpo-ext</a
+      ><a name="6960"
+      > </a
+      ><a name="6961" class="Symbol"
+      >(&#955;</a
+      ><a name="6963"
+      > </a
+      ><a name="6964" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="6965"
+      > </a
+      ><a name="6966" class="Symbol"
+      >&#8594;</a
+      ><a name="6967"
+      >
+
+                                 </a
+      ><a name="7002" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7005"
+      > </a
+      ><a name="7006" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7007"
+      > </a
+      ><a name="7008" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="7009"
+      > </a
+      ><a name="7010" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7011"
+      > </a
+      ><a name="7012" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7016"
+      > </a
+      ><a name="7017" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7018"
+      > </a
+      ><a name="7019" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7020"
+      > </a
+      ><a name="7021" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7024"
+      >
+                                                               </a
+      ><a name="7088" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="7089"
+      > </a
+      ><a name="7090" href="CPOFunctions.html#7009" class="Function"
+      >&#8729;-assocRL</a
+      ><a name="7099"
+      > </a
+      ><a name="7100" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7103"
+      > </a
+      ><a name="7104" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="7105"
+      > </a
+      ><a name="7106" class="Symbol"
+      >(</a
+      ><a name="7107" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7111"
+      > </a
+      ><a name="7112" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7113"
+      > </a
+      ><a name="7114" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7115"
+      > </a
+      ><a name="7116" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7119" class="Symbol"
+      >)</a
+      ><a name="7120"
+      > </a
+      ><a name="7121" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="7122"
+      >
+                                 </a
+      ><a name="7156" class="Symbol"
+      >(</a
+      ><a name="7157" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7160"
+      > </a
+      ><a name="7161" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7162"
+      > </a
+      ><a name="7163" href="WWFoldDerived.html#1246" class="Bound"
+      >g</a
+      ><a name="7164" class="Symbol"
+      >)</a
+      ><a name="7165"
+      > </a
+      ><a name="7166" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7167"
+      > </a
+      ><a name="7168" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7172"
+      > </a
+      ><a name="7173" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7174"
+      > </a
+      ><a name="7175" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7176"
+      > </a
+      ><a name="7177" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7180"
+      >
+                                                               </a
+      ><a name="7244" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="7245"
+      > </a
+      ><a name="7246" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="7253"
+      > </a
+      ><a name="7254" class="Symbol"
+      >(</a
+      ><a name="7255" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7259"
+      > </a
+      ><a name="7260" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7261"
+      > </a
+      ><a name="7262" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7263"
+      > </a
+      ><a name="7264" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7267" class="Symbol"
+      >)</a
+      ><a name="7268"
+      > </a
+      ><a name="7269" href="WWFoldDerived.html#6948" class="Bound"
+      >3&#945;</a
+      ><a name="7271"
+      > </a
+      ><a name="7272" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="7273"
+      >
+                                 </a
+      ><a name="7307" class="Symbol"
+      >(</a
+      ><a name="7308" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="7309"
+      > </a
+      ><a name="7310" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7311"
+      > </a
+      ><a name="7312" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7316"
+      > </a
+      ><a name="7317" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7320" class="Symbol"
+      >)</a
+      ><a name="7321"
+      > </a
+      ><a name="7322" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7323"
+      > </a
+      ><a name="7324" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7328"
+      > </a
+      ><a name="7329" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7330"
+      > </a
+      ><a name="7331" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7332"
+      > </a
+      ><a name="7333" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7336"
+      >
+                                                               </a
+      ><a name="7400" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="7401"
+      > </a
+      ><a name="7402" href="CPOFunctions.html#8472" class="Function"
+      >&#8729;-assocEC</a
+      ><a name="7411"
+      > </a
+      ><a name="7412" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="7413"
+      > </a
+      ><a name="7414" class="Symbol"
+      >(</a
+      ><a name="7415" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7419"
+      > </a
+      ><a name="7420" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7423" class="Symbol"
+      >)</a
+      ><a name="7424"
+      > </a
+      ><a name="7425" class="Symbol"
+      >(</a
+      ><a name="7426" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7430"
+      > </a
+      ><a name="7431" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7432" class="Symbol"
+      >)</a
+      ><a name="7433"
+      > </a
+      ><a name="7434" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7437"
+      > </a
+      ><a name="7438" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="7439"
+      >
+                                 </a
+      ><a name="7473" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="7474"
+      > </a
+      ><a name="7475" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7476"
+      > </a
+      ><a name="7477" class="Symbol"
+      >(</a
+      ><a name="7478" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7482"
+      > </a
+      ><a name="7483" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7486"
+      > </a
+      ><a name="7487" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7488"
+      > </a
+      ><a name="7489" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7493"
+      > </a
+      ><a name="7494" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7495" class="Symbol"
+      >)</a
+      ><a name="7496"
+      > </a
+      ><a name="7497" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7498"
+      > </a
+      ><a name="7499" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7502"
+      >
+                                                               </a
+      ><a name="7566" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="7567"
+      > </a
+      ><a name="7568" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="7575"
+      > </a
+      ><a name="7576" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="7577"
+      > </a
+      ><a name="7578" class="Symbol"
+      >(</a
+      ><a name="7579" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="7586"
+      > </a
+      ><a name="7587" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7590"
+      > </a
+      ><a name="7591" class="Symbol"
+      >(</a
+      ><a name="7592" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="7595"
+      > </a
+      ><a name="7596" class="Symbol"
+      >(</a
+      ><a name="7597" href="WWFoldDerived.html#849" class="Bound"
+      >fmap-comp</a
+      ><a name="7606"
+      > </a
+      ><a name="7607" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7610"
+      > </a
+      ><a name="7611" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7612" class="Symbol"
+      >)))</a
+      ><a name="7615"
+      > </a
+      ><a name="7616" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="7617"
+      >
+                                 </a
+      ><a name="7651" href="WWFoldDerived.html#1222" class="Bound"
+      >f</a
+      ><a name="7652"
+      > </a
+      ><a name="7653" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7654"
+      > </a
+      ><a name="7655" href="FoldTheorems.html#1459" class="Function"
+      >fmap</a
+      ><a name="7659"
+      > </a
+      ><a name="7660" class="Symbol"
+      >(</a
+      ><a name="7661" href="WWFoldDerived.html#1292" class="Bound"
+      >abs</a
+      ><a name="7664"
+      > </a
+      ><a name="7665" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7666"
+      > </a
+      ><a name="7667" href="WWFoldDerived.html#6964" class="Bound"
+      >h</a
+      ><a name="7668" class="Symbol"
+      >)</a
+      ><a name="7669"
+      > </a
+      ><a name="7670" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="7671"
+      > </a
+      ><a name="7672" href="WWFoldDerived.html#1023" class="Bound"
+      >out</a
+      ><a name="7675"
+      >
+                                                               </a
+      ><a name="7739" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="7742" class="Symbol"
+      >)</a
+      ><a name="7743"
+      >
+
+</a
+      ><a name="7745" class="Comment"
+      >------------------------------------------------</a
+      ><a name="7793"
+      >
+
+</a
+      ><a name="7795" href="WWFoldDerived.html#7795" class="Function"
+      >WWFac-Fix&#8658;WWFac</a
+      ><a name="7810"
+      > </a
+      ><a name="7811" class="Symbol"
+      >:</a
+      ><a name="7812"
+      > </a
+      ><a name="7813" href="WWFix.html#1290" class="Function"
+      >WWFactorisation-fix</a
+      ><a name="7832"
+      > </a
+      ><a name="7833" class="Symbol"
+      >&#8594;</a
+      ><a name="7834"
+      > </a
+      ><a name="7835" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="7850"
+      >
+</a
+      ><a name="7851" href="WWFoldDerived.html#7795" class="Function"
+      >WWFac-Fix&#8658;WWFac</a
+      ><a name="7866"
+      > </a
+      ><a name="7867" href="WWFoldDerived.html#7867" class="Bound"
+      >fac</a
+      ><a name="7870"
+      > </a
+      ><a name="7871" class="Symbol"
+      >=</a
+      ><a name="7872"
+      > </a
+      ><a name="7873" href="WWFoldDerived.html#7867" class="Bound"
+      >fac</a
+      ><a name="7876"
+      >
+
+</a
+      ><a name="7878" href="WWFoldDerived.html#7878" class="Function"
+      >WWFusion-Fix&#8658;WWFusion</a
+      ><a name="7899"
+      > </a
+      ><a name="7900" class="Symbol"
+      >:</a
+      ><a name="7901"
+      > </a
+      ><a name="7902" href="WWFix.html#1351" class="Function"
+      >WWFusion-fix</a
+      ><a name="7914"
+      > </a
+      ><a name="7915" class="Symbol"
+      >&#8594;</a
+      ><a name="7916"
+      > </a
+      ><a name="7917" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="7925"
+      >
+</a
+      ><a name="7926" href="WWFoldDerived.html#7878" class="Function"
+      >WWFusion-Fix&#8658;WWFusion</a
+      ><a name="7947"
+      > </a
+      ><a name="7948" href="WWFoldDerived.html#7948" class="Bound"
+      >fus</a
+      ><a name="7951"
+      > </a
+      ><a name="7952" class="Symbol"
+      >=</a
+      ><a name="7953"
+      > </a
+      ><a name="7954" href="WWFoldDerived.html#7948" class="Bound"
+      >fus</a
+      ><a name="7957"
+      >
+
+</a
+      ><a name="7959" class="Comment"
+      >------------------------------------------------</a
+      ><a name="8007"
+      >
+
+</a
+      ><a name="8009" href="WWFoldDerived.html#8009" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="8020"
+      > </a
+      ><a name="8021" class="Symbol"
+      >:</a
+      ><a name="8022"
+      > </a
+      ><a name="8023" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="8027"
+      > </a
+      ><a name="8028" class="Symbol"
+      >&#8594;</a
+      ><a name="8029"
+      > </a
+      ><a name="8030" class="Symbol"
+      >(</a
+      ><a name="8031" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="8037"
+      > </a
+      ><a name="8038" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8039"
+      > </a
+      ><a name="8040" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="8046" class="Symbol"
+      >)</a
+      ><a name="8047"
+      > </a
+      ><a name="8048" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8049"
+      > </a
+      ><a name="8050" class="Symbol"
+      >(</a
+      ><a name="8051" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="8057"
+      > </a
+      ><a name="8058" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8059"
+      > </a
+      ><a name="8060" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="8066" class="Symbol"
+      >)</a
+      ><a name="8067"
+      > </a
+      ><a name="8068" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8069"
+      > </a
+      ><a name="8070" href="WWFoldCommon.html#1853" class="Function"
+      >Cond3&#945;</a
+      ><a name="8076"
+      > </a
+      ><a name="8077" class="Symbol"
+      >&#8594;</a
+      ><a name="8078"
+      > </a
+      ><a name="8079" href="WWFoldCommon.html#1900" class="Function"
+      >WWFactorisation</a
+      ><a name="8094"
+      >
+</a
+      ><a name="8095" href="WWFoldDerived.html#8009" class="Function"
+      >WW-Fold-Fac</a
+      ><a name="8106"
+      > </a
+      ><a name="8107" href="WWFoldDerived.html#8107" class="Bound"
+      >C</a
+      ><a name="8108"
+      > </a
+      ><a name="8109" href="WWFoldDerived.html#8109" class="Bound"
+      >cond</a
+      ><a name="8113"
+      > </a
+      ><a name="8114" class="Symbol"
+      >=</a
+      ><a name="8115"
+      > </a
+      ><a name="8116" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="8126"
+      > </a
+      ><a name="8127" class="Symbol"
+      >(</a
+      ><a name="8128" href="WWFoldDerived.html#3629" class="Function"
+      >AssC&#8658;AssC-fix</a
+      ><a name="8141"
+      > </a
+      ><a name="8142" href="WWFoldDerived.html#8107" class="Bound"
+      >C</a
+      ><a name="8143" class="Symbol"
+      >)</a
+      ><a name="8144"
+      > </a
+      ><a name="8145" class="Symbol"
+      >(</a
+      ><a name="8146" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8151"
+      > </a
+      ><a name="8152" class="Symbol"
+      >(</a
+      ><a name="8153" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8158"
+      > </a
+      ><a name="8159" href="WWFoldDerived.html#4946" class="Function"
+      >Cond1&#945;&#8658;Cond1&#945;-fix</a
+      ><a name="8176"
+      > </a
+      ><a name="8177" href="WWFoldDerived.html#5613" class="Function"
+      >Cond1&#946;&#8658;Cond1&#946;-fix</a
+      ><a name="8194" class="Symbol"
+      >)</a
+      ><a name="8195"
+      >
+                                                  </a
+      ><a name="8246" class="Symbol"
+      >(</a
+      ><a name="8247" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8252"
+      > </a
+      ><a name="8253" class="Symbol"
+      >(</a
+      ><a name="8254" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8259"
+      > </a
+      ><a name="8260" href="WWFoldDerived.html#5746" class="Function"
+      >Cond2&#945;&#8658;Cond2&#945;-fix</a
+      ><a name="8277"
+      > </a
+      ><a name="8278" href="WWFoldDerived.html#6773" class="Function"
+      >Cond2&#946;&#8658;Cond2&#946;-fix</a
+      ><a name="8295" class="Symbol"
+      >)</a
+      ><a name="8296"
+      >
+                                                                </a
+      ><a name="8361" href="WWFoldDerived.html#6890" class="Function"
+      >Cond3&#945;&#8658;Cond3&#945;-fix</a
+      ><a name="8378" class="Symbol"
+      >)</a
+      ><a name="8379"
+      >
+                                                  </a
+      ><a name="8430" href="WWFoldDerived.html#8109" class="Bound"
+      >cond</a
+      ><a name="8434" class="Symbol"
+      >)</a
+      ><a name="8435"
+      >
+
+</a
+      ><a name="8437" href="WWFoldDerived.html#8437" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="8451"
+      > </a
+      ><a name="8452" class="Symbol"
+      >:</a
+      ><a name="8453"
+      > </a
+      ><a name="8454" href="WWFoldCommon.html#1594" class="Function"
+      >AssC</a
+      ><a name="8458"
+      > </a
+      ><a name="8459" class="Symbol"
+      >&#8594;</a
+      ><a name="8460"
+      > </a
+      ><a name="8461" class="Symbol"
+      >(</a
+      ><a name="8462" href="WWFoldCommon.html#1643" class="Function"
+      >Cond1&#945;</a
+      ><a name="8468"
+      > </a
+      ><a name="8469" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8470"
+      > </a
+      ><a name="8471" href="WWFoldCommon.html#1689" class="Function"
+      >Cond1&#946;</a
+      ><a name="8477" class="Symbol"
+      >)</a
+      ><a name="8478"
+      > </a
+      ><a name="8479" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8480"
+      > </a
+      ><a name="8481" class="Symbol"
+      >(</a
+      ><a name="8482" href="WWFoldCommon.html#1747" class="Function"
+      >Cond2&#945;</a
+      ><a name="8488"
+      > </a
+      ><a name="8489" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="8490"
+      > </a
+      ><a name="8491" href="WWFoldCommon.html#1808" class="Function"
+      >Cond2&#946;</a
+      ><a name="8497" class="Symbol"
+      >)</a
+      ><a name="8498"
+      > </a
+      ><a name="8499" class="Symbol"
+      >&#8594;</a
+      ><a name="8500"
+      > </a
+      ><a name="8501" href="WWFoldCommon.html#1963" class="Function"
+      >WWFusion</a
+      ><a name="8509"
+      >
+</a
+      ><a name="8510" href="WWFoldDerived.html#8437" class="Function"
+      >WW-Fold-Fusion</a
+      ><a name="8524"
+      > </a
+      ><a name="8525" href="WWFoldDerived.html#8525" class="Bound"
+      >C</a
+      ><a name="8526"
+      > </a
+      ><a name="8527" href="WWFoldDerived.html#8527" class="Bound"
+      >cond</a
+      ><a name="8531"
+      > </a
+      ><a name="8532" class="Symbol"
+      >=</a
+      ><a name="8533"
+      > </a
+      ><a name="8534" href="WWFix.html#9455" class="Function"
+      >WW-Fix-Fusion</a
+      ><a name="8547"
+      > </a
+      ><a name="8548" class="Symbol"
+      >(</a
+      ><a name="8549" href="WWFoldDerived.html#3629" class="Function"
+      >AssC&#8658;AssC-fix</a
+      ><a name="8562"
+      > </a
+      ><a name="8563" href="WWFoldDerived.html#8525" class="Bound"
+      >C</a
+      ><a name="8564" class="Symbol"
+      >)</a
+      ><a name="8565"
+      > </a
+      ><a name="8566" class="Symbol"
+      >(</a
+      ><a name="8567" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8572"
+      > </a
+      ><a name="8573" class="Symbol"
+      >(</a
+      ><a name="8574" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8579"
+      > </a
+      ><a name="8580" href="WWFoldDerived.html#4946" class="Function"
+      >Cond1&#945;&#8658;Cond1&#945;-fix</a
+      ><a name="8597"
+      > </a
+      ><a name="8598" href="WWFoldDerived.html#5613" class="Function"
+      >Cond1&#946;&#8658;Cond1&#946;-fix</a
+      ><a name="8615" class="Symbol"
+      >)</a
+      ><a name="8616"
+      >
+                                                               </a
+      ><a name="8680" class="Symbol"
+      >(</a
+      ><a name="8681" href="NeilPrelude.html#22430" class="Function"
+      >map-&#8846;</a
+      ><a name="8686"
+      > </a
+      ><a name="8687" href="WWFoldDerived.html#5746" class="Function"
+      >Cond2&#945;&#8658;Cond2&#945;-fix</a
+      ><a name="8704"
+      > </a
+      ><a name="8705" href="WWFoldDerived.html#6773" class="Function"
+      >Cond2&#946;&#8658;Cond2&#946;-fix</a
+      ><a name="8722" class="Symbol"
+      >)</a
+      ><a name="8723"
+      >
+                                                        </a
+      ><a name="8780" href="WWFoldDerived.html#8527" class="Bound"
+      >cond</a
+      ><a name="8784" class="Symbol"
+      >)</a
+      ><a name="8785"
+      >
+
+</a
+      ><a name="8787" class="Comment"
+      >------------------------------------------------</a
+      ><a name="8835"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

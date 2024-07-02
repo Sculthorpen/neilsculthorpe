@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Equational</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type </a
+      ><a name="28" class="Symbol"
+      >#-}</a
+      ><a name="31"
+      >
+
+</a
+      ><a name="33" class="Comment"
+      >-- Equational reasoning about relations over one specific set can be found in PreOrder.agda</a
+      ><a name="124"
+      >
+
+</a
+      ><a name="126" class="Keyword"
+      >open</a
+      ><a name="130"
+      > </a
+      ><a name="131" class="Keyword"
+      >import</a
+      ><a name="137"
+      > </a
+      ><a name="138" href="NeilPrelude.html#1" class="Module"
+      >NeilPrelude</a
+      ><a name="149"
+      >
+</a
+      ><a name="150" class="Keyword"
+      >open</a
+      ><a name="154"
+      > </a
+      ><a name="155" class="Keyword"
+      >import</a
+      ><a name="161"
+      > </a
+      ><a name="162" href="Properties.html#1" class="Module"
+      >Properties</a
+      ><a name="172"
+      >
+
+</a
+      ><a name="174" class="Keyword"
+      >module</a
+      ><a name="180"
+      > </a
+      ><a name="181" href="Equational.html#1" class="Module"
+      >Equational</a
+      ><a name="191"
+      >
+
+  </a
+      ><a name="195" class="Symbol"
+      >(</a
+      ><a name="196" href="Equational.html#196" class="Bound Operator"
+      >_&#8776;_</a
+      ><a name="199"
+      > </a
+      ><a name="200" class="Symbol"
+      >:</a
+      ><a name="201"
+      > </a
+      ><a name="202" class="Symbol"
+      >{</a
+      ><a name="203" href="Equational.html#203" class="Bound"
+      >A</a
+      ><a name="204"
+      > </a
+      ><a name="205" class="Symbol"
+      >:</a
+      ><a name="206"
+      > </a
+      ><a name="207" class="PrimitiveType"
+      >Set</a
+      ><a name="210" class="Symbol"
+      >}</a
+      ><a name="211"
+      > </a
+      ><a name="212" class="Symbol"
+      >&#8594;</a
+      ><a name="213"
+      > </a
+      ><a name="214" href="Properties.html#188" class="Function"
+      >Rel</a
+      ><a name="217"
+      > </a
+      ><a name="218" href="Equational.html#203" class="Bound"
+      >A</a
+      ><a name="219" class="Symbol"
+      >)</a
+      ><a name="220"
+      >
+  </a
+      ><a name="223" class="Symbol"
+      >(</a
+      ><a name="224" href="Equational.html#224" class="Bound"
+      >reflexivity</a
+      ><a name="235"
+      > </a
+      ><a name="236" class="Symbol"
+      >:</a
+      ><a name="237"
+      > </a
+      ><a name="238" class="Symbol"
+      >{</a
+      ><a name="239" href="Equational.html#239" class="Bound"
+      >A</a
+      ><a name="240"
+      > </a
+      ><a name="241" class="Symbol"
+      >:</a
+      ><a name="242"
+      > </a
+      ><a name="243" class="PrimitiveType"
+      >Set</a
+      ><a name="246" class="Symbol"
+      >}</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >&#8594;</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="Properties.html#330" class="Function"
+      >Reflexive</a
+      ><a name="259"
+      > </a
+      ><a name="260" class="Symbol"
+      >{</a
+      ><a name="261" href="Equational.html#239" class="Bound"
+      >A</a
+      ><a name="262" class="Symbol"
+      >}</a
+      ><a name="263"
+      > </a
+      ><a name="264" href="Equational.html#196" class="Bound Operator"
+      >_&#8776;_</a
+      ><a name="267" class="Symbol"
+      >)</a
+      ><a name="268"
+      >
+  </a
+      ><a name="271" class="Symbol"
+      >(</a
+      ><a name="272" href="Equational.html#272" class="Bound"
+      >transitive</a
+      ><a name="282"
+      > </a
+      ><a name="283" class="Symbol"
+      >:</a
+      ><a name="284"
+      > </a
+      ><a name="285" class="Symbol"
+      >{</a
+      ><a name="286" href="Equational.html#286" class="Bound"
+      >A</a
+      ><a name="287"
+      > </a
+      ><a name="288" class="Symbol"
+      >:</a
+      ><a name="289"
+      > </a
+      ><a name="290" class="PrimitiveType"
+      >Set</a
+      ><a name="293" class="Symbol"
+      >}</a
+      ><a name="294"
+      > </a
+      ><a name="295" class="Symbol"
+      >&#8594;</a
+      ><a name="296"
+      > </a
+      ><a name="297" href="Properties.html#1297" class="Function"
+      >Transitive</a
+      ><a name="307"
+      > </a
+      ><a name="308" class="Symbol"
+      >{</a
+      ><a name="309" href="Equational.html#286" class="Bound"
+      >A</a
+      ><a name="310" class="Symbol"
+      >}</a
+      ><a name="311"
+      > </a
+      ><a name="312" href="Equational.html#196" class="Bound Operator"
+      >_&#8776;_</a
+      ><a name="315" class="Symbol"
+      >)</a
+      ><a name="316"
+      >
+
+</a
+      ><a name="318" class="Keyword"
+      >where</a
+      ><a name="323"
+      >
+
+</a
+      ><a name="325" class="Keyword"
+      >infixr</a
+      ><a name="331"
+      > </a
+      ><a name="332" class="Number"
+      >1</a
+      ><a name="333"
+      > _&#10216;_&#10217;_
+</a
+      ><a name="340" class="Keyword"
+      >infix</a
+      ><a name="345"
+      >  </a
+      ><a name="347" class="Number"
+      >2</a
+      ><a name="348"
+      > _QED
+
+</a
+      ><a name="355" href="Equational.html#355" class="Function Operator"
+      >_&#10216;_&#10217;_</a
+      ><a name="360"
+      > </a
+      ><a name="361" class="Symbol"
+      >:</a
+      ><a name="362"
+      > </a
+      ><a name="363" class="Symbol"
+      >{</a
+      ><a name="364" href="Equational.html#364" class="Bound"
+      >A</a
+      ><a name="365"
+      > </a
+      ><a name="366" class="Symbol"
+      >:</a
+      ><a name="367"
+      > </a
+      ><a name="368" class="PrimitiveType"
+      >Set</a
+      ><a name="371" class="Symbol"
+      >}</a
+      ><a name="372"
+      > </a
+      ><a name="373" class="Symbol"
+      >&#8594;</a
+      ><a name="374"
+      > </a
+      ><a name="375" class="Symbol"
+      >{</a
+      ><a name="376" href="Equational.html#376" class="Bound"
+      >b</a
+      ><a name="377"
+      > </a
+      ><a name="378" href="Equational.html#378" class="Bound"
+      >c</a
+      ><a name="379"
+      > </a
+      ><a name="380" class="Symbol"
+      >:</a
+      ><a name="381"
+      > </a
+      ><a name="382" href="Equational.html#364" class="Bound"
+      >A</a
+      ><a name="383" class="Symbol"
+      >}</a
+      ><a name="384"
+      > </a
+      ><a name="385" class="Symbol"
+      >&#8594;</a
+      ><a name="386"
+      > </a
+      ><a name="387" class="Symbol"
+      >(</a
+      ><a name="388" href="Equational.html#388" class="Bound"
+      >a</a
+      ><a name="389"
+      > </a
+      ><a name="390" class="Symbol"
+      >:</a
+      ><a name="391"
+      > </a
+      ><a name="392" href="Equational.html#364" class="Bound"
+      >A</a
+      ><a name="393" class="Symbol"
+      >)</a
+      ><a name="394"
+      > </a
+      ><a name="395" class="Symbol"
+      >&#8594;</a
+      ><a name="396"
+      > </a
+      ><a name="397" href="Equational.html#388" class="Bound"
+      >a</a
+      ><a name="398"
+      > </a
+      ><a name="399" href="Equational.html#196" class="Bound Operator"
+      >&#8776;</a
+      ><a name="400"
+      > </a
+      ><a name="401" href="Equational.html#376" class="Bound"
+      >b</a
+      ><a name="402"
+      > </a
+      ><a name="403" class="Symbol"
+      >&#8594;</a
+      ><a name="404"
+      > </a
+      ><a name="405" href="Equational.html#376" class="Bound"
+      >b</a
+      ><a name="406"
+      > </a
+      ><a name="407" href="Equational.html#196" class="Bound Operator"
+      >&#8776;</a
+      ><a name="408"
+      > </a
+      ><a name="409" href="Equational.html#378" class="Bound"
+      >c</a
+      ><a name="410"
+      > </a
+      ><a name="411" class="Symbol"
+      >&#8594;</a
+      ><a name="412"
+      > </a
+      ><a name="413" href="Equational.html#388" class="Bound"
+      >a</a
+      ><a name="414"
+      > </a
+      ><a name="415" href="Equational.html#196" class="Bound Operator"
+      >&#8776;</a
+      ><a name="416"
+      > </a
+      ><a name="417" href="Equational.html#378" class="Bound"
+      >c</a
+      ><a name="418"
+      >
+</a
+      ><a name="419" href="Equational.html#355" class="Function Operator"
+      >_&#10216;_&#10217;_</a
+      ><a name="424"
+      > </a
+      ><a name="425" class="Symbol"
+      >_</a
+      ><a name="426"
+      > </a
+      ><a name="427" class="Symbol"
+      >=</a
+      ><a name="428"
+      > </a
+      ><a name="429" href="Equational.html#272" class="Bound"
+      >transitive</a
+      ><a name="439"
+      >
+
+</a
+      ><a name="441" href="Equational.html#441" class="Function Operator"
+      >_QED</a
+      ><a name="445"
+      > </a
+      ><a name="446" class="Symbol"
+      >:</a
+      ><a name="447"
+      > </a
+      ><a name="448" class="Symbol"
+      >{</a
+      ><a name="449" href="Equational.html#449" class="Bound"
+      >A</a
+      ><a name="450"
+      > </a
+      ><a name="451" class="Symbol"
+      >:</a
+      ><a name="452"
+      > </a
+      ><a name="453" class="PrimitiveType"
+      >Set</a
+      ><a name="456" class="Symbol"
+      >}</a
+      ><a name="457"
+      > </a
+      ><a name="458" class="Symbol"
+      >&#8594;</a
+      ><a name="459"
+      > </a
+      ><a name="460" class="Symbol"
+      >(</a
+      ><a name="461" href="Equational.html#461" class="Bound"
+      >a</a
+      ><a name="462"
+      > </a
+      ><a name="463" class="Symbol"
+      >:</a
+      ><a name="464"
+      > </a
+      ><a name="465" href="Equational.html#449" class="Bound"
+      >A</a
+      ><a name="466" class="Symbol"
+      >)</a
+      ><a name="467"
+      > </a
+      ><a name="468" class="Symbol"
+      >&#8594;</a
+      ><a name="469"
+      > </a
+      ><a name="470" href="Equational.html#461" class="Bound"
+      >a</a
+      ><a name="471"
+      > </a
+      ><a name="472" href="Equational.html#196" class="Bound Operator"
+      >&#8776;</a
+      ><a name="473"
+      > </a
+      ><a name="474" href="Equational.html#461" class="Bound"
+      >a</a
+      ><a name="475"
+      >
+</a
+      ><a name="476" class="Symbol"
+      >_</a
+      ><a name="477"
+      > </a
+      ><a name="478" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="481"
+      > </a
+      ><a name="482" class="Symbol"
+      >=</a
+      ><a name="483"
+      > </a
+      ><a name="484" href="Equational.html#224" class="Bound"
+      >reflexivity</a
+      ><a name="495"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

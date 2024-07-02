@@ -1,0 +1,12 @@
+Semantic specifications of programming languages typically have poor modularity.
+This hinders reuse of parts of the semantics of one language when specifying a
+different language --- even when the two languages have many constructs in common
+--- and evolution of a language may require major reformulation of its semantics.
+Such drawbacks have discouraged language developers from using formal semantics to
+document their designs.
+
+In the PLanCompS project, we are developing a component-based approach to semantics.
+Our approach is based on reusable fundamental constructs (funcons), which provide
+good modularity and support co-evolution of languages and their formal semantics.
+In this talk I will overview the funcon approach, and present some exemplary
+funcons and semantic definitions.

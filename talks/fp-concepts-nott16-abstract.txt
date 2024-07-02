@@ -1,0 +1,8 @@
+Functional programming languages are becoming increasingly popular,
+both in industry and academia.  Ideas from the functional programming
+paradigm are gradually making their way into mainstream languages not
+traditionally associated with functional programming, both as a
+programming style, and as new language features intended to facilitate
+the functional style.  In this talk I will overview the main concepts
+of the functional programming paradigm, and the advantages they bring
+to a programmer.

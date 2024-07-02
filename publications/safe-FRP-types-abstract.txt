@@ -1,0 +1,24 @@
+Functional Reactive Programming (FRP) is an approach to reactive programming
+where systems are structured as networks of functions operating on signals.
+FRP is based on the synchronous data-flow paradigm and supports both
+continuous-time and discrete-time signals (hybrid systems). What sets FRP
+apart from most other languages for similar applications is its support for
+systems with dynamic structure and for higher-order reactive constructs.
+
+Statically guaranteeing correctness properties of programs is an attractive
+proposition. This is true in particular for typical application domains for
+reactive programming such as embedded systems. To that end, many existing
+reactive languages have type systems or other static checks that guarantee
+domain-specific properties, such as feedback loops always being well-formed.
+However, they are limited in their capabilities to support dynamism and
+higher-order data-flow compared with FRP. Thus, the onus of ensuring such
+properties of FRP programs has so far been on the programmer as established
+static techniques do not suffice.
+
+In this paper, we show how dependent types allow this concern to be addressed.
+We present an implementation of FRP embedded in the dependently-typed
+language Agda, leveraging the type system of the host language to craft a
+domain-specific (dependent) type system for FRP. The implementation
+constitutes a discrete, operational semantics of FRP, and as it passes the
+Agda type, coverage, and termination checks, we know the operational semantics
+is total, which means our type system is safe.

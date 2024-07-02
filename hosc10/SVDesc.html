@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >SVDesc</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+   </a
+      ><a name="31" class="Symbol"
+      >#-}</a
+      ><a name="34"
+      >
+
+</a
+      ><a name="36" class="Keyword"
+      >module</a
+      ><a name="42"
+      > </a
+      ><a name="43" href="SVDesc.html#43" class="Module"
+      >SVDesc</a
+      ><a name="49"
+      > </a
+      ><a name="50" class="Keyword"
+      >where</a
+      ><a name="55"
+      >
+
+</a
+      ><a name="57" class="Keyword"
+      >open</a
+      ><a name="61"
+      > </a
+      ><a name="62" class="Keyword"
+      >import</a
+      ><a name="68"
+      > </a
+      ><a name="69" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="80"
+      >
+
+</a
+      ><a name="82" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="139"
+      >
+
+</a
+      ><a name="141" class="Keyword"
+      >infixr</a
+      ><a name="147"
+      > </a
+      ><a name="148" class="Number"
+      >2</a
+      ><a name="149"
+      > _,_
+
+</a
+      ><a name="155" class="Keyword"
+      >data</a
+      ><a name="159"
+      > </a
+      ><a name="160" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="166"
+      > </a
+      ><a name="167" class="Symbol"
+      >:</a
+      ><a name="168"
+      > </a
+      ><a name="169" class="PrimitiveType"
+      >Set</a
+      ><a name="172"
+      > </a
+      ><a name="173" class="Keyword"
+      >where</a
+      ><a name="178"
+      >
+  </a
+      ><a name="181" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="182"
+      >   </a
+      ><a name="185" class="Symbol"
+      >:</a
+      ><a name="186"
+      > </a
+      ><a name="187" class="PrimitiveType"
+      >Set</a
+      ><a name="190"
+      > </a
+      ><a name="191" class="Symbol"
+      >&#8594;</a
+      ><a name="192"
+      > </a
+      ><a name="193" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="199"
+      >
+  </a
+      ><a name="202" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="203"
+      >   </a
+      ><a name="206" class="Symbol"
+      >:</a
+      ><a name="207"
+      > </a
+      ><a name="208" class="PrimitiveType"
+      >Set</a
+      ><a name="211"
+      > </a
+      ><a name="212" class="Symbol"
+      >&#8594;</a
+      ><a name="213"
+      > </a
+      ><a name="214" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="220"
+      >
+  </a
+      ><a name="223" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="224"
+      >   </a
+      ><a name="227" class="Symbol"
+      >:</a
+      ><a name="228"
+      > </a
+      ><a name="229" class="PrimitiveType"
+      >Set</a
+      ><a name="232"
+      > </a
+      ><a name="233" class="Symbol"
+      >&#8594;</a
+      ><a name="234"
+      > </a
+      ><a name="235" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="241"
+      >
+  </a
+      ><a name="244" href="SVDesc.html#244" class="InductiveConstructor Operator"
+      >_,_</a
+      ><a name="247"
+      > </a
+      ><a name="248" class="Symbol"
+      >:</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="256"
+      > </a
+      ><a name="257" class="Symbol"
+      >&#8594;</a
+      ><a name="258"
+      > </a
+      ><a name="259" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="265"
+      > </a
+      ><a name="266" class="Symbol"
+      >&#8594;</a
+      ><a name="267"
+      > </a
+      ><a name="268" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="274"
+      >
+
+</a
+      ><a name="276" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="333"
+      >
+
+</a
+      ><a name="335" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="341"
+      > </a
+      ><a name="342" class="Symbol"
+      >:</a
+      ><a name="343"
+      > </a
+      ><a name="344" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="350"
+      > </a
+      ><a name="351" class="Symbol"
+      >&#8594;</a
+      ><a name="352"
+      > </a
+      ><a name="353" class="PrimitiveType"
+      >Set</a
+      ><a name="356"
+      >
+</a
+      ><a name="357" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="363"
+      > </a
+      ><a name="364" class="Symbol"
+      >(</a
+      ><a name="365" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="366"
+      > </a
+      ><a name="367" href="SVDesc.html#367" class="Bound"
+      >A</a
+      ><a name="368" class="Symbol"
+      >)</a
+      ><a name="369"
+      >      </a
+      ><a name="375" class="Symbol"
+      >=</a
+      ><a name="376"
+      > </a
+      ><a name="377" href="SVDesc.html#367" class="Bound"
+      >A</a
+      ><a name="378"
+      >
+</a
+      ><a name="379" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="Symbol"
+      >(</a
+      ><a name="387" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="388"
+      > </a
+      ><a name="389" href="SVDesc.html#389" class="Bound"
+      >A</a
+      ><a name="390" class="Symbol"
+      >)</a
+      ><a name="391"
+      >      </a
+      ><a name="397" class="Symbol"
+      >=</a
+      ><a name="398"
+      > </a
+      ><a name="399" href="NeilPrelude.html#868" class="Datatype"
+      >Maybe</a
+      ><a name="404"
+      > </a
+      ><a name="405" href="SVDesc.html#389" class="Bound"
+      >A</a
+      ><a name="406"
+      >
+</a
+      ><a name="407" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="413"
+      > </a
+      ><a name="414" class="Symbol"
+      >(</a
+      ><a name="415" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="416"
+      > </a
+      ><a name="417" href="SVDesc.html#417" class="Bound"
+      >A</a
+      ><a name="418" class="Symbol"
+      >)</a
+      ><a name="419"
+      >      </a
+      ><a name="425" class="Symbol"
+      >=</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="SVDesc.html#417" class="Bound"
+      >A</a
+      ><a name="428"
+      >
+</a
+      ><a name="429" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="435"
+      > </a
+      ><a name="436" class="Symbol"
+      >(</a
+      ><a name="437" href="SVDesc.html#437" class="Bound"
+      >as</a
+      ><a name="439"
+      > </a
+      ><a name="440" href="SVDesc.html#244" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="441"
+      > </a
+      ><a name="442" href="SVDesc.html#442" class="Bound"
+      >bs</a
+      ><a name="444" class="Symbol"
+      >)</a
+      ><a name="445"
+      >  </a
+      ><a name="447" class="Symbol"
+      >=</a
+      ><a name="448"
+      > </a
+      ><a name="449" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="455"
+      > </a
+      ><a name="456" href="SVDesc.html#437" class="Bound"
+      >as</a
+      ><a name="458"
+      > </a
+      ><a name="459" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="460"
+      > </a
+      ><a name="461" href="SVDesc.html#335" class="Function"
+      >Sample</a
+      ><a name="467"
+      > </a
+      ><a name="468" href="SVDesc.html#442" class="Bound"
+      >bs</a
+      ><a name="470"
+      >
+
+</a
+      ><a name="472" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="529"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

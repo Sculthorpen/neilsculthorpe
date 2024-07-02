@@ -1,0 +1,6523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >WWFix</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type </a
+      ><a name="28" class="Symbol"
+      >#-}</a
+      ><a name="31"
+      >
+
+</a
+      ><a name="33" class="Keyword"
+      >open</a
+      ><a name="37"
+      > </a
+      ><a name="38" class="Keyword"
+      >import</a
+      ><a name="44"
+      > </a
+      ><a name="45" href="NeilPrelude.html#1" class="Module"
+      >NeilPrelude</a
+      ><a name="56"
+      >
+</a
+      ><a name="57" class="Keyword"
+      >open</a
+      ><a name="61"
+      > </a
+      ><a name="62" class="Keyword"
+      >import</a
+      ><a name="68"
+      > </a
+      ><a name="69" href="Logic.html#1" class="Module"
+      >Logic</a
+      ><a name="74"
+      >
+</a
+      ><a name="75" class="Keyword"
+      >open</a
+      ><a name="79"
+      > </a
+      ><a name="80" class="Keyword"
+      >import</a
+      ><a name="86"
+      > </a
+      ><a name="87" href="Extensionality.html#1" class="Module"
+      >Extensionality</a
+      ><a name="101"
+      >
+</a
+      ><a name="102" class="Keyword"
+      >open</a
+      ><a name="106"
+      > </a
+      ><a name="107" class="Keyword"
+      >import</a
+      ><a name="113"
+      > </a
+      ><a name="114" href="EquationalEq.html#1" class="Module"
+      >EquationalEq</a
+      ><a name="126"
+      >
+</a
+      ><a name="127" class="Keyword"
+      >open</a
+      ><a name="131"
+      > </a
+      ><a name="132" class="Keyword"
+      >import</a
+      ><a name="138"
+      > </a
+      ><a name="139" href="CPO.html#1" class="Module"
+      >CPO</a
+      ><a name="142"
+      >
+</a
+      ><a name="143" class="Keyword"
+      >open</a
+      ><a name="147"
+      > </a
+      ><a name="148" class="Keyword"
+      >import</a
+      ><a name="154"
+      > </a
+      ><a name="155" href="CPOLemmas.html#1" class="Module"
+      >CPOLemmas</a
+      ><a name="164"
+      >
+</a
+      ><a name="165" class="Keyword"
+      >open</a
+      ><a name="169"
+      > </a
+      ><a name="170" class="Keyword"
+      >import</a
+      ><a name="176"
+      > </a
+      ><a name="177" href="CPOFunctions.html#1" class="Module"
+      >CPOFunctions</a
+      ><a name="189"
+      >
+
+</a
+      ><a name="191" class="Keyword"
+      >module</a
+      ><a name="197"
+      > </a
+      ><a name="198" href="WWFix.html#1" class="Module"
+      >WWFix</a
+      ><a name="203"
+      >
+
+  </a
+      ><a name="207" class="Symbol"
+      >(</a
+      ><a name="208" href="WWFix.html#208" class="Bound"
+      >_</a
+      ><a name="209"
+      > </a
+      ><a name="210" class="Symbol"
+      >:</a
+      ><a name="211"
+      > </a
+      ><a name="212" href="Extensionality.html#87" class="Function"
+      >Extensionality</a
+      ><a name="226" class="Symbol"
+      >)</a
+      ><a name="227"
+      >
+
+  </a
+      ><a name="231" class="Symbol"
+      >(</a
+      ><a name="232" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="235"
+      > </a
+      ><a name="236" class="Symbol"
+      >:</a
+      ><a name="237"
+      > </a
+      ><a name="238" class="Symbol"
+      >{</a
+      ><a name="239" href="WWFix.html#239" class="Bound"
+      >&#964;</a
+      ><a name="240"
+      > </a
+      ><a name="241" class="Symbol"
+      >:</a
+      ><a name="242"
+      > </a
+      ><a name="243" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="247" class="Symbol"
+      >}</a
+      ><a name="248"
+      > </a
+      ><a name="249" class="Symbol"
+      >&#8594;</a
+      ><a name="250"
+      > </a
+      ><a name="251" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="254"
+      > </a
+      ><a name="255" class="Symbol"
+      >(</a
+      ><a name="256" href="WWFix.html#239" class="Bound"
+      >&#964;</a
+      ><a name="257"
+      > </a
+      ><a name="258" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="259"
+      > </a
+      ><a name="260" href="WWFix.html#239" class="Bound"
+      >&#964;</a
+      ><a name="261" class="Symbol"
+      >)</a
+      ><a name="262"
+      > </a
+      ><a name="263" class="Symbol"
+      >&#8594;</a
+      ><a name="264"
+      > </a
+      ><a name="265" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="268"
+      > </a
+      ><a name="269" href="WWFix.html#239" class="Bound"
+      >&#964;</a
+      ><a name="270" class="Symbol"
+      >)</a
+      ><a name="271"
+      >
+  </a
+      ><a name="274" class="Symbol"
+      >(</a
+      ><a name="275" href="WWFix.html#275" class="Bound"
+      >Computation</a
+      ><a name="286"
+      > </a
+      ><a name="287" class="Symbol"
+      >:</a
+      ><a name="288"
+      > </a
+      ><a name="289" class="Symbol"
+      >{</a
+      ><a name="290" href="WWFix.html#290" class="Bound"
+      >&#964;</a
+      ><a name="291"
+      > </a
+      ><a name="292" class="Symbol"
+      >:</a
+      ><a name="293"
+      > </a
+      ><a name="294" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="298" class="Symbol"
+      >}</a
+      ><a name="299"
+      > </a
+      ><a name="300" class="Symbol"
+      >&#8594;</a
+      ><a name="301"
+      > </a
+      ><a name="302" class="Symbol"
+      >(</a
+      ><a name="303" href="WWFix.html#303" class="Bound"
+      >f</a
+      ><a name="304"
+      > </a
+      ><a name="305" class="Symbol"
+      >:</a
+      ><a name="306"
+      > </a
+      ><a name="307" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="310"
+      > </a
+      ><a name="311" class="Symbol"
+      >(</a
+      ><a name="312" href="WWFix.html#290" class="Bound"
+      >&#964;</a
+      ><a name="313"
+      > </a
+      ><a name="314" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="315"
+      > </a
+      ><a name="316" href="WWFix.html#290" class="Bound"
+      >&#964;</a
+      ><a name="317" class="Symbol"
+      >))</a
+      ><a name="319"
+      > </a
+      ><a name="320" class="Symbol"
+      >&#8594;</a
+      ><a name="321"
+      > </a
+      ><a name="322" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="325"
+      > </a
+      ><a name="326" href="WWFix.html#303" class="Bound"
+      >f</a
+      ><a name="327"
+      > </a
+      ><a name="328" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="329"
+      > </a
+      ><a name="330" href="WWFix.html#303" class="Bound"
+      >f</a
+      ><a name="331"
+      > </a
+      ><a name="332" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="333"
+      > </a
+      ><a name="334" class="Symbol"
+      >(</a
+      ><a name="335" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="338"
+      > </a
+      ><a name="339" href="WWFix.html#303" class="Bound"
+      >f</a
+      ><a name="340" class="Symbol"
+      >))</a
+      ><a name="342"
+      >
+  </a
+      ><a name="345" class="Symbol"
+      >(</a
+      ><a name="346" href="WWFix.html#346" class="Bound"
+      >Induction</a
+      ><a name="355"
+      > </a
+      ><a name="356" class="Symbol"
+      >:</a
+      ><a name="357"
+      > </a
+      ><a name="358" class="Symbol"
+      >{</a
+      ><a name="359" href="WWFix.html#359" class="Bound"
+      >&#964;</a
+      ><a name="360"
+      > </a
+      ><a name="361" class="Symbol"
+      >:</a
+      ><a name="362"
+      > </a
+      ><a name="363" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="367" class="Symbol"
+      >}</a
+      ><a name="368"
+      > </a
+      ><a name="369" class="Symbol"
+      >&#8594;</a
+      ><a name="370"
+      > </a
+      ><a name="371" class="Symbol"
+      >{</a
+      ><a name="372" href="WWFix.html#372" class="Bound"
+      >x</a
+      ><a name="373"
+      > </a
+      ><a name="374" class="Symbol"
+      >:</a
+      ><a name="375"
+      > </a
+      ><a name="376" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="WWFix.html#359" class="Bound"
+      >&#964;</a
+      ><a name="381" class="Symbol"
+      >}</a
+      ><a name="382"
+      >  </a
+      ><a name="384" class="Symbol"
+      >&#8594;</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="Symbol"
+      >(</a
+      ><a name="387" href="WWFix.html#387" class="Bound"
+      >f</a
+      ><a name="388"
+      > </a
+      ><a name="389" class="Symbol"
+      >:</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="394"
+      > </a
+      ><a name="395" class="Symbol"
+      >(</a
+      ><a name="396" href="WWFix.html#359" class="Bound"
+      >&#964;</a
+      ><a name="397"
+      > </a
+      ><a name="398" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="399"
+      > </a
+      ><a name="400" href="WWFix.html#359" class="Bound"
+      >&#964;</a
+      ><a name="401" class="Symbol"
+      >))</a
+      ><a name="403"
+      > </a
+      ><a name="404" class="Symbol"
+      >&#8594;</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="WWFix.html#387" class="Bound"
+      >f</a
+      ><a name="407"
+      > </a
+      ><a name="408" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="409"
+      > </a
+      ><a name="410" href="WWFix.html#372" class="Bound"
+      >x</a
+      ><a name="411"
+      > </a
+      ><a name="412" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="413"
+      > </a
+      ><a name="414" href="WWFix.html#372" class="Bound"
+      >x</a
+      ><a name="415"
+      > </a
+      ><a name="416" class="Symbol"
+      >&#8594;</a
+      ><a name="417"
+      > </a
+      ><a name="418" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="421"
+      > </a
+      ><a name="422" href="WWFix.html#387" class="Bound"
+      >f</a
+      ><a name="423"
+      > </a
+      ><a name="424" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="425"
+      > </a
+      ><a name="426" href="WWFix.html#372" class="Bound"
+      >x</a
+      ><a name="427" class="Symbol"
+      >)</a
+      ><a name="428"
+      >
+
+  </a
+      ><a name="432" class="Symbol"
+      >(</a
+      ><a name="433" href="WWFix.html#433" class="Bound"
+      >fix-&#8855;</a
+      ><a name="438"
+      > </a
+      ><a name="439" class="Symbol"
+      >:</a
+      ><a name="440"
+      > </a
+      ><a name="441" class="Symbol"
+      >{</a
+      ><a name="442" href="WWFix.html#442" class="Bound"
+      >&#963;</a
+      ><a name="443"
+      > </a
+      ><a name="444" href="WWFix.html#444" class="Bound"
+      >&#964;</a
+      ><a name="445"
+      > </a
+      ><a name="446" class="Symbol"
+      >:</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="452" class="Symbol"
+      >}</a
+      ><a name="453"
+      > </a
+      ><a name="454" class="Symbol"
+      >&#8594;</a
+      ><a name="455"
+      > </a
+      ><a name="456" class="Symbol"
+      >{</a
+      ><a name="457" href="WWFix.html#457" class="Bound"
+      >f</a
+      ><a name="458"
+      > </a
+      ><a name="459" class="Symbol"
+      >:</a
+      ><a name="460"
+      > </a
+      ><a name="461" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="464"
+      > </a
+      ><a name="465" class="Symbol"
+      >(</a
+      ><a name="466" href="WWFix.html#442" class="Bound"
+      >&#963;</a
+      ><a name="467"
+      > </a
+      ><a name="468" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="469"
+      > </a
+      ><a name="470" href="WWFix.html#442" class="Bound"
+      >&#963;</a
+      ><a name="471" class="Symbol"
+      >)}</a
+      ><a name="473"
+      > </a
+      ><a name="474" class="Symbol"
+      >&#8594;</a
+      ><a name="475"
+      > </a
+      ><a name="476" class="Symbol"
+      >{</a
+      ><a name="477" href="WWFix.html#477" class="Bound"
+      >g</a
+      ><a name="478"
+      > </a
+      ><a name="479" class="Symbol"
+      >:</a
+      ><a name="480"
+      > </a
+      ><a name="481" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="484"
+      > </a
+      ><a name="485" class="Symbol"
+      >(</a
+      ><a name="486" href="WWFix.html#444" class="Bound"
+      >&#964;</a
+      ><a name="487"
+      > </a
+      ><a name="488" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="489"
+      > </a
+      ><a name="490" href="WWFix.html#444" class="Bound"
+      >&#964;</a
+      ><a name="491" class="Symbol"
+      >)}</a
+      ><a name="493"
+      > </a
+      ><a name="494" class="Symbol"
+      >&#8594;</a
+      ><a name="495"
+      > </a
+      ><a name="496" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="499"
+      > </a
+      ><a name="500" class="Symbol"
+      >(</a
+      ><a name="501" href="WWFix.html#457" class="Bound"
+      >f</a
+      ><a name="502"
+      > </a
+      ><a name="503" href="CPOFunctions.html#6340" class="Function Operator"
+      >:&#215;:</a
+      ><a name="506"
+      > </a
+      ><a name="507" href="WWFix.html#477" class="Bound"
+      >g</a
+      ><a name="508" class="Symbol"
+      >)</a
+      ><a name="509"
+      > </a
+      ><a name="510" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="511"
+      > </a
+      ><a name="512" class="Symbol"
+      >(</a
+      ><a name="513" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="516"
+      > </a
+      ><a name="517" href="WWFix.html#457" class="Bound"
+      >f</a
+      ><a name="518"
+      > </a
+      ><a name="519" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="520"
+      > </a
+      ><a name="521" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="524"
+      > </a
+      ><a name="525" href="WWFix.html#477" class="Bound"
+      >g</a
+      ><a name="526" class="Symbol"
+      >))</a
+      ><a name="528"
+      >
+
+  </a
+      ><a name="532" class="Symbol"
+      >(</a
+      ><a name="533" href="WWFix.html#533" class="Bound"
+      >FixpointInduction</a
+      ><a name="550"
+      > </a
+      ><a name="551" class="Symbol"
+      >:</a
+      ><a name="552"
+      > </a
+      ><a name="553" class="Symbol"
+      >{</a
+      ><a name="554" href="WWFix.html#554" class="Bound"
+      >&#964;</a
+      ><a name="555"
+      > </a
+      ><a name="556" class="Symbol"
+      >:</a
+      ><a name="557"
+      > </a
+      ><a name="558" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="562" class="Symbol"
+      >}</a
+      ><a name="563"
+      > </a
+      ><a name="564" class="Symbol"
+      >&#8594;</a
+      ><a name="565"
+      > </a
+      ><a name="566" class="Symbol"
+      >(</a
+      ><a name="567" href="WWFix.html#567" class="Bound"
+      >P</a
+      ><a name="568"
+      > </a
+      ><a name="569" class="Symbol"
+      >:</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="574"
+      > </a
+      ><a name="575" href="WWFix.html#554" class="Bound"
+      >&#964;</a
+      ><a name="576"
+      > </a
+      ><a name="577" class="Symbol"
+      >&#8594;</a
+      ><a name="578"
+      > </a
+      ><a name="579" class="PrimitiveType"
+      >Set</a
+      ><a name="582" class="Symbol"
+      >)</a
+      ><a name="583"
+      > </a
+      ><a name="584" class="Symbol"
+      >&#8594;</a
+      ><a name="585"
+      > </a
+      ><a name="586" class="Symbol"
+      >(</a
+      ><a name="587" href="WWFix.html#587" class="Bound"
+      >f</a
+      ><a name="588"
+      > </a
+      ><a name="589" class="Symbol"
+      >:</a
+      ><a name="590"
+      > </a
+      ><a name="591" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="594"
+      > </a
+      ><a name="595" class="Symbol"
+      >(</a
+      ><a name="596" href="WWFix.html#554" class="Bound"
+      >&#964;</a
+      ><a name="597"
+      > </a
+      ><a name="598" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="599"
+      > </a
+      ><a name="600" href="WWFix.html#554" class="Bound"
+      >&#964;</a
+      ><a name="601" class="Symbol"
+      >))</a
+      ><a name="603"
+      > </a
+      ><a name="604" class="Symbol"
+      >&#8594;</a
+      ><a name="605"
+      > </a
+      ><a name="606" href="CPO.html#11243" class="Function"
+      >ChainComplete</a
+      ><a name="619"
+      > </a
+      ><a name="620" href="WWFix.html#567" class="Bound"
+      >P</a
+      ><a name="621"
+      > </a
+      ><a name="622" class="Symbol"
+      >&#8594;</a
+      ><a name="623"
+      > </a
+      ><a name="624" href="WWFix.html#567" class="Bound"
+      >P</a
+      ><a name="625"
+      > </a
+      ><a name="626" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="627"
+      > </a
+      ><a name="628" class="Symbol"
+      >&#8594;</a
+      ><a name="629"
+      > </a
+      ><a name="630" class="Symbol"
+      >((</a
+      ><a name="632" href="WWFix.html#632" class="Bound"
+      >x</a
+      ><a name="633"
+      > </a
+      ><a name="634" class="Symbol"
+      >:</a
+      ><a name="635"
+      > </a
+      ><a name="636" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="639"
+      > </a
+      ><a name="640" href="WWFix.html#554" class="Bound"
+      >&#964;</a
+      ><a name="641" class="Symbol"
+      >)</a
+      ><a name="642"
+      > </a
+      ><a name="643" class="Symbol"
+      >&#8594;</a
+      ><a name="644"
+      > </a
+      ><a name="645" href="WWFix.html#567" class="Bound"
+      >P</a
+      ><a name="646"
+      > </a
+      ><a name="647" href="WWFix.html#632" class="Bound"
+      >x</a
+      ><a name="648"
+      > </a
+      ><a name="649" class="Symbol"
+      >&#8594;</a
+      ><a name="650"
+      > </a
+      ><a name="651" href="WWFix.html#567" class="Bound"
+      >P</a
+      ><a name="652"
+      > </a
+      ><a name="653" class="Symbol"
+      >(</a
+      ><a name="654" href="WWFix.html#587" class="Bound"
+      >f</a
+      ><a name="655"
+      > </a
+      ><a name="656" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="657"
+      > </a
+      ><a name="658" href="WWFix.html#632" class="Bound"
+      >x</a
+      ><a name="659" class="Symbol"
+      >))</a
+      ><a name="661"
+      > </a
+      ><a name="662" class="Symbol"
+      >&#8594;</a
+      ><a name="663"
+      > </a
+      ><a name="664" href="WWFix.html#567" class="Bound"
+      >P</a
+      ><a name="665"
+      > </a
+      ><a name="666" class="Symbol"
+      >(</a
+      ><a name="667" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="670"
+      > </a
+      ><a name="671" href="WWFix.html#587" class="Bound"
+      >f</a
+      ><a name="672" class="Symbol"
+      >))</a
+      ><a name="674"
+      >
+
+  </a
+      ><a name="678" class="Symbol"
+      >(</a
+      ><a name="679" href="WWFix.html#679" class="Bound"
+      >A</a
+      ><a name="680"
+      > </a
+      ><a name="681" class="Symbol"
+      >:</a
+      ><a name="682"
+      > </a
+      ><a name="683" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="687" class="Symbol"
+      >)</a
+      ><a name="688"
+      >
+  </a
+      ><a name="691" class="Symbol"
+      >(</a
+      ><a name="692" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="693"
+      > </a
+      ><a name="694" class="Symbol"
+      >:</a
+      ><a name="695"
+      > </a
+      ><a name="696" href="CPO.html#1127" class="Datatype"
+      >Type</a
+      ><a name="700" class="Symbol"
+      >)</a
+      ><a name="701"
+      >
+
+  </a
+      ><a name="705" class="Symbol"
+      >(</a
+      ><a name="706" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="707"
+      > </a
+      ><a name="708" class="Symbol"
+      >:</a
+      ><a name="709"
+      > </a
+      ><a name="710" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="713"
+      > </a
+      ><a name="714" class="Symbol"
+      >(</a
+      ><a name="715" href="WWFix.html#679" class="Bound"
+      >A</a
+      ><a name="716"
+      > </a
+      ><a name="717" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="718"
+      > </a
+      ><a name="719" href="WWFix.html#679" class="Bound"
+      >A</a
+      ><a name="720" class="Symbol"
+      >))</a
+      ><a name="722"
+      >
+  </a
+      ><a name="725" class="Symbol"
+      >(</a
+      ><a name="726" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="727"
+      > </a
+      ><a name="728" class="Symbol"
+      >:</a
+      ><a name="729"
+      > </a
+      ><a name="730" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="733"
+      > </a
+      ><a name="734" class="Symbol"
+      >(</a
+      ><a name="735" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="736"
+      > </a
+      ><a name="737" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="738"
+      > </a
+      ><a name="739" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="740" class="Symbol"
+      >))</a
+      ><a name="742"
+      >
+  </a
+      ><a name="745" class="Symbol"
+      >(</a
+      ><a name="746" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="749"
+      > </a
+      ><a name="750" class="Symbol"
+      >:</a
+      ><a name="751"
+      > </a
+      ><a name="752" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="755"
+      > </a
+      ><a name="756" class="Symbol"
+      >(</a
+      ><a name="757" href="WWFix.html#679" class="Bound"
+      >A</a
+      ><a name="758"
+      > </a
+      ><a name="759" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="760"
+      > </a
+      ><a name="761" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="762" class="Symbol"
+      >))</a
+      ><a name="764"
+      >
+  </a
+      ><a name="767" class="Symbol"
+      >(</a
+      ><a name="768" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="771"
+      > </a
+      ><a name="772" class="Symbol"
+      >:</a
+      ><a name="773"
+      > </a
+      ><a name="774" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="777"
+      > </a
+      ><a name="778" class="Symbol"
+      >(</a
+      ><a name="779" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="780"
+      > </a
+      ><a name="781" href="CPO.html#1202" class="InductiveConstructor Operator"
+      >&#8658;</a
+      ><a name="782"
+      > </a
+      ><a name="783" href="WWFix.html#679" class="Bound"
+      >A</a
+      ><a name="784" class="Symbol"
+      >))</a
+      ><a name="786"
+      >
+
+</a
+      ><a name="788" class="Keyword"
+      >where</a
+      ><a name="793"
+      >
+
+</a
+      ><a name="795" class="Keyword"
+      >import</a
+      ><a name="801"
+      > </a
+      ><a name="802" href="FixTheorems.html#1" class="Module"
+      >FixTheorems</a
+      ><a name="813"
+      >
+</a
+      ><a name="814" class="Keyword"
+      >open</a
+      ><a name="818"
+      > </a
+      ><a name="819" href="FixTheorems.html#1" class="Module"
+      >FixTheorems</a
+      ><a name="830"
+      > </a
+      ><a name="831" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="834"
+      > </a
+      ><a name="835" href="WWFix.html#275" class="Bound"
+      >Computation</a
+      ><a name="846"
+      > </a
+      ><a name="847" href="WWFix.html#346" class="Bound"
+      >Induction</a
+      ><a name="856"
+      > </a
+      ><a name="857" href="WWFix.html#433" class="Bound"
+      >fix-&#8855;</a
+      ><a name="862"
+      > </a
+      ><a name="863" href="WWFix.html#533" class="Bound"
+      >FixpointInduction</a
+      ><a name="880"
+      >
+
+</a
+      ><a name="882" class="Comment"
+      >------------------------------------------------</a
+      ><a name="930"
+      >
+
+</a
+      ><a name="932" href="WWFix.html#932" class="Function"
+      >AssA</a
+      ><a name="936"
+      > </a
+      ><a name="937" class="Symbol"
+      >:</a
+      ><a name="938"
+      > </a
+      ><a name="939" class="PrimitiveType"
+      >Set</a
+      ><a name="942"
+      >
+</a
+      ><a name="943" href="WWFix.html#932" class="Function"
+      >AssA</a
+      ><a name="947"
+      > </a
+      ><a name="948" class="Symbol"
+      >=</a
+      ><a name="949"
+      > </a
+      ><a name="950" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="955"
+      > </a
+      ><a name="956" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="959"
+      > </a
+      ><a name="960" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="961"
+      > </a
+      ><a name="962" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="970"
+      >
+
+</a
+      ><a name="972" href="WWFix.html#972" class="Function"
+      >AssB</a
+      ><a name="976"
+      > </a
+      ><a name="977" class="Symbol"
+      >:</a
+      ><a name="978"
+      > </a
+      ><a name="979" class="PrimitiveType"
+      >Set</a
+      ><a name="982"
+      >
+</a
+      ><a name="983" href="WWFix.html#972" class="Function"
+      >AssB</a
+      ><a name="987"
+      > </a
+      ><a name="988" class="Symbol"
+      >=</a
+      ><a name="989"
+      > </a
+      ><a name="990" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="993"
+      > </a
+      ><a name="994" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="999"
+      > </a
+      ><a name="1000" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1001"
+      > </a
+      ><a name="1002" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1005"
+      > </a
+      ><a name="1006" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1007"
+      >
+
+</a
+      ><a name="1009" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" class="Symbol"
+      >:</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" class="PrimitiveType"
+      >Set</a
+      ><a name="1019"
+      >
+</a
+      ><a name="1020" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" class="Symbol"
+      >=</a
+      ><a name="1026"
+      > </a
+      ><a name="1027" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" class="Symbol"
+      >(</a
+      ><a name="1032" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1037"
+      > </a
+      ><a name="1038" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1041"
+      > </a
+      ><a name="1042" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1043"
+      > </a
+      ><a name="1044" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1045" class="Symbol"
+      >)</a
+      ><a name="1046"
+      > </a
+      ><a name="1047" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1048"
+      > </a
+      ><a name="1049" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1054"
+      >
+
+
+</a
+      ><a name="1057" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="1063"
+      > </a
+      ><a name="1064" class="Symbol"
+      >:</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" class="PrimitiveType"
+      >Set</a
+      ><a name="1069"
+      >
+</a
+      ><a name="1070" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" class="Symbol"
+      >=</a
+      ><a name="1078"
+      > </a
+      ><a name="1079" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1080"
+      > </a
+      ><a name="1081" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1086"
+      > </a
+      ><a name="1087" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1088"
+      > </a
+      ><a name="1089" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1090"
+      > </a
+      ><a name="1091" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1092"
+      > </a
+      ><a name="1093" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1096"
+      >
+
+</a
+      ><a name="1098" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="1104"
+      > </a
+      ><a name="1105" class="Symbol"
+      >:</a
+      ><a name="1106"
+      > </a
+      ><a name="1107" class="PrimitiveType"
+      >Set</a
+      ><a name="1110"
+      >
+</a
+      ><a name="1111" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="1117"
+      > </a
+      ><a name="1118" class="Symbol"
+      >=</a
+      ><a name="1119"
+      > </a
+      ><a name="1120" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1125"
+      > </a
+      ><a name="1126" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1127"
+      > </a
+      ><a name="1128" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1131"
+      > </a
+      ><a name="1132" class="Symbol"
+      >(</a
+      ><a name="1133" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1136"
+      > </a
+      ><a name="1137" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1138"
+      > </a
+      ><a name="1139" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1142"
+      > </a
+      ><a name="1143" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1146" class="Symbol"
+      >)</a
+      ><a name="1147"
+      >
+
+</a
+      ><a name="1149" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="1155"
+      > </a
+      ><a name="1156" class="Symbol"
+      >:</a
+      ><a name="1157"
+      > </a
+      ><a name="1158" class="PrimitiveType"
+      >Set</a
+      ><a name="1161"
+      >
+</a
+      ><a name="1162" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="1168"
+      > </a
+      ><a name="1169" class="Symbol"
+      >=</a
+      ><a name="1170"
+      > </a
+      ><a name="1171" class="Symbol"
+      >(</a
+      ><a name="1172" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1177"
+      > </a
+      ><a name="1178" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1179"
+      > </a
+      ><a name="1180" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1189" class="Symbol"
+      >)</a
+      ><a name="1190"
+      > </a
+      ><a name="1191" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="1199"
+      > </a
+      ><a name="1200" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1203"
+      >
+
+</a
+      ><a name="1205" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="1211"
+      > </a
+      ><a name="1212" class="Symbol"
+      >:</a
+      ><a name="1213"
+      > </a
+      ><a name="1214" class="PrimitiveType"
+      >Set</a
+      ><a name="1217"
+      >
+</a
+      ><a name="1218" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="1224"
+      > </a
+      ><a name="1225" class="Symbol"
+      >=</a
+      ><a name="1226"
+      > </a
+      ><a name="1227" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1230"
+      > </a
+      ><a name="1231" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1232"
+      > </a
+      ><a name="1233" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1234"
+      > </a
+      ><a name="1235" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1244"
+      > </a
+      ><a name="1245" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1246"
+      >
+
+</a
+      ><a name="1248" href="WWFix.html#1248" class="Function"
+      >Cond3&#945;</a
+      ><a name="1254"
+      > </a
+      ><a name="1255" class="Symbol"
+      >:</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" class="PrimitiveType"
+      >Set</a
+      ><a name="1260"
+      >
+</a
+      ><a name="1261" href="WWFix.html#1248" class="Function"
+      >Cond3&#945;</a
+      ><a name="1267"
+      > </a
+      ><a name="1268" class="Symbol"
+      >=</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1275"
+      > </a
+      ><a name="1276" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1277"
+      > </a
+      ><a name="1278" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1279"
+      > </a
+      ><a name="1280" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1283"
+      > </a
+      ><a name="1284" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1287"
+      >
+
+
+</a
+      ><a name="1290" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="1305"
+      > </a
+      ><a name="1306" class="Symbol"
+      >:</a
+      ><a name="1307"
+      > </a
+      ><a name="1308" class="PrimitiveType"
+      >Set</a
+      ><a name="1311"
+      >
+</a
+      ><a name="1312" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="1327"
+      > </a
+      ><a name="1328" class="Symbol"
+      >=</a
+      ><a name="1329"
+      > </a
+      ><a name="1330" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1333"
+      > </a
+      ><a name="1334" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="1335"
+      > </a
+      ><a name="1336" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1337"
+      > </a
+      ><a name="1338" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1343"
+      > </a
+      ><a name="1344" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1347"
+      > </a
+      ><a name="1348" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1349"
+      >
+
+</a
+      ><a name="1351" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" class="Symbol"
+      >:</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" class="PrimitiveType"
+      >Set</a
+      ><a name="1365"
+      >
+</a
+      ><a name="1366" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="1374"
+      > </a
+      ><a name="1375" class="Symbol"
+      >=</a
+      ><a name="1376"
+      > </a
+      ><a name="1377" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1380"
+      > </a
+      ><a name="1381" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1382"
+      > </a
+      ><a name="1383" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1386"
+      > </a
+      ><a name="1387" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1388"
+      > </a
+      ><a name="1389" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1392"
+      > </a
+      ><a name="1393" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1396"
+      > </a
+      ><a name="1397" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="1400"
+      > </a
+      ><a name="1401" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="1402"
+      >
+
+</a
+      ><a name="1404" class="Comment"
+      >------------------------------------------------</a
+      ><a name="1452"
+      >
+
+</a
+      ><a name="1454" href="WWFix.html#1454" class="Function"
+      >A&#8658;strictabs</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" class="Symbol"
+      >:</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" href="WWFix.html#932" class="Function"
+      >AssA</a
+      ><a name="1472"
+      > </a
+      ><a name="1473" class="Symbol"
+      >&#8594;</a
+      ><a name="1474"
+      > </a
+      ><a name="1475" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="1481"
+      > </a
+      ><a name="1482" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1485"
+      >
+</a
+      ><a name="1486" href="WWFix.html#1454" class="Function"
+      >A&#8658;strictabs</a
+      ><a name="1497"
+      > </a
+      ><a name="1498" href="WWFix.html#1498" class="Bound"
+      >A</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" class="Symbol"
+      >=</a
+      ><a name="1501"
+      > </a
+      ><a name="1502" href="CPOLemmas.html#2008" class="Function"
+      >&#8849;-&#8869;-eq</a
+      ><a name="1508"
+      > </a
+      ><a name="1509" class="Symbol"
+      >(</a
+      ><a name="1510" href="Logic.html#255" class="Function"
+      >ProveTruth</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" class="Symbol"
+      >(</a
+      ><a name="1522"
+      >
+
+    </a
+      ><a name="1528" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1533"
+      > </a
+      ><a name="1534" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="1535"
+      > </a
+      ><a name="1536" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="1537"
+      > </a
+      ><a name="1538" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="1539"
+      >
+                             </a
+      ><a name="1569" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="1571"
+      > </a
+      ><a name="1572" href="CPOLemmas.html#1761" class="Function"
+      >&#8596;-&#8849;L</a
+      ><a name="1576"
+      > </a
+      ><a name="1577" class="Symbol"
+      >(</a
+      ><a name="1578"
+      >
+                                       </a
+      ><a name="1618" class="Symbol"
+      >(</a
+      ><a name="1619" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="1622"
+      > </a
+      ><a name="1623" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="1628" class="Symbol"
+      >)</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1631"
+      > </a
+      ><a name="1632" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="1633"
+      >
+                                                        </a
+      ><a name="1690" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="1691"
+      > </a
+      ><a name="1692" href="NeilPrelude.html#1029" class="Function"
+      >cong2R</a
+      ><a name="1698"
+      > </a
+      ><a name="1699" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="WWFix.html#1498" class="Bound"
+      >A</a
+      ><a name="1704"
+      > </a
+      ><a name="1705" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="1706"
+      >
+                                       </a
+      ><a name="1746" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="1754"
+      > </a
+      ><a name="1755" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="1756"
+      > </a
+      ><a name="1757" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="1758"
+      >
+                                                        </a
+      ><a name="1815" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="1823"
+      >
+                                       </a
+      ><a name="1863" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="1864"
+      >
+                                                        </a
+      ><a name="1921" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="1924"
+      >
+                                     </a
+      ><a name="1962" class="Symbol"
+      >)</a
+      ><a name="1963"
+      >
+                              </a
+      ><a name="1994" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="1996"
+      >
+    </a
+      ><a name="2001" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2006"
+      > </a
+      ><a name="2007" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="2008"
+      > </a
+      ><a name="2009" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="2010"
+      > </a
+      ><a name="2011" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2014"
+      > </a
+      ><a name="2015" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2016"
+      > </a
+      ><a name="2017" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2020"
+      > </a
+      ><a name="2021" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2022"
+      > </a
+      ><a name="2023" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="2024"
+      >
+                             </a
+      ><a name="2054" href="Logic.html#944" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="2056"
+      > </a
+      ><a name="2057" href="CPO.html#4314" class="Function"
+      >monotonic</a
+      ><a name="2066"
+      > </a
+      ><a name="2067" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2070"
+      > </a
+      ><a name="2071" href="Logic.html#944" class="Function Operator"
+      >&#10217;</a
+      ><a name="2072"
+      >
+    </a
+      ><a name="2077" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="2078"
+      > </a
+      ><a name="2079" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="2080"
+      > </a
+      ><a name="2081" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2084"
+      > </a
+      ><a name="2085" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2086"
+      > </a
+      ><a name="2087" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="2088"
+      >
+                             </a
+      ><a name="2118" href="Logic.html#1221" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="2120"
+      > </a
+      ><a name="2121" href="CPO.html#9355" class="Function"
+      >&#8849;-bot</a
+      ><a name="2126"
+      > </a
+      ><a name="2127" href="Logic.html#1221" class="Function Operator"
+      >&#10217;TRUE</a
+      ><a name="2132"
+      >
+  </a
+      ><a name="2135" class="Symbol"
+      >))</a
+      ><a name="2137"
+      >
+
+</a
+      ><a name="2139" class="Comment"
+      >------------------------------------------------</a
+      ><a name="2187"
+      >
+
+</a
+      ><a name="2189" href="WWFix.html#2189" class="Function"
+      >A&#8658;B</a
+      ><a name="2192"
+      > </a
+      ><a name="2193" class="Symbol"
+      >:</a
+      ><a name="2194"
+      > </a
+      ><a name="2195" href="WWFix.html#932" class="Function"
+      >AssA</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" class="Symbol"
+      >&#8594;</a
+      ><a name="2201"
+      > </a
+      ><a name="2202" href="WWFix.html#972" class="Function"
+      >AssB</a
+      ><a name="2206"
+      >
+</a
+      ><a name="2207" href="WWFix.html#2189" class="Function"
+      >A&#8658;B</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" href="WWFix.html#2211" class="Bound"
+      >A</a
+      ><a name="2212"
+      > </a
+      ><a name="2213" class="Symbol"
+      >=</a
+      ><a name="2214"
+      >  </a
+      ><a name="2216" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2219"
+      > </a
+      ><a name="2220" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2221"
+      > </a
+      ><a name="2222" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2225"
+      > </a
+      ><a name="2226" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2229"
+      >
+                          </a
+      ><a name="2256" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2257"
+      > </a
+      ><a name="2258" href="CPOFunctions.html#7009" class="Function"
+      >&#8729;-assocRL</a
+      ><a name="2267"
+      > </a
+      ><a name="2268" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2271"
+      > </a
+      ><a name="2272" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2275"
+      > </a
+      ><a name="2276" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2277"
+      > </a
+      ><a name="2278" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2279"
+      >
+         </a
+      ><a name="2289" class="Symbol"
+      >(</a
+      ><a name="2290" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2293"
+      > </a
+      ><a name="2294" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2295"
+      > </a
+      ><a name="2296" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2299" class="Symbol"
+      >)</a
+      ><a name="2300"
+      > </a
+      ><a name="2301" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2302"
+      > </a
+      ><a name="2303" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2304"
+      >
+                          </a
+      ><a name="2331" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2332"
+      > </a
+      ><a name="2333" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="2340"
+      > </a
+      ><a name="2341" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2342"
+      > </a
+      ><a name="2343" href="WWFix.html#2211" class="Bound"
+      >A</a
+      ><a name="2344"
+      > </a
+      ><a name="2345" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2346"
+      >
+         </a
+      ><a name="2356" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="2364"
+      > </a
+      ><a name="2365" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2366"
+      > </a
+      ><a name="2367" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2368"
+      >
+                          </a
+      ><a name="2395" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2396"
+      > </a
+      ><a name="2397" href="CPOFunctions.html#6562" class="Function"
+      >&#8729;-idL</a
+      ><a name="2402"
+      > </a
+      ><a name="2403" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2404"
+      > </a
+      ><a name="2405" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2406"
+      >
+         </a
+      ><a name="2416" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2417"
+      >
+                          </a
+      ><a name="2444" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="2447"
+      >
+
+</a
+      ><a name="2449" href="WWFix.html#2449" class="Function"
+      >B&#8658;C</a
+      ><a name="2452"
+      > </a
+      ><a name="2453" class="Symbol"
+      >:</a
+      ><a name="2454"
+      > </a
+      ><a name="2455" href="WWFix.html#972" class="Function"
+      >AssB</a
+      ><a name="2459"
+      > </a
+      ><a name="2460" class="Symbol"
+      >&#8594;</a
+      ><a name="2461"
+      > </a
+      ><a name="2462" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="2466"
+      >
+</a
+      ><a name="2467" href="WWFix.html#2449" class="Function"
+      >B&#8658;C</a
+      ><a name="2470"
+      > </a
+      ><a name="2471" class="Symbol"
+      >=</a
+      ><a name="2472"
+      > </a
+      ><a name="2473" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="2477"
+      > </a
+      ><a name="2478" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="2481"
+      >
+
+</a
+      ><a name="2483" href="WWFix.html#2483" class="Function"
+      >A&#8658;C</a
+      ><a name="2486"
+      > </a
+      ><a name="2487" class="Symbol"
+      >:</a
+      ><a name="2488"
+      > </a
+      ><a name="2489" href="WWFix.html#932" class="Function"
+      >AssA</a
+      ><a name="2493"
+      > </a
+      ><a name="2494" class="Symbol"
+      >&#8594;</a
+      ><a name="2495"
+      > </a
+      ><a name="2496" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="2500"
+      >
+</a
+      ><a name="2501" href="WWFix.html#2483" class="Function"
+      >A&#8658;C</a
+      ><a name="2504"
+      > </a
+      ><a name="2505" class="Symbol"
+      >=</a
+      ><a name="2506"
+      > </a
+      ><a name="2507" href="WWFix.html#2449" class="Function"
+      >B&#8658;C</a
+      ><a name="2510"
+      > </a
+      ><a name="2511" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="2512"
+      > </a
+      ><a name="2513" href="WWFix.html#2189" class="Function"
+      >A&#8658;B</a
+      ><a name="2516"
+      >
+
+</a
+      ><a name="2518" href="WWFix.html#2518" class="Function"
+      >1&#945;&#8658;1&#946;</a
+      ><a name="2523"
+      > </a
+      ><a name="2524" class="Symbol"
+      >:</a
+      ><a name="2525"
+      > </a
+      ><a name="2526" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="2532"
+      > </a
+      ><a name="2533" class="Symbol"
+      >&#8594;</a
+      ><a name="2534"
+      > </a
+      ><a name="2535" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="2541"
+      >
+</a
+      ><a name="2542" href="WWFix.html#2518" class="Function"
+      >1&#945;&#8658;1&#946;</a
+      ><a name="2547"
+      > </a
+      ><a name="2548" href="WWFix.html#2548" class="Bound"
+      >&#945;</a
+      ><a name="2549"
+      > </a
+      ><a name="2550" class="Symbol"
+      >=</a
+      ><a name="2551"
+      > </a
+      ><a name="2552" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="2556"
+      > </a
+      ><a name="2557" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="2560"
+      > </a
+      ><a name="2561" href="WWFix.html#2548" class="Bound"
+      >&#945;</a
+      ><a name="2562"
+      >
+
+</a
+      ><a name="2564" href="WWFix.html#2564" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="2569"
+      > </a
+      ><a name="2570" class="Symbol"
+      >:</a
+      ><a name="2571"
+      > </a
+      ><a name="2572" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="2578"
+      > </a
+      ><a name="2579" class="Symbol"
+      >&#8594;</a
+      ><a name="2580"
+      > </a
+      ><a name="2581" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="2587"
+      >
+</a
+      ><a name="2588" href="WWFix.html#2564" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="2593"
+      > </a
+      ><a name="2594" class="Symbol"
+      >(</a
+      ><a name="2595" href="WWFix.html#2595" class="Bound"
+      >&#946;</a
+      ><a name="2596"
+      > </a
+      ><a name="2597" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2598"
+      > </a
+      ><a name="2599" href="WWFix.html#2599" class="Bound"
+      >strictrep</a
+      ><a name="2608" class="Symbol"
+      >)</a
+      ><a name="2609"
+      > </a
+      ><a name="2610" class="Symbol"
+      >=</a
+      ><a name="2611"
+      > </a
+      ><a name="2612" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="2615"
+      > </a
+      ><a name="2616" class="Symbol"
+      >(</a
+      ><a name="2617" href="FixTheorems.html#5415" class="Function"
+      >FixFusion</a
+      ><a name="2626"
+      > </a
+      ><a name="2627" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2630"
+      > </a
+      ><a name="2631" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2632"
+      > </a
+      ><a name="2633" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="2634"
+      > </a
+      ><a name="2635" href="WWFix.html#2599" class="Bound"
+      >strictrep</a
+      ><a name="2644"
+      > </a
+      ><a name="2645" href="WWFix.html#2595" class="Bound"
+      >&#946;</a
+      ><a name="2646" class="Symbol"
+      >)</a
+      ><a name="2647"
+      >
+
+</a
+      ><a name="2649" href="WWFix.html#2649" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="2654"
+      > </a
+      ><a name="2655" class="Symbol"
+      >:</a
+      ><a name="2656"
+      > </a
+      ><a name="2657" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" class="Symbol"
+      >&#8594;</a
+      ><a name="2663"
+      > </a
+      ><a name="2664" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="2670"
+      > </a
+      ><a name="2671" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="2672"
+      > </a
+      ><a name="2673" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="2679"
+      >
+</a
+      ><a name="2680" href="WWFix.html#2649" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="2685"
+      > </a
+      ><a name="2686" href="WWFix.html#2686" class="Bound"
+      >C</a
+      ><a name="2687"
+      > </a
+      ><a name="2688" class="Symbol"
+      >=</a
+      ><a name="2689"
+      > </a
+      ><a name="2690" href="Logic.html#443" class="Function"
+      >&#8596;-&#8801;</a
+      ><a name="2693"
+      > </a
+      ><a name="2694" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="2698"
+      > </a
+      ><a name="2699" class="Symbol"
+      >(</a
+      ><a name="2700"
+      >
+
+   </a
+      ><a name="2705" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="2708"
+      > </a
+      ><a name="2709" class="Symbol"
+      >(</a
+      ><a name="2710" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2713"
+      > </a
+      ><a name="2714" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2715"
+      > </a
+      ><a name="2716" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2717"
+      > </a
+      ><a name="2718" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2719"
+      > </a
+      ><a name="2720" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2723" class="Symbol"
+      >)</a
+      ><a name="2724"
+      >
+                                    </a
+      ><a name="2761" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2762"
+      > </a
+      ><a name="2763" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="2767"
+      > </a
+      ><a name="2768" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="2771"
+      > </a
+      ><a name="2772" class="Symbol"
+      >(</a
+      ><a name="2773" href="CPOFunctions.html#7009" class="Function"
+      >&#8729;-assocRL</a
+      ><a name="2782"
+      > </a
+      ><a name="2783" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2786"
+      > </a
+      ><a name="2787" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2788"
+      > </a
+      ><a name="2789" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2792" class="Symbol"
+      >)</a
+      ><a name="2793"
+      > </a
+      ><a name="2794" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2795"
+      >
+   </a
+      ><a name="2799" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="2802"
+      > </a
+      ><a name="2803" class="Symbol"
+      >((</a
+      ><a name="2805" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2808"
+      > </a
+      ><a name="2809" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2810"
+      > </a
+      ><a name="2811" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2812" class="Symbol"
+      >)</a
+      ><a name="2813"
+      > </a
+      ><a name="2814" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2815"
+      > </a
+      ><a name="2816" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2819" class="Symbol"
+      >)</a
+      ><a name="2820"
+      >
+                                    </a
+      ><a name="2857" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2858"
+      > </a
+      ><a name="2859" href="FixTheorems.html#3381" class="Function"
+      >RollingRule</a
+      ><a name="2870"
+      > </a
+      ><a name="2871" class="Symbol"
+      >(</a
+      ><a name="2872" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2875"
+      > </a
+      ><a name="2876" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2877"
+      > </a
+      ><a name="2878" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2879" class="Symbol"
+      >)</a
+      ><a name="2880"
+      > </a
+      ><a name="2881" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2884"
+      > </a
+      ><a name="2885" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2886"
+      >
+   </a
+      ><a name="2890" class="Symbol"
+      >(</a
+      ><a name="2891" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2896"
+      > </a
+      ><a name="2897" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2898" class="Symbol"
+      >)</a
+      ><a name="2899"
+      > </a
+      ><a name="2900" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2901"
+      > </a
+      ><a name="2902" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="2905"
+      > </a
+      ><a name="2906" class="Symbol"
+      >(</a
+      ><a name="2907" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="2910"
+      > </a
+      ><a name="2911" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2912"
+      > </a
+      ><a name="2913" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2916"
+      > </a
+      ><a name="2917" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2918"
+      > </a
+      ><a name="2919" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2920" class="Symbol"
+      >)</a
+      ><a name="2921"
+      >
+                                    </a
+      ><a name="2958" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="2959"
+      > </a
+      ><a name="2960" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="2964"
+      > </a
+      ><a name="2965" class="Symbol"
+      >(</a
+      ><a name="2966" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="2969"
+      > </a
+      ><a name="2970" class="Symbol"
+      >(</a
+      ><a name="2971" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2974"
+      > </a
+      ><a name="2975" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2978" class="Symbol"
+      >))</a
+      ><a name="2980"
+      > </a
+      ><a name="2981" href="WWFix.html#2686" class="Bound"
+      >C</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="2984"
+      >
+   </a
+      ><a name="2988" class="Symbol"
+      >(</a
+      ><a name="2989" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="2992"
+      > </a
+      ><a name="2993" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="2994"
+      > </a
+      ><a name="2995" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="2996" class="Symbol"
+      >)</a
+      ><a name="2997"
+      > </a
+      ><a name="2998" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="2999"
+      > </a
+      ><a name="3000" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="3003"
+      > </a
+      ><a name="3004" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3005"
+      >
+                                    </a
+      ><a name="3042" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3043"
+      > </a
+      ><a name="3044" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="3048"
+      > </a
+      ><a name="3049" class="Symbol"
+      >(</a
+      ><a name="3050" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3057" class="Symbol"
+      >)</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" class="Symbol"
+      >(</a
+      ><a name="3060" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="3063"
+      > </a
+      ><a name="3064" class="Symbol"
+      >(</a
+      ><a name="3065" href="WWFix.html#275" class="Bound"
+      >Computation</a
+      ><a name="3076"
+      > </a
+      ><a name="3077" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3078" class="Symbol"
+      >))</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3082"
+      >
+   </a
+      ><a name="3086" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3089"
+      > </a
+      ><a name="3090" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="3091"
+      > </a
+      ><a name="3092" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3097"
+      >
+                                    </a
+      ><a name="3134" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="3137" class="Symbol"
+      >)</a
+      ><a name="3138"
+      >
+
+</a
+      ><a name="3140" href="WWFix.html#3140" class="Function"
+      >1&#945;B&#8658;3&#945;</a
+      ><a name="3146"
+      > </a
+      ><a name="3147" class="Symbol"
+      >:</a
+      ><a name="3148"
+      > </a
+      ><a name="3149" href="WWFix.html#972" class="Function"
+      >AssB</a
+      ><a name="3153"
+      > </a
+      ><a name="3154" class="Symbol"
+      >&#8594;</a
+      ><a name="3155"
+      > </a
+      ><a name="3156" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="3162"
+      > </a
+      ><a name="3163" class="Symbol"
+      >&#8594;</a
+      ><a name="3164"
+      > </a
+      ><a name="3165" href="WWFix.html#1248" class="Function"
+      >Cond3&#945;</a
+      ><a name="3171"
+      >
+</a
+      ><a name="3172" href="WWFix.html#3140" class="Function"
+      >1&#945;B&#8658;3&#945;</a
+      ><a name="3178"
+      > </a
+      ><a name="3179" href="WWFix.html#3179" class="Bound"
+      >B</a
+      ><a name="3180"
+      > </a
+      ><a name="3181" class="Symbol"
+      >=</a
+      ><a name="3182"
+      >
+
+   </a
+      ><a name="3187" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="3188"
+      > </a
+      ><a name="3189" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3190"
+      > </a
+      ><a name="3191" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3194"
+      > </a
+      ><a name="3195" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3196"
+      > </a
+      ><a name="3197" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3198"
+      > </a
+      ><a name="3199" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3200"
+      > </a
+      ><a name="3201" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3204"
+      >
+                                  </a
+      ><a name="3239" href="Logic.html#865" class="Function Operator"
+      >&#8594;&#10216;</a
+      ><a name="3241"
+      > </a
+      ><a name="3242" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="3249"
+      > </a
+      ><a name="3250" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3253"
+      > </a
+      ><a name="3254" href="Logic.html#865" class="Function Operator"
+      >&#10217;</a
+      ><a name="3255"
+      >
+   </a
+      ><a name="3259" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3264"
+      > </a
+      ><a name="3265" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="3266"
+      > </a
+      ><a name="3267" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3268"
+      > </a
+      ><a name="3269" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3272"
+      > </a
+      ><a name="3273" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3278"
+      > </a
+      ><a name="3279" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3280"
+      > </a
+      ><a name="3281" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3282"
+      > </a
+      ><a name="3283" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3284"
+      > </a
+      ><a name="3285" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3288"
+      >
+                                  </a
+      ><a name="3323" href="Logic.html#1023" class="Function Operator"
+      >&#8594;&#10216;</a
+      ><a name="3325"
+      > </a
+      ><a name="3326" href="Logic.html#443" class="Function"
+      >&#8596;-&#8801;</a
+      ><a name="3329"
+      > </a
+      ><a name="3330" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="3334"
+      > </a
+      ><a name="3335" class="Symbol"
+      >(</a
+      ><a name="3336"
+      > </a
+      ><a name="3337" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3340"
+      > </a
+      ><a name="3341" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3342"
+      > </a
+      ><a name="3343" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3346"
+      > </a
+      ><a name="3347" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3348"
+      > </a
+      ><a name="3349" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3350"
+      > </a
+      ><a name="3351" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3352"
+      > </a
+      ><a name="3353" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3356"
+      >
+                                                                      </a
+      ><a name="3427" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3428"
+      > </a
+      ><a name="3429" href="CPOFunctions.html#7964" class="Function"
+      >&#8729;-assocRRLR</a
+      ><a name="3440"
+      > </a
+      ><a name="3441" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3444"
+      > </a
+      ><a name="3445" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3450"
+      > </a
+      ><a name="3451" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3454"
+      > </a
+      ><a name="3455" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3456"
+      >
+                                                </a
+      ><a name="3505" class="Symbol"
+      >(</a
+      ><a name="3506" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3509"
+      > </a
+      ><a name="3510" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3511"
+      > </a
+      ><a name="3512" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3515"
+      > </a
+      ><a name="3516" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3517"
+      > </a
+      ><a name="3518" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3519" class="Symbol"
+      >)</a
+      ><a name="3520"
+      > </a
+      ><a name="3521" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3522"
+      > </a
+      ><a name="3523" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3526"
+      >
+                                                                      </a
+      ><a name="3597" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="3598"
+      > </a
+      ><a name="3599" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="3606"
+      > </a
+      ><a name="3607" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3610"
+      > </a
+      ><a name="3611" href="WWFix.html#3179" class="Bound"
+      >B</a
+      ><a name="3612"
+      > </a
+      ><a name="3613" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="3614"
+      >
+                                                </a
+      ><a name="3663" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3664"
+      > </a
+      ><a name="3665" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3666"
+      > </a
+      ><a name="3667" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3670"
+      >
+                                                                      </a
+      ><a name="3741" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="3744"
+      >
+                                              </a
+      ><a name="3791" class="Symbol"
+      >)</a
+      ><a name="3792"
+      >
+                                   </a
+      ><a name="3828" href="Logic.html#1023" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="3830"
+      >
+   </a
+      ><a name="3834" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3837"
+      > </a
+      ><a name="3838" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3839"
+      > </a
+      ><a name="3840" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="3841"
+      > </a
+      ><a name="3842" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3843"
+      > </a
+      ><a name="3844" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3845"
+      > </a
+      ><a name="3846" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3847"
+      > </a
+      ><a name="3848" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3851"
+      >
+                                   </a
+      ><a name="3887" href="Logic.html#1324" class="Function Operator"
+      >Qed</a
+      ><a name="3890"
+      >
+
+</a
+      ><a name="3892" href="WWFix.html#3892" class="Function"
+      >1&#945;A&#8658;2&#945;</a
+      ><a name="3898"
+      > </a
+      ><a name="3899" class="Symbol"
+      >:</a
+      ><a name="3900"
+      > </a
+      ><a name="3901" href="WWFix.html#932" class="Function"
+      >AssA</a
+      ><a name="3905"
+      > </a
+      ><a name="3906" class="Symbol"
+      >&#8594;</a
+      ><a name="3907"
+      > </a
+      ><a name="3908" href="CPO.html#11463" class="Function"
+      >Strict</a
+      ><a name="3914"
+      > </a
+      ><a name="3915" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3918"
+      > </a
+      ><a name="3919" class="Symbol"
+      >&#8594;</a
+      ><a name="3920"
+      > </a
+      ><a name="3921" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="3927"
+      > </a
+      ><a name="3928" class="Symbol"
+      >&#8594;</a
+      ><a name="3929"
+      > </a
+      ><a name="3930" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="3936"
+      >
+</a
+      ><a name="3937" href="WWFix.html#3892" class="Function"
+      >1&#945;A&#8658;2&#945;</a
+      ><a name="3943"
+      > </a
+      ><a name="3944" href="WWFix.html#3944" class="Bound"
+      >A</a
+      ><a name="3945"
+      > </a
+      ><a name="3946" href="WWFix.html#3946" class="Bound"
+      >sr</a
+      ><a name="3948"
+      > </a
+      ><a name="3949" class="Symbol"
+      >=</a
+      ><a name="3950"
+      >
+
+   </a
+      ><a name="3955" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="3956"
+      > </a
+      ><a name="3957" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3958"
+      > </a
+      ><a name="3959" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="3962"
+      > </a
+      ><a name="3963" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3964"
+      > </a
+      ><a name="3965" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="3966"
+      > </a
+      ><a name="3967" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="3968"
+      > </a
+      ><a name="3969" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="3972"
+      >
+                                     </a
+      ><a name="4010" href="Logic.html#865" class="Function Operator"
+      >&#8594;&#10216;</a
+      ><a name="4012"
+      > </a
+      ><a name="4013" href="CPOFunctions.html#8720" class="Function"
+      >&#8729;-congR</a
+      ><a name="4020"
+      > </a
+      ><a name="4021" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4024"
+      > </a
+      ><a name="4025" href="Logic.html#865" class="Function Operator"
+      >&#10217;</a
+      ><a name="4026"
+      >
+   </a
+      ><a name="4030" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="4031"
+      > </a
+      ><a name="4032" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4033"
+      > </a
+      ><a name="4034" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4037"
+      > </a
+      ><a name="4038" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4039"
+      > </a
+      ><a name="4040" class="Symbol"
+      >(</a
+      ><a name="4041" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4044"
+      > </a
+      ><a name="4045" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4046"
+      > </a
+      ><a name="4047" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4048"
+      > </a
+      ><a name="4049" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4050"
+      > </a
+      ><a name="4051" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="4054" class="Symbol"
+      >)</a
+      ><a name="4055"
+      > </a
+      ><a name="4056" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4057"
+      > </a
+      ><a name="4058" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4061"
+      >
+                                     </a
+      ><a name="4099" href="Logic.html#1023" class="Function Operator"
+      >&#8594;&#10216;</a
+      ><a name="4101"
+      > </a
+      ><a name="4102" href="Logic.html#443" class="Function"
+      >&#8596;-&#8801;</a
+      ><a name="4105"
+      > </a
+      ><a name="4106" href="Equality.html#160" class="InductiveConstructor"
+      >refl</a
+      ><a name="4110"
+      > </a
+      ><a name="4111" class="Symbol"
+      >(</a
+      ><a name="4112"
+      > </a
+      ><a name="4113" class="Symbol"
+      >(</a
+      ><a name="4114" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4117"
+      > </a
+      ><a name="4118" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4119"
+      > </a
+      ><a name="4120" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4121"
+      > </a
+      ><a name="4122" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4123"
+      > </a
+      ><a name="4124" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="4127" class="Symbol"
+      >)</a
+      ><a name="4128"
+      > </a
+      ><a name="4129" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4130"
+      > </a
+      ><a name="4131" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4134"
+      >
+                                                                          </a
+      ><a name="4209" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4210"
+      > </a
+      ><a name="4211" href="CPOFunctions.html#7214" class="Function"
+      >&#8729;-assocLRE</a
+      ><a name="4221"
+      > </a
+      ><a name="4222" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4225"
+      > </a
+      ><a name="4226" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4227"
+      > </a
+      ><a name="4228" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="4231"
+      > </a
+      ><a name="4232" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4235"
+      > </a
+      ><a name="4236" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4237"
+      >
+                                                   </a
+      ><a name="4289" class="Symbol"
+      >(</a
+      ><a name="4290" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4293"
+      > </a
+      ><a name="4294" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4295"
+      > </a
+      ><a name="4296" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4297" class="Symbol"
+      >)</a
+      ><a name="4298"
+      > </a
+      ><a name="4299" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4300"
+      > </a
+      ><a name="4301" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="4304"
+      > </a
+      ><a name="4305" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4306"
+      > </a
+      ><a name="4307" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4310"
+      >
+                                                                          </a
+      ><a name="4385" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4386"
+      > </a
+      ><a name="4387" href="CPOFunctions.html#8834" class="Function"
+      >&#8729;-congL</a
+      ><a name="4394"
+      > </a
+      ><a name="4395" class="Symbol"
+      >(</a
+      ><a name="4396" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4399"
+      > </a
+      ><a name="4400" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4401"
+      > </a
+      ><a name="4402" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4403" class="Symbol"
+      >)</a
+      ><a name="4404"
+      > </a
+      ><a name="4405" href="WWFix.html#3944" class="Bound"
+      >A</a
+      ><a name="4406"
+      > </a
+      ><a name="4407" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4408"
+      >
+                                                   </a
+      ><a name="4460" class="Symbol"
+      >(</a
+      ><a name="4461" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4464"
+      > </a
+      ><a name="4465" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4466"
+      > </a
+      ><a name="4467" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4468" class="Symbol"
+      >)</a
+      ><a name="4469"
+      > </a
+      ><a name="4470" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4471"
+      > </a
+      ><a name="4472" href="CPOFunctions.html#619" class="Function"
+      >identity</a
+      ><a name="4480"
+      >
+                                                                          </a
+      ><a name="4555" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="4556"
+      > </a
+      ><a name="4557" href="CPOFunctions.html#6683" class="Function"
+      >&#8729;-idR</a
+      ><a name="4562"
+      > </a
+      ><a name="4563" class="Symbol"
+      >(</a
+      ><a name="4564" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4567"
+      > </a
+      ><a name="4568" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4569"
+      > </a
+      ><a name="4570" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4571" class="Symbol"
+      >)</a
+      ><a name="4572"
+      > </a
+      ><a name="4573" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="4574"
+      >
+                                                   </a
+      ><a name="4626" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4629"
+      > </a
+      ><a name="4630" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4631"
+      > </a
+      ><a name="4632" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4633"
+      >
+                                                                          </a
+      ><a name="4708" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="4711" class="Symbol"
+      >)</a
+      ><a name="4712"
+      >
+                                     </a
+      ><a name="4750" href="Logic.html#1023" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="4752"
+      >
+   </a
+      ><a name="4756" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="4757"
+      > </a
+      ><a name="4758" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4759"
+      > </a
+      ><a name="4760" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4763"
+      > </a
+      ><a name="4764" href="Equality.html#102" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4765"
+      > </a
+      ><a name="4766" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="4769"
+      > </a
+      ><a name="4770" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="4771"
+      > </a
+      ><a name="4772" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="4773"
+      >
+                                     </a
+      ><a name="4811" href="Logic.html#865" class="Function Operator"
+      >&#8594;&#10216;</a
+      ><a name="4813"
+      > </a
+      ><a name="4814" class="Symbol"
+      >(&#955;</a
+      ><a name="4816"
+      > </a
+      ><a name="4817" href="WWFix.html#4817" class="Bound"
+      >eq</a
+      ><a name="4819"
+      > </a
+      ><a name="4820" class="Symbol"
+      >&#8594;</a
+      ><a name="4821"
+      > </a
+      ><a name="4822" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="4825"
+      > </a
+      ><a name="4826" href="WWFix.html#4817" class="Bound"
+      >eq</a
+      ><a name="4828"
+      > </a
+      ><a name="4829" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4830"
+      > </a
+      ><a name="4831" href="WWFix.html#3946" class="Bound"
+      >sr</a
+      ><a name="4833" class="Symbol"
+      >)</a
+      ><a name="4834"
+      > </a
+      ><a name="4835" href="Logic.html#865" class="Function Operator"
+      >&#10217;</a
+      ><a name="4836"
+      >
+   </a
+      ><a name="4840" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="4846"
+      >
+                                             </a
+      ><a name="4892" href="Logic.html#1324" class="Function Operator"
+      >Qed</a
+      ><a name="4895"
+      >
+
+</a
+      ><a name="4897" class="Comment"
+      >------------------------------------------------</a
+      ><a name="4945"
+      >
+
+</a
+      ><a name="4947" href="WWFix.html#4947" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="4954"
+      > </a
+      ><a name="4955" class="Symbol"
+      >:</a
+      ><a name="4956"
+      > </a
+      ><a name="4957" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="4961"
+      > </a
+      ><a name="4962" class="Symbol"
+      >&#8594;</a
+      ><a name="4963"
+      > </a
+      ><a name="4964" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="4970"
+      > </a
+      ><a name="4971" class="Symbol"
+      >&#8594;</a
+      ><a name="4972"
+      > </a
+      ><a name="4973" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="4988"
+      >
+</a
+      ><a name="4989" href="WWFix.html#4947" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="4996"
+      > </a
+      ><a name="4997" href="WWFix.html#4997" class="Bound"
+      >C</a
+      ><a name="4998"
+      > </a
+      ><a name="4999" href="WWFix.html#4999" class="Bound"
+      >&#946;</a
+      ><a name="5000"
+      > </a
+      ><a name="5001" class="Symbol"
+      >=</a
+      ><a name="5002"
+      >
+
+   </a
+      ><a name="5007" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5010"
+      > </a
+      ><a name="5011" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5012"
+      >
+                                </a
+      ><a name="5045" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5046"
+      > </a
+      ><a name="5047" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="5050"
+      > </a
+      ><a name="5051" href="WWFix.html#4997" class="Bound"
+      >C</a
+      ><a name="5052"
+      > </a
+      ><a name="5053" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5054"
+      >
+   </a
+      ><a name="5058" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5061"
+      > </a
+      ><a name="5062" class="Symbol"
+      >(</a
+      ><a name="5063" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5066"
+      > </a
+      ><a name="5067" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5068"
+      > </a
+      ><a name="5069" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5072"
+      > </a
+      ><a name="5073" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5074"
+      > </a
+      ><a name="5075" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5076" class="Symbol"
+      >)</a
+      ><a name="5077"
+      >
+                                </a
+      ><a name="5110" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5111"
+      > </a
+      ><a name="5112" href="FixTheorems.html#3381" class="Function"
+      >RollingRule</a
+      ><a name="5123"
+      > </a
+      ><a name="5124" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5127"
+      > </a
+      ><a name="5128" class="Symbol"
+      >(</a
+      ><a name="5129" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5132"
+      > </a
+      ><a name="5133" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5134"
+      > </a
+      ><a name="5135" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5136" class="Symbol"
+      >)</a
+      ><a name="5137"
+      > </a
+      ><a name="5138" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5139"
+      >
+   </a
+      ><a name="5143" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5146"
+      > </a
+      ><a name="5147" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="5148"
+      > </a
+      ><a name="5149" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5152"
+      > </a
+      ><a name="5153" class="Symbol"
+      >((</a
+      ><a name="5155" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5158"
+      > </a
+      ><a name="5159" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5160"
+      > </a
+      ><a name="5161" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5162" class="Symbol"
+      >)</a
+      ><a name="5163"
+      > </a
+      ><a name="5164" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5165"
+      > </a
+      ><a name="5166" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5169" class="Symbol"
+      >)</a
+      ><a name="5170"
+      >
+                                </a
+      ><a name="5203" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5204"
+      > </a
+      ><a name="5205" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="5209"
+      > </a
+      ><a name="5210" class="Symbol"
+      >(</a
+      ><a name="5211" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="5214"
+      > </a
+      ><a name="5215" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5218"
+      > </a
+      ><a name="5219" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="5220"
+      > </a
+      ><a name="5221" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5224" class="Symbol"
+      >)</a
+      ><a name="5225"
+      > </a
+      ><a name="5226" class="Symbol"
+      >(</a
+      ><a name="5227" href="CPOFunctions.html#6804" class="Function"
+      >&#8729;-assocLR</a
+      ><a name="5236"
+      > </a
+      ><a name="5237" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5240"
+      > </a
+      ><a name="5241" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5242"
+      > </a
+      ><a name="5243" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5246" class="Symbol"
+      >)</a
+      ><a name="5247"
+      > </a
+      ><a name="5248" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5249"
+      >
+   </a
+      ><a name="5253" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5256"
+      > </a
+      ><a name="5257" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="5258"
+      > </a
+      ><a name="5259" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5262"
+      > </a
+      ><a name="5263" class="Symbol"
+      >(</a
+      ><a name="5264" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5267"
+      > </a
+      ><a name="5268" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5269"
+      > </a
+      ><a name="5270" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5271"
+      > </a
+      ><a name="5272" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="5273"
+      > </a
+      ><a name="5274" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5277" class="Symbol"
+      >)</a
+      ><a name="5278"
+      >
+                                </a
+      ><a name="5311" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5312"
+      > </a
+      ><a name="5313" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="5317"
+      > </a
+      ><a name="5318" class="Symbol"
+      >(</a
+      ><a name="5319" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="5322"
+      > </a
+      ><a name="5323" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5326" class="Symbol"
+      >)</a
+      ><a name="5327"
+      > </a
+      ><a name="5328" class="Symbol"
+      >(</a
+      ><a name="5329" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="5332"
+      > </a
+      ><a name="5333" href="WWFix.html#4999" class="Bound"
+      >&#946;</a
+      ><a name="5334" class="Symbol"
+      >)</a
+      ><a name="5335"
+      > </a
+      ><a name="5336" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5337"
+      >
+   </a
+      ><a name="5341" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5344"
+      > </a
+      ><a name="5345" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="5346"
+      > </a
+      ><a name="5347" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5350"
+      > </a
+      ><a name="5351" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="5352"
+      >
+                                </a
+      ><a name="5385" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="5388"
+      >
+
+</a
+      ><a name="5390" href="WWFix.html#5390" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5397"
+      > </a
+      ><a name="5398" class="Symbol"
+      >:</a
+      ><a name="5399"
+      > </a
+      ><a name="5400" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="5404"
+      > </a
+      ><a name="5405" class="Symbol"
+      >&#8594;</a
+      ><a name="5406"
+      > </a
+      ><a name="5407" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="5413"
+      > </a
+      ><a name="5414" class="Symbol"
+      >&#8594;</a
+      ><a name="5415"
+      > </a
+      ><a name="5416" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="5431"
+      >
+</a
+      ><a name="5432" href="WWFix.html#5390" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5439"
+      > </a
+      ><a name="5440" href="WWFix.html#5440" class="Bound"
+      >C</a
+      ><a name="5441"
+      > </a
+      ><a name="5442" href="WWFix.html#5442" class="Bound"
+      >&#946;</a
+      ><a name="5443"
+      > </a
+      ><a name="5444" class="Symbol"
+      >=</a
+      ><a name="5445"
+      > </a
+      ><a name="5446" href="WWFix.html#4947" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="5453"
+      > </a
+      ><a name="5454" href="WWFix.html#5440" class="Bound"
+      >C</a
+      ><a name="5455"
+      > </a
+      ><a name="5456" class="Symbol"
+      >(</a
+      ><a name="5457" href="Base.html#586" class="Function"
+      >snd</a
+      ><a name="5460"
+      > </a
+      ><a name="5461" class="Symbol"
+      >(</a
+      ><a name="5462" href="WWFix.html#2649" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="5467"
+      > </a
+      ><a name="5468" href="WWFix.html#5440" class="Bound"
+      >C</a
+      ><a name="5469" class="Symbol"
+      >)</a
+      ><a name="5470"
+      > </a
+      ><a name="5471" href="WWFix.html#5442" class="Bound"
+      >&#946;</a
+      ><a name="5472" class="Symbol"
+      >)</a
+      ><a name="5473"
+      >
+
+</a
+      ><a name="5475" href="WWFix.html#5475" class="Function"
+      >1&#945;C&#8658;Fac</a
+      ><a name="5482"
+      > </a
+      ><a name="5483" class="Symbol"
+      >:</a
+      ><a name="5484"
+      > </a
+      ><a name="5485" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="5489"
+      > </a
+      ><a name="5490" class="Symbol"
+      >&#8594;</a
+      ><a name="5491"
+      > </a
+      ><a name="5492" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="5498"
+      > </a
+      ><a name="5499" class="Symbol"
+      >&#8594;</a
+      ><a name="5500"
+      > </a
+      ><a name="5501" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="5516"
+      >
+</a
+      ><a name="5517" href="WWFix.html#5475" class="Function"
+      >1&#945;C&#8658;Fac</a
+      ><a name="5524"
+      > </a
+      ><a name="5525" href="WWFix.html#5525" class="Bound"
+      >C</a
+      ><a name="5526"
+      > </a
+      ><a name="5527" class="Symbol"
+      >=</a
+      ><a name="5528"
+      > </a
+      ><a name="5529" href="WWFix.html#4947" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="5536"
+      > </a
+      ><a name="5537" href="WWFix.html#5525" class="Bound"
+      >C</a
+      ><a name="5538"
+      > </a
+      ><a name="5539" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="5540"
+      > </a
+      ><a name="5541" href="WWFix.html#2518" class="Function"
+      >1&#945;&#8658;1&#946;</a
+      ><a name="5546"
+      >
+
+</a
+      ><a name="5548" href="WWFix.html#5548" class="Function"
+      >2&#945;C&#8658;Fac</a
+      ><a name="5555"
+      > </a
+      ><a name="5556" class="Symbol"
+      >:</a
+      ><a name="5557"
+      > </a
+      ><a name="5558" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="5562"
+      > </a
+      ><a name="5563" class="Symbol"
+      >&#8594;</a
+      ><a name="5564"
+      > </a
+      ><a name="5565" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="5571"
+      > </a
+      ><a name="5572" class="Symbol"
+      >&#8594;</a
+      ><a name="5573"
+      > </a
+      ><a name="5574" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="5589"
+      >
+</a
+      ><a name="5590" href="WWFix.html#5548" class="Function"
+      >2&#945;C&#8658;Fac</a
+      ><a name="5597"
+      > </a
+      ><a name="5598" href="WWFix.html#5598" class="Bound"
+      >C</a
+      ><a name="5599"
+      > </a
+      ><a name="5600" class="Symbol"
+      >=</a
+      ><a name="5601"
+      > </a
+      ><a name="5602" href="WWFix.html#5390" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5609"
+      > </a
+      ><a name="5610" href="WWFix.html#5598" class="Bound"
+      >C</a
+      ><a name="5611"
+      > </a
+      ><a name="5612" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="5613"
+      > </a
+      ><a name="5614" href="WWFix.html#2564" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="5619"
+      >
+
+</a
+      ><a name="5621" href="WWFix.html#5621" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="5631"
+      > </a
+      ><a name="5632" class="Symbol"
+      >:</a
+      ><a name="5633"
+      > </a
+      ><a name="5634" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="5638"
+      > </a
+      ><a name="5639" class="Symbol"
+      >&#8594;</a
+      ><a name="5640"
+      > </a
+      ><a name="5641" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="5647"
+      > </a
+      ><a name="5648" class="Symbol"
+      >&#8594;</a
+      ><a name="5649"
+      > </a
+      ><a name="5650" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="5658"
+      >
+</a
+      ><a name="5659" href="WWFix.html#5621" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="5669"
+      > </a
+      ><a name="5670" href="WWFix.html#5670" class="Bound"
+      >C</a
+      ><a name="5671"
+      > </a
+      ><a name="5672" href="WWFix.html#5672" class="Bound"
+      >&#946;</a
+      ><a name="5673"
+      > </a
+      ><a name="5674" class="Symbol"
+      >=</a
+      ><a name="5675"
+      >
+
+   </a
+      ><a name="5680" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5683"
+      > </a
+      ><a name="5684" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="5685"
+      > </a
+      ><a name="5686" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="5689"
+      > </a
+      ><a name="5690" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="5691"
+      > </a
+      ><a name="5692" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5695"
+      > </a
+      ><a name="5696" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="5697"
+      >
+                      </a
+      ><a name="5720" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5721"
+      > </a
+      ><a name="5722" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="5726"
+      > </a
+      ><a name="5727" class="Symbol"
+      >(</a
+      ><a name="5728" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="5731"
+      > </a
+      ><a name="5732" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5735" class="Symbol"
+      >)</a
+      ><a name="5736"
+      > </a
+      ><a name="5737" class="Symbol"
+      >(</a
+      ><a name="5738" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="5741"
+      > </a
+      ><a name="5742" class="Symbol"
+      >(</a
+      ><a name="5743" href="WWFix.html#5390" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="5750"
+      > </a
+      ><a name="5751" href="WWFix.html#5670" class="Bound"
+      >C</a
+      ><a name="5752"
+      > </a
+      ><a name="5753" href="WWFix.html#5672" class="Bound"
+      >&#946;</a
+      ><a name="5754" class="Symbol"
+      >))</a
+      ><a name="5756"
+      > </a
+      ><a name="5757" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5758"
+      >
+   </a
+      ><a name="5762" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="5765"
+      > </a
+      ><a name="5766" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="5767"
+      > </a
+      ><a name="5768" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5771"
+      > </a
+      ><a name="5772" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="5773"
+      >
+                      </a
+      ><a name="5796" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="5797"
+      > </a
+      ><a name="5798" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="5801"
+      > </a
+      ><a name="5802" href="WWFix.html#5672" class="Bound"
+      >&#946;</a
+      ><a name="5803"
+      > </a
+      ><a name="5804" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="5805"
+      >
+   </a
+      ><a name="5809" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="5812"
+      > </a
+      ><a name="5813" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="5814"
+      >
+                      </a
+      ><a name="5837" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="5840"
+      >
+
+</a
+      ><a name="5842" href="WWFix.html#5842" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="5852"
+      > </a
+      ><a name="5853" class="Symbol"
+      >:</a
+      ><a name="5854"
+      > </a
+      ><a name="5855" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="5859"
+      > </a
+      ><a name="5860" class="Symbol"
+      >&#8594;</a
+      ><a name="5861"
+      > </a
+      ><a name="5862" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="5868"
+      > </a
+      ><a name="5869" class="Symbol"
+      >&#8594;</a
+      ><a name="5870"
+      > </a
+      ><a name="5871" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="5879"
+      >
+</a
+      ><a name="5880" href="WWFix.html#5842" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="5890"
+      > </a
+      ><a name="5891" href="WWFix.html#5891" class="Bound"
+      >C</a
+      ><a name="5892"
+      > </a
+      ><a name="5893" href="WWFix.html#5893" class="Bound"
+      >&#946;</a
+      ><a name="5894"
+      > </a
+      ><a name="5895" class="Symbol"
+      >=</a
+      ><a name="5896"
+      > </a
+      ><a name="5897" href="WWFix.html#5621" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="5907"
+      > </a
+      ><a name="5908" href="WWFix.html#5891" class="Bound"
+      >C</a
+      ><a name="5909"
+      > </a
+      ><a name="5910" class="Symbol"
+      >(</a
+      ><a name="5911" href="Base.html#574" class="Function"
+      >fst</a
+      ><a name="5914"
+      > </a
+      ><a name="5915" class="Symbol"
+      >(</a
+      ><a name="5916" href="WWFix.html#2649" class="Function"
+      >1&#946;&#8660;2&#946;</a
+      ><a name="5921"
+      > </a
+      ><a name="5922" href="WWFix.html#5891" class="Bound"
+      >C</a
+      ><a name="5923" class="Symbol"
+      >)</a
+      ><a name="5924"
+      > </a
+      ><a name="5925" href="WWFix.html#5893" class="Bound"
+      >&#946;</a
+      ><a name="5926" class="Symbol"
+      >)</a
+      ><a name="5927"
+      >
+
+</a
+      ><a name="5929" href="WWFix.html#5929" class="Function"
+      >1&#945;C&#8658;Fusion</a
+      ><a name="5939"
+      > </a
+      ><a name="5940" class="Symbol"
+      >:</a
+      ><a name="5941"
+      > </a
+      ><a name="5942" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="5946"
+      > </a
+      ><a name="5947" class="Symbol"
+      >&#8594;</a
+      ><a name="5948"
+      > </a
+      ><a name="5949" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="5955"
+      > </a
+      ><a name="5956" class="Symbol"
+      >&#8594;</a
+      ><a name="5957"
+      > </a
+      ><a name="5958" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="5966"
+      >
+</a
+      ><a name="5967" href="WWFix.html#5929" class="Function"
+      >1&#945;C&#8658;Fusion</a
+      ><a name="5977"
+      > </a
+      ><a name="5978" href="WWFix.html#5978" class="Bound"
+      >C</a
+      ><a name="5979"
+      > </a
+      ><a name="5980" class="Symbol"
+      >=</a
+      ><a name="5981"
+      > </a
+      ><a name="5982" href="WWFix.html#5842" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="5992"
+      > </a
+      ><a name="5993" href="WWFix.html#5978" class="Bound"
+      >C</a
+      ><a name="5994"
+      > </a
+      ><a name="5995" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="5996"
+      > </a
+      ><a name="5997" href="WWFix.html#2518" class="Function"
+      >1&#945;&#8658;1&#946;</a
+      ><a name="6002"
+      >
+
+</a
+      ><a name="6004" href="WWFix.html#6004" class="Function"
+      >2&#945;C&#8658;Fusion</a
+      ><a name="6014"
+      > </a
+      ><a name="6015" class="Symbol"
+      >:</a
+      ><a name="6016"
+      > </a
+      ><a name="6017" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="6021"
+      > </a
+      ><a name="6022" class="Symbol"
+      >&#8594;</a
+      ><a name="6023"
+      > </a
+      ><a name="6024" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="6030"
+      > </a
+      ><a name="6031" class="Symbol"
+      >&#8594;</a
+      ><a name="6032"
+      > </a
+      ><a name="6033" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="6041"
+      >
+</a
+      ><a name="6042" href="WWFix.html#6004" class="Function"
+      >2&#945;C&#8658;Fusion</a
+      ><a name="6052"
+      > </a
+      ><a name="6053" href="WWFix.html#6053" class="Bound"
+      >C</a
+      ><a name="6054"
+      > </a
+      ><a name="6055" class="Symbol"
+      >=</a
+      ><a name="6056"
+      > </a
+      ><a name="6057" href="WWFix.html#5621" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="6067"
+      > </a
+      ><a name="6068" href="WWFix.html#6053" class="Bound"
+      >C</a
+      ><a name="6069"
+      > </a
+      ><a name="6070" href="NeilPrelude.html#3962" class="Function Operator"
+      >&#8728;</a
+      ><a name="6071"
+      > </a
+      ><a name="6072" href="WWFix.html#2564" class="Function"
+      >2&#945;&#8658;2&#946;</a
+      ><a name="6077"
+      >
+
+</a
+      ><a name="6079" href="WWFix.html#6079" class="Function"
+      >FactFusionC&#8658;2&#946;</a
+      ><a name="6093"
+      > </a
+      ><a name="6094" class="Symbol"
+      >:</a
+      ><a name="6095"
+      > </a
+      ><a name="6096" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="6100"
+      > </a
+      ><a name="6101" class="Symbol"
+      >&#8594;</a
+      ><a name="6102"
+      > </a
+      ><a name="6103" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="6118"
+      > </a
+      ><a name="6119" class="Symbol"
+      >&#8594;</a
+      ><a name="6120"
+      > </a
+      ><a name="6121" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="6129"
+      > </a
+      ><a name="6130" class="Symbol"
+      >&#8594;</a
+      ><a name="6131"
+      > </a
+      ><a name="6132" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="6138"
+      >
+</a
+      ><a name="6139" href="WWFix.html#6079" class="Function"
+      >FactFusionC&#8658;2&#946;</a
+      ><a name="6153"
+      > </a
+      ><a name="6154" href="WWFix.html#6154" class="Bound"
+      >C</a
+      ><a name="6155"
+      > </a
+      ><a name="6156" href="WWFix.html#6156" class="Bound"
+      >fact</a
+      ><a name="6160"
+      > </a
+      ><a name="6161" href="WWFix.html#6161" class="Bound"
+      >fus</a
+      ><a name="6164"
+      > </a
+      ><a name="6165" class="Symbol"
+      >=</a
+      ><a name="6166"
+      >
+
+   </a
+      ><a name="6171" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6174"
+      > </a
+      ><a name="6175" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6176"
+      >
+                      </a
+      ><a name="6199" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="6200"
+      > </a
+      ><a name="6201" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="6204"
+      > </a
+      ><a name="6205" href="WWFix.html#6161" class="Bound"
+      >fus</a
+      ><a name="6208"
+      > </a
+      ><a name="6209" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="6210"
+      >
+   </a
+      ><a name="6214" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="6217"
+      > </a
+      ><a name="6218" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6219"
+      > </a
+      ><a name="6220" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6223"
+      > </a
+      ><a name="6224" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6225"
+      > </a
+      ><a name="6226" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6229"
+      > </a
+      ><a name="6230" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6231"
+      >
+                      </a
+      ><a name="6254" href="Equational.html#355" class="Function Operator"
+      >&#10216;</a
+      ><a name="6255"
+      > </a
+      ><a name="6256" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="6260"
+      > </a
+      ><a name="6261" class="Symbol"
+      >(</a
+      ><a name="6262" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="6265"
+      > </a
+      ><a name="6266" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="6269" class="Symbol"
+      >)</a
+      ><a name="6270"
+      > </a
+      ><a name="6271" class="Symbol"
+      >(</a
+      ><a name="6272" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="6275"
+      > </a
+      ><a name="6276" href="WWFix.html#6156" class="Bound"
+      >fact</a
+      ><a name="6280" class="Symbol"
+      >)</a
+      ><a name="6281"
+      > </a
+      ><a name="6282" href="Equational.html#355" class="Function Operator"
+      >&#10217;</a
+      ><a name="6283"
+      >
+   </a
+      ><a name="6287" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="6290"
+      > </a
+      ><a name="6291" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6292"
+      > </a
+      ><a name="6293" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6296"
+      > </a
+      ><a name="6297" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="6298"
+      >
+                      </a
+      ><a name="6321" href="Equational.html#441" class="Function Operator"
+      >QED</a
+      ><a name="6324"
+      >
+
+</a
+      ><a name="6326" href="WWFix.html#6326" class="Function"
+      >FactFusion&#8660;2&#946;</a
+      ><a name="6339"
+      > </a
+      ><a name="6340" class="Symbol"
+      >:</a
+      ><a name="6341"
+      > </a
+      ><a name="6342" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="6346"
+      > </a
+      ><a name="6347" class="Symbol"
+      >&#8594;</a
+      ><a name="6348"
+      > </a
+      ><a name="6349" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="6355"
+      > </a
+      ><a name="6356" href="NeilPrelude.html#23633" class="Function Operator"
+      >&#8596;</a
+      ><a name="6357"
+      > </a
+      ><a name="6358" class="Symbol"
+      >(</a
+      ><a name="6359" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="6374"
+      > </a
+      ><a name="6375" href="Base.html#753" class="Function Operator"
+      >&#215;</a
+      ><a name="6376"
+      > </a
+      ><a name="6377" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="6385" class="Symbol"
+      >)</a
+      ><a name="6386"
+      >
+</a
+      ><a name="6387" href="WWFix.html#6326" class="Function"
+      >FactFusion&#8660;2&#946;</a
+      ><a name="6400"
+      > </a
+      ><a name="6401" href="WWFix.html#6401" class="Bound"
+      >C</a
+      ><a name="6402"
+      > </a
+      ><a name="6403" class="Symbol"
+      >=</a
+      ><a name="6404"
+      > </a
+      ><a name="6405" class="Symbol"
+      >(&#955;</a
+      ><a name="6407"
+      > </a
+      ><a name="6408" href="WWFix.html#6408" class="Bound"
+      >&#946;</a
+      ><a name="6409"
+      > </a
+      ><a name="6410" class="Symbol"
+      >&#8594;</a
+      ><a name="6411"
+      > </a
+      ><a name="6412" href="WWFix.html#5390" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="6419"
+      > </a
+      ><a name="6420" href="WWFix.html#6401" class="Bound"
+      >C</a
+      ><a name="6421"
+      > </a
+      ><a name="6422" href="WWFix.html#6408" class="Bound"
+      >&#946;</a
+      ><a name="6423"
+      > </a
+      ><a name="6424" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="6425"
+      > </a
+      ><a name="6426" href="WWFix.html#5621" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="6436"
+      > </a
+      ><a name="6437" href="WWFix.html#6401" class="Bound"
+      >C</a
+      ><a name="6438"
+      > </a
+      ><a name="6439" href="WWFix.html#6408" class="Bound"
+      >&#946;</a
+      ><a name="6440" class="Symbol"
+      >)</a
+      ><a name="6441"
+      > </a
+      ><a name="6442" href="Base.html#558" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="6443"
+      > </a
+      ><a name="6444" href="NeilPrelude.html#9367" class="Function"
+      >uncurry</a
+      ><a name="6451"
+      > </a
+      ><a name="6452" class="Symbol"
+      >(</a
+      ><a name="6453" href="WWFix.html#6079" class="Function"
+      >FactFusionC&#8658;2&#946;</a
+      ><a name="6467"
+      > </a
+      ><a name="6468" href="WWFix.html#6401" class="Bound"
+      >C</a
+      ><a name="6469" class="Symbol"
+      >)</a
+      ><a name="6470"
+      >
+
+</a
+      ><a name="6472" class="Comment"
+      >------------------------------------------------</a
+      ><a name="6520"
+      >
+
+</a
+      ><a name="6522" href="WWFix.html#6522" class="Function"
+      >3&#945;C&#8658;Fac</a
+      ><a name="6529"
+      > </a
+      ><a name="6530" class="Symbol"
+      >:</a
+      ><a name="6531"
+      > </a
+      ><a name="6532" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="6536"
+      > </a
+      ><a name="6537" class="Symbol"
+      >&#8594;</a
+      ><a name="6538"
+      > </a
+      ><a name="6539" href="WWFix.html#1248" class="Function"
+      >Cond3&#945;</a
+      ><a name="6545"
+      > </a
+      ><a name="6546" class="Symbol"
+      >&#8594;</a
+      ><a name="6547"
+      > </a
+      ><a name="6548" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="6563"
+      >
+</a
+      ><a name="6564" href="WWFix.html#6522" class="Function"
+      >3&#945;C&#8658;Fac</a
+      ><a name="6571"
+      > </a
+      ><a name="6572" href="WWFix.html#6572" class="Bound"
+      >C</a
+      ><a name="6573"
+      > </a
+      ><a name="6574" href="WWFix.html#6574" class="Bound"
+      >&#945;</a
+      ><a name="6575"
+      > </a
+      ><a name="6576" class="Symbol"
+      >=</a
+      ><a name="6577"
+      > </a
+      ><a name="6578" href="CPO.html#8700" class="Function"
+      >&#8849;-antisym</a
+      ><a name="6587"
+      > </a
+      ><a name="6588" href="WWFix.html#6610" class="Function"
+      >leqL</a
+      ><a name="6592"
+      > </a
+      ><a name="6593" href="WWFix.html#7735" class="Function"
+      >leqR</a
+      ><a name="6597"
+      >
+  </a
+      ><a name="6600" class="Keyword"
+      >where</a
+      ><a name="6605"
+      >
+    </a
+      ><a name="6610" href="WWFix.html#6610" class="Function"
+      >leqL</a
+      ><a name="6614"
+      > </a
+      ><a name="6615" class="Symbol"
+      >:</a
+      ><a name="6616"
+      > </a
+      ><a name="6617" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6620"
+      > </a
+      ><a name="6621" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="6622"
+      > </a
+      ><a name="6623" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="6624"
+      > </a
+      ><a name="6625" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6628"
+      > </a
+      ><a name="6629" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6630"
+      > </a
+      ><a name="6631" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6634"
+      > </a
+      ><a name="6635" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6636"
+      >
+    </a
+      ><a name="6641" href="WWFix.html#6610" class="Function"
+      >leqL</a
+      ><a name="6645"
+      > </a
+      ><a name="6646" class="Symbol"
+      >=</a
+      ><a name="6647"
+      > </a
+      ><a name="6648" href="Logic.html#255" class="Function"
+      >ProveTruth</a
+      ><a name="6658"
+      > </a
+      ><a name="6659" class="Symbol"
+      >(</a
+      ><a name="6660"
+      >
+              </a
+      ><a name="6675" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6678"
+      > </a
+      ><a name="6679" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="6680"
+      > </a
+      ><a name="6681" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="6682"
+      > </a
+      ><a name="6683" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6686"
+      > </a
+      ><a name="6687" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6688"
+      > </a
+      ><a name="6689" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6692"
+      > </a
+      ><a name="6693" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6694"
+      >
+                                               </a
+      ><a name="6742" href="Logic.html#944" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="6744"
+      > </a
+      ><a name="6745" href="WWFix.html#346" class="Bound"
+      >Induction</a
+      ><a name="6754"
+      > </a
+      ><a name="6755" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="6756"
+      > </a
+      ><a name="6757" href="Logic.html#944" class="Function Operator"
+      >&#10217;</a
+      ><a name="6758"
+      >
+              </a
+      ><a name="6773" class="Symbol"
+      >(</a
+      ><a name="6774" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="6775"
+      > </a
+      ><a name="6776" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6777"
+      > </a
+      ><a name="6778" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6781" class="Symbol"
+      >)</a
+      ><a name="6782"
+      > </a
+      ><a name="6783" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6784"
+      > </a
+      ><a name="6785" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6788"
+      > </a
+      ><a name="6789" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6790"
+      > </a
+      ><a name="6791" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="6792"
+      > </a
+      ><a name="6793" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6796"
+      > </a
+      ><a name="6797" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6798"
+      > </a
+      ><a name="6799" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6802"
+      > </a
+      ><a name="6803" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6804"
+      >
+                                               </a
+      ><a name="6852" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="6854"
+      > </a
+      ><a name="6855" href="CPOLemmas.html#1848" class="Function"
+      >&#8596;-&#8849;R</a
+      ><a name="6859"
+      > </a
+      ><a name="6860" class="Symbol"
+      >(</a
+      ><a name="6861" href="NeilPrelude.html#1029" class="Function"
+      >cong2R</a
+      ><a name="6867"
+      > </a
+      ><a name="6868" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="6871"
+      > </a
+      ><a name="6872" href="WWFix.html#6574" class="Bound"
+      >&#945;</a
+      ><a name="6873" class="Symbol"
+      >)</a
+      ><a name="6874"
+      > </a
+      ><a name="6875" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="6877"
+      >
+              </a
+      ><a name="6892" class="Symbol"
+      >(</a
+      ><a name="6893" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6896"
+      > </a
+      ><a name="6897" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="6898"
+      > </a
+      ><a name="6899" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6900" class="Symbol"
+      >)</a
+      ><a name="6901"
+      > </a
+      ><a name="6902" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6903"
+      > </a
+      ><a name="6904" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6907"
+      > </a
+      ><a name="6908" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6909"
+      > </a
+      ><a name="6910" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="6911"
+      > </a
+      ><a name="6912" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6915"
+      > </a
+      ><a name="6916" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="6917"
+      > </a
+      ><a name="6918" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="6921"
+      > </a
+      ><a name="6922" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="6923"
+      >
+                                               </a
+      ><a name="6971" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="6973"
+      > </a
+      ><a name="6974" href="CPOLemmas.html#1848" class="Function"
+      >&#8596;-&#8849;R</a
+      ><a name="6978"
+      > </a
+      ><a name="6979" class="Symbol"
+      >(</a
+      ><a name="6980" href="NeilPrelude.html#789" class="Function"
+      >cong</a
+      ><a name="6984"
+      > </a
+      ><a name="6985" class="Symbol"
+      >(</a
+      ><a name="6986" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="6989"
+      > </a
+      ><a name="6990" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="6993" class="Symbol"
+      >)</a
+      ><a name="6994"
+      > </a
+      ><a name="6995" class="Symbol"
+      >(</a
+      ><a name="6996" href="WWFix.html#275" class="Bound"
+      >Computation</a
+      ><a name="7007"
+      > </a
+      ><a name="7008" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="7009" class="Symbol"
+      >))</a
+      ><a name="7011"
+      > </a
+      ><a name="7012" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="7014"
+      >
+              </a
+      ><a name="7029" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7032"
+      > </a
+      ><a name="7033" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7034"
+      > </a
+      ><a name="7035" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7038"
+      > </a
+      ><a name="7039" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="7040"
+      >  </a
+      ><a name="7042" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7043"
+      > </a
+      ><a name="7044" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7047"
+      > </a
+      ><a name="7048" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7049"
+      > </a
+      ><a name="7050" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7053"
+      > </a
+      ><a name="7054" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="7055"
+      >
+                                               </a
+      ><a name="7103" href="Logic.html#1221" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="7105"
+      > </a
+      ><a name="7106" href="CPO.html#7804" class="Function"
+      >&#8849;-refl</a
+      ><a name="7112"
+      > </a
+      ><a name="7113" href="Logic.html#1221" class="Function Operator"
+      >&#10217;TRUE</a
+      ><a name="7118"
+      >
+              </a
+      ><a name="7133" class="Symbol"
+      >)</a
+      ><a name="7134"
+      >
+
+    </a
+      ><a name="7140" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7141"
+      > </a
+      ><a name="7142" class="Symbol"
+      >:</a
+      ><a name="7143"
+      > </a
+      ><a name="7144" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="7147"
+      > </a
+      ><a name="7148" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="7149"
+      > </a
+      ><a name="7150" class="Symbol"
+      >&#8594;</a
+      ><a name="7151"
+      > </a
+      ><a name="7152" class="PrimitiveType"
+      >Set</a
+      ><a name="7155"
+      >
+    </a
+      ><a name="7160" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7161"
+      > </a
+      ><a name="7162" href="WWFix.html#7162" class="Bound"
+      >b</a
+      ><a name="7163"
+      > </a
+      ><a name="7164" class="Symbol"
+      >=</a
+      ><a name="7165"
+      > </a
+      ><a name="7166" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7169"
+      > </a
+      ><a name="7170" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7171"
+      > </a
+      ><a name="7172" href="WWFix.html#7162" class="Bound"
+      >b</a
+      ><a name="7173"
+      > </a
+      ><a name="7174" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7175"
+      > </a
+      ><a name="7176" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7179"
+      > </a
+      ><a name="7180" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7181"
+      >
+
+    </a
+      ><a name="7187" href="WWFix.html#7187" class="Function"
+      >ChainCompleteP</a
+      ><a name="7201"
+      > </a
+      ><a name="7202" class="Symbol"
+      >:</a
+      ><a name="7203"
+      > </a
+      ><a name="7204" href="CPO.html#11243" class="Function"
+      >ChainComplete</a
+      ><a name="7217"
+      > </a
+      ><a name="7218" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7219"
+      >
+    </a
+      ><a name="7224" href="WWFix.html#7187" class="Function"
+      >ChainCompleteP</a
+      ><a name="7238"
+      > </a
+      ><a name="7239" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7240"
+      > </a
+      ><a name="7241" href="WWFix.html#7241" class="Bound"
+      >p</a
+      ><a name="7242"
+      > </a
+      ><a name="7243" class="Symbol"
+      >=</a
+      ><a name="7244"
+      >
+
+        </a
+      ><a name="7254" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7255"
+      > </a
+      ><a name="7256" class="Symbol"
+      >(</a
+      ><a name="7257" href="CPO.html#2953" class="Function"
+      >&#10758;</a
+      ><a name="7258"
+      > </a
+      ><a name="7259" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7260" class="Symbol"
+      >)</a
+      ><a name="7261"
+      >
+                                                 </a
+      ><a name="7311" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="7313"
+      > </a
+      ><a name="7314" href="Logic.html#315" class="Function"
+      >&#8596;-refl</a
+      ><a name="7320"
+      > </a
+      ><a name="7321" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="7323"
+      >
+        </a
+      ><a name="7332" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7335"
+      > </a
+      ><a name="7336" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7337"
+      > </a
+      ><a name="7338" href="CPO.html#2953" class="Function"
+      >&#10758;</a
+      ><a name="7339"
+      > </a
+      ><a name="7340" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7341"
+      > </a
+      ><a name="7342" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7343"
+      > </a
+      ><a name="7344" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7347"
+      > </a
+      ><a name="7348" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7349"
+      >
+                                                 </a
+      ><a name="7399" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="7401"
+      > </a
+      ><a name="7402" href="Logic.html#315" class="Function"
+      >&#8596;-refl</a
+      ><a name="7408"
+      > </a
+      ><a name="7409" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="7411"
+      >
+        </a
+      ><a name="7420" href="CPO.html#2953" class="Function"
+      >&#10758;</a
+      ><a name="7421"
+      > </a
+      ><a name="7422" class="Symbol"
+      >(</a
+      ><a name="7423" href="CPO.html#4598" class="Function"
+      >chainImage</a
+      ><a name="7433"
+      > </a
+      ><a name="7434" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7437"
+      > </a
+      ><a name="7438" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7439" class="Symbol"
+      >)</a
+      ><a name="7440"
+      > </a
+      ><a name="7441" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7442"
+      > </a
+      ><a name="7443" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7446"
+      > </a
+      ><a name="7447" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7448"
+      >
+                                                 </a
+      ><a name="7498" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="7500"
+      > </a
+      ><a name="7501" href="CPOLemmas.html#7605" class="Function"
+      >continuity</a
+      ><a name="7511"
+      > </a
+      ><a name="7512" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7515"
+      > </a
+      ><a name="7516" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7517"
+      > </a
+      ><a name="7518" href="WWFix.html#7241" class="Bound"
+      >p</a
+      ><a name="7519"
+      > </a
+      ><a name="7520" class="Symbol"
+      >(</a
+      ><a name="7521" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7524"
+      > </a
+      ><a name="7525" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7526" class="Symbol"
+      >)</a
+      ><a name="7527"
+      > </a
+      ><a name="7528" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="7530"
+      >
+        </a
+      ><a name="7539" class="Symbol"
+      >((</a
+      ><a name="7541" href="WWFix.html#7541" class="Bound"
+      >b</a
+      ><a name="7542"
+      > </a
+      ><a name="7543" class="Symbol"
+      >:</a
+      ><a name="7544"
+      > </a
+      ><a name="7545" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="7548"
+      > </a
+      ><a name="7549" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="7550" class="Symbol"
+      >)</a
+      ><a name="7551"
+      > </a
+      ><a name="7552" class="Symbol"
+      >&#8594;</a
+      ><a name="7553"
+      > </a
+      ><a name="7554" href="WWFix.html#7541" class="Bound"
+      >b</a
+      ><a name="7555"
+      > </a
+      ><a name="7556" href="CPO.html#2889" class="Function Operator"
+      >&#8712;</a
+      ><a name="7557"
+      > </a
+      ><a name="7558" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7559"
+      > </a
+      ><a name="7560" class="Symbol"
+      >&#8594;</a
+      ><a name="7561"
+      > </a
+      ><a name="7562" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7565"
+      > </a
+      ><a name="7566" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7567"
+      > </a
+      ><a name="7568" href="WWFix.html#7541" class="Bound"
+      >b</a
+      ><a name="7569"
+      > </a
+      ><a name="7570" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7571"
+      > </a
+      ><a name="7572" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7575"
+      > </a
+      ><a name="7576" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7577" class="Symbol"
+      >)</a
+      ><a name="7578"
+      >
+                                                 </a
+      ><a name="7628" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="7630"
+      > </a
+      ><a name="7631" href="Logic.html#315" class="Function"
+      >&#8596;-refl</a
+      ><a name="7637"
+      > </a
+      ><a name="7638" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="7640"
+      >
+        </a
+      ><a name="7649" class="Symbol"
+      >((</a
+      ><a name="7651" href="WWFix.html#7651" class="Bound"
+      >b</a
+      ><a name="7652"
+      > </a
+      ><a name="7653" class="Symbol"
+      >:</a
+      ><a name="7654"
+      > </a
+      ><a name="7655" href="CPO.html#1272" class="Datatype"
+      >CPO</a
+      ><a name="7658"
+      > </a
+      ><a name="7659" href="WWFix.html#692" class="Bound"
+      >B</a
+      ><a name="7660" class="Symbol"
+      >)</a
+      ><a name="7661"
+      > </a
+      ><a name="7662" class="Symbol"
+      >&#8594;</a
+      ><a name="7663"
+      > </a
+      ><a name="7664" href="WWFix.html#7651" class="Bound"
+      >b</a
+      ><a name="7665"
+      > </a
+      ><a name="7666" href="CPO.html#2889" class="Function Operator"
+      >&#8712;</a
+      ><a name="7667"
+      > </a
+      ><a name="7668" href="WWFix.html#7239" class="Bound"
+      >X</a
+      ><a name="7669"
+      > </a
+      ><a name="7670" class="Symbol"
+      >&#8594;</a
+      ><a name="7671"
+      > </a
+      ><a name="7672" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7673"
+      > </a
+      ><a name="7674" href="WWFix.html#7651" class="Bound"
+      >b</a
+      ><a name="7675" class="Symbol"
+      >)</a
+      ><a name="7676"
+      >
+                                                 </a
+      ><a name="7726" href="Logic.html#1324" class="Function Operator"
+      >Qed</a
+      ><a name="7729"
+      >
+
+    </a
+      ><a name="7735" href="WWFix.html#7735" class="Function"
+      >leqR</a
+      ><a name="7739"
+      > </a
+      ><a name="7740" class="Symbol"
+      >:</a
+      ><a name="7741"
+      > </a
+      ><a name="7742" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7745"
+      > </a
+      ><a name="7746" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7747"
+      > </a
+      ><a name="7748" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7751"
+      > </a
+      ><a name="7752" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="7753"
+      > </a
+      ><a name="7754" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7755"
+      > </a
+      ><a name="7756" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7759"
+      > </a
+      ><a name="7760" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7761"
+      >
+    </a
+      ><a name="7766" href="WWFix.html#7735" class="Function"
+      >leqR</a
+      ><a name="7770"
+      > </a
+      ><a name="7771" class="Symbol"
+      >=</a
+      ><a name="7772"
+      > </a
+      ><a name="7773" href="WWFix.html#533" class="Bound"
+      >FixpointInduction</a
+      ><a name="7790"
+      > </a
+      ><a name="7791" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7792"
+      > </a
+      ><a name="7793" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="7794"
+      > </a
+      ><a name="7795" href="WWFix.html#7187" class="Function"
+      >ChainCompleteP</a
+      ><a name="7809"
+      >
+             </a
+      ><a name="7823" class="Symbol"
+      >(</a
+      ><a name="7824" href="Logic.html#255" class="Function"
+      >ProveTruth</a
+      ><a name="7834"
+      > </a
+      ><a name="7835" class="Symbol"
+      >(</a
+      ><a name="7836"
+      >
+                 </a
+      ><a name="7854" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="7855"
+      > </a
+      ><a name="7856" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="7857"
+      >
+                                                       </a
+      ><a name="7913" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="7915"
+      > </a
+      ><a name="7916" href="Logic.html#315" class="Function"
+      >&#8596;-refl</a
+      ><a name="7922"
+      > </a
+      ><a name="7923" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="7925"
+      >
+                 </a
+      ><a name="7943" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="7946"
+      > </a
+      ><a name="7947" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="7948"
+      > </a
+      ><a name="7949" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="7950"
+      > </a
+      ><a name="7951" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="7952"
+      > </a
+      ><a name="7953" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="7956"
+      > </a
+      ><a name="7957" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="7958"
+      >
+                                                       </a
+      ><a name="8014" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8016"
+      > </a
+      ><a name="8017" href="CPOLemmas.html#1761" class="Function"
+      >&#8596;-&#8849;L</a
+      ><a name="8021"
+      > </a
+      ><a name="8022" href="WWFix.html#6572" class="Bound"
+      >C</a
+      ><a name="8023"
+      > </a
+      ><a name="8024" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="8026"
+      >
+                 </a
+      ><a name="8044" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8047"
+      > </a
+      ><a name="8048" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8049"
+      > </a
+      ><a name="8050" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="8051"
+      > </a
+      ><a name="8052" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8053"
+      > </a
+      ><a name="8054" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8057"
+      > </a
+      ><a name="8058" class="Symbol"
+      >(</a
+      ><a name="8059" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8062"
+      > </a
+      ><a name="8063" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8064"
+      > </a
+      ><a name="8065" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="8068"
+      > </a
+      ><a name="8069" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8070"
+      > </a
+      ><a name="8071" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8072" class="Symbol"
+      >)</a
+      ><a name="8073"
+      >
+                                                       </a
+      ><a name="8129" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8131"
+      > </a
+      ><a name="8132" href="CPOLemmas.html#1761" class="Function"
+      >&#8596;-&#8849;L</a
+      ><a name="8136"
+      > </a
+      ><a name="8137" class="Symbol"
+      >(</a
+      ><a name="8138" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="8141"
+      > </a
+      ><a name="8142" class="Symbol"
+      >(</a
+      ><a name="8143" href="FixTheorems.html#3381" class="Function"
+      >RollingRule</a
+      ><a name="8154"
+      > </a
+      ><a name="8155" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8158"
+      > </a
+      ><a name="8159" class="Symbol"
+      >(</a
+      ><a name="8160" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="8163"
+      > </a
+      ><a name="8164" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8165"
+      > </a
+      ><a name="8166" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8167" class="Symbol"
+      >)))</a
+      ><a name="8170"
+      > </a
+      ><a name="8171" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="8173"
+      >
+                 </a
+      ><a name="8191" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8194"
+      > </a
+      ><a name="8195" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8196"
+      > </a
+      ><a name="8197" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="8198"
+      > </a
+      ><a name="8199" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8200"
+      > </a
+      ><a name="8201" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8204"
+      > </a
+      ><a name="8205" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8206"
+      > </a
+      ><a name="8207" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8210"
+      > </a
+      ><a name="8211" class="Symbol"
+      >((</a
+      ><a name="8213" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="8216"
+      > </a
+      ><a name="8217" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8218"
+      > </a
+      ><a name="8219" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8220" class="Symbol"
+      >)</a
+      ><a name="8221"
+      > </a
+      ><a name="8222" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8223"
+      > </a
+      ><a name="8224" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8227" class="Symbol"
+      >)</a
+      ><a name="8228"
+      >
+                                                       </a
+      ><a name="8284" href="Logic.html#944" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8286"
+      > </a
+      ><a name="8287" href="CPO.html#4314" class="Function"
+      >monotonic</a
+      ><a name="8296"
+      > </a
+      ><a name="8297" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8300"
+      > </a
+      ><a name="8301" href="Logic.html#944" class="Function Operator"
+      >&#10217;</a
+      ><a name="8302"
+      >
+                 </a
+      ><a name="8320" href="CPO.html#9219" class="Function"
+      >&#8869;</a
+      ><a name="8321"
+      > </a
+      ><a name="8322" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8323"
+      > </a
+      ><a name="8324" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8327"
+      > </a
+      ><a name="8328" class="Symbol"
+      >((</a
+      ><a name="8330" href="WWFix.html#746" class="Bound"
+      >rep</a
+      ><a name="8333"
+      > </a
+      ><a name="8334" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8335"
+      > </a
+      ><a name="8336" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8337" class="Symbol"
+      >)</a
+      ><a name="8338"
+      > </a
+      ><a name="8339" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8340"
+      > </a
+      ><a name="8341" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8344" class="Symbol"
+      >)</a
+      ><a name="8345"
+      >
+                                                       </a
+      ><a name="8401" href="Logic.html#1221" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8403"
+      > </a
+      ><a name="8404" href="CPO.html#9355" class="Function"
+      >&#8849;-bot</a
+      ><a name="8409"
+      > </a
+      ><a name="8410" href="Logic.html#1221" class="Function Operator"
+      >&#10217;TRUE</a
+      ><a name="8415"
+      >
+                 </a
+      ><a name="8433" class="Symbol"
+      >)</a
+      ><a name="8434"
+      >
+             </a
+      ><a name="8448" class="Symbol"
+      >)</a
+      ><a name="8449"
+      >
+             </a
+      ><a name="8463" class="Symbol"
+      >(&#955;</a
+      ><a name="8465"
+      > </a
+      ><a name="8466" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="8467"
+      > </a
+      ><a name="8468" class="Symbol"
+      >&#8594;</a
+      ><a name="8469"
+      >
+                    </a
+      ><a name="8490" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="8491"
+      > </a
+      ><a name="8492" class="Symbol"
+      >(</a
+      ><a name="8493" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="8494"
+      > </a
+      ><a name="8495" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8496"
+      > </a
+      ><a name="8497" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="8498" class="Symbol"
+      >)</a
+      ><a name="8499"
+      >
+                                           </a
+      ><a name="8543" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8545"
+      > </a
+      ><a name="8546" href="Logic.html#315" class="Function"
+      >&#8596;-refl</a
+      ><a name="8552"
+      > </a
+      ><a name="8553" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="8555"
+      >
+                    </a
+      ><a name="8576" class="Symbol"
+      >(</a
+      ><a name="8577" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8580"
+      > </a
+      ><a name="8581" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8582"
+      > </a
+      ><a name="8583" href="WWFix.html#726" class="Bound"
+      >g</a
+      ><a name="8584" class="Symbol"
+      >)</a
+      ><a name="8585"
+      > </a
+      ><a name="8586" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8587"
+      > </a
+      ><a name="8588" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="8589"
+      > </a
+      ><a name="8590" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8591"
+      > </a
+      ><a name="8592" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8595"
+      > </a
+      ><a name="8596" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8597"
+      >
+                                           </a
+      ><a name="8641" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8643"
+      > </a
+      ><a name="8644" href="CPOLemmas.html#1848" class="Function"
+      >&#8596;-&#8849;R</a
+      ><a name="8648"
+      > </a
+      ><a name="8649" class="Symbol"
+      >(</a
+      ><a name="8650" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="8653"
+      > </a
+      ><a name="8654" class="Symbol"
+      >(</a
+      ><a name="8655" href="NeilPrelude.html#1029" class="Function"
+      >cong2R</a
+      ><a name="8661"
+      > </a
+      ><a name="8662" href="CPO.html#4151" class="Function Operator"
+      >_$_</a
+      ><a name="8665"
+      > </a
+      ><a name="8666" href="WWFix.html#6574" class="Bound"
+      >&#945;</a
+      ><a name="8667" class="Symbol"
+      >))</a
+      ><a name="8669"
+      > </a
+      ><a name="8670" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="8672"
+      >
+                    </a
+      ><a name="8693" class="Symbol"
+      >(</a
+      ><a name="8694" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8695"
+      > </a
+      ><a name="8696" href="CPOFunctions.html#2934" class="Function Operator"
+      >&#8729;</a
+      ><a name="8697"
+      > </a
+      ><a name="8698" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8701" class="Symbol"
+      >)</a
+      ><a name="8702"
+      > </a
+      ><a name="8703" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8704"
+      > </a
+      ><a name="8705" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="8706"
+      > </a
+      ><a name="8707" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8708"
+      > </a
+      ><a name="8709" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8712"
+      > </a
+      ><a name="8713" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8714"
+      >
+                                           </a
+      ><a name="8758" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8760"
+      > </a
+      ><a name="8761" href="CPOLemmas.html#1761" class="Function"
+      >&#8596;-&#8849;L</a
+      ><a name="8765"
+      > </a
+      ><a name="8766" class="Symbol"
+      >(</a
+      ><a name="8767" href="NeilPrelude.html#1373" class="Function"
+      >sym</a
+      ><a name="8770"
+      > </a
+      ><a name="8771" class="Symbol"
+      >(</a
+      ><a name="8772" href="WWFix.html#275" class="Bound"
+      >Computation</a
+      ><a name="8783"
+      > </a
+      ><a name="8784" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8785" class="Symbol"
+      >))</a
+      ><a name="8787"
+      > </a
+      ><a name="8788" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="8790"
+      >
+                    </a
+      ><a name="8811" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8812"
+      > </a
+      ><a name="8813" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8814"
+      > </a
+      ><a name="8815" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8818"
+      > </a
+      ><a name="8819" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8820"
+      > </a
+      ><a name="8821" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="8822"
+      > </a
+      ><a name="8823" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8824"
+      > </a
+      ><a name="8825" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8826"
+      > </a
+      ><a name="8827" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8828"
+      > </a
+      ><a name="8829" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8832"
+      > </a
+      ><a name="8833" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8834"
+      >
+                                           </a
+      ><a name="8878" href="Logic.html#944" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8880"
+      > </a
+      ><a name="8881" href="CPO.html#4314" class="Function"
+      >monotonic</a
+      ><a name="8890"
+      > </a
+      ><a name="8891" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8892"
+      > </a
+      ><a name="8893" href="Logic.html#944" class="Function Operator"
+      >&#10217;</a
+      ><a name="8894"
+      >
+                    </a
+      ><a name="8915" href="WWFix.html#768" class="Bound"
+      >abs</a
+      ><a name="8918"
+      > </a
+      ><a name="8919" href="CPO.html#4151" class="Function Operator"
+      >$</a
+      ><a name="8920"
+      > </a
+      ><a name="8921" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="8922"
+      > </a
+      ><a name="8923" href="CPO.html#1962" class="Datatype Operator"
+      >&#8849;</a
+      ><a name="8924"
+      > </a
+      ><a name="8925" href="WWFix.html#232" class="Bound"
+      >fix</a
+      ><a name="8928"
+      > </a
+      ><a name="8929" href="WWFix.html#706" class="Bound"
+      >f</a
+      ><a name="8930"
+      >
+                                           </a
+      ><a name="8974" href="Logic.html#1122" class="Function Operator"
+      >&#8592;&#10216;</a
+      ><a name="8976"
+      > </a
+      ><a name="8977" href="Logic.html#315" class="Function"
+      >&#8596;-refl</a
+      ><a name="8983"
+      > </a
+      ><a name="8984" href="Logic.html#1122" class="Function Operator"
+      >&#10217;&#8596;</a
+      ><a name="8986"
+      >
+                    </a
+      ><a name="9007" href="WWFix.html#7140" class="Function"
+      >P</a
+      ><a name="9008"
+      > </a
+      ><a name="9009" href="WWFix.html#8466" class="Bound"
+      >b</a
+      ><a name="9010"
+      >
+                                           </a
+      ><a name="9054" href="Logic.html#1324" class="Function Operator"
+      >Qed</a
+      ><a name="9057"
+      >
+             </a
+      ><a name="9071" class="Symbol"
+      >)</a
+      ><a name="9072"
+      >
+
+</a
+      ><a name="9074" class="Comment"
+      >------------------------------------------------</a
+      ><a name="9122"
+      >
+
+</a
+      ><a name="9124" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="9134"
+      > </a
+      ><a name="9135" class="Symbol"
+      >:</a
+      ><a name="9136"
+      > </a
+      ><a name="9137" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="9141"
+      > </a
+      ><a name="9142" class="Symbol"
+      >&#8594;</a
+      ><a name="9143"
+      > </a
+      ><a name="9144" class="Symbol"
+      >(</a
+      ><a name="9145" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="9151"
+      > </a
+      ><a name="9152" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9153"
+      > </a
+      ><a name="9154" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="9160" class="Symbol"
+      >)</a
+      ><a name="9161"
+      > </a
+      ><a name="9162" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9163"
+      > </a
+      ><a name="9164" class="Symbol"
+      >(</a
+      ><a name="9165" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="9171"
+      > </a
+      ><a name="9172" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9173"
+      > </a
+      ><a name="9174" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="9180" class="Symbol"
+      >)</a
+      ><a name="9181"
+      > </a
+      ><a name="9182" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9183"
+      > </a
+      ><a name="9184" href="WWFix.html#1248" class="Function"
+      >Cond3&#945;</a
+      ><a name="9190"
+      > </a
+      ><a name="9191" class="Symbol"
+      >&#8594;</a
+      ><a name="9192"
+      > </a
+      ><a name="9193" href="WWFix.html#1290" class="Function"
+      >WWFactorisation</a
+      ><a name="9208"
+      >
+</a
+      ><a name="9209" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="9219"
+      > </a
+      ><a name="9220" href="WWFix.html#9220" class="Bound"
+      >C</a
+      ><a name="9221"
+      > </a
+      ><a name="9222" class="Symbol"
+      >(</a
+      ><a name="9223" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9226"
+      > </a
+      ><a name="9227" class="Symbol"
+      >(</a
+      ><a name="9228" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9231"
+      > </a
+      ><a name="9232" href="WWFix.html#9232" class="Bound"
+      >1&#945;</a
+      ><a name="9234" class="Symbol"
+      >))</a
+      ><a name="9236"
+      >       </a
+      ><a name="9243" class="Symbol"
+      >=</a
+      ><a name="9244"
+      > </a
+      ><a name="9245" href="WWFix.html#5475" class="Function"
+      >1&#945;C&#8658;Fac</a
+      ><a name="9252"
+      > </a
+      ><a name="9253" href="WWFix.html#9220" class="Bound"
+      >C</a
+      ><a name="9254"
+      > </a
+      ><a name="9255" href="WWFix.html#9232" class="Bound"
+      >1&#945;</a
+      ><a name="9257"
+      >
+</a
+      ><a name="9258" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="9268"
+      > </a
+      ><a name="9269" href="WWFix.html#9269" class="Bound"
+      >C</a
+      ><a name="9270"
+      > </a
+      ><a name="9271" class="Symbol"
+      >(</a
+      ><a name="9272" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9275"
+      > </a
+      ><a name="9276" class="Symbol"
+      >(</a
+      ><a name="9277" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9280"
+      > </a
+      ><a name="9281" href="WWFix.html#9281" class="Bound"
+      >1&#946;</a
+      ><a name="9283" class="Symbol"
+      >))</a
+      ><a name="9285"
+      >       </a
+      ><a name="9292" class="Symbol"
+      >=</a
+      ><a name="9293"
+      > </a
+      ><a name="9294" href="WWFix.html#4947" class="Function"
+      >1&#946;C&#8658;Fac</a
+      ><a name="9301"
+      > </a
+      ><a name="9302" href="WWFix.html#9269" class="Bound"
+      >C</a
+      ><a name="9303"
+      > </a
+      ><a name="9304" href="WWFix.html#9281" class="Bound"
+      >1&#946;</a
+      ><a name="9306"
+      >
+</a
+      ><a name="9307" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="9317"
+      > </a
+      ><a name="9318" href="WWFix.html#9318" class="Bound"
+      >C</a
+      ><a name="9319"
+      > </a
+      ><a name="9320" class="Symbol"
+      >(</a
+      ><a name="9321" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9324"
+      > </a
+      ><a name="9325" class="Symbol"
+      >(</a
+      ><a name="9326" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9329"
+      > </a
+      ><a name="9330" class="Symbol"
+      >(</a
+      ><a name="9331" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9334"
+      > </a
+      ><a name="9335" href="WWFix.html#9335" class="Bound"
+      >2&#945;</a
+      ><a name="9337" class="Symbol"
+      >)))</a
+      ><a name="9340"
+      > </a
+      ><a name="9341" class="Symbol"
+      >=</a
+      ><a name="9342"
+      > </a
+      ><a name="9343" href="WWFix.html#5548" class="Function"
+      >2&#945;C&#8658;Fac</a
+      ><a name="9350"
+      > </a
+      ><a name="9351" href="WWFix.html#9318" class="Bound"
+      >C</a
+      ><a name="9352"
+      > </a
+      ><a name="9353" href="WWFix.html#9335" class="Bound"
+      >2&#945;</a
+      ><a name="9355"
+      >
+</a
+      ><a name="9356" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="9366"
+      > </a
+      ><a name="9367" href="WWFix.html#9367" class="Bound"
+      >C</a
+      ><a name="9368"
+      > </a
+      ><a name="9369" class="Symbol"
+      >(</a
+      ><a name="9370" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9373"
+      > </a
+      ><a name="9374" class="Symbol"
+      >(</a
+      ><a name="9375" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9378"
+      > </a
+      ><a name="9379" class="Symbol"
+      >(</a
+      ><a name="9380" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9383"
+      > </a
+      ><a name="9384" href="WWFix.html#9384" class="Bound"
+      >2&#946;</a
+      ><a name="9386" class="Symbol"
+      >)))</a
+      ><a name="9389"
+      > </a
+      ><a name="9390" class="Symbol"
+      >=</a
+      ><a name="9391"
+      > </a
+      ><a name="9392" href="WWFix.html#5390" class="Function"
+      >2&#946;C&#8658;Fac</a
+      ><a name="9399"
+      > </a
+      ><a name="9400" href="WWFix.html#9367" class="Bound"
+      >C</a
+      ><a name="9401"
+      > </a
+      ><a name="9402" href="WWFix.html#9384" class="Bound"
+      >2&#946;</a
+      ><a name="9404"
+      >
+</a
+      ><a name="9405" href="WWFix.html#9124" class="Function"
+      >WW-Fix-Fac</a
+      ><a name="9415"
+      > </a
+      ><a name="9416" href="WWFix.html#9416" class="Bound"
+      >C</a
+      ><a name="9417"
+      > </a
+      ><a name="9418" class="Symbol"
+      >(</a
+      ><a name="9419" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9422"
+      > </a
+      ><a name="9423" class="Symbol"
+      >(</a
+      ><a name="9424" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9427"
+      > </a
+      ><a name="9428" href="WWFix.html#9428" class="Bound"
+      >3&#945;</a
+      ><a name="9430" class="Symbol"
+      >))</a
+      ><a name="9432"
+      >       </a
+      ><a name="9439" class="Symbol"
+      >=</a
+      ><a name="9440"
+      > </a
+      ><a name="9441" href="WWFix.html#6522" class="Function"
+      >3&#945;C&#8658;Fac</a
+      ><a name="9448"
+      > </a
+      ><a name="9449" href="WWFix.html#9416" class="Bound"
+      >C</a
+      ><a name="9450"
+      > </a
+      ><a name="9451" href="WWFix.html#9428" class="Bound"
+      >3&#945;</a
+      ><a name="9453"
+      >
+
+</a
+      ><a name="9455" href="WWFix.html#9455" class="Function"
+      >WW-Fix-Fusion</a
+      ><a name="9468"
+      > </a
+      ><a name="9469" class="Symbol"
+      >:</a
+      ><a name="9470"
+      > </a
+      ><a name="9471" href="WWFix.html#1009" class="Function"
+      >AssC</a
+      ><a name="9475"
+      > </a
+      ><a name="9476" class="Symbol"
+      >&#8594;</a
+      ><a name="9477"
+      > </a
+      ><a name="9478" class="Symbol"
+      >(</a
+      ><a name="9479" href="WWFix.html#1057" class="Function"
+      >Cond1&#945;</a
+      ><a name="9485"
+      > </a
+      ><a name="9486" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9487"
+      > </a
+      ><a name="9488" href="WWFix.html#1098" class="Function"
+      >Cond1&#946;</a
+      ><a name="9494" class="Symbol"
+      >)</a
+      ><a name="9495"
+      > </a
+      ><a name="9496" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9497"
+      > </a
+      ><a name="9498" class="Symbol"
+      >(</a
+      ><a name="9499" href="WWFix.html#1149" class="Function"
+      >Cond2&#945;</a
+      ><a name="9505"
+      > </a
+      ><a name="9506" href="Base.html#841" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="9507"
+      > </a
+      ><a name="9508" href="WWFix.html#1205" class="Function"
+      >Cond2&#946;</a
+      ><a name="9514" class="Symbol"
+      >)</a
+      ><a name="9515"
+      > </a
+      ><a name="9516" class="Symbol"
+      >&#8594;</a
+      ><a name="9517"
+      > </a
+      ><a name="9518" href="WWFix.html#1351" class="Function"
+      >WWFusion</a
+      ><a name="9526"
+      >
+</a
+      ><a name="9527" href="WWFix.html#9455" class="Function"
+      >WW-Fix-Fusion</a
+      ><a name="9540"
+      > </a
+      ><a name="9541" href="WWFix.html#9541" class="Bound"
+      >C</a
+      ><a name="9542"
+      > </a
+      ><a name="9543" class="Symbol"
+      >(</a
+      ><a name="9544" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9547"
+      > </a
+      ><a name="9548" class="Symbol"
+      >(</a
+      ><a name="9549" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9552"
+      > </a
+      ><a name="9553" href="WWFix.html#9553" class="Bound"
+      >1&#945;</a
+      ><a name="9555" class="Symbol"
+      >))</a
+      ><a name="9557"
+      > </a
+      ><a name="9558" class="Symbol"
+      >=</a
+      ><a name="9559"
+      > </a
+      ><a name="9560" href="WWFix.html#5929" class="Function"
+      >1&#945;C&#8658;Fusion</a
+      ><a name="9570"
+      > </a
+      ><a name="9571" href="WWFix.html#9541" class="Bound"
+      >C</a
+      ><a name="9572"
+      > </a
+      ><a name="9573" href="WWFix.html#9553" class="Bound"
+      >1&#945;</a
+      ><a name="9575"
+      >
+</a
+      ><a name="9576" href="WWFix.html#9455" class="Function"
+      >WW-Fix-Fusion</a
+      ><a name="9589"
+      > </a
+      ><a name="9590" href="WWFix.html#9590" class="Bound"
+      >C</a
+      ><a name="9591"
+      > </a
+      ><a name="9592" class="Symbol"
+      >(</a
+      ><a name="9593" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9596"
+      > </a
+      ><a name="9597" class="Symbol"
+      >(</a
+      ><a name="9598" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9601"
+      > </a
+      ><a name="9602" href="WWFix.html#9602" class="Bound"
+      >1&#946;</a
+      ><a name="9604" class="Symbol"
+      >))</a
+      ><a name="9606"
+      > </a
+      ><a name="9607" class="Symbol"
+      >=</a
+      ><a name="9608"
+      > </a
+      ><a name="9609" href="WWFix.html#5842" class="Function"
+      >1&#946;C&#8658;Fusion</a
+      ><a name="9619"
+      > </a
+      ><a name="9620" href="WWFix.html#9590" class="Bound"
+      >C</a
+      ><a name="9621"
+      > </a
+      ><a name="9622" href="WWFix.html#9602" class="Bound"
+      >1&#946;</a
+      ><a name="9624"
+      >
+</a
+      ><a name="9625" href="WWFix.html#9455" class="Function"
+      >WW-Fix-Fusion</a
+      ><a name="9638"
+      > </a
+      ><a name="9639" href="WWFix.html#9639" class="Bound"
+      >C</a
+      ><a name="9640"
+      > </a
+      ><a name="9641" class="Symbol"
+      >(</a
+      ><a name="9642" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9645"
+      > </a
+      ><a name="9646" class="Symbol"
+      >(</a
+      ><a name="9647" href="Base.html#871" class="InductiveConstructor"
+      >inl</a
+      ><a name="9650"
+      > </a
+      ><a name="9651" href="WWFix.html#9651" class="Bound"
+      >2&#945;</a
+      ><a name="9653" class="Symbol"
+      >))</a
+      ><a name="9655"
+      > </a
+      ><a name="9656" class="Symbol"
+      >=</a
+      ><a name="9657"
+      > </a
+      ><a name="9658" href="WWFix.html#6004" class="Function"
+      >2&#945;C&#8658;Fusion</a
+      ><a name="9668"
+      > </a
+      ><a name="9669" href="WWFix.html#9639" class="Bound"
+      >C</a
+      ><a name="9670"
+      > </a
+      ><a name="9671" href="WWFix.html#9651" class="Bound"
+      >2&#945;</a
+      ><a name="9673"
+      >
+</a
+      ><a name="9674" href="WWFix.html#9455" class="Function"
+      >WW-Fix-Fusion</a
+      ><a name="9687"
+      > </a
+      ><a name="9688" href="WWFix.html#9688" class="Bound"
+      >C</a
+      ><a name="9689"
+      > </a
+      ><a name="9690" class="Symbol"
+      >(</a
+      ><a name="9691" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9694"
+      > </a
+      ><a name="9695" class="Symbol"
+      >(</a
+      ><a name="9696" href="Base.html#889" class="InductiveConstructor"
+      >inr</a
+      ><a name="9699"
+      > </a
+      ><a name="9700" href="WWFix.html#9700" class="Bound"
+      >2&#946;</a
+      ><a name="9702" class="Symbol"
+      >))</a
+      ><a name="9704"
+      > </a
+      ><a name="9705" class="Symbol"
+      >=</a
+      ><a name="9706"
+      > </a
+      ><a name="9707" href="WWFix.html#5621" class="Function"
+      >2&#946;C&#8658;Fusion</a
+      ><a name="9717"
+      > </a
+      ><a name="9718" href="WWFix.html#9688" class="Bound"
+      >C</a
+      ><a name="9719"
+      > </a
+      ><a name="9720" href="WWFix.html#9700" class="Bound"
+      >2&#946;</a
+      ><a name="9722"
+      >
+
+</a
+      ><a name="9724" class="Comment"
+      >------------------------------------------------</a
+      ><a name="9772"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

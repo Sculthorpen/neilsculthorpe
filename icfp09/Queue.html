@@ -1,0 +1,1667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Queue</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+    </a
+      ><a name="32" class="Symbol"
+      >#-}</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Keyword"
+      >open</a
+      ><a name="41"
+      > </a
+      ><a name="42" class="Keyword"
+      >import</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="60"
+      >
+</a
+      ><a name="61" class="Keyword"
+      >open</a
+      ><a name="65"
+      > </a
+      ><a name="66" class="Keyword"
+      >import</a
+      ><a name="72"
+      > </a
+      ><a name="73" href="Nat.html#69" class="Module"
+      >Nat</a
+      ><a name="76"
+      >
+</a
+      ><a name="77" class="Keyword"
+      >open</a
+      ><a name="81"
+      > </a
+      ><a name="82" class="Keyword"
+      >import</a
+      ><a name="88"
+      > </a
+      ><a name="89" href="MaybeMonad.html#88" class="Module"
+      >MaybeMonad</a
+      ><a name="99"
+      >
+</a
+      ><a name="100" class="Keyword"
+      >open</a
+      ><a name="104"
+      > </a
+      ><a name="105" class="Keyword"
+      >import</a
+      ><a name="111"
+      > </a
+      ><a name="112" href="List.html#86" class="Module"
+      >List</a
+      ><a name="116"
+      >
+
+</a
+      ><a name="118" class="Keyword"
+      >module</a
+      ><a name="124"
+      > </a
+      ><a name="125" href="Queue.html#125" class="Module"
+      >Queue</a
+      ><a name="130"
+      > </a
+      ><a name="131" class="Keyword"
+      >where</a
+      ><a name="136"
+      >
+
+</a
+      ><a name="138" class="Comment"
+      >-- When adding a list to a queue, the head of the list joins the queue first</a
+      ><a name="214"
+      >
+</a
+      ><a name="215" class="Comment"
+      >-- When taking from a queue, the head of the resultant list is the first out of the queue</a
+      ><a name="304"
+      >
+
+</a
+      ><a name="306" class="Comment"
+      >-- Back &#215; Front</a
+      ><a name="321"
+      >
+
+</a
+      ><a name="323" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="328"
+      > </a
+      ><a name="329" class="Symbol"
+      >:</a
+      ><a name="330"
+      > </a
+      ><a name="331" class="PrimitiveType"
+      >Set</a
+      ><a name="334"
+      > </a
+      ><a name="335" class="Symbol"
+      >&#8594;</a
+      ><a name="336"
+      > </a
+      ><a name="337" class="PrimitiveType"
+      >Set</a
+      ><a name="340"
+      >
+</a
+      ><a name="341" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="346"
+      > </a
+      ><a name="347" href="Queue.html#347" class="Bound"
+      >A</a
+      ><a name="348"
+      > </a
+      ><a name="349" class="Symbol"
+      >=</a
+      ><a name="350"
+      > </a
+      ><a name="351" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="355"
+      > </a
+      ><a name="356" href="Queue.html#347" class="Bound"
+      >A</a
+      ><a name="357"
+      > </a
+      ><a name="358" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="359"
+      > </a
+      ><a name="360" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="364"
+      > </a
+      ><a name="365" href="Queue.html#347" class="Bound"
+      >A</a
+      ><a name="366"
+      >
+
+</a
+      ><a name="368" href="Queue.html#368" class="Function"
+      >emptyQueue</a
+      ><a name="378"
+      > </a
+      ><a name="379" class="Symbol"
+      >:</a
+      ><a name="380"
+      > </a
+      ><a name="381" class="Symbol"
+      >{</a
+      ><a name="382" href="Queue.html#382" class="Bound"
+      >A</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Symbol"
+      >:</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="PrimitiveType"
+      >Set</a
+      ><a name="389" class="Symbol"
+      >}</a
+      ><a name="390"
+      > </a
+      ><a name="391" class="Symbol"
+      >&#8594;</a
+      ><a name="392"
+      > </a
+      ><a name="393" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="398"
+      > </a
+      ><a name="399" href="Queue.html#382" class="Bound"
+      >A</a
+      ><a name="400"
+      >
+</a
+      ><a name="401" href="Queue.html#368" class="Function"
+      >emptyQueue</a
+      ><a name="411"
+      > </a
+      ><a name="412" class="Symbol"
+      >=</a
+      ><a name="413"
+      > </a
+      ><a name="414" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="416"
+      > </a
+      ><a name="417" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="418"
+      > </a
+      ><a name="419" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="421"
+      >
+
+</a
+      ><a name="423" href="Queue.html#423" class="Function"
+      >newQueue</a
+      ><a name="431"
+      > </a
+      ><a name="432" class="Symbol"
+      >:</a
+      ><a name="433"
+      > </a
+      ><a name="434" class="Symbol"
+      >{</a
+      ><a name="435" href="Queue.html#435" class="Bound"
+      >A</a
+      ><a name="436"
+      > </a
+      ><a name="437" class="Symbol"
+      >:</a
+      ><a name="438"
+      > </a
+      ><a name="439" class="PrimitiveType"
+      >Set</a
+      ><a name="442" class="Symbol"
+      >}</a
+      ><a name="443"
+      > </a
+      ><a name="444" class="Symbol"
+      >&#8594;</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="450"
+      > </a
+      ><a name="451" href="Queue.html#435" class="Bound"
+      >A</a
+      ><a name="452"
+      > </a
+      ><a name="453" class="Symbol"
+      >&#8594;</a
+      ><a name="454"
+      > </a
+      ><a name="455" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="460"
+      > </a
+      ><a name="461" href="Queue.html#435" class="Bound"
+      >A</a
+      ><a name="462"
+      >
+</a
+      ><a name="463" href="Queue.html#423" class="Function"
+      >newQueue</a
+      ><a name="471"
+      > </a
+      ><a name="472" href="Queue.html#472" class="Bound"
+      >as</a
+      ><a name="474"
+      > </a
+      ><a name="475" class="Symbol"
+      >=</a
+      ><a name="476"
+      > </a
+      ><a name="477" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="479"
+      > </a
+      ><a name="480" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="Queue.html#472" class="Bound"
+      >as</a
+      ><a name="484"
+      >
+
+</a
+      ><a name="486" href="Queue.html#486" class="Function"
+      >enQueue</a
+      ><a name="493"
+      > </a
+      ><a name="494" class="Symbol"
+      >:</a
+      ><a name="495"
+      > </a
+      ><a name="496" class="Symbol"
+      >{</a
+      ><a name="497" href="Queue.html#497" class="Bound"
+      >A</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="Symbol"
+      >:</a
+      ><a name="500"
+      > </a
+      ><a name="501" class="PrimitiveType"
+      >Set</a
+      ><a name="504" class="Symbol"
+      >}</a
+      ><a name="505"
+      > </a
+      ><a name="506" class="Symbol"
+      >&#8594;</a
+      ><a name="507"
+      > </a
+      ><a name="508" href="Queue.html#497" class="Bound"
+      >A</a
+      ><a name="509"
+      > </a
+      ><a name="510" class="Symbol"
+      >&#8594;</a
+      ><a name="511"
+      > </a
+      ><a name="512" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="517"
+      > </a
+      ><a name="518" href="Queue.html#497" class="Bound"
+      >A</a
+      ><a name="519"
+      > </a
+      ><a name="520" class="Symbol"
+      >&#8594;</a
+      ><a name="521"
+      > </a
+      ><a name="522" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="527"
+      > </a
+      ><a name="528" href="Queue.html#497" class="Bound"
+      >A</a
+      ><a name="529"
+      >
+</a
+      ><a name="530" href="Queue.html#486" class="Function"
+      >enQueue</a
+      ><a name="537"
+      > </a
+      ><a name="538" class="Symbol"
+      >=</a
+      ><a name="539"
+      > </a
+      ><a name="540" href="NeilPrelude.html#13140" class="Function"
+      >first</a
+      ><a name="545"
+      > </a
+      ><a name="546" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="547"
+      > </a
+      ><a name="548" href="List.html#178" class="InductiveConstructor Operator"
+      >_&#8759;_</a
+      ><a name="551"
+      >
+
+</a
+      ><a name="553" href="Queue.html#553" class="Function"
+      >singletonQueue</a
+      ><a name="567"
+      > </a
+      ><a name="568" class="Symbol"
+      >:</a
+      ><a name="569"
+      > </a
+      ><a name="570" class="Symbol"
+      >{</a
+      ><a name="571" href="Queue.html#571" class="Bound"
+      >A</a
+      ><a name="572"
+      > </a
+      ><a name="573" class="Symbol"
+      >:</a
+      ><a name="574"
+      > </a
+      ><a name="575" class="PrimitiveType"
+      >Set</a
+      ><a name="578" class="Symbol"
+      >}</a
+      ><a name="579"
+      > </a
+      ><a name="580" class="Symbol"
+      >&#8594;</a
+      ><a name="581"
+      > </a
+      ><a name="582" href="Queue.html#571" class="Bound"
+      >A</a
+      ><a name="583"
+      > </a
+      ><a name="584" class="Symbol"
+      >&#8594;</a
+      ><a name="585"
+      > </a
+      ><a name="586" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="591"
+      > </a
+      ><a name="592" href="Queue.html#571" class="Bound"
+      >A</a
+      ><a name="593"
+      >
+</a
+      ><a name="594" href="Queue.html#553" class="Function"
+      >singletonQueue</a
+      ><a name="608"
+      > </a
+      ><a name="609" href="Queue.html#609" class="Bound"
+      >a</a
+      ><a name="610"
+      > </a
+      ><a name="611" class="Symbol"
+      >=</a
+      ><a name="612"
+      > </a
+      ><a name="613" href="Queue.html#486" class="Function"
+      >enQueue</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="Queue.html#609" class="Bound"
+      >a</a
+      ><a name="622"
+      > </a
+      ><a name="623" href="Queue.html#368" class="Function"
+      >emptyQueue</a
+      ><a name="633"
+      > 
+
+</a
+      ><a name="636" href="Queue.html#636" class="Function"
+      >deQueue</a
+      ><a name="643"
+      > </a
+      ><a name="644" class="Symbol"
+      >:</a
+      ><a name="645"
+      > </a
+      ><a name="646" class="Symbol"
+      >{</a
+      ><a name="647" href="Queue.html#647" class="Bound"
+      >A</a
+      ><a name="648"
+      > </a
+      ><a name="649" class="Symbol"
+      >:</a
+      ><a name="650"
+      > </a
+      ><a name="651" class="PrimitiveType"
+      >Set</a
+      ><a name="654" class="Symbol"
+      >}</a
+      ><a name="655"
+      > </a
+      ><a name="656" class="Symbol"
+      >&#8594;</a
+      ><a name="657"
+      > </a
+      ><a name="658" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="663"
+      > </a
+      ><a name="664" href="Queue.html#647" class="Bound"
+      >A</a
+      ><a name="665"
+      > </a
+      ><a name="666" class="Symbol"
+      >&#8594;</a
+      ><a name="667"
+      > </a
+      ><a name="668" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="673"
+      > </a
+      ><a name="674" class="Symbol"
+      >(</a
+      ><a name="675" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="680"
+      > </a
+      ><a name="681" href="Queue.html#647" class="Bound"
+      >A</a
+      ><a name="682"
+      > </a
+      ><a name="683" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="684"
+      > </a
+      ><a name="685" href="Queue.html#647" class="Bound"
+      >A</a
+      ><a name="686" class="Symbol"
+      >)</a
+      ><a name="687"
+      >
+</a
+      ><a name="688" href="Queue.html#636" class="Function"
+      >deQueue</a
+      ><a name="695"
+      > </a
+      ><a name="696" class="Symbol"
+      >(</a
+      ><a name="697" href="Queue.html#697" class="Bound"
+      >zs</a
+      ><a name="699"
+      > </a
+      ><a name="700" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="701"
+      > </a
+      ><a name="702" href="Queue.html#702" class="Bound"
+      >a</a
+      ><a name="703"
+      > </a
+      ><a name="704" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="705"
+      > </a
+      ><a name="706" href="Queue.html#706" class="Bound"
+      >as</a
+      ><a name="708" class="Symbol"
+      >)</a
+      ><a name="709"
+      > </a
+      ><a name="710" class="Symbol"
+      >=</a
+      ><a name="711"
+      > </a
+      ><a name="712" href="NeilPrelude.html#931" class="InductiveConstructor"
+      >just</a
+      ><a name="716"
+      > </a
+      ><a name="717" class="Symbol"
+      >((</a
+      ><a name="719" href="Queue.html#697" class="Bound"
+      >zs</a
+      ><a name="721"
+      > </a
+      ><a name="722" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="723"
+      > </a
+      ><a name="724" href="Queue.html#706" class="Bound"
+      >as</a
+      ><a name="726" class="Symbol"
+      >)</a
+      ><a name="727"
+      > </a
+      ><a name="728" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="729"
+      > </a
+      ><a name="730" href="Queue.html#702" class="Bound"
+      >a</a
+      ><a name="731" class="Symbol"
+      >)</a
+      ><a name="732"
+      >
+</a
+      ><a name="733" href="Queue.html#636" class="Function"
+      >deQueue</a
+      ><a name="740"
+      > </a
+      ><a name="741" class="Symbol"
+      >(</a
+      ><a name="742" href="Queue.html#742" class="Bound"
+      >zs</a
+      ><a name="744"
+      > </a
+      ><a name="745" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="746"
+      > </a
+      ><a name="747" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="749" class="Symbol"
+      >)</a
+      ><a name="750"
+      > </a
+      ><a name="751" class="Keyword"
+      >with</a
+      ><a name="755"
+      > </a
+      ><a name="756" href="List.html#1567" class="Function"
+      >reverse</a
+      ><a name="763"
+      > </a
+      ><a name="764" href="Queue.html#742" class="Bound"
+      >zs</a
+      ><a name="766"
+      >
+</a
+      ><a name="767" class="Symbol"
+      >...</a
+      ><a name="770"
+      > </a
+      ><a name="771" class="Symbol"
+      >|</a
+      ><a name="772"
+      > </a
+      ><a name="773" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="775"
+      >     </a
+      ><a name="780" class="Symbol"
+      >=</a
+      ><a name="781"
+      > </a
+      ><a name="782" href="NeilPrelude.html#911" class="InductiveConstructor"
+      >nothing</a
+      ><a name="789"
+      >
+</a
+      ><a name="790" class="Symbol"
+      >...</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Symbol"
+      >|</a
+      ><a name="795"
+      > </a
+      ><a name="796" href="Queue.html#796" class="Bound"
+      >a</a
+      ><a name="797"
+      > </a
+      ><a name="798" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="799"
+      > </a
+      ><a name="800" href="Queue.html#800" class="Bound"
+      >as</a
+      ><a name="802"
+      > </a
+      ><a name="803" class="Symbol"
+      >=</a
+      ><a name="804"
+      > </a
+      ><a name="805" href="NeilPrelude.html#931" class="InductiveConstructor"
+      >just</a
+      ><a name="809"
+      > </a
+      ><a name="810" class="Symbol"
+      >(</a
+      ><a name="811" href="Queue.html#423" class="Function"
+      >newQueue</a
+      ><a name="819"
+      > </a
+      ><a name="820" href="Queue.html#800" class="Bound"
+      >as</a
+      ><a name="822"
+      > </a
+      ><a name="823" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="824"
+      > </a
+      ><a name="825" href="Queue.html#796" class="Bound"
+      >a</a
+      ><a name="826" class="Symbol"
+      >)</a
+      ><a name="827"
+      >
+
+</a
+      ><a name="829" href="Queue.html#829" class="Function"
+      >enQueues</a
+      ><a name="837"
+      > </a
+      ><a name="838" class="Symbol"
+      >:</a
+      ><a name="839"
+      > </a
+      ><a name="840" class="Symbol"
+      >{</a
+      ><a name="841" href="Queue.html#841" class="Bound"
+      >A</a
+      ><a name="842"
+      > </a
+      ><a name="843" class="Symbol"
+      >:</a
+      ><a name="844"
+      > </a
+      ><a name="845" class="PrimitiveType"
+      >Set</a
+      ><a name="848" class="Symbol"
+      >}</a
+      ><a name="849"
+      > </a
+      ><a name="850" class="Symbol"
+      >&#8594;</a
+      ><a name="851"
+      > </a
+      ><a name="852" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="856"
+      > </a
+      ><a name="857" href="Queue.html#841" class="Bound"
+      >A</a
+      ><a name="858"
+      > </a
+      ><a name="859" class="Symbol"
+      >&#8594;</a
+      ><a name="860"
+      > </a
+      ><a name="861" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="866"
+      > </a
+      ><a name="867" href="Queue.html#841" class="Bound"
+      >A</a
+      ><a name="868"
+      > </a
+      ><a name="869" class="Symbol"
+      >&#8594;</a
+      ><a name="870"
+      > </a
+      ><a name="871" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="876"
+      > </a
+      ><a name="877" href="Queue.html#841" class="Bound"
+      >A</a
+      ><a name="878"
+      >
+</a
+      ><a name="879" href="Queue.html#829" class="Function"
+      >enQueues</a
+      ><a name="887"
+      > </a
+      ><a name="888" href="Queue.html#888" class="Bound"
+      >as</a
+      ><a name="890"
+      > </a
+      ><a name="891" href="Queue.html#891" class="Bound"
+      >q</a
+      ><a name="892"
+      > </a
+      ><a name="893" class="Symbol"
+      >=</a
+      ><a name="894"
+      > </a
+      ><a name="895" href="List.html#766" class="Function"
+      >foldl</a
+      ><a name="900"
+      > </a
+      ><a name="901" class="Symbol"
+      >(</a
+      ><a name="902" href="NeilPrelude.html#8370" class="Function"
+      >flip</a
+      ><a name="906"
+      > </a
+      ><a name="907" href="Queue.html#486" class="Function"
+      >enQueue</a
+      ><a name="914" class="Symbol"
+      >)</a
+      ><a name="915"
+      > </a
+      ><a name="916" href="Queue.html#891" class="Bound"
+      >q</a
+      ><a name="917"
+      > </a
+      ><a name="918" href="Queue.html#888" class="Bound"
+      >as</a
+      ><a name="920"
+      >
+
+</a
+      ><a name="922" href="Queue.html#922" class="Function"
+      >deQueueWhile</a
+      ><a name="934"
+      > </a
+      ><a name="935" class="Symbol"
+      >:</a
+      ><a name="936"
+      > </a
+      ><a name="937" class="Symbol"
+      >{</a
+      ><a name="938" href="Queue.html#938" class="Bound"
+      >A</a
+      ><a name="939"
+      > </a
+      ><a name="940" class="Symbol"
+      >:</a
+      ><a name="941"
+      > </a
+      ><a name="942" class="PrimitiveType"
+      >Set</a
+      ><a name="945" class="Symbol"
+      >}</a
+      ><a name="946"
+      > </a
+      ><a name="947" class="Symbol"
+      >&#8594;</a
+      ><a name="948"
+      > </a
+      ><a name="949" class="Symbol"
+      >(</a
+      ><a name="950" href="Queue.html#938" class="Bound"
+      >A</a
+      ><a name="951"
+      > </a
+      ><a name="952" class="Symbol"
+      >&#8594;</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="958" class="Symbol"
+      >)</a
+      ><a name="959"
+      > </a
+      ><a name="960" class="Symbol"
+      >&#8594;</a
+      ><a name="961"
+      > </a
+      ><a name="962" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="Queue.html#938" class="Bound"
+      >A</a
+      ><a name="969"
+      > </a
+      ><a name="970" class="Symbol"
+      >&#8594;</a
+      ><a name="971"
+      > </a
+      ><a name="972" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="977"
+      > </a
+      ><a name="978" href="Queue.html#938" class="Bound"
+      >A</a
+      ><a name="979"
+      > </a
+      ><a name="980" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="981"
+      > </a
+      ><a name="982" href="List.html#133" class="Datatype"
+      >List</a
+      ><a name="986"
+      > </a
+      ><a name="987" href="Queue.html#938" class="Bound"
+      >A</a
+      ><a name="988"
+      >
+</a
+      ><a name="989" href="Queue.html#922" class="Function"
+      >deQueueWhile</a
+      ><a name="1001"
+      > </a
+      ><a name="1002" href="Queue.html#1002" class="Bound"
+      >p</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" class="Symbol"
+      >(</a
+      ><a name="1005" href="Queue.html#1005" class="Bound"
+      >zs</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="Queue.html#1010" class="Bound"
+      >as</a
+      ><a name="1012" class="Symbol"
+      >)</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" class="Keyword"
+      >with</a
+      ><a name="1018"
+      > </a
+      ><a name="1019" href="List.html#2912" class="Function"
+      >span</a
+      ><a name="1023"
+      > </a
+      ><a name="1024" href="Queue.html#1002" class="Bound"
+      >p</a
+      ><a name="1025"
+      > </a
+      ><a name="1026" href="Queue.html#1010" class="Bound"
+      >as</a
+      ><a name="1028"
+      >
+</a
+      ><a name="1029" class="Symbol"
+      >...</a
+      ><a name="1032"
+      > </a
+      ><a name="1033" class="Symbol"
+      >|</a
+      ><a name="1034"
+      > </a
+      ><a name="1035" href="Queue.html#1035" class="Bound"
+      >pas</a
+      ><a name="1038"
+      > </a
+      ><a name="1039" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1040"
+      > </a
+      ><a name="1041" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="1043"
+      >  </a
+      ><a name="1045" class="Symbol"
+      >=</a
+      ><a name="1046"
+      > </a
+      ><a name="1047" class="Symbol"
+      >(</a
+      ><a name="1048" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >_,_</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="NeilPrelude.html#15552" class="Function Operator"
+      >&#8741;</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" href="List.html#881" class="Function Operator"
+      >_++_</a
+      ><a name="1061"
+      > </a
+      ><a name="1062" href="Queue.html#1035" class="Bound"
+      >pas</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="1067"
+      > </a
+      ><a name="1068" href="NeilPrelude.html#17736" class="Function"
+      >swap</a
+      ><a name="1072"
+      > </a
+      ><a name="1073" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="1074"
+      > </a
+      ><a name="1075" href="List.html#2912" class="Function"
+      >span</a
+      ><a name="1079"
+      > </a
+      ><a name="1080" href="Queue.html#1002" class="Bound"
+      >p</a
+      ><a name="1081"
+      > </a
+      ><a name="1082" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="1083"
+      > </a
+      ><a name="1084" href="List.html#1567" class="Function"
+      >reverse</a
+      ><a name="1091" class="Symbol"
+      >)</a
+      ><a name="1092"
+      > </a
+      ><a name="1093" href="Queue.html#1005" class="Bound"
+      >zs</a
+      ><a name="1095"
+      >
+</a
+      ><a name="1096" class="Symbol"
+      >...</a
+      ><a name="1099"
+      > </a
+      ><a name="1100" class="Symbol"
+      >|</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" href="Queue.html#1102" class="Bound"
+      >pas</a
+      ><a name="1105"
+      > </a
+      ><a name="1106" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" href="Queue.html#1108" class="Bound"
+      >npas</a
+      ><a name="1112"
+      > </a
+      ><a name="1113" class="Symbol"
+      >=</a
+      ><a name="1114"
+      > </a
+      ><a name="1115" class="Symbol"
+      >(</a
+      ><a name="1116" href="Queue.html#1005" class="Bound"
+      >zs</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1120"
+      > </a
+      ><a name="1121" href="Queue.html#1108" class="Bound"
+      >npas</a
+      ><a name="1125" class="Symbol"
+      >)</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1128"
+      > </a
+      ><a name="1129" href="Queue.html#1102" class="Bound"
+      >pas</a
+      ><a name="1132"
+      >
+
+</a
+      ><a name="1134" href="Queue.html#1134" class="Function"
+      >deQueueWhileLast</a
+      ><a name="1150"
+      > </a
+      ><a name="1151" class="Symbol"
+      >:</a
+      ><a name="1152"
+      > </a
+      ><a name="1153" class="Symbol"
+      >{</a
+      ><a name="1154" href="Queue.html#1154" class="Bound"
+      >A</a
+      ><a name="1155"
+      > </a
+      ><a name="1156" class="Symbol"
+      >:</a
+      ><a name="1157"
+      > </a
+      ><a name="1158" class="PrimitiveType"
+      >Set</a
+      ><a name="1161" class="Symbol"
+      >}</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" class="Symbol"
+      >&#8594;</a
+      ><a name="1164"
+      > </a
+      ><a name="1165" class="Symbol"
+      >(</a
+      ><a name="1166" href="Queue.html#1154" class="Bound"
+      >A</a
+      ><a name="1167"
+      > </a
+      ><a name="1168" class="Symbol"
+      >&#8594;</a
+      ><a name="1169"
+      > </a
+      ><a name="1170" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1174" class="Symbol"
+      >)</a
+      ><a name="1175"
+      > </a
+      ><a name="1176" class="Symbol"
+      >&#8594;</a
+      ><a name="1177"
+      > </a
+      ><a name="1178" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" href="Queue.html#1154" class="Bound"
+      >A</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" class="Symbol"
+      >&#8594;</a
+      ><a name="1187"
+      > </a
+      ><a name="1188" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" class="Symbol"
+      >(</a
+      ><a name="1195" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1200"
+      > </a
+      ><a name="1201" href="Queue.html#1154" class="Bound"
+      >A</a
+      ><a name="1202"
+      > </a
+      ><a name="1203" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="1204"
+      > </a
+      ><a name="1205" href="Queue.html#1154" class="Bound"
+      >A</a
+      ><a name="1206" class="Symbol"
+      >)</a
+      ><a name="1207"
+      >
+</a
+      ><a name="1208" href="Queue.html#1134" class="Function"
+      >deQueueWhileLast</a
+      ><a name="1224"
+      > </a
+      ><a name="1225" href="Queue.html#1225" class="Bound"
+      >p</a
+      ><a name="1226"
+      > </a
+      ><a name="1227" href="Queue.html#1227" class="Bound"
+      >q</a
+      ><a name="1228"
+      > </a
+      ><a name="1229" class="Keyword"
+      >with</a
+      ><a name="1233"
+      > </a
+      ><a name="1234" href="Queue.html#922" class="Function"
+      >deQueueWhile</a
+      ><a name="1246"
+      > </a
+      ><a name="1247" href="Queue.html#1225" class="Bound"
+      >p</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" href="Queue.html#1227" class="Bound"
+      >q</a
+      ><a name="1250"
+      >
+</a
+      ><a name="1251" class="Symbol"
+      >...</a
+      ><a name="1254"
+      > </a
+      ><a name="1255" class="Symbol"
+      >|</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" class="Symbol"
+      >_</a
+      ><a name="1258"
+      >  </a
+      ><a name="1260" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="1264"
+      >       </a
+      ><a name="1271" class="Symbol"
+      >=</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" href="NeilPrelude.html#911" class="InductiveConstructor"
+      >nothing</a
+      ><a name="1280"
+      >
+</a
+      ><a name="1281" class="Symbol"
+      >...</a
+      ><a name="1284"
+      > </a
+      ><a name="1285" class="Symbol"
+      >|</a
+      ><a name="1286"
+      > </a
+      ><a name="1287" href="Queue.html#1287" class="Bound"
+      >q'</a
+      ><a name="1289"
+      > </a
+      ><a name="1290" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1291"
+      > </a
+      ><a name="1292" class="Symbol"
+      >(</a
+      ><a name="1293" href="Queue.html#1293" class="Bound"
+      >a</a
+      ><a name="1294"
+      > </a
+      ><a name="1295" href="List.html#178" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" href="Queue.html#1297" class="Bound"
+      >as</a
+      ><a name="1299" class="Symbol"
+      >)</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" class="Symbol"
+      >=</a
+      ><a name="1302"
+      > </a
+      ><a name="1303" href="NeilPrelude.html#931" class="InductiveConstructor"
+      >just</a
+      ><a name="1307"
+      > </a
+      ><a name="1308" class="Symbol"
+      >(</a
+      ><a name="1309" href="Queue.html#1287" class="Bound"
+      >q'</a
+      ><a name="1311"
+      > </a
+      ><a name="1312" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1313"
+      > </a
+      ><a name="1314" href="List.html#2715" class="Function"
+      >safelast</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" href="Queue.html#1293" class="Bound"
+      >a</a
+      ><a name="1324"
+      > </a
+      ><a name="1325" href="Queue.html#1297" class="Bound"
+      >as</a
+      ><a name="1327" class="Symbol"
+      >)</a
+      ><a name="1328"
+      >
+
+</a
+      ><a name="1330" href="Queue.html#1330" class="Function"
+      >deQueueIf</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" class="Symbol"
+      >:</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" class="Symbol"
+      >{</a
+      ><a name="1343" href="Queue.html#1343" class="Bound"
+      >A</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" class="Symbol"
+      >:</a
+      ><a name="1346"
+      > </a
+      ><a name="1347" class="PrimitiveType"
+      >Set</a
+      ><a name="1350" class="Symbol"
+      >}</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" class="Symbol"
+      >&#8594;</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" class="Symbol"
+      >(</a
+      ><a name="1355" href="Queue.html#1343" class="Bound"
+      >A</a
+      ><a name="1356"
+      > </a
+      ><a name="1357" class="Symbol"
+      >&#8594;</a
+      ><a name="1358"
+      > </a
+      ><a name="1359" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="1363" class="Symbol"
+      >)</a
+      ><a name="1364"
+      > </a
+      ><a name="1365" class="Symbol"
+      >&#8594;</a
+      ><a name="1366"
+      > </a
+      ><a name="1367" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1372"
+      > </a
+      ><a name="1373" href="Queue.html#1343" class="Bound"
+      >A</a
+      ><a name="1374"
+      > </a
+      ><a name="1375" class="Symbol"
+      >&#8594;</a
+      ><a name="1376"
+      > </a
+      ><a name="1377" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="1382"
+      > </a
+      ><a name="1383" class="Symbol"
+      >(</a
+      ><a name="1384" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1389"
+      > </a
+      ><a name="1390" href="Queue.html#1343" class="Bound"
+      >A</a
+      ><a name="1391"
+      > </a
+      ><a name="1392" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="1393"
+      > </a
+      ><a name="1394" href="Queue.html#1343" class="Bound"
+      >A</a
+      ><a name="1395" class="Symbol"
+      >)</a
+      ><a name="1396"
+      >
+</a
+      ><a name="1397" href="Queue.html#1330" class="Function"
+      >deQueueIf</a
+      ><a name="1406"
+      > </a
+      ><a name="1407" href="Queue.html#1407" class="Bound"
+      >p</a
+      ><a name="1408"
+      > </a
+      ><a name="1409" href="Queue.html#1409" class="Bound"
+      >q</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" class="Symbol"
+      >=</a
+      ><a name="1412"
+      > </a
+      ><a name="1413" href="Queue.html#636" class="Function"
+      >deQueue</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" href="Queue.html#1409" class="Bound"
+      >q</a
+      ><a name="1422"
+      > </a
+      ><a name="1423" href="Monad.html#567" class="Function Operator"
+      >&gt;&gt;=</a
+      ><a name="1426"
+      > </a
+      ><a name="1427" class="Symbol"
+      >\</a
+      ><a name="1428" href="Queue.html#1428" class="Bound"
+      >qa</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" class="Symbol"
+      >&#8594;</a
+      ><a name="1432"
+      >
+                </a
+      ><a name="1449" href="MonadPlus.html#1110" class="Function"
+      >guard</a
+      ><a name="1454"
+      > </a
+      ><a name="1455" class="Symbol"
+      >(</a
+      ><a name="1456" href="Queue.html#1407" class="Bound"
+      >p</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" class="Symbol"
+      >(</a
+      ><a name="1459" href="NeilPrelude.html#11651" class="Function"
+      >snd</a
+      ><a name="1462"
+      > </a
+      ><a name="1463" href="Queue.html#1428" class="Bound"
+      >qa</a
+      ><a name="1465" class="Symbol"
+      >))</a
+      ><a name="1467"
+      > </a
+      ><a name="1468" href="Monad.html#939" class="Function Operator"
+      >&gt;&gt;</a
+      ><a name="1470"
+      >
+                </a
+      ><a name="1487" href="Monad.html#691" class="Function"
+      >return</a
+      ><a name="1493"
+      > </a
+      ><a name="1494" href="Queue.html#1428" class="Bound"
+      >qa</a
+      ><a name="1496"
+      >
+
+</a
+      ><a name="1498" href="Queue.html#1498" class="Function"
+      >qmap</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" class="Symbol"
+      >:</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" class="Symbol"
+      >{</a
+      ><a name="1506" href="Queue.html#1506" class="Bound"
+      >A</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" href="Queue.html#1508" class="Bound"
+      >B</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" class="Symbol"
+      >:</a
+      ><a name="1511"
+      > </a
+      ><a name="1512" class="PrimitiveType"
+      >Set</a
+      ><a name="1515" class="Symbol"
+      >}</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" class="Symbol"
+      >&#8594;</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" class="Symbol"
+      >(</a
+      ><a name="1520" href="Queue.html#1506" class="Bound"
+      >A</a
+      ><a name="1521"
+      > </a
+      ><a name="1522" class="Symbol"
+      >&#8594;</a
+      ><a name="1523"
+      > </a
+      ><a name="1524" href="Queue.html#1508" class="Bound"
+      >B</a
+      ><a name="1525" class="Symbol"
+      >)</a
+      ><a name="1526"
+      > </a
+      ><a name="1527" class="Symbol"
+      >&#8594;</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1534"
+      > </a
+      ><a name="1535" href="Queue.html#1506" class="Bound"
+      >A</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" class="Symbol"
+      >&#8594;</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1544"
+      > </a
+      ><a name="1545" href="Queue.html#1508" class="Bound"
+      >B</a
+      ><a name="1546"
+      > 
+</a
+      ><a name="1548" href="Queue.html#1498" class="Function"
+      >qmap</a
+      ><a name="1552"
+      > </a
+      ><a name="1553" href="Queue.html#1553" class="Bound"
+      >f</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" class="Symbol"
+      >=</a
+      ><a name="1556"
+      > </a
+      ><a name="1557" href="NeilPrelude.html#16272" class="Function"
+      >&#215;-map</a
+      ><a name="1562"
+      > </a
+      ><a name="1563" class="Symbol"
+      >(</a
+      ><a name="1564" href="List.html#972" class="Function"
+      >map</a
+      ><a name="1567"
+      > </a
+      ><a name="1568" href="Queue.html#1553" class="Bound"
+      >f</a
+      ><a name="1569" class="Symbol"
+      >)</a
+      ><a name="1570"
+      >
+
+</a
+      ><a name="1572" href="Queue.html#1572" class="Function"
+      >qreverse</a
+      ><a name="1580"
+      > </a
+      ><a name="1581" class="Symbol"
+      >:</a
+      ><a name="1582"
+      > </a
+      ><a name="1583" class="Symbol"
+      >{</a
+      ><a name="1584" href="Queue.html#1584" class="Bound"
+      >A</a
+      ><a name="1585"
+      > </a
+      ><a name="1586" class="Symbol"
+      >:</a
+      ><a name="1587"
+      > </a
+      ><a name="1588" class="PrimitiveType"
+      >Set</a
+      ><a name="1591" class="Symbol"
+      >}</a
+      ><a name="1592"
+      > </a
+      ><a name="1593" class="Symbol"
+      >&#8594;</a
+      ><a name="1594"
+      > </a
+      ><a name="1595" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" href="Queue.html#1584" class="Bound"
+      >A</a
+      ><a name="1602"
+      > </a
+      ><a name="1603" class="Symbol"
+      >&#8594;</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" href="Queue.html#1584" class="Bound"
+      >A</a
+      ><a name="1612"
+      >
+</a
+      ><a name="1613" href="Queue.html#1572" class="Function"
+      >qreverse</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" class="Symbol"
+      >=</a
+      ><a name="1623"
+      > </a
+      ><a name="1624" href="NeilPrelude.html#17736" class="Function"
+      >swap</a
+      ><a name="1628"
+      >
+
+</a
+      ><a name="1630" href="Queue.html#1630" class="Function"
+      >qlength</a
+      ><a name="1637"
+      > </a
+      ><a name="1638" class="Symbol"
+      >:</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" class="Symbol"
+      >{</a
+      ><a name="1641" href="Queue.html#1641" class="Bound"
+      >A</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" class="Symbol"
+      >:</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" class="PrimitiveType"
+      >Set</a
+      ><a name="1648" class="Symbol"
+      >}</a
+      ><a name="1649"
+      > </a
+      ><a name="1650" class="Symbol"
+      >&#8594;</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" href="Queue.html#323" class="Function"
+      >Queue</a
+      ><a name="1657"
+      > </a
+      ><a name="1658" href="Queue.html#1641" class="Bound"
+      >A</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" class="Symbol"
+      >&#8594;</a
+      ><a name="1661"
+      > </a
+      ><a name="1662" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="1663"
+      >
+</a
+      ><a name="1664" href="Queue.html#1630" class="Function"
+      >qlength</a
+      ><a name="1671"
+      > </a
+      ><a name="1672" class="Symbol"
+      >(</a
+      ><a name="1673" href="Queue.html#1673" class="Bound"
+      >as</a
+      ><a name="1675"
+      > </a
+      ><a name="1676" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1677"
+      > </a
+      ><a name="1678" href="Queue.html#1678" class="Bound"
+      >bs</a
+      ><a name="1680" class="Symbol"
+      >)</a
+      ><a name="1681"
+      > </a
+      ><a name="1682" class="Symbol"
+      >=</a
+      ><a name="1683"
+      > </a
+      ><a name="1684" href="Nat.html#918" class="Function"
+      >length</a
+      ><a name="1690"
+      > </a
+      ><a name="1691" href="Queue.html#1673" class="Bound"
+      >as</a
+      ><a name="1693"
+      > </a
+      ><a name="1694" href="Nat.html#406" class="Primitive Operator"
+      >+</a
+      ><a name="1695"
+      > </a
+      ><a name="1696" href="Nat.html#918" class="Function"
+      >length</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="Queue.html#1678" class="Bound"
+      >bs</a
+      ><a name="1705"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

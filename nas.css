@@ -1,0 +1,33 @@
+img {
+  border: 0
+}
+
+body {
+  color: #333366
+}
+
+h1 {
+  text-align:center
+}
+
+span.alert {
+  color:red;
+  font-style:italic
+}
+
+h2.center {
+  text-align:center
+}
+
+.address-tag {
+  font-weight: bold;
+  text-align: right;
+  vertical-align: top
+}
+
+.main-td {
+  vertical-align: top;
+  padding: 0px 25px 0px 0px /* top, right, bottom, left */
+}
+
+.pictureholder{ margin: 0px 0px 20px 0px }

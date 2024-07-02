@@ -1,0 +1,20 @@
+The developers of a programming language need to document its intended syntax and
+semantics, and to update the documentation when the language evolves.  They use
+formal grammars to define context-free syntax, but usually give only an informal
+description of semantics.  Use of formal semantics could greatly increase the
+consistency and completeness of language documentation, support rapid prototyping,
+and allow empirical validation.
+
+Modularity of semantics is essential for practicality when scaling up to definitions
+of larger languages.  Component-based semantics takes modularity to the highest
+possible level.  In this approach, the semantics of a language is defined by
+equations translating its constructs (compositionally) to combinations of so-called
+fundamental constructs, or `funcons'.  The definition of each funcon is a small,
+highly reusable component.  The PLanCompS project has defined a substantial library
+of funcons, and shown their reusability in several case studies.
+
+We have designed a meta-language called CBS for component-based semantics, and an
+IDE to support development, rapid prototyping, and validation of definitions in CBS.
+After introducing and motivating CBS, we demonstrate how the IDE can be used to
+browse and edit the CBS definition of a toy language, to generate a prototype
+implementation of the language, and to parse and run programs.

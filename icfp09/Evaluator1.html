@@ -1,0 +1,3657 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Evaluator1</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Keyword"
+      >open</a
+      ><a name="5"
+      > </a
+      ><a name="6" class="Keyword"
+      >import</a
+      ><a name="12"
+      > </a
+      ><a name="13" href="NeilPrelude1.html#45" class="Module"
+      >NeilPrelude1</a
+      ><a name="25"
+      >
+</a
+      ><a name="26" class="Keyword"
+      >open</a
+      ><a name="30"
+      > </a
+      ><a name="31" class="Keyword"
+      >import</a
+      ><a name="37"
+      > </a
+      ><a name="38" href="Core1.html#51" class="Module"
+      >Core1</a
+      ><a name="43"
+      >
+</a
+      ><a name="44" class="Keyword"
+      >open</a
+      ><a name="48"
+      > </a
+      ><a name="49" class="Keyword"
+      >import</a
+      ><a name="55"
+      > </a
+      ><a name="56" href="BoolOrd1.html#74" class="Module"
+      >BoolOrd1</a
+      ><a name="64"
+      >
+</a
+      ><a name="65" class="Keyword"
+      >open</a
+      ><a name="69"
+      > </a
+      ><a name="70" class="Keyword"
+      >import</a
+      ><a name="76"
+      > </a
+      ><a name="77" href="BoolProps1.html#34" class="Module"
+      >BoolProps1</a
+      ><a name="87"
+      >
+
+</a
+      ><a name="89" class="Keyword"
+      >module</a
+      ><a name="95"
+      > </a
+      ><a name="96" href="Evaluator1.html#96" class="Module"
+      >Evaluator1</a
+      ><a name="106"
+      > </a
+      ><a name="107" class="Keyword"
+      >where</a
+      ><a name="112"
+      >
+
+</a
+      ><a name="114" class="Comment"
+      >-- Utility Function --</a
+      ><a name="136"
+      >
+
+</a
+      ><a name="138" href="Evaluator1.html#138" class="Function"
+      >afterSwitchWeaken</a
+      ><a name="155"
+      > </a
+      ><a name="156" class="Symbol"
+      >:</a
+      ><a name="157"
+      > </a
+      ><a name="158" class="Symbol"
+      >{</a
+      ><a name="159" href="Evaluator1.html#159" class="Bound"
+      >d&#8322;</a
+      ><a name="161"
+      > </a
+      ><a name="162" class="Symbol"
+      >:</a
+      ><a name="163"
+      > </a
+      ><a name="164" href="Core1.html#458" class="Function"
+      >Dec</a
+      ><a name="167" class="Symbol"
+      >}</a
+      ><a name="168"
+      > </a
+      ><a name="169" class="Symbol"
+      >&#8594;</a
+      ><a name="170"
+      > </a
+      ><a name="171" class="Symbol"
+      >{</a
+      ><a name="172" href="Evaluator1.html#172" class="Bound"
+      >as</a
+      ><a name="174"
+      > </a
+      ><a name="175" href="Evaluator1.html#175" class="Bound"
+      >bs</a
+      ><a name="177"
+      > </a
+      ><a name="178" class="Symbol"
+      >:</a
+      ><a name="179"
+      > </a
+      ><a name="180" href="Core1.html#618" class="Function"
+      >SVDesc</a
+      ><a name="186" class="Symbol"
+      >}</a
+      ><a name="187"
+      > </a
+      ><a name="188" class="Symbol"
+      >&#8594;</a
+      ><a name="189"
+      > </a
+      ><a name="190" class="Symbol"
+      >(</a
+      ><a name="191" href="Evaluator1.html#191" class="Bound"
+      >d&#8321;</a
+      ><a name="193"
+      > </a
+      ><a name="194" class="Symbol"
+      >:</a
+      ><a name="195"
+      > </a
+      ><a name="196" href="Core1.html#458" class="Function"
+      >Dec</a
+      ><a name="199" class="Symbol"
+      >)</a
+      ><a name="200"
+      > </a
+      ><a name="201" class="Symbol"
+      >&#8594;</a
+      ><a name="202"
+      > </a
+      ><a name="203" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="205"
+      > </a
+      ><a name="206" href="Evaluator1.html#172" class="Bound"
+      >as</a
+      ><a name="208"
+      > </a
+      ><a name="209" href="Evaluator1.html#175" class="Bound"
+      >bs</a
+      ><a name="211"
+      > </a
+      ><a name="212" href="Evaluator1.html#159" class="Bound"
+      >d&#8322;</a
+      ><a name="214"
+      > </a
+      ><a name="215" class="Symbol"
+      >&#8594;</a
+      ><a name="216"
+      > </a
+      ><a name="217" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="219"
+      > </a
+      ><a name="220" href="Evaluator1.html#172" class="Bound"
+      >as</a
+      ><a name="222"
+      > </a
+      ><a name="223" href="Evaluator1.html#175" class="Bound"
+      >bs</a
+      ><a name="225"
+      > </a
+      ><a name="226" class="Symbol"
+      >(</a
+      ><a name="227" href="Evaluator1.html#191" class="Bound"
+      >d&#8321;</a
+      ><a name="229"
+      > </a
+      ><a name="230" href="NeilPrelude1.html#9681" class="Function Operator"
+      >&#8744;</a
+      ><a name="231"
+      > </a
+      ><a name="232" href="Evaluator1.html#159" class="Bound"
+      >d&#8322;</a
+      ><a name="234" class="Symbol"
+      >)</a
+      ><a name="235"
+      >
+</a
+      ><a name="236" href="Evaluator1.html#138" class="Function"
+      >afterSwitchWeaken</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="Evaluator1.html#254" class="Bound"
+      >d</a
+      ><a name="255"
+      > </a
+      ><a name="256" class="Symbol"
+      >=</a
+      ><a name="257"
+      > </a
+      ><a name="258" href="Core1.html#2256" class="InductiveConstructor"
+      >weaken</a
+      ><a name="264"
+      > </a
+      ><a name="265" class="Symbol"
+      >(</a
+      ><a name="266" href="BoolOrd1.html#1530" class="Function"
+      >&#8744;maxR</a
+      ><a name="271"
+      > </a
+      ><a name="272" href="Evaluator1.html#254" class="Bound"
+      >d</a
+      ><a name="273" class="Symbol"
+      >)</a
+      ><a name="274"
+      >
+
+
+</a
+      ><a name="277" class="Comment"
+      >-- Evaluation Signal Functions --</a
+      ><a name="310"
+      >
+
+</a
+      ><a name="312" class="Keyword"
+      >mutual</a
+      ><a name="318"
+      >
+
+</a
+      ><a name="320" class="Comment"
+      >-- eval is the &#8658; evaluation relation</a
+      ><a name="356"
+      >
+
+  </a
+      ><a name="360" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="364"
+      > </a
+      ><a name="365" class="Symbol"
+      >:</a
+      ><a name="366"
+      > </a
+      ><a name="367" class="Symbol"
+      >{</a
+      ><a name="368" href="Evaluator1.html#368" class="Bound"
+      >as</a
+      ><a name="370"
+      > </a
+      ><a name="371" href="Evaluator1.html#371" class="Bound"
+      >bs</a
+      ><a name="373"
+      > </a
+      ><a name="374" class="Symbol"
+      >:</a
+      ><a name="375"
+      > </a
+      ><a name="376" href="Core1.html#618" class="Function"
+      >SVDesc</a
+      ><a name="382" class="Symbol"
+      >}</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Symbol"
+      >&#8594;</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="Symbol"
+      >{</a
+      ><a name="387" href="Evaluator1.html#387" class="Bound"
+      >d</a
+      ><a name="388"
+      > </a
+      ><a name="389" class="Symbol"
+      >:</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="Core1.html#458" class="Function"
+      >Dec</a
+      ><a name="394" class="Symbol"
+      >}</a
+      ><a name="395"
+      > </a
+      ><a name="396" class="Symbol"
+      >&#8594;</a
+      ><a name="397"
+      > </a
+      ><a name="398" href="Core1.html#1260" class="Function"
+      >&#916;t</a
+      ><a name="400"
+      > </a
+      ><a name="401" class="Symbol"
+      >&#8594;</a
+      ><a name="402"
+      > </a
+      ><a name="403" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="405"
+      > </a
+      ><a name="406" href="Evaluator1.html#368" class="Bound"
+      >as</a
+      ><a name="408"
+      > </a
+      ><a name="409" href="Evaluator1.html#371" class="Bound"
+      >bs</a
+      ><a name="411"
+      > </a
+      ><a name="412" href="Evaluator1.html#387" class="Bound"
+      >d</a
+      ><a name="413"
+      > </a
+      ><a name="414" class="Symbol"
+      >&#8594;</a
+      ><a name="415"
+      > </a
+      ><a name="416" href="Core1.html#727" class="Datatype"
+      >SVRep</a
+      ><a name="421"
+      > </a
+      ><a name="422" href="Evaluator1.html#368" class="Bound"
+      >as</a
+      ><a name="424"
+      > </a
+      ><a name="425" class="Symbol"
+      >&#8594;</a
+      ><a name="426"
+      > </a
+      ><a name="427" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="429"
+      > </a
+      ><a name="430" href="Evaluator1.html#368" class="Bound"
+      >as</a
+      ><a name="432"
+      > </a
+      ><a name="433" href="Evaluator1.html#371" class="Bound"
+      >bs</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="Evaluator1.html#387" class="Bound"
+      >d</a
+      ><a name="437"
+      > </a
+      ><a name="438" href="NeilPrelude1.html#4028" class="Function Operator"
+      >1&#215;1</a
+      ><a name="441"
+      > </a
+      ><a name="442" href="Core1.html#727" class="Datatype"
+      >SVRep</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="Evaluator1.html#371" class="Bound"
+      >bs</a
+      ><a name="450"
+      >
+
+  </a
+      ><a name="454" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="458"
+      > </a
+      ><a name="459" href="Evaluator1.html#459" class="Bound"
+      >t</a
+      ><a name="460"
+      > </a
+      ><a name="461" class="Symbol"
+      >(</a
+      ><a name="462" href="Core1.html#1399" class="InductiveConstructor"
+      >prim</a
+      ><a name="466"
+      > </a
+      ><a name="467" href="Evaluator1.html#467" class="Bound"
+      >f</a
+      ><a name="468"
+      > </a
+      ><a name="469" href="Evaluator1.html#469" class="Bound"
+      >s</a
+      ><a name="470" class="Symbol"
+      >)</a
+      ><a name="471"
+      > </a
+      ><a name="472" href="Evaluator1.html#472" class="Bound"
+      >as</a
+      ><a name="474"
+      > </a
+      ><a name="475" class="Keyword"
+      >with</a
+      ><a name="479"
+      > </a
+      ><a name="480" href="Evaluator1.html#467" class="Bound"
+      >f</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="Evaluator1.html#459" class="Bound"
+      >t</a
+      ><a name="483"
+      > </a
+      ><a name="484" href="Evaluator1.html#469" class="Bound"
+      >s</a
+      ><a name="485"
+      > </a
+      ><a name="486" href="Evaluator1.html#472" class="Bound"
+      >as</a
+      ><a name="488"
+      >
+  </a
+      ><a name="491" class="Symbol"
+      >...</a
+      ><a name="494"
+      > </a
+      ><a name="495" class="Symbol"
+      >|</a
+      ><a name="496"
+      > </a
+      ><a name="497" href="Evaluator1.html#497" class="Bound"
+      >s'</a
+      ><a name="499"
+      > </a
+      ><a name="500" href="NeilPrelude1.html#3667" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="501"
+      > </a
+      ><a name="502" href="Evaluator1.html#502" class="Bound"
+      >bs</a
+      ><a name="504"
+      > </a
+      ><a name="505" class="Symbol"
+      >=</a
+      ><a name="506"
+      > </a
+      ><a name="507" href="Core1.html#1399" class="InductiveConstructor"
+      >prim</a
+      ><a name="511"
+      > </a
+      ><a name="512" href="Evaluator1.html#467" class="Bound"
+      >f</a
+      ><a name="513"
+      > </a
+      ><a name="514" href="Evaluator1.html#497" class="Bound"
+      >s'</a
+      ><a name="516"
+      > </a
+      ><a name="517" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="Evaluator1.html#502" class="Bound"
+      >bs</a
+      ><a name="521"
+      > 
+
+  </a
+      ><a name="526" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="530"
+      > </a
+      ><a name="531" href="Evaluator1.html#531" class="Bound"
+      >t</a
+      ><a name="532"
+      > </a
+      ><a name="533" class="Symbol"
+      >(</a
+      ><a name="534" href="Core1.html#1516" class="InductiveConstructor"
+      >dprim</a
+      ><a name="539"
+      > </a
+      ><a name="540" href="Evaluator1.html#540" class="Bound"
+      >f</a
+      ><a name="541"
+      > </a
+      ><a name="542" href="Evaluator1.html#542" class="Bound"
+      >s</a
+      ><a name="543" class="Symbol"
+      >)</a
+      ><a name="544"
+      > </a
+      ><a name="545" href="Evaluator1.html#545" class="Bound"
+      >as</a
+      ><a name="547"
+      > </a
+      ><a name="548" class="Keyword"
+      >with</a
+      ><a name="552"
+      > </a
+      ><a name="553" href="Evaluator1.html#540" class="Bound"
+      >f</a
+      ><a name="554"
+      > </a
+      ><a name="555" href="Evaluator1.html#531" class="Bound"
+      >t</a
+      ><a name="556"
+      > </a
+      ><a name="557" href="Evaluator1.html#542" class="Bound"
+      >s</a
+      ><a name="558"
+      >
+  </a
+      ><a name="561" class="Symbol"
+      >...</a
+      ><a name="564"
+      > </a
+      ><a name="565" class="Symbol"
+      >|</a
+      ><a name="566"
+      > </a
+      ><a name="567" href="Evaluator1.html#567" class="Bound"
+      >g</a
+      ><a name="568"
+      > </a
+      ><a name="569" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="570"
+      > </a
+      ><a name="571" href="Evaluator1.html#571" class="Bound"
+      >bs</a
+      ><a name="573"
+      > </a
+      ><a name="574" class="Symbol"
+      >=</a
+      ><a name="575"
+      > </a
+      ><a name="576" href="Core1.html#1516" class="InductiveConstructor"
+      >dprim</a
+      ><a name="581"
+      > </a
+      ><a name="582" href="Evaluator1.html#540" class="Bound"
+      >f</a
+      ><a name="583"
+      > </a
+      ><a name="584" class="Symbol"
+      >(</a
+      ><a name="585" href="Evaluator1.html#567" class="Bound"
+      >g</a
+      ><a name="586"
+      > </a
+      ><a name="587" href="Evaluator1.html#545" class="Bound"
+      >as</a
+      ><a name="589" class="Symbol"
+      >)</a
+      ><a name="590"
+      > </a
+      ><a name="591" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="592"
+      > </a
+      ><a name="593" href="Evaluator1.html#571" class="Bound"
+      >bs</a
+      ><a name="595"
+      >
+
+  </a
+      ><a name="599" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="603"
+      > </a
+      ><a name="604" href="Evaluator1.html#604" class="Bound"
+      >t</a
+      ><a name="605"
+      > </a
+      ><a name="606" class="Symbol"
+      >(</a
+      ><a name="607" href="Evaluator1.html#607" class="Bound"
+      >sfl</a
+      ><a name="610"
+      > </a
+      ><a name="611" href="Core1.html#1633" class="InductiveConstructor Operator"
+      >&gt;&gt;&gt;</a
+      ><a name="614"
+      > </a
+      ><a name="615" href="Evaluator1.html#615" class="Bound"
+      >sfr</a
+      ><a name="618" class="Symbol"
+      >)</a
+      ><a name="619"
+      > </a
+      ><a name="620" href="Evaluator1.html#620" class="Bound"
+      >as</a
+      ><a name="622"
+      > </a
+      ><a name="623" class="Keyword"
+      >with</a
+      ><a name="627"
+      > </a
+      ><a name="628" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="632"
+      > </a
+      ><a name="633" href="Evaluator1.html#604" class="Bound"
+      >t</a
+      ><a name="634"
+      > </a
+      ><a name="635" href="Evaluator1.html#607" class="Bound"
+      >sfl</a
+      ><a name="638"
+      > </a
+      ><a name="639" href="Evaluator1.html#620" class="Bound"
+      >as</a
+      ><a name="641"
+      >
+  </a
+      ><a name="644" class="Symbol"
+      >...</a
+      ><a name="647"
+      > </a
+      ><a name="648" class="Symbol"
+      >|</a
+      ><a name="649"
+      > </a
+      ><a name="650" href="Evaluator1.html#650" class="Bound"
+      >sfl'</a
+      ><a name="654"
+      > </a
+      ><a name="655" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="656"
+      > </a
+      ><a name="657" href="Evaluator1.html#657" class="Bound"
+      >bs</a
+      ><a name="659"
+      > </a
+      ><a name="660" class="Keyword"
+      >with</a
+      ><a name="664"
+      > </a
+      ><a name="665" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="669"
+      > </a
+      ><a name="670" href="Evaluator1.html#604" class="Bound"
+      >t</a
+      ><a name="671"
+      > </a
+      ><a name="672" href="Evaluator1.html#615" class="Bound"
+      >sfr</a
+      ><a name="675"
+      > </a
+      ><a name="676" href="Evaluator1.html#657" class="Bound"
+      >bs</a
+      ><a name="678"
+      >
+  </a
+      ><a name="681" class="Symbol"
+      >...</a
+      ><a name="684"
+      >    </a
+      ><a name="688" class="Symbol"
+      >|</a
+      ><a name="689"
+      > </a
+      ><a name="690" href="Evaluator1.html#690" class="Bound"
+      >sfr'</a
+      ><a name="694"
+      > </a
+      ><a name="695" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="696"
+      > </a
+      ><a name="697" href="Evaluator1.html#697" class="Bound"
+      >cs</a
+      ><a name="699"
+      > </a
+      ><a name="700" class="Symbol"
+      >=</a
+      ><a name="701"
+      > </a
+      ><a name="702" href="Evaluator1.html#650" class="Bound"
+      >sfl'</a
+      ><a name="706"
+      > </a
+      ><a name="707" href="Core1.html#1633" class="InductiveConstructor Operator"
+      >&gt;&gt;&gt;</a
+      ><a name="710"
+      > </a
+      ><a name="711" href="Evaluator1.html#690" class="Bound"
+      >sfr'</a
+      ><a name="715"
+      > </a
+      ><a name="716" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="717"
+      > </a
+      ><a name="718" href="Evaluator1.html#697" class="Bound"
+      >cs</a
+      ><a name="720"
+      >
+
+  </a
+      ><a name="724" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="728"
+      > </a
+      ><a name="729" href="Evaluator1.html#729" class="Bound"
+      >t</a
+      ><a name="730"
+      > </a
+      ><a name="731" class="Symbol"
+      >(</a
+      ><a name="732" href="Core1.html#1756" class="InductiveConstructor Operator"
+      >_***_</a
+      ><a name="737"
+      > </a
+      ><a name="738" class="Symbol"
+      >{_}</a
+      ><a name="741"
+      > </a
+      ><a name="742" class="Symbol"
+      >{_}</a
+      ><a name="745"
+      > </a
+      ><a name="746" class="Symbol"
+      >{</a
+      ><a name="747" href="Evaluator1.html#747" class="Bound"
+      >AS</a
+      ><a name="749" class="Symbol"
+      >}</a
+      ><a name="750"
+      > </a
+      ><a name="751" href="Evaluator1.html#751" class="Bound"
+      >sfl</a
+      ><a name="754"
+      > </a
+      ><a name="755" href="Evaluator1.html#755" class="Bound"
+      >sfr</a
+      ><a name="758" class="Symbol"
+      >)</a
+      ><a name="759"
+      > </a
+      ><a name="760" href="Evaluator1.html#760" class="Bound"
+      >asbs</a
+      ><a name="764"
+      > </a
+      ><a name="765" class="Keyword"
+      >with</a
+      ><a name="769"
+      > </a
+      ><a name="770" href="Core1.html#974" class="Function"
+      >svsplit</a
+      ><a name="777"
+      > </a
+      ><a name="778" class="Symbol"
+      >{</a
+      ><a name="779" href="Evaluator1.html#747" class="Bound"
+      >AS</a
+      ><a name="781" class="Symbol"
+      >}</a
+      ><a name="782"
+      > </a
+      ><a name="783" href="Evaluator1.html#760" class="Bound"
+      >asbs</a
+      ><a name="787"
+      >
+  </a
+      ><a name="790" class="Symbol"
+      >...</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Symbol"
+      >|</a
+      ><a name="795"
+      > </a
+      ><a name="796" href="Evaluator1.html#796" class="Bound"
+      >as</a
+      ><a name="798"
+      > </a
+      ><a name="799" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="800"
+      > </a
+      ><a name="801" href="Evaluator1.html#801" class="Bound"
+      >bs</a
+      ><a name="803"
+      > </a
+      ><a name="804" class="Keyword"
+      >with</a
+      ><a name="808"
+      > </a
+      ><a name="809" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="813"
+      > </a
+      ><a name="814" href="Evaluator1.html#729" class="Bound"
+      >t</a
+      ><a name="815"
+      > </a
+      ><a name="816" href="Evaluator1.html#751" class="Bound"
+      >sfl</a
+      ><a name="819"
+      > </a
+      ><a name="820" href="Evaluator1.html#796" class="Bound"
+      >as</a
+      ><a name="822"
+      > </a
+      ><a name="823" class="Symbol"
+      >|</a
+      ><a name="824"
+      > </a
+      ><a name="825" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="829"
+      > </a
+      ><a name="830" href="Evaluator1.html#729" class="Bound"
+      >t</a
+      ><a name="831"
+      > </a
+      ><a name="832" href="Evaluator1.html#755" class="Bound"
+      >sfr</a
+      ><a name="835"
+      > </a
+      ><a name="836" href="Evaluator1.html#801" class="Bound"
+      >bs</a
+      ><a name="838"
+      >
+  </a
+      ><a name="841" class="Symbol"
+      >...</a
+      ><a name="844"
+      >    </a
+      ><a name="848" class="Symbol"
+      >|</a
+      ><a name="849"
+      > </a
+      ><a name="850" href="Evaluator1.html#850" class="Bound"
+      >sfl'</a
+      ><a name="854"
+      > </a
+      ><a name="855" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="856"
+      > </a
+      ><a name="857" href="Evaluator1.html#857" class="Bound"
+      >cs</a
+      ><a name="859"
+      > </a
+      ><a name="860" class="Symbol"
+      >|</a
+      ><a name="861"
+      > </a
+      ><a name="862" href="Evaluator1.html#862" class="Bound"
+      >sfr'</a
+      ><a name="866"
+      > </a
+      ><a name="867" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="868"
+      > </a
+      ><a name="869" href="Evaluator1.html#869" class="Bound"
+      >ds</a
+      ><a name="871"
+      > </a
+      ><a name="872" class="Symbol"
+      >=</a
+      ><a name="873"
+      > </a
+      ><a name="874" href="Evaluator1.html#850" class="Bound"
+      >sfl'</a
+      ><a name="878"
+      > </a
+      ><a name="879" href="Core1.html#1756" class="InductiveConstructor Operator"
+      >***</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="Evaluator1.html#862" class="Bound"
+      >sfr'</a
+      ><a name="887"
+      > </a
+      ><a name="888" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="889"
+      > </a
+      ><a name="890" href="Evaluator1.html#857" class="Bound"
+      >cs</a
+      ><a name="892"
+      > </a
+      ><a name="893" href="Core1.html#857" class="Function Operator"
+      >+++</a
+      ><a name="896"
+      > </a
+      ><a name="897" href="Evaluator1.html#869" class="Bound"
+      >ds</a
+      ><a name="899"
+      >  
+
+  </a
+      ><a name="905" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="909"
+      > </a
+      ><a name="910" href="Evaluator1.html#910" class="Bound"
+      >t</a
+      ><a name="911"
+      > </a
+      ><a name="912" class="Symbol"
+      >(</a
+      ><a name="913" href="Core1.html#1895" class="InductiveConstructor"
+      >loop</a
+      ><a name="917"
+      > </a
+      ><a name="918" class="Symbol"
+      >{_}</a
+      ><a name="921"
+      > </a
+      ><a name="922" class="Symbol"
+      >{_}</a
+      ><a name="925"
+      > </a
+      ><a name="926" class="Symbol"
+      >{</a
+      ><a name="927" href="Evaluator1.html#927" class="Bound"
+      >BS</a
+      ><a name="929" class="Symbol"
+      >}</a
+      ><a name="930"
+      > </a
+      ><a name="931" href="Evaluator1.html#931" class="Bound"
+      >sfs</a
+      ><a name="934"
+      > </a
+      ><a name="935" href="Evaluator1.html#935" class="Bound"
+      >sff</a
+      ><a name="938" class="Symbol"
+      >)</a
+      ><a name="939"
+      > </a
+      ><a name="940" href="Evaluator1.html#940" class="Bound"
+      >as</a
+      ><a name="942"
+      > </a
+      ><a name="943" class="Keyword"
+      >with</a
+      ><a name="947"
+      > </a
+      ><a name="948" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="Evaluator1.html#910" class="Bound"
+      >t</a
+      ><a name="955"
+      > </a
+      ><a name="956" href="Evaluator1.html#935" class="Bound"
+      >sff</a
+      ><a name="959"
+      > </a
+      ><a name="960" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="964"
+      >
+  </a
+      ><a name="967" class="Symbol"
+      >...</a
+      ><a name="970"
+      > </a
+      ><a name="971" class="Symbol"
+      >|</a
+      ><a name="972"
+      > </a
+      ><a name="973" href="Evaluator1.html#973" class="Bound"
+      >g</a
+      ><a name="974"
+      > </a
+      ><a name="975" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="976"
+      > </a
+      ><a name="977" href="Evaluator1.html#977" class="Bound"
+      >cs</a
+      ><a name="979"
+      > </a
+      ><a name="980" class="Keyword"
+      >with</a
+      ><a name="984"
+      > </a
+      ><a name="985" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="989"
+      > </a
+      ><a name="990" href="Evaluator1.html#910" class="Bound"
+      >t</a
+      ><a name="991"
+      > </a
+      ><a name="992" href="Evaluator1.html#931" class="Bound"
+      >sfs</a
+      ><a name="995"
+      > </a
+      ><a name="996" class="Symbol"
+      >(</a
+      ><a name="997" href="Evaluator1.html#940" class="Bound"
+      >as</a
+      ><a name="999"
+      > </a
+      ><a name="1000" href="Core1.html#857" class="Function Operator"
+      >+++</a
+      ><a name="1003"
+      > </a
+      ><a name="1004" href="Evaluator1.html#977" class="Bound"
+      >cs</a
+      ><a name="1006" class="Symbol"
+      >)</a
+      ><a name="1007"
+      >
+  </a
+      ><a name="1010" class="Symbol"
+      >...</a
+      ><a name="1013"
+      >    </a
+      ><a name="1017" class="Symbol"
+      >|</a
+      ><a name="1018"
+      > </a
+      ><a name="1019" href="Evaluator1.html#1019" class="Bound"
+      >sfs'</a
+      ><a name="1023"
+      > </a
+      ><a name="1024" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1025"
+      > </a
+      ><a name="1026" href="Evaluator1.html#1026" class="Bound"
+      >bsds</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" class="Keyword"
+      >with</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" href="Core1.html#974" class="Function"
+      >svsplit</a
+      ><a name="1043"
+      > </a
+      ><a name="1044" class="Symbol"
+      >{</a
+      ><a name="1045" href="Evaluator1.html#927" class="Bound"
+      >BS</a
+      ><a name="1047" class="Symbol"
+      >}</a
+      ><a name="1048"
+      > </a
+      ><a name="1049" href="Evaluator1.html#1026" class="Bound"
+      >bsds</a
+      ><a name="1053"
+      >
+  </a
+      ><a name="1056" class="Symbol"
+      >...</a
+      ><a name="1059"
+      >       </a
+      ><a name="1066" class="Symbol"
+      >|</a
+      ><a name="1067"
+      > </a
+      ><a name="1068" href="Evaluator1.html#1068" class="Bound"
+      >bs</a
+      ><a name="1070"
+      > </a
+      ><a name="1071" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1072"
+      > </a
+      ><a name="1073" href="Evaluator1.html#1073" class="Bound"
+      >ds</a
+      ><a name="1075"
+      > </a
+      ><a name="1076" class="Symbol"
+      >=</a
+      ><a name="1077"
+      > </a
+      ><a name="1078" href="Core1.html#1895" class="InductiveConstructor"
+      >loop</a
+      ><a name="1082"
+      > </a
+      ><a name="1083" href="Evaluator1.html#1019" class="Bound"
+      >sfs'</a
+      ><a name="1087"
+      > </a
+      ><a name="1088" class="Symbol"
+      >(</a
+      ><a name="1089" href="Evaluator1.html#973" class="Bound"
+      >g</a
+      ><a name="1090"
+      > </a
+      ><a name="1091" href="Evaluator1.html#1073" class="Bound"
+      >ds</a
+      ><a name="1093" class="Symbol"
+      >)</a
+      ><a name="1094"
+      > </a
+      ><a name="1095" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1096"
+      > </a
+      ><a name="1097" href="Evaluator1.html#1068" class="Bound"
+      >bs</a
+      ><a name="1099"
+      >
+
+  </a
+      ><a name="1103" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" href="Evaluator1.html#1108" class="Bound"
+      >t</a
+      ><a name="1109"
+      > </a
+      ><a name="1110" class="Symbol"
+      >(</a
+      ><a name="1111" href="Core1.html#2010" class="InductiveConstructor"
+      >switch</a
+      ><a name="1117"
+      > </a
+      ><a name="1118" class="Symbol"
+      >{</a
+      ><a name="1119" href="Evaluator1.html#1119" class="Bound"
+      >d</a
+      ><a name="1120" class="Symbol"
+      >}</a
+      ><a name="1121"
+      > </a
+      ><a name="1122" href="Evaluator1.html#1122" class="Bound"
+      >sf</a
+      ><a name="1124"
+      > </a
+      ><a name="1125" href="Evaluator1.html#1125" class="Bound"
+      >f</a
+      ><a name="1126" class="Symbol"
+      >)</a
+      ><a name="1127"
+      > </a
+      ><a name="1128" href="Evaluator1.html#1128" class="Bound"
+      >as</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" class="Keyword"
+      >with</a
+      ><a name="1135"
+      > </a
+      ><a name="1136" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1140"
+      > </a
+      ><a name="1141" href="Evaluator1.html#1108" class="Bound"
+      >t</a
+      ><a name="1142"
+      > </a
+      ><a name="1143" href="Evaluator1.html#1122" class="Bound"
+      >sf</a
+      ><a name="1145"
+      > </a
+      ><a name="1146" href="Evaluator1.html#1128" class="Bound"
+      >as</a
+      ><a name="1148"
+      >
+  </a
+      ><a name="1151" class="Symbol"
+      >...</a
+      ><a name="1154"
+      > </a
+      ><a name="1155" class="Symbol"
+      >|</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="Evaluator1.html#1157" class="Bound"
+      >sf'</a
+      ><a name="1160"
+      > </a
+      ><a name="1161" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1162"
+      > </a
+      ><a name="1163" href="NeilPrelude1.html#8387" class="InductiveConstructor"
+      >nothing</a
+      ><a name="1170"
+      >  </a
+      ><a name="1172" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" href="Evaluator1.html#1174" class="Bound"
+      >bs</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" class="Symbol"
+      >=</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" href="Core1.html#2010" class="InductiveConstructor"
+      >switch</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" href="Evaluator1.html#1157" class="Bound"
+      >sf'</a
+      ><a name="1189"
+      > </a
+      ><a name="1190" href="Evaluator1.html#1125" class="Bound"
+      >f</a
+      ><a name="1191"
+      > </a
+      ><a name="1192" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1193"
+      > </a
+      ><a name="1194" href="Evaluator1.html#1174" class="Bound"
+      >bs</a
+      ><a name="1196"
+      >
+  </a
+      ><a name="1199" class="Symbol"
+      >...</a
+      ><a name="1202"
+      > </a
+      ><a name="1203" class="Symbol"
+      >|</a
+      ><a name="1204"
+      > </a
+      ><a name="1205" class="Symbol"
+      >_</a
+      ><a name="1206"
+      >   </a
+      ><a name="1209" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" href="NeilPrelude1.html#8407" class="InductiveConstructor"
+      >just</a
+      ><a name="1215"
+      > </a
+      ><a name="1216" href="Evaluator1.html#1216" class="Bound"
+      >e</a
+      ><a name="1217"
+      >   </a
+      ><a name="1220" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1221"
+      > </a
+      ><a name="1222" class="Symbol"
+      >_</a
+      ><a name="1223"
+      >  </a
+      ><a name="1225" class="Keyword"
+      >with</a
+      ><a name="1229"
+      > </a
+      ><a name="1230" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1234"
+      > </a
+      ><a name="1235" href="Core1.html#1271" class="Function"
+      >t0</a
+      ><a name="1237"
+      > </a
+      ><a name="1238" class="Symbol"
+      >(</a
+      ><a name="1239" href="Evaluator1.html#1125" class="Bound"
+      >f</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" href="Evaluator1.html#1216" class="Bound"
+      >e</a
+      ><a name="1242" class="Symbol"
+      >)</a
+      ><a name="1243"
+      > </a
+      ><a name="1244" href="Evaluator1.html#1128" class="Bound"
+      >as</a
+      ><a name="1246"
+      >
+  </a
+      ><a name="1249" class="Symbol"
+      >...</a
+      ><a name="1252"
+      >    </a
+      ><a name="1256" class="Symbol"
+      >|</a
+      ><a name="1257"
+      > </a
+      ><a name="1258" href="Evaluator1.html#1258" class="Bound"
+      >rsf</a
+      ><a name="1261"
+      > </a
+      ><a name="1262" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1263"
+      > </a
+      ><a name="1264" href="Evaluator1.html#1264" class="Bound"
+      >bs</a
+      ><a name="1266"
+      > </a
+      ><a name="1267" class="Symbol"
+      >=</a
+      ><a name="1268"
+      > </a
+      ><a name="1269" href="Evaluator1.html#138" class="Function"
+      >afterSwitchWeaken</a
+      ><a name="1286"
+      > </a
+      ><a name="1287" href="Evaluator1.html#1119" class="Bound"
+      >d</a
+      ><a name="1288"
+      > </a
+      ><a name="1289" href="Evaluator1.html#1258" class="Bound"
+      >rsf</a
+      ><a name="1292"
+      > </a
+      ><a name="1293" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1294"
+      > </a
+      ><a name="1295" href="Evaluator1.html#1264" class="Bound"
+      >bs</a
+      ><a name="1297"
+      >
+
+  </a
+      ><a name="1301" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1305"
+      > </a
+      ><a name="1306" href="Evaluator1.html#1306" class="Bound"
+      >t</a
+      ><a name="1307"
+      > </a
+      ><a name="1308" class="Symbol"
+      >(</a
+      ><a name="1309" href="Core1.html#2133" class="InductiveConstructor"
+      >dswitch</a
+      ><a name="1316"
+      > </a
+      ><a name="1317" class="Symbol"
+      >{</a
+      ><a name="1318" href="Evaluator1.html#1318" class="Bound"
+      >d</a
+      ><a name="1319" class="Symbol"
+      >}</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" href="Evaluator1.html#1321" class="Bound"
+      >sf</a
+      ><a name="1323"
+      > </a
+      ><a name="1324" href="Evaluator1.html#1324" class="Bound"
+      >f</a
+      ><a name="1325" class="Symbol"
+      >)</a
+      ><a name="1326"
+      > </a
+      ><a name="1327" href="Evaluator1.html#1327" class="Bound"
+      >as</a
+      ><a name="1329"
+      > </a
+      ><a name="1330" class="Keyword"
+      >with</a
+      ><a name="1334"
+      > </a
+      ><a name="1335" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1339"
+      > </a
+      ><a name="1340" href="Evaluator1.html#1306" class="Bound"
+      >t</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" href="Evaluator1.html#1321" class="Bound"
+      >sf</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" href="Evaluator1.html#1327" class="Bound"
+      >as</a
+      ><a name="1347"
+      >
+  </a
+      ><a name="1350" class="Symbol"
+      >...</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" class="Symbol"
+      >|</a
+      ><a name="1355"
+      > </a
+      ><a name="1356" href="Evaluator1.html#1356" class="Bound"
+      >sf'</a
+      ><a name="1359"
+      > </a
+      ><a name="1360" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" href="NeilPrelude1.html#8387" class="InductiveConstructor"
+      >nothing</a
+      ><a name="1369"
+      >  </a
+      ><a name="1371" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1372"
+      > </a
+      ><a name="1373" href="Evaluator1.html#1373" class="Bound"
+      >bs</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" class="Symbol"
+      >=</a
+      ><a name="1377"
+      > </a
+      ><a name="1378" href="Core1.html#2133" class="InductiveConstructor"
+      >dswitch</a
+      ><a name="1385"
+      > </a
+      ><a name="1386" href="Evaluator1.html#1356" class="Bound"
+      >sf'</a
+      ><a name="1389"
+      > </a
+      ><a name="1390" href="Evaluator1.html#1324" class="Bound"
+      >f</a
+      ><a name="1391"
+      > </a
+      ><a name="1392" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1393"
+      > </a
+      ><a name="1394" href="Evaluator1.html#1373" class="Bound"
+      >bs</a
+      ><a name="1396"
+      >
+  </a
+      ><a name="1399" class="Symbol"
+      >...</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" class="Symbol"
+      >|</a
+      ><a name="1404"
+      > </a
+      ><a name="1405" class="Symbol"
+      >_</a
+      ><a name="1406"
+      >   </a
+      ><a name="1409" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" href="NeilPrelude1.html#8407" class="InductiveConstructor"
+      >just</a
+      ><a name="1415"
+      > </a
+      ><a name="1416" href="Evaluator1.html#1416" class="Bound"
+      >e</a
+      ><a name="1417"
+      >   </a
+      ><a name="1420" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" href="Evaluator1.html#1422" class="Bound"
+      >bs</a
+      ><a name="1424"
+      > </a
+      ><a name="1425" class="Keyword"
+      >with</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1434"
+      > </a
+      ><a name="1435" href="Core1.html#1271" class="Function"
+      >t0</a
+      ><a name="1437"
+      > </a
+      ><a name="1438" class="Symbol"
+      >(</a
+      ><a name="1439" href="Evaluator1.html#1324" class="Bound"
+      >f</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" href="Evaluator1.html#1416" class="Bound"
+      >e</a
+      ><a name="1442" class="Symbol"
+      >)</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" href="Evaluator1.html#1327" class="Bound"
+      >as</a
+      ><a name="1446"
+      >
+  </a
+      ><a name="1449" class="Symbol"
+      >...</a
+      ><a name="1452"
+      >     </a
+      ><a name="1457" class="Symbol"
+      >|</a
+      ><a name="1458"
+      > </a
+      ><a name="1459" href="Evaluator1.html#1459" class="Bound"
+      >rsf</a
+      ><a name="1462"
+      > </a
+      ><a name="1463" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1464"
+      > </a
+      ><a name="1465" class="Symbol"
+      >_</a
+      ><a name="1466"
+      > </a
+      ><a name="1467" class="Symbol"
+      >=</a
+      ><a name="1468"
+      > </a
+      ><a name="1469" href="Evaluator1.html#138" class="Function"
+      >afterSwitchWeaken</a
+      ><a name="1486"
+      > </a
+      ><a name="1487" href="Evaluator1.html#1318" class="Bound"
+      >d</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" href="Evaluator1.html#1459" class="Bound"
+      >rsf</a
+      ><a name="1492"
+      > </a
+      ><a name="1493" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1494"
+      > </a
+      ><a name="1495" href="Evaluator1.html#1422" class="Bound"
+      >bs</a
+      ><a name="1497"
+      >
+
+  </a
+      ><a name="1501" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1505"
+      > </a
+      ><a name="1506" href="Evaluator1.html#1506" class="Bound"
+      >t</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" class="Symbol"
+      >(</a
+      ><a name="1509" href="Core1.html#2256" class="InductiveConstructor"
+      >weaken</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" href="Evaluator1.html#1516" class="Bound"
+      >w</a
+      ><a name="1517"
+      > </a
+      ><a name="1518" href="Evaluator1.html#1518" class="Bound"
+      >sf</a
+      ><a name="1520" class="Symbol"
+      >)</a
+      ><a name="1521"
+      > </a
+      ><a name="1522" href="Evaluator1.html#1522" class="Bound"
+      >as</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" class="Keyword"
+      >with</a
+      ><a name="1529"
+      > </a
+      ><a name="1530" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="1534"
+      > </a
+      ><a name="1535" href="Evaluator1.html#1506" class="Bound"
+      >t</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" href="Evaluator1.html#1518" class="Bound"
+      >sf</a
+      ><a name="1539"
+      > </a
+      ><a name="1540" href="Evaluator1.html#1522" class="Bound"
+      >as</a
+      ><a name="1542"
+      >
+  </a
+      ><a name="1545" class="Symbol"
+      >...</a
+      ><a name="1548"
+      > </a
+      ><a name="1549" class="Symbol"
+      >|</a
+      ><a name="1550"
+      > </a
+      ><a name="1551" href="Evaluator1.html#1551" class="Bound"
+      >sf'</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1556"
+      > </a
+      ><a name="1557" href="Evaluator1.html#1557" class="Bound"
+      >bs</a
+      ><a name="1559"
+      > </a
+      ><a name="1560" class="Symbol"
+      >=</a
+      ><a name="1561"
+      > </a
+      ><a name="1562" href="Core1.html#2256" class="InductiveConstructor"
+      >weaken</a
+      ><a name="1568"
+      > </a
+      ><a name="1569" href="Evaluator1.html#1516" class="Bound"
+      >w</a
+      ><a name="1570"
+      > </a
+      ><a name="1571" href="Evaluator1.html#1551" class="Bound"
+      >sf'</a
+      ><a name="1574"
+      > </a
+      ><a name="1575" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1576"
+      > </a
+      ><a name="1577" href="Evaluator1.html#1557" class="Bound"
+      >bs</a
+      ><a name="1579"
+      >
+
+
+</a
+      ><a name="1582" class="Comment"
+      >-- Rather than have a two phased evaluation function and an intermediate data structure,</a
+      ><a name="1670"
+      >
+</a
+      ><a name="1671" class="Comment"
+      >-- we instead have eval&#966; return a function from input to updated signal function</a
+      ><a name="1751"
+      >
+</a
+      ><a name="1752" class="Comment"
+      >-- thus eval&#966; does the work of both &#8658;&#966;&#8321; and &#8658;&#966;&#8322;</a
+      ><a name="1799"
+      >
+
+  </a
+      ><a name="1803" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="1808"
+      > </a
+      ><a name="1809" class="Symbol"
+      >:</a
+      ><a name="1810"
+      > </a
+      ><a name="1811" class="Symbol"
+      >{</a
+      ><a name="1812" href="Evaluator1.html#1812" class="Bound"
+      >as</a
+      ><a name="1814"
+      > </a
+      ><a name="1815" href="Evaluator1.html#1815" class="Bound"
+      >bs</a
+      ><a name="1817"
+      > </a
+      ><a name="1818" class="Symbol"
+      >:</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" href="Core1.html#618" class="Function"
+      >SVDesc</a
+      ><a name="1826" class="Symbol"
+      >}</a
+      ><a name="1827"
+      > </a
+      ><a name="1828" class="Symbol"
+      >&#8594;</a
+      ><a name="1829"
+      > </a
+      ><a name="1830" class="Symbol"
+      >{</a
+      ><a name="1831" href="Evaluator1.html#1831" class="Bound"
+      >d</a
+      ><a name="1832"
+      > </a
+      ><a name="1833" class="Symbol"
+      >:</a
+      ><a name="1834"
+      > </a
+      ><a name="1835" href="Core1.html#458" class="Function"
+      >Dec</a
+      ><a name="1838" class="Symbol"
+      >}</a
+      ><a name="1839"
+      > </a
+      ><a name="1840" class="Symbol"
+      >&#8594;</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" href="Core1.html#1260" class="Function"
+      >&#916;t</a
+      ><a name="1844"
+      > </a
+      ><a name="1845" class="Symbol"
+      >&#8594;</a
+      ><a name="1846"
+      > </a
+      ><a name="1847" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="1849"
+      > </a
+      ><a name="1850" href="Evaluator1.html#1812" class="Bound"
+      >as</a
+      ><a name="1852"
+      > </a
+      ><a name="1853" href="Evaluator1.html#1815" class="Bound"
+      >bs</a
+      ><a name="1855"
+      > </a
+      ><a name="1856" href="Evaluator1.html#1831" class="Bound"
+      >d</a
+      ><a name="1857"
+      > </a
+      ><a name="1858" class="Symbol"
+      >&#8594;</a
+      ><a name="1859"
+      > </a
+      ><a name="1860" href="Evaluator1.html#1831" class="Bound"
+      >d</a
+      ><a name="1861"
+      > </a
+      ><a name="1862" href="NeilPrelude1.html#1431" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" href="Core1.html#480" class="Function"
+      >dec</a
+      ><a name="1867"
+      > </a
+      ><a name="1868" class="Symbol"
+      >&#8594;</a
+      ><a name="1869"
+      > </a
+      ><a name="1870" class="Symbol"
+      >(</a
+      ><a name="1871" href="Core1.html#727" class="Datatype"
+      >SVRep</a
+      ><a name="1876"
+      > </a
+      ><a name="1877" href="Evaluator1.html#1812" class="Bound"
+      >as</a
+      ><a name="1879"
+      > </a
+      ><a name="1880" class="Symbol"
+      >&#8594;</a
+      ><a name="1881"
+      > </a
+      ><a name="1882" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" href="Evaluator1.html#1812" class="Bound"
+      >as</a
+      ><a name="1887"
+      > </a
+      ><a name="1888" href="Evaluator1.html#1815" class="Bound"
+      >bs</a
+      ><a name="1890"
+      > </a
+      ><a name="1891" href="Core1.html#480" class="Function"
+      >dec</a
+      ><a name="1894" class="Symbol"
+      >)</a
+      ><a name="1895"
+      > </a
+      ><a name="1896" href="NeilPrelude1.html#4028" class="Function Operator"
+      >1&#215;1</a
+      ><a name="1899"
+      > </a
+      ><a name="1900" href="Core1.html#727" class="Datatype"
+      >SVRep</a
+      ><a name="1905"
+      > </a
+      ><a name="1906" href="Evaluator1.html#1815" class="Bound"
+      >bs</a
+      ><a name="1908"
+      >
+
+  </a
+      ><a name="1912" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="1917"
+      > </a
+      ><a name="1918" href="Evaluator1.html#1918" class="Bound"
+      >t</a
+      ><a name="1919"
+      > </a
+      ><a name="1920" class="Symbol"
+      >(</a
+      ><a name="1921" href="Core1.html#1399" class="InductiveConstructor"
+      >prim</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" href="Evaluator1.html#1926" class="Bound"
+      >f</a
+      ><a name="1927"
+      > </a
+      ><a name="1928" href="Evaluator1.html#1928" class="Bound"
+      >s</a
+      ><a name="1929" class="Symbol"
+      >)</a
+      ><a name="1930"
+      > </a
+      ><a name="1931" class="Symbol"
+      >()</a
+      ><a name="1933"
+      >
+
+  </a
+      ><a name="1937" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="1942"
+      > </a
+      ><a name="1943" href="Evaluator1.html#1943" class="Bound"
+      >t</a
+      ><a name="1944"
+      > </a
+      ><a name="1945" class="Symbol"
+      >(</a
+      ><a name="1946" href="Core1.html#1516" class="InductiveConstructor"
+      >dprim</a
+      ><a name="1951"
+      > </a
+      ><a name="1952" href="Evaluator1.html#1952" class="Bound"
+      >f</a
+      ><a name="1953"
+      > </a
+      ><a name="1954" href="Evaluator1.html#1954" class="Bound"
+      >s</a
+      ><a name="1955" class="Symbol"
+      >)</a
+      ><a name="1956"
+      > </a
+      ><a name="1957" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="1961"
+      > </a
+      ><a name="1962" class="Keyword"
+      >with</a
+      ><a name="1966"
+      > </a
+      ><a name="1967" href="Evaluator1.html#1952" class="Bound"
+      >f</a
+      ><a name="1968"
+      > </a
+      ><a name="1969" href="Evaluator1.html#1943" class="Bound"
+      >t</a
+      ><a name="1970"
+      > </a
+      ><a name="1971" href="Evaluator1.html#1954" class="Bound"
+      >s</a
+      ><a name="1972"
+      >
+  </a
+      ><a name="1975" class="Symbol"
+      >...</a
+      ><a name="1978"
+      > </a
+      ><a name="1979" class="Symbol"
+      >|</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" href="Evaluator1.html#1981" class="Bound"
+      >g</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="Evaluator1.html#1985" class="Bound"
+      >bs</a
+      ><a name="1987"
+      > </a
+      ><a name="1988" class="Symbol"
+      >=</a
+      ><a name="1989"
+      > </a
+      ><a name="1990" class="Symbol"
+      >(&#955;</a
+      ><a name="1992"
+      > </a
+      ><a name="1993" href="Evaluator1.html#1993" class="Bound"
+      >as</a
+      ><a name="1995"
+      > </a
+      ><a name="1996" class="Symbol"
+      >&#8594;</a
+      ><a name="1997"
+      > </a
+      ><a name="1998" href="Core1.html#1516" class="InductiveConstructor"
+      >dprim</a
+      ><a name="2003"
+      > </a
+      ><a name="2004" href="Evaluator1.html#1952" class="Bound"
+      >f</a
+      ><a name="2005"
+      > </a
+      ><a name="2006" class="Symbol"
+      >(</a
+      ><a name="2007" href="Evaluator1.html#1981" class="Bound"
+      >g</a
+      ><a name="2008"
+      > </a
+      ><a name="2009" href="Evaluator1.html#1993" class="Bound"
+      >as</a
+      ><a name="2011" class="Symbol"
+      >))</a
+      ><a name="2013"
+      > </a
+      ><a name="2014" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2015"
+      > </a
+      ><a name="2016" href="Evaluator1.html#1985" class="Bound"
+      >bs</a
+      ><a name="2018"
+      >
+
+  </a
+      ><a name="2022" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2027"
+      > </a
+      ><a name="2028" href="Evaluator1.html#2028" class="Bound"
+      >t</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" class="Symbol"
+      >(</a
+      ><a name="2031" href="Core1.html#1633" class="InductiveConstructor Operator"
+      >_&gt;&gt;&gt;_</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" class="Symbol"
+      >{</a
+      ><a name="2038" href="NeilPrelude1.html#8872" class="InductiveConstructor"
+      >false</a
+      ><a name="2043" class="Symbol"
+      >}</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" href="Evaluator1.html#2045" class="Bound"
+      >sfl</a
+      ><a name="2048"
+      > </a
+      ><a name="2049" href="Evaluator1.html#2049" class="Bound"
+      >sfr</a
+      ><a name="2052" class="Symbol"
+      >)</a
+      ><a name="2053"
+      > </a
+      ><a name="2054" class="Symbol"
+      >_</a
+      ><a name="2055"
+      > </a
+      ><a name="2056" class="Keyword"
+      >with</a
+      ><a name="2060"
+      > </a
+      ><a name="2061" class="Symbol"
+      >(</a
+      ><a name="2062" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2067"
+      > </a
+      ><a name="2068" href="Evaluator1.html#2028" class="Bound"
+      >t</a
+      ><a name="2069"
+      > </a
+      ><a name="2070" href="Evaluator1.html#2045" class="Bound"
+      >sfl</a
+      ><a name="2073"
+      > </a
+      ><a name="2074" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="2078" class="Symbol"
+      >)</a
+      ><a name="2079"
+      >
+  </a
+      ><a name="2082" class="Symbol"
+      >...</a
+      ><a name="2085"
+      > </a
+      ><a name="2086" class="Symbol"
+      >|</a
+      ><a name="2087"
+      > </a
+      ><a name="2088" href="Evaluator1.html#2088" class="Bound"
+      >g</a
+      ><a name="2089"
+      > </a
+      ><a name="2090" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2091"
+      > </a
+      ><a name="2092" href="Evaluator1.html#2092" class="Bound"
+      >bs</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" class="Keyword"
+      >with</a
+      ><a name="2099"
+      > </a
+      ><a name="2100" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" href="Evaluator1.html#2028" class="Bound"
+      >t</a
+      ><a name="2106"
+      > </a
+      ><a name="2107" href="Evaluator1.html#2049" class="Bound"
+      >sfr</a
+      ><a name="2110"
+      > </a
+      ><a name="2111" href="Evaluator1.html#2092" class="Bound"
+      >bs</a
+      ><a name="2113"
+      >
+  </a
+      ><a name="2116" class="Symbol"
+      >...</a
+      ><a name="2119"
+      >    </a
+      ><a name="2123" class="Symbol"
+      >|</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" href="Evaluator1.html#2125" class="Bound"
+      >sfr'</a
+      ><a name="2129"
+      > </a
+      ><a name="2130" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2131"
+      > </a
+      ><a name="2132" href="Evaluator1.html#2132" class="Bound"
+      >cs</a
+      ><a name="2134"
+      > </a
+      ><a name="2135" class="Symbol"
+      >=</a
+      ><a name="2136"
+      > </a
+      ><a name="2137" class="Symbol"
+      >(&#955;</a
+      ><a name="2139"
+      > </a
+      ><a name="2140" href="Evaluator1.html#2140" class="Bound"
+      >as</a
+      ><a name="2142"
+      > </a
+      ><a name="2143" class="Symbol"
+      >&#8594;</a
+      ><a name="2144"
+      > </a
+      ><a name="2145" href="Evaluator1.html#2088" class="Bound"
+      >g</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" href="Evaluator1.html#2140" class="Bound"
+      >as</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" href="Core1.html#1633" class="InductiveConstructor Operator"
+      >&gt;&gt;&gt;</a
+      ><a name="2153"
+      > </a
+      ><a name="2154" href="Evaluator1.html#2125" class="Bound"
+      >sfr'</a
+      ><a name="2158"
+      > </a
+      ><a name="2159" class="Symbol"
+      >)</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2162"
+      > </a
+      ><a name="2163" href="Evaluator1.html#2132" class="Bound"
+      >cs</a
+      ><a name="2165"
+      >
+  </a
+      ><a name="2168" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2173"
+      > </a
+      ><a name="2174" href="Evaluator1.html#2174" class="Bound"
+      >t</a
+      ><a name="2175"
+      > </a
+      ><a name="2176" class="Symbol"
+      >(</a
+      ><a name="2177" href="Core1.html#1633" class="InductiveConstructor Operator"
+      >_&gt;&gt;&gt;_</a
+      ><a name="2182"
+      > </a
+      ><a name="2183" class="Symbol"
+      >{</a
+      ><a name="2184" href="NeilPrelude1.html#8887" class="InductiveConstructor"
+      >true</a
+      ><a name="2188" class="Symbol"
+      >}</a
+      ><a name="2189"
+      > </a
+      ><a name="2190" class="DottedPattern Symbol"
+      >.{</a
+      ><a name="2192" class="Symbol"
+      >_</a
+      ><a name="2193" class="DottedPattern Symbol"
+      >}</a
+      ><a name="2194"
+      > </a
+      ><a name="2195" class="Symbol"
+      >{</a
+      ><a name="2196" href="Evaluator1.html#2196" class="Bound"
+      >AS</a
+      ><a name="2198" class="Symbol"
+      >}</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" class="Symbol"
+      >{_}</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" class="Symbol"
+      >{</a
+      ><a name="2205" href="Evaluator1.html#2205" class="Bound"
+      >CS</a
+      ><a name="2207" class="Symbol"
+      >}</a
+      ><a name="2208"
+      > </a
+      ><a name="2209" href="Evaluator1.html#2209" class="Bound"
+      >sfl</a
+      ><a name="2212"
+      > </a
+      ><a name="2213" href="Evaluator1.html#2213" class="Bound"
+      >sfr</a
+      ><a name="2216" class="Symbol"
+      >)</a
+      ><a name="2217"
+      > </a
+      ><a name="2218" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" class="Keyword"
+      >with</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2233"
+      > </a
+      ><a name="2234" href="Evaluator1.html#2174" class="Bound"
+      >t</a
+      ><a name="2235"
+      > </a
+      ><a name="2236" href="Evaluator1.html#2213" class="Bound"
+      >sfr</a
+      ><a name="2239"
+      > </a
+      ><a name="2240" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="2244"
+      >
+  </a
+      ><a name="2247" class="Symbol"
+      >...</a
+      ><a name="2250"
+      > </a
+      ><a name="2251" class="Symbol"
+      >|</a
+      ><a name="2252"
+      > </a
+      ><a name="2253" href="Evaluator1.html#2253" class="Bound"
+      >g</a
+      ><a name="2254"
+      > </a
+      ><a name="2255" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2256"
+      > </a
+      ><a name="2257" href="Evaluator1.html#2257" class="Bound"
+      >cs</a
+      ><a name="2259"
+      > </a
+      ><a name="2260" class="Symbol"
+      >=</a
+      ><a name="2261"
+      > </a
+      ><a name="2262" href="Evaluator1.html#2294" class="Function"
+      >aux</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2267"
+      > </a
+      ><a name="2268" href="Evaluator1.html#2257" class="Bound"
+      >cs</a
+      ><a name="2270"
+      >
+                 </a
+      ><a name="2288" class="Keyword"
+      >where</a
+      ><a name="2293"
+      > </a
+      ><a name="2294" href="Evaluator1.html#2294" class="Function"
+      >aux</a
+      ><a name="2297"
+      > </a
+      ><a name="2298" class="Symbol"
+      >:</a
+      ><a name="2299"
+      > </a
+      ><a name="2300" href="Core1.html#727" class="Datatype"
+      >SVRep</a
+      ><a name="2305"
+      > </a
+      ><a name="2306" href="Evaluator1.html#2196" class="Bound"
+      >AS</a
+      ><a name="2308"
+      > </a
+      ><a name="2309" class="Symbol"
+      >&#8594;</a
+      ><a name="2310"
+      > </a
+      ><a name="2311" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="2313"
+      > </a
+      ><a name="2314" href="Evaluator1.html#2196" class="Bound"
+      >AS</a
+      ><a name="2316"
+      > </a
+      ><a name="2317" href="Evaluator1.html#2205" class="Bound"
+      >CS</a
+      ><a name="2319"
+      > </a
+      ><a name="2320" href="Core1.html#480" class="Function"
+      >dec</a
+      ><a name="2323"
+      >
+                       </a
+      ><a name="2347" href="Evaluator1.html#2294" class="Function"
+      >aux</a
+      ><a name="2350"
+      > </a
+      ><a name="2351" href="Evaluator1.html#2351" class="Bound"
+      >as</a
+      ><a name="2353"
+      > </a
+      ><a name="2354" class="Keyword"
+      >with</a
+      ><a name="2358"
+      > </a
+      ><a name="2359" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" href="Evaluator1.html#2174" class="Bound"
+      >t</a
+      ><a name="2365"
+      > </a
+      ><a name="2366" href="Evaluator1.html#2209" class="Bound"
+      >sfl</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" href="Evaluator1.html#2351" class="Bound"
+      >as</a
+      ><a name="2372"
+      >
+                       </a
+      ><a name="2396" class="Symbol"
+      >...</a
+      ><a name="2399"
+      > </a
+      ><a name="2400" class="Symbol"
+      >|</a
+      ><a name="2401"
+      > </a
+      ><a name="2402" href="Evaluator1.html#2402" class="Bound"
+      >sfl'</a
+      ><a name="2406"
+      > </a
+      ><a name="2407" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2408"
+      > </a
+      ><a name="2409" href="Evaluator1.html#2409" class="Bound"
+      >bs</a
+      ><a name="2411"
+      > </a
+      ><a name="2412" class="Symbol"
+      >=</a
+      ><a name="2413"
+      > </a
+      ><a name="2414" href="Evaluator1.html#2402" class="Bound"
+      >sfl'</a
+      ><a name="2418"
+      > </a
+      ><a name="2419" href="Core1.html#1633" class="InductiveConstructor Operator"
+      >&gt;&gt;&gt;</a
+      ><a name="2422"
+      > </a
+      ><a name="2423" href="Evaluator1.html#2253" class="Bound"
+      >g</a
+      ><a name="2424"
+      > </a
+      ><a name="2425" href="Evaluator1.html#2409" class="Bound"
+      >bs</a
+      ><a name="2427"
+      >
+
+  </a
+      ><a name="2431" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2436"
+      > </a
+      ><a name="2437" href="Evaluator1.html#2437" class="Bound"
+      >t</a
+      ><a name="2438"
+      > </a
+      ><a name="2439" class="Symbol"
+      >(</a
+      ><a name="2440" href="Core1.html#1756" class="InductiveConstructor Operator"
+      >_***_</a
+      ><a name="2445"
+      > </a
+      ><a name="2446" class="Symbol"
+      >{</a
+      ><a name="2447" href="Evaluator1.html#2447" class="Bound"
+      >d</a
+      ><a name="2448" class="Symbol"
+      >}</a
+      ><a name="2449"
+      > </a
+      ><a name="2450" class="Symbol"
+      >{_}</a
+      ><a name="2453"
+      > </a
+      ><a name="2454" class="Symbol"
+      >{</a
+      ><a name="2455" href="Evaluator1.html#2455" class="Bound"
+      >AS</a
+      ><a name="2457" class="Symbol"
+      >}</a
+      ><a name="2458"
+      > </a
+      ><a name="2459" class="Symbol"
+      >{</a
+      ><a name="2460" href="Evaluator1.html#2460" class="Bound"
+      >BS</a
+      ><a name="2462" class="Symbol"
+      >}</a
+      ><a name="2463"
+      > </a
+      ><a name="2464" class="Symbol"
+      >{</a
+      ><a name="2465" href="Evaluator1.html#2465" class="Bound"
+      >CS</a
+      ><a name="2467" class="Symbol"
+      >}</a
+      ><a name="2468"
+      > </a
+      ><a name="2469" class="Symbol"
+      >{</a
+      ><a name="2470" href="Evaluator1.html#2470" class="Bound"
+      >DS</a
+      ><a name="2472" class="Symbol"
+      >}</a
+      ><a name="2473"
+      > </a
+      ><a name="2474" href="Evaluator1.html#2474" class="Bound"
+      >sfl</a
+      ><a name="2477"
+      > </a
+      ><a name="2478" href="Evaluator1.html#2478" class="Bound"
+      >sfr</a
+      ><a name="2481" class="Symbol"
+      >)</a
+      ><a name="2482"
+      > </a
+      ><a name="2483" href="Evaluator1.html#2483" class="Bound"
+      >p</a
+      ><a name="2484"
+      > </a
+      ><a name="2485" class="Keyword"
+      >with</a
+      ><a name="2489"
+      > </a
+      ><a name="2490" href="BoolProps1.html#380" class="Function"
+      >&#8744;split</a
+      ><a name="2496"
+      > </a
+      ><a name="2497" class="Symbol"
+      >{</a
+      ><a name="2498" href="Evaluator1.html#2447" class="Bound"
+      >d</a
+      ><a name="2499" class="Symbol"
+      >}</a
+      ><a name="2500"
+      > </a
+      ><a name="2501" href="Evaluator1.html#2483" class="Bound"
+      >p</a
+      ><a name="2502"
+      >
+  </a
+      ><a name="2505" class="Symbol"
+      >...</a
+      ><a name="2508"
+      > </a
+      ><a name="2509" class="Symbol"
+      >|</a
+      ><a name="2510"
+      > </a
+      ><a name="2511" href="Evaluator1.html#2511" class="Bound"
+      >pl</a
+      ><a name="2513"
+      > </a
+      ><a name="2514" href="NeilPrelude1.html#3590" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2515"
+      > </a
+      ><a name="2516" href="Evaluator1.html#2516" class="Bound"
+      >pr</a
+      ><a name="2518"
+      > </a
+      ><a name="2519" class="Keyword"
+      >with</a
+      ><a name="2523"
+      > </a
+      ><a name="2524" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" href="Evaluator1.html#2437" class="Bound"
+      >t</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" href="Evaluator1.html#2474" class="Bound"
+      >sfl</a
+      ><a name="2535"
+      > </a
+      ><a name="2536" href="Evaluator1.html#2511" class="Bound"
+      >pl</a
+      ><a name="2538"
+      > </a
+      ><a name="2539" class="Symbol"
+      >|</a
+      ><a name="2540"
+      > </a
+      ><a name="2541" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2546"
+      > </a
+      ><a name="2547" href="Evaluator1.html#2437" class="Bound"
+      >t</a
+      ><a name="2548"
+      > </a
+      ><a name="2549" href="Evaluator1.html#2478" class="Bound"
+      >sfr</a
+      ><a name="2552"
+      > </a
+      ><a name="2553" href="Evaluator1.html#2516" class="Bound"
+      >pr</a
+      ><a name="2555"
+      >
+  </a
+      ><a name="2558" class="Symbol"
+      >...</a
+      ><a name="2561"
+      >   </a
+      ><a name="2564" class="Symbol"
+      >|</a
+      ><a name="2565"
+      > </a
+      ><a name="2566" href="Evaluator1.html#2566" class="Bound"
+      >g</a
+      ><a name="2567"
+      > </a
+      ><a name="2568" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2569"
+      > </a
+      ><a name="2570" href="Evaluator1.html#2570" class="Bound"
+      >cs</a
+      ><a name="2572"
+      > </a
+      ><a name="2573" class="Symbol"
+      >|</a
+      ><a name="2574"
+      > </a
+      ><a name="2575" href="Evaluator1.html#2575" class="Bound"
+      >h</a
+      ><a name="2576"
+      > </a
+      ><a name="2577" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2578"
+      > </a
+      ><a name="2579" href="Evaluator1.html#2579" class="Bound"
+      >ds</a
+      ><a name="2581"
+      > </a
+      ><a name="2582" class="Symbol"
+      >=</a
+      ><a name="2583"
+      > </a
+      ><a name="2584" href="Evaluator1.html#2634" class="Function"
+      >aux</a
+      ><a name="2587"
+      > </a
+      ><a name="2588" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2589"
+      > </a
+      ><a name="2590" href="Evaluator1.html#2570" class="Bound"
+      >cs</a
+      ><a name="2592"
+      > </a
+      ><a name="2593" href="Core1.html#857" class="Function Operator"
+      >+++</a
+      ><a name="2596"
+      > </a
+      ><a name="2597" href="Evaluator1.html#2579" class="Bound"
+      >ds</a
+      ><a name="2599"
+      >
+                            </a
+      ><a name="2628" class="Keyword"
+      >where</a
+      ><a name="2633"
+      > </a
+      ><a name="2634" href="Evaluator1.html#2634" class="Function"
+      >aux</a
+      ><a name="2637"
+      > </a
+      ><a name="2638" class="Symbol"
+      >:</a
+      ><a name="2639"
+      > </a
+      ><a name="2640" href="Core1.html#727" class="Datatype"
+      >SVRep</a
+      ><a name="2645"
+      > </a
+      ><a name="2646" class="Symbol"
+      >(</a
+      ><a name="2647" href="Evaluator1.html#2455" class="Bound"
+      >AS</a
+      ><a name="2649"
+      > </a
+      ><a name="2650" href="Core1.html#181" class="Function Operator"
+      >++</a
+      ><a name="2652"
+      > </a
+      ><a name="2653" href="Evaluator1.html#2460" class="Bound"
+      >BS</a
+      ><a name="2655" class="Symbol"
+      >)</a
+      ><a name="2656"
+      > </a
+      ><a name="2657" class="Symbol"
+      >&#8594;</a
+      ><a name="2658"
+      > </a
+      ><a name="2659" href="Core1.html#1357" class="Datatype"
+      >SF</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" class="Symbol"
+      >(</a
+      ><a name="2663" href="Evaluator1.html#2455" class="Bound"
+      >AS</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" href="Core1.html#181" class="Function Operator"
+      >++</a
+      ><a name="2668"
+      > </a
+      ><a name="2669" href="Evaluator1.html#2460" class="Bound"
+      >BS</a
+      ><a name="2671" class="Symbol"
+      >)</a
+      ><a name="2672"
+      > </a
+      ><a name="2673" class="Symbol"
+      >(</a
+      ><a name="2674" href="Evaluator1.html#2465" class="Bound"
+      >CS</a
+      ><a name="2676"
+      > </a
+      ><a name="2677" href="Core1.html#181" class="Function Operator"
+      >++</a
+      ><a name="2679"
+      > </a
+      ><a name="2680" href="Evaluator1.html#2470" class="Bound"
+      >DS</a
+      ><a name="2682" class="Symbol"
+      >)</a
+      ><a name="2683"
+      > </a
+      ><a name="2684" href="Core1.html#480" class="Function"
+      >dec</a
+      ><a name="2687"
+      >
+                                  </a
+      ><a name="2722" href="Evaluator1.html#2634" class="Function"
+      >aux</a
+      ><a name="2725"
+      > </a
+      ><a name="2726" href="Evaluator1.html#2726" class="Bound"
+      >asbs</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" class="Keyword"
+      >with</a
+      ><a name="2735"
+      > </a
+      ><a name="2736" href="Core1.html#974" class="Function"
+      >svsplit</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" class="Symbol"
+      >{</a
+      ><a name="2745" href="Evaluator1.html#2455" class="Bound"
+      >AS</a
+      ><a name="2747" class="Symbol"
+      >}</a
+      ><a name="2748"
+      > </a
+      ><a name="2749" href="Evaluator1.html#2726" class="Bound"
+      >asbs</a
+      ><a name="2753"
+      >
+                                  </a
+      ><a name="2788" class="Symbol"
+      >...</a
+      ><a name="2791"
+      > </a
+      ><a name="2792" class="Symbol"
+      >|</a
+      ><a name="2793"
+      > </a
+      ><a name="2794" href="Evaluator1.html#2794" class="Bound"
+      >as</a
+      ><a name="2796"
+      > </a
+      ><a name="2797" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2798"
+      > </a
+      ><a name="2799" href="Evaluator1.html#2799" class="Bound"
+      >bs</a
+      ><a name="2801"
+      > </a
+      ><a name="2802" class="Symbol"
+      >=</a
+      ><a name="2803"
+      > </a
+      ><a name="2804" href="Evaluator1.html#2566" class="Bound"
+      >g</a
+      ><a name="2805"
+      > </a
+      ><a name="2806" href="Evaluator1.html#2794" class="Bound"
+      >as</a
+      ><a name="2808"
+      > </a
+      ><a name="2809" href="Core1.html#1756" class="InductiveConstructor Operator"
+      >***</a
+      ><a name="2812"
+      > </a
+      ><a name="2813" href="Evaluator1.html#2575" class="Bound"
+      >h</a
+      ><a name="2814"
+      > </a
+      ><a name="2815" href="Evaluator1.html#2799" class="Bound"
+      >bs</a
+      ><a name="2817"
+      >
+
+  </a
+      ><a name="2821" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2826"
+      > </a
+      ><a name="2827" href="Evaluator1.html#2827" class="Bound"
+      >t</a
+      ><a name="2828"
+      > </a
+      ><a name="2829" class="Symbol"
+      >(</a
+      ><a name="2830" href="Core1.html#1895" class="InductiveConstructor"
+      >loop</a
+      ><a name="2834"
+      > </a
+      ><a name="2835" class="DottedPattern Symbol"
+      >.{</a
+      ><a name="2837" class="Symbol"
+      >_</a
+      ><a name="2838" class="DottedPattern Symbol"
+      >}</a
+      ><a name="2839"
+      > </a
+      ><a name="2840" class="Symbol"
+      >{_}</a
+      ><a name="2843"
+      > </a
+      ><a name="2844" class="Symbol"
+      >{</a
+      ><a name="2845" href="Evaluator1.html#2845" class="Bound"
+      >BS</a
+      ><a name="2847" class="Symbol"
+      >}</a
+      ><a name="2848"
+      > </a
+      ><a name="2849" href="Evaluator1.html#2849" class="Bound"
+      >sfs</a
+      ><a name="2852"
+      > </a
+      ><a name="2853" href="Evaluator1.html#2853" class="Bound"
+      >sff</a
+      ><a name="2856" class="Symbol"
+      >)</a
+      ><a name="2857"
+      > </a
+      ><a name="2858" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="2862"
+      > </a
+      ><a name="2863" class="Keyword"
+      >with</a
+      ><a name="2867"
+      > </a
+      ><a name="2868" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="2873"
+      > </a
+      ><a name="2874" href="Evaluator1.html#2827" class="Bound"
+      >t</a
+      ><a name="2875"
+      > </a
+      ><a name="2876" href="Evaluator1.html#2849" class="Bound"
+      >sfs</a
+      ><a name="2879"
+      > </a
+      ><a name="2880" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="2884"
+      >
+  </a
+      ><a name="2887" class="Symbol"
+      >...</a
+      ><a name="2890"
+      > </a
+      ><a name="2891" class="Symbol"
+      >|</a
+      ><a name="2892"
+      > </a
+      ><a name="2893" href="Evaluator1.html#2893" class="Bound"
+      >g</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2896"
+      > </a
+      ><a name="2897" href="Evaluator1.html#2897" class="Bound"
+      >bsds</a
+      ><a name="2901"
+      > </a
+      ><a name="2902" class="Keyword"
+      >with</a
+      ><a name="2906"
+      > </a
+      ><a name="2907" href="Core1.html#974" class="Function"
+      >svsplit</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" class="Symbol"
+      >{</a
+      ><a name="2916" href="Evaluator1.html#2845" class="Bound"
+      >BS</a
+      ><a name="2918" class="Symbol"
+      >}</a
+      ><a name="2919"
+      > </a
+      ><a name="2920" href="Evaluator1.html#2897" class="Bound"
+      >bsds</a
+      ><a name="2924"
+      >
+  </a
+      ><a name="2927" class="Symbol"
+      >...</a
+      ><a name="2930"
+      >   </a
+      ><a name="2933" class="Symbol"
+      >|</a
+      ><a name="2934"
+      > </a
+      ><a name="2935" href="Evaluator1.html#2935" class="Bound"
+      >bs</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2939"
+      > </a
+      ><a name="2940" href="Evaluator1.html#2940" class="Bound"
+      >ds</a
+      ><a name="2942"
+      > </a
+      ><a name="2943" class="Keyword"
+      >with</a
+      ><a name="2947"
+      > </a
+      ><a name="2948" href="Evaluator1.html#360" class="Function"
+      >eval</a
+      ><a name="2952"
+      > </a
+      ><a name="2953" href="Evaluator1.html#2827" class="Bound"
+      >t</a
+      ><a name="2954"
+      > </a
+      ><a name="2955" href="Evaluator1.html#2853" class="Bound"
+      >sff</a
+      ><a name="2958"
+      > </a
+      ><a name="2959" href="Evaluator1.html#2940" class="Bound"
+      >ds</a
+      ><a name="2961"
+      >
+  </a
+      ><a name="2964" class="Symbol"
+      >...</a
+      ><a name="2967"
+      >    </a
+      ><a name="2971" class="Symbol"
+      >|</a
+      ><a name="2972"
+      > </a
+      ><a name="2973" href="Evaluator1.html#2973" class="Bound"
+      >sff'</a
+      ><a name="2977"
+      > </a
+      ><a name="2978" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="2979"
+      > </a
+      ><a name="2980" href="Evaluator1.html#2980" class="Bound"
+      >cs</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" class="Symbol"
+      >=</a
+      ><a name="2984"
+      > </a
+      ><a name="2985" class="Symbol"
+      >(&#955;</a
+      ><a name="2987"
+      > </a
+      ><a name="2988" href="Evaluator1.html#2988" class="Bound"
+      >as</a
+      ><a name="2990"
+      > </a
+      ><a name="2991" class="Symbol"
+      >&#8594;</a
+      ><a name="2992"
+      > </a
+      ><a name="2993" href="Core1.html#1895" class="InductiveConstructor"
+      >loop</a
+      ><a name="2997"
+      > </a
+      ><a name="2998" class="Symbol"
+      >(</a
+      ><a name="2999" href="Evaluator1.html#2893" class="Bound"
+      >g</a
+      ><a name="3000"
+      > </a
+      ><a name="3001" class="Symbol"
+      >(</a
+      ><a name="3002" href="Evaluator1.html#2988" class="Bound"
+      >as</a
+      ><a name="3004"
+      > </a
+      ><a name="3005" href="Core1.html#857" class="Function Operator"
+      >+++</a
+      ><a name="3008"
+      > </a
+      ><a name="3009" href="Evaluator1.html#2980" class="Bound"
+      >cs</a
+      ><a name="3011" class="Symbol"
+      >))</a
+      ><a name="3013"
+      > </a
+      ><a name="3014" href="Evaluator1.html#2973" class="Bound"
+      >sff'</a
+      ><a name="3018" class="Symbol"
+      >)</a
+      ><a name="3019"
+      > </a
+      ><a name="3020" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3021"
+      > </a
+      ><a name="3022" href="Evaluator1.html#2935" class="Bound"
+      >bs</a
+      ><a name="3024"
+      >
+
+  </a
+      ><a name="3028" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" href="Evaluator1.html#3034" class="Bound"
+      >t</a
+      ><a name="3035"
+      > </a
+      ><a name="3036" class="Symbol"
+      >(</a
+      ><a name="3037" href="Core1.html#2010" class="InductiveConstructor"
+      >switch</a
+      ><a name="3043"
+      > </a
+      ><a name="3044" class="Symbol"
+      >{</a
+      ><a name="3045" href="Evaluator1.html#3045" class="Bound"
+      >d&#8321;</a
+      ><a name="3047" class="Symbol"
+      >}</a
+      ><a name="3048"
+      > </a
+      ><a name="3049" class="Symbol"
+      >{</a
+      ><a name="3050" href="Evaluator1.html#3050" class="Bound"
+      >d&#8322;</a
+      ><a name="3052" class="Symbol"
+      >}</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" href="Evaluator1.html#3054" class="Bound"
+      >sf</a
+      ><a name="3056"
+      > </a
+      ><a name="3057" href="Evaluator1.html#3057" class="Bound"
+      >f</a
+      ><a name="3058" class="Symbol"
+      >)</a
+      ><a name="3059"
+      > </a
+      ><a name="3060" href="Evaluator1.html#3060" class="Bound"
+      >p</a
+      ><a name="3061"
+      > </a
+      ><a name="3062" class="Keyword"
+      >with</a
+      ><a name="3066"
+      > </a
+      ><a name="3067" href="BoolProps1.html#380" class="Function"
+      >&#8744;split</a
+      ><a name="3073"
+      > </a
+      ><a name="3074" class="Symbol"
+      >{</a
+      ><a name="3075" href="Evaluator1.html#3045" class="Bound"
+      >d&#8321;</a
+      ><a name="3077" class="Symbol"
+      >}</a
+      ><a name="3078"
+      > </a
+      ><a name="3079" class="Symbol"
+      >{</a
+      ><a name="3080" href="Evaluator1.html#3050" class="Bound"
+      >d&#8322;</a
+      ><a name="3082" class="Symbol"
+      >}</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" href="Evaluator1.html#3060" class="Bound"
+      >p</a
+      ><a name="3085"
+      >
+  </a
+      ><a name="3088" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3093"
+      > </a
+      ><a name="3094" href="Evaluator1.html#3094" class="Bound"
+      >t</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" class="Symbol"
+      >(</a
+      ><a name="3097" href="Core1.html#2010" class="InductiveConstructor"
+      >switch</a
+      ><a name="3103"
+      > </a
+      ><a name="3104" class="DottedPattern Symbol"
+      >.{</a
+      ><a name="3106" class="Symbol"
+      >_</a
+      ><a name="3107" class="DottedPattern Symbol"
+      >}</a
+      ><a name="3108"
+      > </a
+      ><a name="3109" class="DottedPattern Symbol"
+      >.{</a
+      ><a name="3111" class="Symbol"
+      >_</a
+      ><a name="3112" class="DottedPattern Symbol"
+      >}</a
+      ><a name="3113"
+      > </a
+      ><a name="3114" href="Evaluator1.html#3114" class="Bound"
+      >sf</a
+      ><a name="3116"
+      > </a
+      ><a name="3117" href="Evaluator1.html#3117" class="Bound"
+      >f</a
+      ><a name="3118" class="Symbol"
+      >)</a
+      ><a name="3119"
+      > </a
+      ><a name="3120" class="Symbol"
+      >_</a
+      ><a name="3121"
+      > </a
+      ><a name="3122" class="Symbol"
+      >|</a
+      ><a name="3123"
+      > </a
+      ><a name="3124" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" href="NeilPrelude1.html#3590" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3130"
+      > </a
+      ><a name="3131" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3135"
+      > </a
+      ><a name="3136" class="Keyword"
+      >with</a
+      ><a name="3140"
+      > </a
+      ><a name="3141" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3146"
+      > </a
+      ><a name="3147" href="Evaluator1.html#3094" class="Bound"
+      >t</a
+      ><a name="3148"
+      > </a
+      ><a name="3149" href="Evaluator1.html#3114" class="Bound"
+      >sf</a
+      ><a name="3151"
+      > </a
+      ><a name="3152" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3156"
+      >
+  </a
+      ><a name="3159" class="Symbol"
+      >...</a
+      ><a name="3162"
+      > </a
+      ><a name="3163" class="Symbol"
+      >|</a
+      ><a name="3164"
+      > </a
+      ><a name="3165" href="Evaluator1.html#3165" class="Bound"
+      >g</a
+      ><a name="3166"
+      > </a
+      ><a name="3167" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3168"
+      > </a
+      ><a name="3169" href="NeilPrelude1.html#8387" class="InductiveConstructor"
+      >nothing</a
+      ><a name="3176"
+      >  </a
+      ><a name="3178" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="3179"
+      > </a
+      ><a name="3180" href="Evaluator1.html#3180" class="Bound"
+      >bs</a
+      ><a name="3182"
+      > </a
+      ><a name="3183" class="Symbol"
+      >=</a
+      ><a name="3184"
+      > </a
+      ><a name="3185" class="Symbol"
+      >(&#955;</a
+      ><a name="3187"
+      > </a
+      ><a name="3188" href="Evaluator1.html#3188" class="Bound"
+      >as</a
+      ><a name="3190"
+      > </a
+      ><a name="3191" class="Symbol"
+      >&#8594;</a
+      ><a name="3192"
+      > </a
+      ><a name="3193" href="Core1.html#2010" class="InductiveConstructor"
+      >switch</a
+      ><a name="3199"
+      > </a
+      ><a name="3200" class="Symbol"
+      >(</a
+      ><a name="3201" href="Evaluator1.html#3165" class="Bound"
+      >g</a
+      ><a name="3202"
+      > </a
+      ><a name="3203" href="Evaluator1.html#3188" class="Bound"
+      >as</a
+      ><a name="3205" class="Symbol"
+      >)</a
+      ><a name="3206"
+      > </a
+      ><a name="3207" href="Evaluator1.html#3117" class="Bound"
+      >f</a
+      ><a name="3208" class="Symbol"
+      >)</a
+      ><a name="3209"
+      > </a
+      ><a name="3210" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3211"
+      > </a
+      ><a name="3212" href="Evaluator1.html#3180" class="Bound"
+      >bs</a
+      ><a name="3214"
+      >
+  </a
+      ><a name="3217" class="Symbol"
+      >...</a
+      ><a name="3220"
+      > </a
+      ><a name="3221" class="Symbol"
+      >|</a
+      ><a name="3222"
+      > </a
+      ><a name="3223" class="Symbol"
+      >_</a
+      ><a name="3224"
+      > </a
+      ><a name="3225" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3226"
+      > </a
+      ><a name="3227" href="NeilPrelude1.html#8407" class="InductiveConstructor"
+      >just</a
+      ><a name="3231"
+      > </a
+      ><a name="3232" href="Evaluator1.html#3232" class="Bound"
+      >e</a
+      ><a name="3233"
+      >   </a
+      ><a name="3236" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" class="Symbol"
+      >_</a
+      ><a name="3239"
+      >  </a
+      ><a name="3241" class="Symbol"
+      >=</a
+      ><a name="3242"
+      > </a
+      ><a name="3243" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3248"
+      > </a
+      ><a name="3249" href="Core1.html#1271" class="Function"
+      >t0</a
+      ><a name="3251"
+      > </a
+      ><a name="3252" class="Symbol"
+      >(</a
+      ><a name="3253" href="Evaluator1.html#3117" class="Bound"
+      >f</a
+      ><a name="3254"
+      > </a
+      ><a name="3255" href="Evaluator1.html#3232" class="Bound"
+      >e</a
+      ><a name="3256" class="Symbol"
+      >)</a
+      ><a name="3257"
+      > </a
+      ><a name="3258" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3262"
+      >
+
+  </a
+      ><a name="3266" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3271"
+      > </a
+      ><a name="3272" href="Evaluator1.html#3272" class="Bound"
+      >t</a
+      ><a name="3273"
+      > </a
+      ><a name="3274" class="Symbol"
+      >(</a
+      ><a name="3275" href="Core1.html#2133" class="InductiveConstructor"
+      >dswitch</a
+      ><a name="3282"
+      > </a
+      ><a name="3283" class="Symbol"
+      >{</a
+      ><a name="3284" href="Evaluator1.html#3284" class="Bound"
+      >d&#8321;</a
+      ><a name="3286" class="Symbol"
+      >}</a
+      ><a name="3287"
+      > </a
+      ><a name="3288" class="Symbol"
+      >{</a
+      ><a name="3289" href="Evaluator1.html#3289" class="Bound"
+      >d&#8322;</a
+      ><a name="3291" class="Symbol"
+      >}</a
+      ><a name="3292"
+      > </a
+      ><a name="3293" href="Evaluator1.html#3293" class="Bound"
+      >sf</a
+      ><a name="3295"
+      > </a
+      ><a name="3296" href="Evaluator1.html#3296" class="Bound"
+      >f</a
+      ><a name="3297" class="Symbol"
+      >)</a
+      ><a name="3298"
+      > </a
+      ><a name="3299" href="Evaluator1.html#3299" class="Bound"
+      >p</a
+      ><a name="3300"
+      > </a
+      ><a name="3301" class="Keyword"
+      >with</a
+      ><a name="3305"
+      > </a
+      ><a name="3306" href="BoolProps1.html#380" class="Function"
+      >&#8744;split</a
+      ><a name="3312"
+      > </a
+      ><a name="3313" class="Symbol"
+      >{</a
+      ><a name="3314" href="Evaluator1.html#3284" class="Bound"
+      >d&#8321;</a
+      ><a name="3316" class="Symbol"
+      >}</a
+      ><a name="3317"
+      > </a
+      ><a name="3318" class="Symbol"
+      >{</a
+      ><a name="3319" href="Evaluator1.html#3289" class="Bound"
+      >d&#8322;</a
+      ><a name="3321" class="Symbol"
+      >}</a
+      ><a name="3322"
+      > </a
+      ><a name="3323" href="Evaluator1.html#3299" class="Bound"
+      >p</a
+      ><a name="3324"
+      >
+  </a
+      ><a name="3327" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3332"
+      > </a
+      ><a name="3333" href="Evaluator1.html#3333" class="Bound"
+      >t</a
+      ><a name="3334"
+      > </a
+      ><a name="3335" class="Symbol"
+      >(</a
+      ><a name="3336" href="Core1.html#2133" class="InductiveConstructor"
+      >dswitch</a
+      ><a name="3343"
+      > </a
+      ><a name="3344" class="DottedPattern Symbol"
+      >.{</a
+      ><a name="3346" class="Symbol"
+      >_</a
+      ><a name="3347" class="DottedPattern Symbol"
+      >}</a
+      ><a name="3348"
+      > </a
+      ><a name="3349" class="DottedPattern Symbol"
+      >.{</a
+      ><a name="3351" class="Symbol"
+      >_</a
+      ><a name="3352" class="DottedPattern Symbol"
+      >}</a
+      ><a name="3353"
+      > </a
+      ><a name="3354" href="Evaluator1.html#3354" class="Bound"
+      >sf</a
+      ><a name="3356"
+      > </a
+      ><a name="3357" href="Evaluator1.html#3357" class="Bound"
+      >f</a
+      ><a name="3358" class="Symbol"
+      >)</a
+      ><a name="3359"
+      > </a
+      ><a name="3360" class="Symbol"
+      >_</a
+      ><a name="3361"
+      > </a
+      ><a name="3362" class="Symbol"
+      >|</a
+      ><a name="3363"
+      > </a
+      ><a name="3364" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3368"
+      > </a
+      ><a name="3369" href="NeilPrelude1.html#3590" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3370"
+      > </a
+      ><a name="3371" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3375"
+      > </a
+      ><a name="3376" class="Keyword"
+      >with</a
+      ><a name="3380"
+      > </a
+      ><a name="3381" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3386"
+      > </a
+      ><a name="3387" href="Evaluator1.html#3333" class="Bound"
+      >t</a
+      ><a name="3388"
+      > </a
+      ><a name="3389" href="Evaluator1.html#3354" class="Bound"
+      >sf</a
+      ><a name="3391"
+      > </a
+      ><a name="3392" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3396"
+      >
+  </a
+      ><a name="3399" class="Symbol"
+      >...</a
+      ><a name="3402"
+      > </a
+      ><a name="3403" class="Symbol"
+      >|</a
+      ><a name="3404"
+      > </a
+      ><a name="3405" href="Evaluator1.html#3405" class="Bound"
+      >g</a
+      ><a name="3406"
+      > </a
+      ><a name="3407" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3408"
+      > </a
+      ><a name="3409" href="NeilPrelude1.html#8387" class="InductiveConstructor"
+      >nothing</a
+      ><a name="3416"
+      >  </a
+      ><a name="3418" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="3419"
+      > </a
+      ><a name="3420" href="Evaluator1.html#3420" class="Bound"
+      >bs</a
+      ><a name="3422"
+      > </a
+      ><a name="3423" class="Symbol"
+      >=</a
+      ><a name="3424"
+      > </a
+      ><a name="3425" class="Symbol"
+      >(&#955;</a
+      ><a name="3427"
+      > </a
+      ><a name="3428" href="Evaluator1.html#3428" class="Bound"
+      >as</a
+      ><a name="3430"
+      > </a
+      ><a name="3431" class="Symbol"
+      >&#8594;</a
+      ><a name="3432"
+      > </a
+      ><a name="3433" href="Core1.html#2133" class="InductiveConstructor"
+      >dswitch</a
+      ><a name="3440"
+      > </a
+      ><a name="3441" class="Symbol"
+      >(</a
+      ><a name="3442" href="Evaluator1.html#3405" class="Bound"
+      >g</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" href="Evaluator1.html#3428" class="Bound"
+      >as</a
+      ><a name="3446" class="Symbol"
+      >)</a
+      ><a name="3447"
+      > </a
+      ><a name="3448" href="Evaluator1.html#3357" class="Bound"
+      >f</a
+      ><a name="3449" class="Symbol"
+      >)</a
+      ><a name="3450"
+      > </a
+      ><a name="3451" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3452"
+      > </a
+      ><a name="3453" href="Evaluator1.html#3420" class="Bound"
+      >bs</a
+      ><a name="3455"
+      >
+  </a
+      ><a name="3458" class="Symbol"
+      >...</a
+      ><a name="3461"
+      > </a
+      ><a name="3462" class="Symbol"
+      >|</a
+      ><a name="3463"
+      > </a
+      ><a name="3464" class="Symbol"
+      >_</a
+      ><a name="3465"
+      > </a
+      ><a name="3466" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3467"
+      > </a
+      ><a name="3468" href="NeilPrelude1.html#8407" class="InductiveConstructor"
+      >just</a
+      ><a name="3472"
+      > </a
+      ><a name="3473" href="Evaluator1.html#3473" class="Bound"
+      >e</a
+      ><a name="3474"
+      >   </a
+      ><a name="3477" href="Core1.html#781" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="3478"
+      > </a
+      ><a name="3479" href="Evaluator1.html#3479" class="Bound"
+      >bs</a
+      ><a name="3481"
+      > </a
+      ><a name="3482" class="Keyword"
+      >with</a
+      ><a name="3486"
+      > </a
+      ><a name="3487" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3492"
+      > </a
+      ><a name="3493" href="Core1.html#1271" class="Function"
+      >t0</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" class="Symbol"
+      >(</a
+      ><a name="3497" href="Evaluator1.html#3357" class="Bound"
+      >f</a
+      ><a name="3498"
+      > </a
+      ><a name="3499" href="Evaluator1.html#3473" class="Bound"
+      >e</a
+      ><a name="3500" class="Symbol"
+      >)</a
+      ><a name="3501"
+      > </a
+      ><a name="3502" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3506"
+      >
+  </a
+      ><a name="3509" class="Symbol"
+      >...</a
+      ><a name="3512"
+      >    </a
+      ><a name="3516" class="Symbol"
+      >|</a
+      ><a name="3517"
+      > </a
+      ><a name="3518" href="Evaluator1.html#3518" class="Bound"
+      >g</a
+      ><a name="3519"
+      > </a
+      ><a name="3520" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3521"
+      > </a
+      ><a name="3522" class="Symbol"
+      >_</a
+      ><a name="3523"
+      > </a
+      ><a name="3524" class="Symbol"
+      >=</a
+      ><a name="3525"
+      > </a
+      ><a name="3526" href="Evaluator1.html#3518" class="Bound"
+      >g</a
+      ><a name="3527"
+      > </a
+      ><a name="3528" href="NeilPrelude1.html#3825" class="InductiveConstructor Operator"
+      >&amp;</a
+      ><a name="3529"
+      > </a
+      ><a name="3530" href="Evaluator1.html#3479" class="Bound"
+      >bs</a
+      ><a name="3532"
+      >
+
+  </a
+      ><a name="3536" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3541"
+      > </a
+      ><a name="3542" href="Evaluator1.html#3542" class="Bound"
+      >t</a
+      ><a name="3543"
+      > </a
+      ><a name="3544" class="Symbol"
+      >(</a
+      ><a name="3545" href="Core1.html#2256" class="InductiveConstructor"
+      >weaken</a
+      ><a name="3551"
+      > </a
+      ><a name="3552" class="Symbol"
+      >{</a
+      ><a name="3553" href="NeilPrelude1.html#8872" class="InductiveConstructor"
+      >false</a
+      ><a name="3558" class="Symbol"
+      >}</a
+      ><a name="3559"
+      > </a
+      ><a name="3560" class="Symbol"
+      >_</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" href="Evaluator1.html#3562" class="Bound"
+      >sf</a
+      ><a name="3564" class="Symbol"
+      >)</a
+      ><a name="3565"
+      > </a
+      ><a name="3566" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3570"
+      > </a
+      ><a name="3571" class="Symbol"
+      >=</a
+      ><a name="3572"
+      > </a
+      ><a name="3573" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3578"
+      > </a
+      ><a name="3579" href="Evaluator1.html#3542" class="Bound"
+      >t</a
+      ><a name="3580"
+      > </a
+      ><a name="3581" href="Evaluator1.html#3562" class="Bound"
+      >sf</a
+      ><a name="3583"
+      > </a
+      ><a name="3584" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3588"
+      >
+  </a
+      ><a name="3591" href="Evaluator1.html#1803" class="Function"
+      >eval&#966;</a
+      ><a name="3596"
+      > </a
+      ><a name="3597" href="Evaluator1.html#3597" class="Bound"
+      >t</a
+      ><a name="3598"
+      > </a
+      ><a name="3599" class="Symbol"
+      >(</a
+      ><a name="3600" href="Core1.html#2256" class="InductiveConstructor"
+      >weaken</a
+      ><a name="3606"
+      > </a
+      ><a name="3607" class="Symbol"
+      >{</a
+      ><a name="3608" href="NeilPrelude1.html#8887" class="InductiveConstructor"
+      >true</a
+      ><a name="3612" class="Symbol"
+      >}</a
+      ><a name="3613"
+      > </a
+      ><a name="3614" class="Symbol"
+      >()</a
+      ><a name="3616"
+      > </a
+      ><a name="3617" class="Symbol"
+      >_)</a
+      ><a name="3619"
+      > </a
+      ><a name="3620" href="NeilPrelude1.html#1467" class="InductiveConstructor"
+      >refl</a
+      ><a name="3624"
+      >
+
+</a
+      ></pre
+    ></body
+  ></html
+>

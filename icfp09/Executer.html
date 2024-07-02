@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Executer</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+    </a
+      ><a name="32" class="Symbol"
+      >#-}</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Keyword"
+      >open</a
+      ><a name="41"
+      > </a
+      ><a name="42" class="Keyword"
+      >import</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="60"
+      >
+</a
+      ><a name="61" class="Keyword"
+      >open</a
+      ><a name="65"
+      > </a
+      ><a name="66" class="Keyword"
+      >import</a
+      ><a name="72"
+      > </a
+      ><a name="73" href="Nat.html#69" class="Module"
+      >Nat</a
+      ><a name="76"
+      >
+</a
+      ><a name="77" class="Keyword"
+      >open</a
+      ><a name="81"
+      > </a
+      ><a name="82" class="Keyword"
+      >import</a
+      ><a name="88"
+      > </a
+      ><a name="89" href="Core.html#102" class="Module"
+      >Core</a
+      ><a name="93"
+      >
+</a
+      ><a name="94" class="Keyword"
+      >open</a
+      ><a name="98"
+      > </a
+      ><a name="99" class="Keyword"
+      >import</a
+      ><a name="105"
+      > </a
+      ><a name="106" href="Evaluator.html#145" class="Module"
+      >Evaluator</a
+      ><a name="115"
+      >
+</a
+      ><a name="116" class="Keyword"
+      >open</a
+      ><a name="120"
+      > </a
+      ><a name="121" class="Keyword"
+      >import</a
+      ><a name="127"
+      > </a
+      ><a name="128" href="Vector.html#140" class="Module"
+      >Vector</a
+      ><a name="134"
+      >
+
+</a
+      ><a name="136" class="Keyword"
+      >module</a
+      ><a name="142"
+      > </a
+      ><a name="143" href="Executer.html#143" class="Module"
+      >Executer</a
+      ><a name="151"
+      > </a
+      ><a name="152" class="Keyword"
+      >where</a
+      ><a name="157"
+      >
+
+</a
+      ><a name="159" class="Comment"
+      >-- Run a signal function over a finite amount of predetermined input</a
+      ><a name="227"
+      >
+
+</a
+      ><a name="229" href="Executer.html#229" class="Function"
+      >runSF</a
+      ><a name="234"
+      > </a
+      ><a name="235" class="Symbol"
+      >:</a
+      ><a name="236"
+      > </a
+      ><a name="237" class="Symbol"
+      >{</a
+      ><a name="238" href="Executer.html#238" class="Bound"
+      >as</a
+      ><a name="240"
+      > </a
+      ><a name="241" href="Executer.html#241" class="Bound"
+      >bs</a
+      ><a name="243"
+      > </a
+      ><a name="244" class="Symbol"
+      >:</a
+      ><a name="245"
+      > </a
+      ><a name="246" href="Descriptors.html#425" class="Function"
+      >SVDesc</a
+      ><a name="252" class="Symbol"
+      >}</a
+      ><a name="253"
+      > </a
+      ><a name="254" class="Symbol"
+      >&#8594;</a
+      ><a name="255"
+      > </a
+      ><a name="256" class="Symbol"
+      >{</a
+      ><a name="257" href="Executer.html#257" class="Bound"
+      >d</a
+      ><a name="258"
+      > </a
+      ><a name="259" class="Symbol"
+      >:</a
+      ><a name="260"
+      > </a
+      ><a name="261" href="Descriptors.html#265" class="Function"
+      >Dec</a
+      ><a name="264" class="Symbol"
+      >}</a
+      ><a name="265"
+      > </a
+      ><a name="266" class="Symbol"
+      >&#8594;</a
+      ><a name="267"
+      > </a
+      ><a name="268" class="Symbol"
+      >{</a
+      ><a name="269" href="Executer.html#269" class="Bound"
+      >n</a
+      ><a name="270"
+      > </a
+      ><a name="271" class="Symbol"
+      >:</a
+      ><a name="272"
+      > </a
+      ><a name="273" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="274" class="Symbol"
+      >}</a
+      ><a name="275"
+      > </a
+      ><a name="276" class="Symbol"
+      >&#8594;</a
+      ><a name="277"
+      > </a
+      ><a name="278" href="Vector.html#206" class="Datatype"
+      >Vec</a
+      ><a name="281"
+      > </a
+      ><a name="282" class="Symbol"
+      >(</a
+      ><a name="283" href="Core.html#303" class="Function"
+      >SVRep</a
+      ><a name="288"
+      > </a
+      ><a name="289" href="Executer.html#238" class="Bound"
+      >as</a
+      ><a name="291"
+      > </a
+      ><a name="292" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="293"
+      > </a
+      ><a name="294" href="Core.html#566" class="Function"
+      >&#916;t</a
+      ><a name="296" class="Symbol"
+      >)</a
+      ><a name="297"
+      > </a
+      ><a name="298" href="Executer.html#269" class="Bound"
+      >n</a
+      ><a name="299"
+      > </a
+      ><a name="300" class="Symbol"
+      >&#8594;</a
+      ><a name="301"
+      > </a
+      ><a name="302" href="Core.html#681" class="Datatype"
+      >SF</a
+      ><a name="304"
+      > </a
+      ><a name="305" href="Executer.html#238" class="Bound"
+      >as</a
+      ><a name="307"
+      > </a
+      ><a name="308" href="Executer.html#241" class="Bound"
+      >bs</a
+      ><a name="310"
+      > </a
+      ><a name="311" href="Executer.html#257" class="Bound"
+      >d</a
+      ><a name="312"
+      > </a
+      ><a name="313" class="Symbol"
+      >&#8594;</a
+      ><a name="314"
+      > </a
+      ><a name="315" href="Core.html#681" class="Datatype"
+      >SF</a
+      ><a name="317"
+      > </a
+      ><a name="318" href="Executer.html#238" class="Bound"
+      >as</a
+      ><a name="320"
+      > </a
+      ><a name="321" href="Executer.html#241" class="Bound"
+      >bs</a
+      ><a name="323"
+      > </a
+      ><a name="324" href="Executer.html#257" class="Bound"
+      >d</a
+      ><a name="325"
+      > </a
+      ><a name="326" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="327"
+      > </a
+      ><a name="328" href="Vector.html#206" class="Datatype"
+      >Vec</a
+      ><a name="331"
+      > </a
+      ><a name="332" class="Symbol"
+      >(</a
+      ><a name="333" href="Core.html#303" class="Function"
+      >SVRep</a
+      ><a name="338"
+      > </a
+      ><a name="339" href="Executer.html#241" class="Bound"
+      >bs</a
+      ><a name="341" class="Symbol"
+      >)</a
+      ><a name="342"
+      > </a
+      ><a name="343" href="Executer.html#269" class="Bound"
+      >n</a
+      ><a name="344"
+      >
+</a
+      ><a name="345" href="Executer.html#229" class="Function"
+      >runSF</a
+      ><a name="350"
+      > </a
+      ><a name="351" href="Vector.html#238" class="InductiveConstructor"
+      >[]</a
+      ><a name="353"
+      > </a
+      ><a name="354" href="Executer.html#354" class="Bound"
+      >sf</a
+      ><a name="356"
+      > </a
+      ><a name="357" class="Symbol"
+      >=</a
+      ><a name="358"
+      > </a
+      ><a name="359" href="Executer.html#354" class="Bound"
+      >sf</a
+      ><a name="361"
+      > </a
+      ><a name="362" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="363"
+      > </a
+      ><a name="364" class="InductiveConstructor"
+      >[]</a
+      ><a name="366"
+      >
+</a
+      ><a name="367" href="Executer.html#229" class="Function"
+      >runSF</a
+      ><a name="372"
+      > </a
+      ><a name="373" class="Symbol"
+      >((</a
+      ><a name="375" href="Executer.html#375" class="Bound"
+      >as</a
+      ><a name="377"
+      > </a
+      ><a name="378" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="Executer.html#380" class="Bound"
+      >t</a
+      ><a name="381" class="Symbol"
+      >)</a
+      ><a name="382"
+      > </a
+      ><a name="383" href="Vector.html#253" class="InductiveConstructor Operator"
+      >&#8759;</a
+      ><a name="384"
+      > </a
+      ><a name="385" href="Executer.html#385" class="Bound"
+      >ass</a
+      ><a name="388" class="Symbol"
+      >)</a
+      ><a name="389"
+      > </a
+      ><a name="390" href="Executer.html#390" class="Bound"
+      >sf</a
+      ><a name="392"
+      > </a
+      ><a name="393" class="Keyword"
+      >with</a
+      ><a name="397"
+      > </a
+      ><a name="398" href="Evaluator.html#404" class="Function"
+      >eval</a
+      ><a name="402"
+      > </a
+      ><a name="403" href="Executer.html#380" class="Bound"
+      >t</a
+      ><a name="404"
+      > </a
+      ><a name="405" href="Executer.html#390" class="Bound"
+      >sf</a
+      ><a name="407"
+      > </a
+      ><a name="408" href="Executer.html#375" class="Bound"
+      >as</a
+      ><a name="410"
+      >
+</a
+      ><a name="411" class="Symbol"
+      >...</a
+      ><a name="414"
+      > </a
+      ><a name="415" class="Symbol"
+      >|</a
+      ><a name="416"
+      > </a
+      ><a name="417" href="Executer.html#417" class="Bound"
+      >sf'</a
+      ><a name="420"
+      > </a
+      ><a name="421" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="422"
+      > </a
+      ><a name="423" href="Executer.html#423" class="Bound"
+      >bs</a
+      ><a name="425"
+      > </a
+      ><a name="426" class="Symbol"
+      >=</a
+      ><a name="427"
+      > </a
+      ><a name="428" href="NeilPrelude.html#13252" class="Function"
+      >second</a
+      ><a name="434"
+      > </a
+      ><a name="435" class="Symbol"
+      >(</a
+      ><a name="436" class="InductiveConstructor Operator"
+      >_&#8759;_</a
+      ><a name="439"
+      > </a
+      ><a name="440" href="Executer.html#423" class="Bound"
+      >bs</a
+      ><a name="442" class="Symbol"
+      >)</a
+      ><a name="443"
+      > </a
+      ><a name="444" class="Symbol"
+      >(</a
+      ><a name="445" href="Executer.html#229" class="Function"
+      >runSF</a
+      ><a name="450"
+      > </a
+      ><a name="451" href="Executer.html#385" class="Bound"
+      >ass</a
+      ><a name="454"
+      > </a
+      ><a name="455" href="Executer.html#417" class="Bound"
+      >sf'</a
+      ><a name="458" class="Symbol"
+      >)</a
+      ><a name="459"
+      >
+
+
+</a
+      ><a name="462" class="Comment"
+      >-- Run a signal function that requires no input for n steps at a sampling rate t</a
+      ><a name="542"
+      >
+
+</a
+      ><a name="544" href="Executer.html#544" class="Function"
+      >simpleRun</a
+      ><a name="553"
+      > </a
+      ><a name="554" class="Symbol"
+      >:</a
+      ><a name="555"
+      > </a
+      ><a name="556" class="Symbol"
+      >{</a
+      ><a name="557" href="Executer.html#557" class="Bound"
+      >bs</a
+      ><a name="559"
+      > </a
+      ><a name="560" class="Symbol"
+      >:</a
+      ><a name="561"
+      > </a
+      ><a name="562" href="Descriptors.html#425" class="Function"
+      >SVDesc</a
+      ><a name="568" class="Symbol"
+      >}</a
+      ><a name="569"
+      > </a
+      ><a name="570" class="Symbol"
+      >&#8594;</a
+      ><a name="571"
+      > </a
+      ><a name="572" class="Symbol"
+      >{</a
+      ><a name="573" href="Executer.html#573" class="Bound"
+      >d</a
+      ><a name="574"
+      > </a
+      ><a name="575" class="Symbol"
+      >:</a
+      ><a name="576"
+      > </a
+      ><a name="577" href="Descriptors.html#265" class="Function"
+      >Dec</a
+      ><a name="580" class="Symbol"
+      >}</a
+      ><a name="581"
+      > </a
+      ><a name="582" class="Symbol"
+      >&#8594;</a
+      ><a name="583"
+      > </a
+      ><a name="584" class="Symbol"
+      >(</a
+      ><a name="585" href="Executer.html#585" class="Bound"
+      >n</a
+      ><a name="586"
+      > </a
+      ><a name="587" class="Symbol"
+      >:</a
+      ><a name="588"
+      > </a
+      ><a name="589" href="Nat.html#133" class="Datatype"
+      >&#8469;</a
+      ><a name="590" class="Symbol"
+      >)</a
+      ><a name="591"
+      > </a
+      ><a name="592" class="Symbol"
+      >&#8594;</a
+      ><a name="593"
+      > </a
+      ><a name="594" href="Core.html#566" class="Function"
+      >&#916;t</a
+      ><a name="596"
+      > </a
+      ><a name="597" class="Symbol"
+      >&#8594;</a
+      ><a name="598"
+      > </a
+      ><a name="599" href="Core.html#681" class="Datatype"
+      >SF</a
+      ><a name="601"
+      > </a
+      ><a name="602" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="604"
+      > </a
+      ><a name="605" href="Executer.html#557" class="Bound"
+      >bs</a
+      ><a name="607"
+      > </a
+      ><a name="608" href="Executer.html#573" class="Bound"
+      >d</a
+      ><a name="609"
+      > </a
+      ><a name="610" class="Symbol"
+      >&#8594;</a
+      ><a name="611"
+      > </a
+      ><a name="612" href="Core.html#681" class="Datatype"
+      >SF</a
+      ><a name="614"
+      > </a
+      ><a name="615" href="List.html#162" class="InductiveConstructor"
+      >[]</a
+      ><a name="617"
+      > </a
+      ><a name="618" href="Executer.html#557" class="Bound"
+      >bs</a
+      ><a name="620"
+      > </a
+      ><a name="621" href="Executer.html#573" class="Bound"
+      >d</a
+      ><a name="622"
+      > </a
+      ><a name="623" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="624"
+      > </a
+      ><a name="625" href="Vector.html#206" class="Datatype"
+      >Vec</a
+      ><a name="628"
+      > </a
+      ><a name="629" class="Symbol"
+      >(</a
+      ><a name="630" href="Core.html#303" class="Function"
+      >SVRep</a
+      ><a name="635"
+      > </a
+      ><a name="636" href="Executer.html#557" class="Bound"
+      >bs</a
+      ><a name="638" class="Symbol"
+      >)</a
+      ><a name="639"
+      > </a
+      ><a name="640" href="Executer.html#585" class="Bound"
+      >n</a
+      ><a name="641"
+      >
+</a
+      ><a name="642" href="Executer.html#544" class="Function"
+      >simpleRun</a
+      ><a name="651"
+      > </a
+      ><a name="652" href="Executer.html#652" class="Bound"
+      >n</a
+      ><a name="653"
+      > </a
+      ><a name="654" href="Executer.html#654" class="Bound"
+      >t</a
+      ><a name="655"
+      > </a
+      ><a name="656" href="Executer.html#656" class="Bound"
+      >sf</a
+      ><a name="658"
+      > </a
+      ><a name="659" class="Symbol"
+      >=</a
+      ><a name="660"
+      > </a
+      ><a name="661" href="Executer.html#229" class="Function"
+      >runSF</a
+      ><a name="666"
+      > </a
+      ><a name="667" class="Symbol"
+      >(</a
+      ><a name="668" href="Vector.html#1035" class="Function"
+      >vec</a
+      ><a name="671"
+      > </a
+      ><a name="672" class="Symbol"
+      >(</a
+      ><a name="673" class="InductiveConstructor"
+      >&#10216;&#10217;</a
+      ><a name="675"
+      > </a
+      ><a name="676" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="677"
+      > </a
+      ><a name="678" href="Executer.html#654" class="Bound"
+      >t</a
+      ><a name="679" class="Symbol"
+      >))</a
+      ><a name="681"
+      > </a
+      ><a name="682" href="Executer.html#656" class="Bound"
+      >sf</a
+      ><a name="684"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

@@ -1,0 +1,21 @@
+Functional Reactive Programming (FRP) is an approach to reactive programming
+where systems are structured as networks of functions operating on signals
+(time-varying values). FRP is based on the synchronous data-flow paradigm and
+supports both (an approximation to) continuous-time and discrete-time signals
+(hybrid systems). What sets FRP apart from most other languages for similar
+applications is its support for systems with dynamic structure and for
+higher-order reactive constructs.
+
+This paper contributes towards advancing the state of the art of FRP
+implementation by studying the notion of signal change and change propagation
+in a setting of structurally dynamic networks of n-ary signal functions
+operating on mixed continuous-time and discrete-time signals. We first define
+an ideal denotational semantics (time is truly continuous) for this kind of
+FRP, along with temporal properties, expressed in temporal logic, of signals
+and signal functions pertaining to change and change propagation. Using this
+framework, we then show how to reason about change; specifically, we identify
+and justify a number of possible optimisations, such as avoiding recomputation
+of unchanging values. Note that due to structural dynamism, and the fact that
+the output of a signal function may change because time is passing even if the
+input is unchanging, the problem is significantly more complex than standard
+change propagation in networks with static structure.

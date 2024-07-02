@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Neil Sculthorpe</title>
+<link rel="stylesheet" type="text/css" href="../roundbox.css"/>
+<link rel="stylesheet" type="text/css" href="../nas.css"/>
+
+</head>
+
+<body>
+<h1>Safe Functional Reactive Programming though Dependent Types</h1>
+
+<p>
+Accompanying code for the paper <a href="../publications/safe-FRP-types.pdf">Safe Functional Programming though Dependent Types</a> can be accessed here.  You can either <a href="icfpCode.tar.gz">download the Agda source files</a>, or browse them as html.  There is also a related <a href="safefrp-icfp09.tar.gz">Haskell implementation</a> that encodes decoupledness using Type Families.  This implementation diverges somewhat from the paper, but provides greater functionality.
+</p>
+
+<p>
+There are three Agda versions available:
+</p>
+
+<ul>
+
+<li>
+The first version (icfp09) corresponds to the semantics given in the paper, but does not include uninitialised signals.
+</li>
+
+<li>
+The second version (icfp09Full) is the full implementation including uninitialised signals.  icfp09 is far simpler and more readable, as the presence of uninitialised signals requires quite a lot of coercing of signals, along with accompanying proofs to ensure this is safe.  They also require a separate evaluation function for time zero.
+</li>
+
+<li>
+<p>
+The third version (icfp09Set1) is a basic implementation that does not use the "type-in-type" Agda option.  The disadvantage of this version is duplicated and ugly code (as Agda does not support universe polymorphism), but it does avoid any issues about the "type-in-type" flag making Agda unsound.
+
+The main purpose of this version is to demonstrate that we can translate the other implementations (to avoid using the "type-in-type" flag) in a straightforward and mechanical fashion, and that we're not exploiting the unsoundness of this option.
+</p>
+</li>
+
+</ul>
+
+
+
+<h2>Implementation Without Uninitialised Signals (icfp09)</h2>
+
+<ul>
+
+<li>
+<a href="Descriptors.html">Descriptors.agda</a>
+</li>
+
+<li>
+<a href="Core.html">Core.agda</a>
+</li>
+
+<li>
+<a href="Evaluator.html">Evaluator.agda</a>
+</li>
+
+<li>
+<a href="Primitives.html">Primitives.agda</a>
+</li>
+
+<li>
+<a href="Library.html">Library.agda</a>
+</li>
+
+<li>
+<a href="Executer.html">Executer.agda</a>
+</li>
+
+</ul>
+
+
+<h2>Full Implementation (icfp09Full)</h2>
+
+<ul>
+
+<li>
+<a href="DescriptorsFull.html">DescriptorsFull.agda</a>
+</li>
+
+<li>
+<a href="CoreFull.html">CoreFull.agda</a>
+</li>
+
+<li>
+<a href="EvaluatorFull.html">EvaluatorFull.agda</a>
+</li>
+
+<li>
+<a href="PrimitivesFull.html">PrimitivesFull.agda</a>
+</li>
+
+<li>
+<a href="LibraryFull.html">LibraryFull.agda</a>
+</li>
+
+<li>
+<a href="ExecuterFull.html">ExecuterFull.agda</a>
+</li>
+
+</ul>
+
+
+<h2>Basic Implementation without "type-in-type" Option (icfp09Set1)</h2>
+
+<ul>
+
+<li>
+<a href="Core1.html">Core1.agda</a>
+</li>
+
+<li>
+<a href="Evaluator1.html">Evaluator1.agda</a>
+</li>
+
+<li>
+<a href="Primitives1.html">Primitives1.agda</a>
+</li>
+
+<li>
+<a href="Library1.html">Library1.agda</a>
+</li>
+
+</ul>
+
+<hr />
+
+
+<p>
+<i>Last updated 18th March 2024.</i>
+</p>
+
+<p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10-blue"
+        alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+
+    <a href="http://www.haskellers.com/user/1060"><img
+        src="http://www.haskellers.com/static/badge.png"
+        alt="I'm a Haskeller" /></a>
+
+</p>
+
+</body>
+</html>

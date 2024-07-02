@@ -1,0 +1,18 @@
+This paper describes our experience using the HERMIT toolkit to apply
+well-known transformations to the internal core language of the
+Glasgow Haskell Compiler.  HERMIT provides several mechanisms to
+support writing general-purpose transformations: a domain-specific
+language for strategic programming specialized to GHC's core
+language, a library of primitive rewrites, and a shell-style--based
+scripting language for interactive and batch usage.
+
+There are many program transformation techniques that have been
+described in the literature but have not been mechanized and made
+available inside GHC --- either because they are too specialized to
+include in a general-purpose compiler, or because the developers'
+interest is in theory rather than implementation. The mechanization
+process can often reveal pragmatic obstacles that are glossed over in
+pen-and-paper proofs; understanding and removing these obstacles is our
+concern. Using HERMIT, we implement eleven examples of three program
+transformations, report on our experience, and describe improvements
+made in the process.

@@ -1,0 +1,2986 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >TemporalFunction</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type  </a
+      ><a name="29" class="Symbol"
+      >#-}</a
+      ><a name="32"
+      >
+
+</a
+      ><a name="34" class="Keyword"
+      >open</a
+      ><a name="38"
+      > </a
+      ><a name="39" class="Keyword"
+      >import</a
+      ><a name="45"
+      > </a
+      ><a name="46" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="57"
+      >
+
+</a
+      ><a name="59" class="Keyword"
+      >module</a
+      ><a name="65"
+      > </a
+      ><a name="66" href="TemporalFunction.html#66" class="Module"
+      >TemporalFunction</a
+      ><a name="82"
+      >
+
+  </a
+      ><a name="86" class="Symbol"
+      >(</a
+      ><a name="87" href="TemporalFunction.html#87" class="Bound"
+      >Time</a
+      ><a name="91"
+      > </a
+      ><a name="92" class="Symbol"
+      >:</a
+      ><a name="93"
+      > </a
+      ><a name="94" class="PrimitiveType"
+      >Set</a
+      ><a name="97" class="Symbol"
+      >)</a
+      ><a name="98"
+      >
+  </a
+      ><a name="101" class="Symbol"
+      >(</a
+      ><a name="102" href="TemporalFunction.html#102" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="106"
+      >  </a
+      ><a name="108" class="Symbol"
+      >:</a
+      ><a name="109"
+      > </a
+      ><a name="110" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="113"
+      > </a
+      ><a name="114" href="TemporalFunction.html#87" class="Bound"
+      >Time</a
+      ><a name="118" class="Symbol"
+      >)</a
+      ><a name="119"
+      >
+  </a
+      ><a name="122" class="Symbol"
+      >(</a
+      ><a name="123" href="TemporalFunction.html#123" class="Bound"
+      >irreflex</a
+      ><a name="131"
+      > </a
+      ><a name="132" class="Symbol"
+      >:</a
+      ><a name="133"
+      > </a
+      ><a name="134" href="NeilPrelude.html#1620" class="Function"
+      >Irreflexive</a
+      ><a name="145"
+      > </a
+      ><a name="146" href="TemporalFunction.html#102" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="150" class="Symbol"
+      >)</a
+      ><a name="151"
+      >
+  </a
+      ><a name="154" class="Symbol"
+      >(</a
+      ><a name="155" href="TemporalFunction.html#155" class="Bound"
+      >transit</a
+      ><a name="162"
+      > </a
+      ><a name="163" class="Symbol"
+      >:</a
+      ><a name="164"
+      > </a
+      ><a name="165" href="NeilPrelude.html#2349" class="Function"
+      >Transitive</a
+      ><a name="175"
+      > </a
+      ><a name="176" href="TemporalFunction.html#102" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="180" class="Symbol"
+      >)</a
+      ><a name="181"
+      >
+
+</a
+      ><a name="183" class="Keyword"
+      >where</a
+      ><a name="188"
+      >
+
+</a
+      ><a name="190" class="Comment"
+      >-------------------------------------------------------</a
+      ><a name="245"
+      >
+
+</a
+      ><a name="247" class="Keyword"
+      >import</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="TemporalLogic.html#86" class="Module"
+      >TemporalLogic</a
+      ><a name="267"
+      >
+</a
+      ><a name="268" class="Keyword"
+      >open</a
+      ><a name="272"
+      > </a
+      ><a name="273" href="TemporalLogic.html#86" class="Module"
+      >TemporalLogic</a
+      ><a name="286"
+      > </a
+      ><a name="287" href="TemporalFunction.html#87" class="Bound"
+      >Time</a
+      ><a name="291"
+      > </a
+      ><a name="292" href="TemporalFunction.html#102" class="Bound Operator"
+      >_&lt;'_</a
+      ><a name="296"
+      > </a
+      ><a name="297" href="TemporalFunction.html#123" class="Bound"
+      >irreflex</a
+      ><a name="305"
+      > </a
+      ><a name="306" href="TemporalFunction.html#155" class="Bound"
+      >transit</a
+      ><a name="313"
+      > </a
+      ><a name="314" class="Keyword"
+      >public</a
+      ><a name="320"
+      >
+
+</a
+      ><a name="322" class="Comment"
+      >-------------------------------------------------------</a
+      ><a name="377"
+      >
+
+</a
+      ><a name="379" class="Keyword"
+      >infix</a
+      ><a name="384"
+      > </a
+      ><a name="385" class="Number"
+      >3</a
+      ><a name="386"
+      > _&#8784;_
+
+</a
+      ><a name="392" class="Comment"
+      >-------------------------------------------------------</a
+      ><a name="447"
+      >
+
+</a
+      ><a name="449" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="453"
+      > </a
+      ><a name="454" class="Symbol"
+      >:</a
+      ><a name="455"
+      > </a
+      ><a name="456" class="PrimitiveType"
+      >Set</a
+      ><a name="459"
+      > </a
+      ><a name="460" class="Symbol"
+      >&#8594;</a
+      ><a name="461"
+      > </a
+      ><a name="462" class="PrimitiveType"
+      >Set</a
+      ><a name="465"
+      >
+</a
+      ><a name="466" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="470"
+      > </a
+      ><a name="471" href="TemporalFunction.html#471" class="Bound"
+      >A</a
+      ><a name="472"
+      > </a
+      ><a name="473" class="Symbol"
+      >=</a
+      ><a name="474"
+      > </a
+      ><a name="475" href="TemporalFunction.html#87" class="Bound"
+      >Time</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Symbol"
+      >&#8594;</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="TemporalFunction.html#471" class="Bound"
+      >A</a
+      ><a name="483"
+      >
+
+</a
+      ><a name="485" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="489"
+      > </a
+      ><a name="490" class="Symbol"
+      >:</a
+      ><a name="491"
+      > </a
+      ><a name="492" class="PrimitiveType"
+      >Set</a
+      ><a name="495"
+      > </a
+      ><a name="496" class="Symbol"
+      >&#8594;</a
+      ><a name="497"
+      > </a
+      ><a name="498" class="PrimitiveType"
+      >Set</a
+      ><a name="501"
+      > </a
+      ><a name="502" class="Symbol"
+      >&#8594;</a
+      ><a name="503"
+      > </a
+      ><a name="504" class="PrimitiveType"
+      >Set</a
+      ><a name="507"
+      >
+</a
+      ><a name="508" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="TemporalFunction.html#513" class="Bound"
+      >A</a
+      ><a name="514"
+      > </a
+      ><a name="515" href="TemporalFunction.html#515" class="Bound"
+      >B</a
+      ><a name="516"
+      > </a
+      ><a name="517" class="Symbol"
+      >=</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="523"
+      > </a
+      ><a name="524" href="TemporalFunction.html#513" class="Bound"
+      >A</a
+      ><a name="525"
+      > </a
+      ><a name="526" class="Symbol"
+      >&#8594;</a
+      ><a name="527"
+      > </a
+      ><a name="528" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="532"
+      > </a
+      ><a name="533" href="TemporalFunction.html#515" class="Bound"
+      >B</a
+      ><a name="534"
+      >
+
+</a
+      ><a name="536" class="Comment"
+      >-------------------------------------------------------</a
+      ><a name="591"
+      >
+
+</a
+      ><a name="593" class="Comment"
+      >-- time varying equality</a
+      ><a name="617"
+      >
+
+</a
+      ><a name="619" href="TemporalFunction.html#619" class="Function Operator"
+      >_&#8784;_</a
+      ><a name="622"
+      > </a
+      ><a name="623" class="Symbol"
+      >:</a
+      ><a name="624"
+      > </a
+      ><a name="625" class="Symbol"
+      >{</a
+      ><a name="626" href="TemporalFunction.html#626" class="Bound"
+      >A</a
+      ><a name="627"
+      > </a
+      ><a name="628" class="Symbol"
+      >:</a
+      ><a name="629"
+      > </a
+      ><a name="630" class="PrimitiveType"
+      >Set</a
+      ><a name="633" class="Symbol"
+      >}</a
+      ><a name="634"
+      > </a
+      ><a name="635" class="Symbol"
+      >&#8594;</a
+      ><a name="636"
+      > </a
+      ><a name="637" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="641"
+      > </a
+      ><a name="642" href="TemporalFunction.html#626" class="Bound"
+      >A</a
+      ><a name="643"
+      > </a
+      ><a name="644" class="Symbol"
+      >&#8594;</a
+      ><a name="645"
+      > </a
+      ><a name="646" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="650"
+      > </a
+      ><a name="651" href="TemporalFunction.html#626" class="Bound"
+      >A</a
+      ><a name="652"
+      > </a
+      ><a name="653" class="Symbol"
+      >&#8594;</a
+      ><a name="654"
+      > </a
+      ><a name="655" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="660"
+      >
+</a
+      ><a name="661" class="Symbol"
+      >(</a
+      ><a name="662" href="TemporalFunction.html#662" class="Bound"
+      >p</a
+      ><a name="663"
+      > </a
+      ><a name="664" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="TemporalFunction.html#666" class="Bound"
+      >q</a
+      ><a name="667" class="Symbol"
+      >)</a
+      ><a name="668"
+      > </a
+      ><a name="669" href="TemporalFunction.html#669" class="Bound"
+      >t</a
+      ><a name="670"
+      > </a
+      ><a name="671" class="Symbol"
+      >=</a
+      ><a name="672"
+      > </a
+      ><a name="673" href="TemporalFunction.html#662" class="Bound"
+      >p</a
+      ><a name="674"
+      > </a
+      ><a name="675" href="TemporalFunction.html#669" class="Bound"
+      >t</a
+      ><a name="676"
+      > </a
+      ><a name="677" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="678"
+      > </a
+      ><a name="679" href="TemporalFunction.html#666" class="Bound"
+      >q</a
+      ><a name="680"
+      > </a
+      ><a name="681" href="TemporalFunction.html#669" class="Bound"
+      >t</a
+      ><a name="682"
+      >
+
+</a
+      ><a name="684" href="TemporalFunction.html#684" class="Function"
+      >EqualTo</a
+      ><a name="691"
+      > </a
+      ><a name="692" class="Symbol"
+      >:</a
+      ><a name="693"
+      > </a
+      ><a name="694" class="Symbol"
+      >{</a
+      ><a name="695" href="TemporalFunction.html#695" class="Bound"
+      >A</a
+      ><a name="696"
+      > </a
+      ><a name="697" class="Symbol"
+      >:</a
+      ><a name="698"
+      > </a
+      ><a name="699" class="PrimitiveType"
+      >Set</a
+      ><a name="702" class="Symbol"
+      >}</a
+      ><a name="703"
+      > </a
+      ><a name="704" class="Symbol"
+      >&#8594;</a
+      ><a name="705"
+      > </a
+      ><a name="706" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="710"
+      > </a
+      ><a name="711" href="TemporalFunction.html#695" class="Bound"
+      >A</a
+      ><a name="712"
+      > </a
+      ><a name="713" class="Symbol"
+      >&#8594;</a
+      ><a name="714"
+      > </a
+      ><a name="715" href="TemporalFunction.html#695" class="Bound"
+      >A</a
+      ><a name="716"
+      > </a
+      ><a name="717" class="Symbol"
+      >&#8594;</a
+      ><a name="718"
+      > </a
+      ><a name="719" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="724"
+      >
+</a
+      ><a name="725" href="TemporalFunction.html#684" class="Function"
+      >EqualTo</a
+      ><a name="732"
+      > </a
+      ><a name="733" href="TemporalFunction.html#733" class="Bound"
+      >s</a
+      ><a name="734"
+      > </a
+      ><a name="735" href="TemporalFunction.html#735" class="Bound"
+      >a</a
+      ><a name="736"
+      > </a
+      ><a name="737" href="TemporalFunction.html#737" class="Bound"
+      >t</a
+      ><a name="738"
+      > </a
+      ><a name="739" class="Symbol"
+      >=</a
+      ><a name="740"
+      > </a
+      ><a name="741" href="TemporalFunction.html#733" class="Bound"
+      >s</a
+      ><a name="742"
+      > </a
+      ><a name="743" href="TemporalFunction.html#737" class="Bound"
+      >t</a
+      ><a name="744"
+      > </a
+      ><a name="745" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="746"
+      > </a
+      ><a name="747" href="TemporalFunction.html#735" class="Bound"
+      >a</a
+      ><a name="748"
+      >
+
+</a
+      ><a name="750" href="TemporalFunction.html#750" class="Function"
+      >EqualAt</a
+      ><a name="757"
+      > </a
+      ><a name="758" class="Symbol"
+      >:</a
+      ><a name="759"
+      > </a
+      ><a name="760" class="Symbol"
+      >{</a
+      ><a name="761" href="TemporalFunction.html#761" class="Bound"
+      >A</a
+      ><a name="762"
+      > </a
+      ><a name="763" class="Symbol"
+      >:</a
+      ><a name="764"
+      > </a
+      ><a name="765" class="PrimitiveType"
+      >Set</a
+      ><a name="768" class="Symbol"
+      >}</a
+      ><a name="769"
+      > </a
+      ><a name="770" class="Symbol"
+      >&#8594;</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="776"
+      > </a
+      ><a name="777" href="TemporalFunction.html#761" class="Bound"
+      >A</a
+      ><a name="778"
+      > </a
+      ><a name="779" class="Symbol"
+      >&#8594;</a
+      ><a name="780"
+      > </a
+      ><a name="781" href="TemporalFunction.html#87" class="Bound"
+      >Time</a
+      ><a name="785"
+      > </a
+      ><a name="786" class="Symbol"
+      >&#8594;</a
+      ><a name="787"
+      > </a
+      ><a name="788" href="TemporalLogic.html#388" class="Function"
+      >TPred</a
+      ><a name="793"
+      >
+</a
+      ><a name="794" href="TemporalFunction.html#750" class="Function"
+      >EqualAt</a
+      ><a name="801"
+      > </a
+      ><a name="802" href="TemporalFunction.html#802" class="Bound"
+      >s</a
+      ><a name="803"
+      > </a
+      ><a name="804" href="TemporalFunction.html#804" class="Bound"
+      >t</a
+      ><a name="805"
+      > </a
+      ><a name="806" class="Symbol"
+      >=</a
+      ><a name="807"
+      > </a
+      ><a name="808" href="TemporalFunction.html#684" class="Function"
+      >EqualTo</a
+      ><a name="815"
+      > </a
+      ><a name="816" href="TemporalFunction.html#802" class="Bound"
+      >s</a
+      ><a name="817"
+      > </a
+      ><a name="818" class="Symbol"
+      >(</a
+      ><a name="819" href="TemporalFunction.html#802" class="Bound"
+      >s</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="TemporalFunction.html#804" class="Bound"
+      >t</a
+      ><a name="822" class="Symbol"
+      >)</a
+      ><a name="823"
+      >
+
+</a
+      ><a name="825" class="Comment"
+      >-------------------------------------------------------</a
+      ><a name="880"
+      >
+
+</a
+      ><a name="882" class="Comment"
+      >-- Properties of Temporal Functions</a
+      ><a name="917"
+      >
+
+</a
+      ><a name="919" href="TemporalFunction.html#919" class="Function"
+      >Contractive</a
+      ><a name="930"
+      > </a
+      ><a name="931" class="Symbol"
+      >:</a
+      ><a name="932"
+      > </a
+      ><a name="933" class="Symbol"
+      >{</a
+      ><a name="934" href="TemporalFunction.html#934" class="Bound"
+      >A</a
+      ><a name="935"
+      > </a
+      ><a name="936" href="TemporalFunction.html#936" class="Bound"
+      >B</a
+      ><a name="937"
+      > </a
+      ><a name="938" class="Symbol"
+      >:</a
+      ><a name="939"
+      > </a
+      ><a name="940" class="PrimitiveType"
+      >Set</a
+      ><a name="943" class="Symbol"
+      >}</a
+      ><a name="944"
+      > </a
+      ><a name="945" class="Symbol"
+      >&#8594;</a
+      ><a name="946"
+      > </a
+      ><a name="947" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="951"
+      > </a
+      ><a name="952" href="TemporalFunction.html#934" class="Bound"
+      >A</a
+      ><a name="953"
+      > </a
+      ><a name="954" href="TemporalFunction.html#936" class="Bound"
+      >B</a
+      ><a name="955"
+      > </a
+      ><a name="956" class="Symbol"
+      >&#8594;</a
+      ><a name="957"
+      > </a
+      ><a name="958" class="PrimitiveType"
+      >Set</a
+      ><a name="961"
+      >
+</a
+      ><a name="962" href="TemporalFunction.html#919" class="Function"
+      >Contractive</a
+      ><a name="973"
+      > </a
+      ><a name="974" class="Symbol"
+      >{</a
+      ><a name="975" href="TemporalFunction.html#975" class="Bound"
+      >A</a
+      ><a name="976" class="Symbol"
+      >}</a
+      ><a name="977"
+      > </a
+      ><a name="978" href="TemporalFunction.html#978" class="Bound"
+      >f</a
+      ><a name="979"
+      > </a
+      ><a name="980" class="Symbol"
+      >=</a
+      ><a name="981"
+      > </a
+      ><a name="982" class="Symbol"
+      >(</a
+      ><a name="983" href="TemporalFunction.html#983" class="Bound"
+      >s&#8321;</a
+      ><a name="985"
+      > </a
+      ><a name="986" href="TemporalFunction.html#986" class="Bound"
+      >s&#8322;</a
+      ><a name="988"
+      > </a
+      ><a name="989" class="Symbol"
+      >:</a
+      ><a name="990"
+      > </a
+      ><a name="991" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="TemporalFunction.html#975" class="Bound"
+      >A</a
+      ><a name="997" class="Symbol"
+      >)</a
+      ><a name="998"
+      > </a
+      ><a name="999" class="Symbol"
+      >&#8594;</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1007"
+      > </a
+      ><a name="1008" class="Symbol"
+      >(</a
+      ><a name="1009" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="1010"
+      > </a
+      ><a name="1011" class="Symbol"
+      >(</a
+      ><a name="1012" href="TemporalFunction.html#983" class="Bound"
+      >s&#8321;</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1016"
+      > </a
+      ><a name="1017" href="TemporalFunction.html#986" class="Bound"
+      >s&#8322;</a
+      ><a name="1019" class="Symbol"
+      >)</a
+      ><a name="1020"
+      > </a
+      ><a name="1021" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1022"
+      > </a
+      ><a name="1023" href="TemporalFunction.html#978" class="Bound"
+      >f</a
+      ><a name="1024"
+      > </a
+      ><a name="1025" href="TemporalFunction.html#983" class="Bound"
+      >s&#8321;</a
+      ><a name="1027"
+      > </a
+      ><a name="1028" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1029"
+      > </a
+      ><a name="1030" href="TemporalFunction.html#978" class="Bound"
+      >f</a
+      ><a name="1031"
+      > </a
+      ><a name="1032" href="TemporalFunction.html#986" class="Bound"
+      >s&#8322;</a
+      ><a name="1034" class="Symbol"
+      >)</a
+      ><a name="1035"
+      >
+
+</a
+      ><a name="1037" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="1049"
+      > </a
+      ><a name="1050" class="Symbol"
+      >:</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" class="Symbol"
+      >{</a
+      ><a name="1053" href="TemporalFunction.html#1053" class="Bound"
+      >A</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="TemporalFunction.html#1055" class="Bound"
+      >B</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" class="Symbol"
+      >:</a
+      ><a name="1058"
+      > </a
+      ><a name="1059" class="PrimitiveType"
+      >Set</a
+      ><a name="1062" class="Symbol"
+      >}</a
+      ><a name="1063"
+      > </a
+      ><a name="1064" class="Symbol"
+      >&#8594;</a
+      ><a name="1065"
+      > </a
+      ><a name="1066" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="1070"
+      > </a
+      ><a name="1071" href="TemporalFunction.html#1053" class="Bound"
+      >A</a
+      ><a name="1072"
+      > </a
+      ><a name="1073" href="TemporalFunction.html#1055" class="Bound"
+      >B</a
+      ><a name="1074"
+      > </a
+      ><a name="1075" class="Symbol"
+      >&#8594;</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" class="PrimitiveType"
+      >Set</a
+      ><a name="1080"
+      >
+</a
+      ><a name="1081" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="1093"
+      > </a
+      ><a name="1094" class="Symbol"
+      >{</a
+      ><a name="1095" href="TemporalFunction.html#1095" class="Bound"
+      >A</a
+      ><a name="1096" class="Symbol"
+      >}</a
+      ><a name="1097"
+      > </a
+      ><a name="1098" href="TemporalFunction.html#1098" class="Bound"
+      >f</a
+      ><a name="1099"
+      > </a
+      ><a name="1100" class="Symbol"
+      >=</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" class="Symbol"
+      >(</a
+      ><a name="1103" href="TemporalFunction.html#1103" class="Bound"
+      >s&#8321;</a
+      ><a name="1105"
+      > </a
+      ><a name="1106" href="TemporalFunction.html#1106" class="Bound"
+      >s&#8322;</a
+      ><a name="1108"
+      > </a
+      ><a name="1109" class="Symbol"
+      >:</a
+      ><a name="1110"
+      > </a
+      ><a name="1111" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1115"
+      > </a
+      ><a name="1116" href="TemporalFunction.html#1095" class="Bound"
+      >A</a
+      ><a name="1117" class="Symbol"
+      >)</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" class="Symbol"
+      >&#8594;</a
+      ><a name="1120"
+      > </a
+      ><a name="1121" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1127"
+      > </a
+      ><a name="1128" class="Symbol"
+      >(</a
+      ><a name="1129" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="1131"
+      > </a
+      ><a name="1132" class="Symbol"
+      >(</a
+      ><a name="1133" href="TemporalFunction.html#1103" class="Bound"
+      >s&#8321;</a
+      ><a name="1135"
+      > </a
+      ><a name="1136" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1137"
+      > </a
+      ><a name="1138" href="TemporalFunction.html#1106" class="Bound"
+      >s&#8322;</a
+      ><a name="1140" class="Symbol"
+      >)</a
+      ><a name="1141"
+      > </a
+      ><a name="1142" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1143"
+      > </a
+      ><a name="1144" href="TemporalFunction.html#1098" class="Bound"
+      >f</a
+      ><a name="1145"
+      > </a
+      ><a name="1146" href="TemporalFunction.html#1103" class="Bound"
+      >s&#8321;</a
+      ><a name="1148"
+      > </a
+      ><a name="1149" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1150"
+      > </a
+      ><a name="1151" href="TemporalFunction.html#1098" class="Bound"
+      >f</a
+      ><a name="1152"
+      > </a
+      ><a name="1153" href="TemporalFunction.html#1106" class="Bound"
+      >s&#8322;</a
+      ><a name="1155" class="Symbol"
+      >)</a
+      ><a name="1156"
+      >
+
+</a
+      ><a name="1158" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="1215"
+      >
+
+</a
+      ><a name="1217" href="TemporalFunction.html#1217" class="Function"
+      >lem-cont&#8594;nonexpansive</a
+      ><a name="1238"
+      > </a
+      ><a name="1239" class="Symbol"
+      >:</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" class="Symbol"
+      >{</a
+      ><a name="1242" href="TemporalFunction.html#1242" class="Bound"
+      >A</a
+      ><a name="1243"
+      > </a
+      ><a name="1244" href="TemporalFunction.html#1244" class="Bound"
+      >B</a
+      ><a name="1245"
+      > </a
+      ><a name="1246" class="Symbol"
+      >:</a
+      ><a name="1247"
+      > </a
+      ><a name="1248" class="PrimitiveType"
+      >Set</a
+      ><a name="1251" class="Symbol"
+      >}</a
+      ><a name="1252"
+      > </a
+      ><a name="1253" class="Symbol"
+      >&#8594;</a
+      ><a name="1254"
+      > </a
+      ><a name="1255" class="Symbol"
+      >{</a
+      ><a name="1256" href="TemporalFunction.html#1256" class="Bound"
+      >f</a
+      ><a name="1257"
+      > </a
+      ><a name="1258" class="Symbol"
+      >:</a
+      ><a name="1259"
+      > </a
+      ><a name="1260" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1264"
+      > </a
+      ><a name="1265" href="TemporalFunction.html#1242" class="Bound"
+      >A</a
+      ><a name="1266"
+      > </a
+      ><a name="1267" class="Symbol"
+      >&#8594;</a
+      ><a name="1268"
+      > </a
+      ><a name="1269" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1273"
+      > </a
+      ><a name="1274" href="TemporalFunction.html#1244" class="Bound"
+      >B</a
+      ><a name="1275" class="Symbol"
+      >}</a
+      ><a name="1276"
+      > </a
+      ><a name="1277" class="Symbol"
+      >&#8594;</a
+      ><a name="1278"
+      > </a
+      ><a name="1279" href="TemporalFunction.html#919" class="Function"
+      >Contractive</a
+      ><a name="1290"
+      > </a
+      ><a name="1291" href="TemporalFunction.html#1256" class="Bound"
+      >f</a
+      ><a name="1292"
+      > </a
+      ><a name="1293" class="Symbol"
+      >&#8594;</a
+      ><a name="1294"
+      > </a
+      ><a name="1295" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="1307"
+      > </a
+      ><a name="1308" href="TemporalFunction.html#1256" class="Bound"
+      >f</a
+      ><a name="1309"
+      >
+</a
+      ><a name="1310" href="TemporalFunction.html#1217" class="Function"
+      >lem-cont&#8594;nonexpansive</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" class="Symbol"
+      >=</a
+      ><a name="1333"
+      > </a
+      ><a name="1334" href="NeilPrelude.html#9872" class="Function"
+      >result3'</a
+      ><a name="1342"
+      > </a
+      ><a name="1343" class="Symbol"
+      >(</a
+      ><a name="1344" href="NeilPrelude.html#10133" class="Function"
+      >argument</a
+      ><a name="1352"
+      > </a
+      ><a name="1353" href="NeilPrelude.html#11664" class="Function"
+      >snd</a
+      ><a name="1356" class="Symbol"
+      >)</a
+      ><a name="1357"
+      >
+
+</a
+      ><a name="1359" href="TemporalFunction.html#1359" class="Function"
+      >lem-ne2</a
+      ><a name="1366"
+      > </a
+      ><a name="1367" class="Symbol"
+      >:</a
+      ><a name="1368"
+      > </a
+      ><a name="1369" class="Symbol"
+      >{</a
+      ><a name="1370" href="TemporalFunction.html#1370" class="Bound"
+      >A</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" href="TemporalFunction.html#1372" class="Bound"
+      >B</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" href="TemporalFunction.html#1374" class="Bound"
+      >C</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" class="Symbol"
+      >:</a
+      ><a name="1377"
+      > </a
+      ><a name="1378" class="PrimitiveType"
+      >Set</a
+      ><a name="1381" class="Symbol"
+      >}</a
+      ><a name="1382"
+      > </a
+      ><a name="1383" class="Symbol"
+      >&#8594;</a
+      ><a name="1384"
+      > </a
+      ><a name="1385" class="Symbol"
+      >{</a
+      ><a name="1386" href="TemporalFunction.html#1386" class="Bound"
+      >f</a
+      ><a name="1387"
+      > </a
+      ><a name="1388" class="Symbol"
+      >:</a
+      ><a name="1389"
+      > </a
+      ><a name="1390" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" class="Symbol"
+      >(</a
+      ><a name="1396" href="TemporalFunction.html#1370" class="Bound"
+      >A</a
+      ><a name="1397"
+      > </a
+      ><a name="1398" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" href="TemporalFunction.html#1372" class="Bound"
+      >B</a
+      ><a name="1401" class="Symbol"
+      >)</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" href="TemporalFunction.html#1374" class="Bound"
+      >C</a
+      ><a name="1404" class="Symbol"
+      >}</a
+      ><a name="1405"
+      > </a
+      ><a name="1406" class="Symbol"
+      >&#8594;</a
+      ><a name="1407"
+      > </a
+      ><a name="1408" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" href="TemporalFunction.html#1386" class="Bound"
+      >f</a
+      ><a name="1422"
+      > </a
+      ><a name="1423" class="Symbol"
+      >&#8594;</a
+      ><a name="1424"
+      > </a
+      ><a name="1425" class="Symbol"
+      >(</a
+      ><a name="1426" href="TemporalFunction.html#1426" class="Bound"
+      >a&#8321;</a
+      ><a name="1428"
+      > </a
+      ><a name="1429" href="TemporalFunction.html#1429" class="Bound"
+      >a&#8322;</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" class="Symbol"
+      >:</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1438"
+      > </a
+      ><a name="1439" href="TemporalFunction.html#1370" class="Bound"
+      >A</a
+      ><a name="1440" class="Symbol"
+      >)</a
+      ><a name="1441"
+      > </a
+      ><a name="1442" class="Symbol"
+      >&#8594;</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" class="Symbol"
+      >(</a
+      ><a name="1445" href="TemporalFunction.html#1445" class="Bound"
+      >b&#8321;</a
+      ><a name="1447"
+      > </a
+      ><a name="1448" href="TemporalFunction.html#1448" class="Bound"
+      >b&#8322;</a
+      ><a name="1450"
+      > </a
+      ><a name="1451" class="Symbol"
+      >:</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1457"
+      > </a
+      ><a name="1458" href="TemporalFunction.html#1372" class="Bound"
+      >B</a
+      ><a name="1459" class="Symbol"
+      >)</a
+      ><a name="1460"
+      > 
+          </a
+      ><a name="1472" class="Symbol"
+      >&#8594;</a
+      ><a name="1473"
+      > </a
+      ><a name="1474" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1480"
+      > </a
+      ><a name="1481" class="Symbol"
+      >(</a
+      ><a name="1482" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="1484"
+      > </a
+      ><a name="1485" class="Symbol"
+      >(</a
+      ><a name="1486" href="TemporalFunction.html#1426" class="Bound"
+      >a&#8321;</a
+      ><a name="1488"
+      > </a
+      ><a name="1489" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" href="TemporalFunction.html#1429" class="Bound"
+      >a&#8322;</a
+      ><a name="1493" class="Symbol"
+      >)</a
+      ><a name="1494"
+      > </a
+      ><a name="1495" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1496"
+      > </a
+      ><a name="1497" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" class="Symbol"
+      >(</a
+      ><a name="1501" href="TemporalFunction.html#1445" class="Bound"
+      >b&#8321;</a
+      ><a name="1503"
+      > </a
+      ><a name="1504" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1505"
+      > </a
+      ><a name="1506" href="TemporalFunction.html#1448" class="Bound"
+      >b&#8322;</a
+      ><a name="1508" class="Symbol"
+      >)</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1511"
+      > </a
+      ><a name="1512" href="TemporalFunction.html#1386" class="Bound"
+      >f</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" class="Symbol"
+      >(</a
+      ><a name="1515" href="TemporalFunction.html#1426" class="Bound"
+      >a&#8321;</a
+      ><a name="1517"
+      > </a
+      ><a name="1518" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="1519"
+      > </a
+      ><a name="1520" href="TemporalFunction.html#1445" class="Bound"
+      >b&#8321;</a
+      ><a name="1522" class="Symbol"
+      >)</a
+      ><a name="1523"
+      > </a
+      ><a name="1524" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1525"
+      > </a
+      ><a name="1526" href="TemporalFunction.html#1386" class="Bound"
+      >f</a
+      ><a name="1527"
+      > </a
+      ><a name="1528" class="Symbol"
+      >(</a
+      ><a name="1529" href="TemporalFunction.html#1429" class="Bound"
+      >a&#8322;</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="1533"
+      > </a
+      ><a name="1534" href="TemporalFunction.html#1448" class="Bound"
+      >b&#8322;</a
+      ><a name="1536" class="Symbol"
+      >))</a
+      ><a name="1538"
+      >
+</a
+      ><a name="1539" href="TemporalFunction.html#1359" class="Function"
+      >lem-ne2</a
+      ><a name="1546"
+      > </a
+      ><a name="1547" href="TemporalFunction.html#1547" class="Bound"
+      >ne</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" href="TemporalFunction.html#1550" class="Bound"
+      >a&#8321;</a
+      ><a name="1552"
+      > </a
+      ><a name="1553" href="TemporalFunction.html#1553" class="Bound"
+      >a&#8322;</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" href="TemporalFunction.html#1556" class="Bound"
+      >b&#8321;</a
+      ><a name="1558"
+      > </a
+      ><a name="1559" href="TemporalFunction.html#1559" class="Bound"
+      >b&#8322;</a
+      ><a name="1561"
+      > </a
+      ><a name="1562" href="TemporalFunction.html#1562" class="Bound"
+      >t</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" class="Symbol"
+      >(</a
+      ><a name="1565" href="TemporalFunction.html#1565" class="Bound"
+      >eqa</a
+      ><a name="1568"
+      > </a
+      ><a name="1569" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1570"
+      > </a
+      ><a name="1571" href="TemporalFunction.html#1571" class="Bound"
+      >Heqa</a
+      ><a name="1575" class="Symbol"
+      >)</a
+      ><a name="1576"
+      > </a
+      ><a name="1577" class="Symbol"
+      >(</a
+      ><a name="1578" href="TemporalFunction.html#1578" class="Bound"
+      >eqb</a
+      ><a name="1581"
+      > </a
+      ><a name="1582" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1583"
+      > </a
+      ><a name="1584" href="TemporalFunction.html#1584" class="Bound"
+      >Heqb</a
+      ><a name="1588" class="Symbol"
+      >)</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" class="Symbol"
+      >=</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" href="TemporalFunction.html#1547" class="Bound"
+      >ne</a
+      ><a name="1594"
+      > </a
+      ><a name="1595" class="Symbol"
+      >(</a
+      ><a name="1596" href="TemporalFunction.html#1550" class="Bound"
+      >a&#8321;</a
+      ><a name="1598"
+      > </a
+      ><a name="1599" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" href="TemporalFunction.html#1556" class="Bound"
+      >b&#8321;</a
+      ><a name="1603" class="Symbol"
+      >)</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" class="Symbol"
+      >(</a
+      ><a name="1606" href="TemporalFunction.html#1553" class="Bound"
+      >a&#8322;</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" href="TemporalFunction.html#1559" class="Bound"
+      >b&#8322;</a
+      ><a name="1613" class="Symbol"
+      >)</a
+      ><a name="1614"
+      > </a
+      ><a name="1615" href="TemporalFunction.html#1562" class="Bound"
+      >t</a
+      ><a name="1616"
+      > </a
+      ><a name="1617" class="Symbol"
+      >(</a
+      ><a name="1618" href="NeilPrelude.html#18866" class="Function"
+      >&#215;-cong</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" href="TemporalFunction.html#1565" class="Bound"
+      >eqa</a
+      ><a name="1628"
+      > </a
+      ><a name="1629" href="TemporalFunction.html#1578" class="Bound"
+      >eqb</a
+      ><a name="1632"
+      > </a
+      ><a name="1633" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1634"
+      > </a
+      ><a name="1635" href="NeilPrelude.html#19745" class="Function"
+      >&#215;-cong3</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" href="TemporalFunction.html#1571" class="Bound"
+      >Heqa</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" href="TemporalFunction.html#1584" class="Bound"
+      >Heqb</a
+      ><a name="1652" class="Symbol"
+      >)</a
+      ><a name="1653"
+      >
+
+</a
+      ><a name="1655" href="TemporalFunction.html#1655" class="Function"
+      >lem-H-cong</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" class="Symbol"
+      >:</a
+      ><a name="1667"
+      > </a
+      ><a name="1668" class="Symbol"
+      >{</a
+      ><a name="1669" href="TemporalFunction.html#1669" class="Bound"
+      >A</a
+      ><a name="1670"
+      > </a
+      ><a name="1671" href="TemporalFunction.html#1671" class="Bound"
+      >B</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" class="Symbol"
+      >:</a
+      ><a name="1674"
+      > </a
+      ><a name="1675" class="PrimitiveType"
+      >Set</a
+      ><a name="1678" class="Symbol"
+      >}</a
+      ><a name="1679"
+      > </a
+      ><a name="1680" class="Symbol"
+      >&#8594;</a
+      ><a name="1681"
+      > </a
+      ><a name="1682" class="Symbol"
+      >{</a
+      ><a name="1683" href="TemporalFunction.html#1683" class="Bound"
+      >f</a
+      ><a name="1684"
+      > </a
+      ><a name="1685" class="Symbol"
+      >:</a
+      ><a name="1686"
+      > </a
+      ><a name="1687" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="1691"
+      > </a
+      ><a name="1692" href="TemporalFunction.html#1669" class="Bound"
+      >A</a
+      ><a name="1693"
+      > </a
+      ><a name="1694" href="TemporalFunction.html#1671" class="Bound"
+      >B</a
+      ><a name="1695" class="Symbol"
+      >}</a
+      ><a name="1696"
+      > </a
+      ><a name="1697" class="Symbol"
+      >&#8594;</a
+      ><a name="1698"
+      > </a
+      ><a name="1699" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="1711"
+      > </a
+      ><a name="1712" href="TemporalFunction.html#1683" class="Bound"
+      >f</a
+      ><a name="1713"
+      > </a
+      ><a name="1714" class="Symbol"
+      >&#8594;</a
+      ><a name="1715"
+      > </a
+      ><a name="1716" class="Symbol"
+      >(</a
+      ><a name="1717" href="TemporalFunction.html#1717" class="Bound"
+      >s&#8321;</a
+      ><a name="1719"
+      > </a
+      ><a name="1720" href="TemporalFunction.html#1720" class="Bound"
+      >s&#8322;</a
+      ><a name="1722"
+      > </a
+      ><a name="1723" class="Symbol"
+      >:</a
+      ><a name="1724"
+      > </a
+      ><a name="1725" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1729"
+      > </a
+      ><a name="1730" href="TemporalFunction.html#1669" class="Bound"
+      >A</a
+      ><a name="1731" class="Symbol"
+      >)</a
+      ><a name="1732"
+      > </a
+      ><a name="1733" class="Symbol"
+      >&#8594;</a
+      ><a name="1734"
+      > </a
+      ><a name="1735" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1741"
+      > </a
+      ><a name="1742" class="Symbol"
+      >(</a
+      ><a name="1743" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="1744"
+      > </a
+      ><a name="1745" class="Symbol"
+      >(</a
+      ><a name="1746" href="TemporalFunction.html#1717" class="Bound"
+      >s&#8321;</a
+      ><a name="1748"
+      > </a
+      ><a name="1749" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1750"
+      > </a
+      ><a name="1751" href="TemporalFunction.html#1720" class="Bound"
+      >s&#8322;</a
+      ><a name="1753" class="Symbol"
+      >)</a
+      ><a name="1754"
+      > </a
+      ><a name="1755" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1756"
+      > </a
+      ><a name="1757" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="1758"
+      > </a
+      ><a name="1759" class="Symbol"
+      >(</a
+      ><a name="1760" href="TemporalFunction.html#1683" class="Bound"
+      >f</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" href="TemporalFunction.html#1717" class="Bound"
+      >s&#8321;</a
+      ><a name="1764"
+      > </a
+      ><a name="1765" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1766"
+      > </a
+      ><a name="1767" href="TemporalFunction.html#1683" class="Bound"
+      >f</a
+      ><a name="1768"
+      > </a
+      ><a name="1769" href="TemporalFunction.html#1720" class="Bound"
+      >s&#8322;</a
+      ><a name="1771" class="Symbol"
+      >))</a
+      ><a name="1773"
+      >
+</a
+      ><a name="1774" href="TemporalFunction.html#1655" class="Function"
+      >lem-H-cong</a
+      ><a name="1784"
+      > </a
+      ><a name="1785" href="TemporalFunction.html#1785" class="Bound"
+      >ne</a
+      ><a name="1787"
+      > </a
+      ><a name="1788" href="TemporalFunction.html#1788" class="Bound"
+      >s&#8321;</a
+      ><a name="1790"
+      > </a
+      ><a name="1791" href="TemporalFunction.html#1791" class="Bound"
+      >s&#8322;</a
+      ><a name="1793"
+      > </a
+      ><a name="1794" href="TemporalFunction.html#1794" class="Bound"
+      >t</a
+      ><a name="1795"
+      > </a
+      ><a name="1796" href="TemporalFunction.html#1796" class="Bound"
+      >Heq</a
+      ><a name="1799"
+      > </a
+      ><a name="1800" href="TemporalFunction.html#1800" class="Bound"
+      >t'</a
+      ><a name="1802"
+      > </a
+      ><a name="1803" href="TemporalFunction.html#1803" class="Bound"
+      >lt</a
+      ><a name="1805"
+      > </a
+      ><a name="1806" class="Symbol"
+      >=</a
+      ><a name="1807"
+      > </a
+      ><a name="1808" href="TemporalFunction.html#1785" class="Bound"
+      >ne</a
+      ><a name="1810"
+      > </a
+      ><a name="1811" href="TemporalFunction.html#1788" class="Bound"
+      >s&#8321;</a
+      ><a name="1813"
+      > </a
+      ><a name="1814" href="TemporalFunction.html#1791" class="Bound"
+      >s&#8322;</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" href="TemporalFunction.html#1800" class="Bound"
+      >t'</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" class="Symbol"
+      >(</a
+      ><a name="1821" href="StrictPreOrder.html#1865" class="Function"
+      >reduce-range-&lt;-incl</a
+      ><a name="1840"
+      > </a
+      ><a name="1841" href="TemporalFunction.html#1803" class="Bound"
+      >lt</a
+      ><a name="1843"
+      > </a
+      ><a name="1844" href="TemporalFunction.html#1796" class="Bound"
+      >Heq</a
+      ><a name="1847" class="Symbol"
+      >)</a
+      ><a name="1848"
+      >
+
+</a
+      ><a name="1850" href="TemporalFunction.html#1850" class="Function"
+      >lem-H&#691;</a
+      ><a name="1856"
+      > </a
+      ><a name="1857" class="Symbol"
+      >:</a
+      ><a name="1858"
+      > </a
+      ><a name="1859" class="Symbol"
+      >{</a
+      ><a name="1860" href="TemporalFunction.html#1860" class="Bound"
+      >A</a
+      ><a name="1861"
+      > </a
+      ><a name="1862" href="TemporalFunction.html#1862" class="Bound"
+      >B</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" class="Symbol"
+      >:</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" class="PrimitiveType"
+      >Set</a
+      ><a name="1869" class="Symbol"
+      >}</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" class="Symbol"
+      >&#8594;</a
+      ><a name="1872"
+      > </a
+      ><a name="1873" class="Symbol"
+      >{</a
+      ><a name="1874" href="TemporalFunction.html#1874" class="Bound"
+      >f</a
+      ><a name="1875"
+      > </a
+      ><a name="1876" class="Symbol"
+      >:</a
+      ><a name="1877"
+      > </a
+      ><a name="1878" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" href="TemporalFunction.html#1860" class="Bound"
+      >A</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" href="TemporalFunction.html#1862" class="Bound"
+      >B</a
+      ><a name="1886" class="Symbol"
+      >}</a
+      ><a name="1887"
+      > </a
+      ><a name="1888" class="Symbol"
+      >&#8594;</a
+      ><a name="1889"
+      > </a
+      ><a name="1890" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="1902"
+      > </a
+      ><a name="1903" href="TemporalFunction.html#1874" class="Bound"
+      >f</a
+      ><a name="1904"
+      > </a
+      ><a name="1905" class="Symbol"
+      >&#8594;</a
+      ><a name="1906"
+      > </a
+      ><a name="1907" class="Symbol"
+      >(</a
+      ><a name="1908" href="TemporalFunction.html#1908" class="Bound"
+      >s&#8321;</a
+      ><a name="1910"
+      > </a
+      ><a name="1911" href="TemporalFunction.html#1911" class="Bound"
+      >s&#8322;</a
+      ><a name="1913"
+      > </a
+      ><a name="1914" class="Symbol"
+      >:</a
+      ><a name="1915"
+      > </a
+      ><a name="1916" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="1920"
+      > </a
+      ><a name="1921" href="TemporalFunction.html#1860" class="Bound"
+      >A</a
+      ><a name="1922" class="Symbol"
+      >)</a
+      ><a name="1923"
+      > </a
+      ><a name="1924" class="Symbol"
+      >&#8594;</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1932"
+      > </a
+      ><a name="1933" class="Symbol"
+      >(</a
+      ><a name="1934" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="1936"
+      > </a
+      ><a name="1937" class="Symbol"
+      >(</a
+      ><a name="1938" href="TemporalFunction.html#1908" class="Bound"
+      >s&#8321;</a
+      ><a name="1940"
+      > </a
+      ><a name="1941" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1942"
+      > </a
+      ><a name="1943" href="TemporalFunction.html#1911" class="Bound"
+      >s&#8322;</a
+      ><a name="1945" class="Symbol"
+      >)</a
+      ><a name="1946"
+      > </a
+      ><a name="1947" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1948"
+      > </a
+      ><a name="1949" class="Symbol"
+      >(</a
+      ><a name="1950" href="TemporalFunction.html#1874" class="Bound"
+      >f</a
+      ><a name="1951"
+      > </a
+      ><a name="1952" href="TemporalFunction.html#1908" class="Bound"
+      >s&#8321;</a
+      ><a name="1954"
+      > </a
+      ><a name="1955" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1956"
+      > </a
+      ><a name="1957" href="TemporalFunction.html#1874" class="Bound"
+      >f</a
+      ><a name="1958"
+      > </a
+      ><a name="1959" href="TemporalFunction.html#1911" class="Bound"
+      >s&#8322;</a
+      ><a name="1961" class="Symbol"
+      >))</a
+      ><a name="1963"
+      > </a
+      ><a name="1964" class="Symbol"
+      >&#8594;</a
+      ><a name="1965"
+      > </a
+      ><a name="1966" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1972"
+      > </a
+      ><a name="1973" class="Symbol"
+      >(</a
+      ><a name="1974" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="1976"
+      > </a
+      ><a name="1977" class="Symbol"
+      >(</a
+      ><a name="1978" href="TemporalFunction.html#1908" class="Bound"
+      >s&#8321;</a
+      ><a name="1980"
+      > </a
+      ><a name="1981" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1982"
+      > </a
+      ><a name="1983" href="TemporalFunction.html#1911" class="Bound"
+      >s&#8322;</a
+      ><a name="1985" class="Symbol"
+      >)</a
+      ><a name="1986"
+      > </a
+      ><a name="1987" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1988"
+      > </a
+      ><a name="1989" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" class="Symbol"
+      >(</a
+      ><a name="1993" href="TemporalFunction.html#1874" class="Bound"
+      >f</a
+      ><a name="1994"
+      > </a
+      ><a name="1995" href="TemporalFunction.html#1908" class="Bound"
+      >s&#8321;</a
+      ><a name="1997"
+      > </a
+      ><a name="1998" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" href="TemporalFunction.html#1874" class="Bound"
+      >f</a
+      ><a name="2001"
+      > </a
+      ><a name="2002" href="TemporalFunction.html#1911" class="Bound"
+      >s&#8322;</a
+      ><a name="2004" class="Symbol"
+      >))</a
+      ><a name="2006"
+      >
+</a
+      ><a name="2007" href="TemporalFunction.html#1850" class="Function"
+      >lem-H&#691;</a
+      ><a name="2013"
+      > </a
+      ><a name="2014" href="TemporalFunction.html#2014" class="Bound"
+      >ne</a
+      ><a name="2016"
+      > </a
+      ><a name="2017" href="TemporalFunction.html#2017" class="Bound"
+      >s&#8321;</a
+      ><a name="2019"
+      > </a
+      ><a name="2020" href="TemporalFunction.html#2020" class="Bound"
+      >s&#8322;</a
+      ><a name="2022"
+      > </a
+      ><a name="2023" href="TemporalFunction.html#2023" class="Bound"
+      >g</a
+      ><a name="2024"
+      > </a
+      ><a name="2025" href="TemporalFunction.html#2025" class="Bound"
+      >t</a
+      ><a name="2026"
+      > </a
+      ><a name="2027" href="TemporalFunction.html#2027" class="Bound"
+      >Heq</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" class="Symbol"
+      >=</a
+      ><a name="2032"
+      > </a
+      ><a name="2033" href="TemporalFunction.html#2023" class="Bound"
+      >g</a
+      ><a name="2034"
+      > </a
+      ><a name="2035" href="TemporalFunction.html#2025" class="Bound"
+      >t</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" href="TemporalFunction.html#2027" class="Bound"
+      >Heq</a
+      ><a name="2040"
+      > </a
+      ><a name="2041" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2042"
+      > </a
+      ><a name="2043" href="TemporalFunction.html#1655" class="Function"
+      >lem-H-cong</a
+      ><a name="2053"
+      > </a
+      ><a name="2054" href="TemporalFunction.html#2014" class="Bound"
+      >ne</a
+      ><a name="2056"
+      > </a
+      ><a name="2057" href="TemporalFunction.html#2017" class="Bound"
+      >s&#8321;</a
+      ><a name="2059"
+      > </a
+      ><a name="2060" href="TemporalFunction.html#2020" class="Bound"
+      >s&#8322;</a
+      ><a name="2062"
+      > </a
+      ><a name="2063" href="TemporalFunction.html#2025" class="Bound"
+      >t</a
+      ><a name="2064"
+      > </a
+      ><a name="2065" class="Symbol"
+      >(</a
+      ><a name="2066" href="NeilPrelude.html#11664" class="Function"
+      >snd</a
+      ><a name="2069"
+      > </a
+      ><a name="2070" href="TemporalFunction.html#2027" class="Bound"
+      >Heq</a
+      ><a name="2073" class="Symbol"
+      >)</a
+      ><a name="2074"
+      >
+
+</a
+      ><a name="2076" href="TemporalFunction.html#2076" class="Function"
+      >lem-H&#691;-cong2</a
+      ><a name="2088"
+      > </a
+      ><a name="2089" class="Symbol"
+      >:</a
+      ><a name="2090"
+      > </a
+      ><a name="2091" class="Symbol"
+      >{</a
+      ><a name="2092" href="TemporalFunction.html#2092" class="Bound"
+      >A</a
+      ><a name="2093"
+      > </a
+      ><a name="2094" href="TemporalFunction.html#2094" class="Bound"
+      >B</a
+      ><a name="2095"
+      > </a
+      ><a name="2096" href="TemporalFunction.html#2096" class="Bound"
+      >C</a
+      ><a name="2097"
+      > </a
+      ><a name="2098" class="Symbol"
+      >:</a
+      ><a name="2099"
+      > </a
+      ><a name="2100" class="PrimitiveType"
+      >Set</a
+      ><a name="2103" class="Symbol"
+      >}</a
+      ><a name="2104"
+      > </a
+      ><a name="2105" class="Symbol"
+      >&#8594;</a
+      ><a name="2106"
+      > </a
+      ><a name="2107" class="Symbol"
+      >{</a
+      ><a name="2108" href="TemporalFunction.html#2108" class="Bound"
+      >f</a
+      ><a name="2109"
+      > </a
+      ><a name="2110" class="Symbol"
+      >:</a
+      ><a name="2111"
+      > </a
+      ><a name="2112" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="2116"
+      > </a
+      ><a name="2117" class="Symbol"
+      >(</a
+      ><a name="2118" href="TemporalFunction.html#2092" class="Bound"
+      >A</a
+      ><a name="2119"
+      > </a
+      ><a name="2120" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="2121"
+      > </a
+      ><a name="2122" href="TemporalFunction.html#2094" class="Bound"
+      >B</a
+      ><a name="2123" class="Symbol"
+      >)</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" href="TemporalFunction.html#2096" class="Bound"
+      >C</a
+      ><a name="2126" class="Symbol"
+      >}</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" class="Symbol"
+      >&#8594;</a
+      ><a name="2129"
+      > </a
+      ><a name="2130" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="2142"
+      > </a
+      ><a name="2143" href="TemporalFunction.html#2108" class="Bound"
+      >f</a
+      ><a name="2144"
+      > </a
+      ><a name="2145" class="Symbol"
+      >&#8594;</a
+      ><a name="2146"
+      > </a
+      ><a name="2147" class="Symbol"
+      >(</a
+      ><a name="2148" href="TemporalFunction.html#2148" class="Bound"
+      >a&#8321;</a
+      ><a name="2150"
+      > </a
+      ><a name="2151" href="TemporalFunction.html#2151" class="Bound"
+      >a&#8322;</a
+      ><a name="2153"
+      > </a
+      ><a name="2154" class="Symbol"
+      >:</a
+      ><a name="2155"
+      > </a
+      ><a name="2156" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" href="TemporalFunction.html#2092" class="Bound"
+      >A</a
+      ><a name="2162" class="Symbol"
+      >)</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" class="Symbol"
+      >&#8594;</a
+      ><a name="2165"
+      > </a
+      ><a name="2166" class="Symbol"
+      >(</a
+      ><a name="2167" href="TemporalFunction.html#2167" class="Bound"
+      >b&#8321;</a
+      ><a name="2169"
+      > </a
+      ><a name="2170" href="TemporalFunction.html#2170" class="Bound"
+      >b&#8322;</a
+      ><a name="2172"
+      > </a
+      ><a name="2173" class="Symbol"
+      >:</a
+      ><a name="2174"
+      > </a
+      ><a name="2175" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="2179"
+      > </a
+      ><a name="2180" href="TemporalFunction.html#2094" class="Bound"
+      >B</a
+      ><a name="2181" class="Symbol"
+      >)</a
+      ><a name="2182"
+      > 
+              </a
+      ><a name="2198" class="Symbol"
+      >&#8594;</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2206"
+      > </a
+      ><a name="2207" class="Symbol"
+      >(</a
+      ><a name="2208" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" class="Symbol"
+      >(</a
+      ><a name="2212" href="TemporalFunction.html#2148" class="Bound"
+      >a&#8321;</a
+      ><a name="2214"
+      > </a
+      ><a name="2215" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2216"
+      > </a
+      ><a name="2217" href="TemporalFunction.html#2151" class="Bound"
+      >a&#8322;</a
+      ><a name="2219" class="Symbol"
+      >)</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2225"
+      > </a
+      ><a name="2226" class="Symbol"
+      >(</a
+      ><a name="2227" href="TemporalFunction.html#2167" class="Bound"
+      >b&#8321;</a
+      ><a name="2229"
+      > </a
+      ><a name="2230" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2231"
+      > </a
+      ><a name="2232" href="TemporalFunction.html#2170" class="Bound"
+      >b&#8322;</a
+      ><a name="2234" class="Symbol"
+      >)</a
+      ><a name="2235"
+      > </a
+      ><a name="2236" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2237"
+      > </a
+      ><a name="2238" href="TemporalFunction.html#2108" class="Bound"
+      >f</a
+      ><a name="2239"
+      > </a
+      ><a name="2240" class="Symbol"
+      >(</a
+      ><a name="2241" href="TemporalFunction.html#2148" class="Bound"
+      >a&#8321;</a
+      ><a name="2243"
+      > </a
+      ><a name="2244" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2245"
+      > </a
+      ><a name="2246" href="TemporalFunction.html#2167" class="Bound"
+      >b&#8321;</a
+      ><a name="2248" class="Symbol"
+      >)</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2251"
+      > </a
+      ><a name="2252" href="TemporalFunction.html#2108" class="Bound"
+      >f</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" class="Symbol"
+      >(</a
+      ><a name="2255" href="TemporalFunction.html#2151" class="Bound"
+      >a&#8322;</a
+      ><a name="2257"
+      > </a
+      ><a name="2258" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2259"
+      > </a
+      ><a name="2260" href="TemporalFunction.html#2170" class="Bound"
+      >b&#8322;</a
+      ><a name="2262" class="Symbol"
+      >))</a
+      ><a name="2264"
+      >
+</a
+      ><a name="2265" href="TemporalFunction.html#2076" class="Function"
+      >lem-H&#691;-cong2</a
+      ><a name="2277"
+      > </a
+      ><a name="2278" href="TemporalFunction.html#2278" class="Bound"
+      >ne</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" href="TemporalFunction.html#2281" class="Bound"
+      >a&#8321;</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" href="TemporalFunction.html#2284" class="Bound"
+      >a&#8322;</a
+      ><a name="2286"
+      > </a
+      ><a name="2287" href="TemporalFunction.html#2287" class="Bound"
+      >b&#8321;</a
+      ><a name="2289"
+      > </a
+      ><a name="2290" href="TemporalFunction.html#2290" class="Bound"
+      >b&#8322;</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" href="TemporalFunction.html#2293" class="Bound"
+      >t</a
+      ><a name="2294"
+      > </a
+      ><a name="2295" class="Symbol"
+      >(</a
+      ><a name="2296" href="TemporalFunction.html#2296" class="Bound"
+      >eqa</a
+      ><a name="2299"
+      > </a
+      ><a name="2300" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2301"
+      > </a
+      ><a name="2302" href="TemporalFunction.html#2302" class="Bound"
+      >Heqa</a
+      ><a name="2306" class="Symbol"
+      >)</a
+      ><a name="2307"
+      > </a
+      ><a name="2308" class="Symbol"
+      >(</a
+      ><a name="2309" href="TemporalFunction.html#2309" class="Bound"
+      >eqb</a
+      ><a name="2312"
+      > </a
+      ><a name="2313" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2314"
+      > </a
+      ><a name="2315" href="TemporalFunction.html#2315" class="Bound"
+      >Heqb</a
+      ><a name="2319" class="Symbol"
+      >)</a
+      ><a name="2320"
+      > </a
+      ><a name="2321" class="Symbol"
+      >=</a
+      ><a name="2322"
+      > </a
+      ><a name="2323" href="TemporalFunction.html#2278" class="Bound"
+      >ne</a
+      ><a name="2325"
+      > </a
+      ><a name="2326" class="Symbol"
+      >(</a
+      ><a name="2327" href="TemporalFunction.html#2281" class="Bound"
+      >a&#8321;</a
+      ><a name="2329"
+      > </a
+      ><a name="2330" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2331"
+      > </a
+      ><a name="2332" href="TemporalFunction.html#2287" class="Bound"
+      >b&#8321;</a
+      ><a name="2334" class="Symbol"
+      >)</a
+      ><a name="2335"
+      > </a
+      ><a name="2336" class="Symbol"
+      >(</a
+      ><a name="2337" href="TemporalFunction.html#2284" class="Bound"
+      >a&#8322;</a
+      ><a name="2339"
+      > </a
+      ><a name="2340" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2341"
+      > </a
+      ><a name="2342" href="TemporalFunction.html#2290" class="Bound"
+      >b&#8322;</a
+      ><a name="2344" class="Symbol"
+      >)</a
+      ><a name="2345"
+      > </a
+      ><a name="2346" href="TemporalFunction.html#2293" class="Bound"
+      >t</a
+      ><a name="2347"
+      > </a
+      ><a name="2348" class="Symbol"
+      >(</a
+      ><a name="2349" href="NeilPrelude.html#18866" class="Function"
+      >&#215;-cong</a
+      ><a name="2355"
+      > </a
+      ><a name="2356" href="TemporalFunction.html#2296" class="Bound"
+      >eqa</a
+      ><a name="2359"
+      > </a
+      ><a name="2360" href="TemporalFunction.html#2309" class="Bound"
+      >eqb</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2365"
+      > </a
+      ><a name="2366" href="NeilPrelude.html#19745" class="Function"
+      >&#215;-cong3</a
+      ><a name="2373"
+      > </a
+      ><a name="2374" href="TemporalFunction.html#2302" class="Bound"
+      >Heqa</a
+      ><a name="2378"
+      > </a
+      ><a name="2379" href="TemporalFunction.html#2315" class="Bound"
+      >Heqb</a
+      ><a name="2383" class="Symbol"
+      >)</a
+      ><a name="2384"
+      >
+
+</a
+      ><a name="2386" href="TemporalFunction.html#2386" class="Function"
+      >lem-H&#691;-cong2L</a
+      ><a name="2399"
+      > </a
+      ><a name="2400" class="Symbol"
+      >:</a
+      ><a name="2401"
+      > </a
+      ><a name="2402" class="Symbol"
+      >{</a
+      ><a name="2403" href="TemporalFunction.html#2403" class="Bound"
+      >A</a
+      ><a name="2404"
+      > </a
+      ><a name="2405" href="TemporalFunction.html#2405" class="Bound"
+      >B</a
+      ><a name="2406"
+      > </a
+      ><a name="2407" href="TemporalFunction.html#2407" class="Bound"
+      >C</a
+      ><a name="2408"
+      > </a
+      ><a name="2409" class="Symbol"
+      >:</a
+      ><a name="2410"
+      > </a
+      ><a name="2411" class="PrimitiveType"
+      >Set</a
+      ><a name="2414" class="Symbol"
+      >}</a
+      ><a name="2415"
+      > </a
+      ><a name="2416" class="Symbol"
+      >&#8594;</a
+      ><a name="2417"
+      > </a
+      ><a name="2418" class="Symbol"
+      >{</a
+      ><a name="2419" href="TemporalFunction.html#2419" class="Bound"
+      >f</a
+      ><a name="2420"
+      > </a
+      ><a name="2421" class="Symbol"
+      >:</a
+      ><a name="2422"
+      > </a
+      ><a name="2423" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="2427"
+      > </a
+      ><a name="2428" class="Symbol"
+      >(</a
+      ><a name="2429" href="TemporalFunction.html#2403" class="Bound"
+      >A</a
+      ><a name="2430"
+      > </a
+      ><a name="2431" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="2432"
+      > </a
+      ><a name="2433" href="TemporalFunction.html#2405" class="Bound"
+      >B</a
+      ><a name="2434" class="Symbol"
+      >)</a
+      ><a name="2435"
+      > </a
+      ><a name="2436" href="TemporalFunction.html#2407" class="Bound"
+      >C</a
+      ><a name="2437" class="Symbol"
+      >}</a
+      ><a name="2438"
+      > </a
+      ><a name="2439" class="Symbol"
+      >&#8594;</a
+      ><a name="2440"
+      > </a
+      ><a name="2441" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="2453"
+      > </a
+      ><a name="2454" href="TemporalFunction.html#2419" class="Bound"
+      >f</a
+      ><a name="2455"
+      > </a
+      ><a name="2456" class="Symbol"
+      >&#8594;</a
+      ><a name="2457"
+      > </a
+      ><a name="2458" class="Symbol"
+      >(</a
+      ><a name="2459" href="TemporalFunction.html#2459" class="Bound"
+      >a</a
+      ><a name="2460"
+      > </a
+      ><a name="2461" class="Symbol"
+      >:</a
+      ><a name="2462"
+      > </a
+      ><a name="2463" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="2467"
+      > </a
+      ><a name="2468" href="TemporalFunction.html#2403" class="Bound"
+      >A</a
+      ><a name="2469" class="Symbol"
+      >)</a
+      ><a name="2470"
+      > </a
+      ><a name="2471" class="Symbol"
+      >&#8594;</a
+      ><a name="2472"
+      > </a
+      ><a name="2473" class="Symbol"
+      >(</a
+      ><a name="2474" href="TemporalFunction.html#2474" class="Bound"
+      >b&#8321;</a
+      ><a name="2476"
+      > </a
+      ><a name="2477" href="TemporalFunction.html#2477" class="Bound"
+      >b&#8322;</a
+      ><a name="2479"
+      > </a
+      ><a name="2480" class="Symbol"
+      >:</a
+      ><a name="2481"
+      > </a
+      ><a name="2482" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="2486"
+      > </a
+      ><a name="2487" href="TemporalFunction.html#2405" class="Bound"
+      >B</a
+      ><a name="2488" class="Symbol"
+      >)</a
+      ><a name="2489"
+      > 
+              </a
+      ><a name="2505" class="Symbol"
+      >&#8594;</a
+      ><a name="2506"
+      > </a
+      ><a name="2507" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2513"
+      > </a
+      ><a name="2514" class="Symbol"
+      >(</a
+      ><a name="2515" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2517"
+      > </a
+      ><a name="2518" class="Symbol"
+      >(</a
+      ><a name="2519" href="TemporalFunction.html#2474" class="Bound"
+      >b&#8321;</a
+      ><a name="2521"
+      > </a
+      ><a name="2522" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2523"
+      > </a
+      ><a name="2524" href="TemporalFunction.html#2477" class="Bound"
+      >b&#8322;</a
+      ><a name="2526" class="Symbol"
+      >)</a
+      ><a name="2527"
+      > </a
+      ><a name="2528" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" href="TemporalFunction.html#2419" class="Bound"
+      >f</a
+      ><a name="2531"
+      > </a
+      ><a name="2532" class="Symbol"
+      >(</a
+      ><a name="2533" href="TemporalFunction.html#2459" class="Bound"
+      >a</a
+      ><a name="2534"
+      > </a
+      ><a name="2535" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2536"
+      > </a
+      ><a name="2537" href="TemporalFunction.html#2474" class="Bound"
+      >b&#8321;</a
+      ><a name="2539" class="Symbol"
+      >)</a
+      ><a name="2540"
+      > </a
+      ><a name="2541" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2542"
+      > </a
+      ><a name="2543" href="TemporalFunction.html#2419" class="Bound"
+      >f</a
+      ><a name="2544"
+      > </a
+      ><a name="2545" class="Symbol"
+      >(</a
+      ><a name="2546" href="TemporalFunction.html#2459" class="Bound"
+      >a</a
+      ><a name="2547"
+      > </a
+      ><a name="2548" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2549"
+      > </a
+      ><a name="2550" href="TemporalFunction.html#2477" class="Bound"
+      >b&#8322;</a
+      ><a name="2552" class="Symbol"
+      >))</a
+      ><a name="2554"
+      >
+</a
+      ><a name="2555" href="TemporalFunction.html#2386" class="Function"
+      >lem-H&#691;-cong2L</a
+      ><a name="2568"
+      > </a
+      ><a name="2569" href="TemporalFunction.html#2569" class="Bound"
+      >ne</a
+      ><a name="2571"
+      > </a
+      ><a name="2572" href="TemporalFunction.html#2572" class="Bound"
+      >a</a
+      ><a name="2573"
+      > </a
+      ><a name="2574" href="TemporalFunction.html#2574" class="Bound"
+      >b&#8321;</a
+      ><a name="2576"
+      > </a
+      ><a name="2577" href="TemporalFunction.html#2577" class="Bound"
+      >b&#8322;</a
+      ><a name="2579"
+      > </a
+      ><a name="2580" href="TemporalFunction.html#2580" class="Bound"
+      >t</a
+      ><a name="2581"
+      > </a
+      ><a name="2582" href="TemporalFunction.html#2582" class="Bound"
+      >Heqb</a
+      ><a name="2586"
+      > </a
+      ><a name="2587" class="Symbol"
+      >=</a
+      ><a name="2588"
+      > </a
+      ><a name="2589" href="TemporalFunction.html#2076" class="Function"
+      >lem-H&#691;-cong2</a
+      ><a name="2601"
+      > </a
+      ><a name="2602" href="TemporalFunction.html#2569" class="Bound"
+      >ne</a
+      ><a name="2604"
+      > </a
+      ><a name="2605" href="TemporalFunction.html#2572" class="Bound"
+      >a</a
+      ><a name="2606"
+      > </a
+      ><a name="2607" href="TemporalFunction.html#2572" class="Bound"
+      >a</a
+      ><a name="2608"
+      > </a
+      ><a name="2609" href="TemporalFunction.html#2574" class="Bound"
+      >b&#8321;</a
+      ><a name="2611"
+      > </a
+      ><a name="2612" href="TemporalFunction.html#2577" class="Bound"
+      >b&#8322;</a
+      ><a name="2614"
+      > </a
+      ><a name="2615" href="TemporalFunction.html#2580" class="Bound"
+      >t</a
+      ><a name="2616"
+      > </a
+      ><a name="2617" class="Symbol"
+      >(</a
+      ><a name="2618" class="InductiveConstructor"
+      >refl</a
+      ><a name="2622"
+      > </a
+      ><a name="2623" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2624"
+      > </a
+      ><a name="2625" class="Symbol"
+      >&#955;</a
+      ><a name="2626"
+      > </a
+      ><a name="2627" href="TemporalFunction.html#2627" class="Bound"
+      >_</a
+      ><a name="2628"
+      > </a
+      ><a name="2629" href="TemporalFunction.html#2629" class="Bound"
+      >_</a
+      ><a name="2630"
+      > </a
+      ><a name="2631" class="Symbol"
+      >&#8594;</a
+      ><a name="2632"
+      > </a
+      ><a name="2633" class="InductiveConstructor"
+      >refl</a
+      ><a name="2637" class="Symbol"
+      >)</a
+      ><a name="2638"
+      > </a
+      ><a name="2639" href="TemporalFunction.html#2582" class="Bound"
+      >Heqb</a
+      ><a name="2643"
+      >
+
+</a
+      ><a name="2645" href="TemporalFunction.html#2645" class="Function"
+      >lem-H&#691;-cong2R</a
+      ><a name="2658"
+      > </a
+      ><a name="2659" class="Symbol"
+      >:</a
+      ><a name="2660"
+      > </a
+      ><a name="2661" class="Symbol"
+      >{</a
+      ><a name="2662" href="TemporalFunction.html#2662" class="Bound"
+      >A</a
+      ><a name="2663"
+      > </a
+      ><a name="2664" href="TemporalFunction.html#2664" class="Bound"
+      >B</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" href="TemporalFunction.html#2666" class="Bound"
+      >C</a
+      ><a name="2667"
+      > </a
+      ><a name="2668" class="Symbol"
+      >:</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" class="PrimitiveType"
+      >Set</a
+      ><a name="2673" class="Symbol"
+      >}</a
+      ><a name="2674"
+      > </a
+      ><a name="2675" class="Symbol"
+      >&#8594;</a
+      ><a name="2676"
+      > </a
+      ><a name="2677" class="Symbol"
+      >{</a
+      ><a name="2678" href="TemporalFunction.html#2678" class="Bound"
+      >f</a
+      ><a name="2679"
+      > </a
+      ><a name="2680" class="Symbol"
+      >:</a
+      ><a name="2681"
+      > </a
+      ><a name="2682" href="TemporalFunction.html#485" class="Function"
+      >TFun</a
+      ><a name="2686"
+      > </a
+      ><a name="2687" class="Symbol"
+      >(</a
+      ><a name="2688" href="TemporalFunction.html#2662" class="Bound"
+      >A</a
+      ><a name="2689"
+      > </a
+      ><a name="2690" href="NeilPrelude.html#1070" class="Function Operator"
+      >&#215;</a
+      ><a name="2691"
+      > </a
+      ><a name="2692" href="TemporalFunction.html#2664" class="Bound"
+      >B</a
+      ><a name="2693" class="Symbol"
+      >)</a
+      ><a name="2694"
+      > </a
+      ><a name="2695" href="TemporalFunction.html#2666" class="Bound"
+      >C</a
+      ><a name="2696" class="Symbol"
+      >}</a
+      ><a name="2697"
+      > </a
+      ><a name="2698" class="Symbol"
+      >&#8594;</a
+      ><a name="2699"
+      > </a
+      ><a name="2700" href="TemporalFunction.html#1037" class="Function"
+      >NonExpansive</a
+      ><a name="2712"
+      > </a
+      ><a name="2713" href="TemporalFunction.html#2678" class="Bound"
+      >f</a
+      ><a name="2714"
+      > </a
+      ><a name="2715" class="Symbol"
+      >&#8594;</a
+      ><a name="2716"
+      > </a
+      ><a name="2717" class="Symbol"
+      >(</a
+      ><a name="2718" href="TemporalFunction.html#2718" class="Bound"
+      >a&#8321;</a
+      ><a name="2720"
+      > </a
+      ><a name="2721" href="TemporalFunction.html#2721" class="Bound"
+      >a&#8322;</a
+      ><a name="2723"
+      > </a
+      ><a name="2724" class="Symbol"
+      >:</a
+      ><a name="2725"
+      > </a
+      ><a name="2726" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" href="TemporalFunction.html#2662" class="Bound"
+      >A</a
+      ><a name="2732" class="Symbol"
+      >)</a
+      ><a name="2733"
+      > </a
+      ><a name="2734" class="Symbol"
+      >&#8594;</a
+      ><a name="2735"
+      > </a
+      ><a name="2736" class="Symbol"
+      >(</a
+      ><a name="2737" href="TemporalFunction.html#2737" class="Bound"
+      >b</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" class="Symbol"
+      >:</a
+      ><a name="2740"
+      > </a
+      ><a name="2741" href="TemporalFunction.html#449" class="Function"
+      >TVal</a
+      ><a name="2745"
+      > </a
+      ><a name="2746" href="TemporalFunction.html#2664" class="Bound"
+      >B</a
+      ><a name="2747" class="Symbol"
+      >)</a
+      ><a name="2748"
+      > 
+                </a
+      ><a name="2766" class="Symbol"
+      >&#8594;</a
+      ><a name="2767"
+      > </a
+      ><a name="2768" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2774"
+      > </a
+      ><a name="2775" class="Symbol"
+      >(</a
+      ><a name="2776" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2778"
+      > </a
+      ><a name="2779" class="Symbol"
+      >(</a
+      ><a name="2780" href="TemporalFunction.html#2718" class="Bound"
+      >a&#8321;</a
+      ><a name="2782"
+      > </a
+      ><a name="2783" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2784"
+      > </a
+      ><a name="2785" href="TemporalFunction.html#2721" class="Bound"
+      >a&#8322;</a
+      ><a name="2787" class="Symbol"
+      >)</a
+      ><a name="2788"
+      > </a
+      ><a name="2789" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2790"
+      > </a
+      ><a name="2791" href="TemporalFunction.html#2678" class="Bound"
+      >f</a
+      ><a name="2792"
+      > </a
+      ><a name="2793" class="Symbol"
+      >(</a
+      ><a name="2794" href="TemporalFunction.html#2718" class="Bound"
+      >a&#8321;</a
+      ><a name="2796"
+      > </a
+      ><a name="2797" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2798"
+      > </a
+      ><a name="2799" href="TemporalFunction.html#2737" class="Bound"
+      >b</a
+      ><a name="2800" class="Symbol"
+      >)</a
+      ><a name="2801"
+      > </a
+      ><a name="2802" href="TemporalFunction.html#619" class="Function Operator"
+      >&#8784;</a
+      ><a name="2803"
+      > </a
+      ><a name="2804" href="TemporalFunction.html#2678" class="Bound"
+      >f</a
+      ><a name="2805"
+      > </a
+      ><a name="2806" class="Symbol"
+      >(</a
+      ><a name="2807" href="TemporalFunction.html#2721" class="Bound"
+      >a&#8322;</a
+      ><a name="2809"
+      > </a
+      ><a name="2810" href="NeilPrelude.html#14058" class="Function Operator"
+      >&amp;</a
+      ><a name="2811"
+      > </a
+      ><a name="2812" href="TemporalFunction.html#2737" class="Bound"
+      >b</a
+      ><a name="2813" class="Symbol"
+      >))</a
+      ><a name="2815"
+      >
+</a
+      ><a name="2816" href="TemporalFunction.html#2645" class="Function"
+      >lem-H&#691;-cong2R</a
+      ><a name="2829"
+      > </a
+      ><a name="2830" href="TemporalFunction.html#2830" class="Bound"
+      >ne</a
+      ><a name="2832"
+      > </a
+      ><a name="2833" href="TemporalFunction.html#2833" class="Bound"
+      >a&#8321;</a
+      ><a name="2835"
+      > </a
+      ><a name="2836" href="TemporalFunction.html#2836" class="Bound"
+      >a&#8322;</a
+      ><a name="2838"
+      > </a
+      ><a name="2839" href="TemporalFunction.html#2839" class="Bound"
+      >b</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" href="TemporalFunction.html#2841" class="Bound"
+      >t</a
+      ><a name="2842"
+      > </a
+      ><a name="2843" href="TemporalFunction.html#2843" class="Bound"
+      >Heqa</a
+      ><a name="2847"
+      > </a
+      ><a name="2848" class="Symbol"
+      >=</a
+      ><a name="2849"
+      > </a
+      ><a name="2850" href="TemporalFunction.html#2076" class="Function"
+      >lem-H&#691;-cong2</a
+      ><a name="2862"
+      > </a
+      ><a name="2863" href="TemporalFunction.html#2830" class="Bound"
+      >ne</a
+      ><a name="2865"
+      > </a
+      ><a name="2866" href="TemporalFunction.html#2833" class="Bound"
+      >a&#8321;</a
+      ><a name="2868"
+      > </a
+      ><a name="2869" href="TemporalFunction.html#2836" class="Bound"
+      >a&#8322;</a
+      ><a name="2871"
+      > </a
+      ><a name="2872" href="TemporalFunction.html#2839" class="Bound"
+      >b</a
+      ><a name="2873"
+      > </a
+      ><a name="2874" href="TemporalFunction.html#2839" class="Bound"
+      >b</a
+      ><a name="2875"
+      > </a
+      ><a name="2876" href="TemporalFunction.html#2841" class="Bound"
+      >t</a
+      ><a name="2877"
+      > </a
+      ><a name="2878" href="TemporalFunction.html#2843" class="Bound"
+      >Heqa</a
+      ><a name="2882"
+      > </a
+      ><a name="2883" class="Symbol"
+      >(</a
+      ><a name="2884" class="InductiveConstructor"
+      >refl</a
+      ><a name="2888"
+      > </a
+      ><a name="2889" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2890"
+      > </a
+      ><a name="2891" class="Symbol"
+      >&#955;</a
+      ><a name="2892"
+      > </a
+      ><a name="2893" href="TemporalFunction.html#2893" class="Bound"
+      >_</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" href="TemporalFunction.html#2895" class="Bound"
+      >_</a
+      ><a name="2896"
+      > </a
+      ><a name="2897" class="Symbol"
+      >&#8594;</a
+      ><a name="2898"
+      > </a
+      ><a name="2899" class="InductiveConstructor"
+      >refl</a
+      ><a name="2903" class="Symbol"
+      >)</a
+      ><a name="2904"
+      >
+
+</a
+      ><a name="2906" class="Comment"
+      >---------------------------------------------------------</a
+      ><a name="2963"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

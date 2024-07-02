@@ -1,0 +1,10 @@
+The worker/wrapper transformation is a general-purpose technique
+for refactoring recursive programs to improve their performance.
+The two previous approaches to formalising the technique were
+based upon different recursion operators and different correctness
+conditions.  In this article we show how these two approaches can
+be generalised in a uniform manner by combining their correctness
+conditions, extend the theory with new conditions that are 
+both necessary and sufficient to ensure the correctness of the
+worker/wrapper technique, and explore the benefits that result.
+All the proofs have been mechanically verified using the Agda system.

@@ -1,0 +1,4165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Logic</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+    </a
+      ><a name="32" class="Symbol"
+      >#-}</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Keyword"
+      >open</a
+      ><a name="41"
+      > </a
+      ><a name="42" class="Keyword"
+      >import</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="60"
+      >
+</a
+      ><a name="61" class="Keyword"
+      >open</a
+      ><a name="65"
+      > </a
+      ><a name="66" class="Keyword"
+      >import</a
+      ><a name="72"
+      > </a
+      ><a name="73" href="Bool.html#69" class="Module"
+      >Bool</a
+      ><a name="77"
+      >
+
+</a
+      ><a name="79" class="Keyword"
+      >module</a
+      ><a name="85"
+      > </a
+      ><a name="86" href="Logic.html#86" class="Module"
+      >Logic</a
+      ><a name="91"
+      > </a
+      ><a name="92" class="Keyword"
+      >where</a
+      ><a name="97"
+      >
+
+</a
+      ><a name="99" class="Comment"
+      >---------------------------------------------------------------</a
+      ><a name="162"
+      >
+
+</a
+      ><a name="164" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="170"
+      > </a
+      ><a name="171" class="Symbol"
+      >:</a
+      ><a name="172"
+      > </a
+      ><a name="173" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="177"
+      > </a
+      ><a name="178" class="Symbol"
+      >&#8594;</a
+      ><a name="179"
+      > </a
+      ><a name="180" class="PrimitiveType"
+      >Set</a
+      ><a name="183"
+      >
+</a
+      ><a name="184" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="190"
+      > </a
+      ><a name="191" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="195"
+      >  </a
+      ><a name="197" class="Symbol"
+      >=</a
+      ><a name="198"
+      > </a
+      ><a name="199" href="NeilPrelude.html#1297" class="Record"
+      >True</a
+      ><a name="203"
+      >
+</a
+      ><a name="204" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="210"
+      > </a
+      ><a name="211" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="216"
+      > </a
+      ><a name="217" class="Symbol"
+      >=</a
+      ><a name="218"
+      > </a
+      ><a name="219" href="NeilPrelude.html#1271" class="Datatype"
+      >False</a
+      ><a name="224"
+      >
+
+</a
+      ><a name="226" href="Logic.html#226" class="Function"
+      >magic</a
+      ><a name="231"
+      > </a
+      ><a name="232" class="Symbol"
+      >:</a
+      ><a name="233"
+      > </a
+      ><a name="234" class="Symbol"
+      >{</a
+      ><a name="235" href="Logic.html#235" class="Bound"
+      >A</a
+      ><a name="236"
+      > </a
+      ><a name="237" class="Symbol"
+      >:</a
+      ><a name="238"
+      > </a
+      ><a name="239" class="PrimitiveType"
+      >Set</a
+      ><a name="242" class="Symbol"
+      >}</a
+      ><a name="243"
+      > </a
+      ><a name="244" class="Symbol"
+      >&#8594;</a
+      ><a name="245"
+      > </a
+      ><a name="246" class="Symbol"
+      >(</a
+      ><a name="247" href="NeilPrelude.html#1297" class="Record"
+      >True</a
+      ><a name="251"
+      > </a
+      ><a name="252" class="Symbol"
+      >&#8594;</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="NeilPrelude.html#1271" class="Datatype"
+      >False</a
+      ><a name="259" class="Symbol"
+      >)</a
+      ><a name="260"
+      > </a
+      ><a name="261" class="Symbol"
+      >&#8594;</a
+      ><a name="262"
+      > </a
+      ><a name="263" href="Logic.html#235" class="Bound"
+      >A</a
+      ><a name="264"
+      >
+</a
+      ><a name="265" href="Logic.html#226" class="Function"
+      >magic</a
+      ><a name="270"
+      > </a
+      ><a name="271" href="Logic.html#271" class="Bound"
+      >p</a
+      ><a name="272"
+      > </a
+      ><a name="273" class="Symbol"
+      >=</a
+      ><a name="274"
+      > </a
+      ><a name="275" href="NeilPrelude.html#1315" class="Function"
+      >absurd</a
+      ><a name="281"
+      > </a
+      ><a name="282" class="Symbol"
+      >(</a
+      ><a name="283" href="Logic.html#271" class="Bound"
+      >p</a
+      ><a name="284"
+      > </a
+      ><a name="285" class="Symbol"
+      >_)</a
+      ><a name="287"
+      >
+
+</a
+      ><a name="289" class="Comment"
+      >-- &quot;Sat&quot;isfies the predicate</a
+      ><a name="317"
+      >
+
+</a
+      ><a name="319" href="Logic.html#319" class="Function"
+      >Sat</a
+      ><a name="322"
+      > </a
+      ><a name="323" class="Symbol"
+      >:</a
+      ><a name="324"
+      > </a
+      ><a name="325" class="Symbol"
+      >{</a
+      ><a name="326" href="Logic.html#326" class="Bound"
+      >A</a
+      ><a name="327"
+      > </a
+      ><a name="328" class="Symbol"
+      >:</a
+      ><a name="329"
+      > </a
+      ><a name="330" class="PrimitiveType"
+      >Set</a
+      ><a name="333" class="Symbol"
+      >}</a
+      ><a name="334"
+      > </a
+      ><a name="335" class="Symbol"
+      >&#8594;</a
+      ><a name="336"
+      > </a
+      ><a name="337" class="Symbol"
+      >(</a
+      ><a name="338" href="Logic.html#326" class="Bound"
+      >A</a
+      ><a name="339"
+      > </a
+      ><a name="340" class="Symbol"
+      >&#8594;</a
+      ><a name="341"
+      > </a
+      ><a name="342" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="346" class="Symbol"
+      >)</a
+      ><a name="347"
+      > </a
+      ><a name="348" class="Symbol"
+      >&#8594;</a
+      ><a name="349"
+      > </a
+      ><a name="350" href="Logic.html#326" class="Bound"
+      >A</a
+      ><a name="351"
+      > </a
+      ><a name="352" class="Symbol"
+      >&#8594;</a
+      ><a name="353"
+      > </a
+      ><a name="354" class="PrimitiveType"
+      >Set</a
+      ><a name="357"
+      >
+</a
+      ><a name="358" href="Logic.html#319" class="Function"
+      >Sat</a
+      ><a name="361"
+      > </a
+      ><a name="362" href="Logic.html#362" class="Bound"
+      >p</a
+      ><a name="363"
+      > </a
+      ><a name="364" class="Symbol"
+      >=</a
+      ><a name="365"
+      > </a
+      ><a name="366" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="372"
+      > </a
+      ><a name="373" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="374"
+      > </a
+      ><a name="375" href="Logic.html#362" class="Bound"
+      >p</a
+      ><a name="376"
+      >
+
+</a
+      ><a name="378" href="Logic.html#378" class="Function"
+      >isFalse</a
+      ><a name="385"
+      > </a
+      ><a name="386" class="Symbol"
+      >:</a
+      ><a name="387"
+      > </a
+      ><a name="388" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="392"
+      > </a
+      ><a name="393" class="Symbol"
+      >&#8594;</a
+      ><a name="394"
+      > </a
+      ><a name="395" class="PrimitiveType"
+      >Set</a
+      ><a name="398"
+      >
+</a
+      ><a name="399" href="Logic.html#378" class="Function"
+      >isFalse</a
+      ><a name="406"
+      > </a
+      ><a name="407" class="Symbol"
+      >=</a
+      ><a name="408"
+      > </a
+      ><a name="409" href="Logic.html#319" class="Function"
+      >Sat</a
+      ><a name="412"
+      > </a
+      ><a name="413" href="Bool.html#183" class="Function"
+      >not</a
+      ><a name="416"
+      >
+
+</a
+      ><a name="418" href="Logic.html#418" class="Function"
+      >trueIsTrue</a
+      ><a name="428"
+      > </a
+      ><a name="429" class="Symbol"
+      >:</a
+      ><a name="430"
+      > </a
+      ><a name="431" class="Symbol"
+      >{</a
+      ><a name="432" href="Logic.html#432" class="Bound"
+      >b</a
+      ><a name="433"
+      > </a
+      ><a name="434" class="Symbol"
+      >:</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="440" class="Symbol"
+      >}</a
+      ><a name="441"
+      > </a
+      ><a name="442" class="Symbol"
+      >&#8594;</a
+      ><a name="443"
+      > </a
+      ><a name="444" href="Logic.html#432" class="Bound"
+      >b</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="447"
+      > </a
+      ><a name="448" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="452"
+      > </a
+      ><a name="453" class="Symbol"
+      >&#8594;</a
+      ><a name="454"
+      > </a
+      ><a name="455" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="461"
+      > </a
+      ><a name="462" href="Logic.html#432" class="Bound"
+      >b</a
+      ><a name="463"
+      >
+</a
+      ><a name="464" href="Logic.html#418" class="Function"
+      >trueIsTrue</a
+      ><a name="474"
+      > </a
+      ><a name="475" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Symbol"
+      >=</a
+      ><a name="481"
+      > </a
+      ><a name="482" class="Symbol"
+      >_</a
+      ><a name="483"
+      >
+
+</a
+      ><a name="485" href="Logic.html#485" class="Function"
+      >falseIsFalse</a
+      ><a name="497"
+      > </a
+      ><a name="498" class="Symbol"
+      >:</a
+      ><a name="499"
+      > </a
+      ><a name="500" class="Symbol"
+      >{</a
+      ><a name="501" href="Logic.html#501" class="Bound"
+      >b</a
+      ><a name="502"
+      > </a
+      ><a name="503" class="Symbol"
+      >:</a
+      ><a name="504"
+      > </a
+      ><a name="505" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="509" class="Symbol"
+      >}</a
+      ><a name="510"
+      > </a
+      ><a name="511" class="Symbol"
+      >&#8594;</a
+      ><a name="512"
+      > </a
+      ><a name="513" href="Logic.html#501" class="Bound"
+      >b</a
+      ><a name="514"
+      > </a
+      ><a name="515" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="516"
+      > </a
+      ><a name="517" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="522"
+      > </a
+      ><a name="523" class="Symbol"
+      >&#8594;</a
+      ><a name="524"
+      > </a
+      ><a name="525" href="Logic.html#378" class="Function"
+      >isFalse</a
+      ><a name="532"
+      > </a
+      ><a name="533" href="Logic.html#501" class="Bound"
+      >b</a
+      ><a name="534"
+      >
+</a
+      ><a name="535" href="Logic.html#485" class="Function"
+      >falseIsFalse</a
+      ><a name="547"
+      > </a
+      ><a name="548" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="552"
+      > </a
+      ><a name="553" class="Symbol"
+      >=</a
+      ><a name="554"
+      > </a
+      ><a name="555" class="Symbol"
+      >_</a
+      ><a name="556"
+      >
+
+</a
+      ><a name="558" class="Comment"
+      >---------------------------------------------------------------</a
+      ><a name="621"
+      >
+
+</a
+      ><a name="623" href="Logic.html#623" class="Function"
+      >isJust</a
+      ><a name="629"
+      > </a
+      ><a name="630" class="Symbol"
+      >:</a
+      ><a name="631"
+      > </a
+      ><a name="632" class="Symbol"
+      >{</a
+      ><a name="633" href="Logic.html#633" class="Bound"
+      >A</a
+      ><a name="634"
+      > </a
+      ><a name="635" class="Symbol"
+      >:</a
+      ><a name="636"
+      > </a
+      ><a name="637" class="PrimitiveType"
+      >Set</a
+      ><a name="640" class="Symbol"
+      >}</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >&#8594;</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="649"
+      > </a
+      ><a name="650" href="Logic.html#633" class="Bound"
+      >A</a
+      ><a name="651"
+      > </a
+      ><a name="652" class="Symbol"
+      >&#8594;</a
+      ><a name="653"
+      > </a
+      ><a name="654" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="658"
+      >
+</a
+      ><a name="659" href="Logic.html#623" class="Function"
+      >isJust</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="NeilPrelude.html#911" class="InductiveConstructor"
+      >nothing</a
+      ><a name="673"
+      >  </a
+      ><a name="675" class="Symbol"
+      >=</a
+      ><a name="676"
+      > </a
+      ><a name="677" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="682"
+      >
+</a
+      ><a name="683" href="Logic.html#623" class="Function"
+      >isJust</a
+      ><a name="689"
+      > </a
+      ><a name="690" class="Symbol"
+      >(</a
+      ><a name="691" href="NeilPrelude.html#931" class="InductiveConstructor"
+      >just</a
+      ><a name="695"
+      > </a
+      ><a name="696" class="Symbol"
+      >_)</a
+      ><a name="698"
+      > </a
+      ><a name="699" class="Symbol"
+      >=</a
+      ><a name="700"
+      > </a
+      ><a name="701" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="705"
+      >
+
+</a
+      ><a name="707" href="Logic.html#707" class="Function"
+      >isNothing</a
+      ><a name="716"
+      > </a
+      ><a name="717" class="Symbol"
+      >:</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >{</a
+      ><a name="720" href="Logic.html#720" class="Bound"
+      >A</a
+      ><a name="721"
+      > </a
+      ><a name="722" class="Symbol"
+      >:</a
+      ><a name="723"
+      > </a
+      ><a name="724" class="PrimitiveType"
+      >Set</a
+      ><a name="727" class="Symbol"
+      >}</a
+      ><a name="728"
+      > </a
+      ><a name="729" class="Symbol"
+      >&#8594;</a
+      ><a name="730"
+      > </a
+      ><a name="731" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="736"
+      > </a
+      ><a name="737" href="Logic.html#720" class="Bound"
+      >A</a
+      ><a name="738"
+      > </a
+      ><a name="739" class="Symbol"
+      >&#8594;</a
+      ><a name="740"
+      > </a
+      ><a name="741" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="745"
+      >
+</a
+      ><a name="746" href="Logic.html#707" class="Function"
+      >isNothing</a
+      ><a name="755"
+      > </a
+      ><a name="756" href="NeilPrelude.html#911" class="InductiveConstructor"
+      >nothing</a
+      ><a name="763"
+      >   </a
+      ><a name="766" class="Symbol"
+      >=</a
+      ><a name="767"
+      > </a
+      ><a name="768" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="772"
+      > 
+</a
+      ><a name="774" href="Logic.html#707" class="Function"
+      >isNothing</a
+      ><a name="783"
+      > </a
+      ><a name="784" class="Symbol"
+      >(</a
+      ><a name="785" href="NeilPrelude.html#931" class="InductiveConstructor"
+      >just</a
+      ><a name="789"
+      > </a
+      ><a name="790" class="Symbol"
+      >_)</a
+      ><a name="792"
+      >  </a
+      ><a name="794" class="Symbol"
+      >=</a
+      ><a name="795"
+      > </a
+      ><a name="796" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="801"
+      >
+
+</a
+      ><a name="803" href="Logic.html#803" class="Function"
+      >IsJust</a
+      ><a name="809"
+      > </a
+      ><a name="810" class="Symbol"
+      >:</a
+      ><a name="811"
+      > </a
+      ><a name="812" class="Symbol"
+      >{</a
+      ><a name="813" href="Logic.html#813" class="Bound"
+      >A</a
+      ><a name="814"
+      > </a
+      ><a name="815" class="Symbol"
+      >:</a
+      ><a name="816"
+      > </a
+      ><a name="817" class="PrimitiveType"
+      >Set</a
+      ><a name="820" class="Symbol"
+      >}</a
+      ><a name="821"
+      > </a
+      ><a name="822" class="Symbol"
+      >&#8594;</a
+      ><a name="823"
+      > </a
+      ><a name="824" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="829"
+      > </a
+      ><a name="830" href="Logic.html#813" class="Bound"
+      >A</a
+      ><a name="831"
+      > </a
+      ><a name="832" class="Symbol"
+      >&#8594;</a
+      ><a name="833"
+      > </a
+      ><a name="834" class="PrimitiveType"
+      >Set</a
+      ><a name="837"
+      >
+</a
+      ><a name="838" href="Logic.html#803" class="Function"
+      >IsJust</a
+      ><a name="844"
+      > </a
+      ><a name="845" class="Symbol"
+      >=</a
+      ><a name="846"
+      > </a
+      ><a name="847" href="Logic.html#319" class="Function"
+      >Sat</a
+      ><a name="850"
+      > </a
+      ><a name="851" href="Logic.html#623" class="Function"
+      >isJust</a
+      ><a name="857"
+      >
+
+</a
+      ><a name="859" href="Logic.html#859" class="Function"
+      >IsNothing</a
+      ><a name="868"
+      > </a
+      ><a name="869" class="Symbol"
+      >:</a
+      ><a name="870"
+      > </a
+      ><a name="871" class="Symbol"
+      >{</a
+      ><a name="872" href="Logic.html#872" class="Bound"
+      >A</a
+      ><a name="873"
+      > </a
+      ><a name="874" class="Symbol"
+      >:</a
+      ><a name="875"
+      > </a
+      ><a name="876" class="PrimitiveType"
+      >Set</a
+      ><a name="879" class="Symbol"
+      >}</a
+      ><a name="880"
+      > </a
+      ><a name="881" class="Symbol"
+      >&#8594;</a
+      ><a name="882"
+      > </a
+      ><a name="883" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="888"
+      > </a
+      ><a name="889" href="Logic.html#872" class="Bound"
+      >A</a
+      ><a name="890"
+      > </a
+      ><a name="891" class="Symbol"
+      >&#8594;</a
+      ><a name="892"
+      > </a
+      ><a name="893" class="PrimitiveType"
+      >Set</a
+      ><a name="896"
+      >
+</a
+      ><a name="897" href="Logic.html#859" class="Function"
+      >IsNothing</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >=</a
+      ><a name="908"
+      > </a
+      ><a name="909" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="912"
+      > </a
+      ><a name="913" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="914"
+      > </a
+      ><a name="915" href="Logic.html#803" class="Function"
+      >IsJust</a
+      ><a name="921"
+      >
+
+</a
+      ><a name="923" href="Logic.html#923" class="Function"
+      >lem-isNothing</a
+      ><a name="936"
+      > </a
+      ><a name="937" class="Symbol"
+      >:</a
+      ><a name="938"
+      > </a
+      ><a name="939" class="Symbol"
+      >{</a
+      ><a name="940" href="Logic.html#940" class="Bound"
+      >A</a
+      ><a name="941"
+      > </a
+      ><a name="942" class="Symbol"
+      >:</a
+      ><a name="943"
+      > </a
+      ><a name="944" class="PrimitiveType"
+      >Set</a
+      ><a name="947" class="Symbol"
+      >}</a
+      ><a name="948"
+      > </a
+      ><a name="949" class="Symbol"
+      >&#8594;</a
+      ><a name="950"
+      > </a
+      ><a name="951" class="Symbol"
+      >{</a
+      ><a name="952" href="Logic.html#952" class="Bound"
+      >ma</a
+      ><a name="954"
+      > </a
+      ><a name="955" class="Symbol"
+      >:</a
+      ><a name="956"
+      > </a
+      ><a name="957" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="962"
+      > </a
+      ><a name="963" href="Logic.html#940" class="Bound"
+      >A</a
+      ><a name="964" class="Symbol"
+      >}</a
+      ><a name="965"
+      > </a
+      ><a name="966" class="Symbol"
+      >&#8594;</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="Logic.html#859" class="Function"
+      >IsNothing</a
+      ><a name="977"
+      > </a
+      ><a name="978" href="Logic.html#952" class="Bound"
+      >ma</a
+      ><a name="980"
+      > </a
+      ><a name="981" class="Symbol"
+      >&#8594;</a
+      ><a name="982"
+      > </a
+      ><a name="983" href="Logic.html#952" class="Bound"
+      >ma</a
+      ><a name="985"
+      > </a
+      ><a name="986" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="987"
+      > </a
+      ><a name="988" href="NeilPrelude.html#911" class="InductiveConstructor"
+      >nothing</a
+      ><a name="995"
+      >
+</a
+      ><a name="996" href="Logic.html#923" class="Function"
+      >lem-isNothing</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" class="Symbol"
+      >{_}</a
+      ><a name="1013"
+      > </a
+      ><a name="1014" class="Symbol"
+      >{</a
+      ><a name="1015" href="NeilPrelude.html#911" class="InductiveConstructor"
+      >nothing</a
+      ><a name="1022" class="Symbol"
+      >}</a
+      ><a name="1023"
+      > </a
+      ><a name="1024" class="Symbol"
+      >_</a
+      ><a name="1025"
+      > </a
+      ><a name="1026" class="Symbol"
+      >=</a
+      ><a name="1027"
+      > </a
+      ><a name="1028" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="1032"
+      >
+</a
+      ><a name="1033" href="Logic.html#923" class="Function"
+      >lem-isNothing</a
+      ><a name="1046"
+      > </a
+      ><a name="1047" class="Symbol"
+      >{_}</a
+      ><a name="1050"
+      > </a
+      ><a name="1051" class="Symbol"
+      >{</a
+      ><a name="1052" href="NeilPrelude.html#931" class="InductiveConstructor"
+      >just</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" class="Symbol"
+      >_}</a
+      ><a name="1059"
+      >  </a
+      ><a name="1061" href="Logic.html#1061" class="Bound"
+      >p</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" class="Symbol"
+      >=</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" href="Logic.html#226" class="Function"
+      >magic</a
+      ><a name="1070"
+      > </a
+      ><a name="1071" href="Logic.html#1061" class="Bound"
+      >p</a
+      ><a name="1072"
+      >
+
+</a
+      ><a name="1074" href="Logic.html#1074" class="Function"
+      >lem-isNothingEq</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" class="Symbol"
+      >:</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" class="Symbol"
+      >{</a
+      ><a name="1093" href="Logic.html#1093" class="Bound"
+      >A</a
+      ><a name="1094"
+      > </a
+      ><a name="1095" class="Symbol"
+      >:</a
+      ><a name="1096"
+      > </a
+      ><a name="1097" class="PrimitiveType"
+      >Set</a
+      ><a name="1100" class="Symbol"
+      >}</a
+      ><a name="1101"
+      > </a
+      ><a name="1102" class="Symbol"
+      >&#8594;</a
+      ><a name="1103"
+      > </a
+      ><a name="1104" class="Symbol"
+      >{</a
+      ><a name="1105" href="Logic.html#1105" class="Bound"
+      >ma</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" href="Logic.html#1108" class="Bound"
+      >mb</a
+      ><a name="1110"
+      > </a
+      ><a name="1111" class="Symbol"
+      >:</a
+      ><a name="1112"
+      > </a
+      ><a name="1113" href="NeilPrelude.html#881" class="Datatype"
+      >Maybe</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" href="Logic.html#1093" class="Bound"
+      >A</a
+      ><a name="1120" class="Symbol"
+      >}</a
+      ><a name="1121"
+      > </a
+      ><a name="1122" class="Symbol"
+      >&#8594;</a
+      ><a name="1123"
+      > </a
+      ><a name="1124" href="Logic.html#859" class="Function"
+      >IsNothing</a
+      ><a name="1133"
+      > </a
+      ><a name="1134" href="Logic.html#1105" class="Bound"
+      >ma</a
+      ><a name="1136"
+      > </a
+      ><a name="1137" class="Symbol"
+      >&#8594;</a
+      ><a name="1138"
+      > </a
+      ><a name="1139" href="Logic.html#859" class="Function"
+      >IsNothing</a
+      ><a name="1148"
+      > </a
+      ><a name="1149" href="Logic.html#1108" class="Bound"
+      >mb</a
+      ><a name="1151"
+      > </a
+      ><a name="1152" class="Symbol"
+      >&#8594;</a
+      ><a name="1153"
+      > </a
+      ><a name="1154" href="Logic.html#1105" class="Bound"
+      >ma</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1158"
+      > </a
+      ><a name="1159" href="Logic.html#1108" class="Bound"
+      >mb</a
+      ><a name="1161"
+      >
+</a
+      ><a name="1162" href="Logic.html#1074" class="Function"
+      >lem-isNothingEq</a
+      ><a name="1177"
+      > </a
+      ><a name="1178" href="Logic.html#1178" class="Bound"
+      >p</a
+      ><a name="1179"
+      > </a
+      ><a name="1180" href="Logic.html#1180" class="Bound"
+      >q</a
+      ><a name="1181"
+      > </a
+      ><a name="1182" class="Symbol"
+      >=</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" href="NeilPrelude.html#5491" class="Function"
+      >trans</a
+      ><a name="1189"
+      > </a
+      ><a name="1190" class="Symbol"
+      >(</a
+      ><a name="1191" href="Logic.html#923" class="Function"
+      >lem-isNothing</a
+      ><a name="1204"
+      > </a
+      ><a name="1205" href="Logic.html#1178" class="Bound"
+      >p</a
+      ><a name="1206" class="Symbol"
+      >)</a
+      ><a name="1207"
+      > </a
+      ><a name="1208" class="Symbol"
+      >(</a
+      ><a name="1209" href="NeilPrelude.html#5439" class="Function"
+      >sym</a
+      ><a name="1212"
+      > </a
+      ><a name="1213" class="Symbol"
+      >(</a
+      ><a name="1214" href="Logic.html#923" class="Function"
+      >lem-isNothing</a
+      ><a name="1227"
+      > </a
+      ><a name="1228" href="Logic.html#1180" class="Bound"
+      >q</a
+      ><a name="1229" class="Symbol"
+      >))</a
+      ><a name="1231"
+      >
+
+</a
+      ><a name="1233" class="Comment"
+      >---------------------------------------------------------------</a
+      ><a name="1296"
+      >
+
+</a
+      ><a name="1298" href="Logic.html#1298" class="Function"
+      >implDist</a
+      ><a name="1306"
+      > </a
+      ><a name="1307" class="Symbol"
+      >:</a
+      ><a name="1308"
+      > </a
+      ><a name="1309" class="Symbol"
+      >{</a
+      ><a name="1310" href="Logic.html#1310" class="Bound"
+      >P</a
+      ><a name="1311"
+      > </a
+      ><a name="1312" href="Logic.html#1312" class="Bound"
+      >Q</a
+      ><a name="1313"
+      > </a
+      ><a name="1314" href="Logic.html#1314" class="Bound"
+      >R</a
+      ><a name="1315"
+      > </a
+      ><a name="1316" class="Symbol"
+      >:</a
+      ><a name="1317"
+      > </a
+      ><a name="1318" class="PrimitiveType"
+      >Set</a
+      ><a name="1321" class="Symbol"
+      >}</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" class="Symbol"
+      >&#8594;</a
+      ><a name="1324"
+      > </a
+      ><a name="1325" class="Symbol"
+      >(</a
+      ><a name="1326" href="Logic.html#1310" class="Bound"
+      >P</a
+      ><a name="1327"
+      > </a
+      ><a name="1328" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="1329"
+      > </a
+      ><a name="1330" href="Logic.html#1312" class="Bound"
+      >Q</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" class="Symbol"
+      >&#8594;</a
+      ><a name="1333"
+      > </a
+      ><a name="1334" href="Logic.html#1314" class="Bound"
+      >R</a
+      ><a name="1335" class="Symbol"
+      >)</a
+      ><a name="1336"
+      > </a
+      ><a name="1337" class="Symbol"
+      >&#8594;</a
+      ><a name="1338"
+      > </a
+      ><a name="1339" class="Symbol"
+      >(</a
+      ><a name="1340" href="Logic.html#1310" class="Bound"
+      >P</a
+      ><a name="1341"
+      > </a
+      ><a name="1342" class="Symbol"
+      >&#8594;</a
+      ><a name="1343"
+      > </a
+      ><a name="1344" href="Logic.html#1314" class="Bound"
+      >R</a
+      ><a name="1345" class="Symbol"
+      >)</a
+      ><a name="1346"
+      > </a
+      ><a name="1347" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="1348"
+      > </a
+      ><a name="1349" class="Symbol"
+      >(</a
+      ><a name="1350" href="Logic.html#1312" class="Bound"
+      >Q</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" class="Symbol"
+      >&#8594;</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" href="Logic.html#1314" class="Bound"
+      >R</a
+      ><a name="1355" class="Symbol"
+      >)</a
+      ><a name="1356"
+      >
+</a
+      ><a name="1357" href="Logic.html#1298" class="Function"
+      >implDist</a
+      ><a name="1365"
+      > </a
+      ><a name="1366" class="Symbol"
+      >=</a
+      ><a name="1367"
+      > </a
+      ><a name="1368" class="Symbol"
+      >&#955;</a
+      ><a name="1369"
+      > </a
+      ><a name="1370" href="Logic.html#1370" class="Bound"
+      >f</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" class="Symbol"
+      >&#8594;</a
+      ><a name="1373"
+      > </a
+      ><a name="1374" href="Logic.html#1370" class="Bound"
+      >f</a
+      ><a name="1375"
+      > </a
+      ><a name="1376" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="1377"
+      > </a
+      ><a name="1378" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="1381"
+      > </a
+      ><a name="1382" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1383"
+      > </a
+      ><a name="1384" href="Logic.html#1370" class="Bound"
+      >f</a
+      ><a name="1385"
+      > </a
+      ><a name="1386" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="1387"
+      > </a
+      ><a name="1388" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="1391"
+      >
+
+</a
+      ><a name="1393" href="Logic.html#1393" class="Function"
+      >implDistR</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" class="Symbol"
+      >:</a
+      ><a name="1404"
+      > </a
+      ><a name="1405" class="Symbol"
+      >{</a
+      ><a name="1406" href="Logic.html#1406" class="Bound"
+      >P</a
+      ><a name="1407"
+      > </a
+      ><a name="1408" href="Logic.html#1408" class="Bound"
+      >Q</a
+      ><a name="1409"
+      > </a
+      ><a name="1410" href="Logic.html#1410" class="Bound"
+      >R</a
+      ><a name="1411"
+      > </a
+      ><a name="1412" class="Symbol"
+      >:</a
+      ><a name="1413"
+      > </a
+      ><a name="1414" class="PrimitiveType"
+      >Set</a
+      ><a name="1417" class="Symbol"
+      >}</a
+      ><a name="1418"
+      > </a
+      ><a name="1419" class="Symbol"
+      >&#8594;</a
+      ><a name="1420"
+      > </a
+      ><a name="1421" class="Symbol"
+      >(</a
+      ><a name="1422" href="Logic.html#1406" class="Bound"
+      >P</a
+      ><a name="1423"
+      > </a
+      ><a name="1424" class="Symbol"
+      >&#8594;</a
+      ><a name="1425"
+      > </a
+      ><a name="1426" href="Logic.html#1410" class="Bound"
+      >R</a
+      ><a name="1427" class="Symbol"
+      >)</a
+      ><a name="1428"
+      > </a
+      ><a name="1429" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="1430"
+      > </a
+      ><a name="1431" class="Symbol"
+      >(</a
+      ><a name="1432" href="Logic.html#1408" class="Bound"
+      >Q</a
+      ><a name="1433"
+      > </a
+      ><a name="1434" class="Symbol"
+      >&#8594;</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" href="Logic.html#1410" class="Bound"
+      >R</a
+      ><a name="1437" class="Symbol"
+      >)</a
+      ><a name="1438"
+      > </a
+      ><a name="1439" class="Symbol"
+      >&#8594;</a
+      ><a name="1440"
+      > </a
+      ><a name="1441" class="Symbol"
+      >(</a
+      ><a name="1442" href="Logic.html#1406" class="Bound"
+      >P</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" href="Logic.html#1408" class="Bound"
+      >Q</a
+      ><a name="1447"
+      > </a
+      ><a name="1448" class="Symbol"
+      >&#8594;</a
+      ><a name="1449"
+      > </a
+      ><a name="1450" href="Logic.html#1410" class="Bound"
+      >R</a
+      ><a name="1451" class="Symbol"
+      >)</a
+      ><a name="1452"
+      >
+</a
+      ><a name="1453" href="Logic.html#1393" class="Function"
+      >implDistR</a
+      ><a name="1462"
+      > </a
+      ><a name="1463" class="Symbol"
+      >=</a
+      ><a name="1464"
+      > </a
+      ><a name="1465" class="Symbol"
+      >&#955;</a
+      ><a name="1466"
+      > </a
+      ><a name="1467" href="Logic.html#1467" class="Bound"
+      >pq</a
+      ><a name="1469"
+      > </a
+      ><a name="1470" class="Symbol"
+      >&#8594;</a
+      ><a name="1471"
+      > </a
+      ><a name="1472" href="NeilPrelude.html#19081" class="Function"
+      >case</a
+      ><a name="1476"
+      > </a
+      ><a name="1477" class="Symbol"
+      >(</a
+      ><a name="1478" href="NeilPrelude.html#11591" class="Function"
+      >fst</a
+      ><a name="1481"
+      > </a
+      ><a name="1482" href="Logic.html#1467" class="Bound"
+      >pq</a
+      ><a name="1484" class="Symbol"
+      >)</a
+      ><a name="1485"
+      > </a
+      ><a name="1486" class="Symbol"
+      >(</a
+      ><a name="1487" href="NeilPrelude.html#11651" class="Function"
+      >snd</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" href="Logic.html#1467" class="Bound"
+      >pq</a
+      ><a name="1493" class="Symbol"
+      >)</a
+      ><a name="1494"
+      >
+
+</a
+      ><a name="1496" href="Logic.html#1496" class="Function"
+      >NotNot</a
+      ><a name="1502"
+      > </a
+      ><a name="1503" class="Symbol"
+      >:</a
+      ><a name="1504"
+      > </a
+      ><a name="1505" class="Symbol"
+      >{</a
+      ><a name="1506" href="Logic.html#1506" class="Bound"
+      >P</a
+      ><a name="1507"
+      > </a
+      ><a name="1508" class="Symbol"
+      >:</a
+      ><a name="1509"
+      > </a
+      ><a name="1510" class="PrimitiveType"
+      >Set</a
+      ><a name="1513" class="Symbol"
+      >}</a
+      ><a name="1514"
+      > </a
+      ><a name="1515" class="Symbol"
+      >&#8594;</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" href="Logic.html#1506" class="Bound"
+      >P</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" class="Symbol"
+      >&#8594;</a
+      ><a name="1520"
+      > </a
+      ><a name="1521" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1524"
+      > </a
+      ><a name="1525" class="Symbol"
+      >(</a
+      ><a name="1526" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1529"
+      > </a
+      ><a name="1530" href="Logic.html#1506" class="Bound"
+      >P</a
+      ><a name="1531" class="Symbol"
+      >)</a
+      ><a name="1532"
+      >
+</a
+      ><a name="1533" href="Logic.html#1496" class="Function"
+      >NotNot</a
+      ><a name="1539"
+      > </a
+      ><a name="1540" class="Symbol"
+      >=</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" href="NeilPrelude.html#8676" class="Function"
+      >applyTo</a
+      ><a name="1549"
+      >
+
+</a
+      ><a name="1551" href="Logic.html#1551" class="Function"
+      >contpos</a
+      ><a name="1558"
+      > </a
+      ><a name="1559" class="Symbol"
+      >:</a
+      ><a name="1560"
+      > </a
+      ><a name="1561" class="Symbol"
+      >{</a
+      ><a name="1562" href="Logic.html#1562" class="Bound"
+      >P</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" href="Logic.html#1564" class="Bound"
+      >Q</a
+      ><a name="1565"
+      > </a
+      ><a name="1566" class="Symbol"
+      >:</a
+      ><a name="1567"
+      > </a
+      ><a name="1568" class="PrimitiveType"
+      >Set</a
+      ><a name="1571" class="Symbol"
+      >}</a
+      ><a name="1572"
+      > </a
+      ><a name="1573" class="Symbol"
+      >&#8594;</a
+      ><a name="1574"
+      > </a
+      ><a name="1575" class="Symbol"
+      >(</a
+      ><a name="1576" href="Logic.html#1562" class="Bound"
+      >P</a
+      ><a name="1577"
+      > </a
+      ><a name="1578" class="Symbol"
+      >&#8594;</a
+      ><a name="1579"
+      > </a
+      ><a name="1580" href="Logic.html#1564" class="Bound"
+      >Q</a
+      ><a name="1581" class="Symbol"
+      >)</a
+      ><a name="1582"
+      > </a
+      ><a name="1583" class="Symbol"
+      >&#8594;</a
+      ><a name="1584"
+      > </a
+      ><a name="1585" class="Symbol"
+      >(</a
+      ><a name="1586" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1589"
+      > </a
+      ><a name="1590" href="Logic.html#1564" class="Bound"
+      >Q</a
+      ><a name="1591"
+      > </a
+      ><a name="1592" class="Symbol"
+      >&#8594;</a
+      ><a name="1593"
+      > </a
+      ><a name="1594" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1597"
+      > </a
+      ><a name="1598" href="Logic.html#1562" class="Bound"
+      >P</a
+      ><a name="1599" class="Symbol"
+      >)</a
+      ><a name="1600"
+      >
+</a
+      ><a name="1601" href="Logic.html#1551" class="Function"
+      >contpos</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" class="Symbol"
+      >=</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" href="NeilPrelude.html#8878" class="Function Operator"
+      >_&#8921;_</a
+      ><a name="1614"
+      >
+
+</a
+      ><a name="1616" href="Logic.html#1616" class="Function"
+      >nn-antecedent</a
+      ><a name="1629"
+      > </a
+      ><a name="1630" class="Symbol"
+      >:</a
+      ><a name="1631"
+      > </a
+      ><a name="1632" class="Symbol"
+      >{</a
+      ><a name="1633" href="Logic.html#1633" class="Bound"
+      >P</a
+      ><a name="1634"
+      > </a
+      ><a name="1635" href="Logic.html#1635" class="Bound"
+      >Q</a
+      ><a name="1636"
+      > </a
+      ><a name="1637" class="Symbol"
+      >:</a
+      ><a name="1638"
+      > </a
+      ><a name="1639" class="PrimitiveType"
+      >Set</a
+      ><a name="1642" class="Symbol"
+      >}</a
+      ><a name="1643"
+      > </a
+      ><a name="1644" class="Symbol"
+      >&#8594;</a
+      ><a name="1645"
+      > </a
+      ><a name="1646" class="Symbol"
+      >(</a
+      ><a name="1647" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1650"
+      > </a
+      ><a name="1651" class="Symbol"
+      >(</a
+      ><a name="1652" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1655"
+      > </a
+      ><a name="1656" href="Logic.html#1633" class="Bound"
+      >P</a
+      ><a name="1657" class="Symbol"
+      >)</a
+      ><a name="1658"
+      > </a
+      ><a name="1659" class="Symbol"
+      >&#8594;</a
+      ><a name="1660"
+      > </a
+      ><a name="1661" href="Logic.html#1635" class="Bound"
+      >Q</a
+      ><a name="1662" class="Symbol"
+      >)</a
+      ><a name="1663"
+      > </a
+      ><a name="1664" class="Symbol"
+      >&#8594;</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" class="Symbol"
+      >(</a
+      ><a name="1667" href="Logic.html#1633" class="Bound"
+      >P</a
+      ><a name="1668"
+      > </a
+      ><a name="1669" class="Symbol"
+      >&#8594;</a
+      ><a name="1670"
+      > </a
+      ><a name="1671" href="Logic.html#1635" class="Bound"
+      >Q</a
+      ><a name="1672" class="Symbol"
+      >)</a
+      ><a name="1673"
+      >
+</a
+      ><a name="1674" href="Logic.html#1616" class="Function"
+      >nn-antecedent</a
+      ><a name="1687"
+      > </a
+      ><a name="1688" class="Symbol"
+      >=</a
+      ><a name="1689"
+      > </a
+      ><a name="1690" href="NeilPrelude.html#10120" class="Function"
+      >argument</a
+      ><a name="1698"
+      > </a
+      ><a name="1699" href="NeilPrelude.html#8676" class="Function"
+      >applyTo</a
+      ><a name="1706"
+      >
+
+</a
+      ><a name="1708" href="Logic.html#1708" class="Function"
+      >nn-consequent</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" class="Symbol"
+      >:</a
+      ><a name="1723"
+      > </a
+      ><a name="1724" class="Symbol"
+      >{</a
+      ><a name="1725" href="Logic.html#1725" class="Bound"
+      >P</a
+      ><a name="1726"
+      > </a
+      ><a name="1727" href="Logic.html#1727" class="Bound"
+      >Q</a
+      ><a name="1728"
+      > </a
+      ><a name="1729" class="Symbol"
+      >:</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" class="PrimitiveType"
+      >Set</a
+      ><a name="1734" class="Symbol"
+      >}</a
+      ><a name="1735"
+      > </a
+      ><a name="1736" class="Symbol"
+      >&#8594;</a
+      ><a name="1737"
+      > </a
+      ><a name="1738" class="Symbol"
+      >(</a
+      ><a name="1739" href="Logic.html#1725" class="Bound"
+      >P</a
+      ><a name="1740"
+      > </a
+      ><a name="1741" class="Symbol"
+      >&#8594;</a
+      ><a name="1742"
+      > </a
+      ><a name="1743" href="Logic.html#1727" class="Bound"
+      >Q</a
+      ><a name="1744" class="Symbol"
+      >)</a
+      ><a name="1745"
+      > </a
+      ><a name="1746" class="Symbol"
+      >&#8594;</a
+      ><a name="1747"
+      > </a
+      ><a name="1748" class="Symbol"
+      >(</a
+      ><a name="1749" href="Logic.html#1725" class="Bound"
+      >P</a
+      ><a name="1750"
+      > </a
+      ><a name="1751" class="Symbol"
+      >&#8594;</a
+      ><a name="1752"
+      > </a
+      ><a name="1753" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1756"
+      > </a
+      ><a name="1757" class="Symbol"
+      >(</a
+      ><a name="1758" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1761"
+      > </a
+      ><a name="1762" href="Logic.html#1727" class="Bound"
+      >Q</a
+      ><a name="1763" class="Symbol"
+      >))</a
+      ><a name="1765"
+      >
+</a
+      ><a name="1766" href="Logic.html#1708" class="Function"
+      >nn-consequent</a
+      ><a name="1779"
+      > </a
+      ><a name="1780" href="Logic.html#1780" class="Bound"
+      >f</a
+      ><a name="1781"
+      > </a
+      ><a name="1782" class="Symbol"
+      >=</a
+      ><a name="1783"
+      > </a
+      ><a name="1784" href="NeilPrelude.html#8676" class="Function"
+      >applyTo</a
+      ><a name="1791"
+      > </a
+      ><a name="1792" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="1793"
+      > </a
+      ><a name="1794" href="Logic.html#1780" class="Bound"
+      >f</a
+      ><a name="1795"
+      >
+
+</a
+      ><a name="1797" href="Logic.html#1797" class="Function"
+      >impl-contr</a
+      ><a name="1807"
+      > </a
+      ><a name="1808" class="Symbol"
+      >:</a
+      ><a name="1809"
+      > </a
+      ><a name="1810" class="Symbol"
+      >{</a
+      ><a name="1811" href="Logic.html#1811" class="Bound"
+      >P</a
+      ><a name="1812"
+      > </a
+      ><a name="1813" href="Logic.html#1813" class="Bound"
+      >Q</a
+      ><a name="1814"
+      > </a
+      ><a name="1815" class="Symbol"
+      >:</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" class="PrimitiveType"
+      >Set</a
+      ><a name="1820" class="Symbol"
+      >}</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" class="Symbol"
+      >&#8594;</a
+      ><a name="1823"
+      > </a
+      ><a name="1824" class="Symbol"
+      >(</a
+      ><a name="1825" href="Logic.html#1811" class="Bound"
+      >P</a
+      ><a name="1826"
+      > </a
+      ><a name="1827" class="Symbol"
+      >&#8594;</a
+      ><a name="1828"
+      > </a
+      ><a name="1829" href="Logic.html#1813" class="Bound"
+      >Q</a
+      ><a name="1830" class="Symbol"
+      >)</a
+      ><a name="1831"
+      > </a
+      ><a name="1832" class="Symbol"
+      >&#8594;</a
+      ><a name="1833"
+      > </a
+      ><a name="1834" href="Logic.html#1811" class="Bound"
+      >P</a
+      ><a name="1835"
+      > </a
+      ><a name="1836" class="Symbol"
+      >&#8594;</a
+      ><a name="1837"
+      > </a
+      ><a name="1838" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="1841"
+      > </a
+      ><a name="1842" href="Logic.html#1813" class="Bound"
+      >Q</a
+      ><a name="1843"
+      > </a
+      ><a name="1844" class="Symbol"
+      >&#8594;</a
+      ><a name="1845"
+      > </a
+      ><a name="1846" href="NeilPrelude.html#1271" class="Datatype"
+      >False</a
+      ><a name="1851"
+      >
+</a
+      ><a name="1852" href="Logic.html#1797" class="Function"
+      >impl-contr</a
+      ><a name="1862"
+      > </a
+      ><a name="1863" href="Logic.html#1863" class="Bound"
+      >f</a
+      ><a name="1864"
+      > </a
+      ><a name="1865" href="Logic.html#1865" class="Bound"
+      >p</a
+      ><a name="1866"
+      > </a
+      ><a name="1867" href="Logic.html#1867" class="Bound"
+      >nq</a
+      ><a name="1869"
+      > </a
+      ><a name="1870" class="Symbol"
+      >=</a
+      ><a name="1871"
+      > </a
+      ><a name="1872" href="Logic.html#1867" class="Bound"
+      >nq</a
+      ><a name="1874"
+      > </a
+      ><a name="1875" class="Symbol"
+      >(</a
+      ><a name="1876" href="Logic.html#1863" class="Bound"
+      >f</a
+      ><a name="1877"
+      > </a
+      ><a name="1878" href="Logic.html#1865" class="Bound"
+      >p</a
+      ><a name="1879" class="Symbol"
+      >)</a
+      ><a name="1880"
+      >
+
+</a
+      ><a name="1882" href="Logic.html#1882" class="Function"
+      >ProofIrrelevence</a
+      ><a name="1898"
+      > </a
+      ><a name="1899" class="Symbol"
+      >:</a
+      ><a name="1900"
+      > </a
+      ><a name="1901" class="PrimitiveType"
+      >Set</a
+      ><a name="1904"
+      > </a
+      ><a name="1905" class="Symbol"
+      >&#8594;</a
+      ><a name="1906"
+      > </a
+      ><a name="1907" class="PrimitiveType"
+      >Set</a
+      ><a name="1910"
+      >
+</a
+      ><a name="1911" href="Logic.html#1882" class="Function"
+      >ProofIrrelevence</a
+      ><a name="1927"
+      > </a
+      ><a name="1928" href="Logic.html#1928" class="Bound"
+      >P</a
+      ><a name="1929"
+      > </a
+      ><a name="1930" class="Symbol"
+      >=</a
+      ><a name="1931"
+      > </a
+      ><a name="1932" class="Symbol"
+      >(</a
+      ><a name="1933" href="Logic.html#1933" class="Bound"
+      >p</a
+      ><a name="1934"
+      > </a
+      ><a name="1935" href="Logic.html#1935" class="Bound"
+      >q</a
+      ><a name="1936"
+      > </a
+      ><a name="1937" class="Symbol"
+      >:</a
+      ><a name="1938"
+      > </a
+      ><a name="1939" href="Logic.html#1928" class="Bound"
+      >P</a
+      ><a name="1940" class="Symbol"
+      >)</a
+      ><a name="1941"
+      > </a
+      ><a name="1942" class="Symbol"
+      >&#8594;</a
+      ><a name="1943"
+      > </a
+      ><a name="1944" href="Logic.html#1933" class="Bound"
+      >p</a
+      ><a name="1945"
+      > </a
+      ><a name="1946" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1947"
+      > </a
+      ><a name="1948" href="Logic.html#1935" class="Bound"
+      >q</a
+      ><a name="1949"
+      >
+
+</a
+      ><a name="1951" href="Logic.html#1951" class="Function"
+      >proofIrrelevence</a
+      ><a name="1967"
+      > </a
+      ><a name="1968" class="Symbol"
+      >:</a
+      ><a name="1969"
+      > </a
+      ><a name="1970" class="Symbol"
+      >{</a
+      ><a name="1971" href="Logic.html#1971" class="Bound"
+      >A</a
+      ><a name="1972"
+      > </a
+      ><a name="1973" class="Symbol"
+      >:</a
+      ><a name="1974"
+      > </a
+      ><a name="1975" class="PrimitiveType"
+      >Set</a
+      ><a name="1978" class="Symbol"
+      >}</a
+      ><a name="1979"
+      > </a
+      ><a name="1980" class="Symbol"
+      >&#8594;</a
+      ><a name="1981"
+      > </a
+      ><a name="1982" class="Symbol"
+      >{</a
+      ><a name="1983" href="Logic.html#1983" class="Bound"
+      >a</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="Logic.html#1985" class="Bound"
+      >b</a
+      ><a name="1986"
+      > </a
+      ><a name="1987" class="Symbol"
+      >:</a
+      ><a name="1988"
+      > </a
+      ><a name="1989" href="Logic.html#1971" class="Bound"
+      >A</a
+      ><a name="1990" class="Symbol"
+      >}</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" class="Symbol"
+      >&#8594;</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" href="Logic.html#1882" class="Function"
+      >ProofIrrelevence</a
+      ><a name="2010"
+      > </a
+      ><a name="2011" class="Symbol"
+      >(</a
+      ><a name="2012" href="Logic.html#1983" class="Bound"
+      >a</a
+      ><a name="2013"
+      > </a
+      ><a name="2014" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2015"
+      > </a
+      ><a name="2016" href="Logic.html#1985" class="Bound"
+      >b</a
+      ><a name="2017" class="Symbol"
+      >)</a
+      ><a name="2018"
+      >
+</a
+      ><a name="2019" href="Logic.html#1951" class="Function"
+      >proofIrrelevence</a
+      ><a name="2035"
+      > </a
+      ><a name="2036" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="2040"
+      > </a
+      ><a name="2041" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="2045"
+      > </a
+      ><a name="2046" class="Symbol"
+      >=</a
+      ><a name="2047"
+      > </a
+      ><a name="2048" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="2052"
+      >
+
+
+
+</a
+      ><a name="2056" class="Comment"
+      >---------------------------------------------------------------</a
+      ><a name="2119"
+      >
+
+</a
+      ><a name="2121" class="Comment"
+      >-- Classical Logic (depends on the excluded middle)</a
+      ><a name="2172"
+      >
+
+</a
+      ><a name="2174" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="2176"
+      > </a
+      ><a name="2177" class="Symbol"
+      >:</a
+      ><a name="2178"
+      > </a
+      ><a name="2179" class="PrimitiveType"
+      >Set</a
+      ><a name="2182"
+      >
+</a
+      ><a name="2183" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="2185"
+      > </a
+      ><a name="2186" class="Symbol"
+      >=</a
+      ><a name="2187"
+      > </a
+      ><a name="2188" class="Symbol"
+      >{</a
+      ><a name="2189" href="Logic.html#2189" class="Bound"
+      >P</a
+      ><a name="2190"
+      > </a
+      ><a name="2191" class="Symbol"
+      >:</a
+      ><a name="2192"
+      > </a
+      ><a name="2193" class="PrimitiveType"
+      >Set</a
+      ><a name="2196" class="Symbol"
+      >}</a
+      ><a name="2197"
+      > </a
+      ><a name="2198" class="Symbol"
+      >&#8594;</a
+      ><a name="2199"
+      > </a
+      ><a name="2200" href="Logic.html#2189" class="Bound"
+      >P</a
+      ><a name="2201"
+      > </a
+      ><a name="2202" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="2203"
+      > </a
+      ><a name="2204" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2207"
+      > </a
+      ><a name="2208" href="Logic.html#2189" class="Bound"
+      >P</a
+      ><a name="2209"
+      >
+
+</a
+      ><a name="2211" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2220"
+      > </a
+      ><a name="2221" class="Symbol"
+      >:</a
+      ><a name="2222"
+      > </a
+      ><a name="2223" class="PrimitiveType"
+      >Set</a
+      ><a name="2226"
+      > </a
+      ><a name="2227" class="Symbol"
+      >&#8594;</a
+      ><a name="2228"
+      > </a
+      ><a name="2229" class="PrimitiveType"
+      >Set</a
+      ><a name="2232"
+      >
+</a
+      ><a name="2233" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2242"
+      > </a
+      ><a name="2243" href="Logic.html#2243" class="Bound"
+      >P</a
+      ><a name="2244"
+      > </a
+      ><a name="2245" class="Symbol"
+      >=</a
+      ><a name="2246"
+      > </a
+      ><a name="2247" href="Logic.html#2243" class="Bound"
+      >P</a
+      ><a name="2248"
+      > </a
+      ><a name="2249" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="2250"
+      > </a
+      ><a name="2251" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2254"
+      > </a
+      ><a name="2255" href="Logic.html#2243" class="Bound"
+      >P</a
+      ><a name="2256"
+      >
+
+</a
+      ><a name="2258" href="Logic.html#2258" class="Function"
+      >em-isTrue</a
+      ><a name="2267"
+      > </a
+      ><a name="2268" class="Symbol"
+      >:</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" class="Symbol"
+      >{</a
+      ><a name="2271" href="Logic.html#2271" class="Bound"
+      >b</a
+      ><a name="2272"
+      > </a
+      ><a name="2273" class="Symbol"
+      >:</a
+      ><a name="2274"
+      > </a
+      ><a name="2275" href="NeilPrelude.html#743" class="Datatype"
+      >Bool</a
+      ><a name="2279" class="Symbol"
+      >}</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" class="Symbol"
+      >&#8594;</a
+      ><a name="2282"
+      > </a
+      ><a name="2283" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="2289"
+      > </a
+      ><a name="2290" href="Logic.html#2271" class="Bound"
+      >b</a
+      ><a name="2291"
+      > </a
+      ><a name="2292" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="2293"
+      > </a
+      ><a name="2294" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2297"
+      > </a
+      ><a name="2298" class="Symbol"
+      >(</a
+      ><a name="2299" href="Logic.html#164" class="Function"
+      >isTrue</a
+      ><a name="2305"
+      > </a
+      ><a name="2306" href="Logic.html#2271" class="Bound"
+      >b</a
+      ><a name="2307" class="Symbol"
+      >)</a
+      ><a name="2308"
+      >
+</a
+      ><a name="2309" href="Logic.html#2258" class="Function"
+      >em-isTrue</a
+      ><a name="2318"
+      > </a
+      ><a name="2319" class="Symbol"
+      >{</a
+      ><a name="2320" href="NeilPrelude.html#762" class="InductiveConstructor"
+      >false</a
+      ><a name="2325" class="Symbol"
+      >}</a
+      ><a name="2326"
+      > </a
+      ><a name="2327" class="Symbol"
+      >=</a
+      ><a name="2328"
+      > </a
+      ><a name="2329" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="2332"
+      > </a
+      ><a name="2333" href="NeilPrelude.html#8336" class="Function"
+      >id</a
+      ><a name="2335"
+      >
+</a
+      ><a name="2336" href="Logic.html#2258" class="Function"
+      >em-isTrue</a
+      ><a name="2345"
+      > </a
+      ><a name="2346" class="Symbol"
+      >{</a
+      ><a name="2347" href="NeilPrelude.html#777" class="InductiveConstructor"
+      >true</a
+      ><a name="2351" class="Symbol"
+      >}</a
+      ><a name="2352"
+      >  </a
+      ><a name="2354" class="Symbol"
+      >=</a
+      ><a name="2355"
+      > </a
+      ><a name="2356" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="2359"
+      > </a
+      ><a name="2360" class="Symbol"
+      >_</a
+      ><a name="2361"
+      >
+
+
+</a
+      ><a name="2364" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="2377"
+      > </a
+      ><a name="2378" class="Symbol"
+      >:</a
+      ><a name="2379"
+      > </a
+      ><a name="2380" class="Symbol"
+      >{</a
+      ><a name="2381" href="Logic.html#2381" class="Bound"
+      >P</a
+      ><a name="2382"
+      > </a
+      ><a name="2383" class="Symbol"
+      >:</a
+      ><a name="2384"
+      > </a
+      ><a name="2385" class="PrimitiveType"
+      >Set</a
+      ><a name="2388" class="Symbol"
+      >}</a
+      ><a name="2389"
+      > </a
+      ><a name="2390" class="Symbol"
+      >&#8594;</a
+      ><a name="2391"
+      > </a
+      ><a name="2392" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2401"
+      > </a
+      ><a name="2402" href="Logic.html#2381" class="Bound"
+      >P</a
+      ><a name="2403"
+      > </a
+      ><a name="2404" class="Symbol"
+      >&#8594;</a
+      ><a name="2405"
+      > </a
+      ><a name="2406" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2409"
+      > </a
+      ><a name="2410" class="Symbol"
+      >(</a
+      ><a name="2411" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2414"
+      > </a
+      ><a name="2415" href="Logic.html#2381" class="Bound"
+      >P</a
+      ><a name="2416" class="Symbol"
+      >)</a
+      ><a name="2417"
+      > </a
+      ><a name="2418" class="Symbol"
+      >&#8594;</a
+      ><a name="2419"
+      > </a
+      ><a name="2420" href="Logic.html#2381" class="Bound"
+      >P</a
+      ><a name="2421"
+      >
+</a
+      ><a name="2422" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="2435"
+      > </a
+      ><a name="2436" class="Symbol"
+      >(</a
+      ><a name="2437" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="2440"
+      > </a
+      ><a name="2441" href="Logic.html#2441" class="Bound"
+      >p</a
+      ><a name="2442" class="Symbol"
+      >)</a
+      ><a name="2443"
+      >  </a
+      ><a name="2445" href="Logic.html#2445" class="Bound"
+      >nnp</a
+      ><a name="2448"
+      > </a
+      ><a name="2449" class="Symbol"
+      >=</a
+      ><a name="2450"
+      > </a
+      ><a name="2451" href="Logic.html#2441" class="Bound"
+      >p</a
+      ><a name="2452"
+      >
+</a
+      ><a name="2453" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="2466"
+      > </a
+      ><a name="2467" class="Symbol"
+      >(</a
+      ><a name="2468" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="2471"
+      > </a
+      ><a name="2472" href="Logic.html#2472" class="Bound"
+      >np</a
+      ><a name="2474" class="Symbol"
+      >)</a
+      ><a name="2475"
+      > </a
+      ><a name="2476" href="Logic.html#2476" class="Bound"
+      >nnp</a
+      ><a name="2479"
+      > </a
+      ><a name="2480" class="Symbol"
+      >=</a
+      ><a name="2481"
+      > </a
+      ><a name="2482" href="NeilPrelude.html#1315" class="Function"
+      >absurd</a
+      ><a name="2488"
+      > </a
+      ><a name="2489" class="Symbol"
+      >(</a
+      ><a name="2490" href="Logic.html#2476" class="Bound"
+      >nnp</a
+      ><a name="2493"
+      > </a
+      ><a name="2494" href="Logic.html#2472" class="Bound"
+      >np</a
+      ><a name="2496" class="Symbol"
+      >)</a
+      ><a name="2497"
+      >
+
+</a
+      ><a name="2499" href="Logic.html#2499" class="Function"
+      >contpos-em</a
+      ><a name="2509"
+      > </a
+      ><a name="2510" class="Symbol"
+      >:</a
+      ><a name="2511"
+      > </a
+      ><a name="2512" class="Symbol"
+      >{</a
+      ><a name="2513" href="Logic.html#2513" class="Bound"
+      >P</a
+      ><a name="2514"
+      > </a
+      ><a name="2515" href="Logic.html#2515" class="Bound"
+      >Q</a
+      ><a name="2516"
+      > </a
+      ><a name="2517" class="Symbol"
+      >:</a
+      ><a name="2518"
+      > </a
+      ><a name="2519" class="PrimitiveType"
+      >Set</a
+      ><a name="2522" class="Symbol"
+      >}</a
+      ><a name="2523"
+      > </a
+      ><a name="2524" class="Symbol"
+      >&#8594;</a
+      ><a name="2525"
+      > </a
+      ><a name="2526" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2535"
+      > </a
+      ><a name="2536" href="Logic.html#2513" class="Bound"
+      >P</a
+      ><a name="2537"
+      > </a
+      ><a name="2538" class="Symbol"
+      >&#8594;</a
+      ><a name="2539"
+      > </a
+      ><a name="2540" class="Symbol"
+      >(</a
+      ><a name="2541" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2544"
+      > </a
+      ><a name="2545" href="Logic.html#2513" class="Bound"
+      >P</a
+      ><a name="2546"
+      > </a
+      ><a name="2547" class="Symbol"
+      >&#8594;</a
+      ><a name="2548"
+      > </a
+      ><a name="2549" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2552"
+      > </a
+      ><a name="2553" href="Logic.html#2515" class="Bound"
+      >Q</a
+      ><a name="2554" class="Symbol"
+      >)</a
+      ><a name="2555"
+      > </a
+      ><a name="2556" class="Symbol"
+      >&#8594;</a
+      ><a name="2557"
+      > </a
+      ><a name="2558" class="Symbol"
+      >(</a
+      ><a name="2559" href="Logic.html#2515" class="Bound"
+      >Q</a
+      ><a name="2560"
+      > </a
+      ><a name="2561" class="Symbol"
+      >&#8594;</a
+      ><a name="2562"
+      > </a
+      ><a name="2563" href="Logic.html#2513" class="Bound"
+      >P</a
+      ><a name="2564" class="Symbol"
+      >)</a
+      ><a name="2565"
+      >
+</a
+      ><a name="2566" href="Logic.html#2499" class="Function"
+      >contpos-em</a
+      ><a name="2576"
+      > </a
+      ><a name="2577" href="Logic.html#2577" class="Bound"
+      >em</a
+      ><a name="2579"
+      > </a
+      ><a name="2580" href="Logic.html#2580" class="Bound"
+      >f</a
+      ><a name="2581"
+      > </a
+      ><a name="2582" href="Logic.html#2582" class="Bound"
+      >q</a
+      ><a name="2583"
+      > </a
+      ><a name="2584" class="Symbol"
+      >=</a
+      ><a name="2585"
+      > </a
+      ><a name="2586" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="2599"
+      > </a
+      ><a name="2600" href="Logic.html#2577" class="Bound"
+      >em</a
+      ><a name="2602"
+      > </a
+      ><a name="2603" class="Symbol"
+      >(</a
+      ><a name="2604" href="NeilPrelude.html#8370" class="Function"
+      >flip</a
+      ><a name="2608"
+      > </a
+      ><a name="2609" href="Logic.html#2580" class="Bound"
+      >f</a
+      ><a name="2610"
+      > </a
+      ><a name="2611" href="Logic.html#2582" class="Bound"
+      >q</a
+      ><a name="2612" class="Symbol"
+      >)</a
+      ><a name="2613"
+      >
+
+</a
+      ><a name="2615" href="Logic.html#2615" class="Function"
+      >nn-antecedent-em</a
+      ><a name="2631"
+      > </a
+      ><a name="2632" class="Symbol"
+      >:</a
+      ><a name="2633"
+      > </a
+      ><a name="2634" class="Symbol"
+      >{</a
+      ><a name="2635" href="Logic.html#2635" class="Bound"
+      >P</a
+      ><a name="2636"
+      > </a
+      ><a name="2637" href="Logic.html#2637" class="Bound"
+      >Q</a
+      ><a name="2638"
+      > </a
+      ><a name="2639" class="Symbol"
+      >:</a
+      ><a name="2640"
+      > </a
+      ><a name="2641" class="PrimitiveType"
+      >Set</a
+      ><a name="2644" class="Symbol"
+      >}</a
+      ><a name="2645"
+      > </a
+      ><a name="2646" class="Symbol"
+      >&#8594;</a
+      ><a name="2647"
+      > </a
+      ><a name="2648" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2657"
+      > </a
+      ><a name="2658" href="Logic.html#2635" class="Bound"
+      >P</a
+      ><a name="2659"
+      > </a
+      ><a name="2660" class="Symbol"
+      >&#8594;</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" class="Symbol"
+      >(</a
+      ><a name="2663" href="Logic.html#2635" class="Bound"
+      >P</a
+      ><a name="2664"
+      > </a
+      ><a name="2665" class="Symbol"
+      >&#8594;</a
+      ><a name="2666"
+      > </a
+      ><a name="2667" href="Logic.html#2637" class="Bound"
+      >Q</a
+      ><a name="2668" class="Symbol"
+      >)</a
+      ><a name="2669"
+      > </a
+      ><a name="2670" class="Symbol"
+      >&#8594;</a
+      ><a name="2671"
+      > </a
+      ><a name="2672" class="Symbol"
+      >(</a
+      ><a name="2673" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2676"
+      > </a
+      ><a name="2677" class="Symbol"
+      >(</a
+      ><a name="2678" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2681"
+      > </a
+      ><a name="2682" href="Logic.html#2635" class="Bound"
+      >P</a
+      ><a name="2683" class="Symbol"
+      >)</a
+      ><a name="2684"
+      > </a
+      ><a name="2685" class="Symbol"
+      >&#8594;</a
+      ><a name="2686"
+      > </a
+      ><a name="2687" href="Logic.html#2637" class="Bound"
+      >Q</a
+      ><a name="2688" class="Symbol"
+      >)</a
+      ><a name="2689"
+      >
+</a
+      ><a name="2690" href="Logic.html#2615" class="Function"
+      >nn-antecedent-em</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" class="Symbol"
+      >(</a
+      ><a name="2708" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="2711"
+      > </a
+      ><a name="2712" href="Logic.html#2712" class="Bound"
+      >p</a
+      ><a name="2713" class="Symbol"
+      >)</a
+      ><a name="2714"
+      >  </a
+      ><a name="2716" href="Logic.html#2716" class="Bound"
+      >f</a
+      ><a name="2717"
+      > </a
+      ><a name="2718" href="Logic.html#2718" class="Bound"
+      >nnp</a
+      ><a name="2721"
+      > </a
+      ><a name="2722" class="Symbol"
+      >=</a
+      ><a name="2723"
+      > </a
+      ><a name="2724" href="Logic.html#2716" class="Bound"
+      >f</a
+      ><a name="2725"
+      > </a
+      ><a name="2726" href="Logic.html#2712" class="Bound"
+      >p</a
+      ><a name="2727"
+      >
+</a
+      ><a name="2728" href="Logic.html#2615" class="Function"
+      >nn-antecedent-em</a
+      ><a name="2744"
+      > </a
+      ><a name="2745" class="Symbol"
+      >(</a
+      ><a name="2746" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="2749"
+      > </a
+      ><a name="2750" href="Logic.html#2750" class="Bound"
+      >np</a
+      ><a name="2752" class="Symbol"
+      >)</a
+      ><a name="2753"
+      > </a
+      ><a name="2754" href="Logic.html#2754" class="Bound"
+      >f</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" href="Logic.html#2756" class="Bound"
+      >nnp</a
+      ><a name="2759"
+      > </a
+      ><a name="2760" class="Symbol"
+      >=</a
+      ><a name="2761"
+      > </a
+      ><a name="2762" href="NeilPrelude.html#1315" class="Function"
+      >absurd</a
+      ><a name="2768"
+      > </a
+      ><a name="2769" class="Symbol"
+      >(</a
+      ><a name="2770" href="Logic.html#2756" class="Bound"
+      >nnp</a
+      ><a name="2773"
+      > </a
+      ><a name="2774" href="Logic.html#2750" class="Bound"
+      >np</a
+      ><a name="2776" class="Symbol"
+      >)</a
+      ><a name="2777"
+      > 
+
+</a
+      ><a name="2780" href="Logic.html#2780" class="Function"
+      >nn-consequent-em</a
+      ><a name="2796"
+      > </a
+      ><a name="2797" class="Symbol"
+      >:</a
+      ><a name="2798"
+      > </a
+      ><a name="2799" class="Symbol"
+      >{</a
+      ><a name="2800" href="Logic.html#2800" class="Bound"
+      >P</a
+      ><a name="2801"
+      > </a
+      ><a name="2802" href="Logic.html#2802" class="Bound"
+      >Q</a
+      ><a name="2803"
+      > </a
+      ><a name="2804" class="Symbol"
+      >:</a
+      ><a name="2805"
+      > </a
+      ><a name="2806" class="PrimitiveType"
+      >Set</a
+      ><a name="2809" class="Symbol"
+      >}</a
+      ><a name="2810"
+      > </a
+      ><a name="2811" class="Symbol"
+      >&#8594;</a
+      ><a name="2812"
+      > </a
+      ><a name="2813" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2822"
+      > </a
+      ><a name="2823" href="Logic.html#2802" class="Bound"
+      >Q</a
+      ><a name="2824"
+      > </a
+      ><a name="2825" class="Symbol"
+      >&#8594;</a
+      ><a name="2826"
+      > </a
+      ><a name="2827" class="Symbol"
+      >(</a
+      ><a name="2828" href="Logic.html#2800" class="Bound"
+      >P</a
+      ><a name="2829"
+      > </a
+      ><a name="2830" class="Symbol"
+      >&#8594;</a
+      ><a name="2831"
+      > </a
+      ><a name="2832" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2835"
+      > </a
+      ><a name="2836" class="Symbol"
+      >(</a
+      ><a name="2837" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2840"
+      > </a
+      ><a name="2841" href="Logic.html#2802" class="Bound"
+      >Q</a
+      ><a name="2842" class="Symbol"
+      >))</a
+      ><a name="2844"
+      > </a
+      ><a name="2845" class="Symbol"
+      >&#8594;</a
+      ><a name="2846"
+      > </a
+      ><a name="2847" class="Symbol"
+      >(</a
+      ><a name="2848" href="Logic.html#2800" class="Bound"
+      >P</a
+      ><a name="2849"
+      > </a
+      ><a name="2850" class="Symbol"
+      >&#8594;</a
+      ><a name="2851"
+      > </a
+      ><a name="2852" href="Logic.html#2802" class="Bound"
+      >Q</a
+      ><a name="2853" class="Symbol"
+      >)</a
+      ><a name="2854"
+      >
+</a
+      ><a name="2855" href="Logic.html#2780" class="Function"
+      >nn-consequent-em</a
+      ><a name="2871"
+      > </a
+      ><a name="2872" href="Logic.html#2872" class="Bound"
+      >em</a
+      ><a name="2874"
+      > </a
+      ><a name="2875" href="Logic.html#2875" class="Bound"
+      >f</a
+      ><a name="2876"
+      > </a
+      ><a name="2877" href="Logic.html#2877" class="Bound"
+      >p</a
+      ><a name="2878"
+      > </a
+      ><a name="2879" class="Symbol"
+      >=</a
+      ><a name="2880"
+      > </a
+      ><a name="2881" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="2894"
+      > </a
+      ><a name="2895" href="Logic.html#2872" class="Bound"
+      >em</a
+      ><a name="2897"
+      > </a
+      ><a name="2898" class="Symbol"
+      >(</a
+      ><a name="2899" href="Logic.html#2875" class="Bound"
+      >f</a
+      ><a name="2900"
+      > </a
+      ><a name="2901" href="Logic.html#2877" class="Bound"
+      >p</a
+      ><a name="2902" class="Symbol"
+      >)</a
+      ><a name="2903"
+      >
+
+</a
+      ><a name="2905" href="Logic.html#2905" class="Function"
+      >notBoth</a
+      ><a name="2912"
+      > </a
+      ><a name="2913" class="Symbol"
+      >:</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" class="Symbol"
+      >{</a
+      ><a name="2916" href="Logic.html#2916" class="Bound"
+      >P</a
+      ><a name="2917"
+      > </a
+      ><a name="2918" href="Logic.html#2918" class="Bound"
+      >Q</a
+      ><a name="2919"
+      > </a
+      ><a name="2920" class="Symbol"
+      >:</a
+      ><a name="2921"
+      > </a
+      ><a name="2922" class="PrimitiveType"
+      >Set</a
+      ><a name="2925" class="Symbol"
+      >}</a
+      ><a name="2926"
+      > </a
+      ><a name="2927" class="Symbol"
+      >&#8594;</a
+      ><a name="2928"
+      > </a
+      ><a name="2929" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2938"
+      > </a
+      ><a name="2939" href="Logic.html#2916" class="Bound"
+      >P</a
+      ><a name="2940"
+      > </a
+      ><a name="2941" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="2942"
+      > </a
+      ><a name="2943" href="Logic.html#2211" class="Function"
+      >Decidable</a
+      ><a name="2952"
+      > </a
+      ><a name="2953" href="Logic.html#2918" class="Bound"
+      >Q</a
+      ><a name="2954"
+      > </a
+      ><a name="2955" class="Symbol"
+      >&#8594;</a
+      ><a name="2956"
+      > </a
+      ><a name="2957" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2960"
+      > </a
+      ><a name="2961" class="Symbol"
+      >(</a
+      ><a name="2962" href="Logic.html#2916" class="Bound"
+      >P</a
+      ><a name="2963"
+      > </a
+      ><a name="2964" href="NeilPrelude.html#1083" class="Function Operator"
+      >&#215;</a
+      ><a name="2965"
+      > </a
+      ><a name="2966" href="Logic.html#2918" class="Bound"
+      >Q</a
+      ><a name="2967" class="Symbol"
+      >)</a
+      ><a name="2968"
+      > </a
+      ><a name="2969" class="Symbol"
+      >&#8594;</a
+      ><a name="2970"
+      > </a
+      ><a name="2971" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2974"
+      > </a
+      ><a name="2975" href="Logic.html#2916" class="Bound"
+      >P</a
+      ><a name="2976"
+      > </a
+      ><a name="2977" href="NeilPrelude.html#1173" class="Datatype Operator"
+      >&#8846;</a
+      ><a name="2978"
+      > </a
+      ><a name="2979" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" href="Logic.html#2918" class="Bound"
+      >Q</a
+      ><a name="2984"
+      >
+</a
+      ><a name="2985" href="Logic.html#2905" class="Function"
+      >notBoth</a
+      ><a name="2992"
+      > </a
+      ><a name="2993" class="Symbol"
+      >(</a
+      ><a name="2994" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="2997"
+      > </a
+      ><a name="2998" class="Symbol"
+      >(</a
+      ><a name="2999" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="3002"
+      > </a
+      ><a name="3003" href="Logic.html#3003" class="Bound"
+      >p</a
+      ><a name="3004" class="Symbol"
+      >))</a
+      ><a name="3006"
+      >  </a
+      ><a name="3008" href="Logic.html#3008" class="Bound"
+      >nb</a
+      ><a name="3010"
+      > </a
+      ><a name="3011" class="Symbol"
+      >=</a
+      ><a name="3012"
+      > </a
+      ><a name="3013" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="3016"
+      > </a
+      ><a name="3017" class="Symbol"
+      >(&#955;</a
+      ><a name="3019"
+      > </a
+      ><a name="3020" href="Logic.html#3020" class="Bound"
+      >q</a
+      ><a name="3021"
+      > </a
+      ><a name="3022" class="Symbol"
+      >&#8594;</a
+      ><a name="3023"
+      > </a
+      ><a name="3024" href="Logic.html#3008" class="Bound"
+      >nb</a
+      ><a name="3026"
+      > </a
+      ><a name="3027" class="Symbol"
+      >(</a
+      ><a name="3028" href="Logic.html#3003" class="Bound"
+      >p</a
+      ><a name="3029"
+      > </a
+      ><a name="3030" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3031"
+      > </a
+      ><a name="3032" href="Logic.html#3020" class="Bound"
+      >q</a
+      ><a name="3033" class="Symbol"
+      >))</a
+      ><a name="3035"
+      >
+</a
+      ><a name="3036" href="Logic.html#2905" class="Function"
+      >notBoth</a
+      ><a name="3043"
+      > </a
+      ><a name="3044" class="Symbol"
+      >(</a
+      ><a name="3045" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="3048"
+      > </a
+      ><a name="3049" class="Symbol"
+      >(</a
+      ><a name="3050" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" href="Logic.html#3054" class="Bound"
+      >np</a
+      ><a name="3056" class="Symbol"
+      >))</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" href="Logic.html#3059" class="Bound"
+      >nb</a
+      ><a name="3061"
+      > </a
+      ><a name="3062" class="Symbol"
+      >=</a
+      ><a name="3063"
+      > </a
+      ><a name="3064" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="3067"
+      > </a
+      ><a name="3068" href="Logic.html#3054" class="Bound"
+      >np</a
+      ><a name="3070"
+      >
+</a
+      ><a name="3071" href="Logic.html#2905" class="Function"
+      >notBoth</a
+      ><a name="3078"
+      > </a
+      ><a name="3079" class="Symbol"
+      >(</a
+      ><a name="3080" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="3083"
+      > </a
+      ><a name="3084" class="Symbol"
+      >(</a
+      ><a name="3085" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="3088"
+      > </a
+      ><a name="3089" href="Logic.html#3089" class="Bound"
+      >q</a
+      ><a name="3090" class="Symbol"
+      >))</a
+      ><a name="3092"
+      >  </a
+      ><a name="3094" href="Logic.html#3094" class="Bound"
+      >nb</a
+      ><a name="3096"
+      > </a
+      ><a name="3097" class="Symbol"
+      >=</a
+      ><a name="3098"
+      > </a
+      ><a name="3099" href="NeilPrelude.html#1203" class="InductiveConstructor"
+      >inl</a
+      ><a name="3102"
+      > </a
+      ><a name="3103" class="Symbol"
+      >(&#955;</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" href="Logic.html#3106" class="Bound"
+      >p</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" class="Symbol"
+      >&#8594;</a
+      ><a name="3109"
+      > </a
+      ><a name="3110" href="Logic.html#3094" class="Bound"
+      >nb</a
+      ><a name="3112"
+      > </a
+      ><a name="3113" class="Symbol"
+      >(</a
+      ><a name="3114" href="Logic.html#3106" class="Bound"
+      >p</a
+      ><a name="3115"
+      > </a
+      ><a name="3116" href="NeilPrelude.html#1032" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" href="Logic.html#3089" class="Bound"
+      >q</a
+      ><a name="3119" class="Symbol"
+      >))</a
+      ><a name="3121"
+      >
+</a
+      ><a name="3122" href="Logic.html#2905" class="Function"
+      >notBoth</a
+      ><a name="3129"
+      > </a
+      ><a name="3130" class="Symbol"
+      >(</a
+      ><a name="3131" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="3134"
+      > </a
+      ><a name="3135" class="Symbol"
+      >(</a
+      ><a name="3136" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="3139"
+      > </a
+      ><a name="3140" href="Logic.html#3140" class="Bound"
+      >nq</a
+      ><a name="3142" class="Symbol"
+      >))</a
+      ><a name="3144"
+      > </a
+      ><a name="3145" href="Logic.html#3145" class="Bound"
+      >nb</a
+      ><a name="3147"
+      > </a
+      ><a name="3148" class="Symbol"
+      >=</a
+      ><a name="3149"
+      > </a
+      ><a name="3150" href="NeilPrelude.html#1221" class="InductiveConstructor"
+      >inr</a
+      ><a name="3153"
+      > </a
+      ><a name="3154" href="Logic.html#3140" class="Bound"
+      >nq</a
+      ><a name="3156"
+      >
+
+</a
+      ><a name="3158" class="Comment"
+      >-- nn-Bool : {b : Bool} &#8594; Not (Not (isTrue b)) &#8594; isTrue b</a
+      ><a name="3215"
+      >
+</a
+      ><a name="3216" class="Comment"
+      >-- nn-Bool = case const (&#955; nb &#8594; absurd &#8728; applyTo nb) em-Bool</a
+      ><a name="3276"
+      >
+
+</a
+      ><a name="3278" class="Comment"
+      >-- Some lemmas of forall and exists</a
+      ><a name="3313"
+      >
+
+</a
+      ><a name="3315" class="Comment"
+      >-- lem1 : {A : Set} &#8594; {P : A &#8594; Set} &#8594; &#931; A P &#8594; Not (&#928; A (Not &#8728; P))</a
+      ><a name="3380"
+      >
+</a
+      ><a name="3381" class="Comment"
+      >-- lem1 (a , pa) f = f a pa</a
+      ><a name="3408"
+      >
+
+</a
+      ><a name="3410" class="Comment"
+      >-- lem2 : {A : Set} &#8594; {P : A &#8594; Set} &#8594; &#931; A (Not &#8728; P) &#8594; Not (&#928; A P)</a
+      ><a name="3475"
+      >
+</a
+      ><a name="3476" class="Comment"
+      >-- lem2 (a , npa) f = npa (f a)</a
+      ><a name="3507"
+      >
+
+</a
+      ><a name="3509" class="Comment"
+      >-- lem3 : {A : Set} &#8594; {P : A &#8594; Set} &#8594; &#928; A P &#8594; Not (&#931; A (Not &#8728; P))</a
+      ><a name="3574"
+      >
+</a
+      ><a name="3575" class="Comment"
+      >-- lem3 f (a , npa) = npa (f a)</a
+      ><a name="3606"
+      >
+
+</a
+      ><a name="3608" class="Comment"
+      >-- lem4 : {A : Set} &#8594; {P : A &#8594; Set} &#8594; &#928; A (Not &#8728; P) &#8594; Not (&#931; A P)</a
+      ><a name="3673"
+      >
+</a
+      ><a name="3674" class="Comment"
+      >-- lem4 f (a , pa) = f a pa</a
+      ><a name="3701"
+      >
+
+</a
+      ><a name="3703" class="Comment"
+      >-- lem5 : {A : Set} &#8594; {P : A &#8594; Set} &#8594; EM &#8594; Not (&#928; A (Not &#8728; P)) &#8594; &#931; A P</a
+      ><a name="3773"
+      >
+</a
+      ><a name="3774" class="Comment"
+      >-- lem5 em p = case id (&#955; nap &#8594; absurd (p (curry nap))) em</a
+      ><a name="3832"
+      >
+
+</a
+      ><a name="3834" class="Comment"
+      >-- lem-nAEn : {A : Set} &#8594; {P : A &#8594; Set} &#8594; EM &#8594; Not (&#928; A P) &#8594; &#931; A (Not &#8728; P)</a
+      ><a name="3908"
+      >
+</a
+      ><a name="3909" class="Comment"
+      >-- lem-nAEn {A} {P} em nap with em {A}</a
+      ><a name="3947"
+      >
+</a
+      ><a name="3948" class="Comment"
+      >-- ... | inr na = absurd (nap (&#955; a &#8594; absurd (na a)))</a
+      ><a name="4000"
+      >
+</a
+      ><a name="4001" class="Comment"
+      >-- ... | inl a with em {P a}</a
+      ><a name="4029"
+      >
+</a
+      ><a name="4030" class="Comment"
+      >-- ...   | inl pa   = {!!}</a
+      ><a name="4056"
+      >
+</a
+      ><a name="4057" class="Comment"
+      >-- ...   | inr npa = a , npa</a
+      ><a name="4085"
+      >
+
+</a
+      ><a name="4087" href="Logic.html#4087" class="Function"
+      >must-always-cur</a
+      ><a name="4102"
+      > </a
+      ><a name="4103" class="Symbol"
+      >:</a
+      ><a name="4104"
+      > </a
+      ><a name="4105" class="Symbol"
+      >{</a
+      ><a name="4106" href="Logic.html#4106" class="Bound"
+      >A</a
+      ><a name="4107"
+      > </a
+      ><a name="4108" class="Symbol"
+      >:</a
+      ><a name="4109"
+      > </a
+      ><a name="4110" class="PrimitiveType"
+      >Set</a
+      ><a name="4113" class="Symbol"
+      >}</a
+      ><a name="4114"
+      > </a
+      ><a name="4115" class="Symbol"
+      >&#8594;</a
+      ><a name="4116"
+      > </a
+      ><a name="4117" class="Symbol"
+      >{</a
+      ><a name="4118" href="Logic.html#4118" class="Bound"
+      >P</a
+      ><a name="4119"
+      > </a
+      ><a name="4120" class="Symbol"
+      >:</a
+      ><a name="4121"
+      > </a
+      ><a name="4122" href="Logic.html#4106" class="Bound"
+      >A</a
+      ><a name="4123"
+      > </a
+      ><a name="4124" class="Symbol"
+      >&#8594;</a
+      ><a name="4125"
+      > </a
+      ><a name="4126" class="PrimitiveType"
+      >Set</a
+      ><a name="4129" class="Symbol"
+      >}</a
+      ><a name="4130"
+      > </a
+      ><a name="4131" class="Symbol"
+      >&#8594;</a
+      ><a name="4132"
+      > </a
+      ><a name="4133" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="4135"
+      > </a
+      ><a name="4136" class="Symbol"
+      >&#8594;</a
+      ><a name="4137"
+      > </a
+      ><a name="4138" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="4139"
+      > </a
+      ><a name="4140" href="Logic.html#4106" class="Bound"
+      >A</a
+      ><a name="4141"
+      > </a
+      ><a name="4142" class="Symbol"
+      >(</a
+      ><a name="4143" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4146"
+      > </a
+      ><a name="4147" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4148"
+      > </a
+      ><a name="4149" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4152"
+      > </a
+      ><a name="4153" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4154"
+      > </a
+      ><a name="4155" href="Logic.html#4118" class="Bound"
+      >P</a
+      ><a name="4156" class="Symbol"
+      >)</a
+      ><a name="4157"
+      > </a
+      ><a name="4158" class="Symbol"
+      >&#8594;</a
+      ><a name="4159"
+      > </a
+      ><a name="4160" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="4161"
+      > </a
+      ><a name="4162" href="Logic.html#4106" class="Bound"
+      >A</a
+      ><a name="4163"
+      > </a
+      ><a name="4164" href="Logic.html#4118" class="Bound"
+      >P</a
+      ><a name="4165"
+      >
+</a
+      ><a name="4166" href="Logic.html#4087" class="Function"
+      >must-always-cur</a
+      ><a name="4181"
+      > </a
+      ><a name="4182" href="Logic.html#4182" class="Bound"
+      >em</a
+      ><a name="4184"
+      > </a
+      ><a name="4185" href="Logic.html#4185" class="Bound"
+      >npa</a
+      ><a name="4188"
+      > </a
+      ><a name="4189" href="Logic.html#4189" class="Bound"
+      >a</a
+      ><a name="4190"
+      > </a
+      ><a name="4191" class="Symbol"
+      >=</a
+      ><a name="4192"
+      > </a
+      ><a name="4193" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="4206"
+      > </a
+      ><a name="4207" href="Logic.html#4182" class="Bound"
+      >em</a
+      ><a name="4209"
+      > </a
+      ><a name="4210" class="Symbol"
+      >(</a
+      ><a name="4211" href="Logic.html#4185" class="Bound"
+      >npa</a
+      ><a name="4214"
+      > </a
+      ><a name="4215" href="Logic.html#4189" class="Bound"
+      >a</a
+      ><a name="4216" class="Symbol"
+      >)</a
+      ><a name="4217"
+      >
+
+</a
+      ><a name="4219" href="Logic.html#4219" class="Function"
+      >must-always</a
+      ><a name="4230"
+      > </a
+      ><a name="4231" class="Symbol"
+      >:</a
+      ><a name="4232"
+      > </a
+      ><a name="4233" class="Symbol"
+      >{</a
+      ><a name="4234" href="Logic.html#4234" class="Bound"
+      >A</a
+      ><a name="4235"
+      > </a
+      ><a name="4236" class="Symbol"
+      >:</a
+      ><a name="4237"
+      > </a
+      ><a name="4238" class="PrimitiveType"
+      >Set</a
+      ><a name="4241" class="Symbol"
+      >}</a
+      ><a name="4242"
+      > </a
+      ><a name="4243" class="Symbol"
+      >&#8594;</a
+      ><a name="4244"
+      > </a
+      ><a name="4245" class="Symbol"
+      >{</a
+      ><a name="4246" href="Logic.html#4246" class="Bound"
+      >P</a
+      ><a name="4247"
+      > </a
+      ><a name="4248" class="Symbol"
+      >:</a
+      ><a name="4249"
+      > </a
+      ><a name="4250" href="Logic.html#4234" class="Bound"
+      >A</a
+      ><a name="4251"
+      > </a
+      ><a name="4252" class="Symbol"
+      >&#8594;</a
+      ><a name="4253"
+      > </a
+      ><a name="4254" class="PrimitiveType"
+      >Set</a
+      ><a name="4257" class="Symbol"
+      >}</a
+      ><a name="4258"
+      > </a
+      ><a name="4259" class="Symbol"
+      >&#8594;</a
+      ><a name="4260"
+      > </a
+      ><a name="4261" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="4263"
+      > </a
+      ><a name="4264" class="Symbol"
+      >&#8594;</a
+      ><a name="4265"
+      > </a
+      ><a name="4266" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4269"
+      > </a
+      ><a name="4270" class="Symbol"
+      >(</a
+      ><a name="4271" href="NeilPrelude.html#992" class="Datatype"
+      >&#931;</a
+      ><a name="4272"
+      > </a
+      ><a name="4273" href="Logic.html#4234" class="Bound"
+      >A</a
+      ><a name="4274"
+      > </a
+      ><a name="4275" class="Symbol"
+      >(</a
+      ><a name="4276" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4279"
+      > </a
+      ><a name="4280" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4281"
+      > </a
+      ><a name="4282" href="Logic.html#4246" class="Bound"
+      >P</a
+      ><a name="4283" class="Symbol"
+      >))</a
+      ><a name="4285"
+      > </a
+      ><a name="4286" class="Symbol"
+      >&#8594;</a
+      ><a name="4287"
+      > </a
+      ><a name="4288" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="4289"
+      > </a
+      ><a name="4290" href="Logic.html#4234" class="Bound"
+      >A</a
+      ><a name="4291"
+      > </a
+      ><a name="4292" href="Logic.html#4246" class="Bound"
+      >P</a
+      ><a name="4293"
+      >
+</a
+      ><a name="4294" href="Logic.html#4219" class="Function"
+      >must-always</a
+      ><a name="4305"
+      > </a
+      ><a name="4306" href="Logic.html#4306" class="Bound"
+      >em</a
+      ><a name="4308"
+      > </a
+      ><a name="4309" class="Symbol"
+      >=</a
+      ><a name="4310"
+      > </a
+      ><a name="4311" href="Logic.html#4087" class="Function"
+      >must-always-cur</a
+      ><a name="4326"
+      > </a
+      ><a name="4327" href="Logic.html#4306" class="Bound"
+      >em</a
+      ><a name="4329"
+      > </a
+      ><a name="4330" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4331"
+      > </a
+      ><a name="4332" href="NeilPrelude.html#11952" class="Function"
+      >curry</a
+      ><a name="4337"
+      >
+
+</a
+      ><a name="4339" href="Logic.html#4339" class="Function"
+      >must-exist</a
+      ><a name="4349"
+      > </a
+      ><a name="4350" class="Symbol"
+      >:</a
+      ><a name="4351"
+      > </a
+      ><a name="4352" class="Symbol"
+      >{</a
+      ><a name="4353" href="Logic.html#4353" class="Bound"
+      >A</a
+      ><a name="4354"
+      > </a
+      ><a name="4355" class="Symbol"
+      >:</a
+      ><a name="4356"
+      > </a
+      ><a name="4357" class="PrimitiveType"
+      >Set</a
+      ><a name="4360" class="Symbol"
+      >}</a
+      ><a name="4361"
+      > </a
+      ><a name="4362" class="Symbol"
+      >&#8594;</a
+      ><a name="4363"
+      > </a
+      ><a name="4364" class="Symbol"
+      >{</a
+      ><a name="4365" href="Logic.html#4365" class="Bound"
+      >P</a
+      ><a name="4366"
+      > </a
+      ><a name="4367" class="Symbol"
+      >:</a
+      ><a name="4368"
+      > </a
+      ><a name="4369" href="Logic.html#4353" class="Bound"
+      >A</a
+      ><a name="4370"
+      > </a
+      ><a name="4371" class="Symbol"
+      >&#8594;</a
+      ><a name="4372"
+      > </a
+      ><a name="4373" class="PrimitiveType"
+      >Set</a
+      ><a name="4376" class="Symbol"
+      >}</a
+      ><a name="4377"
+      > </a
+      ><a name="4378" class="Symbol"
+      >&#8594;</a
+      ><a name="4379"
+      > </a
+      ><a name="4380" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="4382"
+      > </a
+      ><a name="4383" class="Symbol"
+      >&#8594;</a
+      ><a name="4384"
+      > </a
+      ><a name="4385" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4388"
+      > </a
+      ><a name="4389" class="Symbol"
+      >(</a
+      ><a name="4390" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="4391"
+      > </a
+      ><a name="4392" href="Logic.html#4353" class="Bound"
+      >A</a
+      ><a name="4393"
+      > </a
+      ><a name="4394" class="Symbol"
+      >(</a
+      ><a name="4395" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4398"
+      > </a
+      ><a name="4399" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4400"
+      > </a
+      ><a name="4401" href="Logic.html#4365" class="Bound"
+      >P</a
+      ><a name="4402" class="Symbol"
+      >))</a
+      ><a name="4404"
+      > </a
+      ><a name="4405" class="Symbol"
+      >&#8594;</a
+      ><a name="4406"
+      > </a
+      ><a name="4407" href="NeilPrelude.html#992" class="Datatype"
+      >&#931;</a
+      ><a name="4408"
+      > </a
+      ><a name="4409" href="Logic.html#4353" class="Bound"
+      >A</a
+      ><a name="4410"
+      > </a
+      ><a name="4411" href="Logic.html#4365" class="Bound"
+      >P</a
+      ><a name="4412"
+      >
+</a
+      ><a name="4413" href="Logic.html#4339" class="Function"
+      >must-exist</a
+      ><a name="4423"
+      > </a
+      ><a name="4424" href="Logic.html#4424" class="Bound"
+      >em</a
+      ><a name="4426"
+      > </a
+      ><a name="4427" href="Logic.html#4427" class="Bound"
+      >nn</a
+      ><a name="4429"
+      > </a
+      ><a name="4430" class="Symbol"
+      >=</a
+      ><a name="4431"
+      > </a
+      ><a name="4432" href="Logic.html#2364" class="Function"
+      >contradiction</a
+      ><a name="4445"
+      > </a
+      ><a name="4446" href="Logic.html#4424" class="Bound"
+      >em</a
+      ><a name="4448"
+      > </a
+      ><a name="4449" class="Symbol"
+      >(</a
+      ><a name="4450" href="Logic.html#4427" class="Bound"
+      >nn</a
+      ><a name="4452"
+      > </a
+      ><a name="4453" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4454"
+      > </a
+      ><a name="4455" href="NeilPrelude.html#11952" class="Function"
+      >curry</a
+      ><a name="4460" class="Symbol"
+      >)</a
+      ><a name="4461"
+      >
+
+</a
+      ><a name="4463" href="Logic.html#4463" class="Function"
+      >must-exist-not</a
+      ><a name="4477"
+      > </a
+      ><a name="4478" class="Symbol"
+      >:</a
+      ><a name="4479"
+      > </a
+      ><a name="4480" class="Symbol"
+      >{</a
+      ><a name="4481" href="Logic.html#4481" class="Bound"
+      >A</a
+      ><a name="4482"
+      > </a
+      ><a name="4483" class="Symbol"
+      >:</a
+      ><a name="4484"
+      > </a
+      ><a name="4485" class="PrimitiveType"
+      >Set</a
+      ><a name="4488" class="Symbol"
+      >}</a
+      ><a name="4489"
+      > </a
+      ><a name="4490" class="Symbol"
+      >&#8594;</a
+      ><a name="4491"
+      > </a
+      ><a name="4492" class="Symbol"
+      >{</a
+      ><a name="4493" href="Logic.html#4493" class="Bound"
+      >P</a
+      ><a name="4494"
+      > </a
+      ><a name="4495" class="Symbol"
+      >:</a
+      ><a name="4496"
+      > </a
+      ><a name="4497" href="Logic.html#4481" class="Bound"
+      >A</a
+      ><a name="4498"
+      > </a
+      ><a name="4499" class="Symbol"
+      >&#8594;</a
+      ><a name="4500"
+      > </a
+      ><a name="4501" class="PrimitiveType"
+      >Set</a
+      ><a name="4504" class="Symbol"
+      >}</a
+      ><a name="4505"
+      > </a
+      ><a name="4506" class="Symbol"
+      >&#8594;</a
+      ><a name="4507"
+      > </a
+      ><a name="4508" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="4510"
+      > </a
+      ><a name="4511" class="Symbol"
+      >&#8594;</a
+      ><a name="4512"
+      > </a
+      ><a name="4513" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4516"
+      > </a
+      ><a name="4517" class="Symbol"
+      >(</a
+      ><a name="4518" href="NeilPrelude.html#5755" class="Function"
+      >&#928;</a
+      ><a name="4519"
+      > </a
+      ><a name="4520" href="Logic.html#4481" class="Bound"
+      >A</a
+      ><a name="4521"
+      > </a
+      ><a name="4522" href="Logic.html#4493" class="Bound"
+      >P</a
+      ><a name="4523" class="Symbol"
+      >)</a
+      ><a name="4524"
+      > </a
+      ><a name="4525" class="Symbol"
+      >&#8594;</a
+      ><a name="4526"
+      > </a
+      ><a name="4527" href="NeilPrelude.html#992" class="Datatype"
+      >&#931;</a
+      ><a name="4528"
+      > </a
+      ><a name="4529" href="Logic.html#4481" class="Bound"
+      >A</a
+      ><a name="4530"
+      > </a
+      ><a name="4531" class="Symbol"
+      >(</a
+      ><a name="4532" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4535"
+      > </a
+      ><a name="4536" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4537"
+      > </a
+      ><a name="4538" href="Logic.html#4493" class="Bound"
+      >P</a
+      ><a name="4539" class="Symbol"
+      >)</a
+      ><a name="4540"
+      >
+</a
+      ><a name="4541" href="Logic.html#4463" class="Function"
+      >must-exist-not</a
+      ><a name="4555"
+      > </a
+      ><a name="4556" href="Logic.html#4556" class="Bound"
+      >em</a
+      ><a name="4558"
+      > </a
+      ><a name="4559" href="Logic.html#4559" class="Bound"
+      >nap</a
+      ><a name="4562"
+      > </a
+      ><a name="4563" class="Symbol"
+      >=</a
+      ><a name="4564"
+      > </a
+      ><a name="4565" href="Logic.html#4339" class="Function"
+      >must-exist</a
+      ><a name="4575"
+      > </a
+      ><a name="4576" href="Logic.html#4556" class="Bound"
+      >em</a
+      ><a name="4578"
+      > </a
+      ><a name="4579" class="Symbol"
+      >(&#955;</a
+      ><a name="4581"
+      > </a
+      ><a name="4582" href="Logic.html#4582" class="Bound"
+      >f</a
+      ><a name="4583"
+      > </a
+      ><a name="4584" class="Symbol"
+      >&#8594;</a
+      ><a name="4585"
+      > </a
+      ><a name="4586" href="Logic.html#4559" class="Bound"
+      >nap</a
+      ><a name="4589"
+      > </a
+      ><a name="4590" class="Symbol"
+      >(</a
+      ><a name="4591" href="Logic.html#4087" class="Function"
+      >must-always-cur</a
+      ><a name="4606"
+      > </a
+      ><a name="4607" href="Logic.html#4556" class="Bound"
+      >em</a
+      ><a name="4609"
+      > </a
+      ><a name="4610" href="Logic.html#4582" class="Bound"
+      >f</a
+      ><a name="4611" class="Symbol"
+      >))</a
+      ><a name="4613"
+      >
+
+</a
+      ><a name="4615" href="Logic.html#4615" class="Function"
+      >must-exist-not2</a
+      ><a name="4630"
+      > </a
+      ><a name="4631" class="Symbol"
+      >:</a
+      ><a name="4632"
+      > </a
+      ><a name="4633" class="Symbol"
+      >{</a
+      ><a name="4634" href="Logic.html#4634" class="Bound"
+      >A</a
+      ><a name="4635"
+      > </a
+      ><a name="4636" class="Symbol"
+      >:</a
+      ><a name="4637"
+      > </a
+      ><a name="4638" class="PrimitiveType"
+      >Set</a
+      ><a name="4641" class="Symbol"
+      >}</a
+      ><a name="4642"
+      > </a
+      ><a name="4643" class="Symbol"
+      >&#8594;</a
+      ><a name="4644"
+      > </a
+      ><a name="4645" class="Symbol"
+      >{</a
+      ><a name="4646" href="Logic.html#4646" class="Bound"
+      >B</a
+      ><a name="4647"
+      > </a
+      ><a name="4648" class="Symbol"
+      >:</a
+      ><a name="4649"
+      > </a
+      ><a name="4650" href="Logic.html#4634" class="Bound"
+      >A</a
+      ><a name="4651"
+      > </a
+      ><a name="4652" class="Symbol"
+      >&#8594;</a
+      ><a name="4653"
+      > </a
+      ><a name="4654" class="PrimitiveType"
+      >Set</a
+      ><a name="4657" class="Symbol"
+      >}</a
+      ><a name="4658"
+      > </a
+      ><a name="4659" class="Symbol"
+      >&#8594;</a
+      ><a name="4660"
+      > </a
+      ><a name="4661" class="Symbol"
+      >{</a
+      ><a name="4662" href="Logic.html#4662" class="Bound"
+      >P</a
+      ><a name="4663"
+      > </a
+      ><a name="4664" class="Symbol"
+      >:</a
+      ><a name="4665"
+      > </a
+      ><a name="4666" class="Symbol"
+      >(</a
+      ><a name="4667" href="Logic.html#4667" class="Bound"
+      >a</a
+      ><a name="4668"
+      > </a
+      ><a name="4669" class="Symbol"
+      >:</a
+      ><a name="4670"
+      > </a
+      ><a name="4671" href="Logic.html#4634" class="Bound"
+      >A</a
+      ><a name="4672" class="Symbol"
+      >)</a
+      ><a name="4673"
+      > </a
+      ><a name="4674" class="Symbol"
+      >&#8594;</a
+      ><a name="4675"
+      > </a
+      ><a name="4676" href="Logic.html#4646" class="Bound"
+      >B</a
+      ><a name="4677"
+      > </a
+      ><a name="4678" href="Logic.html#4667" class="Bound"
+      >a</a
+      ><a name="4679"
+      > </a
+      ><a name="4680" class="Symbol"
+      >&#8594;</a
+      ><a name="4681"
+      > </a
+      ><a name="4682" class="PrimitiveType"
+      >Set</a
+      ><a name="4685" class="Symbol"
+      >}</a
+      ><a name="4686"
+      > </a
+      ><a name="4687" class="Symbol"
+      >&#8594;</a
+      ><a name="4688"
+      > </a
+      ><a name="4689" href="Logic.html#2174" class="Function"
+      >EM</a
+      ><a name="4691"
+      > </a
+      ><a name="4692" class="Symbol"
+      >&#8594;</a
+      ><a name="4693"
+      > </a
+      ><a name="4694" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4697"
+      > </a
+      ><a name="4698" class="Symbol"
+      >(</a
+      ><a name="4699" href="NeilPrelude.html#6659" class="Function"
+      >&#928;&#8322;</a
+      ><a name="4701"
+      > </a
+      ><a name="4702" href="Logic.html#4634" class="Bound"
+      >A</a
+      ><a name="4703"
+      > </a
+      ><a name="4704" href="Logic.html#4646" class="Bound"
+      >B</a
+      ><a name="4705"
+      > </a
+      ><a name="4706" href="Logic.html#4662" class="Bound"
+      >P</a
+      ><a name="4707" class="Symbol"
+      >)</a
+      ><a name="4708"
+      > </a
+      ><a name="4709" class="Symbol"
+      >&#8594;</a
+      ><a name="4710"
+      > </a
+      ><a name="4711" href="NeilPrelude.html#992" class="Datatype"
+      >&#931;</a
+      ><a name="4712"
+      > </a
+      ><a name="4713" href="Logic.html#4634" class="Bound"
+      >A</a
+      ><a name="4714"
+      > </a
+      ><a name="4715" class="Symbol"
+      >(&#955;</a
+      ><a name="4717"
+      > </a
+      ><a name="4718" href="Logic.html#4718" class="Bound"
+      >a</a
+      ><a name="4719"
+      > </a
+      ><a name="4720" class="Symbol"
+      >&#8594;</a
+      ><a name="4721"
+      > </a
+      ><a name="4722" href="NeilPrelude.html#992" class="Datatype"
+      >&#931;</a
+      ><a name="4723"
+      > </a
+      ><a name="4724" class="Symbol"
+      >(</a
+      ><a name="4725" href="Logic.html#4646" class="Bound"
+      >B</a
+      ><a name="4726"
+      > </a
+      ><a name="4727" href="Logic.html#4718" class="Bound"
+      >a</a
+      ><a name="4728" class="Symbol"
+      >)</a
+      ><a name="4729"
+      > </a
+      ><a name="4730" class="Symbol"
+      >(</a
+      ><a name="4731" href="NeilPrelude.html#1357" class="Function"
+      >Not</a
+      ><a name="4734"
+      > </a
+      ><a name="4735" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4736"
+      > </a
+      ><a name="4737" href="Logic.html#4662" class="Bound"
+      >P</a
+      ><a name="4738"
+      > </a
+      ><a name="4739" href="Logic.html#4718" class="Bound"
+      >a</a
+      ><a name="4740" class="Symbol"
+      >))</a
+      ><a name="4742"
+      >
+</a
+      ><a name="4743" href="Logic.html#4615" class="Function"
+      >must-exist-not2</a
+      ><a name="4758"
+      > </a
+      ><a name="4759" href="Logic.html#4759" class="Bound"
+      >em</a
+      ><a name="4761"
+      > </a
+      ><a name="4762" class="Symbol"
+      >=</a
+      ><a name="4763"
+      > </a
+      ><a name="4764" href="NeilPrelude.html#13329" class="Function"
+      >second'</a
+      ><a name="4771"
+      > </a
+      ><a name="4772" class="Symbol"
+      >(</a
+      ><a name="4773" href="Logic.html#4463" class="Function"
+      >must-exist-not</a
+      ><a name="4787"
+      > </a
+      ><a name="4788" href="Logic.html#4759" class="Bound"
+      >em</a
+      ><a name="4790" class="Symbol"
+      >)</a
+      ><a name="4791"
+      > </a
+      ><a name="4792" href="NeilPrelude.html#7412" class="Function Operator"
+      >&#8728;</a
+      ><a name="4793"
+      > </a
+      ><a name="4794" href="Logic.html#4463" class="Function"
+      >must-exist-not</a
+      ><a name="4808"
+      > </a
+      ><a name="4809" href="Logic.html#4759" class="Bound"
+      >em</a
+      ><a name="4811"
+      >
+
+</a
+      ><a name="4813" class="Comment"
+      >-- must-never : {A : Set} &#8594; {P : A &#8594; Set} &#8594; Not (&#931; A P) &#8594; &#928; A (Not &#8728; P)</a
+      ><a name="4884"
+      >
+</a
+      ><a name="4885" class="Comment"
+      >-- must-never = curry</a
+      ><a name="4906"
+      >
+
+</a
+      ><a name="4908" class="Comment"
+      >-- must-never2 : {A : Set} &#8594; {B : A &#8594; Set} &#8594; {P : (a : A) &#8594; B a &#8594; Set} &#8594; Not (&#931;&#8322; A B P) &#8594; (a : A) &#8594; &#928; (B a) (Not &#8728; P a)</a
+      ><a name="5027"
+      >
+</a
+      ><a name="5028" class="Comment"
+      >-- must-never2 = curry2 </a
+      ><a name="5052"
+      >
+
+
+</a
+      ><a name="5055" class="Comment"
+      >-- lem-Aux : {A : Set} &#8594; {P : A &#8594; Set} &#8594; EM &#8594; Not (&#928; A (Not &#8728; P)) &#8594; &#931; A (Not &#8728; Not &#8728; P)</a
+      ><a name="5142"
+      >
+</a
+      ><a name="5143" class="Comment"
+      >-- lem-Aux em nn with must-exist em nn</a
+      ><a name="5181"
+      >
+</a
+      ><a name="5182" class="Comment"
+      >-- ... | a , p = a , NotNot p</a
+      ><a name="5211"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

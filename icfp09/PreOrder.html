@@ -1,0 +1,1087 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >PreOrder</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+    </a
+      ><a name="32" class="Symbol"
+      >#-}</a
+      ><a name="35"
+      >
+
+</a
+      ><a name="37" class="Keyword"
+      >open</a
+      ><a name="41"
+      > </a
+      ><a name="42" class="Keyword"
+      >import</a
+      ><a name="48"
+      > </a
+      ><a name="49" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="60"
+      >
+
+</a
+      ><a name="62" class="Keyword"
+      >module</a
+      ><a name="68"
+      > </a
+      ><a name="69" href="PreOrder.html#69" class="Module"
+      >PreOrder</a
+      ><a name="77"
+      > </a
+      ><a name="78" class="Symbol"
+      >{</a
+      ><a name="79" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="80"
+      > </a
+      ><a name="81" class="Symbol"
+      >:</a
+      ><a name="82"
+      > </a
+      ><a name="83" class="PrimitiveType"
+      >Set</a
+      ><a name="86" class="Symbol"
+      >}</a
+      ><a name="87"
+      > </a
+      ><a name="88" class="Symbol"
+      >(</a
+      ><a name="89" href="PreOrder.html#89" class="Bound Operator"
+      >_&#8804;'_</a
+      ><a name="93"
+      > </a
+      ><a name="94" class="Symbol"
+      >:</a
+      ><a name="95"
+      > </a
+      ><a name="96" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="97"
+      > </a
+      ><a name="98" class="Symbol"
+      >&#8594;</a
+      ><a name="99"
+      > </a
+      ><a name="100" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="101"
+      > </a
+      ><a name="102" class="Symbol"
+      >&#8594;</a
+      ><a name="103"
+      > </a
+      ><a name="104" class="PrimitiveType"
+      >Set</a
+      ><a name="107" class="Symbol"
+      >)</a
+      ><a name="108"
+      >
+
+                    </a
+      ><a name="130" class="Symbol"
+      >(</a
+      ><a name="131" href="PreOrder.html#131" class="Bound"
+      >reflex</a
+      ><a name="137"
+      >  </a
+      ><a name="139" class="Symbol"
+      >:</a
+      ><a name="140"
+      > </a
+      ><a name="141" href="NeilPrelude.html#1591" class="Function"
+      >Reflexive</a
+      ><a name="150"
+      > </a
+      ><a name="151" href="PreOrder.html#89" class="Bound Operator"
+      >_&#8804;'_</a
+      ><a name="155" class="Symbol"
+      >)</a
+      ><a name="156"
+      >
+                    </a
+      ><a name="177" class="Symbol"
+      >(</a
+      ><a name="178" href="PreOrder.html#178" class="Bound"
+      >transit</a
+      ><a name="185"
+      > </a
+      ><a name="186" class="Symbol"
+      >:</a
+      ><a name="187"
+      > </a
+      ><a name="188" href="NeilPrelude.html#2393" class="Function"
+      >Transitive</a
+      ><a name="198"
+      > </a
+      ><a name="199" href="PreOrder.html#89" class="Bound Operator"
+      >_&#8804;'_</a
+      ><a name="203" class="Symbol"
+      >)</a
+      ><a name="204"
+      >
+
+</a
+      ><a name="206" class="Keyword"
+      >where</a
+      ><a name="211"
+      >
+
+</a
+      ><a name="213" class="Keyword"
+      >infix</a
+      ><a name="218"
+      > </a
+      ><a name="219" class="Number"
+      >3</a
+      ><a name="220"
+      > _&#8804;_ _&#8805;_
+
+</a
+      ><a name="230" href="PreOrder.html#230" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="233"
+      > </a
+      ><a name="234" class="Symbol"
+      >:</a
+      ><a name="235"
+      > </a
+      ><a name="236" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="237"
+      > </a
+      ><a name="238" class="Symbol"
+      >&#8594;</a
+      ><a name="239"
+      > </a
+      ><a name="240" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="241"
+      > </a
+      ><a name="242" class="Symbol"
+      >&#8594;</a
+      ><a name="243"
+      > </a
+      ><a name="244" class="PrimitiveType"
+      >Set</a
+      ><a name="247"
+      >
+</a
+      ><a name="248" href="PreOrder.html#230" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="251"
+      > </a
+      ><a name="252" class="Symbol"
+      >=</a
+      ><a name="253"
+      > </a
+      ><a name="254" href="PreOrder.html#89" class="Bound Operator"
+      >_&#8804;'_</a
+      ><a name="258"
+      >
+
+</a
+      ><a name="260" href="PreOrder.html#260" class="Function Operator"
+      >_&#8805;_</a
+      ><a name="263"
+      > </a
+      ><a name="264" class="Symbol"
+      >:</a
+      ><a name="265"
+      > </a
+      ><a name="266" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="267"
+      > </a
+      ><a name="268" class="Symbol"
+      >&#8594;</a
+      ><a name="269"
+      > </a
+      ><a name="270" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="271"
+      > </a
+      ><a name="272" class="Symbol"
+      >&#8594;</a
+      ><a name="273"
+      > </a
+      ><a name="274" class="PrimitiveType"
+      >Set</a
+      ><a name="277"
+      >
+</a
+      ><a name="278" href="PreOrder.html#278" class="Bound"
+      >a</a
+      ><a name="279"
+      > </a
+      ><a name="280" href="PreOrder.html#260" class="Function Operator"
+      >&#8805;</a
+      ><a name="281"
+      > </a
+      ><a name="282" href="PreOrder.html#282" class="Bound"
+      >b</a
+      ><a name="283"
+      > </a
+      ><a name="284" class="Symbol"
+      >=</a
+      ><a name="285"
+      > </a
+      ><a name="286" href="PreOrder.html#282" class="Bound"
+      >b</a
+      ><a name="287"
+      > </a
+      ><a name="288" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="289"
+      > </a
+      ><a name="290" href="PreOrder.html#278" class="Bound"
+      >a</a
+      ><a name="291"
+      >
+
+</a
+      ><a name="293" href="PreOrder.html#293" class="Function"
+      >reflexive</a
+      ><a name="302"
+      > </a
+      ><a name="303" class="Symbol"
+      >:</a
+      ><a name="304"
+      > </a
+      ><a name="305" href="NeilPrelude.html#1591" class="Function"
+      >Reflexive</a
+      ><a name="314"
+      > </a
+      ><a name="315" href="PreOrder.html#230" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="318"
+      >
+</a
+      ><a name="319" href="PreOrder.html#293" class="Function"
+      >reflexive</a
+      ><a name="328"
+      > </a
+      ><a name="329" class="Symbol"
+      >=</a
+      ><a name="330"
+      > </a
+      ><a name="331" href="PreOrder.html#131" class="Bound"
+      >reflex</a
+      ><a name="337"
+      >
+
+</a
+      ><a name="339" href="PreOrder.html#339" class="Function"
+      >transitive</a
+      ><a name="349"
+      > </a
+      ><a name="350" class="Symbol"
+      >:</a
+      ><a name="351"
+      > </a
+      ><a name="352" href="NeilPrelude.html#2393" class="Function"
+      >Transitive</a
+      ><a name="362"
+      > </a
+      ><a name="363" href="PreOrder.html#230" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="366"
+      >
+</a
+      ><a name="367" href="PreOrder.html#339" class="Function"
+      >transitive</a
+      ><a name="377"
+      > </a
+      ><a name="378" class="Symbol"
+      >=</a
+      ><a name="379"
+      > </a
+      ><a name="380" href="PreOrder.html#178" class="Bound"
+      >transit</a
+      ><a name="387"
+      >
+
+</a
+      ><a name="389" href="PreOrder.html#389" class="Function"
+      >transitive2</a
+      ><a name="400"
+      > </a
+      ><a name="401" class="Symbol"
+      >:</a
+      ><a name="402"
+      > </a
+      ><a name="403" href="NeilPrelude.html#2458" class="Function"
+      >Transitive2</a
+      ><a name="414"
+      > </a
+      ><a name="415" href="PreOrder.html#230" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="418"
+      >
+</a
+      ><a name="419" href="PreOrder.html#389" class="Function"
+      >transitive2</a
+      ><a name="430"
+      > </a
+      ><a name="431" href="PreOrder.html#431" class="Bound"
+      >ab</a
+      ><a name="433"
+      > </a
+      ><a name="434" href="PreOrder.html#434" class="Bound"
+      >bc</a
+      ><a name="436"
+      > </a
+      ><a name="437" href="PreOrder.html#437" class="Bound"
+      >cd</a
+      ><a name="439"
+      > </a
+      ><a name="440" class="Symbol"
+      >=</a
+      ><a name="441"
+      > </a
+      ><a name="442" href="PreOrder.html#339" class="Function"
+      >transitive</a
+      ><a name="452"
+      > </a
+      ><a name="453" href="PreOrder.html#431" class="Bound"
+      >ab</a
+      ><a name="455"
+      > </a
+      ><a name="456" class="Symbol"
+      >(</a
+      ><a name="457" href="PreOrder.html#339" class="Function"
+      >transitive</a
+      ><a name="467"
+      > </a
+      ><a name="468" href="PreOrder.html#434" class="Bound"
+      >bc</a
+      ><a name="470"
+      > </a
+      ><a name="471" href="PreOrder.html#437" class="Bound"
+      >cd</a
+      ><a name="473" class="Symbol"
+      >)</a
+      ><a name="474"
+      >
+
+</a
+      ><a name="476" href="PreOrder.html#476" class="Function"
+      >transitive3</a
+      ><a name="487"
+      > </a
+      ><a name="488" class="Symbol"
+      >:</a
+      ><a name="489"
+      > </a
+      ><a name="490" href="NeilPrelude.html#2528" class="Function"
+      >Transitive3</a
+      ><a name="501"
+      > </a
+      ><a name="502" href="PreOrder.html#230" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="505"
+      >
+</a
+      ><a name="506" href="PreOrder.html#476" class="Function"
+      >transitive3</a
+      ><a name="517"
+      > </a
+      ><a name="518" href="PreOrder.html#518" class="Bound"
+      >ab</a
+      ><a name="520"
+      > </a
+      ><a name="521" href="PreOrder.html#521" class="Bound"
+      >bc</a
+      ><a name="523"
+      > </a
+      ><a name="524" href="PreOrder.html#524" class="Bound"
+      >cd</a
+      ><a name="526"
+      > </a
+      ><a name="527" href="PreOrder.html#527" class="Bound"
+      >de</a
+      ><a name="529"
+      > </a
+      ><a name="530" class="Symbol"
+      >=</a
+      ><a name="531"
+      > </a
+      ><a name="532" href="PreOrder.html#389" class="Function"
+      >transitive2</a
+      ><a name="543"
+      > </a
+      ><a name="544" href="PreOrder.html#518" class="Bound"
+      >ab</a
+      ><a name="546"
+      > </a
+      ><a name="547" href="PreOrder.html#521" class="Bound"
+      >bc</a
+      ><a name="549"
+      > </a
+      ><a name="550" class="Symbol"
+      >(</a
+      ><a name="551" href="PreOrder.html#339" class="Function"
+      >transitive</a
+      ><a name="561"
+      > </a
+      ><a name="562" href="PreOrder.html#524" class="Bound"
+      >cd</a
+      ><a name="564"
+      > </a
+      ><a name="565" href="PreOrder.html#527" class="Bound"
+      >de</a
+      ><a name="567" class="Symbol"
+      >)</a
+      ><a name="568"
+      >
+
+</a
+      ><a name="570" href="PreOrder.html#570" class="Function"
+      >&#8801;implies&#8804;</a
+      ><a name="579"
+      > </a
+      ><a name="580" class="Symbol"
+      >:</a
+      ><a name="581"
+      > </a
+      ><a name="582" class="Symbol"
+      >{</a
+      ><a name="583" href="PreOrder.html#583" class="Bound"
+      >a</a
+      ><a name="584"
+      > </a
+      ><a name="585" href="PreOrder.html#585" class="Bound"
+      >b</a
+      ><a name="586"
+      > </a
+      ><a name="587" class="Symbol"
+      >:</a
+      ><a name="588"
+      > </a
+      ><a name="589" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="590" class="Symbol"
+      >}</a
+      ><a name="591"
+      > </a
+      ><a name="592" class="Symbol"
+      >&#8594;</a
+      ><a name="593"
+      > </a
+      ><a name="594" href="PreOrder.html#583" class="Bound"
+      >a</a
+      ><a name="595"
+      > </a
+      ><a name="596" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="597"
+      > </a
+      ><a name="598" href="PreOrder.html#585" class="Bound"
+      >b</a
+      ><a name="599"
+      > </a
+      ><a name="600" class="Symbol"
+      >&#8594;</a
+      ><a name="601"
+      > </a
+      ><a name="602" href="PreOrder.html#583" class="Bound"
+      >a</a
+      ><a name="603"
+      > </a
+      ><a name="604" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="605"
+      > </a
+      ><a name="606" href="PreOrder.html#585" class="Bound"
+      >b</a
+      ><a name="607"
+      >
+</a
+      ><a name="608" href="PreOrder.html#570" class="Function"
+      >&#8801;implies&#8804;</a
+      ><a name="617"
+      > </a
+      ><a name="618" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="622"
+      > </a
+      ><a name="623" class="Symbol"
+      >=</a
+      ><a name="624"
+      > </a
+      ><a name="625" href="PreOrder.html#131" class="Bound"
+      >reflex</a
+      ><a name="631"
+      >
+
+</a
+      ><a name="633" href="PreOrder.html#633" class="Function"
+      >&#8804;subst</a
+      ><a name="639"
+      > </a
+      ><a name="640" class="Symbol"
+      >:</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >{</a
+      ><a name="643" href="PreOrder.html#643" class="Bound"
+      >a</a
+      ><a name="644"
+      > </a
+      ><a name="645" href="PreOrder.html#645" class="Bound"
+      >b</a
+      ><a name="646"
+      > </a
+      ><a name="647" href="PreOrder.html#647" class="Bound"
+      >c</a
+      ><a name="648"
+      > </a
+      ><a name="649" href="PreOrder.html#649" class="Bound"
+      >d</a
+      ><a name="650"
+      > </a
+      ><a name="651" class="Symbol"
+      >:</a
+      ><a name="652"
+      > </a
+      ><a name="653" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="654" class="Symbol"
+      >}</a
+      ><a name="655"
+      > </a
+      ><a name="656" class="Symbol"
+      >&#8594;</a
+      ><a name="657"
+      > </a
+      ><a name="658" href="PreOrder.html#645" class="Bound"
+      >b</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="661"
+      > </a
+      ><a name="662" href="PreOrder.html#643" class="Bound"
+      >a</a
+      ><a name="663"
+      > </a
+      ><a name="664" class="Symbol"
+      >&#8594;</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="PreOrder.html#649" class="Bound"
+      >d</a
+      ><a name="667"
+      > </a
+      ><a name="668" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="669"
+      > </a
+      ><a name="670" href="PreOrder.html#647" class="Bound"
+      >c</a
+      ><a name="671"
+      > </a
+      ><a name="672" class="Symbol"
+      >&#8594;</a
+      ><a name="673"
+      > </a
+      ><a name="674" href="PreOrder.html#643" class="Bound"
+      >a</a
+      ><a name="675"
+      > </a
+      ><a name="676" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="677"
+      > </a
+      ><a name="678" href="PreOrder.html#647" class="Bound"
+      >c</a
+      ><a name="679"
+      > </a
+      ><a name="680" class="Symbol"
+      >&#8594;</a
+      ><a name="681"
+      > </a
+      ><a name="682" href="PreOrder.html#645" class="Bound"
+      >b</a
+      ><a name="683"
+      > </a
+      ><a name="684" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="685"
+      > </a
+      ><a name="686" href="PreOrder.html#649" class="Bound"
+      >d</a
+      ><a name="687"
+      >
+</a
+      ><a name="688" href="PreOrder.html#633" class="Function"
+      >&#8804;subst</a
+      ><a name="694"
+      > </a
+      ><a name="695" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="699"
+      > </a
+      ><a name="700" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="704"
+      > </a
+      ><a name="705" class="Symbol"
+      >=</a
+      ><a name="706"
+      > </a
+      ><a name="707" href="NeilPrelude.html#8336" class="Function"
+      >id</a
+      ><a name="709"
+      >
+
+</a
+      ><a name="711" href="PreOrder.html#711" class="Function"
+      >&#8804;substL</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >:</a
+      ><a name="720"
+      > </a
+      ><a name="721" class="Symbol"
+      >{</a
+      ><a name="722" href="PreOrder.html#722" class="Bound"
+      >a</a
+      ><a name="723"
+      > </a
+      ><a name="724" href="PreOrder.html#724" class="Bound"
+      >b</a
+      ><a name="725"
+      > </a
+      ><a name="726" href="PreOrder.html#726" class="Bound"
+      >c</a
+      ><a name="727"
+      > </a
+      ><a name="728" class="Symbol"
+      >:</a
+      ><a name="729"
+      > </a
+      ><a name="730" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="731" class="Symbol"
+      >}</a
+      ><a name="732"
+      > </a
+      ><a name="733" class="Symbol"
+      >&#8594;</a
+      ><a name="734"
+      > </a
+      ><a name="735" href="PreOrder.html#724" class="Bound"
+      >b</a
+      ><a name="736"
+      > </a
+      ><a name="737" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="738"
+      > </a
+      ><a name="739" href="PreOrder.html#722" class="Bound"
+      >a</a
+      ><a name="740"
+      > </a
+      ><a name="741" class="Symbol"
+      >&#8594;</a
+      ><a name="742"
+      > </a
+      ><a name="743" href="PreOrder.html#722" class="Bound"
+      >a</a
+      ><a name="744"
+      > </a
+      ><a name="745" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="746"
+      > </a
+      ><a name="747" href="PreOrder.html#726" class="Bound"
+      >c</a
+      ><a name="748"
+      > </a
+      ><a name="749" class="Symbol"
+      >&#8594;</a
+      ><a name="750"
+      > </a
+      ><a name="751" href="PreOrder.html#724" class="Bound"
+      >b</a
+      ><a name="752"
+      > </a
+      ><a name="753" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="754"
+      > </a
+      ><a name="755" href="PreOrder.html#726" class="Bound"
+      >c</a
+      ><a name="756"
+      >
+</a
+      ><a name="757" href="PreOrder.html#711" class="Function"
+      >&#8804;substL</a
+      ><a name="764"
+      > </a
+      ><a name="765" class="Symbol"
+      >=</a
+      ><a name="766"
+      > </a
+      ><a name="767" href="NeilPrelude.html#8370" class="Function"
+      >flip</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="PreOrder.html#633" class="Function"
+      >&#8804;subst</a
+      ><a name="778"
+      > </a
+      ><a name="779" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="783"
+      >
+
+</a
+      ><a name="785" href="PreOrder.html#785" class="Function"
+      >&#8804;substR</a
+      ><a name="792"
+      > </a
+      ><a name="793" class="Symbol"
+      >:</a
+      ><a name="794"
+      > </a
+      ><a name="795" class="Symbol"
+      >{</a
+      ><a name="796" href="PreOrder.html#796" class="Bound"
+      >a</a
+      ><a name="797"
+      > </a
+      ><a name="798" href="PreOrder.html#798" class="Bound"
+      >b</a
+      ><a name="799"
+      > </a
+      ><a name="800" href="PreOrder.html#800" class="Bound"
+      >c</a
+      ><a name="801"
+      > </a
+      ><a name="802" class="Symbol"
+      >:</a
+      ><a name="803"
+      > </a
+      ><a name="804" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="805" class="Symbol"
+      >}</a
+      ><a name="806"
+      > </a
+      ><a name="807" class="Symbol"
+      >&#8594;</a
+      ><a name="808"
+      > </a
+      ><a name="809" href="PreOrder.html#800" class="Bound"
+      >c</a
+      ><a name="810"
+      > </a
+      ><a name="811" href="NeilPrelude.html#1434" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="PreOrder.html#798" class="Bound"
+      >b</a
+      ><a name="814"
+      > </a
+      ><a name="815" class="Symbol"
+      >&#8594;</a
+      ><a name="816"
+      > </a
+      ><a name="817" href="PreOrder.html#796" class="Bound"
+      >a</a
+      ><a name="818"
+      > </a
+      ><a name="819" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="820"
+      > </a
+      ><a name="821" href="PreOrder.html#798" class="Bound"
+      >b</a
+      ><a name="822"
+      > </a
+      ><a name="823" class="Symbol"
+      >&#8594;</a
+      ><a name="824"
+      > </a
+      ><a name="825" href="PreOrder.html#796" class="Bound"
+      >a</a
+      ><a name="826"
+      > </a
+      ><a name="827" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="828"
+      > </a
+      ><a name="829" href="PreOrder.html#800" class="Bound"
+      >c</a
+      ><a name="830"
+      >
+</a
+      ><a name="831" href="PreOrder.html#785" class="Function"
+      >&#8804;substR</a
+      ><a name="838"
+      > </a
+      ><a name="839" class="Symbol"
+      >=</a
+      ><a name="840"
+      > </a
+      ><a name="841" href="PreOrder.html#633" class="Function"
+      >&#8804;subst</a
+      ><a name="847"
+      > </a
+      ><a name="848" href="NeilPrelude.html#1470" class="InductiveConstructor"
+      >refl</a
+      ><a name="852"
+      >
+
+</a
+      ><a name="854" class="Comment"
+      >-----------------------------------------------------------------</a
+      ><a name="919"
+      >
+
+</a
+      ><a name="921" class="Keyword"
+      >infixr</a
+      ><a name="927"
+      > </a
+      ><a name="928" class="Number"
+      >1</a
+      ><a name="929"
+      > _&#8804;&#10216;_&#10217;_
+</a
+      ><a name="937" class="Keyword"
+      >infix</a
+      ><a name="942"
+      >  </a
+      ><a name="944" class="Number"
+      >2</a
+      ><a name="945"
+      > _QED
+
+</a
+      ><a name="952" href="PreOrder.html#952" class="Function Operator"
+      >_&#8804;&#10216;_&#10217;_</a
+      ><a name="958"
+      > </a
+      ><a name="959" class="Symbol"
+      >:</a
+      ><a name="960"
+      > </a
+      ><a name="961" class="Symbol"
+      >{</a
+      ><a name="962" href="PreOrder.html#962" class="Bound"
+      >b</a
+      ><a name="963"
+      > </a
+      ><a name="964" href="PreOrder.html#964" class="Bound"
+      >c</a
+      ><a name="965"
+      > </a
+      ><a name="966" class="Symbol"
+      >:</a
+      ><a name="967"
+      > </a
+      ><a name="968" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="969" class="Symbol"
+      >}</a
+      ><a name="970"
+      > </a
+      ><a name="971" class="Symbol"
+      >&#8594;</a
+      ><a name="972"
+      > </a
+      ><a name="973" class="Symbol"
+      >(</a
+      ><a name="974" href="PreOrder.html#974" class="Bound"
+      >a</a
+      ><a name="975"
+      > </a
+      ><a name="976" class="Symbol"
+      >:</a
+      ><a name="977"
+      > </a
+      ><a name="978" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="979" class="Symbol"
+      >)</a
+      ><a name="980"
+      > </a
+      ><a name="981" class="Symbol"
+      >&#8594;</a
+      ><a name="982"
+      > </a
+      ><a name="983" href="PreOrder.html#974" class="Bound"
+      >a</a
+      ><a name="984"
+      > </a
+      ><a name="985" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="986"
+      > </a
+      ><a name="987" href="PreOrder.html#962" class="Bound"
+      >b</a
+      ><a name="988"
+      > </a
+      ><a name="989" class="Symbol"
+      >&#8594;</a
+      ><a name="990"
+      > </a
+      ><a name="991" href="PreOrder.html#962" class="Bound"
+      >b</a
+      ><a name="992"
+      > </a
+      ><a name="993" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="994"
+      > </a
+      ><a name="995" href="PreOrder.html#964" class="Bound"
+      >c</a
+      ><a name="996"
+      > </a
+      ><a name="997" class="Symbol"
+      >&#8594;</a
+      ><a name="998"
+      > </a
+      ><a name="999" href="PreOrder.html#974" class="Bound"
+      >a</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="1002"
+      > </a
+      ><a name="1003" href="PreOrder.html#964" class="Bound"
+      >c</a
+      ><a name="1004"
+      >
+</a
+      ><a name="1005" class="Symbol"
+      >_</a
+      ><a name="1006"
+      > </a
+      ><a name="1007" href="PreOrder.html#952" class="Function Operator"
+      >&#8804;&#10216;</a
+      ><a name="1009"
+      > </a
+      ><a name="1010" href="PreOrder.html#1010" class="Bound"
+      >ab</a
+      ><a name="1012"
+      > </a
+      ><a name="1013" href="PreOrder.html#952" class="Function Operator"
+      >&#10217;</a
+      ><a name="1014"
+      > </a
+      ><a name="1015" href="PreOrder.html#1015" class="Bound"
+      >bc</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" class="Symbol"
+      >=</a
+      ><a name="1019"
+      > </a
+      ><a name="1020" href="PreOrder.html#339" class="Function"
+      >transitive</a
+      ><a name="1030"
+      > </a
+      ><a name="1031" href="PreOrder.html#1010" class="Bound"
+      >ab</a
+      ><a name="1033"
+      > </a
+      ><a name="1034" href="PreOrder.html#1015" class="Bound"
+      >bc</a
+      ><a name="1036"
+      >
+
+</a
+      ><a name="1038" href="PreOrder.html#1038" class="Function Operator"
+      >_QED</a
+      ><a name="1042"
+      > </a
+      ><a name="1043" class="Symbol"
+      >:</a
+      ><a name="1044"
+      > </a
+      ><a name="1045" class="Symbol"
+      >(</a
+      ><a name="1046" href="PreOrder.html#1046" class="Bound"
+      >a</a
+      ><a name="1047"
+      > </a
+      ><a name="1048" class="Symbol"
+      >:</a
+      ><a name="1049"
+      > </a
+      ><a name="1050" href="PreOrder.html#79" class="Bound"
+      >A</a
+      ><a name="1051" class="Symbol"
+      >)</a
+      ><a name="1052"
+      > </a
+      ><a name="1053" class="Symbol"
+      >&#8594;</a
+      ><a name="1054"
+      > </a
+      ><a name="1055" href="PreOrder.html#1046" class="Bound"
+      >a</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" href="PreOrder.html#230" class="Function Operator"
+      >&#8804;</a
+      ><a name="1058"
+      > </a
+      ><a name="1059" href="PreOrder.html#1046" class="Bound"
+      >a</a
+      ><a name="1060"
+      >
+</a
+      ><a name="1061" class="Symbol"
+      >_</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" href="PreOrder.html#1038" class="Function Operator"
+      >QED</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" class="Symbol"
+      >=</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" href="PreOrder.html#131" class="Bound"
+      >reflex</a
+      ><a name="1075"
+      >
+
+</a
+      ><a name="1077" class="Comment"
+      >-----------------------------------------------------------------</a
+      ><a name="1142"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

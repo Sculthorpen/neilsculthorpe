@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<title>Neil Sculthorpe</title>
+<link rel="stylesheet" type="text/css" href="../roundbox.css"/>
+<link rel="stylesheet" type="text/css" href="../nas.css"/>
+
+</head>
+
+<body>
+<h1>Towards Safe and Efficient Functional Reactive Programming</h1>
+
+<p>
+This page contains the accompanying code for my thesis "<a href="../publications/safe-efficient-FRP.pdf">Towards Safe and Efficient Functional Reactive Programming</a>".
+</p>
+
+<hr />
+
+<h2>Agda</h2>
+
+<p>
+The Agda code is available as a <a href="thesisCode.tar.gz">tarball</a>, or it can be browsed as hyperlinked HTML (recommended).
+</p>
+
+<h3>Conceptual Models</h3>
+
+<ul>
+
+<li>
+<a href="CFRP.html">CFRP.agda</a>
+</li>
+
+<li>
+<a href="UFRP.html">UFRP.agda</a>
+</li>
+
+<li>
+<a href="SigVecs.html">SigVecs.agda</a>
+</li>
+
+<li>
+<a href="Utilities.html">Utilities.agda</a>
+</li>
+
+<li>
+<a href="NaryFRP.html">NaryFRP.agda</a>
+</li>
+
+</ul>
+
+
+<h3>N-ary FRP Library Code</h3>
+
+<ul>
+
+<li>
+<a href="Library1.html">Library1.agda</a>
+</li>
+
+<li>
+<a href="RSwitch.html">RSwitch.agda</a>
+</li>
+
+<li>
+<a href="Library2.html">Library2.agda</a>
+</li>
+
+</ul>
+
+
+<h3>Properties of N-ary FRP</h3>
+
+<ul>
+
+<li>
+<a href="CausalityProps.html">CausalityProps.agda</a>
+</li>
+
+<li>
+<a href="ChangeProps.html">ChangeProps.agda</a>
+</li>
+
+<li>
+<a href="PrimProps.html">PrimProps.agda</a>
+</li>
+
+<li>
+<a href="Loop.html">Loop.agda</a>
+</li>
+
+</ul>
+
+
+<h3>Embedded Implementation of N-ary FRP</h3>
+
+<ul>
+
+<li>
+<a href="Core.html">Core.agda</a>
+</li>
+
+<li>
+<a href="Primitives.html">Primitives.agda</a>
+</li>
+
+<li>
+<a href="Library.html">Library.agda</a>
+</li>
+
+</ul>
+
+<h3>Embedded Implementation of N-ary FRP with Feedback</h3>
+
+<ul>
+
+<li>
+<a href="CoreD.html">CoreD.agda</a>
+</li>
+
+<li>
+<a href="PrimitivesD.html">PrimitivesD.agda</a>
+</li>
+
+<li>
+<a href="LibraryD.html">LibraryD.agda</a>
+</li>
+
+</ul>
+
+
+<h3>Now-Soon Models</h3>
+
+<ul>
+
+<li>
+<a href="NowSoon.html">NowSoon.agda</a>
+</li>
+
+</ul>
+
+
+<h3>Conceptual Model of N-ary FRP with Uninitialised Signals</h3>
+
+<ul>
+
+<li>
+<a href="UtilitiesI.html">UtilitiesI.agda</a>
+</li>
+
+<li>
+<a href="NaryFRPI.html">NaryFRPI.agda</a>
+</li>
+
+</ul>
+
+
+<h3>Embedded Implementation of N-ary FRP with Uninitialised Signals</h3>
+
+<ul>
+
+<li>
+<a href="CoreI.html">CoreI.agda</a>
+</li>
+
+<li>
+<a href="PrimitivesI.html">PrimitivesI.agda</a>
+</li>
+
+<li>
+<a href="LibraryI.html">LibraryI.agda</a>
+</li>
+
+</ul>
+
+
+<h3>Decoupledness Matrices</h3>
+
+<ul>
+
+<li>
+<a href="DecMatrices.html">DecMatrices.agda</a>
+</li>
+
+</ul>
+
+<hr />
+
+<h2>Haskell</h2>
+
+<p>
+The Haskell code is available as a <a href="haskell.tar.gz">tarball</a>, or the source code files can be viewed individually.
+</p>
+
+<h3>Embedded Implementation of N-ary FRP</h3>
+
+<ul>
+
+<li>
+<a href="haskell/Core.hs">Core.hs</a>
+</li>
+
+<li>
+<a href="haskell/Primitives.hs">Primitives.hs</a>
+</li>
+
+<li>
+<a href="haskell/Library.hs">Library.hs</a>
+</li>
+
+</ul>
+
+
+<h3>Embedded Implementation of N-ary FRP with Feedback</h3>
+
+<ul>
+
+<li>
+<a href="haskell/CoreD.hs">CoreD.hs</a>
+</li>
+
+<li>
+<a href="haskell/PrimitivesD.hs">PrimitivesD.hs</a>
+</li>
+
+<li>
+<a href="haskell/LibraryD.hs">LibraryD.hs</a>
+</li>
+
+</ul>
+
+
+<h3>Modules used by both Embeddings </h3>
+
+<ul>
+
+<li>
+<a href="haskell/ArrowCombinators.lhs">ArrowCombinators.lhs</a>
+</li>
+
+<li>
+<a href="haskell/BouncingBall.hs">BouncingBall.hs</a>
+</li>
+
+<li>
+<a href="haskell/Decoupled.hs">Decoupled.hs</a>
+</li>
+
+<li>
+<a href="haskell/Queue.lhs">Queue.lhs</a>
+</li>
+
+<li>
+<a href="haskell/Time.hs">Time.hs</a>
+</li>
+
+<li>
+<a href="haskell/Utilities.lhs">Utilities.lhs</a>
+</li>
+
+</ul>
+
+<hr />
+
+
+<p>
+<i>Last updated 16th February 2016.</i>
+</p>
+
+<p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10-blue"
+        alt="Valid XHTML 1.0 Strict" height="31" width="88" /></a>
+
+    <a href="http://www.haskellers.com/user/1060"><img
+        src="http://www.haskellers.com/static/badge.png"
+        alt="I'm a Haskeller" /></a>
+
+</p>
+
+</body>
+</html>

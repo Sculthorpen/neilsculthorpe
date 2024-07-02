@@ -1,0 +1,3934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >StrictPosReal</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+   </a
+      ><a name="31" class="Symbol"
+      >#-}</a
+      ><a name="34"
+      >
+
+</a
+      ><a name="36" class="Keyword"
+      >open</a
+      ><a name="40"
+      > </a
+      ><a name="41" class="Keyword"
+      >import</a
+      ><a name="47"
+      > </a
+      ><a name="48" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="59"
+      >
+
+</a
+      ><a name="61" class="Keyword"
+      >module</a
+      ><a name="67"
+      > </a
+      ><a name="68" href="StrictPosReal.html#68" class="Module"
+      >StrictPosReal</a
+      ><a name="81"
+      > </a
+      ><a name="82" class="Keyword"
+      >where</a
+      ><a name="87"
+      >
+
+</a
+      ><a name="89" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="145"
+      >
+
+</a
+      ><a name="147" class="Keyword"
+      >infix</a
+      ><a name="152"
+      >  </a
+      ><a name="154" class="Number"
+      >3</a
+      ><a name="155"
+      >  _&lt;&#8476;&#8314;_ _&#8804;&#8476;&#8314;_ _&#8805;&#8476;&#8314;_ _&gt;&#8476;&#8314;_
+
+</a
+      ><a name="182" class="Keyword"
+      >postulate</a
+      ><a name="191"
+      > </a
+      ><a name="192" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="194"
+      > </a
+      ><a name="195" class="Symbol"
+      >:</a
+      ><a name="196"
+      > </a
+      ><a name="197" class="PrimitiveType"
+      >Set</a
+      ><a name="200"
+      >
+</a
+      ><a name="201" class="Keyword"
+      >postulate</a
+      ><a name="210"
+      > </a
+      ><a name="211" href="StrictPosReal.html#211" class="Postulate"
+      >&#305;&#8314;</a
+      ><a name="213"
+      > </a
+      ><a name="214" class="Symbol"
+      >:</a
+      ><a name="215"
+      > </a
+      ><a name="216" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="218"
+      >
+
+</a
+      ><a name="220" class="Keyword"
+      >postulate</a
+      ><a name="229"
+      > </a
+      ><a name="230" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="235"
+      > </a
+      ><a name="236" class="Symbol"
+      >:</a
+      ><a name="237"
+      > </a
+      ><a name="238" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="241"
+      > </a
+      ><a name="242" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="244"
+      >
+</a
+      ><a name="245" class="Keyword"
+      >postulate</a
+      ><a name="254"
+      > </a
+      ><a name="255" href="StrictPosReal.html#255" class="Postulate"
+      >&lt;&#8476;&#8314;-trich</a
+      ><a name="264"
+      > </a
+      ><a name="265" class="Symbol"
+      >:</a
+      ><a name="266"
+      > </a
+      ><a name="267" href="NeilPrelude.html#2790" class="Function"
+      >Trichotomous</a
+      ><a name="279"
+      > </a
+      ><a name="280" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="285"
+      >
+</a
+      ><a name="286" class="Keyword"
+      >postulate</a
+      ><a name="295"
+      > </a
+      ><a name="296" href="StrictPosReal.html#296" class="Postulate"
+      >&lt;&#8476;&#8314;-trans</a
+      ><a name="305"
+      > </a
+      ><a name="306" class="Symbol"
+      >:</a
+      ><a name="307"
+      > </a
+      ><a name="308" href="NeilPrelude.html#2349" class="Function"
+      >Transitive</a
+      ><a name="318"
+      > </a
+      ><a name="319" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="324"
+      >
+
+</a
+      ><a name="326" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="382"
+      >
+
+</a
+      ><a name="384" class="Keyword"
+      >import</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="StrictTotalOrder.html#69" class="Module"
+      >StrictTotalOrder</a
+      ><a name="407"
+      >
+</a
+      ><a name="408" class="Keyword"
+      >module</a
+      ><a name="414"
+      > </a
+      ><a name="415" href="StrictPosReal.html#415" class="Module"
+      >STO&#8476;&#8314;</a
+      ><a name="420"
+      > </a
+      ><a name="421" class="Symbol"
+      >=</a
+      ><a name="422"
+      > </a
+      ><a name="423" href="StrictTotalOrder.html#69" class="Module"
+      >StrictTotalOrder</a
+      ><a name="439"
+      > </a
+      ><a name="440" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="445"
+      > </a
+      ><a name="446" href="StrictPosReal.html#296" class="Postulate"
+      >&lt;&#8476;&#8314;-trans</a
+      ><a name="455"
+      > </a
+      ><a name="456" href="StrictPosReal.html#255" class="Postulate"
+      >&lt;&#8476;&#8314;-trich</a
+      ><a name="465"
+      >
+</a
+      ><a name="466" class="Keyword"
+      >open</a
+      ><a name="470"
+      > </a
+      ><a name="471" href="StrictPosReal.html#415" class="Module"
+      >STO&#8476;&#8314;</a
+      ><a name="476"
+      >
+
+</a
+      ><a name="478" href="StrictPosReal.html#478" class="Function"
+      >Compare&#8476;&#8314;</a
+      ><a name="487"
+      > </a
+      ><a name="488" class="Symbol"
+      >:</a
+      ><a name="489"
+      > </a
+      ><a name="490" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="493"
+      > </a
+      ><a name="494" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="496"
+      >
+</a
+      ><a name="497" href="StrictPosReal.html#478" class="Function"
+      >Compare&#8476;&#8314;</a
+      ><a name="506"
+      > </a
+      ><a name="507" class="Symbol"
+      >=</a
+      ><a name="508"
+      > </a
+      ><a name="509" href="StrictTotalOrder.html#716" class="Datatype"
+      >OrdCompare</a
+      ><a name="519"
+      >
+
+</a
+      ><a name="521" href="StrictPosReal.html#521" class="Function"
+      >CompareLeq&#8476;&#8314;</a
+      ><a name="533"
+      > </a
+      ><a name="534" class="Symbol"
+      >:</a
+      ><a name="535"
+      > </a
+      ><a name="536" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="539"
+      > </a
+      ><a name="540" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="542"
+      >
+</a
+      ><a name="543" href="StrictPosReal.html#521" class="Function"
+      >CompareLeq&#8476;&#8314;</a
+      ><a name="555"
+      > </a
+      ><a name="556" class="Symbol"
+      >=</a
+      ><a name="557"
+      > </a
+      ><a name="558" href="StrictTotalOrder.html#885" class="Datatype"
+      >OrdCompareLeq</a
+      ><a name="571"
+      >
+
+</a
+      ><a name="573" href="StrictPosReal.html#573" class="Function"
+      >CompareGeq&#8476;&#8314;</a
+      ><a name="585"
+      > </a
+      ><a name="586" class="Symbol"
+      >:</a
+      ><a name="587"
+      > </a
+      ><a name="588" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="591"
+      > </a
+      ><a name="592" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="594"
+      >
+</a
+      ><a name="595" href="StrictPosReal.html#573" class="Function"
+      >CompareGeq&#8476;&#8314;</a
+      ><a name="607"
+      > </a
+      ><a name="608" class="Symbol"
+      >=</a
+      ><a name="609"
+      > </a
+      ><a name="610" href="StrictTotalOrder.html#997" class="Datatype"
+      >OrdCompareGeq</a
+      ><a name="623"
+      >
+
+</a
+      ><a name="625" href="StrictPosReal.html#625" class="Function"
+      >compare&#8476;&#8314;</a
+      ><a name="634"
+      > </a
+      ><a name="635" class="Symbol"
+      >:</a
+      ><a name="636"
+      > </a
+      ><a name="637" class="Symbol"
+      >(</a
+      ><a name="638" href="StrictPosReal.html#638" class="Bound"
+      >x</a
+      ><a name="639"
+      > </a
+      ><a name="640" href="StrictPosReal.html#640" class="Bound"
+      >y</a
+      ><a name="641"
+      > </a
+      ><a name="642" class="Symbol"
+      >:</a
+      ><a name="643"
+      > </a
+      ><a name="644" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="646" class="Symbol"
+      >)</a
+      ><a name="647"
+      > </a
+      ><a name="648" class="Symbol"
+      >&#8594;</a
+      ><a name="649"
+      > </a
+      ><a name="650" href="StrictPosReal.html#478" class="Function"
+      >Compare&#8476;&#8314;</a
+      ><a name="659"
+      > </a
+      ><a name="660" href="StrictPosReal.html#638" class="Bound"
+      >x</a
+      ><a name="661"
+      > </a
+      ><a name="662" href="StrictPosReal.html#640" class="Bound"
+      >y</a
+      ><a name="663"
+      >
+</a
+      ><a name="664" href="StrictPosReal.html#625" class="Function"
+      >compare&#8476;&#8314;</a
+      ><a name="673"
+      > </a
+      ><a name="674" class="Symbol"
+      >=</a
+      ><a name="675"
+      > </a
+      ><a name="676" href="StrictTotalOrder.html#1169" class="Function"
+      >compare</a
+      ><a name="683"
+      >
+
+</a
+      ><a name="685" href="StrictPosReal.html#685" class="Function"
+      >compareLeq&#8476;&#8314;</a
+      ><a name="697"
+      > </a
+      ><a name="698" class="Symbol"
+      >:</a
+      ><a name="699"
+      > </a
+      ><a name="700" class="Symbol"
+      >(</a
+      ><a name="701" href="StrictPosReal.html#701" class="Bound"
+      >x</a
+      ><a name="702"
+      > </a
+      ><a name="703" href="StrictPosReal.html#703" class="Bound"
+      >y</a
+      ><a name="704"
+      > </a
+      ><a name="705" class="Symbol"
+      >:</a
+      ><a name="706"
+      > </a
+      ><a name="707" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="709" class="Symbol"
+      >)</a
+      ><a name="710"
+      > </a
+      ><a name="711" class="Symbol"
+      >&#8594;</a
+      ><a name="712"
+      > </a
+      ><a name="713" href="StrictPosReal.html#521" class="Function"
+      >CompareLeq&#8476;&#8314;</a
+      ><a name="725"
+      > </a
+      ><a name="726" href="StrictPosReal.html#701" class="Bound"
+      >x</a
+      ><a name="727"
+      > </a
+      ><a name="728" href="StrictPosReal.html#703" class="Bound"
+      >y</a
+      ><a name="729"
+      >
+</a
+      ><a name="730" href="StrictPosReal.html#685" class="Function"
+      >compareLeq&#8476;&#8314;</a
+      ><a name="742"
+      > </a
+      ><a name="743" class="Symbol"
+      >=</a
+      ><a name="744"
+      > </a
+      ><a name="745" href="StrictTotalOrder.html#1374" class="Function"
+      >compareLeq</a
+      ><a name="755"
+      >
+
+</a
+      ><a name="757" href="StrictPosReal.html#757" class="Function"
+      >compareGeq&#8476;&#8314;</a
+      ><a name="769"
+      > </a
+      ><a name="770" class="Symbol"
+      >:</a
+      ><a name="771"
+      > </a
+      ><a name="772" class="Symbol"
+      >(</a
+      ><a name="773" href="StrictPosReal.html#773" class="Bound"
+      >x</a
+      ><a name="774"
+      > </a
+      ><a name="775" href="StrictPosReal.html#775" class="Bound"
+      >y</a
+      ><a name="776"
+      > </a
+      ><a name="777" class="Symbol"
+      >:</a
+      ><a name="778"
+      > </a
+      ><a name="779" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="781" class="Symbol"
+      >)</a
+      ><a name="782"
+      > </a
+      ><a name="783" class="Symbol"
+      >&#8594;</a
+      ><a name="784"
+      > </a
+      ><a name="785" href="StrictPosReal.html#573" class="Function"
+      >CompareGeq&#8476;&#8314;</a
+      ><a name="797"
+      > </a
+      ><a name="798" href="StrictPosReal.html#773" class="Bound"
+      >x</a
+      ><a name="799"
+      > </a
+      ><a name="800" href="StrictPosReal.html#775" class="Bound"
+      >y</a
+      ><a name="801"
+      >
+</a
+      ><a name="802" href="StrictPosReal.html#757" class="Function"
+      >compareGeq&#8476;&#8314;</a
+      ><a name="814"
+      > </a
+      ><a name="815" class="Symbol"
+      >=</a
+      ><a name="816"
+      > </a
+      ><a name="817" href="StrictTotalOrder.html#1565" class="Function"
+      >compareGeq</a
+      ><a name="827"
+      >
+
+</a
+      ><a name="829" href="StrictPosReal.html#829" class="Function Operator"
+      >_&gt;&#8476;&#8314;_</a
+      ><a name="834"
+      > </a
+      ><a name="835" class="Symbol"
+      >:</a
+      ><a name="836"
+      > </a
+      ><a name="837" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="840"
+      > </a
+      ><a name="841" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="843"
+      >
+</a
+      ><a name="844" href="StrictPosReal.html#829" class="Function Operator"
+      >_&gt;&#8476;&#8314;_</a
+      ><a name="849"
+      > </a
+      ><a name="850" class="Symbol"
+      >=</a
+      ><a name="851"
+      > </a
+      ><a name="852" href="StrictPreOrder.html#330" class="Function Operator"
+      >_&gt;_</a
+      ><a name="855"
+      >
+
+</a
+      ><a name="857" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="862"
+      > </a
+      ><a name="863" class="Symbol"
+      >:</a
+      ><a name="864"
+      > </a
+      ><a name="865" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="868"
+      > </a
+      ><a name="869" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="871"
+      >
+</a
+      ><a name="872" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="877"
+      > </a
+      ><a name="878" class="Symbol"
+      >=</a
+      ><a name="879"
+      > </a
+      ><a name="880" href="StrictPreOrder.html#745" class="Function Operator"
+      >_&#8804;_</a
+      ><a name="883"
+      > 
+
+</a
+      ><a name="886" href="StrictPosReal.html#886" class="Function Operator"
+      >_&#8805;&#8476;&#8314;_</a
+      ><a name="891"
+      > </a
+      ><a name="892" class="Symbol"
+      >:</a
+      ><a name="893"
+      > </a
+      ><a name="894" href="NeilPrelude.html#1354" class="Function"
+      >Rel</a
+      ><a name="897"
+      > </a
+      ><a name="898" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="900"
+      >
+</a
+      ><a name="901" href="StrictPosReal.html#886" class="Function Operator"
+      >_&#8805;&#8476;&#8314;_</a
+      ><a name="906"
+      > </a
+      ><a name="907" class="Symbol"
+      >=</a
+      ><a name="908"
+      > </a
+      ><a name="909" href="StrictPreOrder.html#782" class="Function Operator"
+      >_&#8805;_</a
+      ><a name="912"
+      > 
+
+</a
+      ><a name="915" href="StrictPosReal.html#915" class="Function"
+      >&lt;&#8476;&#8314;-irreflexive</a
+      ><a name="930"
+      > </a
+      ><a name="931" class="Symbol"
+      >:</a
+      ><a name="932"
+      > </a
+      ><a name="933" href="NeilPrelude.html#1620" class="Function"
+      >Irreflexive</a
+      ><a name="944"
+      > </a
+      ><a name="945" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="950"
+      >
+</a
+      ><a name="951" href="StrictPosReal.html#915" class="Function"
+      >&lt;&#8476;&#8314;-irreflexive</a
+      ><a name="966"
+      > </a
+      ><a name="967" class="Symbol"
+      >=</a
+      ><a name="968"
+      > </a
+      ><a name="969" href="StrictTotalOrder.html#247" class="Function"
+      >irreflex</a
+      ><a name="977"
+      >
+
+</a
+      ><a name="979" href="StrictPosReal.html#979" class="Function"
+      >&lt;&#8476;&#8314;-asym</a
+      ><a name="987"
+      > </a
+      ><a name="988" class="Symbol"
+      >:</a
+      ><a name="989"
+      > </a
+      ><a name="990" href="NeilPrelude.html#1786" class="Function"
+      >Asymmetric</a
+      ><a name="1000"
+      > </a
+      ><a name="1001" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="1006"
+      >
+</a
+      ><a name="1007" href="StrictPosReal.html#979" class="Function"
+      >&lt;&#8476;&#8314;-asym</a
+      ><a name="1015"
+      > </a
+      ><a name="1016" class="Symbol"
+      >=</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" href="StrictTotalOrder.html#342" class="Function"
+      >asym</a
+      ><a name="1022"
+      >
+
+</a
+      ><a name="1024" href="StrictPosReal.html#1024" class="Function"
+      >&#8804;&#8476;&#8314;-antisym</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" class="Symbol"
+      >:</a
+      ><a name="1037"
+      > </a
+      ><a name="1038" href="NeilPrelude.html#1877" class="Function"
+      >Antisymmetric</a
+      ><a name="1051"
+      > </a
+      ><a name="1052" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="1057"
+      >
+</a
+      ><a name="1058" href="StrictPosReal.html#1024" class="Function"
+      >&#8804;&#8476;&#8314;-antisym</a
+      ><a name="1069"
+      > </a
+      ><a name="1070" class="Symbol"
+      >=</a
+      ><a name="1071"
+      > </a
+      ><a name="1072" href="StrictPartialOrder.html#457" class="Function"
+      >antisymmetric</a
+      ><a name="1085"
+      >
+
+</a
+      ><a name="1087" href="StrictPosReal.html#1087" class="Function"
+      >&#8804;&#8476;&#8314;-refl</a
+      ><a name="1095"
+      > </a
+      ><a name="1096" class="Symbol"
+      >:</a
+      ><a name="1097"
+      > </a
+      ><a name="1098" href="NeilPrelude.html#1547" class="Function"
+      >Reflexive</a
+      ><a name="1107"
+      > </a
+      ><a name="1108" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="1113"
+      >
+</a
+      ><a name="1114" href="StrictPosReal.html#1087" class="Function"
+      >&#8804;&#8476;&#8314;-refl</a
+      ><a name="1122"
+      > </a
+      ><a name="1123" class="Symbol"
+      >=</a
+      ><a name="1124"
+      > </a
+      ><a name="1125" href="StrictPreOrder.html#877" class="Function"
+      >reflexive</a
+      ><a name="1134"
+      >
+
+</a
+      ><a name="1136" href="StrictPosReal.html#1136" class="Function"
+      >&#8804;&#8476;&#8314;-trans</a
+      ><a name="1145"
+      > </a
+      ><a name="1146" class="Symbol"
+      >:</a
+      ><a name="1147"
+      > </a
+      ><a name="1148" href="NeilPrelude.html#2349" class="Function"
+      >Transitive</a
+      ><a name="1158"
+      > </a
+      ><a name="1159" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="1164"
+      >
+</a
+      ><a name="1165" href="StrictPosReal.html#1136" class="Function"
+      >&#8804;&#8476;&#8314;-trans</a
+      ><a name="1174"
+      > </a
+      ><a name="1175" class="Symbol"
+      >=</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" href="StrictPreOrder.html#968" class="Function"
+      >&#8804;-trans</a
+      ><a name="1184"
+      >
+
+</a
+      ><a name="1186" href="StrictPosReal.html#1186" class="Function"
+      >&lt;&#8804;&#8476;&#8314;-trans</a
+      ><a name="1196"
+      > </a
+      ><a name="1197" class="Symbol"
+      >:</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" href="NeilPrelude.html#1976" class="Function"
+      >Trans</a
+      ><a name="1204"
+      > </a
+      ><a name="1205" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="1216"
+      > </a
+      ><a name="1217" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="1222"
+      >
+</a
+      ><a name="1223" href="StrictPosReal.html#1186" class="Function"
+      >&lt;&#8804;&#8476;&#8314;-trans</a
+      ><a name="1233"
+      > </a
+      ><a name="1234" class="Symbol"
+      >=</a
+      ><a name="1235"
+      > </a
+      ><a name="1236" href="StrictPreOrder.html#1162" class="Function"
+      >&lt;&#8804;-trans</a
+      ><a name="1244"
+      >
+
+</a
+      ><a name="1246" href="StrictPosReal.html#1246" class="Function"
+      >&#8804;&lt;&#8476;&#8314;-trans</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" class="Symbol"
+      >:</a
+      ><a name="1258"
+      > </a
+      ><a name="1259" href="NeilPrelude.html#1976" class="Function"
+      >Trans</a
+      ><a name="1264"
+      > </a
+      ><a name="1265" href="StrictPosReal.html#857" class="Function Operator"
+      >_&#8804;&#8476;&#8314;_</a
+      ><a name="1270"
+      > </a
+      ><a name="1271" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="1276"
+      > </a
+      ><a name="1277" href="StrictPosReal.html#230" class="Postulate Operator"
+      >_&lt;&#8476;&#8314;_</a
+      ><a name="1282"
+      >
+</a
+      ><a name="1283" href="StrictPosReal.html#1246" class="Function"
+      >&#8804;&lt;&#8476;&#8314;-trans</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" class="Symbol"
+      >=</a
+      ><a name="1295"
+      > </a
+      ><a name="1296" href="StrictPreOrder.html#1254" class="Function"
+      >&#8804;&lt;-trans</a
+      ><a name="1304"
+      >
+
+</a
+      ><a name="1306" href="StrictPosReal.html#1306" class="Function"
+      >&lt;&#8804;&#8476;&#8314;-asym</a
+      ><a name="1315"
+      > </a
+      ><a name="1316" class="Symbol"
+      >:</a
+      ><a name="1317"
+      > </a
+      ><a name="1318" class="Symbol"
+      >{</a
+      ><a name="1319" href="StrictPosReal.html#1319" class="Bound"
+      >x</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" href="StrictPosReal.html#1321" class="Bound"
+      >y</a
+      ><a name="1322"
+      > </a
+      ><a name="1323" class="Symbol"
+      >:</a
+      ><a name="1324"
+      > </a
+      ><a name="1325" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1327" class="Symbol"
+      >}</a
+      ><a name="1328"
+      > </a
+      ><a name="1329" class="Symbol"
+      >&#8594;</a
+      ><a name="1330"
+      > </a
+      ><a name="1331" href="StrictPosReal.html#1319" class="Bound"
+      >x</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1336"
+      > </a
+      ><a name="1337" href="StrictPosReal.html#1321" class="Bound"
+      >y</a
+      ><a name="1338"
+      > </a
+      ><a name="1339" class="Symbol"
+      >&#8594;</a
+      ><a name="1340"
+      > </a
+      ><a name="1341" href="NeilPrelude.html#1319" class="Function"
+      >Not</a
+      ><a name="1344"
+      > </a
+      ><a name="1345" class="Symbol"
+      >(</a
+      ><a name="1346" href="StrictPosReal.html#1321" class="Bound"
+      >y</a
+      ><a name="1347"
+      > </a
+      ><a name="1348" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" href="StrictPosReal.html#1319" class="Bound"
+      >x</a
+      ><a name="1353" class="Symbol"
+      >)</a
+      ><a name="1354"
+      >
+</a
+      ><a name="1355" href="StrictPosReal.html#1306" class="Function"
+      >&lt;&#8804;&#8476;&#8314;-asym</a
+      ><a name="1364"
+      > </a
+      ><a name="1365" class="Symbol"
+      >=</a
+      ><a name="1366"
+      > </a
+      ><a name="1367" href="StrictPartialOrder.html#616" class="Function"
+      >&lt;&#8804;-asym</a
+      ><a name="1374"
+      >
+
+</a
+      ><a name="1376" href="StrictPosReal.html#1376" class="Function"
+      >&#8804;&lt;&#8476;&#8314;-asym</a
+      ><a name="1385"
+      > </a
+      ><a name="1386" class="Symbol"
+      >:</a
+      ><a name="1387"
+      > </a
+      ><a name="1388" class="Symbol"
+      >{</a
+      ><a name="1389" href="StrictPosReal.html#1389" class="Bound"
+      >x</a
+      ><a name="1390"
+      > </a
+      ><a name="1391" href="StrictPosReal.html#1391" class="Bound"
+      >y</a
+      ><a name="1392"
+      > </a
+      ><a name="1393" class="Symbol"
+      >:</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1397" class="Symbol"
+      >}</a
+      ><a name="1398"
+      > </a
+      ><a name="1399" class="Symbol"
+      >&#8594;</a
+      ><a name="1400"
+      > </a
+      ><a name="1401" href="StrictPosReal.html#1389" class="Bound"
+      >x</a
+      ><a name="1402"
+      > </a
+      ><a name="1403" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1406"
+      > </a
+      ><a name="1407" href="StrictPosReal.html#1391" class="Bound"
+      >y</a
+      ><a name="1408"
+      > </a
+      ><a name="1409" class="Symbol"
+      >&#8594;</a
+      ><a name="1410"
+      > </a
+      ><a name="1411" href="NeilPrelude.html#1319" class="Function"
+      >Not</a
+      ><a name="1414"
+      > </a
+      ><a name="1415" class="Symbol"
+      >(</a
+      ><a name="1416" href="StrictPosReal.html#1391" class="Bound"
+      >y</a
+      ><a name="1417"
+      > </a
+      ><a name="1418" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" href="StrictPosReal.html#1389" class="Bound"
+      >x</a
+      ><a name="1423" class="Symbol"
+      >)</a
+      ><a name="1424"
+      >
+</a
+      ><a name="1425" href="StrictPosReal.html#1376" class="Function"
+      >&#8804;&lt;&#8476;&#8314;-asym</a
+      ><a name="1434"
+      > </a
+      ><a name="1435" class="Symbol"
+      >=</a
+      ><a name="1436"
+      > </a
+      ><a name="1437" href="StrictPartialOrder.html#725" class="Function"
+      >&#8804;&lt;-asym</a
+      ><a name="1444"
+      >
+
+</a
+      ><a name="1446" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="1502"
+      >
+
+</a
+      ><a name="1504" href="StrictPosReal.html#1504" class="Function"
+      >&lt;&#8476;&#8314;-subst</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" class="Symbol"
+      >:</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" class="Symbol"
+      >{</a
+      ><a name="1517" href="StrictPosReal.html#1517" class="Bound"
+      >x&#8321;</a
+      ><a name="1519"
+      > </a
+      ><a name="1520" href="StrictPosReal.html#1520" class="Bound"
+      >y&#8321;</a
+      ><a name="1522"
+      > </a
+      ><a name="1523" href="StrictPosReal.html#1523" class="Bound"
+      >x&#8322;</a
+      ><a name="1525"
+      > </a
+      ><a name="1526" href="StrictPosReal.html#1526" class="Bound"
+      >y&#8322;</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" class="Symbol"
+      >:</a
+      ><a name="1530"
+      > </a
+      ><a name="1531" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1533" class="Symbol"
+      >}</a
+      ><a name="1534"
+      > </a
+      ><a name="1535" class="Symbol"
+      >&#8594;</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" href="StrictPosReal.html#1517" class="Bound"
+      >x&#8321;</a
+      ><a name="1539"
+      > </a
+      ><a name="1540" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" href="StrictPosReal.html#1523" class="Bound"
+      >x&#8322;</a
+      ><a name="1544"
+      > </a
+      ><a name="1545" class="Symbol"
+      >&#8594;</a
+      ><a name="1546"
+      > </a
+      ><a name="1547" href="StrictPosReal.html#1520" class="Bound"
+      >y&#8321;</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1551"
+      > </a
+      ><a name="1552" href="StrictPosReal.html#1526" class="Bound"
+      >y&#8322;</a
+      ><a name="1554"
+      > </a
+      ><a name="1555" class="Symbol"
+      >&#8594;</a
+      ><a name="1556"
+      > </a
+      ><a name="1557" href="StrictPosReal.html#1517" class="Bound"
+      >x&#8321;</a
+      ><a name="1559"
+      > </a
+      ><a name="1560" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" href="StrictPosReal.html#1520" class="Bound"
+      >y&#8321;</a
+      ><a name="1566"
+      > </a
+      ><a name="1567" class="Symbol"
+      >&#8594;</a
+      ><a name="1568"
+      > </a
+      ><a name="1569" href="StrictPosReal.html#1523" class="Bound"
+      >x&#8322;</a
+      ><a name="1571"
+      > </a
+      ><a name="1572" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1575"
+      > </a
+      ><a name="1576" href="StrictPosReal.html#1526" class="Bound"
+      >y&#8322;</a
+      ><a name="1578"
+      >
+</a
+      ><a name="1579" href="StrictPosReal.html#1504" class="Function"
+      >&lt;&#8476;&#8314;-subst</a
+      ><a name="1588"
+      > </a
+      ><a name="1589" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1593"
+      > </a
+      ><a name="1594" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1598"
+      > </a
+      ><a name="1599" class="Symbol"
+      >=</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" href="NeilPrelude.html#8292" class="Function"
+      >id</a
+      ><a name="1603"
+      >
+
+</a
+      ><a name="1605" href="StrictPosReal.html#1605" class="Function"
+      >&lt;&#8476;&#8314;-substL</a
+      ><a name="1615"
+      > </a
+      ><a name="1616" class="Symbol"
+      >:</a
+      ><a name="1617"
+      > </a
+      ><a name="1618" class="Symbol"
+      >{</a
+      ><a name="1619" href="StrictPosReal.html#1619" class="Bound"
+      >x&#8321;</a
+      ><a name="1621"
+      > </a
+      ><a name="1622" href="StrictPosReal.html#1622" class="Bound"
+      >x&#8322;</a
+      ><a name="1624"
+      > </a
+      ><a name="1625" href="StrictPosReal.html#1625" class="Bound"
+      >y</a
+      ><a name="1626"
+      > </a
+      ><a name="1627" class="Symbol"
+      >:</a
+      ><a name="1628"
+      > </a
+      ><a name="1629" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1631" class="Symbol"
+      >}</a
+      ><a name="1632"
+      > </a
+      ><a name="1633" class="Symbol"
+      >&#8594;</a
+      ><a name="1634"
+      > </a
+      ><a name="1635" href="StrictPosReal.html#1619" class="Bound"
+      >x&#8321;</a
+      ><a name="1637"
+      > </a
+      ><a name="1638" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" href="StrictPosReal.html#1622" class="Bound"
+      >x&#8322;</a
+      ><a name="1642"
+      > </a
+      ><a name="1643" class="Symbol"
+      >&#8594;</a
+      ><a name="1644"
+      > </a
+      ><a name="1645" href="StrictPosReal.html#1619" class="Bound"
+      >x&#8321;</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1651"
+      > </a
+      ><a name="1652" href="StrictPosReal.html#1625" class="Bound"
+      >y</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" class="Symbol"
+      >&#8594;</a
+      ><a name="1655"
+      > </a
+      ><a name="1656" href="StrictPosReal.html#1622" class="Bound"
+      >x&#8322;</a
+      ><a name="1658"
+      > </a
+      ><a name="1659" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1662"
+      > </a
+      ><a name="1663" href="StrictPosReal.html#1625" class="Bound"
+      >y</a
+      ><a name="1664"
+      >
+</a
+      ><a name="1665" href="StrictPosReal.html#1605" class="Function"
+      >&lt;&#8476;&#8314;-substL</a
+      ><a name="1675"
+      > </a
+      ><a name="1676" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1680"
+      > </a
+      ><a name="1681" class="Symbol"
+      >=</a
+      ><a name="1682"
+      > </a
+      ><a name="1683" href="NeilPrelude.html#8292" class="Function"
+      >id</a
+      ><a name="1685"
+      >
+
+</a
+      ><a name="1687" href="StrictPosReal.html#1687" class="Function"
+      >&lt;&#8476;&#8314;-substR</a
+      ><a name="1697"
+      > </a
+      ><a name="1698" class="Symbol"
+      >:</a
+      ><a name="1699"
+      > </a
+      ><a name="1700" class="Symbol"
+      >{</a
+      ><a name="1701" href="StrictPosReal.html#1701" class="Bound"
+      >x</a
+      ><a name="1702"
+      > </a
+      ><a name="1703" href="StrictPosReal.html#1703" class="Bound"
+      >y&#8321;</a
+      ><a name="1705"
+      > </a
+      ><a name="1706" href="StrictPosReal.html#1706" class="Bound"
+      >y&#8322;</a
+      ><a name="1708"
+      > </a
+      ><a name="1709" class="Symbol"
+      >:</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1713" class="Symbol"
+      >}</a
+      ><a name="1714"
+      > </a
+      ><a name="1715" class="Symbol"
+      >&#8594;</a
+      ><a name="1716"
+      > </a
+      ><a name="1717" href="StrictPosReal.html#1703" class="Bound"
+      >y&#8321;</a
+      ><a name="1719"
+      > </a
+      ><a name="1720" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1721"
+      > </a
+      ><a name="1722" href="StrictPosReal.html#1706" class="Bound"
+      >y&#8322;</a
+      ><a name="1724"
+      > </a
+      ><a name="1725" class="Symbol"
+      >&#8594;</a
+      ><a name="1726"
+      > </a
+      ><a name="1727" href="StrictPosReal.html#1701" class="Bound"
+      >x</a
+      ><a name="1728"
+      > </a
+      ><a name="1729" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1732"
+      > </a
+      ><a name="1733" href="StrictPosReal.html#1703" class="Bound"
+      >y&#8321;</a
+      ><a name="1735"
+      > </a
+      ><a name="1736" class="Symbol"
+      >&#8594;</a
+      ><a name="1737"
+      > </a
+      ><a name="1738" href="StrictPosReal.html#1701" class="Bound"
+      >x</a
+      ><a name="1739"
+      > </a
+      ><a name="1740" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="1743"
+      > </a
+      ><a name="1744" href="StrictPosReal.html#1706" class="Bound"
+      >y&#8322;</a
+      ><a name="1746"
+      >
+</a
+      ><a name="1747" href="StrictPosReal.html#1687" class="Function"
+      >&lt;&#8476;&#8314;-substR</a
+      ><a name="1757"
+      > </a
+      ><a name="1758" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1762"
+      > </a
+      ><a name="1763" class="Symbol"
+      >=</a
+      ><a name="1764"
+      > </a
+      ><a name="1765" href="NeilPrelude.html#8292" class="Function"
+      >id</a
+      ><a name="1767"
+      >
+
+</a
+      ><a name="1769" href="StrictPosReal.html#1769" class="Function"
+      >&#8804;&#8476;&#8314;-subst</a
+      ><a name="1778"
+      > </a
+      ><a name="1779" class="Symbol"
+      >:</a
+      ><a name="1780"
+      > </a
+      ><a name="1781" class="Symbol"
+      >{</a
+      ><a name="1782" href="StrictPosReal.html#1782" class="Bound"
+      >x&#8321;</a
+      ><a name="1784"
+      > </a
+      ><a name="1785" href="StrictPosReal.html#1785" class="Bound"
+      >y&#8321;</a
+      ><a name="1787"
+      > </a
+      ><a name="1788" href="StrictPosReal.html#1788" class="Bound"
+      >x&#8322;</a
+      ><a name="1790"
+      > </a
+      ><a name="1791" href="StrictPosReal.html#1791" class="Bound"
+      >y&#8322;</a
+      ><a name="1793"
+      > </a
+      ><a name="1794" class="Symbol"
+      >:</a
+      ><a name="1795"
+      > </a
+      ><a name="1796" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1798" class="Symbol"
+      >}</a
+      ><a name="1799"
+      > </a
+      ><a name="1800" class="Symbol"
+      >&#8594;</a
+      ><a name="1801"
+      > </a
+      ><a name="1802" href="StrictPosReal.html#1782" class="Bound"
+      >x&#8321;</a
+      ><a name="1804"
+      > </a
+      ><a name="1805" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1806"
+      > </a
+      ><a name="1807" href="StrictPosReal.html#1788" class="Bound"
+      >x&#8322;</a
+      ><a name="1809"
+      > </a
+      ><a name="1810" class="Symbol"
+      >&#8594;</a
+      ><a name="1811"
+      > </a
+      ><a name="1812" href="StrictPosReal.html#1785" class="Bound"
+      >y&#8321;</a
+      ><a name="1814"
+      > </a
+      ><a name="1815" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" href="StrictPosReal.html#1791" class="Bound"
+      >y&#8322;</a
+      ><a name="1819"
+      > </a
+      ><a name="1820" class="Symbol"
+      >&#8594;</a
+      ><a name="1821"
+      > </a
+      ><a name="1822" href="StrictPosReal.html#1782" class="Bound"
+      >x&#8321;</a
+      ><a name="1824"
+      > </a
+      ><a name="1825" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1828"
+      > </a
+      ><a name="1829" href="StrictPosReal.html#1785" class="Bound"
+      >y&#8321;</a
+      ><a name="1831"
+      > </a
+      ><a name="1832" class="Symbol"
+      >&#8594;</a
+      ><a name="1833"
+      > </a
+      ><a name="1834" href="StrictPosReal.html#1788" class="Bound"
+      >x&#8322;</a
+      ><a name="1836"
+      > </a
+      ><a name="1837" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1840"
+      > </a
+      ><a name="1841" href="StrictPosReal.html#1791" class="Bound"
+      >y&#8322;</a
+      ><a name="1843"
+      >
+</a
+      ><a name="1844" href="StrictPosReal.html#1769" class="Function"
+      >&#8804;&#8476;&#8314;-subst</a
+      ><a name="1853"
+      > </a
+      ><a name="1854" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1858"
+      > </a
+      ><a name="1859" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" class="Symbol"
+      >=</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" href="NeilPrelude.html#8292" class="Function"
+      >id</a
+      ><a name="1868"
+      >
+
+</a
+      ><a name="1870" href="StrictPosReal.html#1870" class="Function"
+      >&#8804;&#8476;&#8314;-substL</a
+      ><a name="1880"
+      > </a
+      ><a name="1881" class="Symbol"
+      >:</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" class="Symbol"
+      >{</a
+      ><a name="1884" href="StrictPosReal.html#1884" class="Bound"
+      >x&#8321;</a
+      ><a name="1886"
+      > </a
+      ><a name="1887" href="StrictPosReal.html#1887" class="Bound"
+      >x&#8322;</a
+      ><a name="1889"
+      > </a
+      ><a name="1890" href="StrictPosReal.html#1890" class="Bound"
+      >y</a
+      ><a name="1891"
+      > </a
+      ><a name="1892" class="Symbol"
+      >:</a
+      ><a name="1893"
+      > </a
+      ><a name="1894" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1896" class="Symbol"
+      >}</a
+      ><a name="1897"
+      > </a
+      ><a name="1898" class="Symbol"
+      >&#8594;</a
+      ><a name="1899"
+      > </a
+      ><a name="1900" href="StrictPosReal.html#1884" class="Bound"
+      >x&#8321;</a
+      ><a name="1902"
+      > </a
+      ><a name="1903" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1904"
+      > </a
+      ><a name="1905" href="StrictPosReal.html#1887" class="Bound"
+      >x&#8322;</a
+      ><a name="1907"
+      > </a
+      ><a name="1908" class="Symbol"
+      >&#8594;</a
+      ><a name="1909"
+      > </a
+      ><a name="1910" href="StrictPosReal.html#1884" class="Bound"
+      >x&#8321;</a
+      ><a name="1912"
+      > </a
+      ><a name="1913" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1916"
+      > </a
+      ><a name="1917" href="StrictPosReal.html#1890" class="Bound"
+      >y</a
+      ><a name="1918"
+      > </a
+      ><a name="1919" class="Symbol"
+      >&#8594;</a
+      ><a name="1920"
+      > </a
+      ><a name="1921" href="StrictPosReal.html#1887" class="Bound"
+      >x&#8322;</a
+      ><a name="1923"
+      > </a
+      ><a name="1924" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1927"
+      > </a
+      ><a name="1928" href="StrictPosReal.html#1890" class="Bound"
+      >y</a
+      ><a name="1929"
+      >
+</a
+      ><a name="1930" href="StrictPosReal.html#1870" class="Function"
+      >&#8804;&#8476;&#8314;-substL</a
+      ><a name="1940"
+      > </a
+      ><a name="1941" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1945"
+      > </a
+      ><a name="1946" class="Symbol"
+      >=</a
+      ><a name="1947"
+      > </a
+      ><a name="1948" href="NeilPrelude.html#8292" class="Function"
+      >id</a
+      ><a name="1950"
+      >
+
+</a
+      ><a name="1952" href="StrictPosReal.html#1952" class="Function"
+      >&#8804;&#8476;&#8314;-substR</a
+      ><a name="1962"
+      > </a
+      ><a name="1963" class="Symbol"
+      >:</a
+      ><a name="1964"
+      > </a
+      ><a name="1965" class="Symbol"
+      >{</a
+      ><a name="1966" href="StrictPosReal.html#1966" class="Bound"
+      >x</a
+      ><a name="1967"
+      > </a
+      ><a name="1968" href="StrictPosReal.html#1968" class="Bound"
+      >y&#8321;</a
+      ><a name="1970"
+      > </a
+      ><a name="1971" href="StrictPosReal.html#1971" class="Bound"
+      >y&#8322;</a
+      ><a name="1973"
+      > </a
+      ><a name="1974" class="Symbol"
+      >:</a
+      ><a name="1975"
+      > </a
+      ><a name="1976" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="1978" class="Symbol"
+      >}</a
+      ><a name="1979"
+      > </a
+      ><a name="1980" class="Symbol"
+      >&#8594;</a
+      ><a name="1981"
+      > </a
+      ><a name="1982" href="StrictPosReal.html#1968" class="Bound"
+      >y&#8321;</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="1986"
+      > </a
+      ><a name="1987" href="StrictPosReal.html#1971" class="Bound"
+      >y&#8322;</a
+      ><a name="1989"
+      > </a
+      ><a name="1990" class="Symbol"
+      >&#8594;</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" href="StrictPosReal.html#1966" class="Bound"
+      >x</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="1997"
+      > </a
+      ><a name="1998" href="StrictPosReal.html#1968" class="Bound"
+      >y&#8321;</a
+      ><a name="2000"
+      > </a
+      ><a name="2001" class="Symbol"
+      >&#8594;</a
+      ><a name="2002"
+      > </a
+      ><a name="2003" href="StrictPosReal.html#1966" class="Bound"
+      >x</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="2008"
+      > </a
+      ><a name="2009" href="StrictPosReal.html#1971" class="Bound"
+      >y&#8322;</a
+      ><a name="2011"
+      >
+</a
+      ><a name="2012" href="StrictPosReal.html#1952" class="Function"
+      >&#8804;&#8476;&#8314;-substR</a
+      ><a name="2022"
+      > </a
+      ><a name="2023" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="2027"
+      > </a
+      ><a name="2028" class="Symbol"
+      >=</a
+      ><a name="2029"
+      > </a
+      ><a name="2030" href="NeilPrelude.html#8292" class="Function"
+      >id</a
+      ><a name="2032"
+      >
+
+</a
+      ><a name="2034" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="2090"
+      >
+
+</a
+      ><a name="2092" class="Keyword"
+      >infixl</a
+      ><a name="2098"
+      > </a
+      ><a name="2099" class="Number"
+      >10</a
+      ><a name="2101"
+      > _&#8314;+&#8314;_
+
+</a
+      ><a name="2109" class="Keyword"
+      >postulate</a
+      ><a name="2118"
+      > </a
+      ><a name="2119" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >_&#8314;+&#8314;_</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" class="Symbol"
+      >:</a
+      ><a name="2126"
+      > </a
+      ><a name="2127" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2129"
+      > </a
+      ><a name="2130" class="Symbol"
+      >&#8594;</a
+      ><a name="2131"
+      > </a
+      ><a name="2132" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2134"
+      > </a
+      ><a name="2135" class="Symbol"
+      >&#8594;</a
+      ><a name="2136"
+      > </a
+      ><a name="2137" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2139"
+      >
+</a
+      ><a name="2140" class="Keyword"
+      >postulate</a
+      ><a name="2149"
+      > </a
+      ><a name="2150" href="StrictPosReal.html#2150" class="Postulate"
+      >&#8476;&#8314;-minus</a
+      ><a name="2158"
+      > </a
+      ><a name="2159" class="Symbol"
+      >:</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" class="Symbol"
+      >(</a
+      ><a name="2162" href="StrictPosReal.html#2162" class="Bound"
+      >x</a
+      ><a name="2163"
+      > </a
+      ><a name="2164" href="StrictPosReal.html#2164" class="Bound"
+      >y</a
+      ><a name="2165"
+      > </a
+      ><a name="2166" class="Symbol"
+      >:</a
+      ><a name="2167"
+      > </a
+      ><a name="2168" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2170" class="Symbol"
+      >)</a
+      ><a name="2171"
+      > </a
+      ><a name="2172" class="Symbol"
+      >&#8594;</a
+      ><a name="2173"
+      > </a
+      ><a name="2174" href="StrictPosReal.html#2164" class="Bound"
+      >y</a
+      ><a name="2175"
+      > </a
+      ><a name="2176" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2179"
+      > </a
+      ><a name="2180" href="StrictPosReal.html#2162" class="Bound"
+      >x</a
+      ><a name="2181"
+      > </a
+      ><a name="2182" class="Symbol"
+      >&#8594;</a
+      ><a name="2183"
+      > </a
+      ><a name="2184" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2186"
+      >
+
+</a
+      ><a name="2188" href="StrictPosReal.html#2188" class="Function Operator"
+      >_&#8314;-&#8314;_</a
+      ><a name="2193"
+      > </a
+      ><a name="2194" class="Symbol"
+      >:</a
+      ><a name="2195"
+      > </a
+      ><a name="2196" class="Symbol"
+      >(</a
+      ><a name="2197" href="StrictPosReal.html#2197" class="Bound"
+      >x</a
+      ><a name="2198"
+      > </a
+      ><a name="2199" href="StrictPosReal.html#2199" class="Bound"
+      >y</a
+      ><a name="2200"
+      > </a
+      ><a name="2201" class="Symbol"
+      >:</a
+      ><a name="2202"
+      > </a
+      ><a name="2203" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2205" class="Symbol"
+      >)</a
+      ><a name="2206"
+      > </a
+      ><a name="2207" class="Symbol"
+      >&#8594;</a
+      ><a name="2208"
+      > </a
+      ><a name="2209" href="StrictPosReal.html#2199" class="Bound"
+      >y</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2214"
+      > </a
+      ><a name="2215" href="StrictPosReal.html#2197" class="Bound"
+      >x</a
+      ><a name="2216"
+      > </a
+      ><a name="2217" class="Symbol"
+      >&#8594;</a
+      ><a name="2218"
+      > </a
+      ><a name="2219" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2221"
+      >
+</a
+      ><a name="2222" href="StrictPosReal.html#2188" class="Function Operator"
+      >_&#8314;-&#8314;_</a
+      ><a name="2227"
+      > </a
+      ><a name="2228" class="Symbol"
+      >=</a
+      ><a name="2229"
+      > </a
+      ><a name="2230" href="StrictPosReal.html#2150" class="Postulate"
+      >&#8476;&#8314;-minus</a
+      ><a name="2238"
+      >
+
+</a
+      ><a name="2240" class="Keyword"
+      >postulate</a
+      ><a name="2249"
+      > </a
+      ><a name="2250" href="StrictPosReal.html#2250" class="Postulate"
+      >&#8314;+&#8314;-comm</a
+      ><a name="2258"
+      > </a
+      ><a name="2259" class="Symbol"
+      >:</a
+      ><a name="2260"
+      > </a
+      ><a name="2261" class="Symbol"
+      >{</a
+      ><a name="2262" href="StrictPosReal.html#2262" class="Bound"
+      >x</a
+      ><a name="2263"
+      > </a
+      ><a name="2264" href="StrictPosReal.html#2264" class="Bound"
+      >y</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" class="Symbol"
+      >:</a
+      ><a name="2267"
+      > </a
+      ><a name="2268" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2270" class="Symbol"
+      >}</a
+      ><a name="2271"
+      > </a
+      ><a name="2272" class="Symbol"
+      >&#8594;</a
+      ><a name="2273"
+      > </a
+      ><a name="2274" class="Symbol"
+      >(</a
+      ><a name="2275" href="StrictPosReal.html#2262" class="Bound"
+      >x</a
+      ><a name="2276"
+      > </a
+      ><a name="2277" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" href="StrictPosReal.html#2264" class="Bound"
+      >y</a
+      ><a name="2282" class="Symbol"
+      >)</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2285"
+      > </a
+      ><a name="2286" class="Symbol"
+      >(</a
+      ><a name="2287" href="StrictPosReal.html#2264" class="Bound"
+      >y</a
+      ><a name="2288"
+      > </a
+      ><a name="2289" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" href="StrictPosReal.html#2262" class="Bound"
+      >x</a
+      ><a name="2294" class="Symbol"
+      >)</a
+      ><a name="2295"
+      >
+
+</a
+      ><a name="2297" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="2353"
+      >
+
+</a
+      ><a name="2355" class="Keyword"
+      >postulate</a
+      ><a name="2364"
+      > </a
+      ><a name="2365" href="StrictPosReal.html#2365" class="Postulate"
+      >lem-&#8476;&#8314;-minus-proofirrelevence</a
+      ><a name="2394"
+      > </a
+      ><a name="2395" class="Symbol"
+      >:</a
+      ><a name="2396"
+      > </a
+      ><a name="2397" class="Symbol"
+      >{</a
+      ><a name="2398" href="StrictPosReal.html#2398" class="Bound"
+      >x</a
+      ><a name="2399"
+      > </a
+      ><a name="2400" href="StrictPosReal.html#2400" class="Bound"
+      >y</a
+      ><a name="2401"
+      > </a
+      ><a name="2402" class="Symbol"
+      >:</a
+      ><a name="2403"
+      > </a
+      ><a name="2404" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2406" class="Symbol"
+      >}</a
+      ><a name="2407"
+      > </a
+      ><a name="2408" class="Symbol"
+      >&#8594;</a
+      ><a name="2409"
+      > </a
+      ><a name="2410" class="Symbol"
+      >(</a
+      ><a name="2411" href="StrictPosReal.html#2411" class="Bound"
+      >p</a
+      ><a name="2412"
+      > </a
+      ><a name="2413" href="StrictPosReal.html#2413" class="Bound"
+      >q</a
+      ><a name="2414"
+      > </a
+      ><a name="2415" class="Symbol"
+      >:</a
+      ><a name="2416"
+      > </a
+      ><a name="2417" href="StrictPosReal.html#2400" class="Bound"
+      >y</a
+      ><a name="2418"
+      > </a
+      ><a name="2419" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2422"
+      > </a
+      ><a name="2423" href="StrictPosReal.html#2398" class="Bound"
+      >x</a
+      ><a name="2424" class="Symbol"
+      >)</a
+      ><a name="2425"
+      > </a
+      ><a name="2426" class="Symbol"
+      >&#8594;</a
+      ><a name="2427"
+      > </a
+      ><a name="2428" class="Symbol"
+      >(</a
+      ><a name="2429" href="StrictPosReal.html#2398" class="Bound"
+      >x</a
+      ><a name="2430"
+      > </a
+      ><a name="2431" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="2434"
+      > </a
+      ><a name="2435" href="StrictPosReal.html#2400" class="Bound"
+      >y</a
+      ><a name="2436" class="Symbol"
+      >)</a
+      ><a name="2437"
+      > </a
+      ><a name="2438" href="StrictPosReal.html#2411" class="Bound"
+      >p</a
+      ><a name="2439"
+      > </a
+      ><a name="2440" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2441"
+      > </a
+      ><a name="2442" class="Symbol"
+      >(</a
+      ><a name="2443" href="StrictPosReal.html#2398" class="Bound"
+      >x</a
+      ><a name="2444"
+      > </a
+      ><a name="2445" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="2448"
+      > </a
+      ><a name="2449" href="StrictPosReal.html#2400" class="Bound"
+      >y</a
+      ><a name="2450" class="Symbol"
+      >)</a
+      ><a name="2451"
+      > </a
+      ><a name="2452" href="StrictPosReal.html#2413" class="Bound"
+      >q</a
+      ><a name="2453"
+      >
+
+</a
+      ><a name="2455" class="Keyword"
+      >postulate</a
+      ><a name="2464"
+      > </a
+      ><a name="2465" href="StrictPosReal.html#2465" class="Postulate"
+      >&#8314;+&#8314;-cancL</a
+      ><a name="2474"
+      > </a
+      ><a name="2475" class="Symbol"
+      >:</a
+      ><a name="2476"
+      > </a
+      ><a name="2477" href="NeilPrelude.html#3733" class="Function"
+      >CancellativeL</a
+      ><a name="2490"
+      > </a
+      ><a name="2491" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >_&#8314;+&#8314;_</a
+      ><a name="2496"
+      >
+
+</a
+      ><a name="2498" href="StrictPosReal.html#2498" class="Function"
+      >&#8314;+&#8314;-cancR</a
+      ><a name="2507"
+      > </a
+      ><a name="2508" class="Symbol"
+      >:</a
+      ><a name="2509"
+      > </a
+      ><a name="2510" href="NeilPrelude.html#3832" class="Function"
+      >CancellativeR</a
+      ><a name="2523"
+      > </a
+      ><a name="2524" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >_&#8314;+&#8314;_</a
+      ><a name="2529"
+      >
+</a
+      ><a name="2530" href="StrictPosReal.html#2498" class="Function"
+      >&#8314;+&#8314;-cancR</a
+      ><a name="2539"
+      > </a
+      ><a name="2540" href="StrictPosReal.html#2540" class="Bound"
+      >eq</a
+      ><a name="2542"
+      > </a
+      ><a name="2543" class="Symbol"
+      >=</a
+      ><a name="2544"
+      > </a
+      ><a name="2545" href="StrictPosReal.html#2465" class="Postulate"
+      >&#8314;+&#8314;-cancL</a
+      ><a name="2554"
+      > </a
+      ><a name="2555" class="Symbol"
+      >(</a
+      ><a name="2556" href="NeilPrelude.html#5509" class="Function"
+      >trans2</a
+      ><a name="2562"
+      > </a
+      ><a name="2563" href="StrictPosReal.html#2250" class="Postulate"
+      >&#8314;+&#8314;-comm</a
+      ><a name="2571"
+      > </a
+      ><a name="2572" href="StrictPosReal.html#2540" class="Bound"
+      >eq</a
+      ><a name="2574"
+      > </a
+      ><a name="2575" href="StrictPosReal.html#2250" class="Postulate"
+      >&#8314;+&#8314;-comm</a
+      ><a name="2583" class="Symbol"
+      >)</a
+      ><a name="2584"
+      >
+
+</a
+      ><a name="2586" class="Keyword"
+      >postulate</a
+      ><a name="2595"
+      > </a
+      ><a name="2596" href="StrictPosReal.html#2596" class="Postulate"
+      >lem-&#8476;&#8314;-+-&lt;-cancellativeL</a
+      ><a name="2620"
+      > </a
+      ><a name="2621" class="Symbol"
+      >:</a
+      ><a name="2622"
+      > </a
+      ><a name="2623" class="Symbol"
+      >{</a
+      ><a name="2624" href="StrictPosReal.html#2624" class="Bound"
+      >x</a
+      ><a name="2625"
+      > </a
+      ><a name="2626" href="StrictPosReal.html#2626" class="Bound"
+      >y</a
+      ><a name="2627"
+      > </a
+      ><a name="2628" href="StrictPosReal.html#2628" class="Bound"
+      >z</a
+      ><a name="2629"
+      > </a
+      ><a name="2630" class="Symbol"
+      >:</a
+      ><a name="2631"
+      > </a
+      ><a name="2632" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2634" class="Symbol"
+      >}</a
+      ><a name="2635"
+      > </a
+      ><a name="2636" class="Symbol"
+      >&#8594;</a
+      ><a name="2637"
+      > </a
+      ><a name="2638" class="Symbol"
+      >(</a
+      ><a name="2639" href="StrictPosReal.html#2639" class="Bound"
+      >p</a
+      ><a name="2640"
+      > </a
+      ><a name="2641" class="Symbol"
+      >:</a
+      ><a name="2642"
+      > </a
+      ><a name="2643" href="StrictPosReal.html#2624" class="Bound"
+      >x</a
+      ><a name="2644"
+      > </a
+      ><a name="2645" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2648"
+      > </a
+      ><a name="2649" href="StrictPosReal.html#2626" class="Bound"
+      >y</a
+      ><a name="2650" class="Symbol"
+      >)</a
+      ><a name="2651"
+      > </a
+      ><a name="2652" class="Symbol"
+      >&#8594;</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" href="StrictPosReal.html#2624" class="Bound"
+      >x</a
+      ><a name="2655"
+      > </a
+      ><a name="2656" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="2659"
+      > </a
+      ><a name="2660" href="StrictPosReal.html#2628" class="Bound"
+      >z</a
+      ><a name="2661"
+      > </a
+      ><a name="2662" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" href="StrictPosReal.html#2626" class="Bound"
+      >y</a
+      ><a name="2667"
+      > </a
+      ><a name="2668" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="2671"
+      > </a
+      ><a name="2672" href="StrictPosReal.html#2628" class="Bound"
+      >z</a
+      ><a name="2673"
+      >
+
+</a
+      ><a name="2675" href="StrictPosReal.html#2675" class="Function"
+      >lem-&#8476;&#8314;-+-&lt;-cancellativeR</a
+      ><a name="2699"
+      > </a
+      ><a name="2700" class="Symbol"
+      >:</a
+      ><a name="2701"
+      > </a
+      ><a name="2702" class="Symbol"
+      >{</a
+      ><a name="2703" href="StrictPosReal.html#2703" class="Bound"
+      >x</a
+      ><a name="2704"
+      > </a
+      ><a name="2705" href="StrictPosReal.html#2705" class="Bound"
+      >y</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" href="StrictPosReal.html#2707" class="Bound"
+      >z</a
+      ><a name="2708"
+      > </a
+      ><a name="2709" class="Symbol"
+      >:</a
+      ><a name="2710"
+      > </a
+      ><a name="2711" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2713" class="Symbol"
+      >}</a
+      ><a name="2714"
+      > </a
+      ><a name="2715" class="Symbol"
+      >&#8594;</a
+      ><a name="2716"
+      > </a
+      ><a name="2717" class="Symbol"
+      >(</a
+      ><a name="2718" href="StrictPosReal.html#2718" class="Bound"
+      >p</a
+      ><a name="2719"
+      > </a
+      ><a name="2720" class="Symbol"
+      >:</a
+      ><a name="2721"
+      > </a
+      ><a name="2722" href="StrictPosReal.html#2705" class="Bound"
+      >y</a
+      ><a name="2723"
+      > </a
+      ><a name="2724" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2727"
+      > </a
+      ><a name="2728" href="StrictPosReal.html#2707" class="Bound"
+      >z</a
+      ><a name="2729" class="Symbol"
+      >)</a
+      ><a name="2730"
+      > </a
+      ><a name="2731" class="Symbol"
+      >&#8594;</a
+      ><a name="2732"
+      > </a
+      ><a name="2733" href="StrictPosReal.html#2703" class="Bound"
+      >x</a
+      ><a name="2734"
+      > </a
+      ><a name="2735" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" href="StrictPosReal.html#2705" class="Bound"
+      >y</a
+      ><a name="2740"
+      > </a
+      ><a name="2741" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2744"
+      > </a
+      ><a name="2745" href="StrictPosReal.html#2703" class="Bound"
+      >x</a
+      ><a name="2746"
+      > </a
+      ><a name="2747" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="2750"
+      > </a
+      ><a name="2751" href="StrictPosReal.html#2707" class="Bound"
+      >z</a
+      ><a name="2752"
+      >
+</a
+      ><a name="2753" href="StrictPosReal.html#2675" class="Function"
+      >lem-&#8476;&#8314;-+-&lt;-cancellativeR</a
+      ><a name="2777"
+      > </a
+      ><a name="2778" class="Symbol"
+      >{</a
+      ><a name="2779" href="StrictPosReal.html#2779" class="Bound"
+      >x</a
+      ><a name="2780" class="Symbol"
+      >}</a
+      ><a name="2781"
+      > </a
+      ><a name="2782" class="Symbol"
+      >{</a
+      ><a name="2783" href="StrictPosReal.html#2783" class="Bound"
+      >y</a
+      ><a name="2784" class="Symbol"
+      >}</a
+      ><a name="2785"
+      > </a
+      ><a name="2786" class="Symbol"
+      >{</a
+      ><a name="2787" href="StrictPosReal.html#2787" class="Bound"
+      >z</a
+      ><a name="2788" class="Symbol"
+      >}</a
+      ><a name="2789"
+      > </a
+      ><a name="2790" class="Symbol"
+      >=</a
+      ><a name="2791"
+      > </a
+      ><a name="2792" href="StrictPosReal.html#1504" class="Function"
+      >&lt;&#8476;&#8314;-subst</a
+      ><a name="2801"
+      > </a
+      ><a name="2802" href="StrictPosReal.html#2250" class="Postulate"
+      >&#8314;+&#8314;-comm</a
+      ><a name="2810"
+      > </a
+      ><a name="2811" href="StrictPosReal.html#2250" class="Postulate"
+      >&#8314;+&#8314;-comm</a
+      ><a name="2819"
+      > </a
+      ><a name="2820" href="NeilPrelude.html#7368" class="Function Operator"
+      >&#8728;</a
+      ><a name="2821"
+      > </a
+      ><a name="2822" href="StrictPosReal.html#2596" class="Postulate"
+      >lem-&#8476;&#8314;-+-&lt;-cancellativeL</a
+      ><a name="2846"
+      > </a
+      ><a name="2847" class="Symbol"
+      >{</a
+      ><a name="2848" href="StrictPosReal.html#2783" class="Bound"
+      >y</a
+      ><a name="2849" class="Symbol"
+      >}</a
+      ><a name="2850"
+      > </a
+      ><a name="2851" class="Symbol"
+      >{</a
+      ><a name="2852" href="StrictPosReal.html#2787" class="Bound"
+      >z</a
+      ><a name="2853" class="Symbol"
+      >}</a
+      ><a name="2854"
+      > </a
+      ><a name="2855" class="Symbol"
+      >{</a
+      ><a name="2856" href="StrictPosReal.html#2779" class="Bound"
+      >x</a
+      ><a name="2857" class="Symbol"
+      >}</a
+      ><a name="2858"
+      >
+
+</a
+      ><a name="2860" class="Keyword"
+      >postulate</a
+      ><a name="2869"
+      > </a
+      ><a name="2870" href="StrictPosReal.html#2870" class="Postulate"
+      >lem-&#8476;&#8314;-minus-&lt;-cancellative</a
+      ><a name="2897"
+      > </a
+      ><a name="2898" class="Symbol"
+      >:</a
+      ><a name="2899"
+      > </a
+      ><a name="2900" class="Symbol"
+      >{</a
+      ><a name="2901" href="StrictPosReal.html#2901" class="Bound"
+      >x</a
+      ><a name="2902"
+      > </a
+      ><a name="2903" href="StrictPosReal.html#2903" class="Bound"
+      >y</a
+      ><a name="2904"
+      > </a
+      ><a name="2905" href="StrictPosReal.html#2905" class="Bound"
+      >z</a
+      ><a name="2906"
+      > </a
+      ><a name="2907" class="Symbol"
+      >:</a
+      ><a name="2908"
+      > </a
+      ><a name="2909" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="2911" class="Symbol"
+      >}</a
+      ><a name="2912"
+      > </a
+      ><a name="2913" class="Symbol"
+      >&#8594;</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" class="Symbol"
+      >(</a
+      ><a name="2916" href="StrictPosReal.html#2916" class="Bound"
+      >p</a
+      ><a name="2917"
+      > </a
+      ><a name="2918" class="Symbol"
+      >:</a
+      ><a name="2919"
+      > </a
+      ><a name="2920" href="StrictPosReal.html#2905" class="Bound"
+      >z</a
+      ><a name="2921"
+      > </a
+      ><a name="2922" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2925"
+      > </a
+      ><a name="2926" href="StrictPosReal.html#2901" class="Bound"
+      >x</a
+      ><a name="2927" class="Symbol"
+      >)</a
+      ><a name="2928"
+      > </a
+      ><a name="2929" class="Symbol"
+      >&#8594;</a
+      ><a name="2930"
+      > </a
+      ><a name="2931" class="Symbol"
+      >(</a
+      ><a name="2932" href="StrictPosReal.html#2932" class="Bound"
+      >q</a
+      ><a name="2933"
+      > </a
+      ><a name="2934" class="Symbol"
+      >:</a
+      ><a name="2935"
+      > </a
+      ><a name="2936" href="StrictPosReal.html#2905" class="Bound"
+      >z</a
+      ><a name="2937"
+      > </a
+      ><a name="2938" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" href="StrictPosReal.html#2903" class="Bound"
+      >y</a
+      ><a name="2943" class="Symbol"
+      >)</a
+      ><a name="2944"
+      > </a
+      ><a name="2945" class="Symbol"
+      >&#8594;</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" href="StrictPosReal.html#2901" class="Bound"
+      >x</a
+      ><a name="2948"
+      > </a
+      ><a name="2949" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2952"
+      > </a
+      ><a name="2953" href="StrictPosReal.html#2903" class="Bound"
+      >y</a
+      ><a name="2954"
+      > </a
+      ><a name="2955" class="Symbol"
+      >&#8594;</a
+      ><a name="2956"
+      > </a
+      ><a name="2957" class="Symbol"
+      >(</a
+      ><a name="2958" href="StrictPosReal.html#2901" class="Bound"
+      >x</a
+      ><a name="2959"
+      > </a
+      ><a name="2960" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="2963"
+      > </a
+      ><a name="2964" href="StrictPosReal.html#2905" class="Bound"
+      >z</a
+      ><a name="2965" class="Symbol"
+      >)</a
+      ><a name="2966"
+      > </a
+      ><a name="2967" href="StrictPosReal.html#2916" class="Bound"
+      >p</a
+      ><a name="2968"
+      > </a
+      ><a name="2969" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="2972"
+      > </a
+      ><a name="2973" class="Symbol"
+      >(</a
+      ><a name="2974" href="StrictPosReal.html#2903" class="Bound"
+      >y</a
+      ><a name="2975"
+      > </a
+      ><a name="2976" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="2979"
+      > </a
+      ><a name="2980" href="StrictPosReal.html#2905" class="Bound"
+      >z</a
+      ><a name="2981" class="Symbol"
+      >)</a
+      ><a name="2982"
+      > </a
+      ><a name="2983" href="StrictPosReal.html#2932" class="Bound"
+      >q</a
+      ><a name="2984"
+      >
+
+</a
+      ><a name="2986" href="StrictPosReal.html#2986" class="Function"
+      >lem-&#8476;&#8314;-minus-&#8804;-cancellative</a
+      ><a name="3013"
+      > </a
+      ><a name="3014" class="Symbol"
+      >:</a
+      ><a name="3015"
+      > </a
+      ><a name="3016" class="Symbol"
+      >{</a
+      ><a name="3017" href="StrictPosReal.html#3017" class="Bound"
+      >x</a
+      ><a name="3018"
+      > </a
+      ><a name="3019" href="StrictPosReal.html#3019" class="Bound"
+      >y</a
+      ><a name="3020"
+      > </a
+      ><a name="3021" href="StrictPosReal.html#3021" class="Bound"
+      >z</a
+      ><a name="3022"
+      > </a
+      ><a name="3023" class="Symbol"
+      >:</a
+      ><a name="3024"
+      > </a
+      ><a name="3025" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3027" class="Symbol"
+      >}</a
+      ><a name="3028"
+      > </a
+      ><a name="3029" class="Symbol"
+      >&#8594;</a
+      ><a name="3030"
+      > </a
+      ><a name="3031" class="Symbol"
+      >(</a
+      ><a name="3032" href="StrictPosReal.html#3032" class="Bound"
+      >p</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" class="Symbol"
+      >:</a
+      ><a name="3035"
+      > </a
+      ><a name="3036" href="StrictPosReal.html#3021" class="Bound"
+      >z</a
+      ><a name="3037"
+      > </a
+      ><a name="3038" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3041"
+      > </a
+      ><a name="3042" href="StrictPosReal.html#3017" class="Bound"
+      >x</a
+      ><a name="3043" class="Symbol"
+      >)</a
+      ><a name="3044"
+      > </a
+      ><a name="3045" class="Symbol"
+      >&#8594;</a
+      ><a name="3046"
+      > </a
+      ><a name="3047" class="Symbol"
+      >(</a
+      ><a name="3048" href="StrictPosReal.html#3048" class="Bound"
+      >q</a
+      ><a name="3049"
+      > </a
+      ><a name="3050" class="Symbol"
+      >:</a
+      ><a name="3051"
+      > </a
+      ><a name="3052" href="StrictPosReal.html#3021" class="Bound"
+      >z</a
+      ><a name="3053"
+      > </a
+      ><a name="3054" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3057"
+      > </a
+      ><a name="3058" href="StrictPosReal.html#3019" class="Bound"
+      >y</a
+      ><a name="3059" class="Symbol"
+      >)</a
+      ><a name="3060"
+      > </a
+      ><a name="3061" class="Symbol"
+      >&#8594;</a
+      ><a name="3062"
+      > </a
+      ><a name="3063" href="StrictPosReal.html#3017" class="Bound"
+      >x</a
+      ><a name="3064"
+      > </a
+      ><a name="3065" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="3068"
+      > </a
+      ><a name="3069" href="StrictPosReal.html#3019" class="Bound"
+      >y</a
+      ><a name="3070"
+      > </a
+      ><a name="3071" class="Symbol"
+      >&#8594;</a
+      ><a name="3072"
+      > </a
+      ><a name="3073" class="Symbol"
+      >(</a
+      ><a name="3074" href="StrictPosReal.html#3017" class="Bound"
+      >x</a
+      ><a name="3075"
+      > </a
+      ><a name="3076" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="3079"
+      > </a
+      ><a name="3080" href="StrictPosReal.html#3021" class="Bound"
+      >z</a
+      ><a name="3081" class="Symbol"
+      >)</a
+      ><a name="3082"
+      > </a
+      ><a name="3083" href="StrictPosReal.html#3032" class="Bound"
+      >p</a
+      ><a name="3084"
+      > </a
+      ><a name="3085" href="StrictPosReal.html#857" class="Function Operator"
+      >&#8804;&#8476;&#8314;</a
+      ><a name="3088"
+      > </a
+      ><a name="3089" class="Symbol"
+      >(</a
+      ><a name="3090" href="StrictPosReal.html#3019" class="Bound"
+      >y</a
+      ><a name="3091"
+      > </a
+      ><a name="3092" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" href="StrictPosReal.html#3021" class="Bound"
+      >z</a
+      ><a name="3097" class="Symbol"
+      >)</a
+      ><a name="3098"
+      > </a
+      ><a name="3099" href="StrictPosReal.html#3048" class="Bound"
+      >q</a
+      ><a name="3100"
+      >
+</a
+      ><a name="3101" href="StrictPosReal.html#2986" class="Function"
+      >lem-&#8476;&#8314;-minus-&#8804;-cancellative</a
+      ><a name="3128"
+      > </a
+      ><a name="3129" href="StrictPosReal.html#3129" class="Bound"
+      >p</a
+      ><a name="3130"
+      > </a
+      ><a name="3131" href="StrictPosReal.html#3131" class="Bound"
+      >q</a
+      ><a name="3132"
+      > </a
+      ><a name="3133" class="Symbol"
+      >(</a
+      ><a name="3134" href="NeilPrelude.html#1190" class="InductiveConstructor"
+      >inl</a
+      ><a name="3137"
+      > </a
+      ><a name="3138" href="StrictPosReal.html#3138" class="Bound"
+      >lt</a
+      ><a name="3140" class="Symbol"
+      >)</a
+      ><a name="3141"
+      > </a
+      ><a name="3142" class="Symbol"
+      >=</a
+      ><a name="3143"
+      > </a
+      ><a name="3144" href="NeilPrelude.html#1190" class="InductiveConstructor"
+      >inl</a
+      ><a name="3147"
+      > </a
+      ><a name="3148" class="Symbol"
+      >(</a
+      ><a name="3149" href="StrictPosReal.html#2870" class="Postulate"
+      >lem-&#8476;&#8314;-minus-&lt;-cancellative</a
+      ><a name="3176"
+      > </a
+      ><a name="3177" href="StrictPosReal.html#3129" class="Bound"
+      >p</a
+      ><a name="3178"
+      > </a
+      ><a name="3179" href="StrictPosReal.html#3131" class="Bound"
+      >q</a
+      ><a name="3180"
+      > </a
+      ><a name="3181" href="StrictPosReal.html#3138" class="Bound"
+      >lt</a
+      ><a name="3183" class="Symbol"
+      >)</a
+      ><a name="3184"
+      >
+</a
+      ><a name="3185" href="StrictPosReal.html#2986" class="Function"
+      >lem-&#8476;&#8314;-minus-&#8804;-cancellative</a
+      ><a name="3212"
+      > </a
+      ><a name="3213" href="StrictPosReal.html#3213" class="Bound"
+      >p</a
+      ><a name="3214"
+      > </a
+      ><a name="3215" href="StrictPosReal.html#3215" class="Bound"
+      >q</a
+      ><a name="3216"
+      > </a
+      ><a name="3217" class="Symbol"
+      >(</a
+      ><a name="3218" href="NeilPrelude.html#1208" class="InductiveConstructor"
+      >inr</a
+      ><a name="3221"
+      > </a
+      ><a name="3222" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="3226" class="Symbol"
+      >)</a
+      ><a name="3227"
+      > </a
+      ><a name="3228" class="Symbol"
+      >=</a
+      ><a name="3229"
+      > </a
+      ><a name="3230" href="NeilPrelude.html#1208" class="InductiveConstructor"
+      >inr</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" class="Symbol"
+      >(</a
+      ><a name="3235" href="StrictPosReal.html#2365" class="Postulate"
+      >lem-&#8476;&#8314;-minus-proofirrelevence</a
+      ><a name="3264"
+      > </a
+      ><a name="3265" href="StrictPosReal.html#3213" class="Bound"
+      >p</a
+      ><a name="3266"
+      > </a
+      ><a name="3267" href="StrictPosReal.html#3215" class="Bound"
+      >q</a
+      ><a name="3268" class="Symbol"
+      >)</a
+      ><a name="3269"
+      >
+
+</a
+      ><a name="3271" class="Keyword"
+      >postulate</a
+      ><a name="3280"
+      > </a
+      ><a name="3281" href="StrictPosReal.html#3281" class="Postulate"
+      >lem-&#8476;&#8314;-+-&lt;-increasing</a
+      ><a name="3302"
+      > </a
+      ><a name="3303" class="Symbol"
+      >:</a
+      ><a name="3304"
+      > </a
+      ><a name="3305" class="Symbol"
+      >{</a
+      ><a name="3306" href="StrictPosReal.html#3306" class="Bound"
+      >x</a
+      ><a name="3307"
+      > </a
+      ><a name="3308" href="StrictPosReal.html#3308" class="Bound"
+      >y</a
+      ><a name="3309"
+      > </a
+      ><a name="3310" class="Symbol"
+      >:</a
+      ><a name="3311"
+      > </a
+      ><a name="3312" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3314" class="Symbol"
+      >}</a
+      ><a name="3315"
+      > </a
+      ><a name="3316" class="Symbol"
+      >&#8594;</a
+      ><a name="3317"
+      > </a
+      ><a name="3318" href="StrictPosReal.html#3306" class="Bound"
+      >x</a
+      ><a name="3319"
+      > </a
+      ><a name="3320" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3323"
+      > </a
+      ><a name="3324" class="Symbol"
+      >(</a
+      ><a name="3325" href="StrictPosReal.html#3308" class="Bound"
+      >y</a
+      ><a name="3326"
+      > </a
+      ><a name="3327" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3330"
+      > </a
+      ><a name="3331" href="StrictPosReal.html#3306" class="Bound"
+      >x</a
+      ><a name="3332" class="Symbol"
+      >)</a
+      ><a name="3333"
+      >
+
+</a
+      ><a name="3335" href="StrictPosReal.html#3335" class="Function"
+      >lem-&#8476;&#8314;-+-&lt;-increasingR</a
+      ><a name="3357"
+      > </a
+      ><a name="3358" class="Symbol"
+      >:</a
+      ><a name="3359"
+      > </a
+      ><a name="3360" class="Symbol"
+      >{</a
+      ><a name="3361" href="StrictPosReal.html#3361" class="Bound"
+      >x</a
+      ><a name="3362"
+      > </a
+      ><a name="3363" href="StrictPosReal.html#3363" class="Bound"
+      >y</a
+      ><a name="3364"
+      > </a
+      ><a name="3365" class="Symbol"
+      >:</a
+      ><a name="3366"
+      > </a
+      ><a name="3367" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3369" class="Symbol"
+      >}</a
+      ><a name="3370"
+      > </a
+      ><a name="3371" class="Symbol"
+      >&#8594;</a
+      ><a name="3372"
+      > </a
+      ><a name="3373" href="StrictPosReal.html#3361" class="Bound"
+      >x</a
+      ><a name="3374"
+      > </a
+      ><a name="3375" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3378"
+      > </a
+      ><a name="3379" class="Symbol"
+      >(</a
+      ><a name="3380" href="StrictPosReal.html#3361" class="Bound"
+      >x</a
+      ><a name="3381"
+      > </a
+      ><a name="3382" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3385"
+      > </a
+      ><a name="3386" href="StrictPosReal.html#3363" class="Bound"
+      >y</a
+      ><a name="3387" class="Symbol"
+      >)</a
+      ><a name="3388"
+      > 
+</a
+      ><a name="3390" href="StrictPosReal.html#3335" class="Function"
+      >lem-&#8476;&#8314;-+-&lt;-increasingR</a
+      ><a name="3412"
+      > </a
+      ><a name="3413" class="Symbol"
+      >=</a
+      ><a name="3414"
+      > </a
+      ><a name="3415" href="StrictPosReal.html#1687" class="Function"
+      >&lt;&#8476;&#8314;-substR</a
+      ><a name="3425"
+      > </a
+      ><a name="3426" href="StrictPosReal.html#2250" class="Postulate"
+      >&#8314;+&#8314;-comm</a
+      ><a name="3434"
+      > </a
+      ><a name="3435" href="StrictPosReal.html#3281" class="Postulate"
+      >lem-&#8476;&#8314;-+-&lt;-increasing</a
+      ><a name="3456"
+      >
+
+</a
+      ><a name="3458" href="StrictPosReal.html#3458" class="Function"
+      >lem-&#8476;&#8314;-+-&#8817;-increasingR</a
+      ><a name="3480"
+      > </a
+      ><a name="3481" class="Symbol"
+      >:</a
+      ><a name="3482"
+      > </a
+      ><a name="3483" class="Symbol"
+      >{</a
+      ><a name="3484" href="StrictPosReal.html#3484" class="Bound"
+      >x</a
+      ><a name="3485"
+      > </a
+      ><a name="3486" href="StrictPosReal.html#3486" class="Bound"
+      >y</a
+      ><a name="3487"
+      > </a
+      ><a name="3488" class="Symbol"
+      >:</a
+      ><a name="3489"
+      > </a
+      ><a name="3490" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3492" class="Symbol"
+      >}</a
+      ><a name="3493"
+      > </a
+      ><a name="3494" class="Symbol"
+      >&#8594;</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" href="NeilPrelude.html#1319" class="Function"
+      >Not</a
+      ><a name="3499"
+      > </a
+      ><a name="3500" class="Symbol"
+      >(</a
+      ><a name="3501" href="StrictPosReal.html#3484" class="Bound"
+      >x</a
+      ><a name="3502"
+      > </a
+      ><a name="3503" href="StrictPosReal.html#886" class="Function Operator"
+      >&#8805;&#8476;&#8314;</a
+      ><a name="3506"
+      > </a
+      ><a name="3507" class="Symbol"
+      >(</a
+      ><a name="3508" href="StrictPosReal.html#3484" class="Bound"
+      >x</a
+      ><a name="3509"
+      > </a
+      ><a name="3510" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3513"
+      > </a
+      ><a name="3514" href="StrictPosReal.html#3486" class="Bound"
+      >y</a
+      ><a name="3515" class="Symbol"
+      >))</a
+      ><a name="3517"
+      >
+</a
+      ><a name="3518" href="StrictPosReal.html#3458" class="Function"
+      >lem-&#8476;&#8314;-+-&#8817;-increasingR</a
+      ><a name="3540"
+      > </a
+      ><a name="3541" href="StrictPosReal.html#3541" class="Bound"
+      >p</a
+      ><a name="3542"
+      > </a
+      ><a name="3543" class="Symbol"
+      >=</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="StrictPosReal.html#1306" class="Function"
+      >&lt;&#8804;&#8476;&#8314;-asym</a
+      ><a name="3554"
+      > </a
+      ><a name="3555" href="StrictPosReal.html#3335" class="Function"
+      >lem-&#8476;&#8314;-+-&lt;-increasingR</a
+      ><a name="3577"
+      > </a
+      ><a name="3578" href="StrictPosReal.html#3541" class="Bound"
+      >p</a
+      ><a name="3579"
+      >
+
+</a
+      ><a name="3581" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="3637"
+      >
+
+</a
+      ><a name="3639" class="Keyword"
+      >postulate</a
+      ><a name="3648"
+      > </a
+      ><a name="3649" href="StrictPosReal.html#3649" class="Postulate"
+      >lem-&#8476;&#8314;-x+[y-x]=y</a
+      ><a name="3665"
+      > </a
+      ><a name="3666" class="Symbol"
+      >:</a
+      ><a name="3667"
+      > </a
+      ><a name="3668" class="Symbol"
+      >{</a
+      ><a name="3669" href="StrictPosReal.html#3669" class="Bound"
+      >x</a
+      ><a name="3670"
+      > </a
+      ><a name="3671" href="StrictPosReal.html#3671" class="Bound"
+      >y</a
+      ><a name="3672"
+      > </a
+      ><a name="3673" class="Symbol"
+      >:</a
+      ><a name="3674"
+      > </a
+      ><a name="3675" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3677" class="Symbol"
+      >}</a
+      ><a name="3678"
+      > </a
+      ><a name="3679" class="Symbol"
+      >&#8594;</a
+      ><a name="3680"
+      > </a
+      ><a name="3681" class="Symbol"
+      >(</a
+      ><a name="3682" href="StrictPosReal.html#3682" class="Bound"
+      >p</a
+      ><a name="3683"
+      > </a
+      ><a name="3684" class="Symbol"
+      >:</a
+      ><a name="3685"
+      > </a
+      ><a name="3686" href="StrictPosReal.html#3669" class="Bound"
+      >x</a
+      ><a name="3687"
+      > </a
+      ><a name="3688" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3691"
+      > </a
+      ><a name="3692" href="StrictPosReal.html#3671" class="Bound"
+      >y</a
+      ><a name="3693" class="Symbol"
+      >)</a
+      ><a name="3694"
+      > </a
+      ><a name="3695" class="Symbol"
+      >&#8594;</a
+      ><a name="3696"
+      > </a
+      ><a name="3697" href="StrictPosReal.html#3669" class="Bound"
+      >x</a
+      ><a name="3698"
+      > </a
+      ><a name="3699" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3702"
+      > </a
+      ><a name="3703" class="Symbol"
+      >((</a
+      ><a name="3705" href="StrictPosReal.html#3671" class="Bound"
+      >y</a
+      ><a name="3706"
+      > </a
+      ><a name="3707" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="3710"
+      > </a
+      ><a name="3711" href="StrictPosReal.html#3669" class="Bound"
+      >x</a
+      ><a name="3712" class="Symbol"
+      >)</a
+      ><a name="3713"
+      > </a
+      ><a name="3714" href="StrictPosReal.html#3682" class="Bound"
+      >p</a
+      ><a name="3715" class="Symbol"
+      >)</a
+      ><a name="3716"
+      > </a
+      ><a name="3717" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3718"
+      > </a
+      ><a name="3719" href="StrictPosReal.html#3671" class="Bound"
+      >y</a
+      ><a name="3720"
+      >
+</a
+      ><a name="3721" class="Keyword"
+      >postulate</a
+      ><a name="3730"
+      > </a
+      ><a name="3731" href="StrictPosReal.html#3731" class="Postulate"
+      >lem-&#8476;&#8314;-[x+y]-x=y</a
+      ><a name="3747"
+      > </a
+      ><a name="3748" class="Symbol"
+      >:</a
+      ><a name="3749"
+      > </a
+      ><a name="3750" class="Symbol"
+      >{</a
+      ><a name="3751" href="StrictPosReal.html#3751" class="Bound"
+      >x</a
+      ><a name="3752"
+      > </a
+      ><a name="3753" href="StrictPosReal.html#3753" class="Bound"
+      >y</a
+      ><a name="3754"
+      > </a
+      ><a name="3755" class="Symbol"
+      >:</a
+      ><a name="3756"
+      > </a
+      ><a name="3757" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3759" class="Symbol"
+      >}</a
+      ><a name="3760"
+      > </a
+      ><a name="3761" class="Symbol"
+      >&#8594;</a
+      ><a name="3762"
+      > </a
+      ><a name="3763" class="Symbol"
+      >(</a
+      ><a name="3764" href="StrictPosReal.html#3764" class="Bound"
+      >p</a
+      ><a name="3765"
+      > </a
+      ><a name="3766" class="Symbol"
+      >:</a
+      ><a name="3767"
+      > </a
+      ><a name="3768" href="StrictPosReal.html#3751" class="Bound"
+      >x</a
+      ><a name="3769"
+      > </a
+      ><a name="3770" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3773"
+      > </a
+      ><a name="3774" class="Symbol"
+      >(</a
+      ><a name="3775" href="StrictPosReal.html#3751" class="Bound"
+      >x</a
+      ><a name="3776"
+      > </a
+      ><a name="3777" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3780"
+      > </a
+      ><a name="3781" href="StrictPosReal.html#3753" class="Bound"
+      >y</a
+      ><a name="3782" class="Symbol"
+      >))</a
+      ><a name="3784"
+      > </a
+      ><a name="3785" class="Symbol"
+      >&#8594;</a
+      ><a name="3786"
+      > </a
+      ><a name="3787" class="Symbol"
+      >((</a
+      ><a name="3789" href="StrictPosReal.html#3751" class="Bound"
+      >x</a
+      ><a name="3790"
+      > </a
+      ><a name="3791" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3794"
+      > </a
+      ><a name="3795" href="StrictPosReal.html#3753" class="Bound"
+      >y</a
+      ><a name="3796" class="Symbol"
+      >)</a
+      ><a name="3797"
+      > </a
+      ><a name="3798" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="3801"
+      > </a
+      ><a name="3802" href="StrictPosReal.html#3751" class="Bound"
+      >x</a
+      ><a name="3803" class="Symbol"
+      >)</a
+      ><a name="3804"
+      > </a
+      ><a name="3805" href="StrictPosReal.html#3764" class="Bound"
+      >p</a
+      ><a name="3806"
+      > </a
+      ><a name="3807" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="3808"
+      > </a
+      ><a name="3809" href="StrictPosReal.html#3753" class="Bound"
+      >y</a
+      ><a name="3810"
+      >
+</a
+      ><a name="3811" class="Keyword"
+      >postulate</a
+      ><a name="3820"
+      > </a
+      ><a name="3821" href="StrictPosReal.html#3821" class="Postulate"
+      >lem-&#8476;&#8314;-x-y&lt;z&#8594;x&lt;y+z</a
+      ><a name="3839"
+      > </a
+      ><a name="3840" class="Symbol"
+      >:</a
+      ><a name="3841"
+      > </a
+      ><a name="3842" class="Symbol"
+      >{</a
+      ><a name="3843" href="StrictPosReal.html#3843" class="Bound"
+      >x</a
+      ><a name="3844"
+      > </a
+      ><a name="3845" href="StrictPosReal.html#3845" class="Bound"
+      >y</a
+      ><a name="3846"
+      > </a
+      ><a name="3847" href="StrictPosReal.html#3847" class="Bound"
+      >z</a
+      ><a name="3848"
+      > </a
+      ><a name="3849" class="Symbol"
+      >:</a
+      ><a name="3850"
+      > </a
+      ><a name="3851" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3853" class="Symbol"
+      >}</a
+      ><a name="3854"
+      > </a
+      ><a name="3855" class="Symbol"
+      >&#8594;</a
+      ><a name="3856"
+      > </a
+      ><a name="3857" class="Symbol"
+      >(</a
+      ><a name="3858" href="StrictPosReal.html#3858" class="Bound"
+      >p</a
+      ><a name="3859"
+      > </a
+      ><a name="3860" class="Symbol"
+      >:</a
+      ><a name="3861"
+      > </a
+      ><a name="3862" href="StrictPosReal.html#3845" class="Bound"
+      >y</a
+      ><a name="3863"
+      > </a
+      ><a name="3864" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3867"
+      > </a
+      ><a name="3868" href="StrictPosReal.html#3843" class="Bound"
+      >x</a
+      ><a name="3869" class="Symbol"
+      >)</a
+      ><a name="3870"
+      > </a
+      ><a name="3871" class="Symbol"
+      >&#8594;</a
+      ><a name="3872"
+      > </a
+      ><a name="3873" class="Symbol"
+      >((</a
+      ><a name="3875" href="StrictPosReal.html#3843" class="Bound"
+      >x</a
+      ><a name="3876"
+      > </a
+      ><a name="3877" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="3880"
+      > </a
+      ><a name="3881" href="StrictPosReal.html#3845" class="Bound"
+      >y</a
+      ><a name="3882" class="Symbol"
+      >)</a
+      ><a name="3883"
+      > </a
+      ><a name="3884" href="StrictPosReal.html#3858" class="Bound"
+      >p</a
+      ><a name="3885"
+      > </a
+      ><a name="3886" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3889"
+      > </a
+      ><a name="3890" href="StrictPosReal.html#3847" class="Bound"
+      >z</a
+      ><a name="3891" class="Symbol"
+      >)</a
+      ><a name="3892"
+      > </a
+      ><a name="3893" class="Symbol"
+      >&#8594;</a
+      ><a name="3894"
+      > </a
+      ><a name="3895" href="StrictPosReal.html#3843" class="Bound"
+      >x</a
+      ><a name="3896"
+      > </a
+      ><a name="3897" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3900"
+      > </a
+      ><a name="3901" class="Symbol"
+      >(</a
+      ><a name="3902" href="StrictPosReal.html#3845" class="Bound"
+      >y</a
+      ><a name="3903"
+      > </a
+      ><a name="3904" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="3907"
+      > </a
+      ><a name="3908" href="StrictPosReal.html#3847" class="Bound"
+      >z</a
+      ><a name="3909" class="Symbol"
+      >)</a
+      ><a name="3910"
+      >
+</a
+      ><a name="3911" class="Keyword"
+      >postulate</a
+      ><a name="3920"
+      > </a
+      ><a name="3921" href="StrictPosReal.html#3921" class="Postulate"
+      >lem-&#8476;&#8314;-y&lt;z-x&#8594;x+y&lt;z</a
+      ><a name="3939"
+      > </a
+      ><a name="3940" class="Symbol"
+      >:</a
+      ><a name="3941"
+      > </a
+      ><a name="3942" class="Symbol"
+      >{</a
+      ><a name="3943" href="StrictPosReal.html#3943" class="Bound"
+      >x</a
+      ><a name="3944"
+      > </a
+      ><a name="3945" href="StrictPosReal.html#3945" class="Bound"
+      >y</a
+      ><a name="3946"
+      > </a
+      ><a name="3947" href="StrictPosReal.html#3947" class="Bound"
+      >z</a
+      ><a name="3948"
+      > </a
+      ><a name="3949" class="Symbol"
+      >:</a
+      ><a name="3950"
+      > </a
+      ><a name="3951" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="3953" class="Symbol"
+      >}</a
+      ><a name="3954"
+      > </a
+      ><a name="3955" class="Symbol"
+      >&#8594;</a
+      ><a name="3956"
+      > </a
+      ><a name="3957" class="Symbol"
+      >(</a
+      ><a name="3958" href="StrictPosReal.html#3958" class="Bound"
+      >p</a
+      ><a name="3959"
+      > </a
+      ><a name="3960" class="Symbol"
+      >:</a
+      ><a name="3961"
+      > </a
+      ><a name="3962" href="StrictPosReal.html#3943" class="Bound"
+      >x</a
+      ><a name="3963"
+      > </a
+      ><a name="3964" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3967"
+      > </a
+      ><a name="3968" href="StrictPosReal.html#3947" class="Bound"
+      >z</a
+      ><a name="3969" class="Symbol"
+      >)</a
+      ><a name="3970"
+      > </a
+      ><a name="3971" class="Symbol"
+      >&#8594;</a
+      ><a name="3972"
+      > </a
+      ><a name="3973" class="Symbol"
+      >(</a
+      ><a name="3974" href="StrictPosReal.html#3945" class="Bound"
+      >y</a
+      ><a name="3975"
+      > </a
+      ><a name="3976" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="3979"
+      > </a
+      ><a name="3980" class="Symbol"
+      >(</a
+      ><a name="3981" href="StrictPosReal.html#3947" class="Bound"
+      >z</a
+      ><a name="3982"
+      > </a
+      ><a name="3983" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="3986"
+      > </a
+      ><a name="3987" href="StrictPosReal.html#3943" class="Bound"
+      >x</a
+      ><a name="3988" class="Symbol"
+      >)</a
+      ><a name="3989"
+      > </a
+      ><a name="3990" href="StrictPosReal.html#3958" class="Bound"
+      >p</a
+      ><a name="3991" class="Symbol"
+      >)</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" class="Symbol"
+      >&#8594;</a
+      ><a name="3994"
+      > </a
+      ><a name="3995" class="Symbol"
+      >(</a
+      ><a name="3996" href="StrictPosReal.html#3943" class="Bound"
+      >x</a
+      ><a name="3997"
+      > </a
+      ><a name="3998" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="4001"
+      > </a
+      ><a name="4002" href="StrictPosReal.html#3945" class="Bound"
+      >y</a
+      ><a name="4003" class="Symbol"
+      >)</a
+      ><a name="4004"
+      > </a
+      ><a name="4005" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="4008"
+      > </a
+      ><a name="4009" href="StrictPosReal.html#3947" class="Bound"
+      >z</a
+      ><a name="4010"
+      >
+</a
+      ><a name="4011" class="Keyword"
+      >postulate</a
+      ><a name="4020"
+      > </a
+      ><a name="4021" href="StrictPosReal.html#4021" class="Postulate"
+      >lem-&#8476;&#8314;-x-[y+z]=[x-y]-z</a
+      ><a name="4043"
+      > </a
+      ><a name="4044" class="Symbol"
+      >:</a
+      ><a name="4045"
+      > </a
+      ><a name="4046" class="Symbol"
+      >{</a
+      ><a name="4047" href="StrictPosReal.html#4047" class="Bound"
+      >x</a
+      ><a name="4048"
+      > </a
+      ><a name="4049" href="StrictPosReal.html#4049" class="Bound"
+      >y</a
+      ><a name="4050"
+      > </a
+      ><a name="4051" href="StrictPosReal.html#4051" class="Bound"
+      >z</a
+      ><a name="4052"
+      > </a
+      ><a name="4053" class="Symbol"
+      >:</a
+      ><a name="4054"
+      > </a
+      ><a name="4055" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4057" class="Symbol"
+      >}</a
+      ><a name="4058"
+      > </a
+      ><a name="4059" class="Symbol"
+      >&#8594;</a
+      ><a name="4060"
+      > </a
+      ><a name="4061" class="Symbol"
+      >(</a
+      ><a name="4062" href="StrictPosReal.html#4062" class="Bound"
+      >p</a
+      ><a name="4063"
+      > </a
+      ><a name="4064" class="Symbol"
+      >:</a
+      ><a name="4065"
+      > </a
+      ><a name="4066" class="Symbol"
+      >(</a
+      ><a name="4067" href="StrictPosReal.html#4049" class="Bound"
+      >y</a
+      ><a name="4068"
+      > </a
+      ><a name="4069" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="4072"
+      > </a
+      ><a name="4073" href="StrictPosReal.html#4051" class="Bound"
+      >z</a
+      ><a name="4074" class="Symbol"
+      >)</a
+      ><a name="4075"
+      > </a
+      ><a name="4076" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="4079"
+      > </a
+      ><a name="4080" href="StrictPosReal.html#4047" class="Bound"
+      >x</a
+      ><a name="4081" class="Symbol"
+      >)</a
+      ><a name="4082"
+      > </a
+      ><a name="4083" class="Symbol"
+      >&#8594;</a
+      ><a name="4084"
+      > </a
+      ><a name="4085" class="Symbol"
+      >(</a
+      ><a name="4086" href="StrictPosReal.html#4086" class="Bound"
+      >q</a
+      ><a name="4087"
+      > </a
+      ><a name="4088" class="Symbol"
+      >:</a
+      ><a name="4089"
+      > </a
+      ><a name="4090" href="StrictPosReal.html#4049" class="Bound"
+      >y</a
+      ><a name="4091"
+      > </a
+      ><a name="4092" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="4095"
+      > </a
+      ><a name="4096" href="StrictPosReal.html#4047" class="Bound"
+      >x</a
+      ><a name="4097" class="Symbol"
+      >)</a
+      ><a name="4098"
+      > </a
+      ><a name="4099" class="Symbol"
+      >&#8594;</a
+      ><a name="4100"
+      > </a
+      ><a name="4101" class="Symbol"
+      >(</a
+      ><a name="4102" href="StrictPosReal.html#4102" class="Bound"
+      >r</a
+      ><a name="4103"
+      > </a
+      ><a name="4104" class="Symbol"
+      >:</a
+      ><a name="4105"
+      > </a
+      ><a name="4106" href="StrictPosReal.html#4051" class="Bound"
+      >z</a
+      ><a name="4107"
+      > </a
+      ><a name="4108" href="StrictPosReal.html#230" class="Postulate Operator"
+      >&lt;&#8476;&#8314;</a
+      ><a name="4111"
+      > </a
+      ><a name="4112" class="Symbol"
+      >((</a
+      ><a name="4114" href="StrictPosReal.html#4047" class="Bound"
+      >x</a
+      ><a name="4115"
+      > </a
+      ><a name="4116" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="4119"
+      > </a
+      ><a name="4120" href="StrictPosReal.html#4049" class="Bound"
+      >y</a
+      ><a name="4121" class="Symbol"
+      >)</a
+      ><a name="4122"
+      > </a
+      ><a name="4123" href="StrictPosReal.html#4086" class="Bound"
+      >q</a
+      ><a name="4124" class="Symbol"
+      >)</a
+      ><a name="4125"
+      > </a
+      ><a name="4126" class="Symbol"
+      >)</a
+      ><a name="4127"
+      > </a
+      ><a name="4128" class="Symbol"
+      >&#8594;</a
+      ><a name="4129"
+      > </a
+      ><a name="4130" class="Symbol"
+      >((</a
+      ><a name="4132" href="StrictPosReal.html#4047" class="Bound"
+      >x</a
+      ><a name="4133"
+      > </a
+      ><a name="4134" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="4137"
+      > </a
+      ><a name="4138" class="Symbol"
+      >(</a
+      ><a name="4139" href="StrictPosReal.html#4049" class="Bound"
+      >y</a
+      ><a name="4140"
+      > </a
+      ><a name="4141" href="StrictPosReal.html#2119" class="Postulate Operator"
+      >&#8314;+&#8314;</a
+      ><a name="4144"
+      > </a
+      ><a name="4145" href="StrictPosReal.html#4051" class="Bound"
+      >z</a
+      ><a name="4146" class="Symbol"
+      >))</a
+      ><a name="4148"
+      > </a
+      ><a name="4149" href="StrictPosReal.html#4062" class="Bound"
+      >p</a
+      ><a name="4150"
+      > </a
+      ><a name="4151" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="4152"
+      > </a
+      ><a name="4153" class="Symbol"
+      >((</a
+      ><a name="4155" href="StrictPosReal.html#4047" class="Bound"
+      >x</a
+      ><a name="4156"
+      > </a
+      ><a name="4157" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="4160"
+      > </a
+      ><a name="4161" href="StrictPosReal.html#4049" class="Bound"
+      >y</a
+      ><a name="4162" class="Symbol"
+      >)</a
+      ><a name="4163"
+      > </a
+      ><a name="4164" href="StrictPosReal.html#4086" class="Bound"
+      >q</a
+      ><a name="4165"
+      > </a
+      ><a name="4166" href="StrictPosReal.html#2188" class="Function Operator"
+      >&#8314;-&#8314;</a
+      ><a name="4169"
+      > </a
+      ><a name="4170" href="StrictPosReal.html#4051" class="Bound"
+      >z</a
+      ><a name="4171" class="Symbol"
+      >)</a
+      ><a name="4172"
+      > </a
+      ><a name="4173" href="StrictPosReal.html#4102" class="Bound"
+      >r</a
+      ><a name="4174" class="Symbol"
+      >)</a
+      ><a name="4175"
+      >
+
+</a
+      ><a name="4177" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="4233"
+      >
+
+</a
+      ><a name="4235" class="Keyword"
+      >infixl</a
+      ><a name="4241"
+      > </a
+      ><a name="4242" class="Number"
+      >11</a
+      ><a name="4244"
+      > _&#8314;*&#8314;_
+
+</a
+      ><a name="4252" class="Keyword"
+      >postulate</a
+      ><a name="4261"
+      > </a
+      ><a name="4262" href="StrictPosReal.html#4262" class="Postulate Operator"
+      >_&#8314;*&#8314;_</a
+      ><a name="4267"
+      >   </a
+      ><a name="4270" class="Symbol"
+      >:</a
+      ><a name="4271"
+      > </a
+      ><a name="4272" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4274"
+      > </a
+      ><a name="4275" class="Symbol"
+      >&#8594;</a
+      ><a name="4276"
+      > </a
+      ><a name="4277" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4279"
+      > </a
+      ><a name="4280" class="Symbol"
+      >&#8594;</a
+      ><a name="4281"
+      > </a
+      ><a name="4282" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4284"
+      >
+
+</a
+      ><a name="4286" class="Comment"
+      >--------------------------------------------------------</a
+      ><a name="4342"
+      >
+
+</a
+      ><a name="4344" href="StrictPosReal.html#4344" class="Function Operator"
+      >_&#8314;&lt;=&#8314;_</a
+      ><a name="4350"
+      > </a
+      ><a name="4351" class="Symbol"
+      >:</a
+      ><a name="4352"
+      > </a
+      ><a name="4353" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4355"
+      > </a
+      ><a name="4356" class="Symbol"
+      >&#8594;</a
+      ><a name="4357"
+      > </a
+      ><a name="4358" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4360"
+      > </a
+      ><a name="4361" class="Symbol"
+      >&#8594;</a
+      ><a name="4362"
+      > </a
+      ><a name="4363" href="NeilPrelude.html#730" class="Datatype"
+      >Bool</a
+      ><a name="4367"
+      >
+</a
+      ><a name="4368" href="StrictPosReal.html#4344" class="Function Operator"
+      >_&#8314;&lt;=&#8314;_</a
+      ><a name="4374"
+      > </a
+      ><a name="4375" class="Symbol"
+      >=</a
+      ><a name="4376"
+      > </a
+      ><a name="4377" href="StrictTotalOrder.html#2548" class="Function Operator"
+      >_&lt;='_</a
+      ><a name="4382"
+      >
+
+</a
+      ><a name="4384" href="StrictPosReal.html#4384" class="Function Operator"
+      >_&#8314;&gt;=&#8314;_</a
+      ><a name="4390"
+      > </a
+      ><a name="4391" class="Symbol"
+      >:</a
+      ><a name="4392"
+      > </a
+      ><a name="4393" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4395"
+      > </a
+      ><a name="4396" class="Symbol"
+      >&#8594;</a
+      ><a name="4397"
+      > </a
+      ><a name="4398" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4400"
+      > </a
+      ><a name="4401" class="Symbol"
+      >&#8594;</a
+      ><a name="4402"
+      > </a
+      ><a name="4403" href="NeilPrelude.html#730" class="Datatype"
+      >Bool</a
+      ><a name="4407"
+      >
+</a
+      ><a name="4408" href="StrictPosReal.html#4384" class="Function Operator"
+      >_&#8314;&gt;=&#8314;_</a
+      ><a name="4414"
+      > </a
+      ><a name="4415" class="Symbol"
+      >=</a
+      ><a name="4416"
+      > </a
+      ><a name="4417" href="StrictTotalOrder.html#2639" class="Function Operator"
+      >_&gt;='_</a
+      ><a name="4422"
+      >
+
+</a
+      ><a name="4424" href="StrictPosReal.html#4424" class="Function Operator"
+      >_&#8314;&lt;&#8314;_</a
+      ><a name="4429"
+      > </a
+      ><a name="4430" class="Symbol"
+      >:</a
+      ><a name="4431"
+      > </a
+      ><a name="4432" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4434"
+      > </a
+      ><a name="4435" class="Symbol"
+      >&#8594;</a
+      ><a name="4436"
+      > </a
+      ><a name="4437" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4439"
+      > </a
+      ><a name="4440" class="Symbol"
+      >&#8594;</a
+      ><a name="4441"
+      > </a
+      ><a name="4442" href="NeilPrelude.html#730" class="Datatype"
+      >Bool</a
+      ><a name="4446"
+      >
+</a
+      ><a name="4447" href="StrictPosReal.html#4424" class="Function Operator"
+      >_&#8314;&lt;&#8314;_</a
+      ><a name="4452"
+      > </a
+      ><a name="4453" class="Symbol"
+      >=</a
+      ><a name="4454"
+      > </a
+      ><a name="4455" href="StrictTotalOrder.html#2697" class="Function Operator"
+      >_&lt;'_</a
+      ><a name="4459"
+      >
+
+</a
+      ><a name="4461" href="StrictPosReal.html#4461" class="Function Operator"
+      >_&#8314;&gt;&#8314;_</a
+      ><a name="4466"
+      > </a
+      ><a name="4467" class="Symbol"
+      >:</a
+      ><a name="4468"
+      > </a
+      ><a name="4469" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4471"
+      > </a
+      ><a name="4472" class="Symbol"
+      >&#8594;</a
+      ><a name="4473"
+      > </a
+      ><a name="4474" href="StrictPosReal.html#192" class="Postulate"
+      >&#8476;&#8314;</a
+      ><a name="4476"
+      > </a
+      ><a name="4477" class="Symbol"
+      >&#8594;</a
+      ><a name="4478"
+      > </a
+      ><a name="4479" href="NeilPrelude.html#730" class="Datatype"
+      >Bool</a
+      ><a name="4483"
+      >
+</a
+      ><a name="4484" href="StrictPosReal.html#4461" class="Function Operator"
+      >_&#8314;&gt;&#8314;_</a
+      ><a name="4489"
+      > </a
+      ><a name="4490" class="Symbol"
+      >=</a
+      ><a name="4491"
+      > </a
+      ><a name="4492" href="StrictTotalOrder.html#2741" class="Function Operator"
+      >_&gt;'_</a
+      ><a name="4496"
+      >
+
+</a
+      ><a name="4498" class="Comment"
+      >----------------------------------------------------------------</a
+      ><a name="4562"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

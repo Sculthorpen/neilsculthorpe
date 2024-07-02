@@ -1,0 +1,4 @@
+The PLanCompS project has developed a component-based approach to formal
+semantics.  Here, we present the tools we have implemented to support
+component-based language definitions, including semantics-based program
+execution.  The talk includes a demonstration of the use of the tools.

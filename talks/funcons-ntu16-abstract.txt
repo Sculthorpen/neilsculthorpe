@@ -1,0 +1,26 @@
+Whenever a new programming language is created, the semantics of that
+language needs to be clearly defined so that the language can be correctly
+and consistently implemented.  Such a definition can be expressed in a
+number of forms, such as natural language, a mathematical formalism, or by a
+reference implementation.  A formal mathematical semantics has the advantage
+of being precise and unambiguous, but is often perceived as requiring too
+much time and effort, both to define initially, and to subsequently update
+to reflect evolution of the language.
+
+To address this problem, we are developing a component-based approach to
+formal semantics.  The key idea is to create a repository of modular
+components that represent common programming constructs, such as
+conditionals, loops and functions.  A language designer can then combine
+these components when specifying a new programming language, analogously to
+the way that a software engineer makes use of existing data structures and
+algorithms from standard libraries, rather than implementing everything from
+scratch.  Our repository provides formal specifications for the modular
+components, and thus these formal specifications are reused between any
+language definitions constructed out of such components.  The mathematical
+formalism we use for these specifications is executable, which enables us to
+mechanically generate a reference implementation from any such language
+definition.
+
+In this talk I will give an overview of our component-based approach, give
+some simple examples for basic programming constructs, and demonstrate the
+supporting tool-chain that we have developed.

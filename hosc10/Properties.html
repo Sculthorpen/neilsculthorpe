@@ -1,0 +1,3027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Properties</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+   </a
+      ><a name="31" class="Symbol"
+      >#-}</a
+      ><a name="34"
+      >
+
+</a
+      ><a name="36" class="Keyword"
+      >module</a
+      ><a name="42"
+      > </a
+      ><a name="43" href="Properties.html#43" class="Module"
+      >Properties</a
+      ><a name="53"
+      > </a
+      ><a name="54" class="Keyword"
+      >where</a
+      ><a name="59"
+      >
+
+</a
+      ><a name="61" class="Keyword"
+      >open</a
+      ><a name="65"
+      > </a
+      ><a name="66" class="Keyword"
+      >import</a
+      ><a name="72"
+      > </a
+      ><a name="73" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="84"
+      >
+</a
+      ><a name="85" class="Keyword"
+      >open</a
+      ><a name="89"
+      > </a
+      ><a name="90" class="Keyword"
+      >import</a
+      ><a name="96"
+      > </a
+      ><a name="97" href="RealTime.html#66" class="Module"
+      >RealTime</a
+      ><a name="105"
+      >
+</a
+      ><a name="106" class="Keyword"
+      >open</a
+      ><a name="110"
+      > </a
+      ><a name="111" class="Keyword"
+      >import</a
+      ><a name="117"
+      > </a
+      ><a name="118" href="Logic.html#86" class="Module"
+      >Logic</a
+      ><a name="123"
+      >
+</a
+      ><a name="124" class="Keyword"
+      >open</a
+      ><a name="128"
+      > </a
+      ><a name="129" class="Keyword"
+      >import</a
+      ><a name="135"
+      > </a
+      ><a name="136" href="Utilities.html#66" class="Module"
+      >Utilities</a
+      ><a name="145"
+      >
+</a
+      ><a name="146" class="Keyword"
+      >open</a
+      ><a name="150"
+      > </a
+      ><a name="151" class="Keyword"
+      >import</a
+      ><a name="157"
+      > </a
+      ><a name="158" href="TimeDeltaList.html#133" class="Module"
+      >TimeDeltaList</a
+      ><a name="171"
+      >
+</a
+      ><a name="172" class="Keyword"
+      >open</a
+      ><a name="176"
+      > </a
+      ><a name="177" class="Keyword"
+      >import</a
+      ><a name="183"
+      > </a
+      ><a name="184" href="SigVecs.html#43" class="Module"
+      >SigVecs</a
+      ><a name="191"
+      >
+
+</a
+      ><a name="193" class="Keyword"
+      >import</a
+      ><a name="199"
+      > </a
+      ><a name="200" href="TemporalFunction.html#66" class="Module"
+      >TemporalFunction</a
+      ><a name="216"
+      >
+</a
+      ><a name="217" class="Keyword"
+      >open</a
+      ><a name="221"
+      > </a
+      ><a name="222" href="TemporalFunction.html#66" class="Module"
+      >TemporalFunction</a
+      ><a name="238"
+      > </a
+      ><a name="239" href="RealTime.html#158" class="Function"
+      >Time</a
+      ><a name="243"
+      > </a
+      ><a name="244" href="PosReal.html#276" class="Function Operator"
+      >_&lt;&#8476;&#8320;_</a
+      ><a name="249"
+      > </a
+      ><a name="250" href="PosReal.html#1905" class="Function"
+      >&lt;&#8476;&#8320;-irreflexive</a
+      ><a name="265"
+      > </a
+      ><a name="266" href="PosReal.html#780" class="Function"
+      >&lt;&#8476;&#8320;-trans</a
+      ><a name="275"
+      > </a
+      ><a name="276" class="Keyword"
+      >public</a
+      ><a name="282"
+      >
+
+</a
+      ><a name="284" class="Comment"
+      >-----------------------------------------------------------------------------------</a
+      ><a name="367"
+      >
+
+</a
+      ><a name="369" class="Comment"
+      >-- Side Conditions of Change Prefixes</a
+      ><a name="406"
+      >
+
+</a
+      ><a name="408" class="Comment"
+      >-- We expect all signals to be Stable and Contained</a
+      ><a name="459"
+      >
+
+</a
+      ><a name="461" href="Properties.html#461" class="Function"
+      >Stable</a
+      ><a name="467"
+      > </a
+      ><a name="468" class="Symbol"
+      >:</a
+      ><a name="469"
+      > </a
+      ><a name="470" class="Symbol"
+      >{</a
+      ><a name="471" href="Properties.html#471" class="Bound"
+      >A</a
+      ><a name="472"
+      > </a
+      ><a name="473" class="Symbol"
+      >:</a
+      ><a name="474"
+      > </a
+      ><a name="475" class="PrimitiveType"
+      >Set</a
+      ><a name="478" class="Symbol"
+      >}</a
+      ><a name="479"
+      > </a
+      ><a name="480" class="Symbol"
+      >&#8594;</a
+      ><a name="481"
+      > </a
+      ><a name="482" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="494"
+      > </a
+      ><a name="495" href="Properties.html#471" class="Bound"
+      >A</a
+      ><a name="496"
+      > </a
+      ><a name="497" class="Symbol"
+      >&#8594;</a
+      ><a name="498"
+      > </a
+      ><a name="499" class="PrimitiveType"
+      >Set</a
+      ><a name="502"
+      >
+</a
+      ><a name="503" href="Properties.html#461" class="Function"
+      >Stable</a
+      ><a name="509"
+      > </a
+      ><a name="510" href="Properties.html#510" class="Bound"
+      >cp</a
+      ><a name="512"
+      > </a
+      ><a name="513" class="Symbol"
+      >=</a
+      ><a name="514"
+      > </a
+      ><a name="515" class="Symbol"
+      >{</a
+      ><a name="516" href="Properties.html#516" class="Bound"
+      >t&#8321;</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="Properties.html#519" class="Bound"
+      >t&#8322;</a
+      ><a name="521"
+      > </a
+      ><a name="522" class="Symbol"
+      >:</a
+      ><a name="523"
+      > </a
+      ><a name="524" href="RealTime.html#158" class="Function"
+      >Time</a
+      ><a name="528" class="Symbol"
+      >}</a
+      ><a name="529"
+      > </a
+      ><a name="530" class="Symbol"
+      >&#8594;</a
+      ><a name="531"
+      > </a
+      ><a name="532" href="Properties.html#516" class="Bound"
+      >t&#8321;</a
+      ><a name="534"
+      > </a
+      ><a name="535" href="StrictPreOrder.html#745" class="Function Operator"
+      >&#8804;</a
+      ><a name="536"
+      > </a
+      ><a name="537" href="Properties.html#519" class="Bound"
+      >t&#8322;</a
+      ><a name="539"
+      > </a
+      ><a name="540" class="Symbol"
+      >&#8594;</a
+      ><a name="541"
+      > </a
+      ><a name="542" class="Symbol"
+      >(</a
+      ><a name="543" href="Properties.html#510" class="Bound"
+      >cp</a
+      ><a name="545"
+      > </a
+      ><a name="546" href="Properties.html#516" class="Bound"
+      >t&#8321;</a
+      ><a name="548"
+      > </a
+      ><a name="549" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="550"
+      > </a
+      ><a name="551" href="TimeDeltaList.html#3261" class="Function"
+      >takeIncl</a
+      ><a name="559"
+      > </a
+      ><a name="560" href="Properties.html#516" class="Bound"
+      >t&#8321;</a
+      ><a name="562"
+      > </a
+      ><a name="563" class="Symbol"
+      >(</a
+      ><a name="564" href="Properties.html#510" class="Bound"
+      >cp</a
+      ><a name="566"
+      > </a
+      ><a name="567" href="Properties.html#519" class="Bound"
+      >t&#8322;</a
+      ><a name="569" class="Symbol"
+      >))</a
+      ><a name="571"
+      >
+
+</a
+      ><a name="573" href="Properties.html#573" class="Function"
+      >Contained</a
+      ><a name="582"
+      > </a
+      ><a name="583" class="Symbol"
+      >:</a
+      ><a name="584"
+      > </a
+      ><a name="585" class="Symbol"
+      >{</a
+      ><a name="586" href="Properties.html#586" class="Bound"
+      >A</a
+      ><a name="587"
+      > </a
+      ><a name="588" class="Symbol"
+      >:</a
+      ><a name="589"
+      > </a
+      ><a name="590" class="PrimitiveType"
+      >Set</a
+      ><a name="593" class="Symbol"
+      >}</a
+      ><a name="594"
+      > </a
+      ><a name="595" class="Symbol"
+      >&#8594;</a
+      ><a name="596"
+      > </a
+      ><a name="597" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="609"
+      > </a
+      ><a name="610" href="Properties.html#586" class="Bound"
+      >A</a
+      ><a name="611"
+      > </a
+      ><a name="612" class="Symbol"
+      >&#8594;</a
+      ><a name="613"
+      > </a
+      ><a name="614" class="PrimitiveType"
+      >Set</a
+      ><a name="617"
+      >
+</a
+      ><a name="618" href="Properties.html#573" class="Function"
+      >Contained</a
+      ><a name="627"
+      > </a
+      ><a name="628" href="Properties.html#628" class="Bound"
+      >cp</a
+      ><a name="630"
+      > </a
+      ><a name="631" class="Symbol"
+      >=</a
+      ><a name="632"
+      > </a
+      ><a name="633" class="Symbol"
+      >{</a
+      ><a name="634" href="Properties.html#634" class="Bound"
+      >t</a
+      ><a name="635"
+      > </a
+      ><a name="636" class="Symbol"
+      >:</a
+      ><a name="637"
+      > </a
+      ><a name="638" href="RealTime.html#158" class="Function"
+      >Time</a
+      ><a name="642" class="Symbol"
+      >}</a
+      ><a name="643"
+      > </a
+      ><a name="644" class="Symbol"
+      >&#8594;</a
+      ><a name="645"
+      > </a
+      ><a name="646" class="Symbol"
+      >(</a
+      ><a name="647" href="Utilities.html#326" class="Function"
+      >lastChangeTime</a
+      ><a name="661"
+      > </a
+      ><a name="662" class="Symbol"
+      >(</a
+      ><a name="663" href="Properties.html#628" class="Bound"
+      >cp</a
+      ><a name="665"
+      > </a
+      ><a name="666" href="Properties.html#634" class="Bound"
+      >t</a
+      ><a name="667" class="Symbol"
+      >)</a
+      ><a name="668"
+      > </a
+      ><a name="669" href="StrictPreOrder.html#745" class="Function Operator"
+      >&#8804;</a
+      ><a name="670"
+      > </a
+      ><a name="671" href="Properties.html#634" class="Bound"
+      >t</a
+      ><a name="672" class="Symbol"
+      >)</a
+      ><a name="673"
+      >
+
+</a
+      ><a name="675" href="Properties.html#675" class="Function"
+      >Stability</a
+      ><a name="684"
+      > </a
+      ><a name="685" class="Symbol"
+      >:</a
+      ><a name="686"
+      > </a
+      ><a name="687" class="PrimitiveType"
+      >Set</a
+      ><a name="690"
+      >
+</a
+      ><a name="691" href="Properties.html#675" class="Function"
+      >Stability</a
+      ><a name="700"
+      > </a
+      ><a name="701" class="Symbol"
+      >=</a
+      ><a name="702"
+      > </a
+      ><a name="703" class="Symbol"
+      >{</a
+      ><a name="704" href="Properties.html#704" class="Bound"
+      >A</a
+      ><a name="705"
+      > </a
+      ><a name="706" class="Symbol"
+      >:</a
+      ><a name="707"
+      > </a
+      ><a name="708" class="PrimitiveType"
+      >Set</a
+      ><a name="711" class="Symbol"
+      >}</a
+      ><a name="712"
+      > </a
+      ><a name="713" class="Symbol"
+      >&#8594;</a
+      ><a name="714"
+      > </a
+      ><a name="715" class="Symbol"
+      >(</a
+      ><a name="716" href="Properties.html#716" class="Bound"
+      >cp</a
+      ><a name="718"
+      > </a
+      ><a name="719" class="Symbol"
+      >:</a
+      ><a name="720"
+      > </a
+      ><a name="721" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="733"
+      > </a
+      ><a name="734" href="Properties.html#704" class="Bound"
+      >A</a
+      ><a name="735" class="Symbol"
+      >)</a
+      ><a name="736"
+      > </a
+      ><a name="737" class="Symbol"
+      >&#8594;</a
+      ><a name="738"
+      > </a
+      ><a name="739" href="Properties.html#461" class="Function"
+      >Stable</a
+      ><a name="745"
+      > </a
+      ><a name="746" href="Properties.html#716" class="Bound"
+      >cp</a
+      ><a name="748"
+      >
+
+</a
+      ><a name="750" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="761"
+      > </a
+      ><a name="762" class="Symbol"
+      >:</a
+      ><a name="763"
+      > </a
+      ><a name="764" class="PrimitiveType"
+      >Set</a
+      ><a name="767"
+      >
+</a
+      ><a name="768" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="779"
+      > </a
+      ><a name="780" class="Symbol"
+      >=</a
+      ><a name="781"
+      > </a
+      ><a name="782" class="Symbol"
+      >{</a
+      ><a name="783" href="Properties.html#783" class="Bound"
+      >A</a
+      ><a name="784"
+      > </a
+      ><a name="785" class="Symbol"
+      >:</a
+      ><a name="786"
+      > </a
+      ><a name="787" class="PrimitiveType"
+      >Set</a
+      ><a name="790" class="Symbol"
+      >}</a
+      ><a name="791"
+      > </a
+      ><a name="792" class="Symbol"
+      >&#8594;</a
+      ><a name="793"
+      > </a
+      ><a name="794" class="Symbol"
+      >(</a
+      ><a name="795" href="Properties.html#795" class="Bound"
+      >cp</a
+      ><a name="797"
+      > </a
+      ><a name="798" class="Symbol"
+      >:</a
+      ><a name="799"
+      > </a
+      ><a name="800" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="812"
+      > </a
+      ><a name="813" href="Properties.html#783" class="Bound"
+      >A</a
+      ><a name="814" class="Symbol"
+      >)</a
+      ><a name="815"
+      > </a
+      ><a name="816" class="Symbol"
+      >&#8594;</a
+      ><a name="817"
+      > </a
+      ><a name="818" href="Properties.html#573" class="Function"
+      >Contained</a
+      ><a name="827"
+      > </a
+      ><a name="828" href="Properties.html#795" class="Bound"
+      >cp</a
+      ><a name="830"
+      >
+
+</a
+      ><a name="832" class="Comment"
+      >-------------------------------------------------------------------------------------------------</a
+      ><a name="929"
+      >
+
+</a
+      ><a name="931" class="Comment"
+      >-- Change Properties</a
+      ><a name="951"
+      >
+
+</a
+      ><a name="953" href="Properties.html#953" class="Function"
+      >UnchangingCP</a
+      ><a name="965"
+      > </a
+      ><a name="966" class="Symbol"
+      >:</a
+      ><a name="967"
+      > </a
+      ><a name="968" class="Symbol"
+      >{</a
+      ><a name="969" href="Properties.html#969" class="Bound"
+      >A</a
+      ><a name="970"
+      > </a
+      ><a name="971" class="Symbol"
+      >:</a
+      ><a name="972"
+      > </a
+      ><a name="973" class="PrimitiveType"
+      >Set</a
+      ><a name="976" class="Symbol"
+      >}</a
+      ><a name="977"
+      > </a
+      ><a name="978" class="Symbol"
+      >&#8594;</a
+      ><a name="979"
+      > </a
+      ><a name="980" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="992"
+      > </a
+      ><a name="993" href="Properties.html#969" class="Bound"
+      >A</a
+      ><a name="994"
+      > </a
+      ><a name="995" class="Symbol"
+      >&#8594;</a
+      ><a name="996"
+      > </a
+      ><a name="997" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1005"
+      >
+</a
+      ><a name="1006" href="Properties.html#953" class="Function"
+      >UnchangingCP</a
+      ><a name="1018"
+      > </a
+      ><a name="1019" href="Properties.html#1019" class="Bound"
+      >cp</a
+      ><a name="1021"
+      > </a
+      ><a name="1022" href="Properties.html#1022" class="Bound"
+      >t</a
+      ><a name="1023"
+      > </a
+      ><a name="1024" class="Symbol"
+      >=</a
+      ><a name="1025"
+      > </a
+      ><a name="1026" href="Logic.html#949" class="Function"
+      >IsNothing</a
+      ><a name="1035"
+      > </a
+      ><a name="1036" class="Symbol"
+      >(</a
+      ><a name="1037" href="Utilities.html#400" class="Function"
+      >lookupCP</a
+      ><a name="1045"
+      > </a
+      ><a name="1046" href="Properties.html#1019" class="Bound"
+      >cp</a
+      ><a name="1048"
+      > </a
+      ><a name="1049" href="Properties.html#1022" class="Bound"
+      >t</a
+      ><a name="1050" class="Symbol"
+      >)</a
+      ><a name="1051"
+      >
+
+</a
+      ><a name="1053" href="Properties.html#1053" class="Function"
+      >UnchangingC</a
+      ><a name="1064"
+      > </a
+      ><a name="1065" class="Symbol"
+      >:</a
+      ><a name="1066"
+      > </a
+      ><a name="1067" class="Symbol"
+      >{</a
+      ><a name="1068" href="Properties.html#1068" class="Bound"
+      >A</a
+      ><a name="1069"
+      > </a
+      ><a name="1070" class="Symbol"
+      >:</a
+      ><a name="1071"
+      > </a
+      ><a name="1072" class="PrimitiveType"
+      >Set</a
+      ><a name="1075" class="Symbol"
+      >}</a
+      ><a name="1076"
+      > </a
+      ><a name="1077" class="Symbol"
+      >&#8594;</a
+      ><a name="1078"
+      > </a
+      ><a name="1079" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1085"
+      > </a
+      ><a name="1086" class="Symbol"
+      >(</a
+      ><a name="1087" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1088"
+      > </a
+      ><a name="1089" href="Properties.html#1068" class="Bound"
+      >A</a
+      ><a name="1090" class="Symbol"
+      >)</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" class="Symbol"
+      >&#8594;</a
+      ><a name="1093"
+      > </a
+      ><a name="1094" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1102"
+      >
+</a
+      ><a name="1103" href="Properties.html#1053" class="Function"
+      >UnchangingC</a
+      ><a name="1114"
+      > </a
+      ><a name="1115" href="Properties.html#1115" class="Bound"
+      >s</a
+      ><a name="1116"
+      > </a
+      ><a name="1117" href="Properties.html#1117" class="Bound"
+      >t</a
+      ><a name="1118"
+      > </a
+      ><a name="1119" class="Symbol"
+      >=</a
+      ><a name="1120"
+      > </a
+      ><a name="1121" class="Symbol"
+      >((</a
+      ><a name="1123" href="TemporalFunction.html#750" class="Function"
+      >EqualAt</a
+      ><a name="1130"
+      > </a
+      ><a name="1131" href="Properties.html#1115" class="Bound"
+      >s</a
+      ><a name="1132"
+      > </a
+      ><a name="1133" href="Properties.html#1117" class="Bound"
+      >t</a
+      ><a name="1134" class="Symbol"
+      >)</a
+      ><a name="1135"
+      > </a
+      ><a name="1136" href="TemporalLogic.html#1792" class="Function Operator"
+      >Since</a
+      ><a name="1141"
+      > </a
+      ><a name="1142" class="Symbol"
+      >(</a
+      ><a name="1143" href="TemporalFunction.html#750" class="Function"
+      >EqualAt</a
+      ><a name="1150"
+      > </a
+      ><a name="1151" href="Properties.html#1115" class="Bound"
+      >s</a
+      ><a name="1152"
+      > </a
+      ><a name="1153" href="Properties.html#1117" class="Bound"
+      >t</a
+      ><a name="1154" class="Symbol"
+      >))</a
+      ><a name="1156"
+      > </a
+      ><a name="1157" href="Properties.html#1117" class="Bound"
+      >t</a
+      ><a name="1158"
+      >
+
+</a
+      ><a name="1160" href="Properties.html#1160" class="Function"
+      >UnchangingE</a
+      ><a name="1171"
+      > </a
+      ><a name="1172" class="Symbol"
+      >:</a
+      ><a name="1173"
+      > </a
+      ><a name="1174" class="Symbol"
+      >{</a
+      ><a name="1175" href="Properties.html#1175" class="Bound"
+      >A</a
+      ><a name="1176"
+      > </a
+      ><a name="1177" class="Symbol"
+      >:</a
+      ><a name="1178"
+      > </a
+      ><a name="1179" class="PrimitiveType"
+      >Set</a
+      ><a name="1182" class="Symbol"
+      >}</a
+      ><a name="1183"
+      > </a
+      ><a name="1184" class="Symbol"
+      >&#8594;</a
+      ><a name="1185"
+      > </a
+      ><a name="1186" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" class="Symbol"
+      >(</a
+      ><a name="1194" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="1195"
+      > </a
+      ><a name="1196" href="Properties.html#1175" class="Bound"
+      >A</a
+      ><a name="1197" class="Symbol"
+      >)</a
+      ><a name="1198"
+      > </a
+      ><a name="1199" class="Symbol"
+      >&#8594;</a
+      ><a name="1200"
+      > </a
+      ><a name="1201" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1209"
+      >
+</a
+      ><a name="1210" href="Properties.html#1160" class="Function"
+      >UnchangingE</a
+      ><a name="1221"
+      > </a
+      ><a name="1222" class="Symbol"
+      >(</a
+      ><a name="1223" href="Properties.html#1223" class="Bound"
+      >ma</a
+      ><a name="1225"
+      > </a
+      ><a name="1226" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1227"
+      > </a
+      ><a name="1228" class="Symbol"
+      >_)</a
+      ><a name="1230"
+      >   </a
+      ><a name="1233" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="1234"
+      >  </a
+      ><a name="1236" class="Symbol"
+      >=</a
+      ><a name="1237"
+      >  </a
+      ><a name="1239" href="Logic.html#949" class="Function"
+      >IsNothing</a
+      ><a name="1248"
+      > </a
+      ><a name="1249" href="Properties.html#1223" class="Bound"
+      >ma</a
+      ><a name="1251"
+      >
+</a
+      ><a name="1252" href="Properties.html#1160" class="Function"
+      >UnchangingE</a
+      ><a name="1263"
+      > </a
+      ><a name="1264" class="Symbol"
+      >(_</a
+      ><a name="1266"
+      >  </a
+      ><a name="1268" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1269"
+      > </a
+      ><a name="1270" href="Properties.html#1270" class="Bound"
+      >cp</a
+      ><a name="1272" class="Symbol"
+      >)</a
+      ><a name="1273"
+      >  </a
+      ><a name="1275" href="Properties.html#1275" class="Bound"
+      >t</a
+      ><a name="1276"
+      >  </a
+      ><a name="1278" class="Symbol"
+      >=</a
+      ><a name="1279"
+      >  </a
+      ><a name="1281" href="Properties.html#953" class="Function"
+      >UnchangingCP</a
+      ><a name="1293"
+      > </a
+      ><a name="1294" href="Properties.html#1270" class="Bound"
+      >cp</a
+      ><a name="1296"
+      > </a
+      ><a name="1297" href="Properties.html#1275" class="Bound"
+      >t</a
+      ><a name="1298"
+      >
+
+</a
+      ><a name="1300" href="Properties.html#1300" class="Function"
+      >UnchangingS</a
+      ><a name="1311"
+      > </a
+      ><a name="1312" class="Symbol"
+      >:</a
+      ><a name="1313"
+      > </a
+      ><a name="1314" class="Symbol"
+      >{</a
+      ><a name="1315" href="Properties.html#1315" class="Bound"
+      >A</a
+      ><a name="1316"
+      > </a
+      ><a name="1317" class="Symbol"
+      >:</a
+      ><a name="1318"
+      > </a
+      ><a name="1319" class="PrimitiveType"
+      >Set</a
+      ><a name="1322" class="Symbol"
+      >}</a
+      ><a name="1323"
+      > </a
+      ><a name="1324" class="Symbol"
+      >&#8594;</a
+      ><a name="1325"
+      > </a
+      ><a name="1326" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1332"
+      > </a
+      ><a name="1333" class="Symbol"
+      >(</a
+      ><a name="1334" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="1335"
+      > </a
+      ><a name="1336" href="Properties.html#1315" class="Bound"
+      >A</a
+      ><a name="1337" class="Symbol"
+      >)</a
+      ><a name="1338"
+      > </a
+      ><a name="1339" class="Symbol"
+      >&#8594;</a
+      ><a name="1340"
+      > </a
+      ><a name="1341" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1349"
+      >
+</a
+      ><a name="1350" href="Properties.html#1300" class="Function"
+      >UnchangingS</a
+      ><a name="1361"
+      > </a
+      ><a name="1362" class="Symbol"
+      >_</a
+      ><a name="1363"
+      >         </a
+      ><a name="1372" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="1373"
+      >   </a
+      ><a name="1376" class="Symbol"
+      >=</a
+      ><a name="1377"
+      >  </a
+      ><a name="1379" href="NeilPrelude.html#1258" class="Datatype"
+      >False</a
+      ><a name="1384"
+      >
+</a
+      ><a name="1385" href="Properties.html#1300" class="Function"
+      >UnchangingS</a
+      ><a name="1396"
+      > </a
+      ><a name="1397" class="Symbol"
+      >(_</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1401"
+      > </a
+      ><a name="1402" href="Properties.html#1402" class="Bound"
+      >cp</a
+      ><a name="1404" class="Symbol"
+      >)</a
+      ><a name="1405"
+      >  </a
+      ><a name="1407" href="Properties.html#1407" class="Bound"
+      >t</a
+      ><a name="1408"
+      >   </a
+      ><a name="1411" class="Symbol"
+      >=</a
+      ><a name="1412"
+      >  </a
+      ><a name="1414" href="Properties.html#953" class="Function"
+      >UnchangingCP</a
+      ><a name="1426"
+      > </a
+      ><a name="1427" href="Properties.html#1402" class="Bound"
+      >cp</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="Properties.html#1407" class="Bound"
+      >t</a
+      ><a name="1431"
+      >
+
+</a
+      ><a name="1433" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" class="Symbol"
+      >:</a
+      ><a name="1445"
+      > </a
+      ><a name="1446" class="Symbol"
+      >{</a
+      ><a name="1447" href="Properties.html#1447" class="Bound"
+      >as</a
+      ><a name="1449"
+      > </a
+      ><a name="1450" class="Symbol"
+      >:</a
+      ><a name="1451"
+      > </a
+      ><a name="1452" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="1458" class="Symbol"
+      >}</a
+      ><a name="1459"
+      > </a
+      ><a name="1460" class="Symbol"
+      >&#8594;</a
+      ><a name="1461"
+      > </a
+      ><a name="1462" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1468"
+      > </a
+      ><a name="1469" href="Properties.html#1447" class="Bound"
+      >as</a
+      ><a name="1471"
+      > </a
+      ><a name="1472" class="Symbol"
+      >&#8594;</a
+      ><a name="1473"
+      > </a
+      ><a name="1474" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1482"
+      >
+</a
+      ><a name="1483" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1493"
+      > </a
+      ><a name="1494" class="Symbol"
+      >{</a
+      ><a name="1495" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1496"
+      > </a
+      ><a name="1497" class="Symbol"
+      >_}</a
+      ><a name="1499"
+      > </a
+      ><a name="1500" href="Properties.html#1500" class="Bound"
+      >s</a
+      ><a name="1501"
+      > </a
+      ><a name="1502" class="Symbol"
+      >=</a
+      ><a name="1503"
+      > </a
+      ><a name="1504" href="Properties.html#1053" class="Function"
+      >UnchangingC</a
+      ><a name="1515"
+      > </a
+      ><a name="1516" href="Properties.html#1500" class="Bound"
+      >s</a
+      ><a name="1517"
+      >
+</a
+      ><a name="1518" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1528"
+      > </a
+      ><a name="1529" class="Symbol"
+      >{</a
+      ><a name="1530" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="1531"
+      > </a
+      ><a name="1532" class="Symbol"
+      >_}</a
+      ><a name="1534"
+      > </a
+      ><a name="1535" href="Properties.html#1535" class="Bound"
+      >s</a
+      ><a name="1536"
+      > </a
+      ><a name="1537" class="Symbol"
+      >=</a
+      ><a name="1538"
+      > </a
+      ><a name="1539" href="Properties.html#1300" class="Function"
+      >UnchangingS</a
+      ><a name="1550"
+      > </a
+      ><a name="1551" href="Properties.html#1535" class="Bound"
+      >s</a
+      ><a name="1552"
+      >
+</a
+      ><a name="1553" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" class="Symbol"
+      >{</a
+      ><a name="1565" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="1566"
+      > </a
+      ><a name="1567" class="Symbol"
+      >_}</a
+      ><a name="1569"
+      > </a
+      ><a name="1570" href="Properties.html#1570" class="Bound"
+      >s</a
+      ><a name="1571"
+      > </a
+      ><a name="1572" class="Symbol"
+      >=</a
+      ><a name="1573"
+      > </a
+      ><a name="1574" href="Properties.html#1160" class="Function"
+      >UnchangingE</a
+      ><a name="1585"
+      > </a
+      ><a name="1586" href="Properties.html#1570" class="Bound"
+      >s</a
+      ><a name="1587"
+      >
+</a
+      ><a name="1588" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1598"
+      > </a
+      ><a name="1599" class="Symbol"
+      >{</a
+      ><a name="1600" href="Properties.html#1600" class="Bound"
+      >as</a
+      ><a name="1602"
+      > </a
+      ><a name="1603" href="SVDesc.html#244" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1604"
+      > </a
+      ><a name="1605" href="Properties.html#1605" class="Bound"
+      >bs</a
+      ><a name="1607" class="Symbol"
+      >}</a
+      ><a name="1608"
+      > </a
+      ><a name="1609" class="Symbol"
+      >(</a
+      ><a name="1610" href="Properties.html#1610" class="Bound"
+      >s&#8321;</a
+      ><a name="1612"
+      > </a
+      ><a name="1613" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1614"
+      > </a
+      ><a name="1615" href="Properties.html#1615" class="Bound"
+      >s&#8322;</a
+      ><a name="1617" class="Symbol"
+      >)</a
+      ><a name="1618"
+      > </a
+      ><a name="1619" class="Symbol"
+      >=</a
+      ><a name="1620"
+      > </a
+      ><a name="1621" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1631"
+      > </a
+      ><a name="1632" class="Symbol"
+      >{</a
+      ><a name="1633" href="Properties.html#1600" class="Bound"
+      >as</a
+      ><a name="1635" class="Symbol"
+      >}</a
+      ><a name="1636"
+      > </a
+      ><a name="1637" href="Properties.html#1610" class="Bound"
+      >s&#8321;</a
+      ><a name="1639"
+      > </a
+      ><a name="1640" href="TemporalLogic.html#538" class="Function Operator"
+      >&#8743;</a
+      ><a name="1641"
+      > </a
+      ><a name="1642" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1652"
+      > </a
+      ><a name="1653" class="Symbol"
+      >{</a
+      ><a name="1654" href="Properties.html#1605" class="Bound"
+      >bs</a
+      ><a name="1656" class="Symbol"
+      >}</a
+      ><a name="1657"
+      > </a
+      ><a name="1658" href="Properties.html#1615" class="Bound"
+      >s&#8322;</a
+      ><a name="1660"
+      >
+
+</a
+      ><a name="1662" href="Properties.html#1662" class="Function"
+      >Changing</a
+      ><a name="1670"
+      > </a
+      ><a name="1671" class="Symbol"
+      >:</a
+      ><a name="1672"
+      > </a
+      ><a name="1673" class="Symbol"
+      >{</a
+      ><a name="1674" href="Properties.html#1674" class="Bound"
+      >as</a
+      ><a name="1676"
+      > </a
+      ><a name="1677" class="Symbol"
+      >:</a
+      ><a name="1678"
+      > </a
+      ><a name="1679" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="1685" class="Symbol"
+      >}</a
+      ><a name="1686"
+      > </a
+      ><a name="1687" class="Symbol"
+      >&#8594;</a
+      ><a name="1688"
+      > </a
+      ><a name="1689" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1695"
+      > </a
+      ><a name="1696" href="Properties.html#1674" class="Bound"
+      >as</a
+      ><a name="1698"
+      > </a
+      ><a name="1699" class="Symbol"
+      >&#8594;</a
+      ><a name="1700"
+      > </a
+      ><a name="1701" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1709"
+      >
+</a
+      ><a name="1710" href="Properties.html#1662" class="Function"
+      >Changing</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" class="Symbol"
+      >{</a
+      ><a name="1720" href="Properties.html#1720" class="Bound"
+      >as</a
+      ><a name="1722" class="Symbol"
+      >}</a
+      ><a name="1723"
+      > </a
+      ><a name="1724" href="Properties.html#1724" class="Bound"
+      >s</a
+      ><a name="1725"
+      > </a
+      ><a name="1726" class="Symbol"
+      >=</a
+      ><a name="1727"
+      >  </a
+      ><a name="1729" href="TemporalLogic.html#685" class="Function Operator"
+      >&#172;</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" class="Symbol"
+      >(</a
+      ><a name="1732" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1742"
+      > </a
+      ><a name="1743" class="Symbol"
+      >{</a
+      ><a name="1744" href="Properties.html#1720" class="Bound"
+      >as</a
+      ><a name="1746" class="Symbol"
+      >}</a
+      ><a name="1747"
+      > </a
+      ><a name="1748" href="Properties.html#1724" class="Bound"
+      >s</a
+      ><a name="1749" class="Symbol"
+      >)</a
+      ><a name="1750"
+      >
+
+</a
+      ><a name="1752" class="Comment"
+      >-----------------------------------------------------------------------------------</a
+      ><a name="1835"
+      >
+
+</a
+      ><a name="1837" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="1847"
+      > </a
+      ><a name="1848" class="Symbol"
+      >:</a
+      ><a name="1849"
+      > </a
+      ><a name="1850" class="Symbol"
+      >{</a
+      ><a name="1851" href="Properties.html#1851" class="Bound"
+      >as</a
+      ><a name="1853"
+      > </a
+      ><a name="1854" class="Symbol"
+      >:</a
+      ><a name="1855"
+      > </a
+      ><a name="1856" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="1862" class="Symbol"
+      >}</a
+      ><a name="1863"
+      > </a
+      ><a name="1864" class="Symbol"
+      >&#8594;</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1872"
+      > </a
+      ><a name="1873" href="Properties.html#1851" class="Bound"
+      >as</a
+      ><a name="1875"
+      > </a
+      ><a name="1876" class="Symbol"
+      >&#8594;</a
+      ><a name="1877"
+      > </a
+      ><a name="1878" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1886"
+      >
+</a
+      ><a name="1887" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="1897"
+      > </a
+      ><a name="1898" class="Symbol"
+      >{</a
+      ><a name="1899" href="Properties.html#1899" class="Bound"
+      >as</a
+      ><a name="1901" class="Symbol"
+      >}</a
+      ><a name="1902"
+      > </a
+      ><a name="1903" href="Properties.html#1903" class="Bound"
+      >s</a
+      ><a name="1904"
+      > </a
+      ><a name="1905" class="Symbol"
+      >=</a
+      ><a name="1906"
+      > </a
+      ><a name="1907" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="1908"
+      > </a
+      ><a name="1909" class="Symbol"
+      >(</a
+      ><a name="1910" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1920"
+      > </a
+      ><a name="1921" class="Symbol"
+      >{</a
+      ><a name="1922" href="Properties.html#1899" class="Bound"
+      >as</a
+      ><a name="1924" class="Symbol"
+      >}</a
+      ><a name="1925"
+      > </a
+      ><a name="1926" href="Properties.html#1903" class="Bound"
+      >s</a
+      ><a name="1927" class="Symbol"
+      >)</a
+      ><a name="1928"
+      >
+
+</a
+      ><a name="1930" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="1941"
+      > </a
+      ><a name="1942" class="Symbol"
+      >:</a
+      ><a name="1943"
+      > </a
+      ><a name="1944" class="Symbol"
+      >{</a
+      ><a name="1945" href="Properties.html#1945" class="Bound"
+      >as</a
+      ><a name="1947"
+      > </a
+      ><a name="1948" class="Symbol"
+      >:</a
+      ><a name="1949"
+      > </a
+      ><a name="1950" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="1956" class="Symbol"
+      >}</a
+      ><a name="1957"
+      > </a
+      ><a name="1958" class="Symbol"
+      >&#8594;</a
+      ><a name="1959"
+      > </a
+      ><a name="1960" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1966"
+      > </a
+      ><a name="1967" href="Properties.html#1945" class="Bound"
+      >as</a
+      ><a name="1969"
+      > </a
+      ><a name="1970" class="Symbol"
+      >&#8594;</a
+      ><a name="1971"
+      > </a
+      ><a name="1972" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="1980"
+      >
+</a
+      ><a name="1981" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="1992"
+      > </a
+      ><a name="1993" class="Symbol"
+      >{</a
+      ><a name="1994" href="Properties.html#1994" class="Bound"
+      >as</a
+      ><a name="1996" class="Symbol"
+      >}</a
+      ><a name="1997"
+      > </a
+      ><a name="1998" href="Properties.html#1998" class="Bound"
+      >s</a
+      ><a name="1999"
+      > </a
+      ><a name="2000" class="Symbol"
+      >=</a
+      ><a name="2001"
+      > </a
+      ><a name="2002" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" class="Symbol"
+      >(</a
+      ><a name="2006" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="2016"
+      > </a
+      ><a name="2017" class="Symbol"
+      >{</a
+      ><a name="2018" href="Properties.html#1994" class="Bound"
+      >as</a
+      ><a name="2020" class="Symbol"
+      >}</a
+      ><a name="2021"
+      > </a
+      ><a name="2022" href="Properties.html#1998" class="Bound"
+      >s</a
+      ><a name="2023" class="Symbol"
+      >)</a
+      ><a name="2024"
+      >
+
+</a
+      ><a name="2026" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2034"
+      > </a
+      ><a name="2035" class="Symbol"
+      >:</a
+      ><a name="2036"
+      > </a
+      ><a name="2037" class="Symbol"
+      >{</a
+      ><a name="2038" href="Properties.html#2038" class="Bound"
+      >as</a
+      ><a name="2040"
+      > </a
+      ><a name="2041" class="Symbol"
+      >:</a
+      ><a name="2042"
+      > </a
+      ><a name="2043" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="2049" class="Symbol"
+      >}</a
+      ><a name="2050"
+      > </a
+      ><a name="2051" class="Symbol"
+      >&#8594;</a
+      ><a name="2052"
+      > </a
+      ><a name="2053" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2059"
+      > </a
+      ><a name="2060" href="Properties.html#2038" class="Bound"
+      >as</a
+      ><a name="2062"
+      > </a
+      ><a name="2063" class="Symbol"
+      >&#8594;</a
+      ><a name="2064"
+      > </a
+      ><a name="2065" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2071"
+      > </a
+      ><a name="2072" href="Properties.html#2038" class="Bound"
+      >as</a
+      ><a name="2074"
+      > </a
+      ><a name="2075" class="Symbol"
+      >&#8594;</a
+      ><a name="2076"
+      > </a
+      ><a name="2077" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="2085"
+      >
+</a
+      ><a name="2086" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2094"
+      > </a
+      ><a name="2095" class="Symbol"
+      >{</a
+      ><a name="2096" href="Properties.html#2096" class="Bound"
+      >as</a
+      ><a name="2098" class="Symbol"
+      >}</a
+      ><a name="2099"
+      > </a
+      ><a name="2100" href="Properties.html#2100" class="Bound"
+      >s&#8321;</a
+      ><a name="2102"
+      > </a
+      ><a name="2103" href="Properties.html#2103" class="Bound"
+      >s&#8322;</a
+      ><a name="2105"
+      > </a
+      ><a name="2106" href="Properties.html#2106" class="Bound"
+      >t</a
+      ><a name="2107"
+      > </a
+      ><a name="2108" class="Symbol"
+      >=</a
+      ><a name="2109"
+      > </a
+      ><a name="2110" href="Utilities.html#7682" class="Function"
+      >at</a
+      ><a name="2112"
+      > </a
+      ><a name="2113" class="Symbol"
+      >{</a
+      ><a name="2114" href="Properties.html#2096" class="Bound"
+      >as</a
+      ><a name="2116" class="Symbol"
+      >}</a
+      ><a name="2117"
+      > </a
+      ><a name="2118" href="Properties.html#2100" class="Bound"
+      >s&#8321;</a
+      ><a name="2120"
+      > </a
+      ><a name="2121" href="Properties.html#2106" class="Bound"
+      >t</a
+      ><a name="2122"
+      > </a
+      ><a name="2123" href="NeilPrelude.html#1396" class="Datatype Operator"
+      >&#8801;</a
+      ><a name="2124"
+      > </a
+      ><a name="2125" href="Utilities.html#7682" class="Function"
+      >at</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" class="Symbol"
+      >{</a
+      ><a name="2129" href="Properties.html#2096" class="Bound"
+      >as</a
+      ><a name="2131" class="Symbol"
+      >}</a
+      ><a name="2132"
+      > </a
+      ><a name="2133" href="Properties.html#2103" class="Bound"
+      >s&#8322;</a
+      ><a name="2135"
+      > </a
+      ><a name="2136" href="Properties.html#2106" class="Bound"
+      >t</a
+      ><a name="2137"
+      >
+
+</a
+      ><a name="2139" class="Comment"
+      >-------------------------------------------------</a
+      ><a name="2188"
+      >
+
+</a
+      ><a name="2190" class="Comment"
+      >-- We expect all signal functions to be causal</a
+      ><a name="2236"
+      >
+
+</a
+      ><a name="2238" href="Properties.html#2238" class="Function"
+      >Causal</a
+      ><a name="2244"
+      > </a
+      ><a name="2245" class="Symbol"
+      >:</a
+      ><a name="2246"
+      > </a
+      ><a name="2247" class="Symbol"
+      >{</a
+      ><a name="2248" href="Properties.html#2248" class="Bound"
+      >as</a
+      ><a name="2250"
+      > </a
+      ><a name="2251" href="Properties.html#2251" class="Bound"
+      >bs</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" class="Symbol"
+      >:</a
+      ><a name="2255"
+      > </a
+      ><a name="2256" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="2262" class="Symbol"
+      >}</a
+      ><a name="2263"
+      > </a
+      ><a name="2264" class="Symbol"
+      >&#8594;</a
+      ><a name="2265"
+      > </a
+      ><a name="2266" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="2268"
+      > </a
+      ><a name="2269" href="Properties.html#2248" class="Bound"
+      >as</a
+      ><a name="2271"
+      > </a
+      ><a name="2272" href="Properties.html#2251" class="Bound"
+      >bs</a
+      ><a name="2274"
+      > </a
+      ><a name="2275" class="Symbol"
+      >&#8594;</a
+      ><a name="2276"
+      > </a
+      ><a name="2277" class="PrimitiveType"
+      >Set</a
+      ><a name="2280"
+      >
+</a
+      ><a name="2281" href="Properties.html#2238" class="Function"
+      >Causal</a
+      ><a name="2287"
+      > </a
+      ><a name="2288" class="Symbol"
+      >{</a
+      ><a name="2289" href="Properties.html#2289" class="Bound"
+      >as</a
+      ><a name="2291" class="Symbol"
+      >}</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" class="Symbol"
+      >{</a
+      ><a name="2294" href="Properties.html#2294" class="Bound"
+      >bs</a
+      ><a name="2296" class="Symbol"
+      >}</a
+      ><a name="2297"
+      > </a
+      ><a name="2298" href="Properties.html#2298" class="Bound"
+      >sf</a
+      ><a name="2300"
+      > </a
+      ><a name="2301" class="Symbol"
+      >=</a
+      ><a name="2302"
+      > </a
+      ><a name="2303" class="Symbol"
+      >(</a
+      ><a name="2304" href="Properties.html#2304" class="Bound"
+      >s1</a
+      ><a name="2306"
+      > </a
+      ><a name="2307" href="Properties.html#2307" class="Bound"
+      >s2</a
+      ><a name="2309"
+      > </a
+      ><a name="2310" class="Symbol"
+      >:</a
+      ><a name="2311"
+      > </a
+      ><a name="2312" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2318"
+      > </a
+      ><a name="2319" href="Properties.html#2289" class="Bound"
+      >as</a
+      ><a name="2321" class="Symbol"
+      >)</a
+      ><a name="2322"
+      > </a
+      ><a name="2323" class="Symbol"
+      >&#8594;</a
+      ><a name="2324"
+      > </a
+      ><a name="2325" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2331"
+      > </a
+      ><a name="2332" class="Symbol"
+      >(</a
+      ><a name="2333" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="2335"
+      > </a
+      ><a name="2336" class="Symbol"
+      >(</a
+      ><a name="2337" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2345"
+      > </a
+      ><a name="2346" class="Symbol"
+      >{</a
+      ><a name="2347" href="Properties.html#2289" class="Bound"
+      >as</a
+      ><a name="2349" class="Symbol"
+      >}</a
+      ><a name="2350"
+      > </a
+      ><a name="2351" href="Properties.html#2304" class="Bound"
+      >s1</a
+      ><a name="2353"
+      > </a
+      ><a name="2354" href="Properties.html#2307" class="Bound"
+      >s2</a
+      ><a name="2356" class="Symbol"
+      >)</a
+      ><a name="2357"
+      > </a
+      ><a name="2358" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2359"
+      > </a
+      ><a name="2360" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2368"
+      > </a
+      ><a name="2369" class="Symbol"
+      >{</a
+      ><a name="2370" href="Properties.html#2294" class="Bound"
+      >bs</a
+      ><a name="2372" class="Symbol"
+      >}</a
+      ><a name="2373"
+      > </a
+      ><a name="2374" class="Symbol"
+      >(</a
+      ><a name="2375" href="Properties.html#2298" class="Bound"
+      >sf</a
+      ><a name="2377"
+      > </a
+      ><a name="2378" href="Properties.html#2304" class="Bound"
+      >s1</a
+      ><a name="2380" class="Symbol"
+      >)</a
+      ><a name="2381"
+      > </a
+      ><a name="2382" class="Symbol"
+      >(</a
+      ><a name="2383" href="Properties.html#2298" class="Bound"
+      >sf</a
+      ><a name="2385"
+      > </a
+      ><a name="2386" href="Properties.html#2307" class="Bound"
+      >s2</a
+      ><a name="2388" class="Symbol"
+      >))</a
+      ><a name="2390"
+      >
+
+</a
+      ><a name="2392" class="Comment"
+      >-------------------------------------------------</a
+      ><a name="2441"
+      >
+
+</a
+      ><a name="2443" href="Properties.html#2443" class="Function"
+      >Stateless</a
+      ><a name="2452"
+      > </a
+      ><a name="2453" class="Symbol"
+      >:</a
+      ><a name="2454"
+      > </a
+      ><a name="2455" class="Symbol"
+      >{</a
+      ><a name="2456" href="Properties.html#2456" class="Bound"
+      >as</a
+      ><a name="2458"
+      > </a
+      ><a name="2459" href="Properties.html#2459" class="Bound"
+      >bs</a
+      ><a name="2461"
+      > </a
+      ><a name="2462" class="Symbol"
+      >:</a
+      ><a name="2463"
+      > </a
+      ><a name="2464" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="2470" class="Symbol"
+      >}</a
+      ><a name="2471"
+      > </a
+      ><a name="2472" class="Symbol"
+      >&#8594;</a
+      ><a name="2473"
+      > </a
+      ><a name="2474" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="2476"
+      > </a
+      ><a name="2477" href="Properties.html#2456" class="Bound"
+      >as</a
+      ><a name="2479"
+      > </a
+      ><a name="2480" href="Properties.html#2459" class="Bound"
+      >bs</a
+      ><a name="2482"
+      > </a
+      ><a name="2483" class="Symbol"
+      >&#8594;</a
+      ><a name="2484"
+      > </a
+      ><a name="2485" class="PrimitiveType"
+      >Set</a
+      ><a name="2488"
+      >
+</a
+      ><a name="2489" href="Properties.html#2443" class="Function"
+      >Stateless</a
+      ><a name="2498"
+      > </a
+      ><a name="2499" class="Symbol"
+      >{</a
+      ><a name="2500" href="Properties.html#2500" class="Bound"
+      >as</a
+      ><a name="2502" class="Symbol"
+      >}</a
+      ><a name="2503"
+      > </a
+      ><a name="2504" class="Symbol"
+      >{</a
+      ><a name="2505" href="Properties.html#2505" class="Bound"
+      >bs</a
+      ><a name="2507" class="Symbol"
+      >}</a
+      ><a name="2508"
+      > </a
+      ><a name="2509" href="Properties.html#2509" class="Bound"
+      >sf</a
+      ><a name="2511"
+      > </a
+      ><a name="2512" class="Symbol"
+      >=</a
+      ><a name="2513"
+      > </a
+      ><a name="2514" class="Symbol"
+      >(</a
+      ><a name="2515" href="Properties.html#2515" class="Bound"
+      >s1</a
+      ><a name="2517"
+      > </a
+      ><a name="2518" href="Properties.html#2518" class="Bound"
+      >s2</a
+      ><a name="2520"
+      > </a
+      ><a name="2521" class="Symbol"
+      >:</a
+      ><a name="2522"
+      > </a
+      ><a name="2523" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2529"
+      > </a
+      ><a name="2530" href="Properties.html#2500" class="Bound"
+      >as</a
+      ><a name="2532" class="Symbol"
+      >)</a
+      ><a name="2533"
+      > </a
+      ><a name="2534" class="Symbol"
+      >&#8594;</a
+      ><a name="2535"
+      > </a
+      ><a name="2536" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2542"
+      > </a
+      ><a name="2543" class="Symbol"
+      >(</a
+      ><a name="2544" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2552"
+      > </a
+      ><a name="2553" class="Symbol"
+      >{</a
+      ><a name="2554" href="Properties.html#2500" class="Bound"
+      >as</a
+      ><a name="2556" class="Symbol"
+      >}</a
+      ><a name="2557"
+      > </a
+      ><a name="2558" href="Properties.html#2515" class="Bound"
+      >s1</a
+      ><a name="2560"
+      > </a
+      ><a name="2561" href="Properties.html#2518" class="Bound"
+      >s2</a
+      ><a name="2563"
+      > </a
+      ><a name="2564" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2565"
+      > </a
+      ><a name="2566" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2574"
+      > </a
+      ><a name="2575" class="Symbol"
+      >{</a
+      ><a name="2576" href="Properties.html#2505" class="Bound"
+      >bs</a
+      ><a name="2578" class="Symbol"
+      >}</a
+      ><a name="2579"
+      > </a
+      ><a name="2580" class="Symbol"
+      >(</a
+      ><a name="2581" href="Properties.html#2509" class="Bound"
+      >sf</a
+      ><a name="2583"
+      > </a
+      ><a name="2584" href="Properties.html#2515" class="Bound"
+      >s1</a
+      ><a name="2586" class="Symbol"
+      >)</a
+      ><a name="2587"
+      > </a
+      ><a name="2588" class="Symbol"
+      >(</a
+      ><a name="2589" href="Properties.html#2509" class="Bound"
+      >sf</a
+      ><a name="2591"
+      > </a
+      ><a name="2592" href="Properties.html#2518" class="Bound"
+      >s2</a
+      ><a name="2594" class="Symbol"
+      >))</a
+      ><a name="2596"
+      >
+
+</a
+      ><a name="2598" href="Properties.html#2598" class="Function"
+      >Decoupled</a
+      ><a name="2607"
+      > </a
+      ><a name="2608" class="Symbol"
+      >:</a
+      ><a name="2609"
+      > </a
+      ><a name="2610" class="Symbol"
+      >{</a
+      ><a name="2611" href="Properties.html#2611" class="Bound"
+      >as</a
+      ><a name="2613"
+      > </a
+      ><a name="2614" href="Properties.html#2614" class="Bound"
+      >bs</a
+      ><a name="2616"
+      > </a
+      ><a name="2617" class="Symbol"
+      >:</a
+      ><a name="2618"
+      > </a
+      ><a name="2619" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="2625" class="Symbol"
+      >}</a
+      ><a name="2626"
+      > </a
+      ><a name="2627" class="Symbol"
+      >&#8594;</a
+      ><a name="2628"
+      > </a
+      ><a name="2629" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="2631"
+      > </a
+      ><a name="2632" href="Properties.html#2611" class="Bound"
+      >as</a
+      ><a name="2634"
+      > </a
+      ><a name="2635" href="Properties.html#2614" class="Bound"
+      >bs</a
+      ><a name="2637"
+      > </a
+      ><a name="2638" class="Symbol"
+      >&#8594;</a
+      ><a name="2639"
+      > </a
+      ><a name="2640" class="PrimitiveType"
+      >Set</a
+      ><a name="2643"
+      >
+</a
+      ><a name="2644" href="Properties.html#2598" class="Function"
+      >Decoupled</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" class="Symbol"
+      >{</a
+      ><a name="2655" href="Properties.html#2655" class="Bound"
+      >as</a
+      ><a name="2657" class="Symbol"
+      >}</a
+      ><a name="2658"
+      > </a
+      ><a name="2659" class="Symbol"
+      >{</a
+      ><a name="2660" href="Properties.html#2660" class="Bound"
+      >bs</a
+      ><a name="2662" class="Symbol"
+      >}</a
+      ><a name="2663"
+      > </a
+      ><a name="2664" href="Properties.html#2664" class="Bound"
+      >sf</a
+      ><a name="2666"
+      > </a
+      ><a name="2667" class="Symbol"
+      >=</a
+      ><a name="2668"
+      > </a
+      ><a name="2669" class="Symbol"
+      >(</a
+      ><a name="2670" href="Properties.html#2670" class="Bound"
+      >s1</a
+      ><a name="2672"
+      > </a
+      ><a name="2673" href="Properties.html#2673" class="Bound"
+      >s2</a
+      ><a name="2675"
+      > </a
+      ><a name="2676" class="Symbol"
+      >:</a
+      ><a name="2677"
+      > </a
+      ><a name="2678" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2684"
+      > </a
+      ><a name="2685" href="Properties.html#2655" class="Bound"
+      >as</a
+      ><a name="2687" class="Symbol"
+      >)</a
+      ><a name="2688"
+      > </a
+      ><a name="2689" class="Symbol"
+      >&#8594;</a
+      ><a name="2690"
+      > </a
+      ><a name="2691" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2697"
+      > </a
+      ><a name="2698" class="Symbol"
+      >(</a
+      ><a name="2699" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="2700"
+      > </a
+      ><a name="2701" class="Symbol"
+      >(</a
+      ><a name="2702" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2710"
+      > </a
+      ><a name="2711" class="Symbol"
+      >{</a
+      ><a name="2712" href="Properties.html#2655" class="Bound"
+      >as</a
+      ><a name="2714" class="Symbol"
+      >}</a
+      ><a name="2715"
+      > </a
+      ><a name="2716" href="Properties.html#2670" class="Bound"
+      >s1</a
+      ><a name="2718"
+      > </a
+      ><a name="2719" href="Properties.html#2673" class="Bound"
+      >s2</a
+      ><a name="2721" class="Symbol"
+      >)</a
+      ><a name="2722"
+      > </a
+      ><a name="2723" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2724"
+      > </a
+      ><a name="2725" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2733"
+      > </a
+      ><a name="2734" class="Symbol"
+      >{</a
+      ><a name="2735" href="Properties.html#2660" class="Bound"
+      >bs</a
+      ><a name="2737" class="Symbol"
+      >}</a
+      ><a name="2738"
+      > </a
+      ><a name="2739" class="Symbol"
+      >(</a
+      ><a name="2740" href="Properties.html#2664" class="Bound"
+      >sf</a
+      ><a name="2742"
+      > </a
+      ><a name="2743" href="Properties.html#2670" class="Bound"
+      >s1</a
+      ><a name="2745" class="Symbol"
+      >)</a
+      ><a name="2746"
+      > </a
+      ><a name="2747" class="Symbol"
+      >(</a
+      ><a name="2748" href="Properties.html#2664" class="Bound"
+      >sf</a
+      ><a name="2750"
+      > </a
+      ><a name="2751" href="Properties.html#2673" class="Bound"
+      >s2</a
+      ><a name="2753" class="Symbol"
+      >))</a
+      ><a name="2755"
+      >
+
+</a
+      ><a name="2757" class="Comment"
+      >-------------------------------------------------</a
+      ><a name="2806"
+      >
+
+</a
+      ><a name="2808" href="Properties.html#2808" class="Function"
+      >Source</a
+      ><a name="2814"
+      > </a
+      ><a name="2815" class="Symbol"
+      >:</a
+      ><a name="2816"
+      > </a
+      ><a name="2817" class="Symbol"
+      >{</a
+      ><a name="2818" href="Properties.html#2818" class="Bound"
+      >as</a
+      ><a name="2820"
+      > </a
+      ><a name="2821" href="Properties.html#2821" class="Bound"
+      >bs</a
+      ><a name="2823"
+      > </a
+      ><a name="2824" class="Symbol"
+      >:</a
+      ><a name="2825"
+      > </a
+      ><a name="2826" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="2832" class="Symbol"
+      >}</a
+      ><a name="2833"
+      > </a
+      ><a name="2834" class="Symbol"
+      >&#8594;</a
+      ><a name="2835"
+      > </a
+      ><a name="2836" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="2838"
+      > </a
+      ><a name="2839" href="Properties.html#2818" class="Bound"
+      >as</a
+      ><a name="2841"
+      > </a
+      ><a name="2842" href="Properties.html#2821" class="Bound"
+      >bs</a
+      ><a name="2844"
+      > </a
+      ><a name="2845" class="Symbol"
+      >&#8594;</a
+      ><a name="2846"
+      > </a
+      ><a name="2847" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="2855"
+      >
+</a
+      ><a name="2856" href="Properties.html#2808" class="Function"
+      >Source</a
+      ><a name="2862"
+      > </a
+      ><a name="2863" class="Symbol"
+      >{</a
+      ><a name="2864" href="Properties.html#2864" class="Bound"
+      >as</a
+      ><a name="2866" class="Symbol"
+      >}</a
+      ><a name="2867"
+      > </a
+      ><a name="2868" class="Symbol"
+      >{</a
+      ><a name="2869" href="Properties.html#2869" class="Bound"
+      >bs</a
+      ><a name="2871" class="Symbol"
+      >}</a
+      ><a name="2872"
+      > </a
+      ><a name="2873" href="Properties.html#2873" class="Bound"
+      >sf</a
+      ><a name="2875"
+      > </a
+      ><a name="2876" href="Properties.html#2876" class="Bound"
+      >t</a
+      ><a name="2877"
+      > </a
+      ><a name="2878" class="Symbol"
+      >=</a
+      ><a name="2879"
+      > </a
+      ><a name="2880" class="Symbol"
+      >(</a
+      ><a name="2881" href="Properties.html#2881" class="Bound"
+      >s1</a
+      ><a name="2883"
+      > </a
+      ><a name="2884" href="Properties.html#2884" class="Bound"
+      >s2</a
+      ><a name="2886"
+      > </a
+      ><a name="2887" class="Symbol"
+      >:</a
+      ><a name="2888"
+      > </a
+      ><a name="2889" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2895"
+      > </a
+      ><a name="2896" href="Properties.html#2864" class="Bound"
+      >as</a
+      ><a name="2898" class="Symbol"
+      >)</a
+      ><a name="2899"
+      > </a
+      ><a name="2900" class="Symbol"
+      >&#8594;</a
+      ><a name="2901"
+      > </a
+      ><a name="2902" class="Symbol"
+      >(</a
+      ><a name="2903" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="2904"
+      > </a
+      ><a name="2905" class="Symbol"
+      >(</a
+      ><a name="2906" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2914"
+      > </a
+      ><a name="2915" class="Symbol"
+      >{</a
+      ><a name="2916" href="Properties.html#2864" class="Bound"
+      >as</a
+      ><a name="2918" class="Symbol"
+      >}</a
+      ><a name="2919"
+      > </a
+      ><a name="2920" href="Properties.html#2881" class="Bound"
+      >s1</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" href="Properties.html#2884" class="Bound"
+      >s2</a
+      ><a name="2925" class="Symbol"
+      >)</a
+      ><a name="2926"
+      > </a
+      ><a name="2927" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2928"
+      > </a
+      ><a name="2929" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="2931"
+      > </a
+      ><a name="2932" class="Symbol"
+      >(</a
+      ><a name="2933" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2941"
+      > </a
+      ><a name="2942" class="Symbol"
+      >{</a
+      ><a name="2943" href="Properties.html#2869" class="Bound"
+      >bs</a
+      ><a name="2945" class="Symbol"
+      >}</a
+      ><a name="2946"
+      > </a
+      ><a name="2947" class="Symbol"
+      >(</a
+      ><a name="2948" href="Properties.html#2873" class="Bound"
+      >sf</a
+      ><a name="2950"
+      > </a
+      ><a name="2951" href="Properties.html#2881" class="Bound"
+      >s1</a
+      ><a name="2953" class="Symbol"
+      >)</a
+      ><a name="2954"
+      > </a
+      ><a name="2955" class="Symbol"
+      >(</a
+      ><a name="2956" href="Properties.html#2873" class="Bound"
+      >sf</a
+      ><a name="2958"
+      > </a
+      ><a name="2959" href="Properties.html#2884" class="Bound"
+      >s2</a
+      ><a name="2961" class="Symbol"
+      >)))</a
+      ><a name="2964"
+      > </a
+      ><a name="2965" href="Properties.html#2876" class="Bound"
+      >t</a
+      ><a name="2966"
+      >
+
+</a
+      ><a name="2968" class="Comment"
+      >-------------------------------------------------</a
+      ><a name="3017"
+      >
+
+</a
+      ><a name="3019" href="Properties.html#3019" class="Function"
+      >ChangelessSF</a
+      ><a name="3031"
+      > </a
+      ><a name="3032" class="Symbol"
+      >:</a
+      ><a name="3033"
+      > </a
+      ><a name="3034" class="Symbol"
+      >{</a
+      ><a name="3035" href="Properties.html#3035" class="Bound"
+      >as</a
+      ><a name="3037"
+      > </a
+      ><a name="3038" href="Properties.html#3038" class="Bound"
+      >bs</a
+      ><a name="3040"
+      > </a
+      ><a name="3041" class="Symbol"
+      >:</a
+      ><a name="3042"
+      > </a
+      ><a name="3043" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="3049" class="Symbol"
+      >}</a
+      ><a name="3050"
+      > </a
+      ><a name="3051" class="Symbol"
+      >&#8594;</a
+      ><a name="3052"
+      > </a
+      ><a name="3053" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="3055"
+      > </a
+      ><a name="3056" href="Properties.html#3035" class="Bound"
+      >as</a
+      ><a name="3058"
+      > </a
+      ><a name="3059" href="Properties.html#3038" class="Bound"
+      >bs</a
+      ><a name="3061"
+      > </a
+      ><a name="3062" class="Symbol"
+      >&#8594;</a
+      ><a name="3063"
+      > </a
+      ><a name="3064" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="3072"
+      >
+</a
+      ><a name="3073" href="Properties.html#3019" class="Function"
+      >ChangelessSF</a
+      ><a name="3085"
+      > </a
+      ><a name="3086" class="Symbol"
+      >{</a
+      ><a name="3087" href="Properties.html#3087" class="Bound"
+      >as</a
+      ><a name="3089" class="Symbol"
+      >}</a
+      ><a name="3090"
+      > </a
+      ><a name="3091" class="Symbol"
+      >{</a
+      ><a name="3092" href="Properties.html#3092" class="Bound"
+      >bs</a
+      ><a name="3094" class="Symbol"
+      >}</a
+      ><a name="3095"
+      > </a
+      ><a name="3096" href="Properties.html#3096" class="Bound"
+      >sf</a
+      ><a name="3098"
+      > </a
+      ><a name="3099" href="Properties.html#3099" class="Bound"
+      >t</a
+      ><a name="3100"
+      > </a
+      ><a name="3101" class="Symbol"
+      >=</a
+      ><a name="3102"
+      > </a
+      ><a name="3103" class="Symbol"
+      >(</a
+      ><a name="3104" href="Properties.html#3104" class="Bound"
+      >s</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" class="Symbol"
+      >:</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3114"
+      > </a
+      ><a name="3115" href="Properties.html#3087" class="Bound"
+      >as</a
+      ><a name="3117" class="Symbol"
+      >)</a
+      ><a name="3118"
+      > </a
+      ><a name="3119" class="Symbol"
+      >&#8594;</a
+      ><a name="3120"
+      > </a
+      ><a name="3121" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3131"
+      > </a
+      ><a name="3132" class="Symbol"
+      >{</a
+      ><a name="3133" href="Properties.html#3092" class="Bound"
+      >bs</a
+      ><a name="3135" class="Symbol"
+      >}</a
+      ><a name="3136"
+      > </a
+      ><a name="3137" class="Symbol"
+      >(</a
+      ><a name="3138" href="Properties.html#3096" class="Bound"
+      >sf</a
+      ><a name="3140"
+      > </a
+      ><a name="3141" href="Properties.html#3104" class="Bound"
+      >s</a
+      ><a name="3142" class="Symbol"
+      >)</a
+      ><a name="3143"
+      > </a
+      ><a name="3144" href="Properties.html#3099" class="Bound"
+      >t</a
+      ><a name="3145"
+      >
+
+</a
+      ><a name="3147" href="Properties.html#3147" class="Function"
+      >ChangelessSF&#691;</a
+      ><a name="3160"
+      > </a
+      ><a name="3161" class="Symbol"
+      >:</a
+      ><a name="3162"
+      > </a
+      ><a name="3163" class="Symbol"
+      >{</a
+      ><a name="3164" href="Properties.html#3164" class="Bound"
+      >as</a
+      ><a name="3166"
+      > </a
+      ><a name="3167" href="Properties.html#3167" class="Bound"
+      >bs</a
+      ><a name="3169"
+      > </a
+      ><a name="3170" class="Symbol"
+      >:</a
+      ><a name="3171"
+      > </a
+      ><a name="3172" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="3178" class="Symbol"
+      >}</a
+      ><a name="3179"
+      > </a
+      ><a name="3180" class="Symbol"
+      >&#8594;</a
+      ><a name="3181"
+      > </a
+      ><a name="3182" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="3184"
+      > </a
+      ><a name="3185" href="Properties.html#3164" class="Bound"
+      >as</a
+      ><a name="3187"
+      > </a
+      ><a name="3188" href="Properties.html#3167" class="Bound"
+      >bs</a
+      ><a name="3190"
+      > </a
+      ><a name="3191" class="Symbol"
+      >&#8594;</a
+      ><a name="3192"
+      > </a
+      ><a name="3193" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="3201"
+      >
+</a
+      ><a name="3202" href="Properties.html#3147" class="Function"
+      >ChangelessSF&#691;</a
+      ><a name="3215"
+      > </a
+      ><a name="3216" class="Symbol"
+      >{</a
+      ><a name="3217" href="Properties.html#3217" class="Bound"
+      >as</a
+      ><a name="3219" class="Symbol"
+      >}</a
+      ><a name="3220"
+      > </a
+      ><a name="3221" class="Symbol"
+      >{</a
+      ><a name="3222" href="Properties.html#3222" class="Bound"
+      >bs</a
+      ><a name="3224" class="Symbol"
+      >}</a
+      ><a name="3225"
+      > </a
+      ><a name="3226" href="Properties.html#3226" class="Bound"
+      >sf</a
+      ><a name="3228"
+      > </a
+      ><a name="3229" href="Properties.html#3229" class="Bound"
+      >t</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" class="Symbol"
+      >=</a
+      ><a name="3232"
+      > </a
+      ><a name="3233" class="Symbol"
+      >(</a
+      ><a name="3234" href="Properties.html#3234" class="Bound"
+      >s</a
+      ><a name="3235"
+      > </a
+      ><a name="3236" class="Symbol"
+      >:</a
+      ><a name="3237"
+      > </a
+      ><a name="3238" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3244"
+      > </a
+      ><a name="3245" href="Properties.html#3217" class="Bound"
+      >as</a
+      ><a name="3247" class="Symbol"
+      >)</a
+      ><a name="3248"
+      > </a
+      ><a name="3249" class="Symbol"
+      >&#8594;</a
+      ><a name="3250"
+      > </a
+      ><a name="3251" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" class="Symbol"
+      >{</a
+      ><a name="3264" href="Properties.html#3222" class="Bound"
+      >bs</a
+      ><a name="3266" class="Symbol"
+      >}</a
+      ><a name="3267"
+      > </a
+      ><a name="3268" class="Symbol"
+      >(</a
+      ><a name="3269" href="Properties.html#3226" class="Bound"
+      >sf</a
+      ><a name="3271"
+      > </a
+      ><a name="3272" href="Properties.html#3234" class="Bound"
+      >s</a
+      ><a name="3273" class="Symbol"
+      >)</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" href="Properties.html#3229" class="Bound"
+      >t</a
+      ><a name="3276"
+      >
+
+</a
+      ><a name="3278" href="Properties.html#3278" class="Function"
+      >ChangePrp</a
+      ><a name="3287"
+      > </a
+      ><a name="3288" class="Symbol"
+      >:</a
+      ><a name="3289"
+      > </a
+      ><a name="3290" class="Symbol"
+      >{</a
+      ><a name="3291" href="Properties.html#3291" class="Bound"
+      >as</a
+      ><a name="3293"
+      > </a
+      ><a name="3294" href="Properties.html#3294" class="Bound"
+      >bs</a
+      ><a name="3296"
+      > </a
+      ><a name="3297" class="Symbol"
+      >:</a
+      ><a name="3298"
+      > </a
+      ><a name="3299" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="3305" class="Symbol"
+      >}</a
+      ><a name="3306"
+      > </a
+      ><a name="3307" class="Symbol"
+      >&#8594;</a
+      ><a name="3308"
+      > </a
+      ><a name="3309" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="3311"
+      > </a
+      ><a name="3312" href="Properties.html#3291" class="Bound"
+      >as</a
+      ><a name="3314"
+      > </a
+      ><a name="3315" href="Properties.html#3294" class="Bound"
+      >bs</a
+      ><a name="3317"
+      > </a
+      ><a name="3318" class="Symbol"
+      >&#8594;</a
+      ><a name="3319"
+      > </a
+      ><a name="3320" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="3328"
+      >
+</a
+      ><a name="3329" href="Properties.html#3278" class="Function"
+      >ChangePrp</a
+      ><a name="3338"
+      > </a
+      ><a name="3339" class="Symbol"
+      >{</a
+      ><a name="3340" href="Properties.html#3340" class="Bound"
+      >as</a
+      ><a name="3342" class="Symbol"
+      >}</a
+      ><a name="3343"
+      > </a
+      ><a name="3344" class="Symbol"
+      >{</a
+      ><a name="3345" href="Properties.html#3345" class="Bound"
+      >bs</a
+      ><a name="3347" class="Symbol"
+      >}</a
+      ><a name="3348"
+      > </a
+      ><a name="3349" href="Properties.html#3349" class="Bound"
+      >sf</a
+      ><a name="3351"
+      > </a
+      ><a name="3352" href="Properties.html#3352" class="Bound"
+      >t</a
+      ><a name="3353"
+      > </a
+      ><a name="3354" class="Symbol"
+      >=</a
+      ><a name="3355"
+      > </a
+      ><a name="3356" class="Symbol"
+      >(</a
+      ><a name="3357" href="Properties.html#3357" class="Bound"
+      >s</a
+      ><a name="3358"
+      > </a
+      ><a name="3359" class="Symbol"
+      >:</a
+      ><a name="3360"
+      > </a
+      ><a name="3361" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3367"
+      > </a
+      ><a name="3368" href="Properties.html#3340" class="Bound"
+      >as</a
+      ><a name="3370" class="Symbol"
+      >)</a
+      ><a name="3371"
+      > </a
+      ><a name="3372" class="Symbol"
+      >&#8594;</a
+      ><a name="3373"
+      > </a
+      ><a name="3374" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="3376"
+      > </a
+      ><a name="3377" class="Symbol"
+      >(</a
+      ><a name="3378" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="3388"
+      > </a
+      ><a name="3389" class="Symbol"
+      >{</a
+      ><a name="3390" href="Properties.html#3340" class="Bound"
+      >as</a
+      ><a name="3392" class="Symbol"
+      >}</a
+      ><a name="3393"
+      > </a
+      ><a name="3394" href="Properties.html#3357" class="Bound"
+      >s</a
+      ><a name="3395"
+      > </a
+      ><a name="3396" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3397"
+      > </a
+      ><a name="3398" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="3408"
+      > </a
+      ><a name="3409" class="Symbol"
+      >{</a
+      ><a name="3410" href="Properties.html#3345" class="Bound"
+      >bs</a
+      ><a name="3412" class="Symbol"
+      >}</a
+      ><a name="3413"
+      > </a
+      ><a name="3414" class="Symbol"
+      >(</a
+      ><a name="3415" href="Properties.html#3349" class="Bound"
+      >sf</a
+      ><a name="3417"
+      > </a
+      ><a name="3418" href="Properties.html#3357" class="Bound"
+      >s</a
+      ><a name="3419" class="Symbol"
+      >))</a
+      ><a name="3421"
+      > </a
+      ><a name="3422" href="Properties.html#3352" class="Bound"
+      >t</a
+      ><a name="3423"
+      >
+
+</a
+      ><a name="3425" href="Properties.html#3425" class="Function"
+      >ChangeDep</a
+      ><a name="3434"
+      > </a
+      ><a name="3435" class="Symbol"
+      >:</a
+      ><a name="3436"
+      > </a
+      ><a name="3437" class="Symbol"
+      >{</a
+      ><a name="3438" href="Properties.html#3438" class="Bound"
+      >as</a
+      ><a name="3440"
+      > </a
+      ><a name="3441" href="Properties.html#3441" class="Bound"
+      >bs</a
+      ><a name="3443"
+      > </a
+      ><a name="3444" class="Symbol"
+      >:</a
+      ><a name="3445"
+      > </a
+      ><a name="3446" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="3452" class="Symbol"
+      >}</a
+      ><a name="3453"
+      > </a
+      ><a name="3454" class="Symbol"
+      >&#8594;</a
+      ><a name="3455"
+      > </a
+      ><a name="3456" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="3458"
+      > </a
+      ><a name="3459" href="Properties.html#3438" class="Bound"
+      >as</a
+      ><a name="3461"
+      > </a
+      ><a name="3462" href="Properties.html#3441" class="Bound"
+      >bs</a
+      ><a name="3464"
+      > </a
+      ><a name="3465" class="Symbol"
+      >&#8594;</a
+      ><a name="3466"
+      > </a
+      ><a name="3467" href="TemporalLogic.html#407" class="Function"
+      >TimePred</a
+      ><a name="3475"
+      >
+</a
+      ><a name="3476" href="Properties.html#3425" class="Function"
+      >ChangeDep</a
+      ><a name="3485"
+      > </a
+      ><a name="3486" class="Symbol"
+      >{</a
+      ><a name="3487" href="Properties.html#3487" class="Bound"
+      >as</a
+      ><a name="3489" class="Symbol"
+      >}</a
+      ><a name="3490"
+      > </a
+      ><a name="3491" class="Symbol"
+      >{</a
+      ><a name="3492" href="Properties.html#3492" class="Bound"
+      >bs</a
+      ><a name="3494" class="Symbol"
+      >}</a
+      ><a name="3495"
+      > </a
+      ><a name="3496" href="Properties.html#3496" class="Bound"
+      >sf</a
+      ><a name="3498"
+      > </a
+      ><a name="3499" href="Properties.html#3499" class="Bound"
+      >t</a
+      ><a name="3500"
+      > </a
+      ><a name="3501" class="Symbol"
+      >=</a
+      ><a name="3502"
+      > </a
+      ><a name="3503" class="Symbol"
+      >(</a
+      ><a name="3504" href="Properties.html#3504" class="Bound"
+      >s</a
+      ><a name="3505"
+      > </a
+      ><a name="3506" class="Symbol"
+      >:</a
+      ><a name="3507"
+      > </a
+      ><a name="3508" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3514"
+      > </a
+      ><a name="3515" href="Properties.html#3487" class="Bound"
+      >as</a
+      ><a name="3517" class="Symbol"
+      >)</a
+      ><a name="3518"
+      > </a
+      ><a name="3519" class="Symbol"
+      >&#8594;</a
+      ><a name="3520"
+      > </a
+      ><a name="3521" class="Symbol"
+      >(</a
+      ><a name="3522" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="3532"
+      > </a
+      ><a name="3533" class="Symbol"
+      >{</a
+      ><a name="3534" href="Properties.html#3492" class="Bound"
+      >bs</a
+      ><a name="3536" class="Symbol"
+      >}</a
+      ><a name="3537"
+      > </a
+      ><a name="3538" class="Symbol"
+      >(</a
+      ><a name="3539" href="Properties.html#3496" class="Bound"
+      >sf</a
+      ><a name="3541"
+      > </a
+      ><a name="3542" href="Properties.html#3504" class="Bound"
+      >s</a
+      ><a name="3543" class="Symbol"
+      >)</a
+      ><a name="3544"
+      > </a
+      ><a name="3545" href="TemporalLogic.html#2552" class="Function Operator"
+      >W&#691;</a
+      ><a name="3547"
+      > </a
+      ><a name="3548" href="Properties.html#1662" class="Function"
+      >Changing</a
+      ><a name="3556"
+      > </a
+      ><a name="3557" class="Symbol"
+      >{</a
+      ><a name="3558" href="Properties.html#3487" class="Bound"
+      >as</a
+      ><a name="3560" class="Symbol"
+      >}</a
+      ><a name="3561"
+      > </a
+      ><a name="3562" href="Properties.html#3504" class="Bound"
+      >s</a
+      ><a name="3563" class="Symbol"
+      >)</a
+      ><a name="3564"
+      > </a
+      ><a name="3565" href="Properties.html#3499" class="Bound"
+      >t</a
+      ><a name="3566"
+      >
+
+</a
+      ><a name="3568" class="Comment"
+      >-------------------------------------------------</a
+      ><a name="3617"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

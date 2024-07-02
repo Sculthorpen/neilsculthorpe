@@ -1,0 +1,5364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+><head
+  ><title
+    >Lemmas</title
+    ><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"
+     /><meta http-equiv="Content-Style-Type" content="text/css"
+     /><link href="Agda.css" rel="stylesheet" type="text/css"
+     /></head
+  ><body
+  ><pre
+    ><a name="1" class="Symbol"
+      >{-#</a
+      ><a name="4"
+      > </a
+      ><a name="5" class="Keyword"
+      >OPTIONS</a
+      ><a name="12"
+      > --type-in-type
+   </a
+      ><a name="31" class="Symbol"
+      >#-}</a
+      ><a name="34"
+      >
+
+</a
+      ><a name="36" class="Comment"
+      >-- NOTE: Many of these lemmas still need to be proved</a
+      ><a name="89"
+      >
+</a
+      ><a name="90" class="Comment"
+      >-- I believe some will require postulating properties over continuous time</a
+      ><a name="164"
+      >
+</a
+      ><a name="165" class="Comment"
+      >-- For example, if P(x) has always held, and x is unchanging currently, then P(x) holds now.</a
+      ><a name="257"
+      >
+</a
+      ><a name="258" class="Comment"
+      >-- Identifying precisely the properties of continuous time that we need is the important next step</a
+      ><a name="356"
+      >
+
+</a
+      ><a name="358" class="Keyword"
+      >module</a
+      ><a name="364"
+      > </a
+      ><a name="365" href="Lemmas.html#365" class="Module"
+      >Lemmas</a
+      ><a name="371"
+      > </a
+      ><a name="372" class="Keyword"
+      >where</a
+      ><a name="377"
+      >
+
+</a
+      ><a name="379" class="Keyword"
+      >open</a
+      ><a name="383"
+      > </a
+      ><a name="384" class="Keyword"
+      >import</a
+      ><a name="390"
+      > </a
+      ><a name="391" href="NeilPrelude.html#81" class="Module"
+      >NeilPrelude</a
+      ><a name="402"
+      >
+</a
+      ><a name="403" class="Keyword"
+      >open</a
+      ><a name="407"
+      > </a
+      ><a name="408" class="Keyword"
+      >import</a
+      ><a name="414"
+      > </a
+      ><a name="415" href="RealTime.html#66" class="Module"
+      >RealTime</a
+      ><a name="423"
+      >
+</a
+      ><a name="424" class="Keyword"
+      >open</a
+      ><a name="428"
+      > </a
+      ><a name="429" class="Keyword"
+      >import</a
+      ><a name="435"
+      > </a
+      ><a name="436" href="Logic.html#86" class="Module"
+      >Logic</a
+      ><a name="441"
+      >
+</a
+      ><a name="442" class="Keyword"
+      >open</a
+      ><a name="446"
+      > </a
+      ><a name="447" class="Keyword"
+      >import</a
+      ><a name="453"
+      > </a
+      ><a name="454" href="SigVecs.html#43" class="Module"
+      >SigVecs</a
+      ><a name="461"
+      >
+</a
+      ><a name="462" class="Keyword"
+      >open</a
+      ><a name="466"
+      > </a
+      ><a name="467" class="Keyword"
+      >import</a
+      ><a name="473"
+      > </a
+      ><a name="474" href="Properties.html#43" class="Module"
+      >Properties</a
+      ><a name="484"
+      >
+</a
+      ><a name="485" class="Keyword"
+      >open</a
+      ><a name="489"
+      > </a
+      ><a name="490" class="Keyword"
+      >import</a
+      ><a name="496"
+      > </a
+      ><a name="497" href="Utilities.html#66" class="Module"
+      >Utilities</a
+      ><a name="506"
+      >
+</a
+      ><a name="507" class="Keyword"
+      >open</a
+      ><a name="511"
+      > </a
+      ><a name="512" class="Keyword"
+      >import</a
+      ><a name="518"
+      > </a
+      ><a name="519" href="StrictTotalOrder.html#69" class="Module"
+      >StrictTotalOrder</a
+      ><a name="535"
+      > </a
+      ><a name="536" class="Keyword"
+      >hiding</a
+      ><a name="542"
+      > </a
+      ><a name="543" class="Symbol"
+      >(</a
+      ><a name="544"
+      >_&lt;_ </a
+      ><a name="548" class="Symbol"
+      >;</a
+      ><a name="549"
+      > _&#8804;_</a
+      ><a name="553" class="Symbol"
+      >)</a
+      ><a name="554"
+      >
+</a
+      ><a name="555" class="Keyword"
+      >open</a
+      ><a name="559"
+      > </a
+      ><a name="560" class="Keyword"
+      >import</a
+      ><a name="566"
+      > </a
+      ><a name="567" href="ChangePrefixLemmas.html#43" class="Module"
+      >ChangePrefixLemmas</a
+      ><a name="585"
+      >
+
+</a
+      ><a name="587" class="Comment"
+      >------------------------------------------------------------------</a
+      ><a name="653"
+      >
+
+</a
+      ><a name="655" class="Keyword"
+      >postulate</a
+      ><a name="664"
+      > </a
+      ><a name="665" href="Lemmas.html#665" class="Postulate"
+      >lemS-HEqR&#8658;U&#8658;EqR</a
+      ><a name="680"
+      > </a
+      ><a name="681" class="Symbol"
+      >:</a
+      ><a name="682"
+      > </a
+      ><a name="683" class="Symbol"
+      >{</a
+      ><a name="684" href="Lemmas.html#684" class="Bound"
+      >A</a
+      ><a name="685"
+      > </a
+      ><a name="686" class="Symbol"
+      >:</a
+      ><a name="687"
+      > </a
+      ><a name="688" class="PrimitiveType"
+      >Set</a
+      ><a name="691" class="Symbol"
+      >}</a
+      ><a name="692"
+      > </a
+      ><a name="693" class="Symbol"
+      >&#8594;</a
+      ><a name="694"
+      > </a
+      ><a name="695" class="Symbol"
+      >(</a
+      ><a name="696" href="Lemmas.html#696" class="Bound"
+      >s&#8321;</a
+      ><a name="698"
+      > </a
+      ><a name="699" href="Lemmas.html#699" class="Bound"
+      >s&#8322;</a
+      ><a name="701"
+      > </a
+      ><a name="702" class="Symbol"
+      >:</a
+      ><a name="703"
+      > </a
+      ><a name="704" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="710"
+      > </a
+      ><a name="711" class="Symbol"
+      >(</a
+      ><a name="712" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="713"
+      > </a
+      ><a name="714" href="Lemmas.html#684" class="Bound"
+      >A</a
+      ><a name="715" class="Symbol"
+      >))</a
+      ><a name="717"
+      > </a
+      ><a name="718" class="Symbol"
+      >&#8594;</a
+      ><a name="719"
+      > </a
+      ><a name="720" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="726"
+      > </a
+      ><a name="727" class="Symbol"
+      >(</a
+      ><a name="728" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="729"
+      > </a
+      ><a name="730" class="Symbol"
+      >(</a
+      ><a name="731" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="739"
+      > </a
+      ><a name="740" class="Symbol"
+      >{</a
+      ><a name="741" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="742"
+      > </a
+      ><a name="743" href="Lemmas.html#684" class="Bound"
+      >A</a
+      ><a name="744" class="Symbol"
+      >}</a
+      ><a name="745"
+      > </a
+      ><a name="746" href="Lemmas.html#696" class="Bound"
+      >s&#8321;</a
+      ><a name="748"
+      > </a
+      ><a name="749" href="Lemmas.html#699" class="Bound"
+      >s&#8322;</a
+      ><a name="751" class="Symbol"
+      >)</a
+      ><a name="752"
+      > </a
+      ><a name="753" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="754"
+      > </a
+      ><a name="755" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="765"
+      > </a
+      ><a name="766" class="Symbol"
+      >{</a
+      ><a name="767" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="768"
+      > </a
+      ><a name="769" href="Lemmas.html#684" class="Bound"
+      >A</a
+      ><a name="770" class="Symbol"
+      >}</a
+      ><a name="771"
+      > </a
+      ><a name="772" href="Lemmas.html#696" class="Bound"
+      >s&#8321;</a
+      ><a name="774"
+      > </a
+      ><a name="775" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="776"
+      > </a
+      ><a name="777" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="787"
+      > </a
+      ><a name="788" class="Symbol"
+      >{</a
+      ><a name="789" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="790"
+      > </a
+      ><a name="791" href="Lemmas.html#684" class="Bound"
+      >A</a
+      ><a name="792" class="Symbol"
+      >}</a
+      ><a name="793"
+      > </a
+      ><a name="794" href="Lemmas.html#699" class="Bound"
+      >s&#8322;</a
+      ><a name="796"
+      > </a
+      ><a name="797" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="798"
+      > </a
+      ><a name="799" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="807"
+      > </a
+      ><a name="808" class="Symbol"
+      >{</a
+      ><a name="809" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="810"
+      > </a
+      ><a name="811" href="Lemmas.html#684" class="Bound"
+      >A</a
+      ><a name="812" class="Symbol"
+      >}</a
+      ><a name="813"
+      > </a
+      ><a name="814" href="Lemmas.html#696" class="Bound"
+      >s&#8321;</a
+      ><a name="816"
+      > </a
+      ><a name="817" href="Lemmas.html#699" class="Bound"
+      >s&#8322;</a
+      ><a name="819" class="Symbol"
+      >)</a
+      ><a name="820"
+      >
+
+</a
+      ><a name="822" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="832"
+      > </a
+      ><a name="833" class="Symbol"
+      >:</a
+      ><a name="834"
+      > </a
+      ><a name="835" class="Symbol"
+      >{</a
+      ><a name="836" href="Lemmas.html#836" class="Bound"
+      >A</a
+      ><a name="837"
+      > </a
+      ><a name="838" class="Symbol"
+      >:</a
+      ><a name="839"
+      > </a
+      ><a name="840" class="PrimitiveType"
+      >Set</a
+      ><a name="843" class="Symbol"
+      >}</a
+      ><a name="844"
+      > </a
+      ><a name="845" class="Symbol"
+      >&#8594;</a
+      ><a name="846"
+      > </a
+      ><a name="847" class="Symbol"
+      >(</a
+      ><a name="848" href="Lemmas.html#848" class="Bound"
+      >s&#8321;</a
+      ><a name="850"
+      > </a
+      ><a name="851" href="Lemmas.html#851" class="Bound"
+      >s&#8322;</a
+      ><a name="853"
+      > </a
+      ><a name="854" class="Symbol"
+      >:</a
+      ><a name="855"
+      > </a
+      ><a name="856" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="862"
+      > </a
+      ><a name="863" class="Symbol"
+      >(</a
+      ><a name="864" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="865"
+      > </a
+      ><a name="866" href="Lemmas.html#836" class="Bound"
+      >A</a
+      ><a name="867" class="Symbol"
+      >))</a
+      ><a name="869"
+      > </a
+      ><a name="870" class="Symbol"
+      >&#8594;</a
+      ><a name="871"
+      > </a
+      ><a name="872" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="878"
+      > </a
+      ><a name="879" class="Symbol"
+      >(</a
+      ><a name="880" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="890"
+      > </a
+      ><a name="891" class="Symbol"
+      >{</a
+      ><a name="892" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="893"
+      > </a
+      ><a name="894" href="Lemmas.html#836" class="Bound"
+      >A</a
+      ><a name="895" class="Symbol"
+      >}</a
+      ><a name="896"
+      > </a
+      ><a name="897" href="Lemmas.html#848" class="Bound"
+      >s&#8321;</a
+      ><a name="899"
+      > </a
+      ><a name="900" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="901"
+      > </a
+      ><a name="902" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="912"
+      > </a
+      ><a name="913" class="Symbol"
+      >{</a
+      ><a name="914" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="915"
+      > </a
+      ><a name="916" href="Lemmas.html#836" class="Bound"
+      >A</a
+      ><a name="917" class="Symbol"
+      >}</a
+      ><a name="918"
+      > </a
+      ><a name="919" href="Lemmas.html#851" class="Bound"
+      >s&#8322;</a
+      ><a name="921"
+      > </a
+      ><a name="922" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="923"
+      > </a
+      ><a name="924" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="932"
+      > </a
+      ><a name="933" class="Symbol"
+      >{</a
+      ><a name="934" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="935"
+      > </a
+      ><a name="936" href="Lemmas.html#836" class="Bound"
+      >A</a
+      ><a name="937" class="Symbol"
+      >}</a
+      ><a name="938"
+      > </a
+      ><a name="939" href="Lemmas.html#848" class="Bound"
+      >s&#8321;</a
+      ><a name="941"
+      > </a
+      ><a name="942" href="Lemmas.html#851" class="Bound"
+      >s&#8322;</a
+      ><a name="944" class="Symbol"
+      >)</a
+      ><a name="945"
+      >
+</a
+      ><a name="946" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="956"
+      > </a
+      ><a name="957" class="Symbol"
+      >(</a
+      ><a name="958" href="NeilPrelude.html#898" class="InductiveConstructor"
+      >nothing</a
+      ><a name="965"
+      > </a
+      ><a name="966" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="967"
+      > </a
+      ><a name="968" class="Symbol"
+      >_)</a
+      ><a name="970"
+      > </a
+      ><a name="971" class="Symbol"
+      >(</a
+      ><a name="972" href="NeilPrelude.html#898" class="InductiveConstructor"
+      >nothing</a
+      ><a name="979"
+      > </a
+      ><a name="980" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="981"
+      > </a
+      ><a name="982" class="Symbol"
+      >_)</a
+      ><a name="984"
+      > </a
+      ><a name="985" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="986"
+      >      </a
+      ><a name="992" href="Lemmas.html#992" class="Bound"
+      >un&#8321;</a
+      ><a name="995"
+      > </a
+      ><a name="996" href="Lemmas.html#996" class="Bound"
+      >un&#8322;</a
+      ><a name="999"
+      > </a
+      ><a name="1000" class="Symbol"
+      >=</a
+      ><a name="1001"
+      > </a
+      ><a name="1002" href="NeilPrelude.html#1436" class="InductiveConstructor"
+      >refl</a
+      ><a name="1006"
+      >
+</a
+      ><a name="1007" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="1017"
+      > </a
+      ><a name="1018" class="Symbol"
+      >_</a
+      ><a name="1019"
+      >             </a
+      ><a name="1032" class="Symbol"
+      >(</a
+      ><a name="1033" href="NeilPrelude.html#918" class="InductiveConstructor"
+      >just</a
+      ><a name="1037"
+      > </a
+      ><a name="1038" href="Lemmas.html#1038" class="Bound"
+      >y'</a
+      ><a name="1040"
+      > </a
+      ><a name="1041" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1042"
+      > </a
+      ><a name="1043" class="Symbol"
+      >_)</a
+      ><a name="1045"
+      > </a
+      ><a name="1046" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="1047"
+      >      </a
+      ><a name="1053" href="Lemmas.html#1053" class="Bound"
+      >un&#8321;</a
+      ><a name="1056"
+      > </a
+      ><a name="1057" href="Lemmas.html#1057" class="Bound"
+      >un&#8322;</a
+      ><a name="1060"
+      > </a
+      ><a name="1061" class="Symbol"
+      >=</a
+      ><a name="1062"
+      > </a
+      ><a name="1063" href="Logic.html#316" class="Function"
+      >magic</a
+      ><a name="1068"
+      > </a
+      ><a name="1069" href="Lemmas.html#1057" class="Bound"
+      >un&#8322;</a
+      ><a name="1072"
+      >
+</a
+      ><a name="1073" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="1083"
+      > </a
+      ><a name="1084" class="Symbol"
+      >(</a
+      ><a name="1085" href="NeilPrelude.html#918" class="InductiveConstructor"
+      >just</a
+      ><a name="1089"
+      > </a
+      ><a name="1090" class="Symbol"
+      >_</a
+      ><a name="1091"
+      > </a
+      ><a name="1092" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1093"
+      > </a
+      ><a name="1094" class="Symbol"
+      >_)</a
+      ><a name="1096"
+      >  </a
+      ><a name="1098" class="Symbol"
+      >_</a
+      ><a name="1099"
+      >             </a
+      ><a name="1112" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="1113"
+      >      </a
+      ><a name="1119" href="Lemmas.html#1119" class="Bound"
+      >un&#8321;</a
+      ><a name="1122"
+      > </a
+      ><a name="1123" href="Lemmas.html#1123" class="Bound"
+      >un&#8322;</a
+      ><a name="1126"
+      > </a
+      ><a name="1127" class="Symbol"
+      >=</a
+      ><a name="1128"
+      > </a
+      ><a name="1129" href="Logic.html#316" class="Function"
+      >magic</a
+      ><a name="1134"
+      > </a
+      ><a name="1135" href="Lemmas.html#1119" class="Bound"
+      >un&#8321;</a
+      ><a name="1138"
+      >
+</a
+      ><a name="1139" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="1149"
+      > </a
+      ><a name="1150" class="Symbol"
+      >(_</a
+      ><a name="1152"
+      > </a
+      ><a name="1153" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1154"
+      > </a
+      ><a name="1155" href="Lemmas.html#1155" class="Bound"
+      >fdas&#8321;</a
+      ><a name="1160" class="Symbol"
+      >)</a
+      ><a name="1161"
+      >   </a
+      ><a name="1164" class="Symbol"
+      >(_</a
+      ><a name="1166"
+      > </a
+      ><a name="1167" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1168"
+      > </a
+      ><a name="1169" href="Lemmas.html#1169" class="Bound"
+      >fdas&#8322;</a
+      ><a name="1174" class="Symbol"
+      >)</a
+      ><a name="1175"
+      >   </a
+      ><a name="1178" class="Symbol"
+      >(</a
+      ><a name="1179" href="Lemmas.html#1179" class="Bound"
+      >t</a
+      ><a name="1180"
+      > </a
+      ><a name="1181" href="PosReal.html#261" class="InductiveConstructor Operator"
+      >&gt;0</a
+      ><a name="1183" class="Symbol"
+      >)</a
+      ><a name="1184"
+      > </a
+      ><a name="1185" href="Lemmas.html#1185" class="Bound"
+      >un&#8321;</a
+      ><a name="1188"
+      > </a
+      ><a name="1189" href="Lemmas.html#1189" class="Bound"
+      >un&#8322;</a
+      ><a name="1192"
+      > </a
+      ><a name="1193" class="Symbol"
+      >=</a
+      ><a name="1194"
+      > </a
+      ><a name="1195" href="Logic.html#1164" class="Function"
+      >lem-isNothingEq</a
+      ><a name="1210"
+      > </a
+      ><a name="1211" href="Lemmas.html#1185" class="Bound"
+      >un&#8321;</a
+      ><a name="1214"
+      > </a
+      ><a name="1215" href="Lemmas.html#1189" class="Bound"
+      >un&#8322;</a
+      ><a name="1218"
+      >
+
+</a
+      ><a name="1220" href="Lemmas.html#1220" class="Function"
+      >lemC-HEqR&#8658;U&#8658;EqR</a
+      ><a name="1235"
+      > </a
+      ><a name="1236" class="Symbol"
+      >:</a
+      ><a name="1237"
+      > </a
+      ><a name="1238" class="Symbol"
+      >{</a
+      ><a name="1239" href="Lemmas.html#1239" class="Bound"
+      >A</a
+      ><a name="1240"
+      > </a
+      ><a name="1241" class="Symbol"
+      >:</a
+      ><a name="1242"
+      > </a
+      ><a name="1243" class="PrimitiveType"
+      >Set</a
+      ><a name="1246" class="Symbol"
+      >}</a
+      ><a name="1247"
+      > </a
+      ><a name="1248" class="Symbol"
+      >&#8594;</a
+      ><a name="1249"
+      > </a
+      ><a name="1250" class="Symbol"
+      >(</a
+      ><a name="1251" href="Lemmas.html#1251" class="Bound"
+      >s&#8321;</a
+      ><a name="1253"
+      > </a
+      ><a name="1254" href="Lemmas.html#1254" class="Bound"
+      >s&#8322;</a
+      ><a name="1256"
+      > </a
+      ><a name="1257" class="Symbol"
+      >:</a
+      ><a name="1258"
+      > </a
+      ><a name="1259" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1265"
+      > </a
+      ><a name="1266" class="Symbol"
+      >(</a
+      ><a name="1267" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1268"
+      > </a
+      ><a name="1269" href="Lemmas.html#1239" class="Bound"
+      >A</a
+      ><a name="1270" class="Symbol"
+      >))</a
+      ><a name="1272"
+      > </a
+      ><a name="1273" class="Symbol"
+      >&#8594;</a
+      ><a name="1274"
+      > </a
+      ><a name="1275" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1281"
+      > </a
+      ><a name="1282" class="Symbol"
+      >(</a
+      ><a name="1283" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="1284"
+      > </a
+      ><a name="1285" class="Symbol"
+      >(</a
+      ><a name="1286" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="1294"
+      > </a
+      ><a name="1295" class="Symbol"
+      >{</a
+      ><a name="1296" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1297"
+      > </a
+      ><a name="1298" href="Lemmas.html#1239" class="Bound"
+      >A</a
+      ><a name="1299" class="Symbol"
+      >}</a
+      ><a name="1300"
+      > </a
+      ><a name="1301" href="Lemmas.html#1251" class="Bound"
+      >s&#8321;</a
+      ><a name="1303"
+      > </a
+      ><a name="1304" href="Lemmas.html#1254" class="Bound"
+      >s&#8322;</a
+      ><a name="1306" class="Symbol"
+      >)</a
+      ><a name="1307"
+      > </a
+      ><a name="1308" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1309"
+      > </a
+      ><a name="1310" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1320"
+      > </a
+      ><a name="1321" class="Symbol"
+      >{</a
+      ><a name="1322" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1323"
+      > </a
+      ><a name="1324" href="Lemmas.html#1239" class="Bound"
+      >A</a
+      ><a name="1325" class="Symbol"
+      >}</a
+      ><a name="1326"
+      > </a
+      ><a name="1327" href="Lemmas.html#1251" class="Bound"
+      >s&#8321;</a
+      ><a name="1329"
+      > </a
+      ><a name="1330" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1331"
+      > </a
+      ><a name="1332" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="1342"
+      > </a
+      ><a name="1343" class="Symbol"
+      >{</a
+      ><a name="1344" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1345"
+      > </a
+      ><a name="1346" href="Lemmas.html#1239" class="Bound"
+      >A</a
+      ><a name="1347" class="Symbol"
+      >}</a
+      ><a name="1348"
+      > </a
+      ><a name="1349" href="Lemmas.html#1254" class="Bound"
+      >s&#8322;</a
+      ><a name="1351"
+      > </a
+      ><a name="1352" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1353"
+      > </a
+      ><a name="1354" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="1362"
+      > </a
+      ><a name="1363" class="Symbol"
+      >{</a
+      ><a name="1364" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="1365"
+      > </a
+      ><a name="1366" href="Lemmas.html#1239" class="Bound"
+      >A</a
+      ><a name="1367" class="Symbol"
+      >}</a
+      ><a name="1368"
+      > </a
+      ><a name="1369" href="Lemmas.html#1251" class="Bound"
+      >s&#8321;</a
+      ><a name="1371"
+      > </a
+      ><a name="1372" href="Lemmas.html#1254" class="Bound"
+      >s&#8322;</a
+      ><a name="1374" class="Symbol"
+      >)</a
+      ><a name="1375"
+      >
+</a
+      ><a name="1376" href="Lemmas.html#1220" class="Function"
+      >lemC-HEqR&#8658;U&#8658;EqR</a
+      ><a name="1391"
+      > </a
+      ><a name="1392" href="Lemmas.html#1392" class="Bound"
+      >s&#8321;</a
+      ><a name="1394"
+      > </a
+      ><a name="1395" href="Lemmas.html#1395" class="Bound"
+      >s&#8322;</a
+      ><a name="1397"
+      > </a
+      ><a name="1398" href="Lemmas.html#1398" class="Bound"
+      >t</a
+      ><a name="1399"
+      > </a
+      ><a name="1400" href="Lemmas.html#1400" class="Bound"
+      >Heq</a
+      ><a name="1403"
+      > </a
+      ><a name="1404" class="Symbol"
+      >(</a
+      ><a name="1405" href="Lemmas.html#1405" class="Bound"
+      >t&#8321;</a
+      ><a name="1407"
+      > </a
+      ><a name="1408" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1409"
+      > </a
+      ><a name="1410" href="Lemmas.html#1410" class="Bound"
+      >lt&#8321;</a
+      ><a name="1413"
+      > </a
+      ><a name="1414" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1415"
+      > </a
+      ><a name="1416" href="Lemmas.html#1416" class="Bound"
+      >eq&#8321;</a
+      ><a name="1419"
+      > </a
+      ><a name="1420" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1421"
+      > </a
+      ><a name="1422" href="Lemmas.html#1422" class="Bound"
+      >p&#8321;</a
+      ><a name="1424" class="Symbol"
+      >)</a
+      ><a name="1425"
+      > </a
+      ><a name="1426" class="Symbol"
+      >(</a
+      ><a name="1427" href="Lemmas.html#1427" class="Bound"
+      >t&#8322;</a
+      ><a name="1429"
+      > </a
+      ><a name="1430" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1431"
+      > </a
+      ><a name="1432" href="Lemmas.html#1432" class="Bound"
+      >lt&#8322;</a
+      ><a name="1435"
+      > </a
+      ><a name="1436" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1437"
+      > </a
+      ><a name="1438" href="Lemmas.html#1438" class="Bound"
+      >eq&#8322;</a
+      ><a name="1441"
+      > </a
+      ><a name="1442" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1443"
+      > </a
+      ><a name="1444" href="Lemmas.html#1444" class="Bound"
+      >p&#8322;</a
+      ><a name="1446" class="Symbol"
+      >)</a
+      ><a name="1447"
+      > </a
+      ><a name="1448" class="Keyword"
+      >with</a
+      ><a name="1452"
+      > </a
+      ><a name="1453" href="PosReal.html#1615" class="Function"
+      >compare&#8476;&#8320;</a
+      ><a name="1462"
+      > </a
+      ><a name="1463" href="Lemmas.html#1405" class="Bound"
+      >t&#8321;</a
+      ><a name="1465"
+      > </a
+      ><a name="1466" href="Lemmas.html#1427" class="Bound"
+      >t&#8322;</a
+      ><a name="1468"
+      > </a
+      ><a name="1469" class="Symbol"
+      >|</a
+      ><a name="1470"
+      > </a
+      ><a name="1471" href="Lemmas.html#1400" class="Bound"
+      >Heq</a
+      ><a name="1474"
+      > </a
+      ><a name="1475" href="Lemmas.html#1405" class="Bound"
+      >t&#8321;</a
+      ><a name="1477"
+      > </a
+      ><a name="1478" href="Lemmas.html#1410" class="Bound"
+      >lt&#8321;</a
+      ><a name="1481"
+      > </a
+      ><a name="1482" class="Symbol"
+      >|</a
+      ><a name="1483"
+      > </a
+      ><a name="1484" href="Lemmas.html#1400" class="Bound"
+      >Heq</a
+      ><a name="1487"
+      > </a
+      ><a name="1488" href="Lemmas.html#1427" class="Bound"
+      >t&#8322;</a
+      ><a name="1490"
+      > </a
+      ><a name="1491" href="Lemmas.html#1432" class="Bound"
+      >lt&#8322;</a
+      ><a name="1494"
+      >
+</a
+      ><a name="1495" href="Lemmas.html#1220" class="Function"
+      >lemC-HEqR&#8658;U&#8658;EqR</a
+      ><a name="1510"
+      > </a
+      ><a name="1511" href="Lemmas.html#1511" class="Bound"
+      >s&#8321;</a
+      ><a name="1513"
+      > </a
+      ><a name="1514" href="Lemmas.html#1514" class="Bound"
+      >s&#8322;</a
+      ><a name="1516"
+      > </a
+      ><a name="1517" href="Lemmas.html#1517" class="Bound"
+      >t</a
+      ><a name="1518"
+      > </a
+      ><a name="1519" href="Lemmas.html#1519" class="Bound"
+      >Heq</a
+      ><a name="1522"
+      > </a
+      ><a name="1523" class="Symbol"
+      >(</a
+      ><a name="1524" class="DottedPattern Symbol"
+      >.</a
+      ><a name="1525" href="Lemmas.html#1547" class="DottedPattern Bound"
+      >t&#8322;</a
+      ><a name="1527"
+      > </a
+      ><a name="1528" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1529"
+      > </a
+      ><a name="1530" href="Lemmas.html#1530" class="Bound"
+      >lt&#8321;</a
+      ><a name="1533"
+      > </a
+      ><a name="1534" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1535"
+      > </a
+      ><a name="1536" href="Lemmas.html#1536" class="Bound"
+      >eq&#8321;</a
+      ><a name="1539"
+      > </a
+      ><a name="1540" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1541"
+      > </a
+      ><a name="1542" href="Lemmas.html#1542" class="Bound"
+      >p&#8321;</a
+      ><a name="1544" class="Symbol"
+      >)</a
+      ><a name="1545"
+      > </a
+      ><a name="1546" class="Symbol"
+      >(</a
+      ><a name="1547" href="Lemmas.html#1547" class="Bound"
+      >t&#8322;</a
+      ><a name="1549"
+      > </a
+      ><a name="1550" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1551"
+      > </a
+      ><a name="1552" href="Lemmas.html#1552" class="Bound"
+      >lt&#8322;</a
+      ><a name="1555"
+      > </a
+      ><a name="1556" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1557"
+      > </a
+      ><a name="1558" href="Lemmas.html#1558" class="Bound"
+      >eq&#8322;</a
+      ><a name="1561"
+      > </a
+      ><a name="1562" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1563"
+      > </a
+      ><a name="1564" href="Lemmas.html#1564" class="Bound"
+      >p&#8322;</a
+      ><a name="1566" class="Symbol"
+      >)</a
+      ><a name="1567"
+      > </a
+      ><a name="1568" class="Symbol"
+      >|</a
+      ><a name="1569"
+      > </a
+      ><a name="1570" href="StrictTotalOrder.html#749" class="InductiveConstructor"
+      >refl</a
+      ><a name="1574"
+      >   </a
+      ><a name="1577" class="Symbol"
+      >|</a
+      ><a name="1578"
+      > </a
+      ><a name="1579" href="Lemmas.html#1579" class="Bound"
+      >eq&#8321;&#8322;</a
+      ><a name="1583"
+      > </a
+      ><a name="1584" class="Symbol"
+      >|</a
+      ><a name="1585"
+      > </a
+      ><a name="1586" class="Symbol"
+      >_</a
+      ><a name="1587"
+      >     </a
+      ><a name="1592" class="Symbol"
+      >=</a
+      ><a name="1593"
+      > </a
+      ><a name="1594" href="NeilPrelude.html#5509" class="Function"
+      >trans2</a
+      ><a name="1600"
+      > </a
+      ><a name="1601" class="Symbol"
+      >(</a
+      ><a name="1602" href="NeilPrelude.html#5395" class="Function"
+      >sym</a
+      ><a name="1605"
+      > </a
+      ><a name="1606" href="Lemmas.html#1536" class="Bound"
+      >eq&#8321;</a
+      ><a name="1609" class="Symbol"
+      >)</a
+      ><a name="1610"
+      > </a
+      ><a name="1611" href="Lemmas.html#1579" class="Bound"
+      >eq&#8321;&#8322;</a
+      ><a name="1615"
+      > </a
+      ><a name="1616" href="Lemmas.html#1558" class="Bound"
+      >eq&#8322;</a
+      ><a name="1619"
+      >
+</a
+      ><a name="1620" href="Lemmas.html#1220" class="Function"
+      >lemC-HEqR&#8658;U&#8658;EqR</a
+      ><a name="1635"
+      > </a
+      ><a name="1636" href="Lemmas.html#1636" class="Bound"
+      >s&#8321;</a
+      ><a name="1638"
+      > </a
+      ><a name="1639" href="Lemmas.html#1639" class="Bound"
+      >s&#8322;</a
+      ><a name="1641"
+      > </a
+      ><a name="1642" href="Lemmas.html#1642" class="Bound"
+      >t</a
+      ><a name="1643"
+      > </a
+      ><a name="1644" href="Lemmas.html#1644" class="Bound"
+      >Heq</a
+      ><a name="1647"
+      > </a
+      ><a name="1648" class="Symbol"
+      >(_</a
+      ><a name="1650"
+      >  </a
+      ><a name="1652" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1653"
+      > </a
+      ><a name="1654" class="Symbol"
+      >_</a
+      ><a name="1655"
+      >   </a
+      ><a name="1658" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1659"
+      > </a
+      ><a name="1660" href="Lemmas.html#1660" class="Bound"
+      >eq&#8321;</a
+      ><a name="1663"
+      > </a
+      ><a name="1664" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1665"
+      > </a
+      ><a name="1666" href="Lemmas.html#1666" class="Bound"
+      >p&#8321;</a
+      ><a name="1668" class="Symbol"
+      >)</a
+      ><a name="1669"
+      >  </a
+      ><a name="1671" class="Symbol"
+      >(</a
+      ><a name="1672" href="Lemmas.html#1672" class="Bound"
+      >t&#8322;</a
+      ><a name="1674"
+      > </a
+      ><a name="1675" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1676"
+      > </a
+      ><a name="1677" href="Lemmas.html#1677" class="Bound"
+      >lt&#8322;</a
+      ><a name="1680"
+      > </a
+      ><a name="1681" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1682"
+      > </a
+      ><a name="1683" href="Lemmas.html#1683" class="Bound"
+      >eq&#8322;</a
+      ><a name="1686"
+      > </a
+      ><a name="1687" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1688"
+      > </a
+      ><a name="1689" href="Lemmas.html#1689" class="Bound"
+      >p&#8322;</a
+      ><a name="1691" class="Symbol"
+      >)</a
+      ><a name="1692"
+      > </a
+      ><a name="1693" class="Symbol"
+      >|</a
+      ><a name="1694"
+      > </a
+      ><a name="1695" href="StrictTotalOrder.html#793" class="InductiveConstructor"
+      >less</a
+      ><a name="1699"
+      > </a
+      ><a name="1700" href="Lemmas.html#1700" class="Bound"
+      >q</a
+      ><a name="1701"
+      > </a
+      ><a name="1702" class="Symbol"
+      >|</a
+      ><a name="1703"
+      > </a
+      ><a name="1704" class="Symbol"
+      >_</a
+      ><a name="1705"
+      >    </a
+      ><a name="1709" class="Symbol"
+      >|</a
+      ><a name="1710"
+      > </a
+      ><a name="1711" href="Lemmas.html#1711" class="Bound"
+      >eq&#8322;&#8321;</a
+      ><a name="1715"
+      >  </a
+      ><a name="1717" class="Symbol"
+      >=</a
+      ><a name="1718"
+      > </a
+      ><a name="1719" href="NeilPrelude.html#5509" class="Function"
+      >trans2</a
+      ><a name="1725"
+      > </a
+      ><a name="1726" class="Symbol"
+      >(</a
+      ><a name="1727" href="NeilPrelude.html#5395" class="Function"
+      >sym</a
+      ><a name="1730"
+      > </a
+      ><a name="1731" class="Symbol"
+      >(</a
+      ><a name="1732" href="Lemmas.html#1666" class="Bound"
+      >p&#8321;</a
+      ><a name="1734"
+      > </a
+      ><a name="1735" href="Lemmas.html#1672" class="Bound"
+      >t&#8322;</a
+      ><a name="1737"
+      > </a
+      ><a name="1738" href="Lemmas.html#1700" class="Bound"
+      >q</a
+      ><a name="1739"
+      > </a
+      ><a name="1740" href="Lemmas.html#1677" class="Bound"
+      >lt&#8322;</a
+      ><a name="1743" class="Symbol"
+      >))</a
+      ><a name="1745"
+      > </a
+      ><a name="1746" href="Lemmas.html#1711" class="Bound"
+      >eq&#8322;&#8321;</a
+      ><a name="1750"
+      > </a
+      ><a name="1751" href="Lemmas.html#1683" class="Bound"
+      >eq&#8322;</a
+      ><a name="1754"
+      >
+</a
+      ><a name="1755" href="Lemmas.html#1220" class="Function"
+      >lemC-HEqR&#8658;U&#8658;EqR</a
+      ><a name="1770"
+      > </a
+      ><a name="1771" href="Lemmas.html#1771" class="Bound"
+      >s&#8321;</a
+      ><a name="1773"
+      > </a
+      ><a name="1774" href="Lemmas.html#1774" class="Bound"
+      >s&#8322;</a
+      ><a name="1776"
+      > </a
+      ><a name="1777" href="Lemmas.html#1777" class="Bound"
+      >t</a
+      ><a name="1778"
+      > </a
+      ><a name="1779" href="Lemmas.html#1779" class="Bound"
+      >Heq</a
+      ><a name="1782"
+      > </a
+      ><a name="1783" class="Symbol"
+      >(</a
+      ><a name="1784" href="Lemmas.html#1784" class="Bound"
+      >t&#8321;</a
+      ><a name="1786"
+      > </a
+      ><a name="1787" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1788"
+      > </a
+      ><a name="1789" href="Lemmas.html#1789" class="Bound"
+      >lt&#8321;</a
+      ><a name="1792"
+      > </a
+      ><a name="1793" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1794"
+      > </a
+      ><a name="1795" href="Lemmas.html#1795" class="Bound"
+      >eq&#8321;</a
+      ><a name="1798"
+      > </a
+      ><a name="1799" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1800"
+      > </a
+      ><a name="1801" href="Lemmas.html#1801" class="Bound"
+      >p&#8321;</a
+      ><a name="1803" class="Symbol"
+      >)</a
+      ><a name="1804"
+      > </a
+      ><a name="1805" class="Symbol"
+      >(_</a
+      ><a name="1807"
+      >  </a
+      ><a name="1809" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1810"
+      > </a
+      ><a name="1811" class="Symbol"
+      >_</a
+      ><a name="1812"
+      >   </a
+      ><a name="1815" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1816"
+      > </a
+      ><a name="1817" href="Lemmas.html#1817" class="Bound"
+      >eq&#8322;</a
+      ><a name="1820"
+      > </a
+      ><a name="1821" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="1822"
+      > </a
+      ><a name="1823" href="Lemmas.html#1823" class="Bound"
+      >p&#8322;</a
+      ><a name="1825" class="Symbol"
+      >)</a
+      ><a name="1826"
+      >  </a
+      ><a name="1828" class="Symbol"
+      >|</a
+      ><a name="1829"
+      > </a
+      ><a name="1830" href="StrictTotalOrder.html#837" class="InductiveConstructor"
+      >more</a
+      ><a name="1834"
+      > </a
+      ><a name="1835" href="Lemmas.html#1835" class="Bound"
+      >q</a
+      ><a name="1836"
+      > </a
+      ><a name="1837" class="Symbol"
+      >|</a
+      ><a name="1838"
+      > </a
+      ><a name="1839" href="Lemmas.html#1839" class="Bound"
+      >eq&#8321;&#8322;</a
+      ><a name="1843"
+      > </a
+      ><a name="1844" class="Symbol"
+      >|</a
+      ><a name="1845"
+      > </a
+      ><a name="1846" class="Symbol"
+      >_</a
+      ><a name="1847"
+      >     </a
+      ><a name="1852" class="Symbol"
+      >=</a
+      ><a name="1853"
+      > </a
+      ><a name="1854" href="NeilPrelude.html#5509" class="Function"
+      >trans2</a
+      ><a name="1860"
+      > </a
+      ><a name="1861" class="Symbol"
+      >(</a
+      ><a name="1862" href="NeilPrelude.html#5395" class="Function"
+      >sym</a
+      ><a name="1865"
+      > </a
+      ><a name="1866" href="Lemmas.html#1795" class="Bound"
+      >eq&#8321;</a
+      ><a name="1869" class="Symbol"
+      >)</a
+      ><a name="1870"
+      > </a
+      ><a name="1871" href="Lemmas.html#1839" class="Bound"
+      >eq&#8321;&#8322;</a
+      ><a name="1875"
+      > </a
+      ><a name="1876" class="Symbol"
+      >(</a
+      ><a name="1877" href="Lemmas.html#1823" class="Bound"
+      >p&#8322;</a
+      ><a name="1879"
+      > </a
+      ><a name="1880" href="Lemmas.html#1784" class="Bound"
+      >t&#8321;</a
+      ><a name="1882"
+      > </a
+      ><a name="1883" href="Lemmas.html#1835" class="Bound"
+      >q</a
+      ><a name="1884"
+      > </a
+      ><a name="1885" href="Lemmas.html#1789" class="Bound"
+      >lt&#8321;</a
+      ><a name="1888" class="Symbol"
+      >)</a
+      ><a name="1889"
+      >
+
+</a
+      ><a name="1891" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="1905"
+      > </a
+      ><a name="1906" class="Symbol"
+      >:</a
+      ><a name="1907"
+      > </a
+      ><a name="1908" class="Symbol"
+      >{</a
+      ><a name="1909" href="Lemmas.html#1909" class="Bound"
+      >as</a
+      ><a name="1911"
+      > </a
+      ><a name="1912" class="Symbol"
+      >:</a
+      ><a name="1913"
+      > </a
+      ><a name="1914" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="1920" class="Symbol"
+      >}</a
+      ><a name="1921"
+      > </a
+      ><a name="1922" class="Symbol"
+      >&#8594;</a
+      ><a name="1923"
+      > </a
+      ><a name="1924" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="1935"
+      > </a
+      ><a name="1936" class="Symbol"
+      >&#8594;</a
+      ><a name="1937"
+      > </a
+      ><a name="1938" class="Symbol"
+      >(</a
+      ><a name="1939" href="Lemmas.html#1939" class="Bound"
+      >s&#8321;</a
+      ><a name="1941"
+      > </a
+      ><a name="1942" href="Lemmas.html#1942" class="Bound"
+      >s&#8322;</a
+      ><a name="1944"
+      > </a
+      ><a name="1945" class="Symbol"
+      >:</a
+      ><a name="1946"
+      > </a
+      ><a name="1947" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="1953"
+      > </a
+      ><a name="1954" href="Lemmas.html#1909" class="Bound"
+      >as</a
+      ><a name="1956" class="Symbol"
+      >)</a
+      ><a name="1957"
+      > </a
+      ><a name="1958" class="Symbol"
+      >&#8594;</a
+      ><a name="1959"
+      > </a
+      ><a name="1960" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="1966"
+      > </a
+      ><a name="1967" class="Symbol"
+      >(</a
+      ><a name="1968" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="1969"
+      > </a
+      ><a name="1970" class="Symbol"
+      >(</a
+      ><a name="1971" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="1979"
+      > </a
+      ><a name="1980" class="Symbol"
+      >{</a
+      ><a name="1981" href="Lemmas.html#1909" class="Bound"
+      >as</a
+      ><a name="1983" class="Symbol"
+      >}</a
+      ><a name="1984"
+      > </a
+      ><a name="1985" href="Lemmas.html#1939" class="Bound"
+      >s&#8321;</a
+      ><a name="1987"
+      > </a
+      ><a name="1988" href="Lemmas.html#1942" class="Bound"
+      >s&#8322;</a
+      ><a name="1990" class="Symbol"
+      >)</a
+      ><a name="1991"
+      > </a
+      ><a name="1992" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="1993"
+      > </a
+      ><a name="1994" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="2004"
+      > </a
+      ><a name="2005" class="Symbol"
+      >{</a
+      ><a name="2006" href="Lemmas.html#1909" class="Bound"
+      >as</a
+      ><a name="2008" class="Symbol"
+      >}</a
+      ><a name="2009"
+      > </a
+      ><a name="2010" href="Lemmas.html#1939" class="Bound"
+      >s&#8321;</a
+      ><a name="2012"
+      > </a
+      ><a name="2013" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2014"
+      > </a
+      ><a name="2015" href="Properties.html#1433" class="Function"
+      >Unchanging</a
+      ><a name="2025"
+      > </a
+      ><a name="2026" class="Symbol"
+      >{</a
+      ><a name="2027" href="Lemmas.html#1909" class="Bound"
+      >as</a
+      ><a name="2029" class="Symbol"
+      >}</a
+      ><a name="2030"
+      > </a
+      ><a name="2031" href="Lemmas.html#1942" class="Bound"
+      >s&#8322;</a
+      ><a name="2033"
+      > </a
+      ><a name="2034" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2035"
+      > </a
+      ><a name="2036" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2044"
+      > </a
+      ><a name="2045" class="Symbol"
+      >{</a
+      ><a name="2046" href="Lemmas.html#1909" class="Bound"
+      >as</a
+      ><a name="2048" class="Symbol"
+      >}</a
+      ><a name="2049"
+      > </a
+      ><a name="2050" href="Lemmas.html#1939" class="Bound"
+      >s&#8321;</a
+      ><a name="2052"
+      > </a
+      ><a name="2053" href="Lemmas.html#1942" class="Bound"
+      >s&#8322;</a
+      ><a name="2055" class="Symbol"
+      >)</a
+      ><a name="2056"
+      >
+</a
+      ><a name="2057" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2071"
+      > </a
+      ><a name="2072" class="Symbol"
+      >{</a
+      ><a name="2073" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="2074"
+      > </a
+      ><a name="2075" class="Symbol"
+      >_}</a
+      ><a name="2077"
+      > </a
+      ><a name="2078" href="Lemmas.html#2078" class="Bound"
+      >con</a
+      ><a name="2081"
+      > </a
+      ><a name="2082" href="Lemmas.html#2082" class="Bound"
+      >s&#8321;</a
+      ><a name="2084"
+      > </a
+      ><a name="2085" href="Lemmas.html#2085" class="Bound"
+      >s&#8322;</a
+      ><a name="2087"
+      > </a
+      ><a name="2088" href="Lemmas.html#2088" class="Bound"
+      >t</a
+      ><a name="2089"
+      > </a
+      ><a name="2090" href="Lemmas.html#2090" class="Bound"
+      >Heq</a
+      ><a name="2093"
+      > </a
+      ><a name="2094" href="Lemmas.html#2094" class="Bound"
+      >un&#8321;</a
+      ><a name="2097"
+      > </a
+      ><a name="2098" href="Lemmas.html#2098" class="Bound"
+      >un&#8322;</a
+      ><a name="2101"
+      > </a
+      ><a name="2102" class="Symbol"
+      >=</a
+      ><a name="2103"
+      > </a
+      ><a name="2104" href="Lemmas.html#1220" class="Function"
+      >lemC-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2119"
+      > </a
+      ><a name="2120" href="Lemmas.html#2082" class="Bound"
+      >s&#8321;</a
+      ><a name="2122"
+      > </a
+      ><a name="2123" href="Lemmas.html#2085" class="Bound"
+      >s&#8322;</a
+      ><a name="2125"
+      > </a
+      ><a name="2126" href="Lemmas.html#2088" class="Bound"
+      >t</a
+      ><a name="2127"
+      > </a
+      ><a name="2128" href="Lemmas.html#2090" class="Bound"
+      >Heq</a
+      ><a name="2131"
+      > </a
+      ><a name="2132" href="Lemmas.html#2094" class="Bound"
+      >un&#8321;</a
+      ><a name="2135"
+      > </a
+      ><a name="2136" href="Lemmas.html#2098" class="Bound"
+      >un&#8322;</a
+      ><a name="2139"
+      >
+</a
+      ><a name="2140" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2154"
+      > </a
+      ><a name="2155" class="Symbol"
+      >{</a
+      ><a name="2156" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="2157"
+      > </a
+      ><a name="2158" class="Symbol"
+      >_}</a
+      ><a name="2160"
+      > </a
+      ><a name="2161" href="Lemmas.html#2161" class="Bound"
+      >con</a
+      ><a name="2164"
+      > </a
+      ><a name="2165" href="Lemmas.html#2165" class="Bound"
+      >s&#8321;</a
+      ><a name="2167"
+      > </a
+      ><a name="2168" href="Lemmas.html#2168" class="Bound"
+      >s&#8322;</a
+      ><a name="2170"
+      > </a
+      ><a name="2171" href="Lemmas.html#2171" class="Bound"
+      >t</a
+      ><a name="2172"
+      > </a
+      ><a name="2173" href="Lemmas.html#2173" class="Bound"
+      >Heq</a
+      ><a name="2176"
+      > </a
+      ><a name="2177" href="Lemmas.html#2177" class="Bound"
+      >un&#8321;</a
+      ><a name="2180"
+      > </a
+      ><a name="2181" href="Lemmas.html#2181" class="Bound"
+      >un&#8322;</a
+      ><a name="2184"
+      > </a
+      ><a name="2185" class="Symbol"
+      >=</a
+      ><a name="2186"
+      > </a
+      ><a name="2187" href="Lemmas.html#665" class="Postulate"
+      >lemS-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2202"
+      > </a
+      ><a name="2203" href="Lemmas.html#2165" class="Bound"
+      >s&#8321;</a
+      ><a name="2205"
+      > </a
+      ><a name="2206" href="Lemmas.html#2168" class="Bound"
+      >s&#8322;</a
+      ><a name="2208"
+      > </a
+      ><a name="2209" href="Lemmas.html#2171" class="Bound"
+      >t</a
+      ><a name="2210"
+      > </a
+      ><a name="2211" href="Lemmas.html#2173" class="Bound"
+      >Heq</a
+      ><a name="2214"
+      > </a
+      ><a name="2215" href="Lemmas.html#2177" class="Bound"
+      >un&#8321;</a
+      ><a name="2218"
+      > </a
+      ><a name="2219" href="Lemmas.html#2181" class="Bound"
+      >un&#8322;</a
+      ><a name="2222"
+      >
+</a
+      ><a name="2223" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2237"
+      > </a
+      ><a name="2238" class="Symbol"
+      >{</a
+      ><a name="2239" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="2240"
+      > </a
+      ><a name="2241" class="Symbol"
+      >_}</a
+      ><a name="2243"
+      > </a
+      ><a name="2244" href="Lemmas.html#2244" class="Bound"
+      >con</a
+      ><a name="2247"
+      > </a
+      ><a name="2248" href="Lemmas.html#2248" class="Bound"
+      >s&#8321;</a
+      ><a name="2250"
+      > </a
+      ><a name="2251" href="Lemmas.html#2251" class="Bound"
+      >s&#8322;</a
+      ><a name="2253"
+      > </a
+      ><a name="2254" href="Lemmas.html#2254" class="Bound"
+      >t</a
+      ><a name="2255"
+      > </a
+      ><a name="2256" href="Lemmas.html#2256" class="Bound"
+      >Heq</a
+      ><a name="2259"
+      > </a
+      ><a name="2260" href="Lemmas.html#2260" class="Bound"
+      >un&#8321;</a
+      ><a name="2263"
+      > </a
+      ><a name="2264" href="Lemmas.html#2264" class="Bound"
+      >un&#8322;</a
+      ><a name="2267"
+      > </a
+      ><a name="2268" class="Symbol"
+      >=</a
+      ><a name="2269"
+      > </a
+      ><a name="2270" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="2280"
+      > </a
+      ><a name="2281" href="Lemmas.html#2248" class="Bound"
+      >s&#8321;</a
+      ><a name="2283"
+      > </a
+      ><a name="2284" href="Lemmas.html#2251" class="Bound"
+      >s&#8322;</a
+      ><a name="2286"
+      > </a
+      ><a name="2287" href="Lemmas.html#2254" class="Bound"
+      >t</a
+      ><a name="2288"
+      > </a
+      ><a name="2289" href="Lemmas.html#2260" class="Bound"
+      >un&#8321;</a
+      ><a name="2292"
+      > </a
+      ><a name="2293" href="Lemmas.html#2264" class="Bound"
+      >un&#8322;</a
+      ><a name="2296"
+      >
+</a
+      ><a name="2297" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2311"
+      > </a
+      ><a name="2312" class="Symbol"
+      >{</a
+      ><a name="2313" href="Lemmas.html#2313" class="Bound"
+      >as</a
+      ><a name="2315"
+      > </a
+      ><a name="2316" href="SVDesc.html#244" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2317"
+      > </a
+      ><a name="2318" href="Lemmas.html#2318" class="Bound"
+      >bs</a
+      ><a name="2320" class="Symbol"
+      >}</a
+      ><a name="2321"
+      > </a
+      ><a name="2322" href="Lemmas.html#2322" class="Bound"
+      >con</a
+      ><a name="2325"
+      > </a
+      ><a name="2326" class="Symbol"
+      >(</a
+      ><a name="2327" href="Lemmas.html#2327" class="Bound"
+      >sa&#8321;</a
+      ><a name="2330"
+      > </a
+      ><a name="2331" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2332"
+      > </a
+      ><a name="2333" href="Lemmas.html#2333" class="Bound"
+      >sb&#8321;</a
+      ><a name="2336" class="Symbol"
+      >)</a
+      ><a name="2337"
+      > </a
+      ><a name="2338" class="Symbol"
+      >(</a
+      ><a name="2339" href="Lemmas.html#2339" class="Bound"
+      >sa&#8322;</a
+      ><a name="2342"
+      > </a
+      ><a name="2343" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2344"
+      > </a
+      ><a name="2345" href="Lemmas.html#2345" class="Bound"
+      >sb&#8322;</a
+      ><a name="2348" class="Symbol"
+      >)</a
+      ><a name="2349"
+      > </a
+      ><a name="2350" href="Lemmas.html#2350" class="Bound"
+      >t</a
+      ><a name="2351"
+      > </a
+      ><a name="2352" href="Lemmas.html#2352" class="Bound"
+      >Heq</a
+      ><a name="2355"
+      > </a
+      ><a name="2356" class="Symbol"
+      >(</a
+      ><a name="2357" href="Lemmas.html#2357" class="Bound"
+      >una&#8321;</a
+      ><a name="2361"
+      > </a
+      ><a name="2362" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2363"
+      > </a
+      ><a name="2364" href="Lemmas.html#2364" class="Bound"
+      >unb&#8321;</a
+      ><a name="2368" class="Symbol"
+      >)</a
+      ><a name="2369"
+      > </a
+      ><a name="2370" class="Symbol"
+      >(</a
+      ><a name="2371" href="Lemmas.html#2371" class="Bound"
+      >una&#8322;</a
+      ><a name="2375"
+      > </a
+      ><a name="2376" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2377"
+      > </a
+      ><a name="2378" href="Lemmas.html#2378" class="Bound"
+      >unb&#8322;</a
+      ><a name="2382" class="Symbol"
+      >)</a
+      ><a name="2383"
+      > </a
+      ><a name="2384" class="Keyword"
+      >with</a
+      ><a name="2388"
+      > </a
+      ><a name="2389" href="NeilPrelude.html#18317" class="Function"
+      >&#215;-split2'</a
+      ><a name="2398"
+      > </a
+      ><a name="2399" class="Symbol"
+      >(</a
+      ><a name="2400" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="2408"
+      > </a
+      ><a name="2409" href="NeilPrelude.html#18647" class="Function"
+      >&#215;-inj</a
+      ><a name="2414"
+      > </a
+      ><a name="2415" href="Lemmas.html#2352" class="Bound"
+      >Heq</a
+      ><a name="2418" class="Symbol"
+      >)</a
+      ><a name="2419"
+      >
+</a
+      ><a name="2420" class="Symbol"
+      >...</a
+      ><a name="2423"
+      > </a
+      ><a name="2424" class="Symbol"
+      >|</a
+      ><a name="2425"
+      > </a
+      ><a name="2426" href="Lemmas.html#2426" class="Bound"
+      >Heqa</a
+      ><a name="2430"
+      > </a
+      ><a name="2431" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2432"
+      > </a
+      ><a name="2433" href="Lemmas.html#2433" class="Bound"
+      >Heqb</a
+      ><a name="2437"
+      > </a
+      ><a name="2438" class="Symbol"
+      >=</a
+      ><a name="2439"
+      > </a
+      ><a name="2440" href="NeilPrelude.html#18866" class="Function"
+      >&#215;-cong</a
+      ><a name="2446"
+      > </a
+      ><a name="2447" class="Symbol"
+      >(</a
+      ><a name="2448" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2462"
+      > </a
+      ><a name="2463" class="Symbol"
+      >{</a
+      ><a name="2464" href="Lemmas.html#2313" class="Bound"
+      >as</a
+      ><a name="2466" class="Symbol"
+      >}</a
+      ><a name="2467"
+      > </a
+      ><a name="2468" href="Lemmas.html#2322" class="Bound"
+      >con</a
+      ><a name="2471"
+      > </a
+      ><a name="2472" href="Lemmas.html#2327" class="Bound"
+      >sa&#8321;</a
+      ><a name="2475"
+      > </a
+      ><a name="2476" href="Lemmas.html#2339" class="Bound"
+      >sa&#8322;</a
+      ><a name="2479"
+      > </a
+      ><a name="2480" href="Lemmas.html#2350" class="Bound"
+      >t</a
+      ><a name="2481"
+      > </a
+      ><a name="2482" href="Lemmas.html#2426" class="Bound"
+      >Heqa</a
+      ><a name="2486"
+      > </a
+      ><a name="2487" href="Lemmas.html#2357" class="Bound"
+      >una&#8321;</a
+      ><a name="2491"
+      > </a
+      ><a name="2492" href="Lemmas.html#2371" class="Bound"
+      >una&#8322;</a
+      ><a name="2496" class="Symbol"
+      >)</a
+      ><a name="2497"
+      > </a
+      ><a name="2498" class="Symbol"
+      >(</a
+      ><a name="2499" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2513"
+      > </a
+      ><a name="2514" class="Symbol"
+      >{</a
+      ><a name="2515" href="Lemmas.html#2318" class="Bound"
+      >bs</a
+      ><a name="2517" class="Symbol"
+      >}</a
+      ><a name="2518"
+      > </a
+      ><a name="2519" href="Lemmas.html#2322" class="Bound"
+      >con</a
+      ><a name="2522"
+      > </a
+      ><a name="2523" href="Lemmas.html#2333" class="Bound"
+      >sb&#8321;</a
+      ><a name="2526"
+      > </a
+      ><a name="2527" href="Lemmas.html#2345" class="Bound"
+      >sb&#8322;</a
+      ><a name="2530"
+      > </a
+      ><a name="2531" href="Lemmas.html#2350" class="Bound"
+      >t</a
+      ><a name="2532"
+      > </a
+      ><a name="2533" href="Lemmas.html#2433" class="Bound"
+      >Heqb</a
+      ><a name="2537"
+      > </a
+      ><a name="2538" href="Lemmas.html#2364" class="Bound"
+      >unb&#8321;</a
+      ><a name="2542"
+      > </a
+      ><a name="2543" href="Lemmas.html#2378" class="Bound"
+      >unb&#8322;</a
+      ><a name="2547" class="Symbol"
+      >)</a
+      ><a name="2548"
+      >
+
+</a
+      ><a name="2550" href="Lemmas.html#2550" class="Function"
+      >lem-HEqR&#8658;C&#691;&#8658;EqR</a
+      ><a name="2565"
+      > </a
+      ><a name="2566" class="Symbol"
+      >:</a
+      ><a name="2567"
+      > </a
+      ><a name="2568" class="Symbol"
+      >{</a
+      ><a name="2569" href="Lemmas.html#2569" class="Bound"
+      >as</a
+      ><a name="2571"
+      > </a
+      ><a name="2572" class="Symbol"
+      >:</a
+      ><a name="2573"
+      > </a
+      ><a name="2574" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="2580" class="Symbol"
+      >}</a
+      ><a name="2581"
+      > </a
+      ><a name="2582" class="Symbol"
+      >&#8594;</a
+      ><a name="2583"
+      > </a
+      ><a name="2584" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="2595"
+      > </a
+      ><a name="2596" class="Symbol"
+      >&#8594;</a
+      ><a name="2597"
+      > </a
+      ><a name="2598" class="Symbol"
+      >(</a
+      ><a name="2599" href="Lemmas.html#2599" class="Bound"
+      >s&#8321;</a
+      ><a name="2601"
+      > </a
+      ><a name="2602" href="Lemmas.html#2602" class="Bound"
+      >s&#8322;</a
+      ><a name="2604"
+      > </a
+      ><a name="2605" class="Symbol"
+      >:</a
+      ><a name="2606"
+      > </a
+      ><a name="2607" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="2613"
+      > </a
+      ><a name="2614" href="Lemmas.html#2569" class="Bound"
+      >as</a
+      ><a name="2616" class="Symbol"
+      >)</a
+      ><a name="2617"
+      > </a
+      ><a name="2618" class="Symbol"
+      >&#8594;</a
+      ><a name="2619"
+      > </a
+      ><a name="2620" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2626"
+      > </a
+      ><a name="2627" class="Symbol"
+      >(</a
+      ><a name="2628" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="2629"
+      > </a
+      ><a name="2630" class="Symbol"
+      >(</a
+      ><a name="2631" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2639"
+      > </a
+      ><a name="2640" class="Symbol"
+      >{</a
+      ><a name="2641" href="Lemmas.html#2569" class="Bound"
+      >as</a
+      ><a name="2643" class="Symbol"
+      >}</a
+      ><a name="2644"
+      > </a
+      ><a name="2645" href="Lemmas.html#2599" class="Bound"
+      >s&#8321;</a
+      ><a name="2647"
+      > </a
+      ><a name="2648" href="Lemmas.html#2602" class="Bound"
+      >s&#8322;</a
+      ><a name="2650" class="Symbol"
+      >)</a
+      ><a name="2651"
+      > </a
+      ><a name="2652" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2653"
+      > </a
+      ><a name="2654" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="2665"
+      > </a
+      ><a name="2666" class="Symbol"
+      >{</a
+      ><a name="2667" href="Lemmas.html#2569" class="Bound"
+      >as</a
+      ><a name="2669" class="Symbol"
+      >}</a
+      ><a name="2670"
+      > </a
+      ><a name="2671" href="Lemmas.html#2599" class="Bound"
+      >s&#8321;</a
+      ><a name="2673"
+      > </a
+      ><a name="2674" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2675"
+      > </a
+      ><a name="2676" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="2687"
+      > </a
+      ><a name="2688" class="Symbol"
+      >{</a
+      ><a name="2689" href="Lemmas.html#2569" class="Bound"
+      >as</a
+      ><a name="2691" class="Symbol"
+      >}</a
+      ><a name="2692"
+      > </a
+      ><a name="2693" href="Lemmas.html#2602" class="Bound"
+      >s&#8322;</a
+      ><a name="2695"
+      > </a
+      ><a name="2696" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2697"
+      > </a
+      ><a name="2698" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="2706"
+      > </a
+      ><a name="2707" class="Symbol"
+      >{</a
+      ><a name="2708" href="Lemmas.html#2569" class="Bound"
+      >as</a
+      ><a name="2710" class="Symbol"
+      >}</a
+      ><a name="2711"
+      > </a
+      ><a name="2712" href="Lemmas.html#2599" class="Bound"
+      >s&#8321;</a
+      ><a name="2714"
+      > </a
+      ><a name="2715" href="Lemmas.html#2602" class="Bound"
+      >s&#8322;</a
+      ><a name="2717" class="Symbol"
+      >)</a
+      ><a name="2718"
+      >
+</a
+      ><a name="2719" href="Lemmas.html#2550" class="Function"
+      >lem-HEqR&#8658;C&#691;&#8658;EqR</a
+      ><a name="2734"
+      > </a
+      ><a name="2735" class="Symbol"
+      >{</a
+      ><a name="2736" href="Lemmas.html#2736" class="Bound"
+      >as</a
+      ><a name="2738" class="Symbol"
+      >}</a
+      ><a name="2739"
+      > </a
+      ><a name="2740" href="Lemmas.html#2740" class="Bound"
+      >con</a
+      ><a name="2743"
+      > </a
+      ><a name="2744" href="Lemmas.html#2744" class="Bound"
+      >s&#8321;</a
+      ><a name="2746"
+      > </a
+      ><a name="2747" href="Lemmas.html#2747" class="Bound"
+      >s&#8322;</a
+      ><a name="2749"
+      > </a
+      ><a name="2750" href="Lemmas.html#2750" class="Bound"
+      >t</a
+      ><a name="2751"
+      > </a
+      ><a name="2752" href="Lemmas.html#2752" class="Bound"
+      >Heq</a
+      ><a name="2755"
+      > </a
+      ><a name="2756" class="Symbol"
+      >(</a
+      ><a name="2757" href="Lemmas.html#2757" class="Bound"
+      >un&#8321;</a
+      ><a name="2760"
+      > </a
+      ><a name="2761" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2762"
+      > </a
+      ><a name="2763" href="Lemmas.html#2763" class="Bound"
+      >Gun&#8321;</a
+      ><a name="2767" class="Symbol"
+      >)</a
+      ><a name="2768"
+      > </a
+      ><a name="2769" class="Symbol"
+      >(</a
+      ><a name="2770" href="Lemmas.html#2770" class="Bound"
+      >un&#8322;</a
+      ><a name="2773"
+      > </a
+      ><a name="2774" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2775"
+      > </a
+      ><a name="2776" href="Lemmas.html#2776" class="Bound"
+      >Gun&#8322;</a
+      ><a name="2780" class="Symbol"
+      >)</a
+      ><a name="2781"
+      > </a
+      ><a name="2782" class="Symbol"
+      >=</a
+      ><a name="2783"
+      > </a
+      ><a name="2784" href="Lemmas.html#1891" class="Function"
+      >lem-HEqR&#8658;U&#8658;EqR</a
+      ><a name="2798"
+      > </a
+      ><a name="2799" class="Symbol"
+      >{</a
+      ><a name="2800" href="Lemmas.html#2736" class="Bound"
+      >as</a
+      ><a name="2802" class="Symbol"
+      >}</a
+      ><a name="2803"
+      > </a
+      ><a name="2804" href="Lemmas.html#2740" class="Bound"
+      >con</a
+      ><a name="2807"
+      > </a
+      ><a name="2808" href="Lemmas.html#2744" class="Bound"
+      >s&#8321;</a
+      ><a name="2810"
+      > </a
+      ><a name="2811" href="Lemmas.html#2747" class="Bound"
+      >s&#8322;</a
+      ><a name="2813"
+      > </a
+      ><a name="2814" href="Lemmas.html#2750" class="Bound"
+      >t</a
+      ><a name="2815"
+      > </a
+      ><a name="2816" href="Lemmas.html#2752" class="Bound"
+      >Heq</a
+      ><a name="2819"
+      > </a
+      ><a name="2820" href="Lemmas.html#2757" class="Bound"
+      >un&#8321;</a
+      ><a name="2823"
+      > </a
+      ><a name="2824" href="Lemmas.html#2770" class="Bound"
+      >un&#8322;</a
+      ><a name="2827"
+      >
+
+
+</a
+      ><a name="2830" class="Comment"
+      >------------------------------------------------------------------</a
+      ><a name="2896"
+      >
+
+</a
+      ><a name="2898" href="Lemmas.html#2898" class="Function"
+      >lemS-GU&#8658;GUcp</a
+      ><a name="2910"
+      > </a
+      ><a name="2911" class="Symbol"
+      >:</a
+      ><a name="2912"
+      > </a
+      ><a name="2913" class="Symbol"
+      >{</a
+      ><a name="2914" href="Lemmas.html#2914" class="Bound"
+      >A</a
+      ><a name="2915"
+      > </a
+      ><a name="2916" class="Symbol"
+      >:</a
+      ><a name="2917"
+      > </a
+      ><a name="2918" class="PrimitiveType"
+      >Set</a
+      ><a name="2921" class="Symbol"
+      >}</a
+      ><a name="2922"
+      > </a
+      ><a name="2923" class="Symbol"
+      >&#8594;</a
+      ><a name="2924"
+      > </a
+      ><a name="2925" class="Symbol"
+      >{</a
+      ><a name="2926" href="Lemmas.html#2926" class="Bound"
+      >a</a
+      ><a name="2927"
+      > </a
+      ><a name="2928" class="Symbol"
+      >:</a
+      ><a name="2929"
+      > </a
+      ><a name="2930" href="Lemmas.html#2914" class="Bound"
+      >A</a
+      ><a name="2931" class="Symbol"
+      >}</a
+      ><a name="2932"
+      > </a
+      ><a name="2933" class="Symbol"
+      >&#8594;</a
+      ><a name="2934"
+      > </a
+      ><a name="2935" class="Symbol"
+      >(</a
+      ><a name="2936" href="Lemmas.html#2936" class="Bound"
+      >cp</a
+      ><a name="2938"
+      > </a
+      ><a name="2939" class="Symbol"
+      >:</a
+      ><a name="2940"
+      > </a
+      ><a name="2941" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="2953"
+      > </a
+      ><a name="2954" href="Lemmas.html#2914" class="Bound"
+      >A</a
+      ><a name="2955" class="Symbol"
+      >)</a
+      ><a name="2956"
+      > </a
+      ><a name="2957" class="Symbol"
+      >&#8594;</a
+      ><a name="2958"
+      > </a
+      ><a name="2959" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="2965"
+      > </a
+      ><a name="2966" class="Symbol"
+      >(</a
+      ><a name="2967" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="2968"
+      > </a
+      ><a name="2969" class="Symbol"
+      >(</a
+      ><a name="2970" href="Properties.html#1300" class="Function"
+      >UnchangingS</a
+      ><a name="2981"
+      > </a
+      ><a name="2982" class="Symbol"
+      >(</a
+      ><a name="2983" href="Lemmas.html#2926" class="Bound"
+      >a</a
+      ><a name="2984"
+      > </a
+      ><a name="2985" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="2986"
+      > </a
+      ><a name="2987" href="Lemmas.html#2936" class="Bound"
+      >cp</a
+      ><a name="2989" class="Symbol"
+      >))</a
+      ><a name="2991"
+      > </a
+      ><a name="2992" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="2993"
+      > </a
+      ><a name="2994" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="2995"
+      > </a
+      ><a name="2996" class="Symbol"
+      >(</a
+      ><a name="2997" href="Properties.html#953" class="Function"
+      >UnchangingCP</a
+      ><a name="3009"
+      > </a
+      ><a name="3010" href="Lemmas.html#2936" class="Bound"
+      >cp</a
+      ><a name="3012" class="Symbol"
+      >))</a
+      ><a name="3014"
+      >
+</a
+      ><a name="3015" href="Lemmas.html#2898" class="Function"
+      >lemS-GU&#8658;GUcp</a
+      ><a name="3027"
+      > </a
+      ><a name="3028" href="Lemmas.html#3028" class="Bound"
+      >cp</a
+      ><a name="3030"
+      > </a
+      ><a name="3031" href="Lemmas.html#3031" class="Bound"
+      >t</a
+      ><a name="3032"
+      > </a
+      ><a name="3033" href="Lemmas.html#3033" class="Bound"
+      >Gun</a
+      ><a name="3036"
+      > </a
+      ><a name="3037" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="3038"
+      > </a
+      ><a name="3039" class="Symbol"
+      >()</a
+      ><a name="3041"
+      >
+</a
+      ><a name="3042" href="Lemmas.html#2898" class="Function"
+      >lemS-GU&#8658;GUcp</a
+      ><a name="3054"
+      > </a
+      ><a name="3055" href="Lemmas.html#3055" class="Bound"
+      >cp</a
+      ><a name="3057"
+      > </a
+      ><a name="3058" href="Lemmas.html#3058" class="Bound"
+      >t</a
+      ><a name="3059"
+      > </a
+      ><a name="3060" href="Lemmas.html#3060" class="Bound"
+      >Gun</a
+      ><a name="3063"
+      > </a
+      ><a name="3064" class="Symbol"
+      >(</a
+      ><a name="3065" href="Lemmas.html#3065" class="Bound"
+      >t'</a
+      ><a name="3067"
+      > </a
+      ><a name="3068" href="PosReal.html#261" class="InductiveConstructor Operator"
+      >&gt;0</a
+      ><a name="3070" class="Symbol"
+      >)</a
+      ><a name="3071"
+      > </a
+      ><a name="3072" href="Lemmas.html#3072" class="Bound"
+      >lt</a
+      ><a name="3074"
+      > </a
+      ><a name="3075" class="Symbol"
+      >=</a
+      ><a name="3076"
+      > </a
+      ><a name="3077" href="Lemmas.html#3060" class="Bound"
+      >Gun</a
+      ><a name="3080"
+      > </a
+      ><a name="3081" class="Symbol"
+      >(</a
+      ><a name="3082" href="Lemmas.html#3065" class="Bound"
+      >t'</a
+      ><a name="3084"
+      > </a
+      ><a name="3085" href="PosReal.html#261" class="InductiveConstructor Operator"
+      >&gt;0</a
+      ><a name="3087" class="Symbol"
+      >)</a
+      ><a name="3088"
+      > </a
+      ><a name="3089" href="Lemmas.html#3072" class="Bound"
+      >lt</a
+      ><a name="3091"
+      >
+
+</a
+      ><a name="3093" href="Lemmas.html#3093" class="Function"
+      >lemE-GU&#8658;GUcp</a
+      ><a name="3105"
+      > </a
+      ><a name="3106" class="Symbol"
+      >:</a
+      ><a name="3107"
+      > </a
+      ><a name="3108" class="Symbol"
+      >{</a
+      ><a name="3109" href="Lemmas.html#3109" class="Bound"
+      >A</a
+      ><a name="3110"
+      > </a
+      ><a name="3111" class="Symbol"
+      >:</a
+      ><a name="3112"
+      > </a
+      ><a name="3113" class="PrimitiveType"
+      >Set</a
+      ><a name="3116" class="Symbol"
+      >}</a
+      ><a name="3117"
+      > </a
+      ><a name="3118" class="Symbol"
+      >&#8594;</a
+      ><a name="3119"
+      > </a
+      ><a name="3120" class="Symbol"
+      >{</a
+      ><a name="3121" href="Lemmas.html#3121" class="Bound"
+      >ma</a
+      ><a name="3123"
+      > </a
+      ><a name="3124" class="Symbol"
+      >:</a
+      ><a name="3125"
+      > </a
+      ><a name="3126" href="NeilPrelude.html#868" class="Datatype"
+      >Maybe</a
+      ><a name="3131"
+      > </a
+      ><a name="3132" href="Lemmas.html#3109" class="Bound"
+      >A</a
+      ><a name="3133" class="Symbol"
+      >}</a
+      ><a name="3134"
+      > </a
+      ><a name="3135" class="Symbol"
+      >&#8594;</a
+      ><a name="3136"
+      > </a
+      ><a name="3137" class="Symbol"
+      >(</a
+      ><a name="3138" href="Lemmas.html#3138" class="Bound"
+      >cp</a
+      ><a name="3140"
+      > </a
+      ><a name="3141" class="Symbol"
+      >:</a
+      ><a name="3142"
+      > </a
+      ><a name="3143" href="SigVecs.html#375" class="Function"
+      >ChangePrefix</a
+      ><a name="3155"
+      > </a
+      ><a name="3156" href="Lemmas.html#3109" class="Bound"
+      >A</a
+      ><a name="3157" class="Symbol"
+      >)</a
+      ><a name="3158"
+      > </a
+      ><a name="3159" class="Symbol"
+      >&#8594;</a
+      ><a name="3160"
+      > </a
+      ><a name="3161" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3167"
+      > </a
+      ><a name="3168" class="Symbol"
+      >(</a
+      ><a name="3169" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3170"
+      > </a
+      ><a name="3171" class="Symbol"
+      >(</a
+      ><a name="3172" href="Properties.html#1160" class="Function"
+      >UnchangingE</a
+      ><a name="3183"
+      > </a
+      ><a name="3184" class="Symbol"
+      >(</a
+      ><a name="3185" href="Lemmas.html#3121" class="Bound"
+      >ma</a
+      ><a name="3187"
+      > </a
+      ><a name="3188" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="3189"
+      > </a
+      ><a name="3190" href="Lemmas.html#3138" class="Bound"
+      >cp</a
+      ><a name="3192" class="Symbol"
+      >))</a
+      ><a name="3194"
+      > </a
+      ><a name="3195" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3196"
+      > </a
+      ><a name="3197" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3198"
+      > </a
+      ><a name="3199" class="Symbol"
+      >(</a
+      ><a name="3200" href="Properties.html#953" class="Function"
+      >UnchangingCP</a
+      ><a name="3212"
+      > </a
+      ><a name="3213" href="Lemmas.html#3138" class="Bound"
+      >cp</a
+      ><a name="3215" class="Symbol"
+      >))</a
+      ><a name="3217"
+      >
+</a
+      ><a name="3218" href="Lemmas.html#3093" class="Function"
+      >lemE-GU&#8658;GUcp</a
+      ><a name="3230"
+      > </a
+      ><a name="3231" href="Lemmas.html#3231" class="Bound"
+      >cp</a
+      ><a name="3233"
+      > </a
+      ><a name="3234" href="Lemmas.html#3234" class="Bound"
+      >t</a
+      ><a name="3235"
+      > </a
+      ><a name="3236" href="Lemmas.html#3236" class="Bound"
+      >Gun</a
+      ><a name="3239"
+      > </a
+      ><a name="3240" href="PosReal.html#250" class="InductiveConstructor"
+      >O</a
+      ><a name="3241"
+      > </a
+      ><a name="3242" class="Symbol"
+      >()</a
+      ><a name="3244"
+      >
+</a
+      ><a name="3245" href="Lemmas.html#3093" class="Function"
+      >lemE-GU&#8658;GUcp</a
+      ><a name="3257"
+      > </a
+      ><a name="3258" href="Lemmas.html#3258" class="Bound"
+      >cp</a
+      ><a name="3260"
+      > </a
+      ><a name="3261" href="Lemmas.html#3261" class="Bound"
+      >t</a
+      ><a name="3262"
+      > </a
+      ><a name="3263" href="Lemmas.html#3263" class="Bound"
+      >Gun</a
+      ><a name="3266"
+      > </a
+      ><a name="3267" class="Symbol"
+      >(</a
+      ><a name="3268" href="Lemmas.html#3268" class="Bound"
+      >t'</a
+      ><a name="3270"
+      > </a
+      ><a name="3271" href="PosReal.html#261" class="InductiveConstructor Operator"
+      >&gt;0</a
+      ><a name="3273" class="Symbol"
+      >)</a
+      ><a name="3274"
+      > </a
+      ><a name="3275" href="Lemmas.html#3275" class="Bound"
+      >lt</a
+      ><a name="3277"
+      > </a
+      ><a name="3278" class="Symbol"
+      >=</a
+      ><a name="3279"
+      > </a
+      ><a name="3280" href="Lemmas.html#3263" class="Bound"
+      >Gun</a
+      ><a name="3283"
+      > </a
+      ><a name="3284" class="Symbol"
+      >(</a
+      ><a name="3285" href="Lemmas.html#3268" class="Bound"
+      >t'</a
+      ><a name="3287"
+      > </a
+      ><a name="3288" href="PosReal.html#261" class="InductiveConstructor Operator"
+      >&gt;0</a
+      ><a name="3290" class="Symbol"
+      >)</a
+      ><a name="3291"
+      > </a
+      ><a name="3292" href="Lemmas.html#3275" class="Bound"
+      >lt</a
+      ><a name="3294"
+      >
+
+</a
+      ><a name="3296" class="Comment"
+      >------------------------------------------------------------------</a
+      ><a name="3362"
+      >
+
+</a
+      ><a name="3364" class="Keyword"
+      >postulate</a
+      ><a name="3373"
+      > </a
+      ><a name="3374" href="Lemmas.html#3374" class="Postulate"
+      >lemS-EqR&#8658;C&#8658;GEqR</a
+      ><a name="3389"
+      > </a
+      ><a name="3390" class="Symbol"
+      >:</a
+      ><a name="3391"
+      > </a
+      ><a name="3392" class="Symbol"
+      >{</a
+      ><a name="3393" href="Lemmas.html#3393" class="Bound"
+      >A</a
+      ><a name="3394"
+      > </a
+      ><a name="3395" class="Symbol"
+      >:</a
+      ><a name="3396"
+      > </a
+      ><a name="3397" class="PrimitiveType"
+      >Set</a
+      ><a name="3400" class="Symbol"
+      >}</a
+      ><a name="3401"
+      > </a
+      ><a name="3402" class="Symbol"
+      >&#8594;</a
+      ><a name="3403"
+      > </a
+      ><a name="3404" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="3415"
+      > </a
+      ><a name="3416" class="Symbol"
+      >&#8594;</a
+      ><a name="3417"
+      > </a
+      ><a name="3418" href="Properties.html#675" class="Function"
+      >Stability</a
+      ><a name="3427"
+      > </a
+      ><a name="3428" class="Symbol"
+      >&#8594;</a
+      ><a name="3429"
+      > </a
+      ><a name="3430" class="Symbol"
+      >(</a
+      ><a name="3431" href="Lemmas.html#3431" class="Bound"
+      >s&#8321;</a
+      ><a name="3433"
+      > </a
+      ><a name="3434" href="Lemmas.html#3434" class="Bound"
+      >s&#8322;</a
+      ><a name="3436"
+      > </a
+      ><a name="3437" class="Symbol"
+      >:</a
+      ><a name="3438"
+      > </a
+      ><a name="3439" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3445"
+      > </a
+      ><a name="3446" class="Symbol"
+      >(</a
+      ><a name="3447" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="3448"
+      > </a
+      ><a name="3449" href="Lemmas.html#3393" class="Bound"
+      >A</a
+      ><a name="3450" class="Symbol"
+      >))</a
+      ><a name="3452"
+      > </a
+      ><a name="3453" class="Symbol"
+      >&#8594;</a
+      ><a name="3454"
+      > </a
+      ><a name="3455" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3461"
+      > </a
+      ><a name="3462" class="Symbol"
+      >((</a
+      ><a name="3464" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="3472"
+      > </a
+      ><a name="3473" class="Symbol"
+      >{</a
+      ><a name="3474" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="3475"
+      > </a
+      ><a name="3476" href="Lemmas.html#3393" class="Bound"
+      >A</a
+      ><a name="3477" class="Symbol"
+      >}</a
+      ><a name="3478"
+      > </a
+      ><a name="3479" href="Lemmas.html#3431" class="Bound"
+      >s&#8321;</a
+      ><a name="3481"
+      > </a
+      ><a name="3482" href="Lemmas.html#3434" class="Bound"
+      >s&#8322;</a
+      ><a name="3484" class="Symbol"
+      >)</a
+      ><a name="3485"
+      > </a
+      ><a name="3486" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3487"
+      > </a
+      ><a name="3488" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3498"
+      > </a
+      ><a name="3499" class="Symbol"
+      >{</a
+      ><a name="3500" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="3501"
+      > </a
+      ><a name="3502" href="Lemmas.html#3393" class="Bound"
+      >A</a
+      ><a name="3503" class="Symbol"
+      >}</a
+      ><a name="3504"
+      > </a
+      ><a name="3505" href="Lemmas.html#3431" class="Bound"
+      >s&#8321;</a
+      ><a name="3507"
+      > </a
+      ><a name="3508" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3509"
+      > </a
+      ><a name="3510" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3520"
+      > </a
+      ><a name="3521" class="Symbol"
+      >{</a
+      ><a name="3522" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="3523"
+      > </a
+      ><a name="3524" href="Lemmas.html#3393" class="Bound"
+      >A</a
+      ><a name="3525" class="Symbol"
+      >}</a
+      ><a name="3526"
+      > </a
+      ><a name="3527" href="Lemmas.html#3434" class="Bound"
+      >s&#8322;</a
+      ><a name="3529"
+      > </a
+      ><a name="3530" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3531"
+      > </a
+      ><a name="3532" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3533"
+      > </a
+      ><a name="3534" class="Symbol"
+      >(</a
+      ><a name="3535" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="3543"
+      > </a
+      ><a name="3544" class="Symbol"
+      >{</a
+      ><a name="3545" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="3546"
+      > </a
+      ><a name="3547" href="Lemmas.html#3393" class="Bound"
+      >A</a
+      ><a name="3548" class="Symbol"
+      >}</a
+      ><a name="3549"
+      > </a
+      ><a name="3550" href="Lemmas.html#3431" class="Bound"
+      >s&#8321;</a
+      ><a name="3552"
+      > </a
+      ><a name="3553" href="Lemmas.html#3434" class="Bound"
+      >s&#8322;</a
+      ><a name="3555" class="Symbol"
+      >))</a
+      ><a name="3557"
+      >
+
+</a
+      ><a name="3559" href="Lemmas.html#3559" class="Function"
+      >lemE-EqR&#8658;C&#8658;GEqR</a
+      ><a name="3574"
+      > </a
+      ><a name="3575" class="Symbol"
+      >:</a
+      ><a name="3576"
+      > </a
+      ><a name="3577" class="Symbol"
+      >{</a
+      ><a name="3578" href="Lemmas.html#3578" class="Bound"
+      >A</a
+      ><a name="3579"
+      > </a
+      ><a name="3580" class="Symbol"
+      >:</a
+      ><a name="3581"
+      > </a
+      ><a name="3582" class="PrimitiveType"
+      >Set</a
+      ><a name="3585" class="Symbol"
+      >}</a
+      ><a name="3586"
+      > </a
+      ><a name="3587" class="Symbol"
+      >&#8594;</a
+      ><a name="3588"
+      > </a
+      ><a name="3589" class="Symbol"
+      >(</a
+      ><a name="3590" href="Lemmas.html#3590" class="Bound"
+      >s&#8321;</a
+      ><a name="3592"
+      > </a
+      ><a name="3593" href="Lemmas.html#3593" class="Bound"
+      >s&#8322;</a
+      ><a name="3595"
+      > </a
+      ><a name="3596" class="Symbol"
+      >:</a
+      ><a name="3597"
+      > </a
+      ><a name="3598" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3604"
+      > </a
+      ><a name="3605" class="Symbol"
+      >(</a
+      ><a name="3606" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="3607"
+      > </a
+      ><a name="3608" href="Lemmas.html#3578" class="Bound"
+      >A</a
+      ><a name="3609" class="Symbol"
+      >))</a
+      ><a name="3611"
+      > </a
+      ><a name="3612" class="Symbol"
+      >&#8594;</a
+      ><a name="3613"
+      > </a
+      ><a name="3614" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3620"
+      > </a
+      ><a name="3621" class="Symbol"
+      >(</a
+      ><a name="3622" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3632"
+      > </a
+      ><a name="3633" class="Symbol"
+      >{</a
+      ><a name="3634" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="3635"
+      > </a
+      ><a name="3636" href="Lemmas.html#3578" class="Bound"
+      >A</a
+      ><a name="3637" class="Symbol"
+      >}</a
+      ><a name="3638"
+      > </a
+      ><a name="3639" href="Lemmas.html#3590" class="Bound"
+      >s&#8321;</a
+      ><a name="3641"
+      > </a
+      ><a name="3642" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3643"
+      > </a
+      ><a name="3644" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3654"
+      > </a
+      ><a name="3655" class="Symbol"
+      >{</a
+      ><a name="3656" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="3657"
+      > </a
+      ><a name="3658" href="Lemmas.html#3578" class="Bound"
+      >A</a
+      ><a name="3659" class="Symbol"
+      >}</a
+      ><a name="3660"
+      > </a
+      ><a name="3661" href="Lemmas.html#3593" class="Bound"
+      >s&#8322;</a
+      ><a name="3663"
+      > </a
+      ><a name="3664" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3665"
+      > </a
+      ><a name="3666" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3667"
+      > </a
+      ><a name="3668" class="Symbol"
+      >(</a
+      ><a name="3669" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="3677"
+      > </a
+      ><a name="3678" class="Symbol"
+      >{</a
+      ><a name="3679" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="3680"
+      > </a
+      ><a name="3681" href="Lemmas.html#3578" class="Bound"
+      >A</a
+      ><a name="3682" class="Symbol"
+      >}</a
+      ><a name="3683"
+      > </a
+      ><a name="3684" href="Lemmas.html#3590" class="Bound"
+      >s&#8321;</a
+      ><a name="3686"
+      > </a
+      ><a name="3687" href="Lemmas.html#3593" class="Bound"
+      >s&#8322;</a
+      ><a name="3689" class="Symbol"
+      >))</a
+      ><a name="3691"
+      >
+</a
+      ><a name="3692" href="Lemmas.html#3559" class="Function"
+      >lemE-EqR&#8658;C&#8658;GEqR</a
+      ><a name="3707"
+      > </a
+      ><a name="3708" href="Lemmas.html#3708" class="Bound"
+      >s&#8321;</a
+      ><a name="3710"
+      > </a
+      ><a name="3711" href="Lemmas.html#3711" class="Bound"
+      >s&#8322;</a
+      ><a name="3713"
+      > </a
+      ><a name="3714" href="Lemmas.html#3714" class="Bound"
+      >t</a
+      ><a name="3715"
+      > </a
+      ><a name="3716" href="Lemmas.html#3716" class="Bound"
+      >un&#8321;</a
+      ><a name="3719"
+      > </a
+      ><a name="3720" href="Lemmas.html#3720" class="Bound"
+      >un&#8322;</a
+      ><a name="3723"
+      > </a
+      ><a name="3724" href="Lemmas.html#3724" class="Bound"
+      >t'</a
+      ><a name="3726"
+      > </a
+      ><a name="3727" href="Lemmas.html#3727" class="Bound"
+      >lt</a
+      ><a name="3729"
+      > </a
+      ><a name="3730" class="Symbol"
+      >=</a
+      ><a name="3731"
+      > </a
+      ><a name="3732" href="Lemmas.html#822" class="Function"
+      >lemE-U&#8658;EqR</a
+      ><a name="3742"
+      > </a
+      ><a name="3743" href="Lemmas.html#3708" class="Bound"
+      >s&#8321;</a
+      ><a name="3745"
+      > </a
+      ><a name="3746" href="Lemmas.html#3711" class="Bound"
+      >s&#8322;</a
+      ><a name="3748"
+      > </a
+      ><a name="3749" href="Lemmas.html#3724" class="Bound"
+      >t'</a
+      ><a name="3751"
+      > </a
+      ><a name="3752" class="Symbol"
+      >(</a
+      ><a name="3753" href="Lemmas.html#3716" class="Bound"
+      >un&#8321;</a
+      ><a name="3756"
+      > </a
+      ><a name="3757" href="Lemmas.html#3724" class="Bound"
+      >t'</a
+      ><a name="3759"
+      > </a
+      ><a name="3760" href="Lemmas.html#3727" class="Bound"
+      >lt</a
+      ><a name="3762" class="Symbol"
+      >)</a
+      ><a name="3763"
+      > </a
+      ><a name="3764" class="Symbol"
+      >(</a
+      ><a name="3765" href="Lemmas.html#3720" class="Bound"
+      >un&#8322;</a
+      ><a name="3768"
+      > </a
+      ><a name="3769" href="Lemmas.html#3724" class="Bound"
+      >t'</a
+      ><a name="3771"
+      > </a
+      ><a name="3772" href="Lemmas.html#3727" class="Bound"
+      >lt</a
+      ><a name="3774" class="Symbol"
+      >)</a
+      ><a name="3775"
+      >
+
+</a
+      ><a name="3777" class="Keyword"
+      >postulate</a
+      ><a name="3786"
+      > </a
+      ><a name="3787" href="Lemmas.html#3787" class="Postulate"
+      >lemC-EqR&#8658;C&#8658;GEqR</a
+      ><a name="3802"
+      > </a
+      ><a name="3803" class="Symbol"
+      >:</a
+      ><a name="3804"
+      > </a
+      ><a name="3805" class="Symbol"
+      >{</a
+      ><a name="3806" href="Lemmas.html#3806" class="Bound"
+      >A</a
+      ><a name="3807"
+      > </a
+      ><a name="3808" class="Symbol"
+      >:</a
+      ><a name="3809"
+      > </a
+      ><a name="3810" class="PrimitiveType"
+      >Set</a
+      ><a name="3813" class="Symbol"
+      >}</a
+      ><a name="3814"
+      > </a
+      ><a name="3815" class="Symbol"
+      >&#8594;</a
+      ><a name="3816"
+      > </a
+      ><a name="3817" class="Symbol"
+      >(</a
+      ><a name="3818" href="Lemmas.html#3818" class="Bound"
+      >s&#8321;</a
+      ><a name="3820"
+      > </a
+      ><a name="3821" href="Lemmas.html#3821" class="Bound"
+      >s&#8322;</a
+      ><a name="3823"
+      > </a
+      ><a name="3824" class="Symbol"
+      >:</a
+      ><a name="3825"
+      > </a
+      ><a name="3826" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="3832"
+      > </a
+      ><a name="3833" class="Symbol"
+      >(</a
+      ><a name="3834" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="3835"
+      > </a
+      ><a name="3836" href="Lemmas.html#3806" class="Bound"
+      >A</a
+      ><a name="3837" class="Symbol"
+      >))</a
+      ><a name="3839"
+      > </a
+      ><a name="3840" class="Symbol"
+      >&#8594;</a
+      ><a name="3841"
+      > </a
+      ><a name="3842" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="3848"
+      > </a
+      ><a name="3849" class="Symbol"
+      >((</a
+      ><a name="3851" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="3859"
+      > </a
+      ><a name="3860" class="Symbol"
+      >{</a
+      ><a name="3861" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="3862"
+      > </a
+      ><a name="3863" href="Lemmas.html#3806" class="Bound"
+      >A</a
+      ><a name="3864" class="Symbol"
+      >}</a
+      ><a name="3865"
+      > </a
+      ><a name="3866" href="Lemmas.html#3818" class="Bound"
+      >s&#8321;</a
+      ><a name="3868"
+      > </a
+      ><a name="3869" href="Lemmas.html#3821" class="Bound"
+      >s&#8322;</a
+      ><a name="3871" class="Symbol"
+      >)</a
+      ><a name="3872"
+      > </a
+      ><a name="3873" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3874"
+      > </a
+      ><a name="3875" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3885"
+      > </a
+      ><a name="3886" class="Symbol"
+      >{</a
+      ><a name="3887" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="3888"
+      > </a
+      ><a name="3889" href="Lemmas.html#3806" class="Bound"
+      >A</a
+      ><a name="3890" class="Symbol"
+      >}</a
+      ><a name="3891"
+      > </a
+      ><a name="3892" href="Lemmas.html#3818" class="Bound"
+      >s&#8321;</a
+      ><a name="3894"
+      > </a
+      ><a name="3895" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3896"
+      > </a
+      ><a name="3897" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="3907"
+      > </a
+      ><a name="3908" class="Symbol"
+      >{</a
+      ><a name="3909" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="3910"
+      > </a
+      ><a name="3911" href="Lemmas.html#3806" class="Bound"
+      >A</a
+      ><a name="3912" class="Symbol"
+      >}</a
+      ><a name="3913"
+      > </a
+      ><a name="3914" href="Lemmas.html#3821" class="Bound"
+      >s&#8322;</a
+      ><a name="3916"
+      > </a
+      ><a name="3917" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="3918"
+      > </a
+      ><a name="3919" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="3920"
+      > </a
+      ><a name="3921" class="Symbol"
+      >(</a
+      ><a name="3922" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="3930"
+      > </a
+      ><a name="3931" class="Symbol"
+      >{</a
+      ><a name="3932" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="3933"
+      > </a
+      ><a name="3934" href="Lemmas.html#3806" class="Bound"
+      >A</a
+      ><a name="3935" class="Symbol"
+      >}</a
+      ><a name="3936"
+      > </a
+      ><a name="3937" href="Lemmas.html#3818" class="Bound"
+      >s&#8321;</a
+      ><a name="3939"
+      > </a
+      ><a name="3940" href="Lemmas.html#3821" class="Bound"
+      >s&#8322;</a
+      ><a name="3942" class="Symbol"
+      >))</a
+      ><a name="3944"
+      >
+
+</a
+      ><a name="3946" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="3960"
+      > </a
+      ><a name="3961" class="Symbol"
+      >:</a
+      ><a name="3962"
+      > </a
+      ><a name="3963" class="Symbol"
+      >{</a
+      ><a name="3964" href="Lemmas.html#3964" class="Bound"
+      >as</a
+      ><a name="3966"
+      > </a
+      ><a name="3967" class="Symbol"
+      >:</a
+      ><a name="3968"
+      > </a
+      ><a name="3969" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="3975" class="Symbol"
+      >}</a
+      ><a name="3976"
+      > </a
+      ><a name="3977" class="Symbol"
+      >&#8594;</a
+      ><a name="3978"
+      > </a
+      ><a name="3979" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="3990"
+      > </a
+      ><a name="3991" class="Symbol"
+      >&#8594;</a
+      ><a name="3992"
+      > </a
+      ><a name="3993" href="Properties.html#675" class="Function"
+      >Stability</a
+      ><a name="4002"
+      > </a
+      ><a name="4003" class="Symbol"
+      >&#8594;</a
+      ><a name="4004"
+      > </a
+      ><a name="4005" class="Symbol"
+      >(</a
+      ><a name="4006" href="Lemmas.html#4006" class="Bound"
+      >s&#8321;</a
+      ><a name="4008"
+      > </a
+      ><a name="4009" href="Lemmas.html#4009" class="Bound"
+      >s&#8322;</a
+      ><a name="4011"
+      > </a
+      ><a name="4012" class="Symbol"
+      >:</a
+      ><a name="4013"
+      > </a
+      ><a name="4014" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="4020"
+      > </a
+      ><a name="4021" href="Lemmas.html#3964" class="Bound"
+      >as</a
+      ><a name="4023" class="Symbol"
+      >)</a
+      ><a name="4024"
+      > </a
+      ><a name="4025" class="Symbol"
+      >&#8594;</a
+      ><a name="4026"
+      > </a
+      ><a name="4027" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="4033"
+      > </a
+      ><a name="4034" class="Symbol"
+      >((</a
+      ><a name="4036" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="4044"
+      > </a
+      ><a name="4045" class="Symbol"
+      >{</a
+      ><a name="4046" href="Lemmas.html#3964" class="Bound"
+      >as</a
+      ><a name="4048" class="Symbol"
+      >}</a
+      ><a name="4049"
+      > </a
+      ><a name="4050" href="Lemmas.html#4006" class="Bound"
+      >s&#8321;</a
+      ><a name="4052"
+      > </a
+      ><a name="4053" href="Lemmas.html#4009" class="Bound"
+      >s&#8322;</a
+      ><a name="4055" class="Symbol"
+      >)</a
+      ><a name="4056"
+      > </a
+      ><a name="4057" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4058"
+      > </a
+      ><a name="4059" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="4069"
+      > </a
+      ><a name="4070" class="Symbol"
+      >{</a
+      ><a name="4071" href="Lemmas.html#3964" class="Bound"
+      >as</a
+      ><a name="4073" class="Symbol"
+      >}</a
+      ><a name="4074"
+      > </a
+      ><a name="4075" href="Lemmas.html#4006" class="Bound"
+      >s&#8321;</a
+      ><a name="4077"
+      > </a
+      ><a name="4078" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4079"
+      > </a
+      ><a name="4080" href="Properties.html#1837" class="Function"
+      >Changeless</a
+      ><a name="4090"
+      > </a
+      ><a name="4091" class="Symbol"
+      >{</a
+      ><a name="4092" href="Lemmas.html#3964" class="Bound"
+      >as</a
+      ><a name="4094" class="Symbol"
+      >}</a
+      ><a name="4095"
+      > </a
+      ><a name="4096" href="Lemmas.html#4009" class="Bound"
+      >s&#8322;</a
+      ><a name="4098"
+      > </a
+      ><a name="4099" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4100"
+      > </a
+      ><a name="4101" href="TemporalLogic.html#771" class="Function"
+      >G</a
+      ><a name="4102"
+      > </a
+      ><a name="4103" class="Symbol"
+      >(</a
+      ><a name="4104" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="4112"
+      > </a
+      ><a name="4113" class="Symbol"
+      >{</a
+      ><a name="4114" href="Lemmas.html#3964" class="Bound"
+      >as</a
+      ><a name="4116" class="Symbol"
+      >}</a
+      ><a name="4117"
+      > </a
+      ><a name="4118" href="Lemmas.html#4006" class="Bound"
+      >s&#8321;</a
+      ><a name="4120"
+      > </a
+      ><a name="4121" href="Lemmas.html#4009" class="Bound"
+      >s&#8322;</a
+      ><a name="4123" class="Symbol"
+      >))</a
+      ><a name="4125"
+      >
+</a
+      ><a name="4126" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4140"
+      > </a
+      ><a name="4141" class="Symbol"
+      >{</a
+      ><a name="4142" href="SVDesc.html#181" class="InductiveConstructor"
+      >C</a
+      ><a name="4143"
+      > </a
+      ><a name="4144" href="Lemmas.html#4144" class="Bound"
+      >A</a
+      ><a name="4145" class="Symbol"
+      >}</a
+      ><a name="4146"
+      > </a
+      ><a name="4147" href="Lemmas.html#4147" class="Bound"
+      >con</a
+      ><a name="4150"
+      > </a
+      ><a name="4151" href="Lemmas.html#4151" class="Bound"
+      >stab</a
+      ><a name="4155"
+      > </a
+      ><a name="4156" href="Lemmas.html#4156" class="Bound"
+      >s&#8321;</a
+      ><a name="4158"
+      > </a
+      ><a name="4159" href="Lemmas.html#4159" class="Bound"
+      >s&#8322;</a
+      ><a name="4161"
+      > </a
+      ><a name="4162" href="Lemmas.html#4162" class="Bound"
+      >t</a
+      ><a name="4163"
+      > </a
+      ><a name="4164" href="Lemmas.html#4164" class="Bound"
+      >eq</a
+      ><a name="4166"
+      > </a
+      ><a name="4167" href="Lemmas.html#4167" class="Bound"
+      >un&#8321;</a
+      ><a name="4170"
+      > </a
+      ><a name="4171" href="Lemmas.html#4171" class="Bound"
+      >un&#8322;</a
+      ><a name="4174"
+      >  </a
+      ><a name="4176" class="Symbol"
+      >=</a
+      ><a name="4177"
+      > </a
+      ><a name="4178" href="Lemmas.html#3787" class="Postulate"
+      >lemC-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4193"
+      > </a
+      ><a name="4194" href="Lemmas.html#4156" class="Bound"
+      >s&#8321;</a
+      ><a name="4196"
+      > </a
+      ><a name="4197" href="Lemmas.html#4159" class="Bound"
+      >s&#8322;</a
+      ><a name="4199"
+      > </a
+      ><a name="4200" href="Lemmas.html#4162" class="Bound"
+      >t</a
+      ><a name="4201"
+      > </a
+      ><a name="4202" href="Lemmas.html#4164" class="Bound"
+      >eq</a
+      ><a name="4204"
+      > </a
+      ><a name="4205" href="Lemmas.html#4167" class="Bound"
+      >un&#8321;</a
+      ><a name="4208"
+      > </a
+      ><a name="4209" href="Lemmas.html#4171" class="Bound"
+      >un&#8322;</a
+      ><a name="4212"
+      >
+</a
+      ><a name="4213" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4227"
+      > </a
+      ><a name="4228" class="Symbol"
+      >{</a
+      ><a name="4229" href="SVDesc.html#202" class="InductiveConstructor"
+      >E</a
+      ><a name="4230"
+      > </a
+      ><a name="4231" href="Lemmas.html#4231" class="Bound"
+      >A</a
+      ><a name="4232" class="Symbol"
+      >}</a
+      ><a name="4233"
+      > </a
+      ><a name="4234" href="Lemmas.html#4234" class="Bound"
+      >con</a
+      ><a name="4237"
+      > </a
+      ><a name="4238" href="Lemmas.html#4238" class="Bound"
+      >stab</a
+      ><a name="4242"
+      > </a
+      ><a name="4243" href="Lemmas.html#4243" class="Bound"
+      >s&#8321;</a
+      ><a name="4245"
+      > </a
+      ><a name="4246" href="Lemmas.html#4246" class="Bound"
+      >s&#8322;</a
+      ><a name="4248"
+      > </a
+      ><a name="4249" href="Lemmas.html#4249" class="Bound"
+      >t</a
+      ><a name="4250"
+      > </a
+      ><a name="4251" href="Lemmas.html#4251" class="Bound"
+      >eq</a
+      ><a name="4253"
+      > </a
+      ><a name="4254" href="Lemmas.html#4254" class="Bound"
+      >un&#8321;</a
+      ><a name="4257"
+      > </a
+      ><a name="4258" href="Lemmas.html#4258" class="Bound"
+      >un&#8322;</a
+      ><a name="4261"
+      >  </a
+      ><a name="4263" class="Symbol"
+      >=</a
+      ><a name="4264"
+      > </a
+      ><a name="4265" href="Lemmas.html#3559" class="Function"
+      >lemE-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4280"
+      > </a
+      ><a name="4281" href="Lemmas.html#4243" class="Bound"
+      >s&#8321;</a
+      ><a name="4283"
+      > </a
+      ><a name="4284" href="Lemmas.html#4246" class="Bound"
+      >s&#8322;</a
+      ><a name="4286"
+      > </a
+      ><a name="4287" href="Lemmas.html#4249" class="Bound"
+      >t</a
+      ><a name="4288"
+      > </a
+      ><a name="4289" href="Lemmas.html#4254" class="Bound"
+      >un&#8321;</a
+      ><a name="4292"
+      > </a
+      ><a name="4293" href="Lemmas.html#4258" class="Bound"
+      >un&#8322;</a
+      ><a name="4296"
+      >
+</a
+      ><a name="4297" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4311"
+      > </a
+      ><a name="4312" class="Symbol"
+      >{</a
+      ><a name="4313" href="SVDesc.html#223" class="InductiveConstructor"
+      >S</a
+      ><a name="4314"
+      > </a
+      ><a name="4315" href="Lemmas.html#4315" class="Bound"
+      >A</a
+      ><a name="4316" class="Symbol"
+      >}</a
+      ><a name="4317"
+      > </a
+      ><a name="4318" href="Lemmas.html#4318" class="Bound"
+      >con</a
+      ><a name="4321"
+      > </a
+      ><a name="4322" href="Lemmas.html#4322" class="Bound"
+      >stab</a
+      ><a name="4326"
+      > </a
+      ><a name="4327" href="Lemmas.html#4327" class="Bound"
+      >s&#8321;</a
+      ><a name="4329"
+      > </a
+      ><a name="4330" href="Lemmas.html#4330" class="Bound"
+      >s&#8322;</a
+      ><a name="4332"
+      > </a
+      ><a name="4333" href="Lemmas.html#4333" class="Bound"
+      >t</a
+      ><a name="4334"
+      > </a
+      ><a name="4335" href="Lemmas.html#4335" class="Bound"
+      >eq</a
+      ><a name="4337"
+      > </a
+      ><a name="4338" href="Lemmas.html#4338" class="Bound"
+      >un&#8321;</a
+      ><a name="4341"
+      > </a
+      ><a name="4342" href="Lemmas.html#4342" class="Bound"
+      >un&#8322;</a
+      ><a name="4345"
+      >  </a
+      ><a name="4347" class="Symbol"
+      >=</a
+      ><a name="4348"
+      > </a
+      ><a name="4349" href="Lemmas.html#3374" class="Postulate"
+      >lemS-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4364"
+      > </a
+      ><a name="4365" href="Lemmas.html#4318" class="Bound"
+      >con</a
+      ><a name="4368"
+      > </a
+      ><a name="4369" href="Lemmas.html#4322" class="Bound"
+      >stab</a
+      ><a name="4373"
+      > </a
+      ><a name="4374" href="Lemmas.html#4327" class="Bound"
+      >s&#8321;</a
+      ><a name="4376"
+      > </a
+      ><a name="4377" href="Lemmas.html#4330" class="Bound"
+      >s&#8322;</a
+      ><a name="4379"
+      > </a
+      ><a name="4380" href="Lemmas.html#4333" class="Bound"
+      >t</a
+      ><a name="4381"
+      > </a
+      ><a name="4382" href="Lemmas.html#4335" class="Bound"
+      >eq</a
+      ><a name="4384"
+      > </a
+      ><a name="4385" href="Lemmas.html#4338" class="Bound"
+      >un&#8321;</a
+      ><a name="4388"
+      > </a
+      ><a name="4389" href="Lemmas.html#4342" class="Bound"
+      >un&#8322;</a
+      ><a name="4392"
+      >
+</a
+      ><a name="4393" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4407"
+      > </a
+      ><a name="4408" class="Symbol"
+      >{</a
+      ><a name="4409" href="Lemmas.html#4409" class="Bound"
+      >as</a
+      ><a name="4411"
+      > </a
+      ><a name="4412" href="SVDesc.html#244" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4413"
+      > </a
+      ><a name="4414" href="Lemmas.html#4414" class="Bound"
+      >bs</a
+      ><a name="4416" class="Symbol"
+      >}</a
+      ><a name="4417"
+      > </a
+      ><a name="4418" href="Lemmas.html#4418" class="Bound"
+      >con</a
+      ><a name="4421"
+      > </a
+      ><a name="4422" href="Lemmas.html#4422" class="Bound"
+      >stab</a
+      ><a name="4426"
+      > </a
+      ><a name="4427" class="Symbol"
+      >(</a
+      ><a name="4428" href="Lemmas.html#4428" class="Bound"
+      >sa&#8321;</a
+      ><a name="4431"
+      > </a
+      ><a name="4432" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4433"
+      > </a
+      ><a name="4434" href="Lemmas.html#4434" class="Bound"
+      >sb&#8321;</a
+      ><a name="4437" class="Symbol"
+      >)</a
+      ><a name="4438"
+      > </a
+      ><a name="4439" class="Symbol"
+      >(</a
+      ><a name="4440" href="Lemmas.html#4440" class="Bound"
+      >sa&#8322;</a
+      ><a name="4443"
+      > </a
+      ><a name="4444" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4445"
+      > </a
+      ><a name="4446" href="Lemmas.html#4446" class="Bound"
+      >sb&#8322;</a
+      ><a name="4449" class="Symbol"
+      >)</a
+      ><a name="4450"
+      > </a
+      ><a name="4451" href="Lemmas.html#4451" class="Bound"
+      >t</a
+      ><a name="4452"
+      > </a
+      ><a name="4453" href="Lemmas.html#4453" class="Bound"
+      >eq</a
+      ><a name="4455"
+      > </a
+      ><a name="4456" href="Lemmas.html#4456" class="Bound"
+      >un&#8321;</a
+      ><a name="4459"
+      > </a
+      ><a name="4460" href="Lemmas.html#4460" class="Bound"
+      >un&#8322;</a
+      ><a name="4463"
+      >  </a
+      ><a name="4465" class="Keyword"
+      >with</a
+      ><a name="4469"
+      > </a
+      ><a name="4470" href="NeilPrelude.html#18647" class="Function"
+      >&#215;-inj</a
+      ><a name="4475"
+      > </a
+      ><a name="4476" href="Lemmas.html#4453" class="Bound"
+      >eq</a
+      ><a name="4478"
+      >
+</a
+      ><a name="4479" class="Symbol"
+      >...</a
+      ><a name="4482"
+      > </a
+      ><a name="4483" class="Symbol"
+      >|</a
+      ><a name="4484"
+      > </a
+      ><a name="4485" href="Lemmas.html#4485" class="Bound"
+      >eqa</a
+      ><a name="4488"
+      > </a
+      ><a name="4489" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4490"
+      > </a
+      ><a name="4491" href="Lemmas.html#4491" class="Bound"
+      >eqb</a
+      ><a name="4494"
+      >  </a
+      ><a name="4496" class="Symbol"
+      >=</a
+      ><a name="4497"
+      > </a
+      ><a name="4498" class="Symbol"
+      >&#955;</a
+      ><a name="4499"
+      > </a
+      ><a name="4500" href="Lemmas.html#4500" class="Bound"
+      >t'</a
+      ><a name="4502"
+      > </a
+      ><a name="4503" href="Lemmas.html#4503" class="Bound"
+      >lt</a
+      ><a name="4505"
+      > </a
+      ><a name="4506" class="Symbol"
+      >&#8594;</a
+      ><a name="4507"
+      > </a
+      ><a name="4508" href="NeilPrelude.html#18866" class="Function"
+      >&#215;-cong</a
+      ><a name="4514"
+      > </a
+      ><a name="4515" class="Symbol"
+      >(</a
+      ><a name="4516" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4530"
+      > </a
+      ><a name="4531" class="Symbol"
+      >{</a
+      ><a name="4532" href="Lemmas.html#4409" class="Bound"
+      >as</a
+      ><a name="4534" class="Symbol"
+      >}</a
+      ><a name="4535"
+      > </a
+      ><a name="4536" href="Lemmas.html#4418" class="Bound"
+      >con</a
+      ><a name="4539"
+      > </a
+      ><a name="4540" href="Lemmas.html#4422" class="Bound"
+      >stab</a
+      ><a name="4544"
+      > </a
+      ><a name="4545" href="Lemmas.html#4428" class="Bound"
+      >sa&#8321;</a
+      ><a name="4548"
+      > </a
+      ><a name="4549" href="Lemmas.html#4440" class="Bound"
+      >sa&#8322;</a
+      ><a name="4552"
+      > </a
+      ><a name="4553" href="Lemmas.html#4451" class="Bound"
+      >t</a
+      ><a name="4554"
+      > </a
+      ><a name="4555" href="Lemmas.html#4485" class="Bound"
+      >eqa</a
+      ><a name="4558"
+      > </a
+      ><a name="4559" class="Symbol"
+      >(</a
+      ><a name="4560" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="4568"
+      > </a
+      ><a name="4569" href="NeilPrelude.html#11604" class="Function"
+      >fst</a
+      ><a name="4572"
+      > </a
+      ><a name="4573" href="Lemmas.html#4456" class="Bound"
+      >un&#8321;</a
+      ><a name="4576" class="Symbol"
+      >)</a
+      ><a name="4577"
+      > </a
+      ><a name="4578" class="Symbol"
+      >(</a
+      ><a name="4579" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="4587"
+      > </a
+      ><a name="4588" href="NeilPrelude.html#11604" class="Function"
+      >fst</a
+      ><a name="4591"
+      > </a
+      ><a name="4592" href="Lemmas.html#4460" class="Bound"
+      >un&#8322;</a
+      ><a name="4595" class="Symbol"
+      >)</a
+      ><a name="4596"
+      > </a
+      ><a name="4597" href="Lemmas.html#4500" class="Bound"
+      >t'</a
+      ><a name="4599"
+      > </a
+      ><a name="4600" href="Lemmas.html#4503" class="Bound"
+      >lt</a
+      ><a name="4602" class="Symbol"
+      >)</a
+      ><a name="4603"
+      > </a
+      ><a name="4604" class="Symbol"
+      >(</a
+      ><a name="4605" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="4619"
+      > </a
+      ><a name="4620" class="Symbol"
+      >{</a
+      ><a name="4621" href="Lemmas.html#4414" class="Bound"
+      >bs</a
+      ><a name="4623" class="Symbol"
+      >}</a
+      ><a name="4624"
+      > </a
+      ><a name="4625" href="Lemmas.html#4418" class="Bound"
+      >con</a
+      ><a name="4628"
+      > </a
+      ><a name="4629" href="Lemmas.html#4422" class="Bound"
+      >stab</a
+      ><a name="4633"
+      > </a
+      ><a name="4634" href="Lemmas.html#4434" class="Bound"
+      >sb&#8321;</a
+      ><a name="4637"
+      > </a
+      ><a name="4638" href="Lemmas.html#4446" class="Bound"
+      >sb&#8322;</a
+      ><a name="4641"
+      > </a
+      ><a name="4642" href="Lemmas.html#4451" class="Bound"
+      >t</a
+      ><a name="4643"
+      > </a
+      ><a name="4644" href="Lemmas.html#4491" class="Bound"
+      >eqb</a
+      ><a name="4647"
+      > </a
+      ><a name="4648" class="Symbol"
+      >(</a
+      ><a name="4649" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="4657"
+      > </a
+      ><a name="4658" href="NeilPrelude.html#11664" class="Function"
+      >snd</a
+      ><a name="4661"
+      > </a
+      ><a name="4662" href="Lemmas.html#4456" class="Bound"
+      >un&#8321;</a
+      ><a name="4665" class="Symbol"
+      >)</a
+      ><a name="4666"
+      > </a
+      ><a name="4667" class="Symbol"
+      >(</a
+      ><a name="4668" href="NeilPrelude.html#9581" class="Function"
+      >result2'</a
+      ><a name="4676"
+      > </a
+      ><a name="4677" href="NeilPrelude.html#11664" class="Function"
+      >snd</a
+      ><a name="4680"
+      > </a
+      ><a name="4681" href="Lemmas.html#4460" class="Bound"
+      >un&#8322;</a
+      ><a name="4684" class="Symbol"
+      >)</a
+      ><a name="4685"
+      > </a
+      ><a name="4686" href="Lemmas.html#4500" class="Bound"
+      >t'</a
+      ><a name="4688"
+      > </a
+      ><a name="4689" href="Lemmas.html#4503" class="Bound"
+      >lt</a
+      ><a name="4691" class="Symbol"
+      >)</a
+      ><a name="4692"
+      >
+
+</a
+      ><a name="4694" class="Comment"
+      >------------------------------------------------------------------</a
+      ><a name="4760"
+      >
+
+</a
+      ><a name="4762" href="Lemmas.html#4762" class="Function"
+      >lem-EqR&#8658;C&#691;&#8658;G&#691;Eq</a
+      ><a name="4777"
+      > </a
+      ><a name="4778" class="Symbol"
+      >:</a
+      ><a name="4779"
+      > </a
+      ><a name="4780" class="Symbol"
+      >{</a
+      ><a name="4781" href="Lemmas.html#4781" class="Bound"
+      >as</a
+      ><a name="4783"
+      > </a
+      ><a name="4784" class="Symbol"
+      >:</a
+      ><a name="4785"
+      > </a
+      ><a name="4786" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="4792" class="Symbol"
+      >}</a
+      ><a name="4793"
+      > </a
+      ><a name="4794" class="Symbol"
+      >&#8594;</a
+      ><a name="4795"
+      > </a
+      ><a name="4796" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="4807"
+      > </a
+      ><a name="4808" class="Symbol"
+      >&#8594;</a
+      ><a name="4809"
+      > </a
+      ><a name="4810" href="Properties.html#675" class="Function"
+      >Stability</a
+      ><a name="4819"
+      > </a
+      ><a name="4820" class="Symbol"
+      >&#8594;</a
+      ><a name="4821"
+      > </a
+      ><a name="4822" class="Symbol"
+      >(</a
+      ><a name="4823" href="Lemmas.html#4823" class="Bound"
+      >s&#8321;</a
+      ><a name="4825"
+      > </a
+      ><a name="4826" href="Lemmas.html#4826" class="Bound"
+      >s&#8322;</a
+      ><a name="4828"
+      > </a
+      ><a name="4829" class="Symbol"
+      >:</a
+      ><a name="4830"
+      > </a
+      ><a name="4831" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="4837"
+      > </a
+      ><a name="4838" href="Lemmas.html#4781" class="Bound"
+      >as</a
+      ><a name="4840" class="Symbol"
+      >)</a
+      ><a name="4841"
+      > </a
+      ><a name="4842" class="Symbol"
+      >&#8594;</a
+      ><a name="4843"
+      > </a
+      ><a name="4844" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="4850"
+      > </a
+      ><a name="4851" class="Symbol"
+      >((</a
+      ><a name="4853" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="4861"
+      > </a
+      ><a name="4862" class="Symbol"
+      >{</a
+      ><a name="4863" href="Lemmas.html#4781" class="Bound"
+      >as</a
+      ><a name="4865" class="Symbol"
+      >}</a
+      ><a name="4866"
+      > </a
+      ><a name="4867" href="Lemmas.html#4823" class="Bound"
+      >s&#8321;</a
+      ><a name="4869"
+      > </a
+      ><a name="4870" href="Lemmas.html#4826" class="Bound"
+      >s&#8322;</a
+      ><a name="4872" class="Symbol"
+      >)</a
+      ><a name="4873"
+      > </a
+      ><a name="4874" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4875"
+      > </a
+      ><a name="4876" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="4887"
+      > </a
+      ><a name="4888" class="Symbol"
+      >{</a
+      ><a name="4889" href="Lemmas.html#4781" class="Bound"
+      >as</a
+      ><a name="4891" class="Symbol"
+      >}</a
+      ><a name="4892"
+      > </a
+      ><a name="4893" href="Lemmas.html#4823" class="Bound"
+      >s&#8321;</a
+      ><a name="4895"
+      > </a
+      ><a name="4896" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4897"
+      > </a
+      ><a name="4898" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="4909"
+      > </a
+      ><a name="4910" class="Symbol"
+      >{</a
+      ><a name="4911" href="Lemmas.html#4781" class="Bound"
+      >as</a
+      ><a name="4913" class="Symbol"
+      >}</a
+      ><a name="4914"
+      > </a
+      ><a name="4915" href="Lemmas.html#4826" class="Bound"
+      >s&#8322;</a
+      ><a name="4917"
+      > </a
+      ><a name="4918" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="4919"
+      > </a
+      ><a name="4920" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="4922"
+      > </a
+      ><a name="4923" class="Symbol"
+      >(</a
+      ><a name="4924" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="4932"
+      > </a
+      ><a name="4933" class="Symbol"
+      >{</a
+      ><a name="4934" href="Lemmas.html#4781" class="Bound"
+      >as</a
+      ><a name="4936" class="Symbol"
+      >}</a
+      ><a name="4937"
+      > </a
+      ><a name="4938" href="Lemmas.html#4823" class="Bound"
+      >s&#8321;</a
+      ><a name="4940"
+      > </a
+      ><a name="4941" href="Lemmas.html#4826" class="Bound"
+      >s&#8322;</a
+      ><a name="4943" class="Symbol"
+      >))</a
+      ><a name="4945"
+      >
+</a
+      ><a name="4946" href="Lemmas.html#4762" class="Function"
+      >lem-EqR&#8658;C&#691;&#8658;G&#691;Eq</a
+      ><a name="4961"
+      > </a
+      ><a name="4962" class="Symbol"
+      >{</a
+      ><a name="4963" href="Lemmas.html#4963" class="Bound"
+      >as</a
+      ><a name="4965" class="Symbol"
+      >}</a
+      ><a name="4966"
+      > </a
+      ><a name="4967" href="Lemmas.html#4967" class="Bound"
+      >con</a
+      ><a name="4970"
+      > </a
+      ><a name="4971" href="Lemmas.html#4971" class="Bound"
+      >stab</a
+      ><a name="4975"
+      > </a
+      ><a name="4976" href="Lemmas.html#4976" class="Bound"
+      >s&#8321;</a
+      ><a name="4978"
+      > </a
+      ><a name="4979" href="Lemmas.html#4979" class="Bound"
+      >s&#8322;</a
+      ><a name="4981"
+      > </a
+      ><a name="4982" href="Lemmas.html#4982" class="Bound"
+      >t</a
+      ><a name="4983"
+      > </a
+      ><a name="4984" href="Lemmas.html#4984" class="Bound"
+      >eq</a
+      ><a name="4986"
+      > </a
+      ><a name="4987" class="Symbol"
+      >(_</a
+      ><a name="4989"
+      > </a
+      ><a name="4990" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="4991"
+      > </a
+      ><a name="4992" href="Lemmas.html#4992" class="Bound"
+      >Gun&#8321;</a
+      ><a name="4996" class="Symbol"
+      >)</a
+      ><a name="4997"
+      > </a
+      ><a name="4998" class="Symbol"
+      >(_</a
+      ><a name="5000"
+      > </a
+      ><a name="5001" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="5002"
+      > </a
+      ><a name="5003" href="Lemmas.html#5003" class="Bound"
+      >Gun&#8322;</a
+      ><a name="5007" class="Symbol"
+      >)</a
+      ><a name="5008"
+      > </a
+      ><a name="5009" class="Symbol"
+      >=</a
+      ><a name="5010"
+      > </a
+      ><a name="5011" href="Lemmas.html#4984" class="Bound"
+      >eq</a
+      ><a name="5013"
+      > </a
+      ><a name="5014" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="5015"
+      > </a
+      ><a name="5016" href="Lemmas.html#3946" class="Function"
+      >lem-EqR&#8658;C&#8658;GEqR</a
+      ><a name="5030"
+      > </a
+      ><a name="5031" class="Symbol"
+      >{</a
+      ><a name="5032" href="Lemmas.html#4963" class="Bound"
+      >as</a
+      ><a name="5034" class="Symbol"
+      >}</a
+      ><a name="5035"
+      > </a
+      ><a name="5036" href="Lemmas.html#4967" class="Bound"
+      >con</a
+      ><a name="5039"
+      > </a
+      ><a name="5040" href="Lemmas.html#4971" class="Bound"
+      >stab</a
+      ><a name="5044"
+      > </a
+      ><a name="5045" href="Lemmas.html#4976" class="Bound"
+      >s&#8321;</a
+      ><a name="5047"
+      > </a
+      ><a name="5048" href="Lemmas.html#4979" class="Bound"
+      >s&#8322;</a
+      ><a name="5050"
+      > </a
+      ><a name="5051" href="Lemmas.html#4982" class="Bound"
+      >t</a
+      ><a name="5052"
+      > </a
+      ><a name="5053" href="Lemmas.html#4984" class="Bound"
+      >eq</a
+      ><a name="5055"
+      > </a
+      ><a name="5056" href="Lemmas.html#4992" class="Bound"
+      >Gun&#8321;</a
+      ><a name="5060"
+      > </a
+      ><a name="5061" href="Lemmas.html#5003" class="Bound"
+      >Gun&#8322;</a
+      ><a name="5065"
+      >
+
+</a
+      ><a name="5067" href="Lemmas.html#5067" class="Function"
+      >lem-HEqR&#8658;C&#691;&#8658;G&#691;EqR</a
+      ><a name="5084"
+      > </a
+      ><a name="5085" class="Symbol"
+      >:</a
+      ><a name="5086"
+      > </a
+      ><a name="5087" class="Symbol"
+      >{</a
+      ><a name="5088" href="Lemmas.html#5088" class="Bound"
+      >as</a
+      ><a name="5090"
+      > </a
+      ><a name="5091" class="Symbol"
+      >:</a
+      ><a name="5092"
+      > </a
+      ><a name="5093" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="5099" class="Symbol"
+      >}</a
+      ><a name="5100"
+      > </a
+      ><a name="5101" class="Symbol"
+      >&#8594;</a
+      ><a name="5102"
+      > </a
+      ><a name="5103" href="Properties.html#750" class="Function"
+      >Containment</a
+      ><a name="5114"
+      > </a
+      ><a name="5115" class="Symbol"
+      >&#8594;</a
+      ><a name="5116"
+      > </a
+      ><a name="5117" href="Properties.html#675" class="Function"
+      >Stability</a
+      ><a name="5126"
+      > </a
+      ><a name="5127" class="Symbol"
+      >&#8594;</a
+      ><a name="5128"
+      > </a
+      ><a name="5129" class="Symbol"
+      >(</a
+      ><a name="5130" href="Lemmas.html#5130" class="Bound"
+      >s&#8321;</a
+      ><a name="5132"
+      > </a
+      ><a name="5133" href="Lemmas.html#5133" class="Bound"
+      >s&#8322;</a
+      ><a name="5135"
+      > </a
+      ><a name="5136" class="Symbol"
+      >:</a
+      ><a name="5137"
+      > </a
+      ><a name="5138" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="5144"
+      > </a
+      ><a name="5145" href="Lemmas.html#5088" class="Bound"
+      >as</a
+      ><a name="5147" class="Symbol"
+      >)</a
+      ><a name="5148"
+      > </a
+      ><a name="5149" class="Symbol"
+      >&#8594;</a
+      ><a name="5150"
+      > </a
+      ><a name="5151" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="5157"
+      > </a
+      ><a name="5158" class="Symbol"
+      >(</a
+      ><a name="5159" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="5160"
+      > </a
+      ><a name="5161" class="Symbol"
+      >(</a
+      ><a name="5162" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="5170"
+      > </a
+      ><a name="5171" class="Symbol"
+      >{</a
+      ><a name="5172" href="Lemmas.html#5088" class="Bound"
+      >as</a
+      ><a name="5174" class="Symbol"
+      >}</a
+      ><a name="5175"
+      > </a
+      ><a name="5176" href="Lemmas.html#5130" class="Bound"
+      >s&#8321;</a
+      ><a name="5178"
+      > </a
+      ><a name="5179" href="Lemmas.html#5133" class="Bound"
+      >s&#8322;</a
+      ><a name="5181" class="Symbol"
+      >)</a
+      ><a name="5182"
+      > </a
+      ><a name="5183" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5184"
+      > </a
+      ><a name="5185" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="5196"
+      > </a
+      ><a name="5197" class="Symbol"
+      >{</a
+      ><a name="5198" href="Lemmas.html#5088" class="Bound"
+      >as</a
+      ><a name="5200" class="Symbol"
+      >}</a
+      ><a name="5201"
+      > </a
+      ><a name="5202" href="Lemmas.html#5130" class="Bound"
+      >s&#8321;</a
+      ><a name="5204"
+      > </a
+      ><a name="5205" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5206"
+      > </a
+      ><a name="5207" href="Properties.html#1930" class="Function"
+      >Changeless&#691;</a
+      ><a name="5218"
+      > </a
+      ><a name="5219" class="Symbol"
+      >{</a
+      ><a name="5220" href="Lemmas.html#5088" class="Bound"
+      >as</a
+      ><a name="5222" class="Symbol"
+      >}</a
+      ><a name="5223"
+      > </a
+      ><a name="5224" href="Lemmas.html#5133" class="Bound"
+      >s&#8322;</a
+      ><a name="5226"
+      > </a
+      ><a name="5227" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5228"
+      > </a
+      ><a name="5229" href="TemporalLogic.html#1972" class="Function"
+      >G&#691;</a
+      ><a name="5231"
+      > </a
+      ><a name="5232" class="Symbol"
+      >(</a
+      ><a name="5233" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="5241"
+      > </a
+      ><a name="5242" class="Symbol"
+      >{</a
+      ><a name="5243" href="Lemmas.html#5088" class="Bound"
+      >as</a
+      ><a name="5245" class="Symbol"
+      >}</a
+      ><a name="5246"
+      > </a
+      ><a name="5247" href="Lemmas.html#5130" class="Bound"
+      >s&#8321;</a
+      ><a name="5249"
+      > </a
+      ><a name="5250" href="Lemmas.html#5133" class="Bound"
+      >s&#8322;</a
+      ><a name="5252" class="Symbol"
+      >))</a
+      ><a name="5254"
+      >
+</a
+      ><a name="5255" href="Lemmas.html#5067" class="Function"
+      >lem-HEqR&#8658;C&#691;&#8658;G&#691;EqR</a
+      ><a name="5272"
+      > </a
+      ><a name="5273" class="Symbol"
+      >{</a
+      ><a name="5274" href="Lemmas.html#5274" class="Bound"
+      >as</a
+      ><a name="5276" class="Symbol"
+      >}</a
+      ><a name="5277"
+      > </a
+      ><a name="5278" href="Lemmas.html#5278" class="Bound"
+      >con</a
+      ><a name="5281"
+      > </a
+      ><a name="5282" href="Lemmas.html#5282" class="Bound"
+      >stab</a
+      ><a name="5286"
+      > </a
+      ><a name="5287" href="Lemmas.html#5287" class="Bound"
+      >s&#8321;</a
+      ><a name="5289"
+      > </a
+      ><a name="5290" href="Lemmas.html#5290" class="Bound"
+      >s&#8322;</a
+      ><a name="5292"
+      > </a
+      ><a name="5293" href="Lemmas.html#5293" class="Bound"
+      >t</a
+      ><a name="5294"
+      > </a
+      ><a name="5295" href="Lemmas.html#5295" class="Bound"
+      >Heq</a
+      ><a name="5298"
+      > </a
+      ><a name="5299" href="Lemmas.html#5299" class="Bound"
+      >un&#8321;</a
+      ><a name="5302"
+      > </a
+      ><a name="5303" href="Lemmas.html#5303" class="Bound"
+      >un&#8322;</a
+      ><a name="5306"
+      > </a
+      ><a name="5307" class="Symbol"
+      >=</a
+      ><a name="5308"
+      > </a
+      ><a name="5309" href="Lemmas.html#4762" class="Function"
+      >lem-EqR&#8658;C&#691;&#8658;G&#691;Eq</a
+      ><a name="5324"
+      > </a
+      ><a name="5325" class="Symbol"
+      >{</a
+      ><a name="5326" href="Lemmas.html#5274" class="Bound"
+      >as</a
+      ><a name="5328" class="Symbol"
+      >}</a
+      ><a name="5329"
+      > </a
+      ><a name="5330" href="Lemmas.html#5278" class="Bound"
+      >con</a
+      ><a name="5333"
+      > </a
+      ><a name="5334" href="Lemmas.html#5282" class="Bound"
+      >stab</a
+      ><a name="5338"
+      > </a
+      ><a name="5339" href="Lemmas.html#5287" class="Bound"
+      >s&#8321;</a
+      ><a name="5341"
+      > </a
+      ><a name="5342" href="Lemmas.html#5290" class="Bound"
+      >s&#8322;</a
+      ><a name="5344"
+      > </a
+      ><a name="5345" href="Lemmas.html#5293" class="Bound"
+      >t</a
+      ><a name="5346"
+      > </a
+      ><a name="5347" class="Symbol"
+      >(</a
+      ><a name="5348" href="Lemmas.html#2550" class="Function"
+      >lem-HEqR&#8658;C&#691;&#8658;EqR</a
+      ><a name="5363"
+      > </a
+      ><a name="5364" class="Symbol"
+      >{</a
+      ><a name="5365" href="Lemmas.html#5274" class="Bound"
+      >as</a
+      ><a name="5367" class="Symbol"
+      >}</a
+      ><a name="5368"
+      > </a
+      ><a name="5369" href="Lemmas.html#5278" class="Bound"
+      >con</a
+      ><a name="5372"
+      > </a
+      ><a name="5373" href="Lemmas.html#5287" class="Bound"
+      >s&#8321;</a
+      ><a name="5375"
+      > </a
+      ><a name="5376" href="Lemmas.html#5290" class="Bound"
+      >s&#8322;</a
+      ><a name="5378"
+      > </a
+      ><a name="5379" href="Lemmas.html#5293" class="Bound"
+      >t</a
+      ><a name="5380"
+      > </a
+      ><a name="5381" href="Lemmas.html#5295" class="Bound"
+      >Heq</a
+      ><a name="5384"
+      > </a
+      ><a name="5385" href="Lemmas.html#5299" class="Bound"
+      >un&#8321;</a
+      ><a name="5388"
+      > </a
+      ><a name="5389" href="Lemmas.html#5303" class="Bound"
+      >un&#8322;</a
+      ><a name="5392" class="Symbol"
+      >)</a
+      ><a name="5393"
+      > </a
+      ><a name="5394" href="Lemmas.html#5299" class="Bound"
+      >un&#8321;</a
+      ><a name="5397"
+      > </a
+      ><a name="5398" href="Lemmas.html#5303" class="Bound"
+      >un&#8322;</a
+      ><a name="5401"
+      >
+
+</a
+      ><a name="5403" href="Lemmas.html#5403" class="Function"
+      >lem-HEqR&#8658;HEqRsf</a
+      ><a name="5418"
+      > </a
+      ><a name="5419" class="Symbol"
+      >:</a
+      ><a name="5420"
+      > </a
+      ><a name="5421" class="Symbol"
+      >{</a
+      ><a name="5422" href="Lemmas.html#5422" class="Bound"
+      >as</a
+      ><a name="5424"
+      > </a
+      ><a name="5425" href="Lemmas.html#5425" class="Bound"
+      >bs</a
+      ><a name="5427"
+      > </a
+      ><a name="5428" class="Symbol"
+      >:</a
+      ><a name="5429"
+      > </a
+      ><a name="5430" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="5436" class="Symbol"
+      >}</a
+      ><a name="5437"
+      > </a
+      ><a name="5438" class="Symbol"
+      >&#8594;</a
+      ><a name="5439"
+      > </a
+      ><a name="5440" class="Symbol"
+      >{</a
+      ><a name="5441" href="Lemmas.html#5441" class="Bound"
+      >sf</a
+      ><a name="5443"
+      > </a
+      ><a name="5444" class="Symbol"
+      >:</a
+      ><a name="5445"
+      > </a
+      ><a name="5446" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="5448"
+      > </a
+      ><a name="5449" href="Lemmas.html#5422" class="Bound"
+      >as</a
+      ><a name="5451"
+      > </a
+      ><a name="5452" href="Lemmas.html#5425" class="Bound"
+      >bs</a
+      ><a name="5454" class="Symbol"
+      >}</a
+      ><a name="5455"
+      > </a
+      ><a name="5456" class="Symbol"
+      >&#8594;</a
+      ><a name="5457"
+      > </a
+      ><a name="5458" href="Properties.html#2238" class="Function"
+      >Causal</a
+      ><a name="5464"
+      > </a
+      ><a name="5465" class="Symbol"
+      >{</a
+      ><a name="5466" href="Lemmas.html#5422" class="Bound"
+      >as</a
+      ><a name="5468" class="Symbol"
+      >}</a
+      ><a name="5469"
+      > </a
+      ><a name="5470" class="Symbol"
+      >{</a
+      ><a name="5471" href="Lemmas.html#5425" class="Bound"
+      >bs</a
+      ><a name="5473" class="Symbol"
+      >}</a
+      ><a name="5474"
+      > </a
+      ><a name="5475" href="Lemmas.html#5441" class="Bound"
+      >sf</a
+      ><a name="5477"
+      > </a
+      ><a name="5478" class="Symbol"
+      >&#8594;</a
+      ><a name="5479"
+      > </a
+      ><a name="5480" class="Symbol"
+      >(</a
+      ><a name="5481" href="Lemmas.html#5481" class="Bound"
+      >s&#8321;</a
+      ><a name="5483"
+      > </a
+      ><a name="5484" href="Lemmas.html#5484" class="Bound"
+      >s&#8322;</a
+      ><a name="5486"
+      > </a
+      ><a name="5487" class="Symbol"
+      >:</a
+      ><a name="5488"
+      > </a
+      ><a name="5489" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="5495"
+      > </a
+      ><a name="5496" href="Lemmas.html#5422" class="Bound"
+      >as</a
+      ><a name="5498" class="Symbol"
+      >)</a
+      ><a name="5499"
+      > </a
+      ><a name="5500" class="Symbol"
+      >&#8594;</a
+      ><a name="5501"
+      > </a
+      ><a name="5502" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="5508"
+      > </a
+      ><a name="5509" class="Symbol"
+      >(</a
+      ><a name="5510" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="5511"
+      > </a
+      ><a name="5512" class="Symbol"
+      >(</a
+      ><a name="5513" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="5521"
+      > </a
+      ><a name="5522" class="Symbol"
+      >{</a
+      ><a name="5523" href="Lemmas.html#5422" class="Bound"
+      >as</a
+      ><a name="5525" class="Symbol"
+      >}</a
+      ><a name="5526"
+      > </a
+      ><a name="5527" href="Lemmas.html#5481" class="Bound"
+      >s&#8321;</a
+      ><a name="5529"
+      > </a
+      ><a name="5530" href="Lemmas.html#5484" class="Bound"
+      >s&#8322;</a
+      ><a name="5532" class="Symbol"
+      >)</a
+      ><a name="5533"
+      > </a
+      ><a name="5534" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5535"
+      > </a
+      ><a name="5536" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="5537"
+      > </a
+      ><a name="5538" class="Symbol"
+      >(</a
+      ><a name="5539" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="5547"
+      > </a
+      ><a name="5548" class="Symbol"
+      >{</a
+      ><a name="5549" href="Lemmas.html#5425" class="Bound"
+      >bs</a
+      ><a name="5551" class="Symbol"
+      >}</a
+      ><a name="5552"
+      > </a
+      ><a name="5553" class="Symbol"
+      >(</a
+      ><a name="5554" href="Lemmas.html#5441" class="Bound"
+      >sf</a
+      ><a name="5556"
+      > </a
+      ><a name="5557" href="Lemmas.html#5481" class="Bound"
+      >s&#8321;</a
+      ><a name="5559" class="Symbol"
+      >)</a
+      ><a name="5560"
+      > </a
+      ><a name="5561" class="Symbol"
+      >(</a
+      ><a name="5562" href="Lemmas.html#5441" class="Bound"
+      >sf</a
+      ><a name="5564"
+      > </a
+      ><a name="5565" href="Lemmas.html#5484" class="Bound"
+      >s&#8322;</a
+      ><a name="5567" class="Symbol"
+      >)))</a
+      ><a name="5570"
+      >
+</a
+      ><a name="5571" href="Lemmas.html#5403" class="Function"
+      >lem-HEqR&#8658;HEqRsf</a
+      ><a name="5586"
+      > </a
+      ><a name="5587" href="Lemmas.html#5587" class="Bound"
+      >cau</a
+      ><a name="5590"
+      > </a
+      ><a name="5591" href="Lemmas.html#5591" class="Bound"
+      >s&#8321;</a
+      ><a name="5593"
+      > </a
+      ><a name="5594" href="Lemmas.html#5594" class="Bound"
+      >s&#8322;</a
+      ><a name="5596"
+      > </a
+      ><a name="5597" href="Lemmas.html#5597" class="Bound"
+      >t</a
+      ><a name="5598"
+      > </a
+      ><a name="5599" href="Lemmas.html#5599" class="Bound"
+      >Heq</a
+      ><a name="5602"
+      > </a
+      ><a name="5603" href="Lemmas.html#5603" class="Bound"
+      >t'</a
+      ><a name="5605"
+      > </a
+      ><a name="5606" href="Lemmas.html#5606" class="Bound"
+      >lt</a
+      ><a name="5608"
+      > </a
+      ><a name="5609" class="Symbol"
+      >=</a
+      ><a name="5610"
+      > </a
+      ><a name="5611" href="Lemmas.html#5587" class="Bound"
+      >cau</a
+      ><a name="5614"
+      > </a
+      ><a name="5615" href="Lemmas.html#5591" class="Bound"
+      >s&#8321;</a
+      ><a name="5617"
+      > </a
+      ><a name="5618" href="Lemmas.html#5594" class="Bound"
+      >s&#8322;</a
+      ><a name="5620"
+      > </a
+      ><a name="5621" href="Lemmas.html#5603" class="Bound"
+      >t'</a
+      ><a name="5623"
+      > </a
+      ><a name="5624" class="Symbol"
+      >(</a
+      ><a name="5625" href="StrictPreOrder.html#1865" class="Function"
+      >STO&#8476;&#8320;</a
+      ><a name="5630"
+      >.</a
+      ><a name="5631" href="StrictPreOrder.html#1865" class="Function"
+      >reduce-range-&lt;-incl</a
+      ><a name="5650"
+      > </a
+      ><a name="5651" href="Lemmas.html#5606" class="Bound"
+      >lt</a
+      ><a name="5653"
+      > </a
+      ><a name="5654" href="Lemmas.html#5599" class="Bound"
+      >Heq</a
+      ><a name="5657" class="Symbol"
+      >)</a
+      ><a name="5658"
+      >
+
+</a
+      ><a name="5660" href="Lemmas.html#5660" class="Function"
+      >lem-HEqR&#8658;H&#691;EqRsf</a
+      ><a name="5676"
+      > </a
+      ><a name="5677" class="Symbol"
+      >:</a
+      ><a name="5678"
+      > </a
+      ><a name="5679" class="Symbol"
+      >{</a
+      ><a name="5680" href="Lemmas.html#5680" class="Bound"
+      >as</a
+      ><a name="5682"
+      > </a
+      ><a name="5683" href="Lemmas.html#5683" class="Bound"
+      >bs</a
+      ><a name="5685"
+      > </a
+      ><a name="5686" class="Symbol"
+      >:</a
+      ><a name="5687"
+      > </a
+      ><a name="5688" href="SVDesc.html#160" class="Datatype"
+      >SVDesc</a
+      ><a name="5694" class="Symbol"
+      >}</a
+      ><a name="5695"
+      > </a
+      ><a name="5696" class="Symbol"
+      >&#8594;</a
+      ><a name="5697"
+      > </a
+      ><a name="5698" class="Symbol"
+      >{</a
+      ><a name="5699" href="Lemmas.html#5699" class="Bound"
+      >sf</a
+      ><a name="5701"
+      > </a
+      ><a name="5702" class="Symbol"
+      >:</a
+      ><a name="5703"
+      > </a
+      ><a name="5704" href="SigVecs.html#620" class="Function"
+      >SF</a
+      ><a name="5706"
+      > </a
+      ><a name="5707" href="Lemmas.html#5680" class="Bound"
+      >as</a
+      ><a name="5709"
+      > </a
+      ><a name="5710" href="Lemmas.html#5683" class="Bound"
+      >bs</a
+      ><a name="5712" class="Symbol"
+      >}</a
+      ><a name="5713"
+      > </a
+      ><a name="5714" class="Symbol"
+      >&#8594;</a
+      ><a name="5715"
+      > </a
+      ><a name="5716" href="Properties.html#2598" class="Function"
+      >Decoupled</a
+      ><a name="5725"
+      > </a
+      ><a name="5726" class="Symbol"
+      >{</a
+      ><a name="5727" href="Lemmas.html#5680" class="Bound"
+      >as</a
+      ><a name="5729" class="Symbol"
+      >}</a
+      ><a name="5730"
+      > </a
+      ><a name="5731" class="Symbol"
+      >{</a
+      ><a name="5732" href="Lemmas.html#5683" class="Bound"
+      >bs</a
+      ><a name="5734" class="Symbol"
+      >}</a
+      ><a name="5735"
+      > </a
+      ><a name="5736" href="Lemmas.html#5699" class="Bound"
+      >sf</a
+      ><a name="5738"
+      > </a
+      ><a name="5739" class="Symbol"
+      >&#8594;</a
+      ><a name="5740"
+      > </a
+      ><a name="5741" class="Symbol"
+      >(</a
+      ><a name="5742" href="Lemmas.html#5742" class="Bound"
+      >s&#8321;</a
+      ><a name="5744"
+      > </a
+      ><a name="5745" href="Lemmas.html#5745" class="Bound"
+      >s&#8322;</a
+      ><a name="5747"
+      > </a
+      ><a name="5748" class="Symbol"
+      >:</a
+      ><a name="5749"
+      > </a
+      ><a name="5750" href="SigVecs.html#438" class="Function"
+      >SigVec</a
+      ><a name="5756"
+      > </a
+      ><a name="5757" href="Lemmas.html#5680" class="Bound"
+      >as</a
+      ><a name="5759" class="Symbol"
+      >)</a
+      ><a name="5760"
+      > </a
+      ><a name="5761" class="Symbol"
+      >&#8594;</a
+      ><a name="5762"
+      > </a
+      ><a name="5763" href="TemporalLogic.html#2849" class="Function"
+      >Always</a
+      ><a name="5769"
+      > </a
+      ><a name="5770" class="Symbol"
+      >(</a
+      ><a name="5771" href="TemporalLogic.html#838" class="Function"
+      >H</a
+      ><a name="5772"
+      > </a
+      ><a name="5773" class="Symbol"
+      >(</a
+      ><a name="5774" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="5782"
+      > </a
+      ><a name="5783" class="Symbol"
+      >{</a
+      ><a name="5784" href="Lemmas.html#5680" class="Bound"
+      >as</a
+      ><a name="5786" class="Symbol"
+      >}</a
+      ><a name="5787"
+      > </a
+      ><a name="5788" href="Lemmas.html#5742" class="Bound"
+      >s&#8321;</a
+      ><a name="5790"
+      > </a
+      ><a name="5791" href="Lemmas.html#5745" class="Bound"
+      >s&#8322;</a
+      ><a name="5793" class="Symbol"
+      >)</a
+      ><a name="5794"
+      > </a
+      ><a name="5795" href="TemporalLogic.html#589" class="Function Operator"
+      >&#8658;</a
+      ><a name="5796"
+      > </a
+      ><a name="5797" href="TemporalLogic.html#2007" class="Function"
+      >H&#691;</a
+      ><a name="5799"
+      > </a
+      ><a name="5800" class="Symbol"
+      >(</a
+      ><a name="5801" href="Properties.html#2026" class="Function"
+      >EqSample</a
+      ><a name="5809"
+      > </a
+      ><a name="5810" class="Symbol"
+      >{</a
+      ><a name="5811" href="Lemmas.html#5683" class="Bound"
+      >bs</a
+      ><a name="5813" class="Symbol"
+      >}</a
+      ><a name="5814"
+      > </a
+      ><a name="5815" class="Symbol"
+      >(</a
+      ><a name="5816" href="Lemmas.html#5699" class="Bound"
+      >sf</a
+      ><a name="5818"
+      > </a
+      ><a name="5819" href="Lemmas.html#5742" class="Bound"
+      >s&#8321;</a
+      ><a name="5821" class="Symbol"
+      >)</a
+      ><a name="5822"
+      > </a
+      ><a name="5823" class="Symbol"
+      >(</a
+      ><a name="5824" href="Lemmas.html#5699" class="Bound"
+      >sf</a
+      ><a name="5826"
+      > </a
+      ><a name="5827" href="Lemmas.html#5745" class="Bound"
+      >s&#8322;</a
+      ><a name="5829" class="Symbol"
+      >)))</a
+      ><a name="5832"
+      >
+</a
+      ><a name="5833" href="Lemmas.html#5660" class="Function"
+      >lem-HEqR&#8658;H&#691;EqRsf</a
+      ><a name="5849"
+      > </a
+      ><a name="5850" href="Lemmas.html#5850" class="Bound"
+      >dec</a
+      ><a name="5853"
+      > </a
+      ><a name="5854" href="Lemmas.html#5854" class="Bound"
+      >s&#8321;</a
+      ><a name="5856"
+      > </a
+      ><a name="5857" href="Lemmas.html#5857" class="Bound"
+      >s&#8322;</a
+      ><a name="5859"
+      > </a
+      ><a name="5860" href="Lemmas.html#5860" class="Bound"
+      >t</a
+      ><a name="5861"
+      > </a
+      ><a name="5862" href="Lemmas.html#5862" class="Bound"
+      >Heq</a
+      ><a name="5865"
+      >  </a
+      ><a name="5867" class="Symbol"
+      >=</a
+      ><a name="5868"
+      > </a
+      ><a name="5869" href="Lemmas.html#5850" class="Bound"
+      >dec</a
+      ><a name="5872"
+      > </a
+      ><a name="5873" href="Lemmas.html#5854" class="Bound"
+      >s&#8321;</a
+      ><a name="5875"
+      > </a
+      ><a name="5876" href="Lemmas.html#5857" class="Bound"
+      >s&#8322;</a
+      ><a name="5878"
+      > </a
+      ><a name="5879" href="Lemmas.html#5860" class="Bound"
+      >t</a
+      ><a name="5880"
+      > </a
+      ><a name="5881" href="Lemmas.html#5862" class="Bound"
+      >Heq</a
+      ><a name="5884"
+      > </a
+      ><a name="5885" href="NeilPrelude.html#1019" class="InductiveConstructor Operator"
+      >,</a
+      ><a name="5886"
+      > </a
+      ><a name="5887" class="Symbol"
+      >&#955;</a
+      ><a name="5888"
+      > </a
+      ><a name="5889" href="Lemmas.html#5889" class="Bound"
+      >t'</a
+      ><a name="5891"
+      > </a
+      ><a name="5892" href="Lemmas.html#5892" class="Bound"
+      >lt</a
+      ><a name="5894"
+      > </a
+      ><a name="5895" class="Symbol"
+      >&#8594;</a
+      ><a name="5896"
+      > </a
+      ><a name="5897" href="Lemmas.html#5850" class="Bound"
+      >dec</a
+      ><a name="5900"
+      > </a
+      ><a name="5901" href="Lemmas.html#5854" class="Bound"
+      >s&#8321;</a
+      ><a name="5903"
+      > </a
+      ><a name="5904" href="Lemmas.html#5857" class="Bound"
+      >s&#8322;</a
+      ><a name="5906"
+      > </a
+      ><a name="5907" href="Lemmas.html#5889" class="Bound"
+      >t'</a
+      ><a name="5909"
+      > </a
+      ><a name="5910" class="Symbol"
+      >(</a
+      ><a name="5911" href="StrictPreOrder.html#1555" class="Function"
+      >STO&#8476;&#8320;</a
+      ><a name="5916"
+      >.</a
+      ><a name="5917" href="StrictPreOrder.html#1555" class="Function"
+      >reduce-range-&lt;</a
+      ><a name="5931"
+      > </a
+      ><a name="5932" href="Lemmas.html#5892" class="Bound"
+      >lt</a
+      ><a name="5934"
+      > </a
+      ><a name="5935" href="Lemmas.html#5862" class="Bound"
+      >Heq</a
+      ><a name="5938" class="Symbol"
+      >)</a
+      ><a name="5939"
+      >
+
+</a
+      ><a name="5941" class="Comment"
+      >------------------------------------------------------------------</a
+      ><a name="6007"
+      >
+</a
+      ></pre
+    ></body
+  ></html
+>

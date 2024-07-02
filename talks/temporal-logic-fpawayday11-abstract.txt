@@ -1,0 +1,5 @@
+While working on formalising properties of FRP (Functional Reactive Programming) variants,
+I discovered that combinators from temporal logic could be used to simplify both the
+statement of time dependent properties, and reasoning about such properties.  In this talk
+I give a short tutorial introducing temporal logic and some of its more common combinators.
+I then give some examples of how these combinators can be used in the context of FRP.

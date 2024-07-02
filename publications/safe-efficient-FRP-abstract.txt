@@ -1,0 +1,34 @@
+Functional Reactive Programming (FRP) is an approach to reactive programming
+where systems are structured as networks of functions operating on
+time-varying values (signals).  FRP is based on the synchronous data-flow
+paradigm and supports both continuous-time and discrete-time signals (hybrid
+systems).  What sets FRP apart from most other reactive languages is its
+support for systems with highly dynamic structure (dynamism) and
+higher-order reactive constructs (higher-order data-flow).  However, the
+price paid for these features has been the loss of the safety and
+performance guarantees provided by other, less expressive, reactive
+languages.
+
+Statically guaranteeing safety properties of programs is an attractive
+proposition.  This is true in particular for typical application domains for
+reactive programming such as embedded systems.  To that end, many existing
+reactive languages have type systems or other static checks that guarantee
+domain-specific constraints, such as feedback being well-formed (causality
+analysis).  However, compared with FRP, they are limited in their capacity
+to support dynamism and higher-order data-flow.  On the other hand, as
+established static techniques do not suffice for highly structurally dynamic
+systems, FRP generally enforces few domain-specific constraints, leaving the
+FRP programmer to manually check that the constraints are respected.  Thus,
+there is currently a trade-off between static guarantees and dynamism among
+reactive languages. 
+
+This thesis contributes towards advancing the safety and efficiency of FRP
+by studying highly structurally dynamic networks of functions operating on
+mixed (yet distinct) continuous-time and discrete-time signals.  First, an
+ideal denotational semantics is defined for this kind of FRP, along with a
+type system that captures domain-specific constraints.  The correctness and
+practicality of the language and type system are then demonstrated by
+proof-of-concept implementations in Agda and Haskell.  Finally, temporal
+properties of signals and of functions on signals are expressed using
+techniques from temporal logic, as motivation and justification for a range
+of optimisations.
